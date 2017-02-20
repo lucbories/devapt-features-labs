@@ -1,0 +1,130 @@
+{
+	"views":{
+		"numerical_calculation_lab":{
+			"name":"numerical_calculation_lab",
+			"type":"Component",
+			"rendering":"Lab",
+			"settings":{},
+			"state":{
+				"label":"Lab",
+				"active_tab":"Main",
+				"workspaces":[
+					{
+						"title":"Datasets",
+						"content":"lab_datasets_workspace"
+					},
+					{
+						"title":"Main",
+						"content":"lab_main_workspace"
+					},
+					{
+						"title":"Learning",
+						"content":"lab_learning_workspace"
+					},
+					{
+						"title":"Booklets",
+						"content":"lab_booklets_workspace"
+					}
+				]
+			},
+			"children":{
+				"lab_datasets_workspace":{
+					"type":"Button",
+					"settings":{},
+					"state":{
+						"label":"Button test datasets"
+					}
+				},
+				"lab_main_workspace":{
+					"type":"block_grid",
+					"settings":{
+						"small_size_count":1,
+						"medium_size_count":1,
+						"large_size_count":2
+					},
+					"state":{
+						"label":"Main workspace",
+						"items":[
+							{ "view":"lab_main_workspace_left" },
+							{ "view":"lab_main_workspace_right" }
+						]
+					},
+					"children":{
+						"lab_main_workspace_left":{
+							"type":"block_grid_dock",
+							"settings":{
+								"small_size_count":1,
+								"medium_size_count":1,
+								"large_size_count":1
+							},
+							"state":{
+								"label":"Main workspace left",
+								"items":[
+									{ "view":"PlotLinearWithFctPlot_1" },
+									{ "view":"PlotParametricWithFctPlot_1" },
+									{ "view":"TerminalMathjs" }
+								]
+							},
+							"children":{
+								"PlotLinearWithFctPlot_1":{
+									"template":"PlotLinearWithFctPlotFeatureTemplate",
+									"state":{}
+								},
+								"PlotParametricWithFctPlot_1":{
+									"template":"PlotParametricWithFctPlotFeatureTemplate",
+									"state":{}
+								},
+								"TerminalMathjs":{
+									"template":"TerminalMathJSHistoryTemplate"
+								}
+							}
+						},
+						"lab_main_workspace_right":{
+							"type":"block_grid_dock",
+							"settings":{
+								"small_size_count":1,
+								"medium_size_count":1,
+								"large_size_count":1
+							},
+							"state":{
+								"label":"Main workspace right",
+								"items":[
+									{ "view":"PlotXYWithFctPlot_1" },
+									{ "view":"PlotPolarWithFctPlot_1" },
+									{ "view":"TerminalAlgebrite" }
+								]
+							},
+							"children":{
+								"PlotXYWithFctPlot_1":{
+									"template":"PlotXYWithFctPlotFeatureTemplate",
+									"state":{}
+								},
+								"PlotPolarWithFctPlot_1":{
+									"template":"PlotPolarWithFctPlotFeatureTemplate",
+									"state":{}
+								},
+								"TerminalAlgebrite":{
+									"template":"TerminalAlgebriteHistoryTemplate"
+								}
+							}
+						},
+						"lab_learning_workspace":{
+							"type":"Button",
+							"settings":{},
+							"state":{
+								"label":"Button test learning"
+							}
+						},
+						"lab_booklets_workspace":{
+							"type":"Button",
+							"settings":{},
+							"state":{
+								"label":"Button test booklets"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+{
+  "name": "devapt-features-labs",
+  "description": "Devapt features for labs calculus and plot.",
+  "main": "dist/index.js",
+  "authors": [
+    "Luc BORIES (https://github.com/lucbories)"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "labs",
+    "plot",
+    "devapt",
+    "feature"
+  ],
+  "homepage": "labs.devapt.org",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mathjs": ">=3.8.1",
+    "Algebrite": "davidedc/Algebrite",
+    "llang": "pnevyk/llang#^0.0.2",
+    "morph-expressions": "abukurov/morph-expressions#^0.0.4",
+    "sylvester": "jcoglan/sylvester#^0.1.3",
+    "whs": ">=1.1.5",
+    "jquery.terminal": "<1.0.0",
+    "metrics-graphics": "mozilla/metrics-graphics#^2.11.0",
+    "function-plot": ">=1.17.1",
+    "vis": "^4.18.0",
+    "synaptic": "^1.0.9",
+    "dcjs": "^2.1.1",
+    "logictools": "tammet/logictools",
+    "seth": "*",
+    "plotlyjs": "plotly#^1.18.1",
+    "katex": ">=0.7.1"
+  },
+  "resolutions": {
+    "d3": ">=4"
+  }
+}
