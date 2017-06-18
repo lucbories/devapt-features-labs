@@ -1,5 +1,29 @@
 {
 	"views":{
+		"numerical_lab":{
+			"name":"numerical_lab",
+			"type":"Container",
+			"settings":{},
+			"state":{
+				"label":"Home Lab",
+				"items":[
+					{ "view":"TerminalMathjs" }
+				]
+			},
+			"children":{
+				"PlotLinearWithFctPlot_1":{
+					"template":"PlotLinearWithFctPlotFeatureTemplate",
+					"state":{}
+				},
+				"PlotParametricWithFctPlot_1":{
+					"template":"PlotParametricWithFctPlotFeatureTemplate",
+					"state":{}
+				},
+				"TerminalMathjs":{
+					"template":"TerminalMathJSHistoryTemplate"
+				}
+			}
+		},
 		"numerical_calculation_lab":{
 			"name":"numerical_calculation_lab",
 			"type":"Component",

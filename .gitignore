@@ -8,7 +8,14 @@ npm-debug.log
 go.cmd
 
 .vscode
-dist
+dist/js
 tmp
+unused
 node_modules
 bower_components
+node_modules
+bower_components
+
+unused_*
+todo_*
+old_*

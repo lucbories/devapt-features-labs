@@ -1,8 +1,13 @@
-// NPM IMPORTS
-// import assert from 'assert'
-const Devapt = require('devapt').default
 
-// BROWSER IMPORTS
+// NPM IMPORTS
+
+// DEVAPT CORE COMMON IMPORTS
+// import T from 'devapt-core-common/dist/js/utils/types'
+
+// DEVAPT CORE BROWSER IMPORTS
+import WebWorker from 'devapt-core-browser/dist/js/base/web_worker'
+
+// PLUGIN IMPORTS
 import Terminal from './terminal'
 
 
@@ -35,10 +40,49 @@ export default class TerminalMathJS extends Terminal
 
 		this.is_terminal_mathjs = true
 		
-		this._parser = undefined
+		const name = this.get_name() ? this.get_name() : 'mathjs_terminal'
+		const worker_url = arg_state.worker_url ? arg_state.worker_url : '/labs_assets/plugins/' + plugin_name + '/worker_mathjs.js'
+		this._worker = new WebWorker(name + '_worker', worker_url)
+
 		this.add_assets_dependancy('js-mathjs')
-		
+
 		// this.enable_trace()
+	}
+
+
+
+	/**
+	 * Process graphical 2d operations.
+	 * 
+	 * @param {string}   arg_expression - request expression.
+	 * @param {function} arg_resolve    - promise resolve callback.
+	 * @param {function} arg_reject     - promise reject callback.
+	 */
+	process_2d_request(arg_expression, arg_resolve, arg_reject)
+	{
+		console.log(context + ':process_2d_request:expr=[' + arg_expression + ']')
+
+		// ...
+
+		arg_resolve()
+	}
+
+
+
+	/**
+	 * Process graphical 3d operations.
+	 * 
+	 * @param {string}   arg_expression - request expression.
+	 * @param {function} arg_resolve    - promise resolve callback.
+	 * @param {function} arg_reject     - promise reject callback.
+	 */
+	process_3d_request(arg_expression, arg_resolve, arg_reject)
+	{
+		console.log(context + ':process_3d_request:expr=[' + arg_expression + ']')
+
+		// ...
+
+		arg_resolve()
 	}
 
 
@@ -48,43 +92,61 @@ export default class TerminalMathJS extends Terminal
 	 * 
 	 * @param {string} arg_expression - expression to evaluate.
 	 * 
-	 * @returns {object} - eval result: { error:'', value:'' } on failure or { value:'' } on success.
+	 * @returns {Promise} - eval result promise of: { error:'', value:'' } on failure or { value:'' } on success.
 	 */
 	eval(arg_expression)
 	{
-		// INIT PARSER
-		if (! this._parser)
+		const g2d_prefix = '2d.'
+		const g3d_prefix = '3d.'
+
+		// PROCESS 2D REQUEST (DOM OPERATIONS ARE FORBIDDEN INTO WEB WORKER)
+		if (arg_expression.startsWith(g2d_prefix))
 		{
-			if (this.init_parser)
-			{
-				this.init_parser()
-			} else {
-				if (math && math.parser)
-				{
-					this._parser = math.parser()
-				}
+			const g2d_task = (resolve, reject)=>{
+				this.process_2d_request(arg_expression, resolve, reject)
 			}
-		}
-		if (! this._parser)
-		{
-			return { error:'Bad config, no parser to evaluate function', value:'' }
+			const g2d_promise = new Promise(g2d_task)
+			.then(
+				()=>{ return { value:'done' } }
+			)
+			.catch(
+				(e)=>{ return { error:e, value:'error' } }
+			)
+			return g2d_promise
 		}
 
-		let result_str = undefined
-		try {
-			const res = this._parser.eval(arg_expression)
-			result_str = math.format(res, { precision: 14 })
-			var unRoundedStr = math.format(res)
-			if (unRoundedStr.length - result_str.length > 4)
-			{
-				return { error:'This result contains a round-off error which is hidden from the output. The unrounded result is:', value:unRoundedStr }
+		// PROCESS 3D REQUEST (DOM OPERATIONS ARE FORBIDDEN INTO WEB WORKER)
+		if (arg_expression.startsWith(g3d_prefix))
+		{
+			const g3d_task = (resolve, reject)=>{
+				this.process_3d_request(arg_expression, resolve, reject)
 			}
-		}
-		catch (err) {
-			result_str = err.toString();
-			return { error:result_str }
+			const g3d_promise = new Promise(g3d_task)
+			.then(
+				()=>{ return { value:'done' } }
+			)
+			.catch(
+				(e)=>{ return { error:e, value:'error' } }
+			)
+			return g3d_promise
 		}
 
-		return { value:result_str }
+		// PROCESS MATHJS OPERATIONS
+		const response_promise = this._worker.submit_request(arg_expression)
+		
+		return response_promise
+		.then(
+			(mathjs_result)=>{
+				console.log(context + ':eval:mathjs_result=', mathjs_result)
+				
+				const result_str = mathjs_result.str
+
+				console.log(context + ':eval:result_str=', result_str)
+				return { value:result_str }
+			}
+		)
+		.catch(
+			(e)=>{ return { error:e, value:'error' } }
+		)
 	}
 }

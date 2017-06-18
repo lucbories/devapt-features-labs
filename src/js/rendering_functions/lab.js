@@ -1,16 +1,14 @@
+
 // NPM IMPORTS
-// import assert from 'assert'
-// import _ from 'lodash'
 import h from 'virtual-dom/h'
-const Devapt = require('devapt').default
 
-// DEVAPT IMPORTS
+// DEVAPT CORE COMMON IMPORTS
+import T                      from 'devapt-core-common/dist/js/utils/types'
+import DefaultRenderingPlugin from 'devapt-core-common/dist/js/default_plugins/rendering_default_plugin'
+
+
 const has_window = new Function('try {return this===window;}catch(e){ return false;}')
-const T = Devapt.T
-const DefaultRenderingPlugin = Devapt.DefaultRenderingPlugin
 const rendering_normalize = DefaultRenderingPlugin.find_rendering_function('rendering_normalize')
-
-
 const plugin_name = 'Labs' 
 const context = plugin_name + '/rendering_function/lab'
 

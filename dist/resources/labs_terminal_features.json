@@ -6,15 +6,16 @@
 				"settings":{},
 				"state":{
 					"prompt":"mathjs>",
+					"worker_url":"/labs_assets/plugins/Labs/worker_mathjs.js",
 					"lab_features":["MathJS"]
 				},
 				"children":{}
 			},
 			"TerminalMathJSPlotTemplate":{
-				"type":"terminal_mathjs_plot",
+				"type":"terminal_mathjs",
 				"settings":{},
 				"state":{
-					"prompt":"mathjsplot>",
+					"prompt":"mathjsplot (broken)>",
 					"lab_features":["MathJS"]
 				},
 				"children":{}

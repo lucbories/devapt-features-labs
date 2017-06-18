@@ -9,7 +9,7 @@
 					"theta",
 					"theta^2",
 					"1/theta",
-					"1 / (cos(x) ^ 2)",
+					"",
 					"tan(x)",
 					"2 * sin(4 theta)",
 					"sin(cos(theta^3))",
@@ -26,7 +26,7 @@
 					"x * x * x * x",
 					"-1 / x / x",
 					"-1 / x",
-					"",
+					"1 / (cos(x) ^ 2)",
 					""
 				],
 				"parametric":[
@@ -70,6 +70,65 @@
 				"sources":{
 					"author":"",
 					"url":"http://mathjs.org/"
+				},
+				"examples":{
+					"numerical":[
+						{
+							"commands":["1/9"],
+							"result":"0.11111111111...",
+							"description":""
+						},
+						{
+							"commands":["1/99"],
+							"result":"0.010101010101010101010...",
+							"description":""
+						},
+						{
+							"commands":["1/999"],
+							"result":"0.001001001001001001001...",
+							"description":""
+						},
+						{
+							"commands":["1/9999"],
+							"result":"1.0001000100010001000100010001...",
+							"description":""
+						},
+						{
+							"commands":["1/99999"],
+							"result":"1.0000100001000010000100001...",
+							"description":""
+						},
+						{
+							"commands":["999^2/99"],
+							"result":"10080.8181818181...",
+							"description":""
+						},
+						{
+							"commands":["1/81","1/9^2"],
+							"result":"0.0123456790123456790...",
+							"description":""
+						},
+						{
+							"commands":["1/9801","1/99^2"],
+							"result":"1.0203040506070809101112131415161718192021222324252627282930...",
+							"description":""
+						},
+						{
+							"commands":["1/99980001","1/9999^2"],
+							"result":"0.00000010002000300040005000600070008000900100011001200130014001500160017001800190020002100220023002400250026002700280029003000310032003...",
+							"description":""
+						},
+						{
+							"commands":["1/998001","1/999^2"],
+							"result":"0.0000010020030040050060070080090100110120130140150160170180190200210220...996997999000001...",
+							"description":""
+						},
+						{
+							"commands":["10^10^10^1.1"],
+							"result":"1.222971168278923041323125...e+3883775501690",
+							"description":"Maximum time is the time needed by universe to regenarate it: 10^10^10^10^1.1 (too big for bignumber with precision 128, so test with 10^10^10^1.1)"
+						}
+					]
 				},
 				"functions":{
 					"abs":{

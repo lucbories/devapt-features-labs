@@ -30,8 +30,8 @@
     "feature"
   ],
   "dependencies": {
-    "devapt": "^2.0.0",
-    "typr": "^0.2.1",
+    "devapt-core-common": "^2.0.0",
+    "devapt-core-browser": "^2.0.0",
     "virtual-dom": "^2.1.1"
   },
   "devDependencies": {

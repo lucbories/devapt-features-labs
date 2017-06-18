@@ -1,0 +1,21 @@
+{
+	"menubars":{
+		"labs_menubar":{
+			"type":"Menubar",
+			
+			"state":{
+				"label":"Labs",
+				"app_url":"labs",
+				"items":[
+					{
+						"label":"AmazingLabs",
+						"items":[
+							{ "command":"display_numerical_lab" },
+							{ "command":"display_numerical_calculation_labs" }
+						]
+					}
+				]
+			}
+		}
+	}
+}

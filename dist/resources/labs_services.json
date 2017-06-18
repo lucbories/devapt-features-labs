@@ -1,0 +1,24 @@
+{
+	"services":{
+		"labs_num_calc_svc":{
+			"type":"middlewares_svc",
+			"routes":[
+				{
+					"route":"/numerical_calculation_lab",
+					"page_view":"numerical_calculation_lab",
+					"page_menubar":"labs_menubar"
+				},
+				{
+					"route":"/numerical_lab",
+					"page_view":"numerical_lab",
+					"page_menubar":"labs_menubar"
+				},
+				{
+					"route":"/home",
+					"page_view":"numerical_lab",
+					"page_menubar":"labs_menubar"
+				}
+			]
+		}
+	}
+}

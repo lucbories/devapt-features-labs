@@ -1,9 +1,11 @@
-// NPM IMPORTS
-// import assert from 'assert'
-const Devapt = require('devapt').default
 
-// BROWSER IMPORTS
-const Component = Devapt.Component
+// NPM IMPORTS
+
+// DEVAPT CORE COMMON IMPORTS
+// import T from 'devapt-core-common/dist/js/utils/types'
+
+// DEVAPT CORE BROWSER IMPORTS
+import Component from 'devapt-core-browser/dist/js/base/component'
 
 
 const plugin_name = 'Labs' 
@@ -35,7 +37,7 @@ export default class Terminal extends Component
 
 		this.is_terminal = true
 		
-		this.add_assets_dependancy(['js-terminal'])
+		this.add_assets_dependancy('js-terminal')
 		
 		// this.enable_trace()
 	}
@@ -74,11 +76,11 @@ export default class Terminal extends Component
 	 * 
 	 * @param {string} arg_expression - expression to evaluate.
 	 * 
-	 * @returns {object} - eval result: { error:'', value:'' } on failure or { value:'' } on success.
+	 * @returns {Promise} - eval result promise of: { error:'', value:'' } on failure or { value:'' } on success.
 	 */
 	eval(arg_expression)
 	{
-		return { value:arg_expression }
+		return Promise.resolve( { value:arg_expression } )
 	}
 
 	
@@ -116,22 +118,32 @@ export default class Terminal extends Component
 			var str_result = ''
 
 			// EVALUATE EXPRESSION
-			var result = self.eval(command)
-			if (result.error)
-			{
-				str_result = result.error + ' [' + result.value + ']'
-				terminal_out_result_jqo.css('color', 'red')
-			} else {
-				str_result = result.value
-				terminal_out_result_jqo.css('color', 'green')
-			}
-			terminal_out_result_jqo.text(str_result)
+			var result_promise = self.eval(command)
+			result_promise.then(
+				(result)=>{
+					if (result.error)
+					{
+						str_result = result.error + ' [' + result.value + ']'
+						terminal_out_result_jqo.css('color', 'red')
+					}
+					else if (result.warning)
+					{
+						str_result = result.value + ' with warning [' + result.warning + ']'
+						terminal_out_result_jqo.css('color', 'green')
+					}
+					else {
+						str_result = result.value
+						terminal_out_result_jqo.css('color', 'green')
+					}
+					terminal_out_result_jqo.text(str_result)
 
-			if (history_jqo)
-			{
-				history_jqo.prepend(terminal_out_result_jqo)
-				history_jqo.prepend(terminal_out_cmd_jqo)
-			}
+					if (history_jqo)
+					{
+						history_jqo.prepend(terminal_out_result_jqo)
+						history_jqo.prepend(terminal_out_cmd_jqo)
+					}
+				}
+			)
 		}
 
 		var cmd = input_jqo.cmd(
@@ -144,6 +156,7 @@ export default class Terminal extends Component
 				commands:commands_cb
 			}
 		)
+
 		input_jqo.css('background-color', 'steelblue')
 		input_jqo.css('height', '30px')
 		input_jqo.css('padding-top', '10px')
@@ -153,7 +166,7 @@ export default class Terminal extends Component
 				var enabled = $('.cmd.enabled')
 				if (enabled && enabled.length > 0)
 				{
-					enabled.data('cmd').disable()
+					cmd.disable()
 				}
 				cmd.enable()
 			}
@@ -164,7 +177,7 @@ export default class Terminal extends Component
 				var enabled = $('.cmd.enabled')
 				if (enabled && enabled.length > 0)
 				{
-					enabled.data('cmd').disable()
+					cmd.disable()
 				}
 			}
 		)
@@ -182,16 +195,6 @@ export default class Terminal extends Component
 	init()
 	{
 		this.enter_group('init')
-
-		// const assets_promises = []
-		// this._assets_scripts.forEach(
-		// 	(asset_id)=>{
-		// 		assets_promises.push( window.devapt().asset_promise(asset_id) )
-		// 	}
-		// )
-		// console.log(context + ':init:%s:assets:', this.get_name(), this._assets_scripts)
-
-		// Promise.all(assets_promises)
 
 		this.get_assets_promise()
 		.then( ()=>this.init_terminal() )

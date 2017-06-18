@@ -1,12 +1,11 @@
 // NPM IMPORTS
 import assert from 'assert'
 import path from 'path'
-const Devapt = require('devapt').default
 
-// DEVAPT IMPORTS
-const T = Devapt.T
-const RenderingPlugin = Devapt.RenderingPlugin
-const DefaultRenderingPlugin = Devapt.DefaultRenderingPlugin
+// DEVAPT CORE COMMON IMPORTS
+import T                      from 'devapt-core-common/dist/js/utils/types'
+import RenderingPlugin        from 'devapt-core-common/dist/js/plugins/rendering_plugin'
+import DefaultRenderingPlugin from 'devapt-core-common/dist/js/default_plugins/rendering_default_plugin'
 
 // PLUGIN IMPORTS
 // RENDERING FUNCTIONS
@@ -92,8 +91,18 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 		this.add_public_asset('js', '/' + plugin_name + '/vis.js',                path.join(__dirname, bower_dir, 'vis/dist/vis.js') )
 		this.add_public_asset('css', '/' + plugin_name + '/vis.css',              path.join(__dirname, bower_dir, 'vis/dist/vis.css') )
 	
+		const devapt_browser_dir = '../../node_modules/devapt-core-browser/public'
+		this.add_public_asset('js', '/' + plugin_name + '/devapt-browser.js',     path.join(__dirname, devapt_browser_dir, 'js/build/devapt-core-browser.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/devapt-browser.js.map', path.join(__dirname, devapt_browser_dir, 'js/build/devapt-core-browser.js.map') )
+
 		const dist_dir = __dirname + '/../../dist/'
 		this.add_public_asset('js', '/' + plugin_name + '/devapt-features-labs.js', path.join(dist_dir, 'devapt-features-labs.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js',        path.join(dist_dir, 'js/workers',  'worker_mathjs.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js.map',    path.join(dist_dir, 'js/workers',  'worker_mathjs.js.map') )
+		this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js',     path.join(dist_dir, 'js/workers',  'worker_algebrite.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js.map', path.join(dist_dir, 'js/workers',  'worker_algebrite.js.map') )
+		this.add_public_asset('js', '/' + plugin_name + '/mathjs_features.js',      path.join(dist_dir, 'mathjs_features.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/mathjs_features.js.map',  path.join(dist_dir, 'mathjs_features.js.map') )
 
 		const fonts = ['KaTeX_AMS-Regular',
 			'KaTeX_Caligraphic-Bold',

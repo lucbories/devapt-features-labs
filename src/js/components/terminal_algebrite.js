@@ -1,8 +1,13 @@
-// NPM IMPORTS
-// import assert from 'assert'
-const Devapt = require('devapt').default
 
-// BROWSER IMPORTS
+// NPM IMPORTS
+
+// DEVAPT CORE COMMON IMPORTS
+// import T from 'devapt-core-common/dist/js/utils/types'
+
+// DEVAPT CORE BROWSER IMPORTS
+import WorkerCommand from 'devapt-core-browser/dist/js/commands/worker_command'
+
+// PLUGIN IMPORTS
 import Terminal from './terminal'
 
 
@@ -33,6 +38,10 @@ export default class TerminalAlgebrite extends Terminal
 	{	
 		super(arg_runtime, arg_state, arg_log_context ? arg_log_context : context)
 
+		/**
+		 * Class type flag.
+		 * @type {boolean}
+		 */
 		this.is_terminal_algebrite = true
 		
 		this.add_assets_dependancy('js-algebrite')
@@ -47,19 +56,40 @@ export default class TerminalAlgebrite extends Terminal
 	 * 
 	 * @param {string} arg_expression - expression to evaluate.
 	 * 
-	 * @returns {object} - eval result: { error:'', value:'' } on failure or { value:'' } on success.
+	 * @returns {Promise} - eval result promise of: { error:'', value:'' } on failure or { value:'' } on success.
 	 */
 	eval(arg_expression)
 	{
 		let result_str = undefined
 		try {
-			result_str = Algebrite.eval(arg_expression);
+			// WORKER TEST
+			const worker_cfg = {
+				type:'algebrite',
+				name:'algebrite cmd',
+				script_url:'/labs_assets/plugins/' + plugin_name + '/worker_algebrite.js',
+				script_operands:[arg_expression]
+			}
+			const runtime = window.devapt().runtime()
+			const cmd = new WorkerCommand(runtime, worker_cfg, context + ':eval')
+			cmd.do().then(
+				(result)=>{
+					console.log(context + ':eval:WorkerCommand result for [%s]=', arg_expression, result)
+				}
+			)
+			.catch(
+				(error)=>{
+					console.log(context + ':eval:WorkerCommand error for [%s]=', arg_expression, error)
+				}
+			)
+
+			// ALGEBRITE
+			result_str = window.Algebrite.eval(arg_expression)
 		}
 		catch (err) {
-			result_str = err.toString();
-			return { error:result_str }
+			result_str = err.toString()
+			return Promise.resolve( { error:result_str } )
 		}
 
-		return { value:result_str }
+		return Promise.resolve( { value:result_str } )
 	}
 }

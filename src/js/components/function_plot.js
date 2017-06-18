@@ -1,10 +1,14 @@
+
 // NPM IMPORTS
 import assert from 'assert'
-const Devapt = require('devapt').default
-const T = Devapt.T
-const Component = Devapt.Component
 
-// BROWSER IMPORTS
+// DEVAPT CORE COMMON IMPORTS
+import T from 'devapt-core-common/dist/js/utils/types'
+
+// DEVAPT CORE BROWSER IMPORTS
+import Component from 'devapt-core-browser/dist/js/base/component'
+
+// PLUGIN IMPORTS
 
 
 const plugin_name = 'Labs' 
@@ -64,7 +68,7 @@ export default class FunctionPlot extends Component
 				window.math.config(
 					{
 						number: 'number',
-						precision: 20
+						precision: 10
 					}
 				)
 				
@@ -191,8 +195,11 @@ export default class FunctionPlot extends Component
 
 		this._functions = []
 		const svg = this.get_dom_element().firstChild
-		this.get_dom_element().removeChild(svg)
-		
+		if (svg)
+		{
+			this.get_dom_element().removeChild(svg)
+		}
+	
 		const plot_options = {
 			target:'#' + this.get_dom_id(),
 			data:[]

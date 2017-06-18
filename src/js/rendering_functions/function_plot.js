@@ -1,16 +1,14 @@
+
 // NPM IMPORTS
-// import assert from 'assert'
-// import _ from 'lodash'
 import h from 'virtual-dom/h'
-const Devapt = require('devapt').default
 
-// DEVAPT IMPORTS
+// DEVAPT CORE COMMON IMPORTS
+import T                      from 'devapt-core-common/dist/js/utils/types'
+import DefaultRenderingPlugin from 'devapt-core-common/dist/js/default_plugins/rendering_default_plugin'
+
+
 // const has_window = new Function('try {return this===window;}catch(e){ return false;}')
-const T = Devapt.T
-const DefaultRenderingPlugin = Devapt.DefaultRenderingPlugin
 const rendering_normalize = DefaultRenderingPlugin.find_rendering_function('rendering_normalize')
-
-
 const plugin_name = 'Labs' 
 const context = plugin_name + '/rendering_function/function_plot'
 
@@ -55,27 +53,36 @@ export default (arg_settings={}, arg_state={}, arg_rendering_context, arg_render
 	rendering_result.add_vtree(terminal_id, terminal_tag)
 	
 	// UPDATE RENDERING RESULT
-	rendering_result.add_head_scripts_urls(
+	// rendering_result.add_head_scripts_urls(
+	// 	[
+	// 		{
+	// 			id:'js-d3',
+	// 			src:'plugins/' + plugin_name + '/d3.js'
+	// 		}
+	// 	]
+	// )
+	rendering_result.add_body_scripts_urls(
 		[
 			{
 				id:'js-d3',
 				src:'plugins/' + plugin_name + '/d3.js'
-			}
-		]
-	)
-	rendering_result.add_body_scripts_urls(
-		[
+			},
 			{
 				id:'js-mathjs',
 				src:'plugins/' + plugin_name + '/mathjs.js'
 			},
-			// {
-			// 	id:'js-function-plot',
-			// 	src:'plugins/' + plugin_name + '/function-plot.js'
-			// },
+			{
+				id:'js-function-plot',
+				src:'plugins/' + plugin_name + '/function-plot.js',
+				required:['js-d3']
+			},
 			{
 				id:'js-katex',
 				src:'plugins/' + plugin_name + '/katex.js'
+			},
+			{
+				id:'js-algebrite',
+				src:'plugins/' + plugin_name + '/algebrite.js'
 			}
 		]
 	)

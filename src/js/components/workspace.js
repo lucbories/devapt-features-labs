@@ -1,10 +1,11 @@
-// NPM IMPORTS
-// import assert from 'assert'
-const Devapt = require('devapt').default
 
-// DEVAPT IMPORTS
-// const T = Devapt.T
-const Component = Devapt.Component
+// NPM IMPORTS
+
+// DEVAPT CORE COMMON IMPORTS
+// import T from 'devapt-core-common/dist/js/utils/types'
+
+// DEVAPT CORE BROWSER IMPORTS
+import Component from 'devapt-core-browser/dist/js/base/component'
 
 
 const plugin_name = 'Labs' 

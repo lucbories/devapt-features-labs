@@ -1,0 +1,22 @@
+{
+	"commands":{
+		"display_numerical_lab":{
+			"type":"display",
+			"url":"/numerical_lab",
+			"view":"numerical_lab",
+			"label":"Numerical Lab"
+		},
+		"display_home":{
+			"type":"display",
+			"url":"/home",
+			"view":"numerical_lab",
+			"label":"Numerical Lab"
+		},
+		"display_numerical_calculation_labs":{
+			"type":"display",
+			"url":"/numerical_calculation_lab",
+			"view":"numerical_calculation_lab",
+			"label":"Numerical Calculation Lab"
+		}
+	}
+}
