@@ -46,7 +46,8 @@
 						"state":{
 							"prompt":"mathjs>",
 							"lab_features":["MathJS"],
-							"history_id":"{{devapt-template-id}}_history"
+							"history_id":"{{devapt-template-id}}_history",
+							"worker_url":"/labs_assets/plugins/Labs/worker_mathjs.js"
 						},
 						"children":{}
 					},

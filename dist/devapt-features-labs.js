@@ -61483,6 +61483,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var plugin_name = 'Labs';
 var context = plugin_name + '/terminal_mathjs';
+var MODE_NUMERICAL = 'numerical';
+var MODE_ALGEBRICAL = 'algebrical';
+var MODE_PLOT = 'plot';
+var MODE_PLOT2D = 'plot2d';
+var MODE_PLOT3D = 'plot3d';
+var MODE_PLOT4D = 'plot4d';
+var MODE_DRAW2D = 'draw2d';
+var MODE_DRAW3D = 'draw3d';
+var MODE_DRAW4D = 'draw4d';
+var LIMIT_SPACES_IN_EXPRESSION = 20;
 
 var TerminalMathJS = function (_Terminal) {
 	_inherits(TerminalMathJS, _Terminal);
@@ -61510,29 +61520,128 @@ var TerminalMathJS = function (_Terminal) {
 
 		_this.is_terminal_mathjs = true;
 
+		var app_name = _this.get_runtime().get_session_credentials().get_app();
 		var name = _this.get_name() ? _this.get_name() : 'mathjs_terminal';
-		var worker_url = arg_state.worker_url ? arg_state.worker_url : '/labs_assets/plugins/' + plugin_name + '/worker_mathjs.js';
+
+		var default_worker_url = '/' + app_name + '/plugins/' + plugin_name + '/worker_mathjs.js';
+		var state_worker_url = arg_state.worker_url ? arg_state.worker_url + '' : undefined;
+
+		var worker_url = state_worker_url ? state_worker_url.replace('{{application}}', app_name).replace('{{plugin}}', plugin_name) : default_worker_url;
+
 		_this._worker = new _web_worker2.default(name + '_worker', worker_url);
 
 		_this.add_assets_dependancy('js-mathjs');
+		_this.add_assets_dependancy('js-d3');
 
+		_this._set_mode(MODE_NUMERICAL);
 		// this.enable_trace()
 		return _this;
 	}
 
 	/**
-  * Process graphical 2d operations.
+  * Switch terminal mode: Numeric, algebric, plot.
   * 
-  * @param {string}   arg_expression - request expression.
-  * @param {function} arg_resolve    - promise resolve callback.
-  * @param {function} arg_reject     - promise reject callback.
+  * @param {string} 	arg_new_mode - terminal new mode.
+  * 
+  * @returns {boolean} - new mode is valid
   */
 
 
 	_createClass(TerminalMathJS, [{
-		key: 'process_2d_request',
-		value: function process_2d_request(arg_expression, arg_resolve, arg_reject) {
-			console.log(context + ':process_2d_request:expr=[' + arg_expression + ']');
+		key: 'switch_mode',
+		value: function switch_mode(arg_new_mode) {
+			// TODO: set component Redux state
+
+			// CONVERT STATE
+			var new_mode = arg_new_mode + '';
+			switch (new_mode.toLocaleLowerCase()) {
+				case 'n':
+				case 'num':
+				case 'numerical':
+					this._set_mode(MODE_NUMERICAL);
+					return true;
+				case 'a':
+				case 'alg':
+				case 'algebrical':
+					this._set_mode(MODE_ALGEBRICAL);
+					return true;
+				case 'p':
+				case 'plot':
+					this._set_mode(MODE_PLOT);
+					return true;
+				case 'p2d':
+				case 'plot2d':
+					this._set_mode(MODE_PLOT2D);
+					return true;
+				case 'p3d':
+				case 'plot3d':
+					this._set_mode(MODE_PLOT3D);
+					return true;
+				case 'p4d':
+				case 'plot4d':
+					this._set_mode(MODE_PLOT4D);
+					return true;
+				case 'd':
+				case 'draw':
+				case 'd2d':
+				case 'draw2d':
+					this._set_mode(MODE_DRAW2D);
+					return true;
+				case 'd3d':
+				case 'draw3d':
+					this._set_mode(MODE_DRAW3D);
+					return true;
+				case 'd4d':
+				case 'draw4d':
+					this._set_mode(MODE_DRAW4D);
+					return true;
+			}
+
+			return false;
+		}
+
+		/**
+   * Set terminal mode: Numeric, algebric, plot.
+   * @private
+   * 
+   * @param {string} 	arg_checked_mode - terminal new mode, checked value.
+   * 
+   * @returns {nothing}
+   */
+
+	}, {
+		key: '_set_mode',
+		value: function _set_mode(arg_checked_mode) {
+			this._mode = arg_checked_mode;
+		}
+
+		/**
+   * Get terminal mode: Numerical, algebrical, plot.
+   * @private
+   * 
+   * @returns {string}
+   */
+
+	}, {
+		key: '_get_mode',
+		value: function _get_mode() {
+			return this._mode;
+		}
+
+		/**
+   * Process graphical 2d operations.
+   * 
+   * @param {string}   arg_expression - request expression.
+   * @param {function} arg_resolve    - promise resolve callback.
+   * @param {function} arg_reject     - promise reject callback.
+   * 
+   * @return {nothing|number|array|string|Promise}
+   */
+
+	}, {
+		key: 'process_plot2d_request',
+		value: function process_plot2d_request(arg_expression, arg_resolve, arg_reject) {
+			console.log(context + ':process_plot2d_request:expr=[' + arg_expression + ']');
 
 			// ...
 
@@ -61545,16 +61654,46 @@ var TerminalMathJS = function (_Terminal) {
    * @param {string}   arg_expression - request expression.
    * @param {function} arg_resolve    - promise resolve callback.
    * @param {function} arg_reject     - promise reject callback.
+   * 
+   * @return {nothing|number|array|string|Promise}
    */
 
 	}, {
-		key: 'process_3d_request',
-		value: function process_3d_request(arg_expression, arg_resolve, arg_reject) {
-			console.log(context + ':process_3d_request:expr=[' + arg_expression + ']');
+		key: 'process_plot3d_request',
+		value: function process_plot3d_request(arg_expression, arg_resolve, arg_reject) {
+			console.log(context + ':process_plot3d_request:expr=[' + arg_expression + ']');
 
 			// ...
 
 			arg_resolve();
+		}
+
+		/**
+   * Process MathJS operations.
+   * 
+   * @param {string}   arg_expression - request expression.
+   * @param {function} arg_resolve    - promise resolve callback.
+   * @param {function} arg_reject     - promise reject callback.
+   * 
+   * @return {nothing|number|array|string|Promise}
+   */
+
+	}, {
+		key: 'process_mathjs_request',
+		value: function process_mathjs_request(arg_expression, arg_resolve, arg_reject) {
+			var response_promise = this._worker.submit_request(arg_expression);
+
+			return response_promise.then(function (mathjs_result) {
+				console.log(context + ':eval:expression=[%s] mathjs_result=', arg_expression, mathjs_result);
+
+				var result_str = mathjs_result.str;
+
+				console.log(context + ':eval:expression=[%s] result_str=', arg_expression, result_str);
+				arg_resolve(result_str);
+			}).catch(function (error) {
+				console.log(context + ':eval:expression=[%s] error=', arg_expression, error);
+				arg_reject(error);
+			});
 		}
 
 		/**
@@ -61570,48 +61709,48 @@ var TerminalMathJS = function (_Terminal) {
 		value: function _eval(arg_expression) {
 			var _this2 = this;
 
-			var g2d_prefix = '2d.';
-			var g3d_prefix = '3d.';
+			var mode_expression = arg_expression + '';
+			var split_spaces = mode_expression.split('space', LIMIT_SPACES_IN_EXPRESSION);
+			var switch_mode = split_spaces.length > 0 ? this.switch_mode(split_spaces[0]) : false;
+			var expression = switch_mode ? split_spaces.slice(1).join(' ') : expression;
+			var mode = this._get_mode();
 
-			// PROCESS 2D REQUEST (DOM OPERATIONS ARE FORBIDDEN INTO WEB WORKER)
-			if (arg_expression.startsWith(g2d_prefix)) {
-				var g2d_task = function g2d_task(resolve, reject) {
-					_this2.process_2d_request(arg_expression, resolve, reject);
+			// SET MODE METHOD NAME
+			var method_name = undefined;
+			switch (mode) {
+				case MODE_ALGEBRICAL:
+					method_name = 'process_algebrite_request';
+					break;
+				case MODE_NUMERICAL:
+					method_name = 'process_mathjs_request';
+					break;
+				case MODE_PLOT:
+				case MODE_PLOT2D:
+					// PROCESS 2D REQUEST (DOM OPERATIONS ARE FORBIDDEN INTO WEB WORKER)
+					method_name = 'process_plot2d_request';
+					break;
+				case MODE_PLOT3D:
+					// PROCESS 3D REQUEST (DOM OPERATIONS ARE FORBIDDEN INTO WEB WORKER)
+					method_name = 'process_plot3d_request';
+					break;
+				case MODE_PLOT4D:
+				case MODE_DRAW2D:
+				case MODE_DRAW3D:
+					break;
+			}
+
+			// EXECUTE TASK
+			if (method_name && method_name in this) {
+				var fn_task = function fn_task(resolve, reject) {
+					_this2[method_name](arg_expression, resolve, reject);
 				};
-				var g2d_promise = new Promise(g2d_task).then(function () {
-					return { value: 'done' };
+				var task_promise = new Promise(fn_task).then(function (result) {
+					return { value: result ? result : 'done' };
 				}).catch(function (e) {
 					return { error: e, value: 'error' };
 				});
-				return g2d_promise;
+				return task_promise;
 			}
-
-			// PROCESS 3D REQUEST (DOM OPERATIONS ARE FORBIDDEN INTO WEB WORKER)
-			if (arg_expression.startsWith(g3d_prefix)) {
-				var g3d_task = function g3d_task(resolve, reject) {
-					_this2.process_3d_request(arg_expression, resolve, reject);
-				};
-				var g3d_promise = new Promise(g3d_task).then(function () {
-					return { value: 'done' };
-				}).catch(function (e) {
-					return { error: e, value: 'error' };
-				});
-				return g3d_promise;
-			}
-
-			// PROCESS MATHJS OPERATIONS
-			var response_promise = this._worker.submit_request(arg_expression);
-
-			return response_promise.then(function (mathjs_result) {
-				console.log(context + ':eval:mathjs_result=', mathjs_result);
-
-				var result_str = mathjs_result.str;
-
-				console.log(context + ':eval:result_str=', result_str);
-				return { value: result_str };
-			}).catch(function (e) {
-				return { error: e, value: 'error' };
-			});
 		}
 	}]);
 

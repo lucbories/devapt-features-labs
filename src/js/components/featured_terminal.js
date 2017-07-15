@@ -3,26 +3,18 @@
 import _ from 'lodash'
 
 // DEVAPT CORE COMMON IMPORTS
-// import T from 'devapt-core-common/dist/js/utils/types'
+import T from 'devapt-core-common/dist/js/utils/types'
 
 // DEVAPT CORE BROWSER IMPORTS
 import WebWorker from 'devapt-core-browser/dist/js/base/web_worker'
 
 // PLUGIN IMPORTS
 import Terminal from './terminal'
+import TerminalFeature from './terminal_feature'
 
 
 const plugin_name = 'Labs' 
-const context = plugin_name + '/terminal_mathjs'
-const MODE_NUMERICAL  = 'numerical'
-const MODE_ALGEBRICAL = 'algebrical'
-const MODE_PLOT       = 'plot'
-const MODE_PLOT2D     = 'plot2d'
-const MODE_PLOT3D     = 'plot3d'
-const MODE_PLOT4D     = 'plot4d'
-const MODE_DRAW2D     = 'draw2d'
-const MODE_DRAW3D     = 'draw3d'
-const MODE_DRAW4D     = 'draw4d'
+const context = plugin_name + '/featured_terminal'
 const LIMIT_SPACES_IN_EXPRESSION = 20
 
 
@@ -48,38 +40,107 @@ export default class TerminalMathJS extends Terminal
 	{	
 		super(arg_runtime, arg_state, arg_log_context ? arg_log_context : context)
 
-		this.is_terminal_mathjs = true
+		this.is_featured_terminal = true
 		
-		const app_name = this.get_runtime().get_session_credentials().get_app()	
-		const name = this.get_name() ? this.get_name() : 'mathjs_terminal'
-		const default_worker_url ='/' + app_name + '/plugins/' + plugin_name + '/'
+		this._features = {}
+		this._aliases = {}
+		this._mode = undefined
+		this.load_features()
 
-		const state_workers = this.get_state_value('workers', {})
-		const default_workers = {
-			'numerical':{
-				name:'MathJS',
-				url:default_worker_url + 'worker_mathjs.js'
-			},
-			'algebrical':{
-				name:'MathJS',
-				url:default_worker_url + 'worker_mathjs.js'
+		// this.enable_trace()
+	}
+
+
+
+	/**
+	 * Load terminal features.
+	 * 
+	 * @returns {nothing}
+	 */
+	load_features()
+	{
+		const features_config = this.get_setting_js('features', {})
+		const runtime = this.get_runtime()
+
+		let assets = []
+		this._aliases = {}
+		_.forEach(features_config,
+			(feature_config, feature_key)=>{
+				const feature_name = feature_config && feature_config.name ? feature_config.name + '' : feature_key + ''
+				const log_context = context + ':load_features:terminal=[' + this.get_name() + ']:feature=[' + feature_name + ']'
+				const feature = new TerminalFeature(runtime, feature_name, log_context)
+				if (! feature.is_valid())
+				{
+					console.error(log_context + ':feature is not valid')
+					return
+				}
+
+				const feature_assets = feature.get_assets()
+				if ( T.isNotEmptyArray(feature_assets) )
+				{
+					assets = _.merge(feature_assets, assets)
+				}
+				
+				const feature_aliases = feature.get_aliases()
+				if ( T.isNotEmptyArray(feature_aliases) )
+				{
+					_.forEach(feature_aliases,
+						(alias)=>{
+							this._aliases[alias] = feature
+						}
+					)
+				}
+
+				this._features[feature_name] = feature
 			}
+		)
+
+		// LOAD FEATURES ASSETS
+		const log_context = context + ':load_features:terminal=[' + this.get_name() + ']:loading assets'
+		const credentials = this._component._runtime.get_session_credentials()
+		const assets_urls = {
+			'js':[],
+			'css':[]
+		}
+		_.forEach(assets,
+			(asset)=>{
+				if ( T.isNotEmptyString(asset) )
+				{
+					this.add_assets_dependancy(asset)
+				} 
+				else if ( T.isObject(asset) && T.isNotEmptyString(asset.id) && T.isNotEmptyString(asset.type) && T.isNotEmptyString(asset.url) )
+				{
+					if (asset.type in assets_urls)
+					{
+						assets_urls[asset.type].push( { id:asset.id, src:asset.url } )
+					} else {
+						console.warning(log_context + ':bad features asset type=[' + asset.type + '] id=[' + assets.id + ']')
+					}
+				} else {
+					console.warning(log_context + ':bad features asset=[' + asset + '] assets=[' + assets.toString() + ']')
+				}
+			}
+		)
+
+		if ( T.isNotEmptyArray(assets_urls.js) )
+		{
+			this.get_runtime().ui_rendering().process_rendering_result_scripts_urls(document.body, assets_urls.js, credentials)
+			_.forEach(assets_urls.js,
+				(asset)=>{
+					this.add_assets_dependancy(asset.id)
+				}
+			)
 		}
 
-		const state_worker_url = arg_state.worker_url ? arg_state.worker_url + '' : undefined
-
-		const mathjs_worker_name = name + '_mathjs_worker'
-		const worker_url = state_worker_url ? state_worker_url.replace('{{application}}', app_name).replace('{{plugin}}', plugin_name) : default_worker_url
-		
-		this._workers = []
-		this._workers.push( new WebWorker(name + '_worker', worker_url) )
-		this._worker = new WebWorker(, worker_url)
-
-		this.add_assets_dependancy('js-mathjs')
-		this.add_assets_dependancy('js-d3')
-
-		this._set_mode(MODE_NUMERICAL)
-		// this.enable_trace()
+		if ( T.isNotEmptyArray(assets_urls.css) )
+		{
+			this.get_runtime().ui_rendering().process_rendering_result_styles_urls(document.head, assets_urls.css, credentials)
+			_.forEach(assets_urls.css,
+				(asset)=>{
+					this.add_assets_dependancy(asset.id)
+				}
+			)
+		}
 	}
 
 
@@ -97,48 +158,19 @@ export default class TerminalMathJS extends Terminal
 
 		// CONVERT STATE
 		const new_mode = arg_new_mode + ''
-		switch(new_mode.toLocaleLowerCase())
+
+		if (new_mode in this._features)
 		{
-			case 'n':
-			case 'num':
-			case 'numerical':
-				this._set_mode(MODE_NUMERICAL)
-				return true
-			case 'a':
-			case 'alg':
-			case 'algebrical':
-				this._set_mode(MODE_ALGEBRICAL)
-				return true
-			case 'p':
-			case 'plot':
-				this._set_mode(MODE_PLOT)
-				return true
-			case 'p2d':
-			case 'plot2d':
-				this._set_mode(MODE_PLOT2D)
-				return true
-			case 'p3d':
-			case 'plot3d':
-				this._set_mode(MODE_PLOT3D)
-				return true
-			case 'p4d':
-			case 'plot4d':
-				this._set_mode(MODE_PLOT4D)
-				return true
-			case 'd':
-			case 'draw':
-			case 'd2d':
-			case 'draw2d':
-				this._set_mode(MODE_DRAW2D)
-				return true
-			case 'd3d':
-			case 'draw3d':
-				this._set_mode(MODE_DRAW3D)
-				return true
-			case 'd4d':
-			case 'draw4d':
-				this._set_mode(MODE_DRAW4D)
-				return true
+			const feature_name = this._features[new_mode].get_name()
+			this._set_mode(feature_name)
+			return true
+		}
+		
+		if (new_mode in this._aliases)
+		{
+			const feature_name = this._aliases[new_mode].get_name()
+			this._set_mode(feature_name)
+			return true
 		}
 
 		return false
@@ -170,46 +202,6 @@ export default class TerminalMathJS extends Terminal
 	_get_mode()
 	{
 		return this._mode
-	}
-
-
-
-	/**
-	 * Process graphical 2d operations.
-	 * 
-	 * @param {string}   arg_expression - request expression.
-	 * @param {function} arg_resolve    - promise resolve callback.
-	 * @param {function} arg_reject     - promise reject callback.
-	 * 
-	 * @return {nothing|number|array|string|Promise}
-	 */
-	process_plot2d_request(arg_expression, arg_resolve, arg_reject)
-	{
-		console.log(context + ':process_plot2d_request:expr=[' + arg_expression + ']')
-
-		// ...
-
-		arg_resolve()
-	}
-
-
-
-	/**
-	 * Process graphical 3d operations.
-	 * 
-	 * @param {string}   arg_expression - request expression.
-	 * @param {function} arg_resolve    - promise resolve callback.
-	 * @param {function} arg_reject     - promise reject callback.
-	 * 
-	 * @return {nothing|number|array|string|Promise}
-	 */
-	process_plot3d_request(arg_expression, arg_resolve, arg_reject)
-	{
-		console.log(context + ':process_plot3d_request:expr=[' + arg_expression + ']')
-
-		// ...
-
-		arg_resolve()
 	}
 
 	
@@ -263,6 +255,16 @@ export default class TerminalMathJS extends Terminal
 		const expression = switch_mode ? split_spaces.slice(1).join(' ') : expression
 		const mode = this._get_mode()
 
+		const feature = (mode in this._features) ? this._features[mode] : undefined
+
+		if (! feature)
+		{
+			console.log(context + ':no feature found')
+			return
+		}
+
+
+		
 		// SET MODE METHOD NAME
 		let method_name = undefined
 		switch(mode) {

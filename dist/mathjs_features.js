@@ -330,12 +330,14 @@ function fact(x) {
 	}
 	return result;
 }
+
+function choose(n, k) {
+	return fact(n) / (fact(k) * fact(n - k));
+}
+
 exports.default = {
 	feat1: {
 		const456: 456,
-		x3: function x3(scope, x) {
-			return x * scope.scope_item1;
-		},
 		propositional_calculus: function propositional_calculus(scope, formula_str, values) {
 			return _index2.default.evaluate(formula_str, values);
 		},
@@ -363,14 +365,14 @@ exports.default = {
    	1		3		3		1
    	...
    */
-			var triangle = [[1], [1, 2, 1]];
+			var triangle = [[1], [1, 1]];
 			var line = undefined;
 			var n = 2,
 			    k = 0;
 			for (; n <= lines; n++) {
 				line = [1];
 				for (k = 1; k < n; k++) {
-					line.push(fact(n) / (fact(k) * fact(n - k)));
+					line.push(choose(n, k));
 				}
 				line.push(1);
 				triangle.push(line);
