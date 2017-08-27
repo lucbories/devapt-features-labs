@@ -1,0 +1,42 @@
+{
+	"templates":{
+		"views":{
+			"labs_pendulum_two_template":{
+				"type":"canvas_physicsjs",
+				"rendering":"canvas",
+				"settings":{},
+				"state":{
+					"space":{
+						"drawing":{
+							"horizontal":{
+								"pixels":800
+							},
+							"vertical":{
+								"pixels":800
+							}
+						},
+						"domains":[
+							{
+								"name":"x",
+								"start":1,
+								"end":100,
+								"step":1
+							},
+							{
+								"name":"y",
+								"start":1,
+								"end":100,
+								"step":1
+							}
+						],
+						"projection":{}
+					},
+					"scene":{
+						"item pendulum":[{ "type": "pendulum" }]
+					}
+				},
+				"children":{}
+			}
+		}
+	}
+}

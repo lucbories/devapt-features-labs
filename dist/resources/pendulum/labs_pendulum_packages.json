@@ -1,0 +1,16 @@
+{
+	"packages":{
+		"labs_pendulum_pkg":{
+			"base_dir":"",
+			"resources":[
+				"./labs_pendulum_views.json"
+			],
+			"templates":[
+				"./labs_pendulum_templates.json"
+			],
+			"includes":[],
+			"commands":[],
+			"services":[]
+		}
+	}
+}

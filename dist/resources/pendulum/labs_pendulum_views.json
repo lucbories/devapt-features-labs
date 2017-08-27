@@ -1,0 +1,17 @@
+{
+	"views":{
+		"labs_pendulum_two_view":{
+			"template":"labs_pendulum_two_template"
+		},
+		"labs_pendulum_two_workspace":{
+			"type":"workspace",
+			"settings":{
+				"main_view":"labs_pendulum_two_view"
+			},
+			"state":{
+				"items":"labs_pendulum_two_view"
+			},
+			"children":{}
+		}
+	}
+}

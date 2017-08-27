@@ -1,0 +1,16 @@
+{
+	"views":{
+		"labs_alg_calculus_view":{
+			"template":"labs_alg_calculus_template"
+		},
+		"labs_alg_calculus_workspace":{
+			"type":"workspace",
+			"settings":{
+				"main_view":"labs_alg_calculus_view"
+			},
+			"state":{
+			},
+			"children":{}
+		}
+	}
+}

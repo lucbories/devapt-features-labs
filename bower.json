@@ -37,7 +37,10 @@
     "logictools": "tammet/logictools",
     "seth": "*",
     "plotlyjs": "plotly#^1.18.1",
-    "katex": ">=0.7.1"
+    "katex": ">=0.7.1",
+    "Matter": "matterjs#^0.12.0",
+    "PhysicsJS": "physicsjs#^0.7.0",
+    "svg.js": "^2.6.3"
   },
   "resolutions": {
     "d3": ">=4"

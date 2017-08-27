@@ -1,22 +1,34 @@
 {
 	"commands":{
-		"display_numerical_lab":{
-			"type":"display",
-			"url":"/numerical_lab",
-			"view":"numerical_lab",
-			"label":"Numerical Lab"
-		},
-		"display_home":{
+		"labs_display_home_cmd":{
 			"type":"display",
 			"url":"/home",
-			"view":"numerical_lab",
-			"label":"Numerical Lab"
+			"view":"labs_home_view",
+			"label":"Amazing Labs"
 		},
-		"display_numerical_calculation_labs":{
+		"labs_display_num_calculus_cmd":{
 			"type":"display",
-			"url":"/numerical_calculation_lab",
-			"view":"numerical_calculation_lab",
-			"label":"Numerical Calculation Lab"
+			"url":"/num_calculus",
+			"view":"labs_num_calculus_view",
+			"label":"Numerical Calculus Lab"
+		},
+		"labs_display_alg_calculus_cmd":{
+			"type":"display",
+			"url":"/alg_calculus",
+			"view":"labs_alg_calculus_view",
+			"label":"Algebraic Calculus Lab"
+		},
+		"labs_display_pendulum_cmd":{
+			"type":"display",
+			"url":"/pendulum",
+			"view":"labs_pendulum_two_workspace",
+			"label":"Pendulum Lab"
+		},
+		"labs_display_car_cmd":{
+			"type":"display",
+			"url":"/car",
+			"view":"labs_car_view",
+			"label":"Car Lab"
 		}
 	}
 }

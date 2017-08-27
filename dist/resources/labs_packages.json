@@ -1,0 +1,21 @@
+{
+	"packages":{
+		"labs_features_pkg":{
+			"base_dir":"",
+			"resources":[
+				"labs_menubars.json",
+				"labs_views.json",
+				"./num_calculus/labs_num_calculus_views.json",
+				"./alg_calculus/labs_alg_calculus_views.json"
+			],
+			"templates":[
+				"./num_calculus/labs_num_calculus_templates.json",
+				"./alg_calculus/labs_alg_calculus_templates.json"
+			],
+			"includes":[],
+			"commands":"labs_commands.json",
+			"services":"labs_services.json"
+		},
+		"labs_pendulum_pkg":"./pendulum/labs_pendulum_packages.json"
+	}
+}

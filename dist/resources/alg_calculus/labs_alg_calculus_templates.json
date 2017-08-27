@@ -1,0 +1,14 @@
+{
+	"templates":{
+		"views":{
+			"labs_alg_calculus_template":{
+				"type":"canvas_physicsjs",
+				"rendering":"canvas",
+				"settings":{},
+				"state":{
+				},
+				"children":{}
+			}
+		}
+	}
+}

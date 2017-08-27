@@ -1,21 +1,26 @@
 {
 	"services":{
-		"labs_num_calc_svc":{
+		"labs_mw_services":{
 			"type":"middlewares_svc",
 			"routes":[
 				{
-					"route":"/numerical_calculation_lab",
-					"page_view":"numerical_calculation_lab",
-					"page_menubar":"labs_menubar"
-				},
-				{
-					"route":"/numerical_lab",
-					"page_view":"numerical_lab",
-					"page_menubar":"labs_menubar"
-				},
-				{
 					"route":"/home",
-					"page_view":"numerical_lab",
+					"page_view":"labs_home_view",
+					"page_menubar":"labs_menubar"
+				},
+				{
+					"route":"/num_calculus",
+					"page_view":"labs_num_calculus_view",
+					"page_menubar":"labs_menubar"
+				},
+				{
+					"route":"/alg_calculus",
+					"page_view":"labs_alg_calculus_view",
+					"page_menubar":"labs_menubar"
+				},
+				{
+					"route":"/pendulum",
+					"page_view":"labs_pendulum_two_workspace",
 					"page_menubar":"labs_menubar"
 				}
 			]

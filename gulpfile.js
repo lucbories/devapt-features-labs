@@ -23,7 +23,7 @@ var DST_ALL_JS = DST
 var DST_INDEX = './dist/js/index.js'
 var DST_BROWSER_BUNDLE = 'devapt-features-labs.js'
 
-var DST_MATHJS_WEBWORKER_INDEX = './dist/js/features/mathjs_features.js'
+var DST_MATHJS_WEBWORKER_INDEX = './dist/js/js_features/mathjs/labs_features/mathjs_features.js'
 var DST_MATHJS_WEBWORKER_BUNDLE = 'mathjs_features.js'
 
 const BABEL_CONFIG = {
@@ -36,7 +36,7 @@ const BABEL_CONFIG = {
 */
 gulp.task('clean',
 	() => {
-		return del(DST)
+		return del(DST + '/js/*')
 	}
 )
 
@@ -101,7 +101,7 @@ gulp.task('build_mathjs_webworker_bundle',
 			.external('client_runtime')
 			.external('forge-browser')
 			.external('ui')
-			.require('./dist/js/features/mathjs_features.js', { expose:'mathjs_features' } )
+			.require(DST_MATHJS_WEBWORKER_INDEX, { expose:'mathjs_features' } )
 			.bundle()
 			.pipe( source(DST_MATHJS_WEBWORKER_BUNDLE) )
 			.pipe( new Buffer() )

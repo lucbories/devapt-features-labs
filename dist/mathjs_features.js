@@ -309,7 +309,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _index = require('../../../bower_components/llang/index');
+var _index = require('../../../../../bower_components/llang/index');
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -383,7 +383,7 @@ exports.default = {
 };
 
 
-},{"../../../bower_components/llang/index":2}],4:[function(require,module,exports){
+},{"../../../../../bower_components/llang/index":2}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

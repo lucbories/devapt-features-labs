@@ -8,23 +8,47 @@ import RenderingPlugin        from 'devapt-core-common/dist/js/plugins/rendering
 import DefaultRenderingPlugin from 'devapt-core-common/dist/js/default_plugins/rendering_default_plugin'
 
 // PLUGIN IMPORTS
-// RENDERING FUNCTIONS
-import lab_fn from './rendering_functions/lab'
-import workspace_fn from './rendering_functions/workspace'
-import terminal_workspace_fn from './rendering_functions/terminal_workspace'
-import terminal_fn from './rendering_functions/terminal'
-import terminal_algebrite_fn from './rendering_functions/terminal_algebrite'
-import terminal_mathjs_fn from './rendering_functions/terminal_mathjs'
-import terminal_mathjs_plot_fn from './rendering_functions/terminal_mathjs_plot'
-import function_plot_fn from './rendering_functions/function_plot'
 
-// COMPONENTS
-import MathPretty from './components/math_pretty'
-import Terminal from './components/terminal'
-import TerminalAlgebrite from './components/terminal_algebrite'
-import TerminalMathJS from './components/terminal_mathjs'
-import TerminalMathJSPlot from './components/terminal_mathjs_plot'
-import FunctionPlot from './components/function_plot'
+// BASE FEATURE
+import lab_fn                from './base/rendering_functions/lab'
+import workspace_fn          from './base/rendering_functions/workspace'
+import workspace_about_fn    from './base/rendering_functions/workspace_about'
+import workspace_manuals_fn  from './base/rendering_functions/workspace_manuals'
+import workspace_sources_fn  from './base/rendering_functions/workspace_sources'
+import workspace_projects_fn from './base/rendering_functions/workspace_projects'
+import Canvas                from './base/components/canvas'
+// import Lab                   from './base/components/lab'
+import Workspace             from './base/components/workspace'
+
+// TERMINAL FEATURE
+import Terminal                from './js_features/terminal/components/terminal'
+import terminal_fn             from './js_features/terminal/rendering_functions/terminal'
+import terminal_workspace_fn   from './js_features/terminal/rendering_functions/terminal_workspace'
+
+// ALGEBRITE FEATURE
+import TerminalAlgebrite       from './js_features/algebrite/components/terminal_algebrite'
+import terminal_algebrite_fn   from './js_features/algebrite/rendering_functions/terminal_algebrite'
+
+// MATHJS FEATURE
+import TerminalMathJS          from './js_features/mathjs/components/terminal_mathjs'
+import terminal_mathjs_fn      from './js_features/mathjs/rendering_functions/terminal_mathjs'
+import terminal_mathjs_plot_fn from './js_features/mathjs/rendering_functions/terminal_mathjs_plot'
+
+// FUNCTION PLOT FEATURE
+import FunctionPlot            from './js_features/function_plot/components/function_plot'
+import function_plot_fn        from './js_features/function_plot/rendering_functions/function_plot'
+
+// MATH PRETTY FEATURE
+import MathPretty              from './js_features/math_pretty/components/math_pretty'
+
+// PHYSICSJS FEATURE
+import CanvasPhysicsJS         from './js_features/physicsjs/components/canvas_physicsjs'
+
+// MATTERJS FEATURE
+import CanvasMatterJS          from './js_features/matterjs/components/canvas_matterjs'
+
+// SVGJS FEATURE
+import CanvasSvgJS             from './js_features/svgjs/components/canvas_svgjs'
 
 
 const plugin_name = 'Labs' 
@@ -55,6 +79,14 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 
 		this.add_public_asset('js', '/' + plugin_name + '/algebrite.js',          path.join(__dirname, bower_dir, 'Algebrite/dist/algebrite.bundle-for-browser.js') )
 		this.add_public_asset('js', '/' + plugin_name + '/crossfilter.js',        path.join(__dirname, bower_dir, 'crossfilter2/crossfilter.js') )
+
+		this.add_public_asset('js', '/' + plugin_name + '/svg.js',                path.join(__dirname, bower_dir, 'svg.js/dist/svg.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/svg.min.js',            path.join(__dirname, bower_dir, 'svg.js/dist/svg.min.js') )
+
+		this.add_public_asset('js', '/' + plugin_name + '/physicsjs.js',          path.join(__dirname, bower_dir, 'PhysicsJS/dist/physicsjs-full.js') )
+
+		this.add_public_asset('js', '/' + plugin_name + '/matterjs.js',           path.join(__dirname, bower_dir, 'Matter/build/matter.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/matterjs.min.js',       path.join(__dirname, bower_dir, 'Matter/build/matter.min.js') )
 		
 		this.add_public_asset('js', '/' + plugin_name + '/d3.js',                 path.join(__dirname, bower_dir, 'd3-v3.5.17/d3.js') )
 		// this.add_public_asset('js', '/' + plugin_name + '/d3.js',                 path.join(__dirname, bower_dir, 'd3-v3.5.5/d3.js') )
@@ -93,7 +125,7 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 	
 		const devapt_browser_dir = '../../node_modules/devapt-core-browser/public'
 		this.add_public_asset('js', '/' + plugin_name + '/devapt-browser.js',     path.join(__dirname, devapt_browser_dir, 'js/build/devapt-core-browser.js') )
-		this.add_public_asset('js', '/' + plugin_name + '/devapt-browser.js.map', path.join(__dirname, devapt_browser_dir, 'js/build/devapt-core-browser.js.map') )
+		this.add_public_asset('js', '/' + plugin_name + '/devapt-core-browser.js.map', path.join(__dirname, devapt_browser_dir, 'js/build/devapt-core-browser.js.map') )
 
 		const dist_dir = __dirname + '/../../dist/'
 		this.add_public_asset('js', '/' + plugin_name + '/devapt-features-labs.js', path.join(dist_dir, 'devapt-features-labs.js') )
@@ -178,6 +210,12 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 		
 		switch(arg_class_name.toLocaleLowerCase())
 		{
+			case 'workspace':				return new Workspace(arg_name, arg_settings, arg_state)
+			// case 'lab':						return new Lab(arg_name, arg_settings, arg_state)
+			case 'canvas':					return new Canvas(arg_name, arg_settings, arg_state)
+			case 'canvas_svgjs':			return new CanvasSvgJS(arg_name, arg_settings, arg_state)
+			case 'canvas_physicsjs':		return new CanvasPhysicsJS(arg_name, arg_settings, arg_state)
+			case 'canvas_matterjs':			return new CanvasMatterJS(arg_name, arg_settings, arg_state)
 			case 'math_pretty':				return new MathPretty(arg_name, arg_settings, arg_state)
 			case 'terminal':				return new Terminal(arg_name, arg_settings, arg_state)
 			case 'terminal_mathjs':			return new TerminalMathJS(arg_name, arg_settings, arg_state)
@@ -206,6 +244,12 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 		
 		switch(arg_class_name.toLocaleLowerCase())
 		{
+			// case 'lab':						return Lab
+			case 'workspace':				return Workspace
+			case 'canvas':					return Canvas
+			case 'canvas_svgjs':			return CanvasSvgJS
+			case 'canvas_physicsjs':		return CanvasPhysicsJS
+			case 'canvas_matterjs':			return CanvasMatterJS
 			case 'math_pretty':				return MathPretty
 			case 'terminal':				return Terminal
 			case 'terminal_mathjs':			return TerminalMathJS
@@ -231,6 +275,12 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 	{
 		switch(arg_class_name.toLocaleLowerCase())
 		{
+			// case 'lab':
+			case 'workspace':
+			case 'canvas':
+			case 'canvas_svgjs':
+			case 'canvas_physicsjs':
+			case 'canvas_matterjs':
 			case 'math_pretty':
 			case 'terminal':
 			case 'terminal_mathjs':
@@ -263,13 +313,20 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 		switch(arg_type.toLocaleLowerCase())
 		{
 			case 'lab':						return lab_fn
+			case 'workspace':				return workspace_fn
+			case 'workspace_about':			return workspace_about_fn
+			case 'workspace_manuals':		return workspace_manuals_fn
+			case 'workspace_projects':		return workspace_projects_fn
+			case 'workspace_sources':		return workspace_sources_fn
+
+			case 'canvas':					return DefaultRenderingPlugin.find_rendering_function('canvas')
+
 			case 'math_pretty':				return DefaultRenderingPlugin.find_rendering_function('component')
 			case 'terminal':				return terminal_fn
 			case 'terminal_algebrite':		return terminal_algebrite_fn
 			case 'terminal_mathjs':			return terminal_mathjs_fn
 			case 'terminal_mathjs_plot':	return terminal_mathjs_plot_fn
 			case 'function_plot':			return function_plot_fn
-			case 'workspace':				return workspace_fn
 			case 'terminal_workspace':		return terminal_workspace_fn
 		}
 
