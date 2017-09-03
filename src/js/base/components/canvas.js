@@ -154,4 +154,28 @@ export default class Canvas extends Component
 	{
 		console.log(context + ':finish_space')
 	}
+	
+
+
+	/**
+	 * Animation start.
+	 * 
+	 * @returns {nothing}
+	 */
+	start()
+	{
+		console.log(context + ':animation start')
+	}
+	
+
+
+	/**
+	 * Animation stop.
+	 * 
+	 * @returns {nothing}
+	 */
+	stop()
+	{
+		console.log(context + ':animation stop')
+	}
 }

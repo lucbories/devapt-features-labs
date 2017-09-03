@@ -32540,6 +32540,23 @@ function load_package_template(logs, arg_package_name, arg_package_config, arg_c
 
 		var res_obj = arg_children[res_name];
 
+		// TEMPLATE
+		if (_types2.default.isNotEmptyString(res_obj.template)) {
+			var template_name = res_obj.template;
+			var template_resource = arg_package_config.templates[template_name];
+			if (!template_resource) {
+				template_resource = arg_children[template_name];
+			}
+			if (!template_resource) {
+				console.error(context + ':load_package_template:package=[' + arg_package_name + '] resource=[' + res_name + ']: template not found for [' + template_name + ']');
+			}
+			(0, _assert2.default)(_types2.default.isObject(template_resource), error_msg_bad_resource_config + ' for ' + res_name + ' with template ' + template_name);
+			var clone = _lodash2.default.clone(template_resource);
+			res_obj = _lodash2.default.merge(res_obj, clone);
+
+			// console.log(context + ':load_package_template world...packages.' + arg_package_name + ' resource [%s] of collection [%s] from template [%s]:', res_name, type_name, template_name, res_obj)
+		}
+
 		if (type_name !== 'menus' && type_name !== 'models') {
 			res_obj.class_name = res_obj.class_name ? res_obj.class_name : res_obj.type;
 			(0, _assert2.default)(_types2.default.isString(res_obj.class_name), error_msg_bad_resource_config + ' for resource ' + res_name);
@@ -60629,6 +60646,30 @@ var Canvas = function (_Component) {
 		value: function finish_space() {
 			console.log(context + ':finish_space');
 		}
+
+		/**
+   * Animation start.
+   * 
+   * @returns {nothing}
+   */
+
+	}, {
+		key: 'start',
+		value: function start() {
+			console.log(context + ':animation start');
+		}
+
+		/**
+   * Animation stop.
+   * 
+   * @returns {nothing}
+   */
+
+	}, {
+		key: 'stop',
+		value: function stop() {
+			console.log(context + ':animation stop');
+		}
 	}]);
 
 	return Canvas;
@@ -64217,70 +64258,92 @@ var CanvasPhysicsJS = function (_Canvas) {
 
 		_this._world = undefined;
 		_this._factory = undefined;
+		_this._gravity = undefined;
 
 		// this.enable_trace()
 		return _this;
 	}
 
 	/**
-  * Prepare drawing space.
+  * Create a new shape from a configuration using a hidden factory.
   * 
-  * @param {string} 	arg_dom_id - DOM element id.
-  * @param {number} arg_width - DOM element width.
-  * @param {number} arg_height - DOM element height.
-  * @param {object} arg_space - drawing space configuration.
-  * @param {object} arg_scene - drawing shapes.
+  * @param {object} arg_config - shape configuration plain object.
   * 
-  * @returns {nothing}
+  * returns {object} - created shape. 
   */
 
 
 	_createClass(CanvasPhysicsJS, [{
+		key: 'create',
+		value: function create(arg_config) {
+			if (this._factory) {
+				return this._factory.create(arg_config);
+			}
+			return undefined;
+		}
+
+		/**
+   * Prepare drawing space.
+   * 
+   * @param {string} 	arg_dom_id - DOM element id.
+   * @param {number} arg_width - DOM element width.
+   * @param {number} arg_height - DOM element height.
+   * @param {object} arg_space - drawing space configuration.
+   * @param {object} arg_scene - drawing shapes.
+   * 
+   * @returns {nothing}
+   */
+
+	}, {
 		key: 'prepare_space',
 		value: function prepare_space(arg_dom_id, arg_width, arg_height, arg_space, arg_scene) {
 			var _this2 = this;
 
 			_get(CanvasPhysicsJS.prototype.__proto__ || Object.getPrototypeOf(CanvasPhysicsJS.prototype), 'prepare_space', this).call(this, arg_dom_id, arg_width, arg_height, arg_space, arg_scene);
 
-			var world_config = {
-				// set the timestep
-				timestep: 1000.0 / 160,
+			// CONFIGURE WORLD
+			var cfg_timestep = _types2.default.isNumber(arg_space.steps) ? arg_space.steps : 10;
+			var cfg_max_iterations_per_step = _types2.default.isNumber(arg_space.step_iterations) ? arg_space.step_iterations : 4;
 
-				// maximum number of iterations per step
-				maxIPF: 16,
+			var world_config = {
+				timestep: cfg_timestep,
+				maxIPF: cfg_max_iterations_per_step,
 
 				// set the integrator (may also be set with world.add())
-				integrator: 'verlet'
+				integrator: 'verlet',
+
+				// is sleeping disabled?
+				sleepDisabled: false,
+
+				// speed at which bodies wake up
+				sleepSpeedLimit: 0.1,
+
+				// variance in position below which bodies fall asleep
+				sleepVarianceLimit: 2,
+
+				// time (ms) before sleepy bodies fall asleep
+				sleepTimeLimit: 500
 			};
 
 			window.Physics(world_config, function (world) {
 				_this2._world = world;
 			});
 
+			// CONFIGURE WORLD RENDERER
+			var cfg_styles = _types2.default.isNumber(arg_space.styles) ? arg_space.styles : {};
+
 			var renderer_config = {
 				el: arg_dom_id,
 				autoResize: false,
 				width: arg_width,
 				height: arg_height,
-				debug: true,
-				meta: false, // don't display meta data
-				styles: {
-					// set colors for the circle bodies
-					'circle': {
-						strokeStyle: '#351024',
-						lineWidth: 1,
-						fillStyle: '#d33682',
-						angleIndicator: '#351024'
-					}
-				}
+				debug: false,
+				meta: false,
+				styles: cfg_styles
 			};
 
 			var renderer = window.Physics.renderer('canvas', renderer_config);
-
-			// add the renderer
 			this._world.add(renderer);
-
-			// render on each step
 			this._world.on('step', function () {
 				_this2._world.render();
 			});
@@ -64288,15 +64351,107 @@ var CanvasPhysicsJS = function (_Canvas) {
 			// bounds of the window
 			var viewportBounds = window.Physics.aabb(0, 0, arg_width, arg_height);
 
-			// constrain objects to these bounds
-			// add things to the world
+			// CONFIGURE WORLD BEHAVIORS
 			this._world.add([Physics.behavior('interactive', { el: renderer.container }), Physics.behavior('constant-acceleration'), Physics.behavior('body-impulse-response'), Physics.behavior('sweep-prune'), Physics.behavior('edge-collision-detection', {
 				aabb: viewportBounds,
 				restitution: 0.99,
 				cof: 0.99
 			})]);
 
+			// CONFIGURE GRAVITY
+			var pixels_per_meter = _types2.default.isNumber(arg_space.pixels_per_meter) ? arg_space.pixels_per_meter : 41;
+			this.update_gravity(arg_space.gratity, pixels_per_meter);
+
+			// CREATE SHAPES FACTORY
 			this._factory = new _factory2.default(this._world);
+		}
+
+		/**
+   * Update gravity.
+   * 
+   * PhysicsJS help:
+   * 
+   *	Jasper gives the units as 0.0004 px/ms/ms (or px/ms^2). Knowing the units makes this conversion pretty straightforward using unit cancellation. First we convert that figure to px/s^2:
+   *
+   *	0.0004 px/ms^2 * 1000 ms/s * 1000 ms/s = 400 px/s^2
+   *
+   *	Since we know that gravity on Earth is ~9.8 m/s^2, this means that the default value is simulating a scale of:
+   *
+   *	400 px/s^2 * (1/9.8) s^2/m ~= 41 px/m
+   *
+   *	So with the default setting, PhysicsJS is simulating a world where a meter is 41 pixels long.
+   *
+   *	If we use your example where "a 180 centimetres person is 50 pixels tall", then we are converting to a scale of:
+   *
+   *	50px / 0.180m ~= 278px/m
+   *
+   *	Convert this back to px/ms^2 with an acceleration of 9.8 m/s^2 and you get:
+   *
+   *	278 px/m * 9.8 m/s^2 * (1/1000) s/ms * (1/1000) s/ms ~= 0.00272 px/ms^2
+   *
+   *	So, to simulate a world where a 180cm person is 50px tall, you'd use 0.00272 for the PhysicsJS y-acceleration parameter.
+   *
+   *	For 41 pixels per meter:
+   *	Earth:    g=9.807 m/s²		=> 9.807*41 px/s² = 402.087 px/s² = 0,000402087 px/ms²
+   *	Moon:     g=1.623 m/s²
+   *	Mars:     g=3.722 m/s²
+   *	Venus:    g=8.858 m/s²
+   *	Mercury:  g=3.697 m/s²
+   *	Sun:      g=273.614 m/s²
+   *	Jupiter:  g=25.885 m/s²
+   *	Saturn:   g=11.171 m/s²
+   *	Uranus:   g=8.995 m/s²
+   *	Neptune:  g=11.257 m/s²
+   *	Pluto:    g=0.583 m/s²
+   *
+   * @param {number|string} arg_gravity_cfg - gravity planet or gravity simulation value.
+   * @param {number} arg_pixels_per_meter - count of pixels per number.
+   * 
+   * @return {nothing}
+   */
+
+	}, {
+		key: 'update_gravity',
+		value: function update_gravity(arg_gravity_cfg) {
+			var arg_pixels_per_meter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 41;
+
+			if (_types2.default.isNotEmptyString(arg_gravity_cfg)) {
+				var pixels_per_meter = _types2.default.isNumber(arg_pixels_per_meter) ? arg_pixels_per_meter : 41;
+
+				switch (arg_gravity_cfg.toLocaleLowerCase()) {
+					case 'earth':
+						arg_gravity_cfg = 9.807 * pixels_per_meter / 1000 / 1000;break; // 0.0004
+					case 'moon':
+						arg_gravity_cfg = 1.623 * pixels_per_meter / 1000 / 1000;break;
+					case 'mars':
+						arg_gravity_cfg = 3.722 * pixels_per_meter / 1000 / 1000;break;
+					case 'venus':
+						arg_gravity_cfg = 8.858 * pixels_per_meter / 1000 / 1000;break;
+					case 'sun':
+						arg_gravity_cfg = 273.614 * pixels_per_meter / 1000 / 1000;break;
+					case 'jupiter':
+						arg_gravity_cfg = 25.885 * pixels_per_meter / 1000 / 1000;break;
+					case 'saturn':
+						arg_gravity_cfg = 11.171 * pixels_per_meter / 1000 / 1000;break;
+					case 'uranus':
+						arg_gravity_cfg = 8.995 * pixels_per_meter / 1000 / 1000;break;
+					case 'neptune':
+						arg_gravity_cfg = 11.257 * pixels_per_meter / 1000 / 1000;break;
+					case 'pluto':
+						arg_gravity_cfg = 0.583 * pixels_per_meter / 1000 / 1000;break;
+				}
+			}
+			var cfg_gratity_y = _types2.default.isNumber(arg_gravity_cfg) ? arg_gravity_cfg : 0.0004;
+
+			if (!this._gravity) {
+				this._gravity = window.Physics.behavior('constant-acceleration', {
+					acc: { x: 0, y: cfg_gratity_y }
+				});
+				this._world.add(this._gravity);
+				return;
+			}
+
+			this._gravity.setAcceleration({ x: 0, y: cfg_gratity_y });
 		}
 
 		/**
@@ -64313,161 +64468,9 @@ var CanvasPhysicsJS = function (_Canvas) {
 			_get(CanvasPhysicsJS.prototype.__proto__ || Object.getPrototypeOf(CanvasPhysicsJS.prototype), 'process_scene_item', this).call(this, arg_scene_item);
 
 			var shape = this.create(arg_scene_item);
-			console.log(context + ':process_scene_item:shape', shape);
+			// console.log(context + ':process_scene_item:shape', shape)
 
 			shape && shape.draw();
-
-			// this._factory.create(arg_scene_item)
-			/*
-   		const anchor_ball1 = 150
-   		const ball1_ball2 = 150
-   		const colors = [
-   			'#b58900',
-   			'#cb4b16',
-   			'#dc322f',
-   			'#d33682',
-   			'#6c71c4',
-   			'#268bd2',
-   			'#2aa198',
-   			'#859900'
-   		]
-   		var rigidConstraints = Physics.behavior('verlet-constraints', {
-   			iterations: 1
-   		})
-   
-   		this._covered_points = []
-   		// this._covered_points.push( { x:450, y:50} )
-   
-   
-   		var anchor = window.Physics.body('circle', {
-   			// BODY
-   			// is the body hidden (not to be rendered)?
-   			hidden: false,
-   			x: 400, // x-coordinate
-   			y: 320, // y-coordinate
-   			vx: 0, // velocity in x-direction
-   			vy: 0, // velocity in y-direction
-   			// is the body `dynamic`, `kinematic` or `static`?
-       		// http://www.box2d.org/manual.html#_Toc258082973
-   			treatment:'static',
-   			mass:1.0,
-   			// body restitution. How "bouncy" is it?
-   			restitution: 1.0,
-   			// what is its coefficient of friction with another surface with COF = 1? (default=0.8)
-   			cof: 0.1,
-   			// what is the view object (mixed) that should be used when rendering?
-   			view: null,
-   			// the vector offsetting the geometry from its center of mass
-   			offset: Physics.vector(0,0),
-   			// CIRCLE
-   			radius: 5
-   		});
-   		this._world.add(anchor)
-   
-   		var ball1 = window.Physics.body('circle', {
-   			cof: 0.2,
-   			x: anchor.state.pos.x, // x-coordinate
-   			y: anchor.state.pos.y + anchor_ball1, // y-coordinate
-   			vx: 0.2, // velocity in x-direction
-   			vy: 0.01, // velocity in y-direction
-   			radius: 20,
-   			styles: {
-   				fillStyle: colors[0],
-   				angleIndicator: false
-   			}
-   		});
-   		this._world.add(ball1)
-   
-   		rigidConstraints.distanceConstraint(anchor, ball1, 0.3, anchor_ball1)
-   		this._world.add(rigidConstraints)
-   
-   
-   		var ball2 = window.Physics.body('circle', {
-   			cof: 0.2,
-   			x: anchor.state.pos.x + ball1_ball2, // x-coordinate
-   			y: anchor.state.pos.y + anchor_ball1 + ball1_ball2 / 2, // y-coordinate
-   			vx: 0.2, // velocity in x-direction
-   			vy: 0.01, // velocity in y-direction
-   			radius: 20,
-   			styles: {
-   				fillStyle: colors[1],
-   				angleIndicator:false //  r === 30 ? 'rgba(0,0,0,0.6)' : 
-   			}
-   		});
-   		this._world.add(ball2)
-   
-   		rigidConstraints.distanceConstraint(ball1, ball2, 0.3, ball1_ball2)
-   		this._world.add(rigidConstraints)
-   
-   		
-   		var gravity = window.Physics.behavior('constant-acceleration', {
-   			acc: { x : 0, y: 0.0004 } // this is the default
-   		});
-   		this._world.add( gravity )
-   
-   		// later... flip the world upside down!
-   		// gravity.setAcceleration({ x: 0, y: -0.0004 });
-   
-   		const self = this
-   		const style = {
-   			fillStyle: false,
-   			strokeStyle: colors[3],
-   			lineWidth: 1,
-   			globalAlpha:1,
-   			angleIndicator: false
-   		}
-   		const on_render_fn = (data)=>{
-   			// console.log('on_render_fn', data)
-   			const constraints = rigidConstraints.getConstraints().distanceConstraints
-   			let c = undefined
-   
-   			for (let i = 0, l = constraints.length; i < l; ++i )
-   			{
-   				c = constraints[ i ];
-   				// console.log('on_render_fn i=%d c', i, c)
-   				self._world._renderer.drawLine(c.bodyA.state.pos, c.bodyB.state.pos, 'rgba(100, 100, 100, 0.5)');
-   			}
-   
-   			// DRAW BALL 2 PATH
-   			if ( anchor.state.pos.dist(ball2.state.pos) <= anchor_ball1 + ball1_ball2 + 5)
-   			{
-   				this._covered_points.push( { x:ball2.state.pos.x, y:ball2.state.pos.y } )
-   			}
-   			
-   			// console.log('on_render_fn points=', this._covered_points)
-   			// self._world._renderer.drawPolygon(this._covered_points, style)
-   			let prev_pos = this._covered_points[0]
-   			for(let p = 1 ; p < this._covered_points.length ; p++)
-   			{
-   				const pos = this._covered_points[p]
-   				self._world._renderer.drawLine(prev_pos, pos, style)
-   				prev_pos = pos
-   			}
-   		}
-   		const on_render_scratch_fn = (scratch, data)=>{
-   			// console.log('on_render_scratch_fn', data)
-   			on_render_fn(data)
-   			// scratch.done()
-   		}
-   		this._world.on('render', Physics.scratchpad(on_render_scratch_fn))
-   		// this._world.on('render', on_render_fn)
-   
-   		this._world.on(
-   			{
-   				'interact:poke': function(arg_pos) {
-   					const pos_vector = new window.Physics.vector(arg_pos.x, arg_pos.y)
-   					if ( anchor.state.pos.dist(pos_vector) > anchor_ball1 + ball1_ball2)
-   					{
-   						const angle = pos_vector.angle(anchor.state.pos)
-   						console.log('interact:angle=%d', angle, angle)
-   						pos_vector.x = anchor.state.pos.x + Math.cos(angle) * (anchor_ball1 + ball1_ball2)
-   						pos_vector.y = anchor.state.pos.y + Math.sin(angle) * (anchor_ball1 + ball1_ball2)
-   					}
-   					ball2.state.pos = pos_vector
-   					self._covered_points = [ { x:ball2.state.pos.x, y:ball2.state.pos.y } ]
-   				}
-   			}
-   		)*/
 		}
 
 		/**
@@ -64481,22 +64484,180 @@ var CanvasPhysicsJS = function (_Canvas) {
 		value: function finish_space() {
 			var _this3 = this;
 
-			console.log(context + ':finish_space');
+			// console.log(context + ':finish_space')
+
+			this.render_buttons();
 
 			this._world.render();
 
 			// subscribe to ticker to advance the simulation
+			var step = 50; // MINIMAL INTERVAL BETWEEN TWO STEPS
+			var previous = 0;
 			window.Physics.util.ticker.on(function (time, dt) {
-				_this3._world.step(time);
+				if (time - previous > step) {
+					_this3._world.step(time);
+					previous = time;
+				}
 			});
 
 			// start the ticker
 			window.Physics.util.ticker.start();
 		}
+
+		/**
+   * Render animation buttons.
+   * 
+   * @returns {nothing}
+   */
+
 	}, {
-		key: 'create',
-		value: function create(arg_config) {
-			return this._factory ? this._factory.create(arg_config) : undefined;
+		key: 'render_buttons',
+		value: function render_buttons() {
+			console.log(context + ':render_buttons');
+
+			var scene_item = {
+				type: 'button-start',
+				name: 'button_animation_start',
+				position: {
+					x: 10,
+					y: 10
+				},
+				velocity: {
+					vx: 0,
+					vy: 0
+				},
+				is_static: true,
+				color: null,
+				fill_color: 'blue',
+				line_color: 'red',
+				line_width: 2
+			};
+			var button_start = this.create(scene_item);
+			button_start && button_start.draw && button_start.draw();
+
+			scene_item = {
+				type: 'button-stop',
+				name: 'button_animation_stop',
+				position: {
+					x: 40,
+					y: 10
+				},
+				velocity: {
+					vx: 0,
+					vy: 0
+				},
+				is_static: true,
+				color: null,
+				fill_color: 'red',
+				line_color: 'red',
+				line_width: 2
+			};
+			var button_stop = this.create(scene_item);
+			button_stop && button_stop.draw && button_stop.draw();
+
+			scene_item = {
+				type: 'button-reset',
+				name: 'button_animation_reset',
+				position: {
+					x: 70,
+					y: 10
+				},
+				velocity: {
+					vx: 0,
+					vy: 0
+				},
+				is_static: true,
+				color: null,
+				fill_color: 'blue',
+				line_color: 'red',
+				line_width: 2
+			};
+			var button_reset = this.create(scene_item);
+			button_reset && button_reset.draw && button_reset.draw();
+
+			var poke_fn = function poke_fn(arg_pos) {
+				// BUTTONS
+				// if (arg_pos.x < 100 && arg_pos.y < 30)
+				// {
+				// 	console.log('release on buttons')
+				if (arg_pos.body && arg_pos.body.uid == button_start.uid) {
+					arg_pos.body.state.pos.x = 10;
+					arg_pos.body.state.pos.y = 10;
+					self.start();
+					return;
+				}
+				if (arg_pos.body && arg_pos.body.uid == button_stop.uid) {
+					arg_pos.body.state.pos.x = 40;
+					arg_pos.body.state.pos.y = 10;
+					self.stop();
+					return;
+				}
+				if (arg_pos.body && arg_pos.body.uid == button_reset.uid) {
+					arg_pos.body.state.pos.x = 70;
+					arg_pos.body.state.pos.y = 10;
+					console.log('grab on button reset');
+					return;
+				}
+				// return
+				// }
+			};
+			var self = this;
+			this._world.on({
+				'interact:grab': poke_fn,
+				'interact:poke': poke_fn,
+				'interact:move': poke_fn,
+				'interact:release': function interactRelease(arg_pos) {
+					// BUTTONS
+					// if (arg_pos.x < 100 && arg_pos.y < 30)
+					// {
+					console.log('release on buttons');
+					if (arg_pos.body && arg_pos.body.uid == button_start.uid) {
+						arg_pos.body.state.pos.x = 10;
+						arg_pos.body.state.pos.y = 10;
+						self.start();
+						return;
+					}
+					if (arg_pos.body && arg_pos.body.uid == button_stop.uid) {
+						arg_pos.body.state.pos.x = 40;
+						arg_pos.body.state.pos.y = 10;
+						self.stop();
+						return;
+					}
+					if (arg_pos.body && arg_pos.body.uid == button_reset.uid) {
+						arg_pos.body.state.pos.x = 70;
+						arg_pos.body.state.pos.y = 10;
+						console.log('release on button reset');
+						return;
+					}
+					// }
+				}
+			});
+		}
+
+		/**
+   * Animation start.
+   * 
+   * @returns {nothing}
+   */
+
+	}, {
+		key: 'start',
+		value: function start() {
+			console.log(context + ':animation start');
+			window.Physics.util.ticker.start();
+		}
+
+		/**
+   * Animation stop.
+   * 
+   * @returns {nothing}
+   */
+
+	}, {
+		key: 'stop',
+		value: function stop() {
+			console.log(context + ':animation stop');
+			window.Physics.util.ticker.stop();
 		}
 	}]);
 
@@ -64516,6 +64677,7 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 // NPM IMPORTS
 
+
 // DEVAPT CORE COMMON IMPORTS
 
 
@@ -64523,6 +64685,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 // PLUGIN IMPORTS
 
+
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
 
 var _types = require('devapt-core-common/dist/js/utils/types');
 
@@ -64571,44 +64737,193 @@ var Factory = function () {
 			return this._factory_context;
 		}
 	}, {
+		key: 'get',
+		value: function get(arg_shape_name) {
+			return this._shapes[arg_shape_name];
+		}
+	}, {
 		key: 'shapes',
 		value: function shapes() {
 			return this._shapes;
 		}
+
+		/**
+   * Create a new shape from a configuration.
+   * 
+   * @param {object} arg_config - shape configuration plain object.
+   * 
+   * returns {object} - created shape. 
+   */
+
 	}, {
 		key: 'create',
-		value: function create(arg_shape_cfg) {
-			console.log(context + ':create:shape cfg:', arg_shape_cfg);
+		value: function create(arg_shape_config) {
+			var _this = this;
+
+			console.log(context + ':create:shape cfg:', arg_shape_config);
 
 			// GET TYPE
-			var type = arg_shape_cfg.type;
+			var type = arg_shape_config.type;
 			if (!_types2.default.isNotEmptyString(type)) {
-				return;
+				console.error(context + ':create:bad type for shape config=', arg_shape_config);
+				return undefined;
 			}
 
 			// GET NAME
 			this._shapes_counter++;
-			var name = _types2.default.isNotEmptyString(arg_shape_cfg.name) ? arg_shape_cfg.name : 'shape-' + this._shapes_counter;
+			var name = _types2.default.isNotEmptyString(arg_shape_config.name) ? arg_shape_config.name : 'shape-' + this._shapes_counter;
 
 			// GET POSITION AND COLOR
-			var position = _types2.default.isArray(arg_shape_cfg.position) && arg_shape_cfg.position.length >= 2 ? arg_shape_cfg.position : [0, 0, 0];
-			var color = arg_shape_cfg.color;
+			var position = _types2.default.isObject(arg_shape_config.position) ? arg_shape_config.position : { x: 0, y: 0 };
+			var velocity = _types2.default.isObject(arg_shape_config.velocity) ? arg_shape_config.velocity : { vx: 0, vy: 0 };
+			var color = arg_shape_config.color;
+
+			arg_shape_config.styles = {};
+			arg_shape_config.styles.fillStyle = _types2.default.isNotEmptyString(arg_shape_config.fill_color) ? arg_shape_config.fill_color : color ? color : false;
+			arg_shape_config.styles.strokeStyle = _types2.default.isNotEmptyString(arg_shape_config.line_color) ? arg_shape_config.line_color : color ? color : false;
+			arg_shape_config.styles.lineWidth = _types2.default.isNumber(arg_shape_config.line_width) ? arg_shape_config.line_width : 1;
+
+			// PREPARE SHAPE CONFIGURATION
+			var shape_cfg = {
+				// BODY
+				hidden: false,
+
+				x: position.x,
+				y: position.y,
+
+				vx: velocity.vx,
+				vy: velocity.vy,
+
+				treatment: arg_shape_config.is_static ? 'static' : 'dynamic',
+
+				mass: arg_shape_config.mass,
+
+				// body restitution. How "bouncy" is it?
+				restitution: arg_shape_config.restitution,
+
+				// what is its coefficient of friction with another surface with COF = 1? (default=0.8)
+				cof: arg_shape_config.friction,
+
+				// what is the view object (mixed) that should be used when rendering?
+				view: null,
+
+				// the vector offsetting the geometry from its center of mass
+				offset: Physics.vector(0, 0),
+
+				styles: arg_shape_config.styles
+			};
 
 			// LOOKUP TYPE CLASS
+			console.log(context + ':create:type=[%s] position=[%o] color=[%s]:config', type, position, color, arg_shape_config);
 			switch (type.toLocaleLowerCase()) {
 				case 'pendulum':
 					{
-						// const radius = T.isNumber(arg_shape_cfg.radius) && arg_shape_cfg.radius > 0 ? arg_shape_cfg.radius : 100
-						// console.log(context + ':process_scene_item:circle radius=[%d] color=[%s]:', radius, color, position)
-
-						var shape = new _pendulum2.default(this._world, undefined, position, color, arg_shape_cfg);
+						var shape = new _pendulum2.default(this._world, undefined, [0, 0], color, arg_shape_config);
 						shape.draw();
 						this._shapes[name] = shape;
 						return shape;
 					}
+
+				case 'circle':
+					{
+						shape_cfg.radius = _types2.default.isNumber(arg_shape_config.radius) && arg_shape_config.radius > 0 ? arg_shape_config.radius : 10;
+
+						var _shape = window.Physics.body('circle', shape_cfg);
+						this._world.add(_shape);
+						this._shapes[name] = _shape;
+						return _shape;
+					}
+
+				case 'point':
+					{
+						var _shape2 = window.Physics.body('point', shape_cfg);
+						this._world.add(_shape2);
+						this._shapes[name] = _shape2;
+						return _shape2;
+					}
+
+				case 'rectangle':
+					{
+						shape_cfg.width = _types2.default.isNumber(arg_shape_config.width) && arg_shape_config.width > 0 ? arg_shape_config.width : 10;
+						shape_cfg.height = _types2.default.isNumber(arg_shape_config.height) && arg_shape_config.height > 0 ? arg_shape_config.height : 10;
+
+						var _shape3 = window.Physics.body('rectangle', shape_cfg);
+						this._world.add(_shape3);
+						this._shapes[name] = _shape3;
+						return _shape3;
+					}
+
+				case 'compound':
+					{
+						var cfg_children = _types2.default.isArray(arg_shape_config.children) ? arg_shape_config.children : [];
+						shape_cfg.children = [];
+						_lodash2.default.forEach(arg_shape_config.children, function (child_item) {
+							if (_types2.default.isNotEmptyString(child_item)) {
+								var child = _this.get(child_item);
+								if (child) {
+									shape_cfg.children.push(child);
+									return;
+								}
+							}
+							if (_types2.default.isObject(child_item)) {
+								var _child = _this.create(child_item);
+								if (_child) {
+									shape_cfg.children.push(_child);
+									return;
+								}
+							}
+						});
+
+						var _shape4 = window.Physics.body('compound', shape_cfg);
+						this._world.add(_shape4);
+						this._shapes[name] = _shape4;
+						return _shape4;
+					}
+
+				case 'convex-polygon':
+					{
+						shape_cfg.vertices = _types2.default.isArray(arg_shape_config.vertices) ? arg_shape_config.vertices : [];
+
+						var _shape5 = window.Physics.body('convex-polygon', shape_cfg);
+						this._world.add(_shape5);
+						this._shapes[name] = _shape5;
+						return _shape5;
+					}
+
+				case 'button-start':
+					{
+						var size = 14;
+						shape_cfg.vertices = [{ x: shape_cfg.x, y: shape_cfg.y }, { x: shape_cfg.x, y: shape_cfg.y + size }, { x: shape_cfg.x + size, y: shape_cfg.y + size / 2 }];
+
+						var _shape6 = window.Physics.body('convex-polygon', shape_cfg);
+						this._world.add(_shape6);
+						this._shapes[name] = _shape6;
+						return _shape6;
+					}
+
+				case 'button-reset':
+					{
+						shape_cfg.radius = 7;
+
+						var _shape7 = window.Physics.body('circle', shape_cfg);
+						this._world.add(_shape7);
+						this._shapes[name] = _shape7;
+						return _shape7;
+					}
+
+				case 'button-stop':
+					{
+						shape_cfg.width = 14;
+						shape_cfg.height = 14;
+
+						var _shape8 = window.Physics.body('rectangle', shape_cfg);
+						this._world.add(_shape8);
+						this._shapes[name] = _shape8;
+						return _shape8;
+					}
 			}
 
-			return this;
+			return undefined;
 		}
 	}]);
 
@@ -64618,8 +64933,8 @@ var Factory = function () {
 exports.default = Factory;
 
 
-},{"./pendulum":511,"devapt-core-common/dist/js/utils/types":103}],511:[function(require,module,exports){
-'use strict';
+},{"./pendulum":511,"devapt-core-common/dist/js/utils/types":103,"lodash":541}],511:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -64628,18 +64943,32 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 // NPM IMPORTS
 
+
 // DEVAPT CORE COMMON IMPORTS
 
 
-var _types = require('devapt-core-common/dist/js/utils/types');
+// DEVAPT CORE BROWSER IMPORTS
+
+
+var _lodash = require("lodash");
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _assert = require("assert");
+
+var _assert2 = _interopRequireDefault(_assert);
+
+var _types = require("devapt-core-common/dist/js/utils/types");
 
 var _types2 = _interopRequireDefault(_types);
+
+var _factory = require("./factory");
+
+var _factory2 = _interopRequireDefault(_factory);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-// DEVAPT CORE BROWSER IMPORTS
 
 // PLUGIN IMPORTS
 
@@ -64647,11 +64976,119 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var plugin_name = 'Labs';
 var context = plugin_name + '/physicsjs/shapes/pendulum';
 
+var default_origin = {
+	type: "circle",
+
+	position: {
+		x: 200,
+		y: 50
+	},
+
+	velocity: {
+		vx: 0,
+		vy: 0
+	},
+
+	is_static: true,
+
+	line_color: "#351024",
+	line_width: 1,
+	fill_color: "#351024",
+
+	style: {},
+
+	mass: 1,
+	friction: 0.3,
+	restitution: 1
+};
+
+var default_pendant = {
+	type: "circle",
+
+	position: {
+		x: 200,
+		y: 150
+	},
+
+	velocity: {
+		vx: 0,
+		vy: 0
+	},
+
+	is_static: false,
+
+	line_color: "#351024",
+	line_width: 1,
+	fill_color: "#351024",
+
+	style: {},
+
+	mass: 1,
+	friction: 0.3,
+	restitution: 1,
+
+	link_length: 100,
+	link_source: "origin",
+	link_stiffness: 0.5
+};
+
+/*
+'#b58900',
+'#cb4b16',
+'#dc322f',
+'#d33682',
+'#6c71c4',
+'#268bd2',
+'#2aa198',
+'#859900'
+*/
+
 /**
  * @file Pendulum drawing class.
  * 
  * @author Luc BORIES
  * @license Apache-2.0
+ * 
+ * @example
+ * 	Configuration:{
+ * 			settings:{
+ * 				origin:{
+ * 					type:"circle",
+ * 					position:{
+ * 						x:200,
+ * 						y:50
+ * 					},
+ * 					is_static:true,
+ *					line_color:"..." or false,
+ *                  line_width:1,
+ *					fill_color:"..." or false,
+ * 					style:{},
+ * 					mass:1,
+ * 					friction:0.3,
+ *                  restitution:1
+ * 				},
+ * 				shapes:{
+ * 					ball1:{
+ * 						type:"circle",
+ * 						position:{
+ * 							x:200,
+ * 							y:150
+ * 						},
+ * 						is_static:false,
+ *					    line_color:"..." or false,
+ *                      line_width:1,
+ *					    fill_color:"..." or false,
+ * 						style:{},
+ * 						mass:1,
+ * 						friction:0.3,
+ *                      restitution:1,
+ * 						link_stiffness:0.3,
+ * 						link_length:100,
+ * 						link_source:"origin"
+ * 					}
+ * 				}
+ * 			}
+ * 		}
  * 
  */
 
@@ -64673,153 +65110,219 @@ var PhysicsJSPendulum = function () {
 
 		_classCallCheck(this, PhysicsJSPendulum);
 
+		// console.log(context + ':constructor')
+
 		this.is_physicsjs_shapes_pendulum = true;
 
 		this._color = arg_color; // '#f06'
 		this._world = arg_world;
+
+		// this._shapes = undefined
+		this._config = undefined;
+		this._pendulum_length = 0;
+
+		this._factory = new _factory2.default(this._world);
+
+		this._load(arg_config);
 	}
 
 	_createClass(PhysicsJSPendulum, [{
-		key: 'draw',
-		value: function draw() {
+		key: "_load",
+		value: function _load(arg_config) {
 			var _this = this;
 
-			console.log(context + ':draw');
+			// console.log(context + ':_load:config=', arg_config)
 
-			// const pos_h = this.pos_h()
-			// const pos_v = this.pos_v()
-			// const diameter_h = this.domain_h().range_to_screen(2 * this._radius)
-			// const diameter_v = this.domain_v().range_to_screen(2 * this._radius)
-			// const diameter = Math.min(diameter_h, diameter_v)
+			// CHECK CONFIG
+			if (!_types2.default.isObject(arg_config) || !_types2.default.isObject(arg_config.state)) {
+				console.error(context + ':_load:bad config object');
+				return;
+			}
 
-			// this._shape = this.space().svg()
-			// .circle(diameter)
-			// .move(pos_h, pos_v)
-			// // .fill('none')
+			// this._shapes = {}
+			this._config = {
+				origin: undefined,
+				shapes: {},
+				links: []
+			};
+			var origin = _types2.default.isObject(arg_config.state.origin) ? _lodash2.default.cloneDeep(arg_config.state.origin) : undefined;
+			var shapes = _types2.default.isObject(arg_config.state.shapes) ? _lodash2.default.cloneDeep(arg_config.state.shapes) : undefined;
 
-			// if (this._color)
-			// {
-			// 	this._shape.fill(this._color)
-			// }
+			this._config.origin = origin;
+			this._load_shape(origin, 'origin');
 
-			var anchor_ball1 = 150;
-			var ball1_ball2 = 150;
-			var colors = ['#b58900', '#cb4b16', '#dc322f', '#d33682', '#6c71c4', '#268bd2', '#2aa198', '#859900'];
-			var rigidConstraints = window.Physics.behavior('verlet-constraints', {
+			var shapes_count = 0;
+			_lodash2.default.forEach(shapes, function (shape, shape_name) {
+				if (_this._load_shape(shape, shape_name)) {
+					shapes_count++;
+				}
+			});
+			(0, _assert2.default)(shapes_count > 0, context + ':_load:no loaded shape');
+
+			this._load_links();
+		}
+	}, {
+		key: "_load_shape",
+		value: function _load_shape(arg_shape_config, arg_shape_name) {
+			console.log(context + ':_load_shape:name=%s config=%o', arg_shape_name, arg_shape_config);
+
+			(0, _assert2.default)(_types2.default.isObject(arg_shape_config), context + ':_load_shape: bad shape config');
+			(0, _assert2.default)(_types2.default.isNotEmptyString(arg_shape_name), context + ':_load_shape: bad shape name');
+
+			var config = arg_shape_config ? _lodash2.default.merge({}, default_pendant, arg_shape_config) : _lodash2.default.cloneDeep(default_pendant);
+			console.log(context + ':_load_shape:name=%s merged=%o', arg_shape_name, config);
+
+			(0, _assert2.default)(_types2.default.isNotEmptyString(config.type), context + ':_load_shape: bad type');
+
+			(0, _assert2.default)(_types2.default.isObject(config.position), context + ':_load_shape: bad position');
+			(0, _assert2.default)(_types2.default.isNumber(config.position.x), context + ':_load_shape: bad position.x');
+			(0, _assert2.default)(_types2.default.isNumber(config.position.y), context + ':_load_shape: bad position.y');
+
+			(0, _assert2.default)(_types2.default.isObject(config.velocity), context + ':_load_shape: bad velocity');
+			(0, _assert2.default)(_types2.default.isNumber(config.velocity.vx), context + ':_load_shape: bad velocity.vx');
+			(0, _assert2.default)(_types2.default.isNumber(config.velocity.vy), context + ':_load_shape: bad velocity.vy');
+
+			(0, _assert2.default)(_types2.default.isBoolean(config.is_static), context + ':_load_shape: bad is_static');
+
+			// assert( T.isNotEmptyString(config.line_color), context + ':_load_shape: bad line color')
+			// assert( T.isNotEmptyString(config.fill_color), context + ':_load_shape: bad fill color')
+			(0, _assert2.default)(_types2.default.isNumber(config.line_width), context + ':_load_shape: bad line width');
+
+			(0, _assert2.default)(_types2.default.isObject(config.style), context + ':_load_shape: bad style');
+			(0, _assert2.default)(_types2.default.isNumber(config.mass), context + ':_load_shape: bad mass');
+			(0, _assert2.default)(_types2.default.isNumber(config.friction), context + ':_load_shape: bad friction');
+			(0, _assert2.default)(_types2.default.isNumber(config.restitution), context + ':_load_shape: bad restitution');
+
+			// assert( T.isNumber(config.link_length),    context + ':_load_shape: bad link length')
+			// assert( T.isNumber(config.link_stiffness), context + ':_load_shape: bad link stiffness')
+			// assert( T.isNotEmptyString(config.link_source),  context + ':_load_shape: bad linked source')
+
+			config.style.fillStyle = _types2.default.isNotEmptyString(config.fill_color) ? arg_shape_config.fill_color : false;
+			config.style.strokeStyle = _types2.default.isNotEmptyString(config.line_color) ? arg_shape_config.line_color : false;
+			config.style.lineWidth = arg_shape_config.line_width;
+
+			config.name = arg_shape_name;
+			this._config.shapes[arg_shape_name] = config;
+			this.create(config);
+
+			if (_types2.default.isNumber(config.link_length) && _types2.default.isNumber(config.link_stiffness) && _types2.default.isNotEmptyString(config.link_source)) {
+				this._config.links.push([config.link_source, arg_shape_name, config.link_stiffness, config.link_length]);
+			}
+
+			return true;
+		}
+	}, {
+		key: "_load_links",
+		value: function _load_links() {
+			var _this2 = this;
+
+			// console.log(context + ':_load_links')
+
+			var verlet_constraints_config = {
 				iterations: 1
-			});
+			};
+			this._rigid_constraints = window.Physics.behavior('verlet-constraints', verlet_constraints_config);
 
-			this._covered_points = [];
-			// this._covered_points.push( { x:450, y:50} )
+			this._config._sources = {};
+			_lodash2.default.forEach(this._config.links, function (link_record) {
+				// console.log(context + ':_load_links:record=', link_record)
 
-
-			var anchor = window.Physics.body('circle', {
-				// BODY
-				// is the body hidden (not to be rendered)?
-				hidden: false,
-				x: 400, // x-coordinate
-				y: 320, // y-coordinate
-				vx: 0, // velocity in x-direction
-				vy: 0, // velocity in y-direction
-				// is the body `dynamic`, `kinematic` or `static`?
-				// http://www.box2d.org/manual.html#_Toc258082973
-				treatment: 'static',
-				mass: 1.0,
-				// body restitution. How "bouncy" is it?
-				restitution: 1.0,
-				// what is its coefficient of friction with another surface with COF = 1? (default=0.8)
-				cof: 0.1,
-				// what is the view object (mixed) that should be used when rendering?
-				view: null,
-				// the vector offsetting the geometry from its center of mass
-				offset: Physics.vector(0, 0),
-				// CIRCLE
-				radius: 5
-			});
-			this._world.add(anchor);
-
-			var perimeter = window.Physics.body('circle', {
-				// BODY
-				// is the body hidden (not to be rendered)?
-				hidden: false,
-				x: anchor.state.pos.x, // x-coordinate
-				y: anchor.state.pos.y, // y-coordinate
-				vx: 0, // velocity in x-direction
-				vy: 0, // velocity in y-direction
-				// is the body `dynamic`, `kinematic` or `static`?
-				// http://www.box2d.org/manual.html#_Toc258082973
-				treatment: 'static',
-				mass: 1.0,
-				// body restitution. How "bouncy" is it?
-				restitution: 1.0,
-				// what is its coefficient of friction with another surface with COF = 1? (default=0.8)
-				cof: 0.1,
-				// what is the view object (mixed) that should be used when rendering?
-				view: null,
-				// the vector offsetting the geometry from its center of mass
-				offset: Physics.vector(0, 0),
-				// CIRCLE
-				radius: anchor_ball1 + ball1_ball2,
-				styles: {
-					fillStyle: colors[5],
-					angleIndicator: false
+				if (!_types2.default.isArray(link_record) || link_record.length != 4) {
+					return;
 				}
+				var source_name = link_record[0];
+				var target_name = link_record[1];
+				var stiffness = link_record[2];
+				var length = link_record[3];
+
+				var source = _this2.get(source_name);
+				var target = _this2.get(target_name);
+				(0, _assert2.default)(_types2.default.isObject(source), context + ':_load_links: bad source for name [' + source_name + ']');
+				(0, _assert2.default)(_types2.default.isObject(target), context + ':_load_links: bad target for name [' + target_name + ']');
+
+				_this2._config._sources[target_name] = source_name;
+
+				_this2._rigid_constraints.distanceConstraint(source, target, stiffness, length);
+				_this2._world.add(_this2._rigid_constraints);
 			});
-			this._world.add(perimeter);
+		}
+	}, {
+		key: "get",
+		value: function get(arg_shape_name) {
+			return this._factory.get(arg_shape_name);
+			// return this._shapes[arg_shape_name]
+		}
 
-			var ball1 = window.Physics.body('circle', {
-				cof: 0.2,
-				x: anchor.state.pos.x, // x-coordinate
-				y: anchor.state.pos.y + anchor_ball1, // y-coordinate
-				vx: 0.2, // velocity in x-direction
-				vy: 0.01, // velocity in y-direction
-				radius: 20,
-				styles: {
-					fillStyle: colors[0],
-					angleIndicator: false
-				}
-			});
-			this._world.add(ball1);
+		/**
+   * origin->A->B->C
+   * 
+   */
 
-			rigidConstraints.distanceConstraint(anchor, ball1, 0.3, anchor_ball1);
-			this._world.add(rigidConstraints);
+	}, {
+		key: "get_length",
+		value: function get_length(arg_src_name, arg_dest_name) {
+			// console.log(context + ':get_length:src=%s dst=%s length=%d', arg_src_name, arg_dest_name, 0)
 
-			var ball2 = window.Physics.body('circle', {
-				cof: 0.2,
-				x: anchor.state.pos.x + ball1_ball2, // x-coordinate
-				y: anchor.state.pos.y + anchor_ball1 + ball1_ball2 / 2, // y-coordinate
-				vx: 0.2, // velocity in x-direction
-				vy: 0.01, // velocity in y-direction
-				radius: 20,
-				styles: {
-					fillStyle: colors[1],
-					angleIndicator: false //  r === 30 ? 'rgba(0,0,0,0.6)' : 
-				}
-			});
-			this._world.add(ball2);
+			if (arg_src_name == arg_dest_name) {
+				return 0;
+			}
 
-			rigidConstraints.distanceConstraint(ball1, ball2, 0.3, ball1_ball2);
-			this._world.add(rigidConstraints);
+			var accumulator = 0;
+			var dest_name = arg_dest_name;
+			var dest_src_name = this._config._sources[dest_name];
 
-			var gravity = window.Physics.behavior('constant-acceleration', {
-				acc: { x: 0, y: 0.0004 } // this is the default
-			});
-			this._world.add(gravity);
+			// console.log(context + ':get_length:dst=%s dst src=%s', dest_name, dest_src_name)
 
-			// later... flip the world upside down!
-			// gravity.setAcceleration({ x: 0, y: -0.0004 });
+			while (dest_src_name && dest_name != dest_src_name) {
+
+				var src = this._config.shapes[dest_name];
+				// console.log(context + ':get_length:dst src=%o', src)
+
+				var length = src && src.link_length ? src.link_length : 0;
+				accumulator += length;
+
+				dest_name = dest_src_name;
+				dest_src_name = this._config._sources[dest_src_name];
+				// console.log(context + ':get_length:dst=%s dst src=%s length=%d', dest_name, dest_src_name, accumulator)
+			}
+
+			// console.log(context + ':get_length:src=%s dst=%s length=%d', arg_src_name, arg_dest_name, accumulator)
+			return accumulator;
+		}
+	}, {
+		key: "create",
+		value: function create(arg_shape_config) {
+			return this._factory.create(arg_shape_config);
+		}
+	}, {
+		key: "draw",
+		value: function draw() {
+			var _this3 = this;
 
 			var self = this;
+			// console.log(context + ':draw:enter')
+
+
 			var style = {
 				fillStyle: false,
-				strokeStyle: colors[3],
+				strokeStyle: '#dc322f',
 				lineWidth: 1,
 				globalAlpha: 1,
 				angleIndicator: false
 			};
+
+			var origin_name = 'origin'; // TODO
+			var target_name = 'ball1'; // TODO
+			var anchor = this.get(origin_name);
+			var target = this.get(target_name);
+
+			this._covered_points = [];
+			self._pendulum_length = this.get_length(origin_name, target_name);
+
 			var on_render_fn = function on_render_fn(data) {
 				// console.log('on_render_fn', data)
-				var constraints = rigidConstraints.getConstraints().distanceConstraints;
+
+				var constraints = self._rigid_constraints.getConstraints().distanceConstraints;
 				var c = undefined;
 
 				for (var i = 0, l = constraints.length; i < l; ++i) {
@@ -64828,16 +65331,16 @@ var PhysicsJSPendulum = function () {
 					self._world._renderer.drawLine(c.bodyA.state.pos, c.bodyB.state.pos, 'rgba(100, 100, 100, 0.5)');
 				}
 
-				// DRAW BALL 2 PATH
-				if (anchor.state.pos.dist(ball2.state.pos) <= anchor_ball1 + ball1_ball2 + 5) {
-					_this._covered_points.push({ x: ball2.state.pos.x, y: ball2.state.pos.y });
+				// DRAW BALLS PATH
+				if (anchor.state.pos.dist(target.state.pos) <= self._pendulum_length + 5) {
+					_this3._covered_points.push({ x: target.state.pos.x, y: target.state.pos.y });
 				}
 
+				// DRAW HISTORY PATH
 				// console.log('on_render_fn points=', this._covered_points)
-				// self._world._renderer.drawPolygon(this._covered_points, style)
-				var prev_pos = _this._covered_points[0];
-				for (var p = 1; p < _this._covered_points.length; p++) {
-					var pos = _this._covered_points[p];
+				var prev_pos = _this3._covered_points[0];
+				for (var p = 1; p < _this3._covered_points.length; p++) {
+					var pos = _this3._covered_points[p];
 					self._world._renderer.drawLine(prev_pos, pos, style);
 					prev_pos = pos;
 				}
@@ -64845,26 +65348,55 @@ var PhysicsJSPendulum = function () {
 			var on_render_scratch_fn = function on_render_scratch_fn(scratch, data) {
 				// console.log('on_render_scratch_fn', data)
 				on_render_fn(data);
-				// scratch.done()
 			};
 			this._world.on('render', Physics.scratchpad(on_render_scratch_fn));
 			// this._world.on('render', on_render_fn)
 
 			this._world.on({
+				// 'interact:grab': function(arg_pos) {
+				// 	// BUTTONS
+				// 	if (arg_pos.x < 100 && arg_pos.y < 30)
+				// 	{
+				// 		console.log('grab on buttons')
+				// 		return false
+				// 	}
+				// },
+				// 'interact:move': function(arg_pos) {
+				// 	// BUTTONS
+				// 	if (arg_pos.x < 100 && arg_pos.y < 30)
+				// 	{
+				// 		console.log('move on buttons')
+				// 		return false
+				// 	}
+				// },
 				'interact:poke': function interactPoke(arg_pos) {
-					var pos_vector = new window.Physics.vector(arg_pos.x, arg_pos.y);
-					if (anchor.state.pos.dist(pos_vector) > anchor_ball1 + ball1_ball2) {
-						var angle = pos_vector.angle(anchor.state.pos);
-						console.log('interact:angle=%d', angle, angle);
-						pos_vector.x = anchor.state.pos.x + Math.cos(angle) * (anchor_ball1 + ball1_ball2);
-						pos_vector.y = anchor.state.pos.y + Math.sin(angle) * (anchor_ball1 + ball1_ball2);
+					// BUTTONS
+					if (arg_pos.x < 100 && arg_pos.y < 30) {
+						// console.log('poke on buttons')
+						return false;
 					}
-					ball2.state.pos = pos_vector;
-					self._covered_points = [{ x: ball2.state.pos.x, y: ball2.state.pos.y }];
+					var pos_vector = new window.Physics.vector(arg_pos.x, arg_pos.y);
+					if (anchor.state.pos.dist(pos_vector) > self._pendulum_length) {
+						var angle = pos_vector.angle(anchor.state.pos);
+						// console.log('interact:angle=%d', angle, angle)
+
+						pos_vector.x = anchor.state.pos.x + Math.cos(angle) * self._pendulum_length;
+						pos_vector.y = anchor.state.pos.y + Math.sin(angle) * self._pendulum_length;
+					}
+					target.state.pos = pos_vector;
+					self._covered_points = [{ x: target.state.pos.x, y: target.state.pos.y }];
+					// },
+					// 'interact:release': function(arg_pos) {
+					// 	// BUTTONS
+					// 	if (arg_pos.x < 100 && arg_pos.y < 30)
+					// 	{
+					// 		console.log('release on buttons')
+					// 		return false
+					// 	}
 				}
 			});
 
-			return this;
+			// console.log(context + ':draw:leave')
 		}
 	}]);
 
@@ -64874,7 +65406,7 @@ var PhysicsJSPendulum = function () {
 exports.default = PhysicsJSPendulum;
 
 
-},{"devapt-core-common/dist/js/utils/types":103}],512:[function(require,module,exports){
+},{"./factory":510,"assert":525,"devapt-core-common/dist/js/utils/types":103,"lodash":541}],512:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

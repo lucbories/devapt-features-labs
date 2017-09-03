@@ -1,7 +1,7 @@
 {
 	"templates":{
 		"views":{
-			"labs_pendulum_two_template":{
+			"labs_pendulum_any_template":{
 				"type":"canvas_physicsjs",
 				"rendering":"canvas",
 				"settings":{},
@@ -29,13 +29,296 @@
 								"step":1
 							}
 						],
-						"projection":{}
+						"projection":{},
+						"gravity":"earth",
+						"pixels_per_meter":278
 					},
 					"scene":{
-						"item pendulum":[{ "type": "pendulum" }]
+						"pendulum A":[
+							{
+								"type": "pendulum",
+								"state":{
+									"origin":{
+										"type":"circle",
+										"position":{
+											"x":400,
+											"y":320
+										},
+										"velocity":{
+											"vx":0,
+											"vy":0
+										},
+										"radius":5,
+										"is_static":true,
+										"line_color":"#d33682",
+										"line_width":1,
+										"fill_color":"#d33682",
+										"mass":1,
+										"restitution":1,
+										"friction":0.3,
+										"style":{
+											"angleIndicator": false
+										}
+									},
+									"shapes":{
+										"ball1":{
+											"type":"circle",
+											"position":{
+												"x":500,
+												"y":320
+											},
+											"velocity":{
+												"vx":0,
+												"vy":0
+											},
+											"radius":20,
+											"is_static":false,
+											"line_color":"#b58900",
+											"line_width":1,
+											"fill_color":"#b58900",
+											"style":{
+												"angleIndicator": false
+											},
+											"mass":1,
+											"restitution":1,
+											"friction":0.3,
+											"link_stiffness":0.3,
+											"link_length":100,
+											"link_source":"origin"
+										}
+									}
+								}
+							}
+						]
+					},
+					"perimeter":{
+						"type":"circle",
+						"position":{
+							"x":400,
+							"y":320
+						},
+						"velocity":{
+							"vx":0,
+							"vy":0
+						},
+						"radius":100,
+						"is_static":true,
+						"line_color":"#268bd2",
+						"line_width":1,
+						"fill_color":false,
+						"style":{
+							"angleIndicator": false
+						},
+						"mass":1,
+						"restitution":1,
+						"friction":0.3
 					}
 				},
 				"children":{}
+			},
+			"labs_pendulum_one_template":{
+				"template":"labs_pendulum_any_template"
+			},
+			"labs_pendulum_two_template":{
+				"template":"labs_pendulum_any_template",
+				"state":{
+					"scene":{
+						"pendulum A":[
+							{
+								"type": "pendulum",
+								"state":{
+									"shapes":{
+										"ball2":{
+											"type":"rectangle",
+											"position":{
+												"x":570,
+												"y":320
+											},
+											"velocity":{
+												"vx":0,
+												"vy":0
+											},
+											"width":25,
+											"height":10,
+											"is_static":false,
+											"line_color":"#2aa198",
+											"line_width":1,
+											"fill_color":"#2aa198",
+											"style":{
+												"angleIndicator": false
+											},
+											"mass":0.7,
+											"restitution":1,
+											"friction":0.3,
+											"link_stiffness":0.3,
+											"link_length":70,
+											"link_source":"ball1"
+										}
+									}
+								}
+							}
+						]
+					}
+				}
+			},
+			"labs_pendulum_three_template":{
+				"template":"labs_pendulum_any_template",
+				"state":{
+					"scene":{
+						"pendulum A":[
+							{
+								"type": "pendulum",
+								"state":{
+									"shapes":{
+										"ball2":{
+											"type":"rectangle",
+											"position":{
+												"x":570,
+												"y":320
+											},
+											"velocity":{
+												"vx":0,
+												"vy":0
+											},
+											"width":25,
+											"height":10,
+											"is_static":false,
+											"line_color":"#2aa198",
+											"line_width":1,
+											"fill_color":"#2aa198",
+											"style":{
+												"angleIndicator": false
+											},
+											"mass":0.7,
+											"restitution":1,
+											"friction":0.3,
+											"link_stiffness":0.3,
+											"link_length":70,
+											"link_source":"ball1"
+										},
+										"ball3":{
+											"type":"circle",
+											"position":{
+												"x":610,
+												"y":320
+											},
+											"velocity":{
+												"vx":0,
+												"vy":0
+											},
+											"radius":10,
+											"is_static":false,
+											"line_color":"#859900",
+											"line_width":1,
+											"fill_color":"#859900",
+											"style":{
+												"angleIndicator": false
+											},
+											"mass":0.5,
+											"restitution":1,
+											"friction":0.3,
+											"link_stiffness":0.3,
+											"link_length":40,
+											"link_source":"ball2"
+										}
+									}
+								}
+							}
+						]
+					}
+				}
+			},
+			"labs_pendulum_four_template":{
+				"template":"labs_pendulum_any_template",
+				"state":{
+					"scene":{
+						"pendulum A":[
+							{
+								"type": "pendulum",
+								"state":{
+									"shapes":{
+										"ball2":{
+											"type":"rectangle",
+											"position":{
+												"x":570,
+												"y":320
+											},
+											"velocity":{
+												"vx":0,
+												"vy":0
+											},
+											"width":25,
+											"height":10,
+											"is_static":false,
+											"line_color":"#2aa198",
+											"line_width":1,
+											"fill_color":"#2aa198",
+											"style":{
+												"angleIndicator": false
+											},
+											"mass":0.7,
+											"restitution":1,
+											"friction":0.3,
+											"link_stiffness":0.3,
+											"link_length":70,
+											"link_source":"ball1"
+										},
+										"ball3":{
+											"type":"circle",
+											"position":{
+												"x":610,
+												"y":320
+											},
+											"velocity":{
+												"vx":0,
+												"vy":0
+											},
+											"radius":10,
+											"is_static":false,
+											"line_color":"#859900",
+											"line_width":1,
+											"fill_color":"#859900",
+											"style":{
+												"angleIndicator": false
+											},
+											"mass":0.5,
+											"restitution":1,
+											"friction":0.3,
+											"link_stiffness":0.3,
+											"link_length":40,
+											"link_source":"ball2"
+										},
+										"ball4":{
+											"type":"circle",
+											"position":{
+												"x":590,
+												"y":300
+											},
+											"velocity":{
+												"vx":0,
+												"vy":0
+											},
+											"radius":10,
+											"is_static":false,
+											"line_color":"#6c71c4",
+											"line_width":1,
+											"fill_color":"#6c71c4",
+											"style":{
+												"angleIndicator": false
+											},
+											"mass":0.25,
+											"restitution":1,
+											"friction":0.1,
+											"link_stiffness":0.5,
+											"link_length":50,
+											"link_source":"ball2"
+										}
+									}
+								}
+							}
+						]
+					}
+				}
 			}
 		}
 	}
