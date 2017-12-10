@@ -42,6 +42,7 @@ export default class CanvasPhysicsJS extends Canvas
 		this._world = undefined
 		this._factory = undefined
 		this._gravity = undefined
+		this._is_running = false
 
 		// this.enable_trace()
 	}
@@ -112,6 +113,11 @@ export default class CanvasPhysicsJS extends Canvas
 		)
 
 
+		// SAVE PARENT SIZE
+		let dom_parent = this.get_dom_parent()
+		// let parent_width  = dom_parent && dom_parent.getAttribute ? dom_parent.getAttribute('width') : 0
+		// let parent_height = dom_parent && dom_parent.getAttribute ? dom_parent.getAttribute('height') : 0
+
 		// CONFIGURE WORLD RENDERER
 		const cfg_styles = T.isNumber(arg_space.styles) ? arg_space.styles : {}
 
@@ -132,6 +138,41 @@ export default class CanvasPhysicsJS extends Canvas
 				this._world.render();
 			}
 		)
+
+
+		// RESIZE PARENT
+		// while (dom_parent && dom_parent.setAttribute)
+		// {
+		// 	const parent_width  = dom_parent && dom_parent.getAttribute ? dom_parent.getAttribute('width') : 0
+		// 	const parent_height = dom_parent && dom_parent.getAttribute ? dom_parent.getAttribute('height') : 0
+
+		// 	const old_style = dom_parent.getAttribute('style')
+
+		// 	let width  = 0
+		// 	if ( T.isNumber(parent_width) )
+		// 	{
+		// 		width = parent_width
+		// 	}
+		// 	else if ( T.isString(parent_width) && parent_width.endsWith('px') )
+		// 	{
+		// 		width = parent_width.left(parent_width.length - 2) + 0
+		// 	}
+		
+		// 	let height = 0
+		// 	if ( T.isNumber(parent_height) )
+		// 	{
+		// 		height = parent_height
+		// 	}
+		// 	else if ( T.isString(parent_height) && parent_height.endsWith('px') )
+		// 	{
+		// 		height = parent_height.left(parent_height.length - 2) + 0
+		// 	}
+			
+		// 	const new_style = old_style + ';width:' + (width + arg_width) + 'px;height:' + (height + arg_height) + 'px;'
+		// 	dom_parent.setAttribute('style', new_style)
+			
+		// 	dom_parent = dom_parent.parentNode
+		// }
 
 		// bounds of the window
 		const viewportBounds = window.Physics.aabb(0, 0, arg_width, arg_height)
@@ -290,7 +331,8 @@ export default class CanvasPhysicsJS extends Canvas
 		)
 
 		// start the ticker
-		window.Physics.util.ticker.start()
+		// window.Physics.util.ticker.start()
+		this.refresh_canvas()
 	}
 	
 
@@ -389,7 +431,7 @@ export default class CanvasPhysicsJS extends Canvas
 				{
 					arg_pos.body.state.pos.x = 70
 					arg_pos.body.state.pos.y = 10
-					console.log('grab on button reset')
+					// console.log('grab on button reset')
 					return
 				}
 				// return
@@ -405,7 +447,7 @@ export default class CanvasPhysicsJS extends Canvas
 					// BUTTONS
 					// if (arg_pos.x < 100 && arg_pos.y < 30)
 					// {
-						console.log('release on buttons')
+						// console.log('release on buttons')
 						if (arg_pos.body && arg_pos.body.uid == button_start.uid)
 						{
 							arg_pos.body.state.pos.x = 10
@@ -424,7 +466,7 @@ export default class CanvasPhysicsJS extends Canvas
 						{
 							arg_pos.body.state.pos.x = 70
 							arg_pos.body.state.pos.y = 10
-							console.log('release on button reset')
+							// console.log('release on button reset')
 							return
 						}
 					// }
@@ -444,6 +486,7 @@ export default class CanvasPhysicsJS extends Canvas
 	{
 		console.log(context + ':animation start')
 		window.Physics.util.ticker.start()
+		this._is_running = true
 	}
 	
 
@@ -457,5 +500,59 @@ export default class CanvasPhysicsJS extends Canvas
 	{
 		console.log(context + ':animation stop')
 		window.Physics.util.ticker.stop()
+		this._is_running = false
+	}
+	
+
+
+	/**
+	 * Redraw canvas content.
+	 * 
+	 * @returns {nothing}
+	 */
+	refresh_canvas()
+	{
+		if (! this._is_running)
+		{
+			this.start()
+			setTimeout(
+				()=>{ this.stop() },
+				50)
+		}
+	}
+
+
+
+	/**
+	 * Resize component.
+	 * 
+	 * @param {any} arg_width - css width value.
+	 * @param {any} arg_height - css height value.
+	 * 
+	 * @returns {nothing}
+	 */
+	resize(arg_width, arg_height)
+	{
+		console.log(context + ':resize:width=%s height:%s', arg_width, arg_height)
+
+		this._previous_width  = this._width
+		this._previous_heigth = this._height
+		this._width  = arg_width
+		this._height = arg_height
+
+		const dom_id = this.get_dom_id()
+		const element = document.getElementById(dom_id)
+		const ctx2d = element.getContext('2d')
+		
+		if ( T.isNumber(arg_width) && T.isNumber(arg_height) )
+		{
+			ctx2d.canvas.width  = arg_width
+			ctx2d.canvas.height = arg_height
+			
+			this.refresh_canvas()
+		}
+		
+		// ctx2d.canvas.width  = T.isNumber(arg_width) ? arg_width + 'px' : arg_width
+		// ctx2d.canvas.height = T.isNumber(arg_height) ? arg_height + 'px' : arg_height
 	}
 }

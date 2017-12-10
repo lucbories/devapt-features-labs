@@ -4,6 +4,9 @@
 // COMMON IMPORTS
 import T from 'devapt-core-common/dist/js/utils/types'
 
+// DEVAPT CORE BROWSER IMPORTS
+import WebWorker from 'devapt-core-browser/dist/js/base/web_worker'
+
 // BROWSER IMPORTS
 import Feature from 'devapt-core-browser/dist/js/base/feature'
 
@@ -21,6 +24,8 @@ const context = plugin_name + '/terminal_mathjs'
  * 
  * @example
  * 	API
+ * 		->eval(expression):Promise - evaluate a string expression.
+ * 
  * 		->get_name():string - get command name (INHERITED).
  * 		->get_type():string - get command type (INHERITED).
  * 		->get_settings():object - get instance type (INHERITED).
@@ -65,6 +70,73 @@ export default class TerminalFeature extends Feature
 		super(arg_runtime, arg_settings, log_context)
 		
 		this.is_terminal_feature = true
+
+		const worker_url = this.get_worker_url()
+		const name = this.get_name()
+		this._worker = undefined
+		if ( T.isNotEmptyString(worker_url) )
+		{
+			this._worker = new WebWorker(name + '_worker', worker_url)
+		}
+	}
+
+
+
+	/**
+	 * Evaluate a string expression.
+	 * 
+	 * @param {string} arg_expression - expression to evaluate.
+	 * 
+	 * @returns {Promise} - eval result promise of: { error:'', value:'' } on failure or { value:'' } on success.
+	 */
+	eval(arg_expression)
+	{
+		// EXECUTE WEB WORKER
+		if (this._worker)
+		{
+			const response_promise = this._worker.submit_request(arg_expression)
+			
+			return response_promise
+			.then(
+				(worker_result)=>{
+					console.log(context + ':eval:expression=[%s] worker_result=', arg_expression, worker_result)
+
+					const result_str = worker_result.str
+
+					console.log(context + ':eval:expression=[%s] result_str=', arg_expression, result_str)
+					return { value:result_str }
+				}
+			)
+			.catch(
+				(error)=>{
+					console.log(context + ':eval:expression=[%s] error=', arg_expression, error)
+					return error
+				}
+			)
+		}
+
+		
+		// EXECUTE METHOD
+		if (T.isNotEmptyString( this.get_func_name() ) && (this.get_func_name() in this) )
+		{
+			const method_name = this.get_func_name()
+
+			const fn_task = (resolve, reject)=>{
+				this[method_name](arg_expression, resolve, reject)
+			}
+
+			const task_promise = new Promise(fn_task)
+			.then(
+				(result)=>{ return { value:result ? result : 'done' } }
+			)
+			.catch(
+				(e)=>{ return { error:e, value:'error' } }
+			)
+
+			return task_promise
+		}
+
+		return Promise.reject('nothing to do')
 	}
 
 
@@ -78,11 +150,11 @@ export default class TerminalFeature extends Feature
 	{
 		let str = arg_url + '' // CONVERT TO STRING IF NEEDED
 
-		const app_name = this.get_runtime().get_session_credentials().get_app()
+		const app_name = this.get_runtime().get_session_credentials().get_application()
 		const feature_name = this.get_name()
 		const credentials = this.get_runtime().get_session_credentials()
 
-		str = str.replace('{{application}}', app_name).replace('{{plugin}}', plugin_name).replace('{{feature}}', feature_name)
+		str = str.replace('FEATURE_APP', app_name).replace('FEATURE_PLUGIN', plugin_name).replace('FEATURE_NAME', feature_name)
 		if (str.indexOf('{{assets_url}}') > -1)
 		{
 			str = str.replace('{{assets_url}}', '')
@@ -99,11 +171,23 @@ export default class TerminalFeature extends Feature
 	/**
 	 * Get feature aliases.
 	 * 
-	 * @returns {string}
+	 * @returns {array}
 	 */
 	get_aliases()
 	{
-		return ( T.isObject(this._settings) && T.isString(this._settings.aliases) ) ? this._expand_template_url(this._settings.aliases) : undefined
+		return ( T.isObject(this._settings) && T.isArray(this._settings.aliases) ) ? this._settings.aliases : []
+	}
+
+
+
+	/**
+	 * Get Worker instance.
+	 * 
+	 * @returns {object}
+	 */
+	get_worker()
+	{
+		return this._worker
 	}
 
 
@@ -151,7 +235,15 @@ export default class TerminalFeature extends Feature
 	 */
 	is_valid()
 	{
-		return super.is_valid()
-			&& (this.get_worker() || this.get_func_name())
+		// return super.is_valid()
+		// 	&& (this.get_worker() || this.get_func_name())
+		let b = true
+		b = b && T.isString( this.get_name() ) && this.get_name() != 'no name'
+		b = b && T.isString( this.get_type() ) && this.get_type() != 'no type'
+		b = b && T.isString( this.get_about() )
+		b = b && T.isString( this.get_help() )
+		b = b && T.isString( this.get_refdoc() )
+		b = b && ( T.isObject( this.get_worker() ) || T.isNotEmptyString( this.get_func_name() ) )
+		return b
 	}
 }

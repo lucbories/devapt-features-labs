@@ -22,6 +22,7 @@ import Workspace             from './base/components/workspace'
 
 // TERMINAL FEATURE
 import Terminal                from './js_features/terminal/components/terminal'
+import FeaturedTerminal        from './js_features/terminal/components/featured_terminal'
 import terminal_fn             from './js_features/terminal/rendering_functions/terminal'
 import terminal_workspace_fn   from './js_features/terminal/rendering_functions/terminal_workspace'
 
@@ -129,10 +130,10 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 
 		const dist_dir = __dirname + '/../../dist/'
 		this.add_public_asset('js', '/' + plugin_name + '/devapt-features-labs.js', path.join(dist_dir, 'devapt-features-labs.js') )
-		this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js',        path.join(dist_dir, 'js/workers',  'worker_mathjs.js') )
-		this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js.map',    path.join(dist_dir, 'js/workers',  'worker_mathjs.js.map') )
-		this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js',     path.join(dist_dir, 'js/workers',  'worker_algebrite.js') )
-		this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js.map', path.join(dist_dir, 'js/workers',  'worker_algebrite.js.map') )
+		this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js',        path.join(dist_dir, 'js/js_features/mathjs/workers',   'worker_mathjs.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js.map',    path.join(dist_dir, 'js/js_features/mathjs/workers',   'worker_mathjs.js.map') )
+		this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js',     path.join(dist_dir, 'js/js_features/algebrite/workers', 'worker_algebrite.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js.map', path.join(dist_dir, 'js/js_features/algebrite/workers', 'worker_algebrite.js.map') )
 		this.add_public_asset('js', '/' + plugin_name + '/mathjs_features.js',      path.join(dist_dir, 'mathjs_features.js') )
 		this.add_public_asset('js', '/' + plugin_name + '/mathjs_features.js.map',  path.join(dist_dir, 'mathjs_features.js.map') )
 
@@ -213,14 +214,34 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 			case 'workspace':				return new Workspace(arg_name, arg_settings, arg_state)
 			// case 'lab':						return new Lab(arg_name, arg_settings, arg_state)
 			case 'canvas':					return new Canvas(arg_name, arg_settings, arg_state)
+			
+			case 'canvas-svgjs':
 			case 'canvas_svgjs':			return new CanvasSvgJS(arg_name, arg_settings, arg_state)
+			
+			case 'canvas-physicsjs':
 			case 'canvas_physicsjs':		return new CanvasPhysicsJS(arg_name, arg_settings, arg_state)
+			
+			case 'canvas-matterjs':
 			case 'canvas_matterjs':			return new CanvasMatterJS(arg_name, arg_settings, arg_state)
+			
+			case 'math-pretty':
 			case 'math_pretty':				return new MathPretty(arg_name, arg_settings, arg_state)
+			
 			case 'terminal':				return new Terminal(arg_name, arg_settings, arg_state)
+			
+			case 'featured-terminal':
+			case 'featured_terminal':		return new FeaturedTerminal(arg_name, arg_settings, arg_state)
+			
+			case 'terminal-mathjs':
 			case 'terminal_mathjs':			return new TerminalMathJS(arg_name, arg_settings, arg_state)
+			
+			case 'terminal-mathjs-plot':
 			case 'terminal_mathjs_plot':	return new TerminalMathJSPlot(arg_name, arg_settings, arg_state)
+			
+			case 'terminal-algebrite':
 			case 'terminal_algebrite':		return new TerminalAlgebrite(arg_name, arg_settings, arg_state)
+			
+			case 'function-plot':
 			case 'function_plot':			return new FunctionPlot(arg_name, arg_settings, arg_state)
 		}
 		
@@ -247,14 +268,34 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 			// case 'lab':						return Lab
 			case 'workspace':				return Workspace
 			case 'canvas':					return Canvas
+
+			case 'canvas-svgjs':
 			case 'canvas_svgjs':			return CanvasSvgJS
+
+			case 'canvas-physicsjs':
 			case 'canvas_physicsjs':		return CanvasPhysicsJS
+
+			case 'canvas-matterjs':
 			case 'canvas_matterjs':			return CanvasMatterJS
+
+			case 'math-pretty':
 			case 'math_pretty':				return MathPretty
+
 			case 'terminal':				return Terminal
+
+			case 'featured-terminal':
+			case 'featured_terminal':		return FeaturedTerminal
+
+			case 'terminal-mathjs':
 			case 'terminal_mathjs':			return TerminalMathJS
+
+			case 'terminal-mathjs-plot':
 			case 'terminal_mathjs_plot':	return TerminalMathJSPlot
+
+			case 'terminal-algebrite':
 			case 'terminal_algebrite':		return TerminalAlgebrite
+
+			case 'function-plot':
 			case 'function_plot':			return FunctionPlot
 		}
 		
@@ -278,14 +319,24 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 			// case 'lab':
 			case 'workspace':
 			case 'canvas':
+			case 'canvas-svgjs':
 			case 'canvas_svgjs':
+			case 'canvas-physicsjs':
 			case 'canvas_physicsjs':
+			case 'canvas-matterjs':
 			case 'canvas_matterjs':
+			case 'math-pretty':
 			case 'math_pretty':
 			case 'terminal':
+			case 'featured-terminal':
+			case 'featured_terminal':
+			case 'terminal-mathjs':
 			case 'terminal_mathjs':
+			case 'terminal-mathjs_plot':
 			case 'terminal_mathjs_plot':
+			case 'terminal-algebrite':
 			case 'terminal_algebrite':
+			case 'function-plot':
 			case 'function_plot':
 				return true
 		}
@@ -314,6 +365,12 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 		{
 			case 'lab':						return lab_fn
 			case 'workspace':				return workspace_fn
+
+			case 'workspace-about':			return workspace_about_fn
+			case 'workspace-manuals':		return workspace_manuals_fn
+			case 'workspace-projects':		return workspace_projects_fn
+			case 'workspace-sources':		return workspace_sources_fn
+
 			case 'workspace_about':			return workspace_about_fn
 			case 'workspace_manuals':		return workspace_manuals_fn
 			case 'workspace_projects':		return workspace_projects_fn
@@ -321,8 +378,20 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 
 			case 'canvas':					return DefaultRenderingPlugin.find_rendering_function('canvas')
 
+			case 'math-pretty':				return DefaultRenderingPlugin.find_rendering_function('component')
 			case 'math_pretty':				return DefaultRenderingPlugin.find_rendering_function('component')
+			
 			case 'terminal':				return terminal_fn
+
+			case 'featured-terminal':
+			case 'featured_terminal':		return terminal_fn
+			
+			case 'terminal-algebrite':		return terminal_algebrite_fn
+			case 'terminal-mathjs':			return terminal_mathjs_fn
+			case 'terminal-mathjs_plot':	return terminal_mathjs_plot_fn
+			case 'function-plot':			return function_plot_fn
+			case 'terminal-workspace':		return terminal_workspace_fn
+
 			case 'terminal_algebrite':		return terminal_algebrite_fn
 			case 'terminal_mathjs':			return terminal_mathjs_fn
 			case 'terminal_mathjs_plot':	return terminal_mathjs_plot_fn

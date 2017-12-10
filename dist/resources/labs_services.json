@@ -6,22 +6,22 @@
 				{
 					"route":"/home",
 					"page_view":"labs_home_view",
-					"page_menubar":"labs_menubar"
+					"page_menubar":"labs_default_menubar"
 				},
 				{
 					"route":"/num_calculus",
 					"page_view":"labs_num_calculus_view",
-					"page_menubar":"labs_menubar"
+					"page_menubar":"labs_default_menubar"
 				},
 				{
 					"route":"/alg_calculus",
 					"page_view":"labs_alg_calculus_view",
-					"page_menubar":"labs_menubar"
+					"page_menubar":"labs_default_menubar"
 				},
 				{
 					"route":"/pendulum",
-					"page_view":"labs_pendulum_two_workspace",
-					"page_menubar":"labs_menubar"
+					"page_view":"labs_pendulum_workspace",
+					"page_menubar":"labs_default_menubar"
 				}
 			]
 		}

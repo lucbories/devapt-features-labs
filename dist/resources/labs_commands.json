@@ -3,7 +3,7 @@
 		"labs_display_home_cmd":{
 			"type":"display",
 			"url":"/home",
-			"view":"labs_home_view",
+			"view":"home_view",
 			"label":"Amazing Labs"
 		},
 		"labs_display_num_calculus_cmd":{
@@ -21,7 +21,7 @@
 		"labs_display_pendulum_cmd":{
 			"type":"display",
 			"url":"/pendulum",
-			"view":"labs_pendulum_two_workspace",
+			"view":"labs_pendulum_workspace",
 			"label":"Pendulum Lab"
 		},
 		"labs_display_car_cmd":{

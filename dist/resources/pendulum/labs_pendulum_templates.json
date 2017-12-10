@@ -147,7 +147,7 @@
 											"style":{
 												"angleIndicator": false
 											},
-											"mass":0.7,
+											"mass":1,
 											"restitution":1,
 											"friction":0.3,
 											"link_stiffness":0.3,
@@ -189,7 +189,7 @@
 											"style":{
 												"angleIndicator": false
 											},
-											"mass":0.7,
+											"mass":1,
 											"restitution":1,
 											"friction":0.3,
 											"link_stiffness":0.3,
@@ -214,7 +214,7 @@
 											"style":{
 												"angleIndicator": false
 											},
-											"mass":0.5,
+											"mass":1,
 											"restitution":1,
 											"friction":0.3,
 											"link_stiffness":0.3,
@@ -256,7 +256,7 @@
 											"style":{
 												"angleIndicator": false
 											},
-											"mass":0.7,
+											"mass":1,
 											"restitution":1,
 											"friction":0.3,
 											"link_stiffness":0.3,
@@ -281,7 +281,7 @@
 											"style":{
 												"angleIndicator": false
 											},
-											"mass":0.5,
+											"mass":1,
 											"restitution":1,
 											"friction":0.3,
 											"link_stiffness":0.3,
@@ -306,7 +306,7 @@
 											"style":{
 												"angleIndicator": false
 											},
-											"mass":0.25,
+											"mass":1,
 											"restitution":1,
 											"friction":0.1,
 											"link_stiffness":0.5,

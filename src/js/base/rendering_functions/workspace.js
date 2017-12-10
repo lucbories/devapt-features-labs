@@ -18,6 +18,8 @@ const context = plugin_name + '/rendering_function/workspace'
 const default_state = {
 	label:undefined,
 	
+	items:undefined, // MAIN WORKSPACE VIEWS
+
 	about:undefined,    // ABOUT (OPTIONAL)
 	features:undefined, // FEATURES LIST (OPTIONAL)
 	sources:undefined,  // SOURCES LIST (OPTIONAL)
@@ -30,8 +32,6 @@ const default_settings = {
 	class:undefined,
 	style:undefined,
 	id:undefined,
-
-	main_view:undefined, // MAIN WORKSPACE VIEW
 
 	about:undefined,    // ABOUT (OPTIONAL)
 	features:undefined, // FEATURES LIST (OPTIONAL)
@@ -75,7 +75,7 @@ export default (arg_settings={}, arg_state={}, arg_rendering_context, arg_render
 	const hbox = T.isFunction(rf_resolver) ? rf_resolver('hbox') : DefaultRenderingPlugin.find_rendering_function('hbox')
 
 	// GET SETTINGS ATTRIBUTES
-	const main_view = settings.main_view
+	const main_views = T.isArray(state.items) ? state.items : []
 
 	// GET STATE ATTRIBUTES
 	const label    = T.isNotEmptyString(state.label) ? state.label: undefined
@@ -123,17 +123,16 @@ export default (arg_settings={}, arg_state={}, arg_rendering_context, arg_render
 	right_descr.state = T.isObject(state.vbox_right) ? state.vbox_right : {}
 	right_descr.state.items = [about_descr, manuals_descr, sources_descr, projects_descr]
 
-	// DEBUG
-	console.log(context + ':main_view=', main_view)
-	console.log(context + ':right_descr=', right_descr)
-
 	// BUILD HBOX TAG
 	const hbox_main_settings = settings.hbox ? settings.hbox : {}
 	hbox_main_settings.id = settings.id + '_hbox'
 	hbox_main_settings.sizes = ['small-6 large-8', 'small-6 large-4']
 
 	const hbox_main_state = {}
-	hbox_main_state.items = [main_view, right_descr]
+	hbox_main_state.items = main_views.concat([right_descr])
+
+	// DEBUG
+	// console.log(context + ':hbox_main_state.items=', hbox_main_state.items)
 
 	hbox(hbox_main_settings, hbox_main_state, rendering_context, rendering_result)
 

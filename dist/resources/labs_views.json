@@ -1,3 +1,143 @@
 {
-	"views":{}
+	"views":{
+		"labs_home_view":{
+			"type":"hbox",
+			"state":{
+				"items":[
+					{ "view":"lab_middle" },
+					{ "view":"lab_right" }
+				]
+			},
+			"settings":{
+				"sizes":[
+					"small-6 large-8",
+					"small-6 large-4"
+				]
+			},
+			"children":{
+				"lab_middle":{
+					"type":"vbox",
+					"state":{
+						"items":[
+							{ "view":"lab_screens" },
+							{ "view":"lab_terminal" }
+						]
+					},
+					"children":{
+						"lab_screens":{
+							"type":"tabs",
+							"state":{
+								"items":[
+									{ "title":"0-Console", "content":"lab_screen_default_console" },
+									{ "title":"1-Canvas", "content":"lab_screen_default_canvas" }
+								]
+							},
+							"settings":{},
+							"children":{
+								"lab_screen_default_console":{
+									"type":"container",
+									"state":{},
+									"settings":{},
+									"children":{}
+								},
+								"lab_screen_default_canvas":{
+									"type":"canvas",
+									"state":{},
+									"settings":{},
+									"children":{}
+								}
+							}
+						},
+						"lab_terminal":{
+							"type":"featured-terminal",
+							"state":{
+								"prompt":"labs>",
+								"history_id":"lab_screen_default_console",
+								"features":[
+									{
+										"name":"mathjs",
+										"type":"math",
+										"worker_url":"/labs_assets/plugins/FEATURE_PLUGIN/worker_mathjs.js",
+										"about":"",
+										"help":"",
+										"refdoc":"",
+										"func_name":null,
+										"aliases":["num","mjs"]
+									},
+									{
+										"name":"algebrite",
+										"type":"math",
+										"worker_url":"/labs_assets/plugins/FEATURE_PLUGIN/worker_algebrite.js",
+										"about":"",
+										"help":"",
+										"refdoc":"",
+										"func_name":null,
+										"aliases":["alg"]
+									}
+								]
+							},
+							"settings":{
+							},
+							"children":{}
+						},
+						"lab_terminal2":{
+							"type":"terminal_mathjs",
+							"state":{
+								"prompt":"mathjs>",
+								"worker_url":"/labs_assets/plugins/Labs/worker_mathjs.js",
+								"lab_features":["MathJS"]
+							},
+							"settings":{},
+							"children":{}
+						}
+					}
+				},
+				"lab_right":{
+					"type":"vbox",
+					"state":{
+						"items":[
+							{ "view":"lab_about" },
+							{ "view":"lab_manual" },
+							{ "view":"lab_references" },
+							{ "view":"lab_context" }
+						]
+					},
+					"children":{
+						"lab_about":{
+							"type":"label",
+							"state":{
+								"label":"About"
+							},
+							"settings":{},
+							"children":{}
+						},
+						"lab_manual":{
+							"type":"label",
+							"state":{
+								"label":"Manual"
+							},
+							"settings":{},
+							"children":{}
+						},
+						"lab_references":{
+							"type":"label",
+							"state":{
+								"label":"Refs"
+							},
+							"settings":{},
+							"children":{}
+						},
+						"lab_context":{
+							"type":"label",
+							"state":{
+								"label":"Context"
+							},
+							"settings":{},
+							"children":{}
+						}
+					}
+				}
+			}
+		}
+	}
 }

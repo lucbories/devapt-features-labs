@@ -5,9 +5,6 @@ import _ from 'lodash'
 // DEVAPT CORE COMMON IMPORTS
 import T from 'devapt-core-common/dist/js/utils/types'
 
-// DEVAPT CORE BROWSER IMPORTS
-import WebWorker from 'devapt-core-browser/dist/js/base/web_worker'
-
 // PLUGIN IMPORTS
 import Terminal from './terminal'
 import TerminalFeature from './terminal_feature'
@@ -18,7 +15,7 @@ const context = plugin_name + '/featured_terminal'
 const LIMIT_SPACES_IN_EXPRESSION = 20
 
 
-export default class TerminalMathJS extends Terminal
+export default class FeaturedTerminal extends Terminal
 {
 	/**
 	 * Create an instance of TerminalMathJS.
@@ -42,9 +39,11 @@ export default class TerminalMathJS extends Terminal
 
 		this.is_featured_terminal = true
 		
+		this._workers = []
 		this._features = {}
 		this._aliases = {}
 		this._mode = undefined
+
 		this.load_features()
 
 		// this.enable_trace()
@@ -59,16 +58,20 @@ export default class TerminalMathJS extends Terminal
 	 */
 	load_features()
 	{
-		const features_config = this.get_setting_js('features', {})
+		const features_config = this.get_state_value('features', {})
 		const runtime = this.get_runtime()
+
+		console.log(context + ':load_features:features_config', features_config)
 
 		let assets = []
 		this._aliases = {}
 		_.forEach(features_config,
 			(feature_config, feature_key)=>{
 				const feature_name = feature_config && feature_config.name ? feature_config.name + '' : feature_key + ''
+				this.info('load feature:[' + feature_name + ']')
+
 				const log_context = context + ':load_features:terminal=[' + this.get_name() + ']:feature=[' + feature_name + ']'
-				const feature = new TerminalFeature(runtime, feature_name, log_context)
+				const feature = new TerminalFeature(runtime, feature_config, log_context)
 				if (! feature.is_valid())
 				{
 					console.error(log_context + ':feature is not valid')
@@ -97,7 +100,7 @@ export default class TerminalMathJS extends Terminal
 
 		// LOAD FEATURES ASSETS
 		const log_context = context + ':load_features:terminal=[' + this.get_name() + ']:loading assets'
-		const credentials = this._component._runtime.get_session_credentials()
+		const credentials = runtime.get_session_credentials()
 		const assets_urls = {
 			'js':[],
 			'css':[]
@@ -124,7 +127,7 @@ export default class TerminalMathJS extends Terminal
 
 		if ( T.isNotEmptyArray(assets_urls.js) )
 		{
-			this.get_runtime().ui_rendering().process_rendering_result_scripts_urls(document.body, assets_urls.js, credentials)
+			runtime.ui_rendering().process_rendering_result_scripts_urls(document.body, assets_urls.js, credentials)
 			_.forEach(assets_urls.js,
 				(asset)=>{
 					this.add_assets_dependancy(asset.id)
@@ -134,7 +137,7 @@ export default class TerminalMathJS extends Terminal
 
 		if ( T.isNotEmptyArray(assets_urls.css) )
 		{
-			this.get_runtime().ui_rendering().process_rendering_result_styles_urls(document.head, assets_urls.css, credentials)
+			runtime.ui_rendering().process_rendering_result_styles_urls(document.head, assets_urls.css, credentials)
 			_.forEach(assets_urls.css,
 				(asset)=>{
 					this.add_assets_dependancy(asset.id)
@@ -204,40 +207,6 @@ export default class TerminalMathJS extends Terminal
 		return this._mode
 	}
 
-	
-
-	/**
-	 * Process MathJS operations.
-	 * 
-	 * @param {string}   arg_expression - request expression.
-	 * @param {function} arg_resolve    - promise resolve callback.
-	 * @param {function} arg_reject     - promise reject callback.
-	 * 
-	 * @return {nothing|number|array|string|Promise}
-	 */
-	process_mathjs_request(arg_expression, arg_resolve, arg_reject)
-	{
-		const response_promise = this._worker.submit_request(arg_expression)
-		
-		return response_promise
-		.then(
-			(mathjs_result)=>{
-				console.log(context + ':eval:expression=[%s] mathjs_result=', arg_expression, mathjs_result)
-
-				const result_str = mathjs_result.str
-
-				console.log(context + ':eval:expression=[%s] result_str=', arg_expression, result_str)
-				arg_resolve(result_str)
-			}
-		)
-		.catch(
-			(error)=>{
-				console.log(context + ':eval:expression=[%s] error=', arg_expression, error)
-				arg_reject(error)
-			}
-		)
-	}
-
 
 
 	/**
@@ -250,59 +219,21 @@ export default class TerminalMathJS extends Terminal
 	eval(arg_expression)
 	{
 		const mode_expression = arg_expression + ''
-		const split_spaces = mode_expression.split('space', LIMIT_SPACES_IN_EXPRESSION)
+		const split_spaces = mode_expression.split(' ', LIMIT_SPACES_IN_EXPRESSION)
 		const switch_mode = split_spaces.length > 0 ? this.switch_mode(split_spaces[0]) : false
-		const expression = switch_mode ? split_spaces.slice(1).join(' ') : expression
+		const expression = switch_mode ? split_spaces.slice(1).join(' ') : arg_expression
 		const mode = this._get_mode()
 
 		const feature = (mode in this._features) ? this._features[mode] : undefined
 
 		if (! feature)
 		{
-			console.log(context + ':no feature found')
-			return
+			console.log(context + ':feature not found')
+			return Promise.reject('feature not found [' + arg_expression + '] with mode [' + mode + '] and expression ['+ expression + ']')
 		}
 
+		console.log('feature found [' + feature.get_name() + '] with mode [' + mode + '] and expression ['+ expression + ']')
 
-		
-		// SET MODE METHOD NAME
-		let method_name = undefined
-		switch(mode) {
-			case MODE_ALGEBRICAL:
-				method_name = 'process_algebrite_request'
-				break
-			case MODE_NUMERICAL:
-				method_name = 'process_mathjs_request'
-				break
-			case MODE_PLOT:
-			case MODE_PLOT2D:
-				// PROCESS 2D REQUEST (DOM OPERATIONS ARE FORBIDDEN INTO WEB WORKER)
-				method_name = 'process_plot2d_request'
-				break
-			case MODE_PLOT3D:
-				// PROCESS 3D REQUEST (DOM OPERATIONS ARE FORBIDDEN INTO WEB WORKER)
-				method_name = 'process_plot3d_request'
-				break
-			case MODE_PLOT4D:
-			case MODE_DRAW2D:
-			case MODE_DRAW3D:
-				break
-		}
-
-		// EXECUTE TASK
-		if (method_name && (method_name in this) )
-		{
-			const fn_task = (resolve, reject)=>{
-				this[method_name](arg_expression, resolve, reject)
-			}
-			const task_promise = new Promise(fn_task)
-			.then(
-				(result)=>{ return { value:result ? result : 'done' } }
-			)
-			.catch(
-				(e)=>{ return { error:e, value:'error' } }
-			)
-			return task_promise
-		}
+		return feature.eval(expression)
 	}
 }

@@ -60,7 +60,7 @@ export default class Canvas extends Component
 			}
 		)
 	}
-		
+	
 
 
 	/**
@@ -82,7 +82,7 @@ export default class Canvas extends Component
 		const dom_id = this.get_dom_id()
 		console.log(context + ':process:dom_id:', dom_id)
 
-		try{
+		try {
 			this.prepare_space(dom_id, width, height, arg_space, arg_scene)
 
 			// BUILD SCENE
@@ -127,6 +127,10 @@ export default class Canvas extends Component
 	prepare_space(arg_dom_id, arg_width, arg_height, arg_space, arg_scene)
 	{
 		console.log(context + ':prepare_space:dom id=%s width=%d height=%d, space, scene:', arg_dom_id, arg_width, arg_height, arg_space, arg_scene)
+		this._previous_width  = this._width
+		this._previous_heigth = this._height
+		this._width  = arg_width
+		this._height = arg_height
 	}
 	
 
@@ -177,5 +181,44 @@ export default class Canvas extends Component
 	stop()
 	{
 		console.log(context + ':animation stop')
+	}
+
+
+
+	/**
+	 * Resize component.
+	 * 
+	 * @returns {nothing}
+	 */
+	resize()
+	{
+		console.log(context + ':resize')
+		super.resize()
+	}
+
+
+
+	/**
+	 * Show component.
+	 * 
+	 * @returns {nothing}
+	 */
+	show()
+	{
+		console.log(context + ':show')
+		super.show()
+	}
+
+
+
+	/**
+	 * Hide component.
+	 * 
+	 * @returns {nothing}
+	 */
+	hide()
+	{
+		console.log(context + ':hide')
+		super.hide()
 	}
 }

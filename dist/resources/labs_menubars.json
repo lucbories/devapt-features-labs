@@ -1,6 +1,6 @@
 {
 	"menubars":{
-		"labs_menubar":{
+		"labs_default_menubar":{
 			"type":"Menubar",
 			
 			"state":{

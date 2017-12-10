@@ -409,22 +409,6 @@ export default class PhysicsJSPendulum
 
 		this._world.on(
 			{
-				// 'interact:grab': function(arg_pos) {
-				// 	// BUTTONS
-				// 	if (arg_pos.x < 100 && arg_pos.y < 30)
-				// 	{
-				// 		console.log('grab on buttons')
-				// 		return false
-				// 	}
-				// },
-				// 'interact:move': function(arg_pos) {
-				// 	// BUTTONS
-				// 	if (arg_pos.x < 100 && arg_pos.y < 30)
-				// 	{
-				// 		console.log('move on buttons')
-				// 		return false
-				// 	}
-				// },
 				'interact:poke': function(arg_pos) {
 					// BUTTONS
 					if (arg_pos.x < 100 && arg_pos.y < 30)
@@ -443,14 +427,6 @@ export default class PhysicsJSPendulum
 					}
 					target.state.pos = pos_vector
 					self._covered_points = [ { x:target.state.pos.x, y:target.state.pos.y } ]
-				// },
-				// 'interact:release': function(arg_pos) {
-				// 	// BUTTONS
-				// 	if (arg_pos.x < 100 && arg_pos.y < 30)
-				// 	{
-				// 		console.log('release on buttons')
-				// 		return false
-				// 	}
 				}
 			}
 		)

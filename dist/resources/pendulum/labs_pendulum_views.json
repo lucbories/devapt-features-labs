@@ -1,15 +1,151 @@
 {
 	"views":{
-		"labs_pendulum_two_view":{
-			"template":"labs_pendulum_two_template"
-		},
-		"labs_pendulum_two_workspace":{
-			"type":"workspace",
+		"labs_pendulum_dock_view":{
+			"type":"dock",
+			"rendering":"block_grid_dock",
 			"settings":{
-				"main_view":"labs_pendulum_two_view"
+				"small_size_count":1,
+				"medium_size_count":1,
+				"large_size_count":1,
+				"has_config":false,
+				"has_help":false,
+				"has_close":false
 			},
 			"state":{
-				"items":"labs_pendulum_two_view"
+				"label":"Main workspace",
+				"items":[
+					{ "view":"labs_pendulum_one_earth_view_dock_item" }
+				],
+				"old":["",
+					{ "view":"labs_pendulum_two_earth_view_item" },
+					{ "view":"labs_pendulum_three_earth_view_item" },
+					{ "view":"labs_pendulum_four_earth_view_item" }]
+			},
+			"children":{
+				"labs_pendulum_one_earth_view_dock_item":{
+					"type":"dock_item",
+					"rendering":"block_grid_dock_item",
+					"settings":{},
+					"state":{
+						"items":[ { "view":"labs_pendulum_one_earth_view_item" } ]
+					},
+					"children":{
+						"labs_pendulum_one_earth_view_item":{
+							"template":"labs_pendulum_one_template",
+							"settings":{},
+							"state":{
+								"space":{
+									"drawing":{
+										"horizontal":{
+											"pixels":200
+										},
+										"vertical":{
+											"pixels":200
+										}
+									},
+									"gravity":"earth",
+									"pixels_per_meter":278
+								}
+							}
+						}
+					}
+				}
+			},
+			"jkk":{
+				"labs_pendulum_two_earth_view_item":{
+					"type":"container",
+					"settings":{
+						"style":"padding-top:15px;width:220px;height:220px;"
+					},
+					"state":{
+						"items":[ { "view":"labs_pendulum_two_earth_view" } ]
+					},
+					"children":{
+						"labs_pendulum_two_earth_view":{
+							"template":"labs_pendulum_two_template",
+							"settings":{},
+							"state":{
+								"space":{
+									"drawing":{
+										"horizontal":{
+											"pixels":200
+										},
+										"vertical":{
+											"pixels":200
+										}
+									},
+									"gravity":"earth",
+									"pixels_per_meter":278
+								}
+							}
+						}
+					}
+				},
+				"labs_pendulum_three_earth_view_item":{
+					"type":"container",
+					"settings":{
+						"style":"padding-top:15px;width:220px;height:220px;"
+					},
+					"state":{
+						"items":[ { "view":"labs_pendulum_three_earth_view" } ]
+					},
+					"children":{
+						"labs_pendulum_three_earth_view":{
+							"template":"labs_pendulum_three_template",
+							"settings":{},
+							"state":{
+								"space":{
+									"drawing":{
+										"horizontal":{
+											"pixels":200
+										},
+										"vertical":{
+											"pixels":200
+										}
+									},
+									"gravity":"earth",
+									"pixels_per_meter":278
+								}
+							}
+						}
+					}
+				},
+				"labs_pendulum_four_earth_view_item":{
+					"type":"container",
+					"settings":{
+						"style":"padding-top:15px;width:220px;height:220px;"
+					},
+					"state":{
+						"items":[ { "view":"labs_pendulum_four_earth_view" } ]
+					},
+					"children":{
+						"labs_pendulum_four_earth_view":{
+							"template":"labs_pendulum_four_template",
+							"settings":{},
+							"state":{
+								"space":{
+									"drawing":{
+										"horizontal":{
+											"pixels":200
+										},
+										"vertical":{
+											"pixels":200
+										}
+									},
+									"gravity":"earth",
+									"pixels_per_meter":278
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"labs_pendulum_workspace":{
+			"type":"workspace",
+			"settings":{},
+			"state":{
+				"items":[ { "view": "labs_pendulum_dock_view" } ]
 			},
 			"children":{}
 		}
