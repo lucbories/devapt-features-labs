@@ -104,6 +104,7 @@ self.addEventListener('message',
 		}
 
 		var request = event.data
+		var request_str = null
 		var result_node = null
 		var result_str = null
 		var err = null
@@ -118,7 +119,8 @@ self.addEventListener('message',
 
 		try {
 			// GET RESULT NODE
-			node = self.math.parse( JSON.parse(request.data), scope)
+			request_str = JSON.parse(request.data) + ''
+			node = self.math.parse(request_str, scope)
 			code = node.compile()
 			result_node = code.eval(scope)
 
