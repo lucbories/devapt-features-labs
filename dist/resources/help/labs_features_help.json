@@ -1,0 +1,76 @@
+{
+	"features":{
+		"help":{
+			"type":"terminal",
+			"worker_url":null,
+			"about":"",
+			"help":"",
+			"refdoc":"",
+			"func_name":"func_help",
+			"aliases":["h"],
+			"assets":[
+				{ "id":"js-features-help", "type":"js", "url":"plugins/Labs/func_help.js" }
+			],
+			"commands":{
+				"list":{
+					"usage":"list",
+					"description":"get a list of all available features.",
+					"operands":[],
+					"returns":"array",
+					"examples":[
+						{
+							"command":"list",
+							"result":"mathjs,algebrite"
+						}
+					]
+				},
+				"?":{
+					"usage":"? [feature name] [command name]",
+					"description":"display features usages or feature help or feature command help.",
+					"operands":[
+						{
+							"name":"feature name",
+							"type":"string",
+							"required":false
+						},
+						{
+							"name":"command name",
+							"type":"string",
+							"required":false
+						}
+					],
+					"returns":"string",
+					"examples":[
+						{
+							"command":"?",
+							"result":"[list]: usage:...",
+							"description":"display all help commands usages"
+						},
+						{
+							"command":"? algebrite",
+							"result":"[nroots         ]: usage:nroots(expression)",
+							"description":"display all commands usages of given feature"
+						},
+						{
+							"command":"? algebrite nroots",
+							"result":"show command [nroots]\\ndomain: algebric/nroots\\nusage: nroots(expression)\\ndescription: \\noperands: ...\\nreturns: expression\\nexamples: ",
+							"description":"display given command of given feature content"
+						}
+					]
+				},
+				"aliases":{
+					"usage":"aliases [feature name]",
+					"description":"get a list of all available aliases of given feature.",
+					"operands":[
+						{
+							"name":"feature name",
+							"type":"string",
+							"required":false
+						}
+					],
+					"returns":"array"
+				}
+			}
+		}
+	}
+}

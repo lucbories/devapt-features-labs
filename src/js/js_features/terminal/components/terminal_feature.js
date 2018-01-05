@@ -1,5 +1,5 @@
 // NPM IMPORTS
-// import assert from 'assert'
+import path from 'path'
 
 // COMMON IMPORTS
 import T from 'devapt-core-common/dist/js/utils/types'
@@ -12,7 +12,7 @@ import Feature from 'devapt-core-browser/dist/js/base/feature'
 
 
 const plugin_name = 'Labs' 
-const context = plugin_name + '/terminal_mathjs'
+const context = plugin_name + '/terminal_feature'
 
 
 
@@ -24,8 +24,11 @@ const context = plugin_name + '/terminal_mathjs'
  * 
  * @example
  * 	API
- * 		->eval(expression):Promise - evaluate a string expression.
- * 
+ * 		->eval(expression):Promise - evaluate a string expression and returns
+ *           an object {
+ *               error:string : failure message,
+ *               value:string : success message
+ *           }
  * 		->get_name():string - get command name (INHERITED).
  * 		->get_type():string - get command type (INHERITED).
  * 		->get_settings():object - get instance type (INHERITED).
@@ -37,7 +40,7 @@ const context = plugin_name + '/terminal_mathjs'
  * 
  * 		->get_aliases():array - get feature aliases strings array.
  * 		->get_worker_url():string - get worker file url string.
- * 		->get_func_name():string - get processing function name.
+ * 		->get_func_name():string - get processing function file url string.
  * 		->get_assets():array - array of assets id strings or assets definition (id, url) objects.
  */
 export default class TerminalFeature extends Feature
@@ -72,11 +75,23 @@ export default class TerminalFeature extends Feature
 		this.is_terminal_feature = true
 
 		const worker_url = this.get_worker_url()
+		const func_name = this.get_func_name()
 		const name = this.get_name()
+
+		this._request_counter = 0
 		this._worker = undefined
+		this._func_name = undefined
+		this._terminal = arg_settings.terminal
+		this._commands_names = arg_settings.commands ? Object.keys(arg_settings.commands) : [] 
+
 		if ( T.isNotEmptyString(worker_url) )
 		{
 			this._worker = new WebWorker(name + '_worker', worker_url)
+		}
+
+		if ( T.isNotEmptyString(func_name) )
+		{
+			this._func_name = func_name
 		}
 	}
 
@@ -99,42 +114,59 @@ export default class TerminalFeature extends Feature
 			return response_promise
 			.then(
 				(worker_result)=>{
-					console.log(context + ':eval:expression=[%s] worker_result=', arg_expression, worker_result)
+					console.log(context + ':eval worker:expression=[%s] worker_result=', arg_expression, worker_result)
 
 					const result_str = worker_result.str
 
-					console.log(context + ':eval:expression=[%s] result_str=', arg_expression, result_str)
-					return { value:result_str }
+					console.log(context + ':eval worker:expression=[%s] result_str=', arg_expression, result_str)
+					return { str:result_str, value:worker_result.value, error:worker_result.error }
 				}
 			)
 			.catch(
-				(error)=>{
-					console.log(context + ':eval:expression=[%s] error=', arg_expression, error)
-					return error
+				(e)=>{
+					console.log(context + ':eval worker:expression=[%s] error=', arg_expression, e)
+					return { str:undefined, value:undefined, error:e.toString() }
 				}
 			)
 		}
 
 		
 		// EXECUTE METHOD
-		if (T.isNotEmptyString( this.get_func_name() ) && (this.get_func_name() in this) )
+		if (this._func_name && T.isObject(window.devapt().func_features) && T.isFunction( window.devapt().func_features[this._func_name] ) )
 		{
-			const method_name = this.get_func_name()
-
-			const fn_task = (resolve, reject)=>{
-				this[method_name](arg_expression, resolve, reject)
+			const func_cb = (resolve, reject)=>{
+				++this._request_counter
+				const result = window.devapt().func_features[this._func_name](this, { data:arg_expression, id:this._request_counter } )
+				if (result.error)
+				{
+					reject(result.error)
+					return
+				}
+				resolve(result)
 			}
 
-			const task_promise = new Promise(fn_task)
+			return new Promise(func_cb)
 			.then(
-				(result)=>{ return { value:result ? result : 'done' } }
+				(response)=>{
+					console.log(context + ':eval func:expression=[%s] response=', arg_expression, response)
+
+					const result = response.result ? response.result : { value:undefined, str:undefined, error:'no result in func response'}
+					let value_str = result.str
+					if (result.value && ! result.str)
+					{
+						value_str = result.value + ''
+					}
+					return { str:value_str, value:result.value, error:result.error }
+				}
 			)
 			.catch(
-				(e)=>{ return { error:e, value:'error' } }
+				(e)=>{
+					console.log(context + ':eval func:expression=[%s] error=', arg_expression, e)
+					return { error:e, str:'error', value:undefined }
+				}
 			)
-
-			return task_promise
 		}
+
 
 		return Promise.reject('nothing to do')
 	}
@@ -181,6 +213,18 @@ export default class TerminalFeature extends Feature
 
 
 	/**
+	 * Get feature terminal component instance.
+	 * 
+	 * @returns {Terminal}
+	 */
+	get_terminal()
+	{
+		return this._terminal
+	}
+
+
+
+	/**
 	 * Get Worker instance.
 	 * 
 	 * @returns {object}
@@ -211,7 +255,7 @@ export default class TerminalFeature extends Feature
 	 */
 	get_func_name()
 	{
-		return ( T.isObject(this._settings) && T.isString(this._settings.func_name) ) ? this._settings.func_name : undefined
+		return this._settings.func_name
 	}
 
 
@@ -223,7 +267,53 @@ export default class TerminalFeature extends Feature
 	 */
 	get_assets()
 	{
-		return ( T.isObject(this._settings) && T.isString(this._settings.assets) ) ? this._settings.assets : undefined
+		return ( T.isObject(this._settings) && T.isArray(this._settings.assets) ) ? this._settings.assets : undefined
+	}
+
+
+
+	/**
+	 * Get commands map.
+	 * 
+	 * @returns {object}
+	 */
+	get_commands()
+	{
+		return ( T.isObject(this._settings) && T.isObject(this._settings.commands) ) ? this._settings.commands : undefined
+	}
+
+
+
+	/**
+	 * Test command name.
+	 * 
+	 * @param {string} arg_name - command name.
+	 * 
+	 * @returns {boolean}
+	 */
+	has_command(arg_name)
+	{
+		return this._commands_names.indexOf(arg_name) > -1
+	}
+
+
+
+	/**
+	 * Get command object.
+	 * 
+	 * @param {string} arg_name - command name.
+	 * 
+	 * @returns {object}
+	 */
+	get_command(arg_name)
+	{
+		if ( T.isNotEmptyString(arg_name) && arg_name in this._settings.commands )
+		{
+			const cmd = this._settings.commands[arg_name]
+			cmd.name = arg_name
+			return cmd
+		}
+		return undefined
 	}
 
 
@@ -235,8 +325,6 @@ export default class TerminalFeature extends Feature
 	 */
 	is_valid()
 	{
-		// return super.is_valid()
-		// 	&& (this.get_worker() || this.get_func_name())
 		let b = true
 		b = b && T.isString( this.get_name() ) && this.get_name() != 'no name'
 		b = b && T.isString( this.get_type() ) && this.get_type() != 'no type'

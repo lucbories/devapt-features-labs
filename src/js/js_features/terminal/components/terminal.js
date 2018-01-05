@@ -76,11 +76,11 @@ export default class Terminal extends Component
 	 * 
 	 * @param {string} arg_expression - expression to evaluate.
 	 * 
-	 * @returns {Promise} - eval result promise of: { error:'', value:'' } on failure or { value:'' } on success.
+	 * @returns {Promise} - eval result promise of: { error:'...', value:'...' } on failure or { value:'...' } on success.
 	 */
 	eval(arg_expression)
 	{
-		return Promise.resolve( { value:arg_expression } )
+		return Promise.resolve( { value:arg_expression, error:undefined, str:undefined } )
 	}
 
 	
@@ -123,18 +123,19 @@ export default class Terminal extends Component
 				(result)=>{
 					if (result.error)
 					{
-						str_result = result.error + ' [' + result.value + ']'
+						str_result = result.error + ' [' + result.str + ']'
 						terminal_out_result_jqo.css('color', 'red')
 					}
 					else if (result.warning)
 					{
-						str_result = result.value + ' with warning [' + result.warning + ']'
+						str_result = result.str + ' with warning [' + result.warning + ']'
 						terminal_out_result_jqo.css('color', 'green')
 					}
 					else {
-						str_result = result.value
+						str_result = result.str
 						terminal_out_result_jqo.css('color', 'green')
 					}
+					str_result = str_result ? str_result : ''
 					terminal_out_result_jqo.text(str_result)
 
 					if (history_jqo)

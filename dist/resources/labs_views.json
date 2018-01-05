@@ -20,7 +20,8 @@
 					"state":{
 						"items":[
 							{ "view":"lab_screens" },
-							{ "view":"lab_terminal" }
+							{ "view":"lab_terminal" },
+							{ "view":"lab_screen_default_console" }
 						]
 					},
 					"children":{
@@ -28,21 +29,25 @@
 							"type":"tabs",
 							"state":{
 								"items":[
-									{ "title":"0-Console", "content":"lab_screen_default_console" },
 									{ "title":"1-Canvas", "content":"lab_screen_default_canvas" }
 								]
 							},
 							"settings":{},
 							"children":{
-								"lab_screen_default_console":{
-									"type":"container",
-									"state":{},
-									"settings":{},
-									"children":{}
-								},
 								"lab_screen_default_canvas":{
-									"type":"canvas",
-									"state":{},
+									"type":"container",
+									"state":{
+										"space":{
+											"drawing":{
+												"horizontal":{
+													"pixels":300
+												},
+												"vertical":{
+													"pixels":300
+												}
+											}
+										}
+									},
 									"settings":{},
 									"children":{}
 								}
@@ -53,41 +58,33 @@
 							"state":{
 								"prompt":"labs>",
 								"history_id":"lab_screen_default_console",
-								"features":[
-									{
-										"name":"mathjs",
-										"type":"math",
-										"worker_url":"/labs_assets/plugins/FEATURE_PLUGIN/worker_mathjs.js",
-										"about":"",
-										"help":"",
-										"refdoc":"",
-										"func_name":null,
-										"aliases":["num","mjs"]
-									},
-									{
-										"name":"algebrite",
-										"type":"math",
+								"canvas_id":"lab_screen_default_canvas",
+								"default_feature":"help",
+								"required_features":["help", "draw", "mathjs", "algebrite"],
+								"features":{
+									"algebrite2":{
+										"type":"terminal",
 										"worker_url":"/labs_assets/plugins/FEATURE_PLUGIN/worker_algebrite.js",
 										"about":"",
 										"help":"",
 										"refdoc":"",
 										"func_name":null,
-										"aliases":["alg"]
+										"aliases":["alg2"]
 									}
-								]
-							},
-							"settings":{
-							},
-							"children":{}
-						},
-						"lab_terminal2":{
-							"type":"terminal_mathjs",
-							"state":{
-								"prompt":"mathjs>",
-								"worker_url":"/labs_assets/plugins/Labs/worker_mathjs.js",
-								"lab_features":["MathJS"]
+								}
 							},
 							"settings":{},
+							"children":{}
+						},
+						"lab_screen_default_console":{
+							"type":"container",
+							"state":{},
+							"settings":{
+								"style":{
+									"max-height":"200px",
+									"overflow":"auto"
+								}
+							},
 							"children":{}
 						}
 					}

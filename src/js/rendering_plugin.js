@@ -50,6 +50,8 @@ import CanvasMatterJS          from './js_features/matterjs/components/canvas_ma
 
 // SVGJS FEATURE
 import CanvasSvgJS             from './js_features/svgjs/components/canvas_svgjs'
+import SvgFactory              from './js_features/svgjs/svg/factory'
+import SvgSpace                from './js_features/svgjs/svg/space'
 
 
 const plugin_name = 'Labs' 
@@ -75,8 +77,16 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 	{
 		super(arg_runtime, arg_manager, plugin_name, '1.0.0')
 
+
+		// const modules_dir = '../../node_modules'
+
+
 		// const assets_dir = '../../public/assets'
 		const bower_dir = '../../bower_components'
+
+		this.add_public_asset('js', '/' + plugin_name + '/jsep.js',              path.join(__dirname, bower_dir, 'jsep-0.3.3/jsep.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/jsep.min.js',          path.join(__dirname, bower_dir, 'jsep-0.3.3/jsep.min.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/jsep.min.js.map',      path.join(__dirname, bower_dir, 'jsep-0.3.3/jsep.min.js.map') )
 
 		this.add_public_asset('js', '/' + plugin_name + '/algebrite.js',          path.join(__dirname, bower_dir, 'Algebrite/dist/algebrite.bundle-for-browser.js') )
 		this.add_public_asset('js', '/' + plugin_name + '/crossfilter.js',        path.join(__dirname, bower_dir, 'crossfilter2/crossfilter.js') )
@@ -128,14 +138,31 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 		this.add_public_asset('js', '/' + plugin_name + '/devapt-browser.js',     path.join(__dirname, devapt_browser_dir, 'js/build/devapt-core-browser.js') )
 		this.add_public_asset('js', '/' + plugin_name + '/devapt-core-browser.js.map', path.join(__dirname, devapt_browser_dir, 'js/build/devapt-core-browser.js.map') )
 
+
 		const dist_dir = __dirname + '/../../dist/'
 		this.add_public_asset('js', '/' + plugin_name + '/devapt-features-labs.js', path.join(dist_dir, 'devapt-features-labs.js') )
-		this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js',        path.join(dist_dir, 'js/js_features/mathjs/workers',   'worker_mathjs.js') )
-		this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js.map',    path.join(dist_dir, 'js/js_features/mathjs/workers',   'worker_mathjs.js.map') )
-		this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js',     path.join(dist_dir, 'js/js_features/algebrite/workers', 'worker_algebrite.js') )
-		this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js.map', path.join(dist_dir, 'js/js_features/algebrite/workers', 'worker_algebrite.js.map') )
+
+		this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js',        path.join(dist_dir, 'js/js_features/mathjs/workers',    'worker_mathjs.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js.map',    path.join(dist_dir, 'js/js_features/mathjs/workers',    'worker_mathjs.js.map') )
+		
 		this.add_public_asset('js', '/' + plugin_name + '/mathjs_features.js',      path.join(dist_dir, 'mathjs_features.js') )
 		this.add_public_asset('js', '/' + plugin_name + '/mathjs_features.js.map',  path.join(dist_dir, 'mathjs_features.js.map') )
+
+		this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js',     path.join(dist_dir, 'js/js_features/algebrite/workers', 'worker_algebrite.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js.map', path.join(dist_dir, 'js/js_features/algebrite/workers', 'worker_algebrite.js.map') )
+
+		this.add_public_asset('js', '/' + plugin_name + '/func_help.js',            path.join(dist_dir, 'js/js_features/help',              'func_help.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/func_help.js.map',        path.join(dist_dir, 'js/js_features/help',              'func_help.js.map') )
+
+		this.add_public_asset('js', '/' + plugin_name + '/func_draw.js',            path.join(dist_dir, 'js/js_features/draw',              'func_draw.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/func_draw.js.map',        path.join(dist_dir, 'js/js_features/draw',              'func_draw.js.map') )
+		
+		this.add_public_asset('js', '/' + plugin_name + '/func_expression.js',      path.join(dist_dir, 'js/js_features/draw',              'func_expression.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/func_expression.js.map',  path.join(dist_dir, 'js/js_features/draw',              'func_expression.js.map') )
+		
+		// this.add_public_asset('js', '/' + plugin_name + '/svg_features.js',         path.join(dist_dir, 'js/js_features/svgjs/svg',              'svg_features.js') )
+		// this.add_public_asset('js', '/' + plugin_name + '/svg_features.js.map',     path.join(dist_dir, 'js/js_features/svgjs/svg',              'svg_features.js.map') )
+
 
 		const fonts = ['KaTeX_AMS-Regular',
 			'KaTeX_Caligraphic-Bold',
@@ -297,6 +324,9 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 
 			case 'function-plot':
 			case 'function_plot':			return FunctionPlot
+
+			case 'svgfactory':              return SvgFactory
+			case 'svgspace':                return SvgSpace
 		}
 		
 		// assert(false, context + ':get_class:bad class name')
@@ -338,6 +368,9 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 			case 'terminal_algebrite':
 			case 'function-plot':
 			case 'function_plot':
+
+			case 'svgfactory':
+			case 'svgspace':
 				return true
 		}
 		

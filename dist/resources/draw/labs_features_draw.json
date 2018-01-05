@@ -1,0 +1,339 @@
+{
+	"features":{
+		"draw":{
+			"type":"terminal",
+			"worker_url":null,
+			"about":"",
+			"help":"",
+			"refdoc":"",
+			"func_name":"func_draw",
+			"aliases":["dr"],
+			"assets":[
+				{ "id":"js-jsep", "type":"js", "url":"plugins/Labs/jsep.js" },
+				{ "id":"js-expr", "type":"js", "url":"plugins/Labs/func_expression.js" },
+				{ "id":"js-draw", "type":"js", "url":"plugins/Labs/func_draw.js" }
+			],
+			"commands":{
+				"*.move":{
+					"usage":"{shape}.move(x, y)",
+					"description":"move a shape.",
+					"operands":[
+						{
+							"name":"position X",
+							"type":"number"
+						},
+						{
+							"name":"position Y",
+							"type":"number"
+						}
+					],
+					"returns":"a shape object",
+					"examples":[
+						{
+							"command":"c1.move(45, 5)",
+							"result":"a shape is moved"
+						}
+					]
+				},
+				"*.x":{
+					"usage":"{shape}.x()",
+					"description":"move a shape.",
+					"operands":[],
+					"returns":"shape x position",
+					"examples":[
+						{
+							"command":"c1.x()",
+							"result":"45"
+						}
+					]
+				},
+				"*.y":{
+					"usage":"{shape}.y()",
+					"description":"move a shape.",
+					"operands":[],
+					"returns":"shape y position",
+					"examples":[
+						{
+							"command":"c1.y()",
+							"result":"35"
+						}
+					]
+				},
+				"*.pos_h":{
+					"usage":"{shape}.pos_h()",
+					"description":"get shape horizontal pixel coordonate.",
+					"operands":[],
+					"returns":"horizontal pixel coordonate",
+					"examples":[
+						{
+							"command":"c1.pos_h()",
+							"result":"145"
+						}
+					]
+				},
+				"*.pos_v":{
+					"usage":"{shape}.pos_v()",
+					"description":"get shape vertical pixel coordonate.",
+					"operands":[],
+					"returns":"vertical pixel coordonate",
+					"examples":[
+						{
+							"command":"c1.pos_v()",
+							"result":"135"
+						}
+					]
+				},
+				"circle":{
+					"usage":"circle(x0, y0, radius, color)",
+					"description":"draw a circle.",
+					"operands":[
+						{
+							"name":"position X",
+							"type":"number"
+						},
+						{
+							"name":"position Y",
+							"type":"number"
+						},
+						{
+							"name":"radius",
+							"type":"number"
+						},
+						{
+							"name":"color",
+							"type":"string",
+							"unit":"css value",
+							"required":false,
+							"default":"blue"
+						}
+					],
+					"returns":"an object Circle",
+					"examples":[
+						{
+							"command":"c1=circle(50, 50, 20)",
+							"result":"a circle is drawn"
+						}
+					]
+				},
+				"{circle}.point":{
+					"usage":"{circle}.point(angle, color, format, size)",
+					"description":"draw a circle.",
+					"operands":[
+						{
+							"name":"angle",
+							"type":"number",
+							"unit":"degree"
+						},
+						{
+							"name":"color",
+							"type":"string",
+							"unit":"css value",
+							"required":false,
+							"default":"blue"
+						},
+						{
+							"name":"format",
+							"type":"string",
+							"required":false,
+							"values":["cross", "xcross", "circle", "square", "disk"],
+							"default":"xcross"
+						},
+						{
+							"name":"size",
+							"type":"number",
+							"required":false,
+							"default":3
+						}
+					],
+					"returns":"an object Circle",
+					"examples":[
+						{
+							"command":"c1.point(90, green, circle, 5)",
+							"result":"a circle is drawn"
+						}
+					]
+				},
+				"point":{
+					"usage":"point(x0, y0, color, format, size)",
+					"description":"draw a point.",
+					"operands":[
+						{
+							"name":"position X",
+							"type":"number"
+						},
+						{
+							"name":"position Y",
+							"type":"number"
+						},
+						{
+							"name":"color",
+							"type":"string",
+							"unit":"css value",
+							"required":false,
+							"default":"blue"
+						},
+						{
+							"name":"format",
+							"type":"string",
+							"required":false,
+							"values":["cross", "xcross", "circle", "square", "disk"],
+							"default":"xcross"
+						},
+						{
+							"name":"size",
+							"type":"number",
+							"required":false,
+							"default":3
+						}
+					],
+					"returns":"an object Point",
+					"examples":[
+						{
+							"command":"p1=point(50, 50)",
+							"result":"a point is drawn"
+						},
+						{
+							"command":"point(50, 50, red, cross, 5)",
+							"result":"a point is drawn"
+						}
+					]
+				},
+				"rectangle":{
+					"usage":"rectangle(x0, y0, x1, y1, color)",
+					"description":"draw a rectangle.",
+					"operands":[
+						{
+							"name":"position X0",
+							"type":"number"
+						},
+						{
+							"name":"position Y0",
+							"type":"number"
+						},
+						{
+							"name":"position X1",
+							"type":"number"
+						},
+						{
+							"name":"position Y1",
+							"type":"number"
+						},
+						{
+							"name":"color",
+							"type":"string",
+							"unit":"css value",
+							"required":false,
+							"default":"blue"
+						}
+					],
+					"returns":"an object Rectangle",
+					"examples":[
+						{
+							"command":"r1=rectangle(5, 5, 15, 20, yellow)",
+							"result":"a rectangle is drawn"
+						}
+					]
+				},
+				"line":{
+					"usage":"line(x0, y0, x1, y1, color, width)",
+					"description":"draw a circle.",
+					"operands":[
+						{
+							"name":"position X1",
+							"type":"number",
+							"required":"true",
+							"unit":"domain range"
+						},
+						{
+							"name":"position Y1",
+							"type":"number",
+							"required":"true",
+							"unit":"domain range"
+						},
+						{
+							"name":"position X2",
+							"type":"number",
+							"required":"true",
+							"unit":"domain range"
+						},
+						{
+							"name":"position Y2",
+							"type":"number",
+							"required":"true",
+							"unit":"domain range"
+						},
+						{
+							"name":"color",
+							"type":"string",
+							"unit":"css value",
+							"required":false,
+							"default":"blue"
+						},
+						{
+							"name":"width",
+							"type":"number",
+							"unit":"pixels",
+							"required":"false",
+							"default":1
+						}
+					],
+					"returns":"an object Line",
+					"examples":[
+						{
+							"command":"l1=line(50, 50, 120, 70, red, 3)",
+							"result":"a line is drawn"
+						}
+					]
+				},
+				"axis":{
+					"usage":"axis(x0, y0, x, color, width)",
+					"description":"draw an axis.",
+					"operands":[
+						{
+							"name":"origin position X",
+							"type":"number",
+							"required":"true",
+							"unit":"domain range"
+						},
+						{
+							"name":"origin position Y",
+							"type":"number",
+							"required":"true",
+							"unit":"domain range"
+						},
+						{
+							"name":"domain",
+							"type":"string",
+							"required":"true"
+						},
+						{
+							"name":"color",
+							"type":"string",
+							"unit":"css value",
+							"required":false,
+							"default":"blue"
+						},
+						{
+							"name":"width",
+							"type":"number",
+							"unit":"pixels",
+							"required":"false",
+							"default":1
+						}
+					],
+					"returns":"an object Axis",
+					"examples":[
+						{
+							"command":"axis(50, 50, x, red, 3)",
+							"result":"an axis is drawn"
+						},
+						{
+							"command":"axis(50, 50, y, red, 3)",
+							"result":"an axis is drawn"
+						}
+					]
+				}
+			}
+		}
+	}
+}

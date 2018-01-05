@@ -18,7 +18,7 @@ const LIMIT_SPACES_IN_EXPRESSION = 20
 export default class FeaturedTerminal extends Terminal
 {
 	/**
-	 * Create an instance of TerminalMathJS.
+	 * Create an instance of FeaturedTerminal.
 	 * @extends Terminal
 	 * 
 	 * 	API:
@@ -41,9 +41,15 @@ export default class FeaturedTerminal extends Terminal
 		
 		this._workers = []
 		this._features = {}
+		this._features_scopes = {}
 		this._aliases = {}
 		this._mode = undefined
+		this._default_feature_name
 
+		if ( ! T.isObject( window.devapt().func_features ) )
+		{
+			window.devapt().func_features = {}
+		}
 		this.load_features()
 
 		// this.enable_trace()
@@ -58,17 +64,45 @@ export default class FeaturedTerminal extends Terminal
 	 */
 	load_features()
 	{
-		const features_config = this.get_state_value('features', {})
 		const runtime = this.get_runtime()
 
-		console.log(context + ':load_features:features_config', features_config)
+		this._default_feature_name = this.get_state_value('default_feature', undefined)
+		const required_features_view = this.get_state_value('required_features', [])
+		const features_view = this.get_state_value('features', {})
+
+		const all_features_app  = runtime.get_state_store().get_state().get('features', {}).toJS()
+		const required_features_app = {}
+		required_features_view.forEach(
+			(feature_name)=>{
+				if (feature_name in all_features_app)
+				{
+					required_features_app[feature_name] = all_features_app[feature_name]
+				}
+			}
+		)
+
+		const features_config = _.merge(features_view, required_features_app)
+
+		// DEBUG
+		// console.log(context + ':load_features:features_view', features_view)
+		// console.log(context + ':load_features:features_app', features_app)
+		// console.log(context + ':load_features:features_config', features_config)
 
 		let assets = []
 		this._aliases = {}
 		_.forEach(features_config,
 			(feature_config, feature_key)=>{
-				const feature_name = feature_config && feature_config.name ? feature_config.name + '' : feature_key + ''
-				this.info('load feature:[' + feature_name + ']')
+				feature_config.name = feature_config.name ? feature_config.name : feature_key
+				const feature_name = feature_config.name
+				const feature_type = feature_config.type + ''
+				this.info('load feature:[' + feature_name + '] of type [' + feature_type + ']')
+
+				if (feature_type.toLocaleLowerCase() != 'terminal')
+				{
+					return
+				}
+
+				feature_config.terminal = this
 
 				const log_context = context + ':load_features:terminal=[' + this.get_name() + ']:feature=[' + feature_name + ']'
 				const feature = new TerminalFeature(runtime, feature_config, log_context)
@@ -81,7 +115,7 @@ export default class FeaturedTerminal extends Terminal
 				const feature_assets = feature.get_assets()
 				if ( T.isNotEmptyArray(feature_assets) )
 				{
-					assets = _.merge(feature_assets, assets)
+					assets = _.concat(feature_assets, assets)
 				}
 				
 				const feature_aliases = feature.get_aliases()
@@ -95,6 +129,7 @@ export default class FeaturedTerminal extends Terminal
 				}
 
 				this._features[feature_name] = feature
+				this._features_scopes[feature_name] = {}
 			}
 		)
 
@@ -192,21 +227,75 @@ export default class FeaturedTerminal extends Terminal
 	_set_mode(arg_checked_mode)
 	{
 		this._mode = arg_checked_mode
+		// const default_prompt = this.get_state_value('prompt', '>')
+		const input_jqo = $('#' + this.get_dom_id())
+		const new_prompt = arg_checked_mode + '>'
+		const cmd = input_jqo.data('cmd')
+		cmd.prompt(new_prompt)
 	}
 
 
 
 	/**
 	 * Get terminal mode: Numerical, algebrical, plot.
-	 * @private
 	 * 
 	 * @returns {string}
 	 */
-	_get_mode()
+	get_mode()
 	{
 		return this._mode
 	}
 
+
+
+	/**
+	 * Get terminal features.
+	 * 
+	 * @returns {string}
+	 */
+	get_features()
+	{
+		return this._features
+	}
+
+
+
+	/**
+	 * Get terminal features aliases.
+	 * 
+	 * @returns {string}
+	 */
+	get_aliases()
+	{
+		return this._aliases
+	}
+
+
+
+	/**
+	 * Get terminal feature scope.
+	 * 
+	 * @param {string} arg_name - feature name.
+	 * 
+	 * @returns {object} - feature scope/context inside this terminal component.
+	 */
+	get_feature_scope(arg_name)
+	{
+		return this._features_scopes[arg_name]
+	}
+
+
+
+	/**
+	 * Get terminal canvas id.
+	 * 
+	 * @returns {string}
+	 */
+	get_canvas_id()
+	{
+		return this.get_state_value('canvas_id', undefined)
+	}
+	
 
 
 	/**
@@ -218,22 +307,77 @@ export default class FeaturedTerminal extends Terminal
 	 */
 	eval(arg_expression)
 	{
-		const mode_expression = arg_expression + ''
-		const split_spaces = mode_expression.split(' ', LIMIT_SPACES_IN_EXPRESSION)
-		const switch_mode = split_spaces.length > 0 ? this.switch_mode(split_spaces[0]) : false
-		const expression = switch_mode ? split_spaces.slice(1).join(' ') : arg_expression
-		const mode = this._get_mode()
+		// ENABLE DEFAULT FEATURE
+		if ( (! this._mode) && this._default_feature_name)
+		{
+			this.switch_mode(this._default_feature_name)
+		}
 
-		const feature = (mode in this._features) ? this._features[mode] : undefined
+		const str_expression = arg_expression + ''
+		const split_spaces    = str_expression.split(' ', LIMIT_SPACES_IN_EXPRESSION)
+
+		const part0           = split_spaces[0]
+		const part1           = split_spaces[1]
+
+		const switch_mode     = split_spaces.length > 0 ? this.switch_mode(part0) : false
+		const expression      = switch_mode ? split_spaces.slice(1).join(' ') : arg_expression
+		const mode            = this.get_mode()
+
+		let feature = undefined
+		if (switch_mode)
+		{
+			feature = (mode in this._features) ? this._features[mode] : undefined
+		}
 
 		if (! feature)
 		{
-			console.log(context + ':feature not found')
-			return Promise.reject('feature not found [' + arg_expression + '] with mode [' + mode + '] and expression ['+ expression + ']')
+			// SEARCH COMMAND INTO FEATURES
+			let cmd = part0
+			const lexer_assign = new RegExp(/^\s*([a-zA-Z]{1}[a-zA-Z0-9_]*)?\s*=([a-zA-Z]{1}[a-zA-Z0-9_]*){1}\s*/)
+			const lexer_call = new RegExp(/^\s*([a-zA-Z]{1}[a-zA-Z0-9_]*){1}\s*/)
+			const lexer_assign_parts = lexer_assign.exec(part0)
+			const lexer_call_parts = lexer_call.exec(part0)
+			if ( Array.isArray(lexer_assign_parts) && lexer_assign_parts.length > 2 )
+			{
+				cmd = lexer_assign_parts[2]
+			} else if ( Array.isArray(lexer_call_parts) && lexer_call_parts.length > 1 )
+			{
+				cmd = lexer_call_parts[1]
+			}
+
+			_.forEach(this._features,
+				(feature_obj, feature_name)=>{
+					if (feature) return
+
+					if ( feature_obj.has_command(cmd) )
+					{
+						feature = feature_obj
+					}
+				}
+			)
+
+			if (! feature)
+			{
+				if (mode)
+				{
+					feature = (mode in this._features) ? this._features[mode] : undefined
+				}
+				if (! feature)
+				{
+					const error = 'feature not found [' + arg_expression + '] with mode [' + mode + '] and expression ['+ expression + ']'
+					console.log(context + ':error')
+					return Promise.resolve( { value:undefined, error:error, str:undefined } )
+				}
+			}
 		}
 
 		console.log('feature found [' + feature.get_name() + '] with mode [' + mode + '] and expression ['+ expression + ']')
 
-		return feature.eval(expression)
+		if ( T.isNotEmptyString(expression) )
+		{
+			return feature.eval(expression)
+		}
+
+		return Promise.resolve( { value:undefined, error:undefined, str:undefined } )
 	}
 }

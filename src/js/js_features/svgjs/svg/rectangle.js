@@ -46,13 +46,19 @@ export default class Rectangle extends Drawable
 
 		this._width = arg_width
 		this._height = arg_height
-		this._color = arg_color
+		this.color = arg_color
 	}
 
 
 
 	draw()
 	{
+		// DO NOT RENDER	
+		if (this.color == 'none')
+		{
+			return
+		}
+
 		const pos_h = this.pos_h()
 		const pos_v = this.pos_v()
 		const size_h = this.domain_h().range_to_screen(this._width)
@@ -62,9 +68,9 @@ export default class Rectangle extends Drawable
 		.rect(size_h, size_v)
 		.move(pos_h, pos_v)
 
-		if (this._color)
+		if (this.color)
 		{
-			this._shape.fill(this._color)
+			this._shape.fill(this.color)
 		}
 
 		return this

@@ -159,7 +159,7 @@ var BindingService = function (_BindingStream) {
 exports.default = BindingService;
 
 
-},{"./binding_stream":3,"assert":540,"devapt-core-common/dist/js/messaging/stream":55,"devapt-core-common/dist/js/utils/types":107,"util":577}],2:[function(require,module,exports){
+},{"./binding_stream":3,"assert":545,"devapt-core-common/dist/js/messaging/stream":55,"devapt-core-common/dist/js/utils/types":107,"util":582}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -375,7 +375,7 @@ var BindingServiceTimeline = function (_BindingStream) {
 exports.default = BindingServiceTimeline;
 
 
-},{"./binding_stream":3,"assert":540,"devapt-core-common/dist/js/messaging/stream":55,"devapt-core-common/dist/js/utils/transform":106,"devapt-core-common/dist/js/utils/types":107,"util":577}],3:[function(require,module,exports){
+},{"./binding_stream":3,"assert":545,"devapt-core-common/dist/js/messaging/stream":55,"devapt-core-common/dist/js/utils/transform":106,"devapt-core-common/dist/js/utils/types":107,"util":582}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -815,7 +815,7 @@ var BindingStream = function () {
 exports.default = BindingStream;
 
 
-},{"assert":540,"devapt-core-common/dist/js/utils/transform":106,"devapt-core-common/dist/js/utils/types":107,"devapt-core-common/dist/js/utils/uid.js":108,"util":577}],4:[function(require,module,exports){
+},{"assert":545,"devapt-core-common/dist/js/utils/transform":106,"devapt-core-common/dist/js/utils/types":107,"devapt-core-common/dist/js/utils/uid.js":108,"util":582}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1250,7 +1250,7 @@ var BindingLoader = function () {
 exports.default = BindingLoader;
 
 
-},{"./binding_service":1,"./binding_service_timeline":2,"./binding_stream":3,"assert":540,"devapt-core-common/dist/js/messaging/stream":55,"devapt-core-common/dist/js/utils/types":107,"lodash":20,"util":577}],5:[function(require,module,exports){
+},{"./binding_service":1,"./binding_service_timeline":2,"./binding_stream":3,"assert":545,"devapt-core-common/dist/js/messaging/stream":55,"devapt-core-common/dist/js/utils/types":107,"lodash":20,"util":582}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1521,7 +1521,7 @@ var Component = function (_StatedDom) {
 exports.default = Component;
 
 
-},{"./component/stated_dom":10,"assert":540,"devapt-core-common/dist/js/utils/types":107,"lodash":20}],6:[function(require,module,exports){
+},{"./component/stated_dom":10,"assert":545,"devapt-core-common/dist/js/utils/types":107,"lodash":20}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1774,7 +1774,7 @@ var BoundDom = function (_RenderedDom) {
 exports.default = BoundDom;
 
 
-},{"../binding/bindings_loader":4,"./rendered_dom":8,"assert":540,"devapt-core-common/dist/js/utils/types":107,"devapt-core-common/dist/js/utils/uid.js":108,"lodash":20}],7:[function(require,module,exports){
+},{"../binding/bindings_loader":4,"./rendered_dom":8,"assert":545,"devapt-core-common/dist/js/utils/types":107,"devapt-core-common/dist/js/utils/uid.js":108,"lodash":20}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2636,7 +2636,7 @@ var RenderedDDom = function (_Dom) {
 exports.default = RenderedDDom;
 
 
-},{"./dom":7,"assert":540,"devapt-core-common/dist/js/utils/types":107,"lodash":20}],9:[function(require,module,exports){
+},{"./dom":7,"assert":545,"devapt-core-common/dist/js/utils/types":107,"lodash":20}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3124,7 +3124,7 @@ var Rendering = function () {
 exports.default = Rendering;
 
 
-},{"assert":540,"devapt-core-common/dist/js/rendering/rendering_factory":76,"devapt-core-common/dist/js/rendering/rendering_resolver":79,"devapt-core-common/dist/js/utils/types":107,"dom-delegate":17,"vdom-parser":21,"virtual-dom/create-element":24,"virtual-dom/diff":25,"virtual-dom/patch":26}],10:[function(require,module,exports){
+},{"assert":545,"devapt-core-common/dist/js/rendering/rendering_factory":76,"devapt-core-common/dist/js/rendering/rendering_resolver":79,"devapt-core-common/dist/js/utils/types":107,"dom-delegate":17,"vdom-parser":21,"virtual-dom/create-element":24,"virtual-dom/diff":25,"virtual-dom/patch":26}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3634,7 +3634,7 @@ var StatedDom = function (_BoundDom) {
 exports.default = StatedDom;
 
 
-},{"./bound_dom":6,"assert":540,"devapt-core-common/dist/js/utils/types":107,"devapt-core-common/dist/js/utils/uid.js":108,"lodash":20}],11:[function(require,module,exports){
+},{"./bound_dom":6,"assert":545,"devapt-core-common/dist/js/utils/types":107,"devapt-core-common/dist/js/utils/uid.js":108,"lodash":20}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3993,7 +3993,7 @@ var NameTypeSettingsLoggable = function (_Loggable) {
 exports.default = NameTypeSettingsLoggable;
 
 
-},{"assert":540,"devapt-core-common/dist/js/base/loggable":48,"devapt-core-common/dist/js/utils/types":107}],13:[function(require,module,exports){
+},{"assert":545,"devapt-core-common/dist/js/base/loggable":48,"devapt-core-common/dist/js/utils/types":107}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5010,7 +5010,7 @@ if (typeof document !== 'undefined') {
 module.exports = doccy;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"min-document":542}],19:[function(require,module,exports){
+},{"min-document":547}],19:[function(require,module,exports){
 "use strict";
 
 module.exports = function isObject(x) {
@@ -24422,7 +24422,7 @@ var Instance = function (_Stateable) {
 exports.default = Instance;
 
 
-},{"../topology/registry/index":88,"../utils/is_browser":104,"../utils/types":107,"../utils/uid":108,"./runtime":49,"./stateable":51,"assert":540}],48:[function(require,module,exports){
+},{"../topology/registry/index":88,"../utils/is_browser":104,"../utils/types":107,"../utils/uid":108,"./runtime":49,"./stateable":51,"assert":545}],48:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24972,7 +24972,7 @@ var Loggable = function () {
 exports.default = Loggable;
 
 
-},{"../utils/types":107,"assert":540}],49:[function(require,module,exports){
+},{"../utils/types":107,"assert":545}],49:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25249,7 +25249,7 @@ var Settingsable = function (_Errorable) {
 exports.default = Settingsable;
 
 
-},{"../utils/types":107,"./errorable":46,"assert":540,"immutable":152}],51:[function(require,module,exports){
+},{"../utils/types":107,"./errorable":46,"assert":545,"immutable":152}],51:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25615,7 +25615,7 @@ var Stateable = function (_Settingsable) {
 exports.default = Stateable;
 
 
-},{"../utils/types":107,"./settingsable":50,"assert":540,"immutable":152}],52:[function(require,module,exports){
+},{"../utils/types":107,"./settingsable":50,"assert":545,"immutable":152}],52:[function(require,module,exports){
 (function (__dirname){
 'use strict';
 
@@ -25900,7 +25900,7 @@ exports.default = DefaultDefaultRendering;
 
 
 }).call(this,"/node_modules\\devapt-core-common\\dist\\js\\default_plugins")
-},{"../plugins/rendering_plugin":58,"../rendering/index":67,"../utils/types":107,"assert":540,"path":557}],53:[function(require,module,exports){
+},{"../plugins/rendering_plugin":58,"../rendering/index":67,"../utils/types":107,"assert":545,"path":562}],53:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26803,7 +26803,7 @@ var Stream = function () {
 exports.default = Stream;
 
 
-},{"../utils/types":107,"assert":540,"baconjs":109}],56:[function(require,module,exports){
+},{"../utils/types":107,"assert":545,"baconjs":109}],56:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27025,7 +27025,7 @@ var FeaturesPlugin = function (_Plugin) {
 exports.default = FeaturesPlugin;
 
 
-},{"../utils/types":107,"./plugin":57,"assert":540}],57:[function(require,module,exports){
+},{"../utils/types":107,"./plugin":57,"assert":545}],57:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27198,7 +27198,7 @@ var Plugin = function (_Instance) {
 exports.default = Plugin;
 
 
-},{"../base/instance":47,"../utils/types":107,"assert":540}],58:[function(require,module,exports){
+},{"../base/instance":47,"../utils/types":107,"assert":545}],58:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27447,7 +27447,7 @@ var RenderingPlugin = function (_FeaturesPlugin) {
 exports.default = RenderingPlugin;
 
 
-},{"../utils/types":107,"./features_plugin":56,"assert":540}],59:[function(require,module,exports){
+},{"../utils/types":107,"./features_plugin":56,"assert":545}],59:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27534,7 +27534,12 @@ exports.default = function (arg_settings) {
 	if (settings.blank) {
 		tag_props._blank = '';
 	}
-	var tag = (0, _h2.default)('a', tag_props, tag_children);
+	// const tag = h('a', tag_props, tag_children)
+	var tag = (0, _h2.default)(
+		'a',
+		{ id: tag_props.id, style: tag_props.style, className: tag_props.className, href: tag_props.href, 'data-devapt-command': cmd_value },
+		label_value
+	);
 
 	rendering_result.add_vtree(tag_id, tag);
 
@@ -29382,6 +29387,7 @@ var RenderingBuilder = function (_RenderingBuilderAsse) {
 			initial_state.app_url = this._application ? this._application.app_url : null;
 			initial_state.app_assets = this._application ? this._application.app_assets : null;
 			initial_state.commands = this._application ? this._application.get_resources_settings('commands') : {};
+			initial_state.features = this._application ? this._application.get_resources_settings('features') : {};
 			initial_state.views = this._application ? this._application.get_resources_settings('views') : {};
 			initial_state.menubars = this._application ? this._application.get_resources_settings('menubars') : {};
 			initial_state.menus = this._application ? this._application.get_resources_settings('menus') : {};
@@ -29785,7 +29791,7 @@ var RenderingBuilder = function (_RenderingBuilderAsse) {
 exports.default = RenderingBuilder;
 
 
-},{"../utils/is_browser":104,"../utils/types":107,"./rendering_builder_assets":75,"./rendering_factory":76,"./rendering_resolver":79,"assert":540,"lodash":157}],75:[function(require,module,exports){
+},{"../utils/is_browser":104,"../utils/types":107,"./rendering_builder_assets":75,"./rendering_factory":76,"./rendering_resolver":79,"assert":545,"lodash":157}],75:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30065,7 +30071,7 @@ var RenderingBuilderAssets = function (_Loggable) {
 exports.default = RenderingBuilderAssets;
 
 
-},{"../base/loggable":48,"../utils/types":107,"assert":540}],76:[function(require,module,exports){
+},{"../base/loggable":48,"../utils/types":107,"assert":545}],76:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31024,7 +31030,7 @@ var RenderingResult = function () {
 exports.default = RenderingResult;
 
 
-},{"../utils/is_browser":104,"../utils/types":107,"../utils/uid":108,"assert":540,"html-to-vdom":139,"lodash":157,"vdom-as-json":477,"virtual-dom/create-element":481,"virtual-dom/vnode/vnode":496,"virtual-dom/vnode/vtext":498}],81:[function(require,module,exports){
+},{"../utils/is_browser":104,"../utils/types":107,"../utils/uid":108,"assert":545,"html-to-vdom":139,"lodash":157,"vdom-as-json":477,"virtual-dom/create-element":481,"virtual-dom/vnode/vnode":496,"virtual-dom/vnode/vtext":498}],81:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31833,7 +31839,7 @@ var StateStore = function (_Loggable) {
 exports.default = StateStore;
 
 
-},{"../base/loggable":48,"../utils/types":107,"assert":540}],88:[function(require,module,exports){
+},{"../base/loggable":48,"../utils/types":107,"assert":545}],88:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32062,7 +32068,7 @@ function load_application(logs, arg_app_name, arg_app_config, arg_config_package
 exports.default = load_application;
 
 
-},{"../../../utils/parser/parser":105,"../../../utils/types":107,"assert":540,"path":557}],91:[function(require,module,exports){
+},{"../../../utils/parser/parser":105,"../../../utils/types":107,"assert":545,"path":562}],91:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32259,6 +32265,7 @@ function load_config(arg_state, arg_initial_config, arg_base_dir, arg_world_dir,
 		arg_state.config.resources.by_type = {};
 		arg_state.config.resources.by_type.commands = {}; // Resource names (map name:name)
 		arg_state.config.resources.by_type.services = {}; // Resource names (map name:name)
+		arg_state.config.resources.by_type.features = {}; // Resource names (map name:name)
 		arg_state.config.resources.by_type.views = {}; // Resource names (map name:name)
 		arg_state.config.resources.by_type.models = {}; // Resource names (map name:name)
 		arg_state.config.resources.by_type.menubars = {}; // Resource names (map name:name)
@@ -32389,7 +32396,7 @@ function load_config(arg_state, arg_initial_config, arg_base_dir, arg_world_dir,
 exports.default = load_config;
 
 
-},{"../../../loggers/logger_console_standalone":54,"../../../utils/types":107,"./default_config_app":89,"./load_deployments":93,"./load_nodes":94,"./load_plugins":96,"./load_security":97,"./load_tenants":100,"assert":540,"path":557}],93:[function(require,module,exports){
+},{"../../../loggers/logger_console_standalone":54,"../../../utils/types":107,"./default_config_app":89,"./load_deployments":93,"./load_nodes":94,"./load_plugins":96,"./load_security":97,"./load_tenants":100,"assert":545,"path":562}],93:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32503,7 +32510,7 @@ function load_service(logs, arg_app_name, arg_svc_name, arg_deployed_svc_obj, ar
 exports.default = load_deployments;
 
 
-},{"../../../utils/types":107,"assert":540}],94:[function(require,module,exports){
+},{"../../../utils/types":107,"assert":545}],94:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32613,7 +32620,7 @@ function load_node_servers(logs, arg_servers_config, arg_node_name, arg_host /*,
 exports.default = load_nodes;
 
 
-},{"../../../utils/types":107,"assert":540}],95:[function(require,module,exports){
+},{"../../../utils/types":107,"assert":545}],95:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32660,6 +32667,7 @@ var error_msg_bad_templates = context + ':package.templates should be an array';
 var error_msg_bad_includes = context + ':package.includes should be an array';
 
 var error_msg_bad_service = context + ':package.services.* should be an object';
+var error_msg_bad_feature = context + ':package.features.* should be an object';
 var error_msg_bad_command = context + ':package.commands.*. should be an object';
 var error_msg_bad_resource = context + ':package.resources.* should be a string';
 var error_msg_bad_template = context + ':package.templates.* should be a string';
@@ -32764,6 +32772,7 @@ function load_package(logs, arg_package_name, arg_package_config, arg_base_dir, 
 	arg_package_config.base_dir = arg_package_config.base_dir ? arg_package_config.base_dir : '';
 	arg_package_config.commands = arg_package_config.commands ? arg_package_config.commands : {};
 	arg_package_config.services = arg_package_config.services ? arg_package_config.services : {};
+	arg_package_config.features = arg_package_config.features ? arg_package_config.features : {};
 	arg_package_config.resources = arg_package_config.resources ? arg_package_config.resources : {};
 	arg_package_config.templates = arg_package_config.templates ? arg_package_config.templates : {};
 	arg_package_config.includes = arg_package_config.includes ? arg_package_config.includes : {};
@@ -32786,15 +32795,53 @@ function load_package(logs, arg_package_name, arg_package_config, arg_base_dir, 
 
 		var _absolute_path_name = _path2.default.join(arg_base_dir, arg_package_config.base_dir, arg_package_config.services);
 		arg_package_config.services = _parser2.default.read(_absolute_path_name, 'utf8').services;
-
-		// const file_path_name = path.join(arg_base_dir, arg_package_config.services)
-		// arg_package_config.services = require(file_path_name).services
 	}
 	if (_types2.default.isObject(arg_package_config.services)) {
 		logs.info(context, 'loading world...packages.' + arg_package_name + '.services is now an object');
 		// load_services(arg_package_config.services)
 	}
 	// console.log( Object.keys(arg_package_config.services), 'arg_package_config.services for ' + arg_package_name)
+
+
+	// LOAD FEATURES FROM A STRING
+	if (_types2.default.isString(arg_package_config.features)) {
+		logs.info(context, 'loading world...features.' + arg_package_name + '.features is a string');
+
+		var _absolute_path_name2 = _path2.default.join(arg_base_dir, arg_package_config.base_dir, arg_package_config.features);
+		arg_package_config.features = _parser2.default.read(_absolute_path_name2, 'utf8').features;
+	}
+
+	// LOAD FEATURES FROM AN ARRAY
+	if (_types2.default.isNotEmptyArray(arg_package_config.features)) {
+		logs.info(context, 'loading world...features.' + arg_package_name + '.features is an array');
+
+		var features = arg_package_config.features;
+		arg_package_config.features = {};
+		_lodash2.default.forEach(features, function (feature_cfg, feature_key) {
+			// LOAD FEATURES FROM A STRING
+			if (_types2.default.isString(feature_cfg)) {
+				logs.info(context, 'loading world...features.' + arg_package_name + '.features array item string at [' + feature_key + ']');
+
+				var _absolute_path_name3 = _path2.default.join(arg_base_dir, arg_package_config.base_dir, feature_cfg);
+				var loaded_features = _parser2.default.read(_absolute_path_name3, 'utf8').features;
+				if (_types2.default.isObject(loaded_features)) {
+					arg_package_config.features = _lodash2.default.merge(arg_package_config.features, loaded_features);
+					return;
+				}
+			}
+
+			// LOAD FEATURES FROM AN OBJECT
+			if (_types2.default.isObject(feature_cfg)) {
+				arg_package_config.features = _lodash2.default.merge(arg_package_config.features, feature_cfg);
+			}
+		});
+	}
+
+	// LOAD FEATURES FROM AN OBJECT
+	if (_types2.default.isObject(arg_package_config.features)) {
+		logs.info(context, 'loading world...packages.' + arg_package_name + '.features is now an object');
+		// features(arg_package_config.features)
+	}
 
 	// CHECK ATTRIBUTES
 	(0, _assert2.default)(_types2.default.isString(arg_package_config.base_dir), error_msg_bad_base_dir + ' for package ' + arg_package_name);
@@ -32824,6 +32871,7 @@ function load_package(logs, arg_package_name, arg_package_config, arg_base_dir, 
 	arg_package_config.resources_by_type.menus = {};
 	arg_package_config.resources_by_type.datasources = {};
 	arg_package_config.resources_by_type.services = {};
+	arg_package_config.resources_by_type.features = {};
 	arg_package_config.resources_by_type.commands = {};
 	arg_package_config.views = {};
 	arg_package_config.models = {};
@@ -32843,6 +32891,21 @@ function load_package(logs, arg_package_name, arg_package_config, arg_base_dir, 
 
 		arg_package_config.resources_by_name[svc_name] = svc;
 		arg_package_config.resources_by_type['services'][svc_name] = svc;
+	});
+
+	// REGISTER FEATURES AS RESOURCES
+	Object.keys(arg_package_config.features).forEach(function (feature_name) {
+		var feature = arg_package_config.features[feature_name];
+		(0, _assert2.default)(_types2.default.isObject(feature), error_msg_bad_feature);
+		logs.info(context, 'loading world...packages.' + arg_package_name + '.features.' + feature_name + ' is registered');
+
+		// REGISTER BASE DIRECTORIES
+		feature.app_base_dir = arg_base_dir;
+		feature.pkg_base_dir = arg_package_config.base_dir;
+		feature.name = feature_name;
+
+		arg_package_config.resources_by_name[feature_name] = feature;
+		arg_package_config.resources_by_type['features'][feature_name] = feature;
 	});
 
 	// REGISTER COMMANDS AS RESOURCES
@@ -33064,7 +33127,7 @@ function load_package_template(logs, arg_package_name, arg_package_config, arg_c
 exports.default = load_packages;
 
 
-},{"../../../utils/attributes_iterator":103,"../../../utils/parser/parser":105,"../../../utils/types":107,"assert":540,"lodash":157,"path":557}],96:[function(require,module,exports){
+},{"../../../utils/attributes_iterator":103,"../../../utils/parser/parser":105,"../../../utils/types":107,"assert":545,"lodash":157,"path":562}],96:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33123,7 +33186,7 @@ function load_plugins(logs, arg_plugins_config /*, arg_base_dir*/) {
 exports.default = load_plugins;
 
 
-},{"../../../utils/types":107,"assert":540}],97:[function(require,module,exports){
+},{"../../../utils/types":107,"assert":545}],97:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33238,7 +33301,7 @@ function load_security(logs, arg_security_config, arg_base_dir) {
 exports.default = load_security;
 
 
-},{"../../../utils/parser/parser":105,"../../../utils/types":107,"./load_security_authentication":98,"./load_security_authorization":99,"assert":540,"path":557}],98:[function(require,module,exports){
+},{"../../../utils/parser/parser":105,"../../../utils/types":107,"./load_security_authentication":98,"./load_security_authorization":99,"assert":545,"path":562}],98:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33494,7 +33557,7 @@ function load_tenant(logs, arg_tenant_name, arg_tenant_config, arg_plugins, arg_
 exports.default = load_tenants;
 
 
-},{"../../../utils/types":107,"./load_applications":91,"./load_packages":95,"assert":540,"lodash":157,"path":557}],101:[function(require,module,exports){
+},{"../../../utils/types":107,"./load_applications":91,"./load_packages":95,"assert":545,"lodash":157,"path":562}],101:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33556,7 +33619,7 @@ var RegistryStore = function (_MapStore) {
 
 		var _this = _possibleConstructorReturn(this, (RegistryStore.__proto__ || Object.getPrototypeOf(RegistryStore)).call(this, arg_initial_state, my_context, arg_logger_manager));
 
-		_this.collections = ['nodes', 'servers', 'applications', 'modules', 'plugins', 'resources', 'security', 'views', 'models', 'menubars', 'menus', 'loggers', 'services', 'transactions', 'datasources'];
+		_this.collections = ['nodes', 'servers', 'applications', 'modules', 'plugins', 'resources', 'security', 'views', 'models', 'menubars', 'menus', 'loggers', 'services', 'features', 'transactions', 'datasources'];
 
 		_this.register_collection('nodes', 'node');
 		_this.register_collection('servers', 'server');
@@ -33572,6 +33635,7 @@ var RegistryStore = function (_MapStore) {
 		_this.register_resources_collection('menus', 'menu');
 		_this.register_resources_collection('loggers', 'logger');
 		_this.register_resources_collection('services', 'service');
+		_this.register_resources_collection('features', 'feature');
 		_this.register_resources_collection('transactions', 'transaction');
 		_this.register_resources_collection('datasources', 'datasource');
 		return _this;
@@ -33758,7 +33822,7 @@ var RegistryStore = function (_MapStore) {
 exports.default = RegistryStore;
 
 
-},{"../../state_store/map_store":86,"../../utils/types":107,"assert":540}],102:[function(require,module,exports){
+},{"../../state_store/map_store":86,"../../utils/types":107,"assert":545}],102:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -34141,7 +34205,7 @@ var parser = {
 exports.default = parser;
 
 
-},{"fs":544}],106:[function(require,module,exports){
+},{"fs":549}],106:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -34524,7 +34588,7 @@ var transform = exports.transform = function transform(arg_xform) {
 };
 
 
-},{"../utils/types":107,"assert":540,"ramda":158}],107:[function(require,module,exports){
+},{"../utils/types":107,"assert":545,"ramda":158}],107:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39324,7 +39388,7 @@ function decode (str) {
     });
 }
 
-},{"./entities.json":126,"punycode":560}],125:[function(require,module,exports){
+},{"./entities.json":126,"punycode":565}],125:[function(require,module,exports){
 var punycode = require('punycode');
 var revEntities = require('./reversed.json');
 
@@ -39365,7 +39429,7 @@ function encode (str, opts) {
     return chars.join('');
 }
 
-},{"./reversed.json":128,"punycode":560}],126:[function(require,module,exports){
+},{"./reversed.json":128,"punycode":565}],126:[function(require,module,exports){
 module.exports={
     "Aacute;": "\u00C1",
     "Aacute": "\u00C1",
@@ -43163,7 +43227,7 @@ function EvStore(elem) {
 
 },{"individual/one-version":154}],138:[function(require,module,exports){
 arguments[4][18][0].apply(exports,arguments)
-},{"dup":18,"min-document":542}],139:[function(require,module,exports){
+},{"dup":18,"min-document":547}],139:[function(require,module,exports){
 var convertHTML = require('./lib/html-to-vdom');
 module.exports = function initializeConverter (dependencies) {
     if (!dependencies.VNode || !dependencies.VText) {
@@ -44039,7 +44103,7 @@ Parser.prototype.done = Parser.prototype.end;
 
 module.exports = Parser;
 
-},{"./Tokenizer.js":149,"events":549,"inherits":155}],147:[function(require,module,exports){
+},{"./Tokenizer.js":149,"events":554,"inherits":155}],147:[function(require,module,exports){
 module.exports = ProxyHandler;
 
 function ProxyHandler(cbs){
@@ -45037,7 +45101,7 @@ WritableStream.prototype._write = function(chunk, encoding, cb){
 	this._parser.write(chunk);
 	cb();
 };
-},{"./Parser.js":146,"buffer":546,"inherits":155,"readable-stream":542,"stream":572,"string_decoder":573}],151:[function(require,module,exports){
+},{"./Parser.js":146,"buffer":551,"inherits":155,"readable-stream":547,"stream":577,"string_decoder":578}],151:[function(require,module,exports){
 var Parser = require("./Parser.js"),
     DomHandler = require("domhandler");
 
@@ -62103,7 +62167,7 @@ var Workspace = function (_Component) {
 exports.default = Workspace;
 
 
-},{"devapt-core-browser/dist/js/base/component":5,"devapt-core-common/dist/js/utils/types":107,"lodash":556}],502:[function(require,module,exports){
+},{"devapt-core-browser/dist/js/base/component":5,"devapt-core-common/dist/js/utils/types":107,"lodash":561}],502:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62293,8 +62357,8 @@ var context = plugin_name + '/drawing/position';
  * 		->t(v):number - get|set position t value.
  */
 
-var Angle = function (_Vector) {
-	_inherits(Angle, _Vector);
+var Position = function (_Vector) {
+	_inherits(Position, _Vector);
 
 	/**
   * Create an instance of Position.
@@ -62303,16 +62367,16 @@ var Angle = function (_Vector) {
   * 
   * @returns {nothing}
   */
-	function Angle(arg_position_value) {
-		_classCallCheck(this, Angle);
+	function Position(arg_position_value) {
+		_classCallCheck(this, Position);
 
-		var _this = _possibleConstructorReturn(this, (Angle.__proto__ || Object.getPrototypeOf(Angle)).call(this, arg_position_value));
+		var _this = _possibleConstructorReturn(this, (Position.__proto__ || Object.getPrototypeOf(Position)).call(this, arg_position_value));
 
 		_this.is_drawing_position = true;
 		return _this;
 	}
 
-	_createClass(Angle, [{
+	_createClass(Position, [{
 		key: 'x',
 		value: function x(arg_value) {
 			if (_types2.default.isNumber(arg_value)) {
@@ -62354,10 +62418,10 @@ var Angle = function (_Vector) {
 		}
 	}]);
 
-	return Angle;
+	return Position;
 }(_vector2.default);
 
-exports.default = Angle;
+exports.default = Position;
 
 
 },{"./vector":511,"devapt-core-common/dist/js/utils/types":107}],504:[function(require,module,exports){
@@ -62595,7 +62659,7 @@ exports.default = function () {
 };
 
 
-},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":578}],506:[function(require,module,exports){
+},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":583}],506:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62765,7 +62829,7 @@ exports.default = function () {
 };
 
 
-},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":578}],507:[function(require,module,exports){
+},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":583}],507:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62893,7 +62957,7 @@ exports.default = function () {
 };
 
 
-},{"../../plugin_name":539,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":578}],508:[function(require,module,exports){
+},{"../../plugin_name":544,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":583}],508:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63014,7 +63078,7 @@ exports.default = function () {
 };
 
 
-},{"../../plugin_name":539,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":578}],509:[function(require,module,exports){
+},{"../../plugin_name":544,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":583}],509:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63135,7 +63199,7 @@ exports.default = function () {
 };
 
 
-},{"../../plugin_name":539,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":578}],510:[function(require,module,exports){
+},{"../../plugin_name":544,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":583}],510:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63256,7 +63320,7 @@ exports.default = function () {
 };
 
 
-},{"../../plugin_name":539,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":578}],511:[function(require,module,exports){
+},{"../../plugin_name":544,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":583}],511:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63577,7 +63641,7 @@ var TerminalAlgebrite = function (_Terminal) {
 exports.default = TerminalAlgebrite;
 
 
-},{"../../terminal/components/terminal":535,"devapt-core-browser/dist/js/commands/worker_command":15}],514:[function(require,module,exports){
+},{"../../terminal/components/terminal":540,"devapt-core-browser/dist/js/commands/worker_command":15}],514:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63670,7 +63734,7 @@ exports.default = function () {
 };
 
 
-},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"virtual-dom/h":578}],515:[function(require,module,exports){
+},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"virtual-dom/h":583}],515:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -64262,7 +64326,7 @@ var FunctionPlot = function (_Component) {
 exports.default = FunctionPlot;
 
 
-},{"assert":540,"devapt-core-browser/dist/js/base/component":5,"devapt-core-common/dist/js/utils/types":107}],516:[function(require,module,exports){
+},{"assert":545,"devapt-core-browser/dist/js/base/component":5,"devapt-core-common/dist/js/utils/types":107}],516:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -64374,7 +64438,7 @@ exports.default = function () {
 };
 
 
-},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":578}],517:[function(require,module,exports){
+},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107,"virtual-dom/h":583}],517:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -64925,7 +64989,7 @@ var TerminalMathJS = function (_Terminal) {
 exports.default = TerminalMathJS;
 
 
-},{"../../terminal/components/terminal":535,"devapt-core-browser/dist/js/base/web_worker":13,"lodash":556}],519:[function(require,module,exports){
+},{"../../terminal/components/terminal":540,"devapt-core-browser/dist/js/base/web_worker":13,"lodash":561}],519:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -65018,7 +65082,7 @@ exports.default = function () {
 };
 
 
-},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"virtual-dom/h":578}],520:[function(require,module,exports){
+},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"virtual-dom/h":583}],520:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -65114,7 +65178,7 @@ exports.default = function () {
 };
 
 
-},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"virtual-dom/h":578}],521:[function(require,module,exports){
+},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"virtual-dom/h":583}],521:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -66100,7 +66164,7 @@ var Factory = function () {
 exports.default = Factory;
 
 
-},{"./pendulum":524,"devapt-core-common/dist/js/utils/types":107,"lodash":556}],524:[function(require,module,exports){
+},{"./pendulum":524,"devapt-core-common/dist/js/utils/types":107,"lodash":561}],524:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -66549,7 +66613,7 @@ var PhysicsJSPendulum = function () {
 exports.default = PhysicsJSPendulum;
 
 
-},{"./factory":523,"assert":540,"devapt-core-common/dist/js/utils/types":107,"lodash":556}],525:[function(require,module,exports){
+},{"./factory":523,"assert":545,"devapt-core-common/dist/js/utils/types":107,"lodash":561}],525:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -66689,7 +66753,156 @@ var CanvasSvgJS = function (_Canvas) {
 exports.default = CanvasSvgJS;
 
 
-},{"../../../base/components/canvas":500,"../svg/factory":530,"../svg/space":533,"devapt-core-common/dist/js/utils/types":107}],526:[function(require,module,exports){
+},{"../../../base/components/canvas":500,"../svg/factory":531,"../svg/space":537,"devapt-core-common/dist/js/utils/types":107}],526:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _types = require('devapt-core-common/dist/js/utils/types');
+
+var _types2 = _interopRequireDefault(_types);
+
+var _line_arrow = require('./line_arrow');
+
+var _line_arrow2 = _interopRequireDefault(_line_arrow);
+
+var _position = require('../../../base/position');
+
+var _position2 = _interopRequireDefault(_position);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// NPM IMPORTS
+
+// DEVAPT CORE COMMON IMPORTS
+
+
+// DEVAPT CORE BROWSER IMPORTS
+
+// PLUGIN IMPORTS
+
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svg/axis';
+
+var DEFAULT_RADIUS = 1;
+
+/**
+ * @file Drawing axis class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Axis = function (_LineArrow) {
+	_inherits(Axis, _LineArrow);
+
+	/**
+  * Create a shape instance.
+  * 
+  * @param {Space}        arg_space    - drawing space.
+  * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+  * @param {array|Vector} arg_pos_orig - shape origin position.
+  * @param {array|Vector} arg_domain   - axis domain.
+  * @param {string}		 arg_color    - shape color.
+  * @param {number}       arg_width    - shape width in pixels.
+  * 
+  * @returns {nothing}
+  */
+	function Axis(arg_space, arg_owner, arg_pos_orig, arg_domain) {
+		var arg_color = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : undefined;
+		var arg_width = arguments[5];
+
+		_classCallCheck(this, Axis);
+
+		var _this = _possibleConstructorReturn(this, (Axis.__proto__ || Object.getPrototypeOf(Axis)).call(this, arg_space, arg_owner, arg_pos_orig, arg_color, false, true, arg_width, 5, 5, 0, 0));
+		// super(arg_space, arg_owner, arg_pos_orig, 'axis')
+
+
+		_this.type = 'axis';
+		_this.is_svg_axis = true;
+
+		_this._domain = arg_domain == 'x' ? 'x' : 'y';
+		_this.color = arg_color ? arg_color : 'blue';
+		_this._width = arg_width ? arg_width : 1;
+		_this._dashes = ''; // '5,5'
+
+
+		var domain = _this._domain == 'x' ? _this.domain_h() : _this.domain_v();
+		var start = domain.start();
+		var end = domain.end();
+
+		var pos_orig_h = _this.h();
+		var pos_orig_v = _this.v();
+
+		var pos_end = end - start;
+
+		_this._line_length = undefined;
+		_this._line_angle = undefined;
+		if (_this._domain == 'x') {
+			_this._line_end_position = new _position2.default([pos_end, pos_orig_v]);
+		} else {
+			_this._line_end_position = new _position2.default([pos_orig_h, pos_end]);
+		}
+		return _this;
+	}
+
+	_createClass(Axis, [{
+		key: 'draw',
+		value: function draw() {
+			// DO NOT RENDER	
+			if (this.color == 'none') {
+				return;
+			}
+
+			_get(Axis.prototype.__proto__ || Object.getPrototypeOf(Axis.prototype), 'draw', this).call(this);
+
+			var domain = this._domain == 'x' ? this.domain_h() : this.domain_v();
+			var start = domain.start();
+			var step = domain.step();
+			var end = domain.end();
+
+			var pos_orig_h = this.pos_h();
+			var pos_orig_v = this.pos_v();
+
+			var pos_start = domain.range_to_screen(start) + pos_orig_h;
+			var pos_end = domain.range_to_screen(end) + pos_orig_v;
+
+			if (this._domain == 'x') {
+				var r1 = this.space().svg().rect(2, 4).move(pos_start, pos_orig_v - 2);
+				this._shape.add(r1);
+			} else {
+				var _r = this.space().svg().rect(4, 2).move(pos_orig_h - 2, pos_orig_v - 2);
+				this._shape.add(_r);
+			}
+
+			if (this.color && this._width) {
+				this._shape.stroke({ color: this.color, width: this._width, dasharray: this._dashes });
+			}
+
+			return this;
+		}
+	}]);
+
+	return Axis;
+}(_line_arrow2.default);
+
+exports.default = Axis;
+
+
+},{"../../../base/position":503,"./line_arrow":533,"devapt-core-common/dist/js/utils/types":107}],527:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -66764,7 +66977,7 @@ var Car = function (_Drawable) {
 
 				_this._width = arg_width;
 				_this._height = arg_height;
-				_this._color = arg_color;
+				_this.color = arg_color;
 				return _this;
 		}
 
@@ -66795,9 +67008,9 @@ var Car = function (_Drawable) {
 
 						var shape_4 = this.space().svg().circle(20).move(65, 40).fill('grey');
 
-						if (this._color) {
-								shape_1.fill(this._color);
-								shape_2.fill(this._color);
+						if (this.color) {
+								shape_1.fill(this.color);
+								shape_2.fill(this.color);
 						}
 
 						// BUILD
@@ -66839,7 +67052,7 @@ var Car = function (_Drawable) {
 exports.default = Car;
 
 
-},{"./drawable":528,"devapt-core-common/dist/js/utils/types":107}],527:[function(require,module,exports){
+},{"./drawable":529,"devapt-core-common/dist/js/utils/types":107}],528:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -66855,6 +67068,10 @@ var _types2 = _interopRequireDefault(_types);
 var _drawable = require('./drawable');
 
 var _drawable2 = _interopRequireDefault(_drawable);
+
+var _point = require('./point');
+
+var _point2 = _interopRequireDefault(_point);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -66903,6 +67120,7 @@ var Circle = function (_Drawable) {
 	function Circle(arg_space, arg_owner, arg_position) {
 		var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
 		var arg_radius = arguments[4];
+		var arg_fill = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : false;
 
 		_classCallCheck(this, Circle);
 
@@ -66910,26 +67128,33 @@ var Circle = function (_Drawable) {
 
 		_this.is_svg_circle = true;
 
-		_this._radius = arg_radius;
-		_this._color = arg_color; // '#f06'
+		_this.radius = arg_radius;
+		_this.color = arg_color; // '#f06'
+		_this.fill = arg_fill;
+		_this.line_width = 1;
+
+		_this.add_method('point');
 		return _this;
 	}
 
 	_createClass(Circle, [{
 		key: 'draw',
 		value: function draw() {
+			// DO NOT RENDER	
+			if (this.color == 'none') {
+				return;
+			}
+
+			// RENDER
 			var pos_h = this.pos_h();
 			var pos_v = this.pos_v();
-			var diameter_h = this.domain_h().range_to_screen(2 * this._radius);
-			var diameter_v = this.domain_v().range_to_screen(2 * this._radius);
+			var diameter_h = this.domain_h().range_to_screen(2 * this.radius);
+			var diameter_v = this.domain_v().range_to_screen(2 * this.radius);
 			var diameter = Math.min(diameter_h, diameter_v);
 
-			this._shape = this.space().svg().circle(diameter).move(pos_h, pos_v);
-			// .fill('none')
+			this._shape = this.space().svg().circle(diameter).center(pos_h, pos_v);
 
-			if (this._color) {
-				this._shape.fill(this._color);
-			}
+			this.draw_color();
 
 			return this;
 		}
@@ -66937,12 +67162,16 @@ var Circle = function (_Drawable) {
 		key: 'point',
 		value: function point(arg_degrees_angle) {
 			var arg_color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'red';
+			var arg_render = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'xcross';
+			var arg_size = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 5;
 
 			var radian_angle = arg_degrees_angle * Math.PI / 180;
-			var pos_h = this.pos_h() + this.domain_h().range_to_screen(Math.cos(radian_angle) * this._radius);
-			var pos_v = this.pos_v() + this.domain_v().range_to_screen(Math.sin(radian_angle) * this._radius);
+			var pos_h = this.pos_h() + this.domain_h().range_to_screen(Math.cos(radian_angle) * this.radius);
+			var pos_v = this.pos_v() - this.domain_v().range_to_screen(Math.sin(radian_angle) * this.radius);
 
-			return this.space().svg().point(pos_h, pos_v).fill(arg_color);
+			var point = new _point2.default(this._space, this, [pos_h, pos_v], arg_color, arg_render, arg_size);
+			point.draw();
+			return point;
 		}
 	}]);
 
@@ -66952,7 +67181,7 @@ var Circle = function (_Drawable) {
 exports.default = Circle;
 
 
-},{"./drawable":528,"devapt-core-common/dist/js/utils/types":107}],528:[function(require,module,exports){
+},{"./drawable":529,"./point":534,"devapt-core-common/dist/js/utils/types":107}],529:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -67018,12 +67247,44 @@ var Drawable = function () {
 		this._space = space;
 		this._owner = owner;
 		this._position = new _position2.default(position);
-		this._type = type;
 		this._children = [];
 		this._shape = undefined;
+		this._methods = {
+			x: true,
+			y: true,
+			pos_h: true,
+			pos_v: true,
+			move: true
+		};
+
+		this.type = type;
+		this.color = undefined;
+		this.fill = false;
+		this.line_width = 1;
+		this.background_color = 'white';
 	}
 
 	_createClass(Drawable, [{
+		key: 'add_method',
+		value: function add_method(arg_method_name) {
+			this._methods[arg_method_name] = true;
+		}
+	}, {
+		key: 'has_method',
+		value: function has_method(arg_method_name) {
+			return arg_method_name in this._methods;
+		}
+	}, {
+		key: 'get_method',
+		value: function get_method(arg_method_name) {
+			return arg_method_name in this ? this[arg_method_name] : arg_method_name in this.prototype ? this.prototype[arg_method_name] : undefined;
+		}
+	}, {
+		key: 'get_methods_names',
+		value: function get_methods_names() {
+			return Object.keys(this._methods);
+		}
+	}, {
 		key: 'space',
 		value: function space() {
 			return this._space;
@@ -67055,7 +67316,7 @@ var Drawable = function () {
 	}, {
 		key: 'type',
 		value: function type() {
-			return this._type;
+			return this.type;
 		}
 	}, {
 		key: 'position',
@@ -67080,12 +67341,19 @@ var Drawable = function () {
 	}, {
 		key: 'pos_h',
 		value: function pos_h() {
-			return this.domain_h().range_to_screen(this.h());
+			var arg_value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+
+			var value = arg_value != undefined ? arg_value : this.h();
+			return this._space._pad_h + this.domain_h().range_to_screen(value);
 		}
 	}, {
 		key: 'pos_v',
 		value: function pos_v() {
-			return this.domain_v().range_to_screen(this.v());
+			var arg_value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+
+			var value = arg_value != undefined ? arg_value : this.v();
+			var bottom = this.domain_v().range_to_screen(this.domain_v().size());
+			return this._space._pad_v + bottom - this.domain_v().range_to_screen(value);
 		}
 	}, {
 		key: 'h',
@@ -67116,6 +67384,36 @@ var Drawable = function () {
 		key: 'draw',
 		value: function draw() {
 			// TO IMPLEMENT IN SUB CLASSES
+			return this;
+		}
+	}, {
+		key: 'draw_color',
+		value: function draw_color() {
+			if (this.color) {
+				if (this.fill) {
+					this._shape.fill({ color: this.color, opacity: 1 });
+				} else {
+					this._shape.fill({ color: this.background_color, opacity: 0.1 });
+					var options = {
+						width: this.line_width,
+						color: this.color ? this.color : 'blue' /*,
+                                              linecap:'round'*/
+					};
+					this._shape.stroke(options);
+				}
+			}
+		}
+	}, {
+		key: 'move',
+		value: function move(arg_x, arg_y, arg_z) {
+			var pos_h = this.domain_h().range_to_screen(arg_x);
+			var pos_v = this.domain_v().range_to_screen(arg_y);
+			this.position([arg_x, arg_y]);
+
+			if (this._shape) {
+				this._shape.move(pos_h, pos_v);
+			}
+
 			return this;
 		}
 
@@ -67158,7 +67456,7 @@ var Drawable = function () {
 exports.default = Drawable;
 
 
-},{"../../../base/position":503,"devapt-core-common/dist/js/utils/types":107}],529:[function(require,module,exports){
+},{"../../../base/position":503,"devapt-core-common/dist/js/utils/types":107}],530:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -67233,22 +67531,27 @@ var Ellipse = function (_Drawable) {
 
 		_this._width = arg_width;
 		_this._height = arg_height;
-		_this._color = arg_color;
+		_this.color = arg_color;
 		return _this;
 	}
 
 	_createClass(Ellipse, [{
 		key: 'draw',
 		value: function draw() {
+			// DO NOT RENDER	
+			if (this.color == 'none') {
+				return;
+			}
+
 			var pos_h = this.pos_h();
 			var pos_v = this.pos_v();
 			var size_h = this.domain_h().range_to_screen(this._width);
 			var size_v = this.domain_v().range_to_screen(this._height);
 
-			this._shape = this.space().svg().ellipse(size_h, size_v).move(pos_h, pos_v);
+			this._shape = this.space().svg().ellipse(size_h, size_v).center(pos_h, pos_v);
 
-			if (this._color) {
-				this._shape.fill(this._color);
+			if (this.color) {
+				this._shape.fill(this.color);
 			}
 
 			return this;
@@ -67261,7 +67564,7 @@ var Ellipse = function (_Drawable) {
 exports.default = Ellipse;
 
 
-},{"./drawable":528,"devapt-core-common/dist/js/utils/types":107}],530:[function(require,module,exports){
+},{"./drawable":529,"devapt-core-common/dist/js/utils/types":107}],531:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -67299,9 +67602,29 @@ var _car = require('./car');
 
 var _car2 = _interopRequireDefault(_car);
 
+var _point = require('./point');
+
+var _point2 = _interopRequireDefault(_point);
+
 var _line_arrow = require('./line_arrow');
 
 var _line_arrow2 = _interopRequireDefault(_line_arrow);
+
+var _line = require('./line');
+
+var _line2 = _interopRequireDefault(_line);
+
+var _axis = require('./axis');
+
+var _axis2 = _interopRequireDefault(_axis);
+
+var _polygon = require('./polygon');
+
+var _polygon2 = _interopRequireDefault(_polygon);
+
+var _star = require('./star');
+
+var _star2 = _interopRequireDefault(_star);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -67352,6 +67675,21 @@ var Factory = function () {
 			return this._shapes;
 		}
 	}, {
+		key: 'get',
+		value: function get(arg_name) {
+			return this._shapes[arg_name];
+		}
+	}, {
+		key: 'count',
+		value: function count() {
+			return this._shapes_counter;
+		}
+	}, {
+		key: 'types',
+		value: function types() {
+			return ['cir', 'circle', 'rect', 'rectangle', 'line', 'axis', 'grid', 'ell', 'ellipse', 'p', 'point', 'car', 'arrow', 'line_arrow'];
+		}
+	}, {
 		key: 'create',
 		value: function create(arg_shape_cfg) {
 			console.log(context + ':create:shape cfg:', arg_shape_cfg);
@@ -67359,7 +67697,7 @@ var Factory = function () {
 			// GET TYPE
 			var type = arg_shape_cfg.type;
 			if (!_types2.default.isNotEmptyString(type)) {
-				return;
+				return this;
 			}
 
 			// GET NAME
@@ -67384,6 +67722,19 @@ var Factory = function () {
 						break;
 					}
 
+				case 'p':
+				case 'point':
+					{
+						var render = _types2.default.isNotEmptyString(arg_shape_cfg.render) ? arg_shape_cfg.render : undefined;
+						var size = _types2.default.isNumber(arg_shape_cfg.size) && arg_shape_cfg.size > 0 ? arg_shape_cfg.size : undefined;
+						console.log(context + ':process_scene_item:point size=[%d] color=[%s] render=[%s]:', size, color, position, render);
+
+						var _shape = new _point2.default(this._space, this._space, position, color, render, size);
+						_shape.draw();
+						this._shapes[name] = _shape;
+						break;
+					}
+
 				case 'ellipse':
 				case 'ell':
 					{
@@ -67391,9 +67742,9 @@ var Factory = function () {
 						var height = _types2.default.isNumber(arg_shape_cfg.height) && arg_shape_cfg.height > 0 ? arg_shape_cfg.height : 100;
 						console.log(context + ':process_scene_item:ellipse width=[%d] height=[%d] color=[%s]:', width, height, color, position);
 
-						var _shape = new _ellipse2.default(this._space, this._space, position, color, width, height);
-						_shape.draw();
-						this._shapes[name] = _shape;
+						var _shape2 = new _ellipse2.default(this._space, this._space, position, color, width, height);
+						_shape2.draw();
+						this._shapes[name] = _shape2;
 						break;
 					}
 
@@ -67404,21 +67755,71 @@ var Factory = function () {
 						var _height = _types2.default.isNumber(arg_shape_cfg.height) && arg_shape_cfg.height > 0 ? arg_shape_cfg.height : 100;
 						console.log(context + ':process_scene_item:rectangle width=[%d] height=[%d] color=[%s]:', _width, _height, color, position);
 
-						var _shape2 = new _rectangle2.default(this._space, this._space, position, color, _width, _height);
-						_shape2.draw();
-						this._shapes[name] = _shape2;
+						var _shape3 = new _rectangle2.default(this._space, this._space, position, color, _width, _height);
+						_shape3.draw();
+						this._shapes[name] = _shape3;
+						break;
+					}
+
+				case 'line':
+					{
+						var position_end = _types2.default.isArray(arg_shape_cfg.position_end) && arg_shape_cfg.position_end.length >= 2 ? arg_shape_cfg.position_end : [0, 0, 0];
+						var _width2 = _types2.default.isNumber(arg_shape_cfg.width) && arg_shape_cfg.width > 0 ? arg_shape_cfg.width : 1;
+						console.log(context + ':process_scene_item:line width=[%d] color=[%s]:', _width2, color, position, position_end);
+
+						var _shape4 = new _line2.default(this._space, this._space, position, position_end, color, _width2);
+						_shape4.draw();
+						this._shapes[name] = _shape4;
+						break;
+					}
+
+				case 'axis':
+					{
+						var domain = arg_shape_cfg.domain;
+						var _width3 = _types2.default.isNumber(arg_shape_cfg.width) && arg_shape_cfg.width > 0 ? arg_shape_cfg.width : 1;
+						console.log(context + ':process_scene_item:line domain=[%s] color=[%s] width=[%d]:', domain, color, _width3, position);
+
+						var _shape5 = new _axis2.default(this._space, this._space, position, domain, color, _width3);
+						_shape5.draw();
+						this._shapes[name] = _shape5;
+						break;
+					}
+
+				case 'polygon':
+				case 'pol':
+					{
+						var _radius = _types2.default.isNumber(arg_shape_cfg.radius) && arg_shape_cfg.radius > 0 ? arg_shape_cfg.radius : 50;
+						var edges = _types2.default.isNumber(arg_shape_cfg.edges) && arg_shape_cfg.edges > 0 ? arg_shape_cfg.edges : 5;
+						console.log(context + ':process_scene_item:polygon edges=[%d] radius=[%d] color=[%s]:', edges, _radius, color, position);
+
+						var _shape6 = new _polygon2.default(this._space, this._space, position, color, edges, _radius);
+						_shape6.draw();
+						this._shapes[name] = _shape6;
+						break;
+					}
+
+				case 'star':
+					{
+						var inner = _types2.default.isNumber(arg_shape_cfg.inner) && arg_shape_cfg.inner > 0 ? arg_shape_cfg.inner : 50;
+						var outer = _types2.default.isNumber(arg_shape_cfg.outer) && arg_shape_cfg.outer > 0 ? arg_shape_cfg.outer : 50;
+						var spikes = _types2.default.isNumber(arg_shape_cfg.spikes) && arg_shape_cfg.spikes > 0 ? arg_shape_cfg.spikes : 5;
+						console.log(context + ':process_scene_item:star spikes=[%d] inner=[%d] outer=[%d] color=[%s]:', spikes, inner, outer, color, position);
+
+						var _shape7 = new _star2.default(this._space, this._space, position, color, spikes, inner, outer);
+						_shape7.draw();
+						this._shapes[name] = _shape7;
 						break;
 					}
 
 				case 'car':
 					{
-						var _width2 = _types2.default.isNumber(arg_shape_cfg.width) && arg_shape_cfg.width > 0 ? arg_shape_cfg.width : 100;
+						var _width4 = _types2.default.isNumber(arg_shape_cfg.width) && arg_shape_cfg.width > 0 ? arg_shape_cfg.width : 100;
 						var _height2 = _types2.default.isNumber(arg_shape_cfg.height) && arg_shape_cfg.height > 0 ? arg_shape_cfg.height : 100;
-						console.log(context + ':process_scene_item:car width=[%d] height=[%d] color=[%s]:', _width2, _height2, color, position);
+						console.log(context + ':process_scene_item:car width=[%d] height=[%d] color=[%s]:', _width4, _height2, color, position);
 
-						var _shape3 = new _car2.default(this._space, this._space, position, color, _width2, _height2);
-						_shape3.draw();
-						this._shapes[name] = _shape3;
+						var _shape8 = new _car2.default(this._space, this._space, position, color, _width4, _height2);
+						_shape8.draw();
+						this._shapes[name] = _shape8;
 						break;
 					}
 
@@ -67440,9 +67841,9 @@ var Factory = function () {
 
 						console.log(context + ':process_scene_item:line arrow line_width=[%d] length=[%d] angle=[%d] end=[%s] color=[%s]:', line_width, length, angle, end, color, position);
 
-						var _shape4 = new _line_arrow2.default(this._space, this._space, position, color, arrow_start, arrow_end, line_width, arrow_h, arrow_v, end ? end : length, angle);
-						_shape4.draw();
-						this._shapes[name] = _shape4;
+						var _shape9 = new _line_arrow2.default(this._space, this._space, position, color, arrow_start, arrow_end, line_width, arrow_h, arrow_v, end ? end : length, angle);
+						_shape9.draw();
+						this._shapes[name] = _shape9;
 						break;
 					}
 			}
@@ -67457,7 +67858,174 @@ var Factory = function () {
 exports.default = Factory;
 
 
-},{"./car":526,"./circle":527,"./ellipse":529,"./line_arrow":531,"./rectangle":532,"devapt-core-common/dist/js/utils/types":107}],531:[function(require,module,exports){
+},{"./axis":526,"./car":527,"./circle":528,"./ellipse":530,"./line":532,"./line_arrow":533,"./point":534,"./polygon":535,"./rectangle":536,"./star":538,"devapt-core-common/dist/js/utils/types":107}],532:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+		value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _types = require('devapt-core-common/dist/js/utils/types');
+
+var _types2 = _interopRequireDefault(_types);
+
+var _drawable = require('./drawable');
+
+var _drawable2 = _interopRequireDefault(_drawable);
+
+var _position = require('../../../base/position');
+
+var _position2 = _interopRequireDefault(_position);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// NPM IMPORTS
+
+// DEVAPT CORE COMMON IMPORTS
+
+
+// DEVAPT CORE BROWSER IMPORTS
+
+// PLUGIN IMPORTS
+
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svg/line';
+
+var DEFAULT_RADIUS = 1;
+
+/**
+ * @file Drawing line class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Line = function (_Drawable) {
+		_inherits(Line, _Drawable);
+
+		/**
+   * Create a shape instance.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector} arg_pos_begin- shape position begin.
+   * @param {array|Vector} arg_pos_end - shape position end.
+   * @param {string}		 arg_color    - shape color.
+   * @param {number}       arg_width    - shape width in pixels.
+   * 
+   * @returns {nothing}
+   */
+		function Line(arg_space, arg_owner, arg_pos_begin, arg_pos_end) {
+				var arg_color = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : undefined;
+				var arg_width = arguments[5];
+
+				_classCallCheck(this, Line);
+
+				var _this = _possibleConstructorReturn(this, (Line.__proto__ || Object.getPrototypeOf(Line)).call(this, arg_space, arg_owner, arg_pos_begin, 'line'));
+
+				_this.is_svg_line = true;
+
+				_this._pos_end = new _position2.default([0, 0]);
+
+				if (_types2.default.isArray(arg_pos_end) || _this._is_vector(arg_pos_end)) {
+						_this._pos_end.values(arg_pos_end);
+				}
+
+				_this.color = arg_color ? arg_color : 'blue';
+				_this._width = arg_width ? arg_width : 1;
+				return _this;
+		}
+
+		_createClass(Line, [{
+				key: 'draw',
+				value: function draw() {
+						// DO NOT RENDER	
+						if (this.color == 'none') {
+								return;
+						}
+
+						var pos_begin_h = this.pos_h();
+						var pos_begin_v = this.pos_v();
+						var pos_end_h = this.pos_h(this._pos_end.x());
+						var pos_end_v = this.pos_v(this._pos_end.y());
+
+						this._shape = this.space().svg().line(pos_begin_h, pos_begin_v, pos_end_h, pos_end_v);
+
+						if (this.color && this._width) {
+								this._shape.stroke({ color: this.color, width: this._width });
+						}
+
+						return this;
+				}
+		}]);
+
+		return Line;
+}(_drawable2.default);
+/*
+ngon: function(settings) {
+    settings = settings || {}
+
+    var i, a, x, y
+      , points  = []
+      , defaults = SVG.shapes.defaults
+      , edges   = typeof settings.edges  == 'number' ? settings.edges  : defaults.edges 
+      , radius  = typeof settings.radius == 'number' ? settings.radius : defaults.radius
+      , degrees = 360 / edges
+
+    for (i = 0; i < edges; i++) {
+      a = i * degrees - 90
+      x = radius + radius * Math.cos(a * Math.PI / 180)
+      y = radius + radius * Math.sin(a * Math.PI / 180)
+
+      points.push([x, y])
+    }
+
+    return new SVG.PointArray(points)
+  }
+
+  star: function(settings) {
+    settings = settings || {}
+
+    var i, a, x, y
+      , points  = []
+      , defaults = SVG.shapes.defaults
+      , spikes  = typeof settings.spikes == 'number' ? settings.spikes : defaults.spikes
+      , inner   = typeof settings.inner  == 'number' ? settings.inner  : defaults.inner 
+      , outer   = typeof settings.outer  == 'number' ? settings.outer  : defaults.outer 
+      , degrees = 360 / spikes
+
+    for (i = 0; i < spikes; i++) {
+      a = i * degrees + 90
+      x = outer + inner * Math.cos(a * Math.PI / 180)
+      y = outer + inner * Math.sin(a * Math.PI / 180)
+
+      points.push([x, y])
+
+      a += degrees / 2
+      x = outer + outer * Math.cos(a * Math.PI / 180)
+      y = outer + outer * Math.sin(a * Math.PI / 180)
+
+      points.push([x, y])
+    }
+
+    return new SVG.PointArray(points)
+  }
+*/
+
+
+exports.default = Line;
+
+
+},{"../../../base/position":503,"./drawable":529,"devapt-core-common/dist/js/utils/types":107}],533:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -67538,11 +68106,11 @@ var LineArrow = function (_Drawable) {
 
 		_classCallCheck(this, LineArrow);
 
-		var _this = _possibleConstructorReturn(this, (LineArrow.__proto__ || Object.getPrototypeOf(LineArrow)).call(this, arg_space, arg_owner, arg_position, 'rectangle'));
+		var _this = _possibleConstructorReturn(this, (LineArrow.__proto__ || Object.getPrototypeOf(LineArrow)).call(this, arg_space, arg_owner, arg_position, 'linearrow'));
 
-		_this.is_svg_rectangle = true;
+		_this.is_svg_linearrow = true;
 
-		_this._color = arg_color;
+		_this.color = arg_color;
 
 		_this._line_length = _types2.default.isNumber(arg_length_or_position) ? arg_length_or_position : undefined;
 		_this._line_angle = _types2.default.isNumber(arg_angle_or_nothing) ? arg_angle_or_nothing : undefined;
@@ -67564,6 +68132,11 @@ var LineArrow = function (_Drawable) {
 	_createClass(LineArrow, [{
 		key: 'draw',
 		value: function draw() {
+			// DO NOT RENDER	
+			if (this.color == 'none') {
+				return;
+			}
+
 			// SCALE
 			// const size_h = this.domain_h().range_to_screen(this._width)
 			// const size_v = this.domain_v().range_to_screen(this._height)
@@ -67603,8 +68176,8 @@ var LineArrow = function (_Drawable) {
 				}
 			}
 			if (_types2.default.isNumber(end_h) && _types2.default.isNumber(end_v)) {
-				this._line_end_position_h = this.domain_h().range_to_screen(end_h);
-				this._line_end_position_v = this.domain_v().range_to_screen(end_v);
+				this._line_end_position_h = this.pos_h(end_h);
+				this._line_end_position_v = this.pos_v(end_v);
 			}
 			if (!_types2.default.isNumber(this._line_end_position_h) || !_types2.default.isNumber(this._line_end_position_v)) {
 				return;
@@ -67612,8 +68185,8 @@ var LineArrow = function (_Drawable) {
 
 			var options = {
 				width: this._line_width,
-				color: this._color ? this._color : 'black' /*,
-                                               linecap:'round'*/
+				color: this.color ? this.color : 'black' /*,
+                                             linecap:'round'*/
 			};
 
 			console.log(context + ':draw:line:pos_h=%d pos_v=%d end_h=%d end_v=%d', pos_h, pos_v, this._line_end_position_h, this._line_end_position_v);
@@ -67647,7 +68220,281 @@ var LineArrow = function (_Drawable) {
 exports.default = LineArrow;
 
 
-},{"./drawable":528,"devapt-core-common/dist/js/utils/types":107}],532:[function(require,module,exports){
+},{"./drawable":529,"devapt-core-common/dist/js/utils/types":107}],534:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _types = require('devapt-core-common/dist/js/utils/types');
+
+var _types2 = _interopRequireDefault(_types);
+
+var _drawable = require('./drawable');
+
+var _drawable2 = _interopRequireDefault(_drawable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// NPM IMPORTS
+
+// DEVAPT CORE COMMON IMPORTS
+
+
+// DEVAPT CORE BROWSER IMPORTS
+
+// PLUGIN IMPORTS
+
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svg/point';
+
+var DEFAULT_RENDER = 'circle';
+var DEFAULT_SIZE = 2;
+var DEFAULT_COLOR = 'red';
+
+/**
+ * @file Drawing point class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Point = function (_Drawable) {
+	_inherits(Point, _Drawable);
+
+	/**
+  * Create a shape instance.
+  * 
+  * @param {Space}        arg_space    - drawing space.
+  * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+  * @param {array|Vector} arg_position - shape position.
+  * @param {string}		 arg_color    - shape color.
+  * @param {string}       arg_render   - shape rendering:cross, xcross, circle, disk, point.
+  * @param {number}       arg_size     - shape rendering size.
+  * 
+  * @returns {nothing}
+  */
+	function Point(arg_space, arg_owner, arg_position) {
+		var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : DEFAULT_COLOR;
+		var arg_render = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : DEFAULT_RENDER;
+		var arg_size = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : DEFAULT_SIZE;
+
+		_classCallCheck(this, Point);
+
+		var _this = _possibleConstructorReturn(this, (Point.__proto__ || Object.getPrototypeOf(Point)).call(this, arg_space, arg_owner, arg_position, 'point'));
+
+		_this.is_svg_point = true;
+
+		_this.color = arg_color;
+		_this.render = arg_render;
+		_this.size = arg_size;
+		return _this;
+	}
+
+	_createClass(Point, [{
+		key: 'draw',
+		value: function draw() {
+			// DO NOT RENDER	
+			if (this.color == 'none') {
+				return;
+			}
+
+			// RENDER
+			var pos_h = this.pos_h();
+			var pos_v = this.pos_v();
+
+			var size_h = this.domain_h().range_to_screen(this.size);
+			var size_v = this.domain_v().range_to_screen(this.size);
+			var size = Math.min(size_h, size_v);
+
+			var svg = this.space().svg();
+
+			var options = {
+				width: this.size,
+				color: this.color ? this.color : 'blue' /*,
+                                            linecap:'round'*/
+			};
+
+			switch (this.render) {
+				case 'square':
+					this._shape = svg.rect(2 * size_h, 2 * size_v).move(pos_h - size_h, pos_v - size_v).fill('none');
+					this.draw_color();
+					break;
+				case 'cross':
+					this._shape = svg.group();
+					this._shape.add(svg.line(pos_h - size, pos_v, pos_h + size, pos_v));
+					this._shape.add(svg.line(pos_h, pos_v - size, pos_h, pos_v + size));
+					this.draw_color();
+					break;
+				case 'xcross':
+					this._shape = svg.group();
+					this._shape.add(svg.line(pos_h - size, pos_v - size, pos_h + size, pos_v + size));
+					this._shape.add(svg.line(pos_h - size, pos_v + size, pos_h + size, pos_v - size));
+					this.draw_color();
+					break;
+				case 'point':
+					this._shape = svg.point(pos_h, pos_v).fill(this.color);
+					break;
+				case 'disk':
+					this._shape = svg.circle(2 * size).fill(this.color);
+					this._shape.move(pos_h, pos_v);
+					break;
+				case 'circle':
+				default:
+					{
+						this._shape = svg.circle(2 * size).fill('none').stroke(options);
+						this._shape.center(pos_h, pos_v);
+						break;
+					}
+			}
+
+			return this;
+		}
+	}]);
+
+	return Point;
+}(_drawable2.default);
+
+exports.default = Point;
+
+
+},{"./drawable":529,"devapt-core-common/dist/js/utils/types":107}],535:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _types = require('devapt-core-common/dist/js/utils/types');
+
+var _types2 = _interopRequireDefault(_types);
+
+var _drawable = require('./drawable');
+
+var _drawable2 = _interopRequireDefault(_drawable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// NPM IMPORTS
+
+// DEVAPT CORE COMMON IMPORTS
+
+
+// DEVAPT CORE BROWSER IMPORTS
+
+// PLUGIN IMPORTS
+
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svg/polygon';
+
+var DEFAULT_EDGES = 5;
+var DEFAULT_RADIUS = 50;
+
+/**
+ * @file Drawing polygon class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Polygon = function (_Drawable) {
+	_inherits(Polygon, _Drawable);
+
+	/**
+  * Create a shape instance.
+  * 
+  * @param {Space}        arg_space    - drawing space.
+  * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+  * @param {array|Vector} arg_position - shape position.
+  * @param {string}		 arg_color    - shape color.
+  * @param {number}       arg_edges    - shape edges count.
+  * @param {number}       arg_radius   - shape radius.
+  * 
+  * @returns {nothing}
+  */
+	function Polygon(arg_space, arg_owner, arg_position) {
+		var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
+		var arg_edges = arguments[4];
+		var arg_radius = arguments[5];
+
+		_classCallCheck(this, Polygon);
+
+		var _this = _possibleConstructorReturn(this, (Polygon.__proto__ || Object.getPrototypeOf(Polygon)).call(this, arg_space, arg_owner, arg_position, 'polygon'));
+
+		_this.is_svg_polygon = true;
+
+		_this._edges = typeof arg_edges == 'number' ? arg_edges : DEFAULT_EDGES;
+		_this._radius = typeof arg_radius == 'number' ? arg_radius : DEFAULT_RADIUS;
+		_this.color = arg_color;
+		return _this;
+	}
+
+	_createClass(Polygon, [{
+		key: 'draw',
+		value: function draw() {
+			// DO NOT RENDER	
+			if (this.color == 'none') {
+				return;
+			}
+
+			var pos_h = this.pos_h();
+			var pos_v = this.pos_v();
+
+			var radius_h = this.domain_h().range_to_screen(this._radius);
+			var radius_v = this.domain_v().range_to_screen(this._radius);
+			var radius = Math.min(radius_h, radius_v);
+
+			var edges = typeof this._edges == 'number' ? this._edges : DEFAULT_EDGES;
+
+			var i = void 0,
+			    a = void 0,
+			    x = void 0,
+			    y = void 0;
+			var points = [];
+			var degrees = 360 / edges;
+
+			for (i = 0; i < edges; i++) {
+				a = i * degrees - 90;
+				x = radius + radius * Math.cos(a * Math.PI / 180);
+				y = radius + radius * Math.sin(a * Math.PI / 180);
+
+				points.push([x, y]);
+			}
+
+			this._shape = this.space().svg().polygon(new SVG.PointArray(points)).center(pos_h, pos_v);
+
+			this.draw_color();
+
+			return this;
+		}
+	}]);
+
+	return Polygon;
+}(_drawable2.default);
+
+exports.default = Polygon;
+
+
+},{"./drawable":529,"devapt-core-common/dist/js/utils/types":107}],536:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -67722,13 +68569,18 @@ var Rectangle = function (_Drawable) {
 
 		_this._width = arg_width;
 		_this._height = arg_height;
-		_this._color = arg_color;
+		_this.color = arg_color;
 		return _this;
 	}
 
 	_createClass(Rectangle, [{
 		key: 'draw',
 		value: function draw() {
+			// DO NOT RENDER	
+			if (this.color == 'none') {
+				return;
+			}
+
 			var pos_h = this.pos_h();
 			var pos_v = this.pos_v();
 			var size_h = this.domain_h().range_to_screen(this._width);
@@ -67736,8 +68588,8 @@ var Rectangle = function (_Drawable) {
 
 			this._shape = this.space().svg().rect(size_h, size_v).move(pos_h, pos_v);
 
-			if (this._color) {
-				this._shape.fill(this._color);
+			if (this.color) {
+				this._shape.fill(this.color);
 			}
 
 			return this;
@@ -67750,7 +68602,7 @@ var Rectangle = function (_Drawable) {
 exports.default = Rectangle;
 
 
-},{"./drawable":528,"devapt-core-common/dist/js/utils/types":107}],533:[function(require,module,exports){
+},{"./drawable":529,"devapt-core-common/dist/js/utils/types":107}],537:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -67872,12 +68724,14 @@ var Space = function (_Drawable) {
 		_this._width = arg_px_width;
 		_this._height = arg_px_height;
 		_this._viewbox = undefined;
+		_this._pad_h = 5;
+		_this._pad_v = 5;
 
 		_this._domains = [];
 		_this._domains_by_index = {};
 		_this._domains_by_name = {};
 
-		_this._svg = SVG(_this._dom_id).size(_this._width, _this._height);
+		_this._svg = SVG(_this._dom_id).size(_this._width + 2 * _this._pad_h, _this._height + 2 * _this._pad_v);
 
 		_this._set_domains(arg_domains_cfgs);
 		return _this;
@@ -67894,7 +68748,7 @@ var Space = function (_Drawable) {
 			var width = this._width;
 			var height = this._height;
 
-			this._viewbox = this._svg.viewbox(0, 0, width, height);
+			this._viewbox = this._svg.viewbox(0, 0, width + 2 * this._pad_h, height + 2 * this._pad_v);
 
 			return this;
 		}
@@ -67903,7 +68757,7 @@ var Space = function (_Drawable) {
 		value: function background() {
 			var arg_color = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '#dde3e1';
 
-			this._svg.rect(this._width, this._height).fill(arg_color);
+			return this._svg.rect(this._width, this._height).fill(arg_color);
 		}
 	}, {
 		key: 'axis_center_h',
@@ -67912,7 +68766,7 @@ var Space = function (_Drawable) {
 			var arg_width = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
 			var arg_dashes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '5,5';
 
-			this._svg.line(this._width / 2, 0, this._width / 2, this._height).stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes });
+			return this._svg.line(this._width / 2, 0, this._width / 2, this._height).stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes });
 		}
 	}, {
 		key: 'axis_center_v',
@@ -67921,7 +68775,7 @@ var Space = function (_Drawable) {
 			var arg_width = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
 			var arg_dashes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '5,5';
 
-			this._svg.line(0, this._height / 2, this._width, this._height / 2).stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes });
+			return this._svg.line(0, this._height / 2, this._width, this._height / 2).stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes });
 		}
 	}, {
 		key: 'axis_h',
@@ -67932,7 +68786,7 @@ var Space = function (_Drawable) {
 
 			var posh = this.domain_h().range_to_screen(0);
 
-			this._svg.line(posh, 0, posh, this._height).stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes });
+			return this._svg.line(posh, 0, posh, this._height).stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes });
 		}
 	}, {
 		key: 'axis_v',
@@ -67943,7 +68797,7 @@ var Space = function (_Drawable) {
 
 			var posv = this.domain_v().range_to_screen(0);
 
-			this._svg.line(0, posv, this._width, posv).stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes });
+			return this._svg.line(0, posv, this._width, posv).stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes });
 		}
 	}, {
 		key: '_set_domains',
@@ -67983,12 +68837,154 @@ var Space = function (_Drawable) {
 exports.default = Space;
 
 
-},{"../../../base/domain":502,"../../../base/position":503,"../../../base/vector":511,"./drawable":528,"devapt-core-common/dist/js/utils/types":107}],534:[function(require,module,exports){
+},{"../../../base/domain":502,"../../../base/position":503,"../../../base/vector":511,"./drawable":529,"devapt-core-common/dist/js/utils/types":107}],538:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _types = require('devapt-core-common/dist/js/utils/types');
+
+var _types2 = _interopRequireDefault(_types);
+
+var _drawable = require('./drawable');
+
+var _drawable2 = _interopRequireDefault(_drawable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// NPM IMPORTS
+
+// DEVAPT CORE COMMON IMPORTS
+
+
+// DEVAPT CORE BROWSER IMPORTS
+
+// PLUGIN IMPORTS
+
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svg/star';
+
+var DEFAULT_INNER = 50;
+var DEFAULT_OUTER = 50;
+var DEFAULT_SPIKES = 5;
+
+/**
+ * @file Drawing polygon class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Star = function (_Drawable) {
+	_inherits(Star, _Drawable);
+
+	/**
+  * Create a shape instance.
+  * 
+  * @param {Space}        arg_space    - drawing space.
+  * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+  * @param {array|Vector} arg_position - shape position.
+  * @param {string}		 arg_color    - shape color.
+  * @param {number}       arg_spikes   - shape spikes count.
+  * @param {number}       arg_inner    - shape inner.
+  * @param {number}       arg_outer    - shape outer.
+  * 
+  * @returns {nothing}
+  */
+	function Star(arg_space, arg_owner, arg_position) {
+		var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
+		var arg_spikes = arguments[4];
+		var arg_inner = arguments[5];
+		var arg_outer = arguments[6];
+
+		_classCallCheck(this, Star);
+
+		var _this = _possibleConstructorReturn(this, (Star.__proto__ || Object.getPrototypeOf(Star)).call(this, arg_space, arg_owner, arg_position, 'star'));
+
+		_this.is_svg_star = true;
+
+		_this._spikes = typeof arg_spikes == 'number' ? arg_spikes : DEFAULT_SPIKES;
+		_this._inner = typeof arg_inner == 'number' ? arg_inner : DEFAULT_INNER;
+		_this._outer = typeof arg_outer == 'number' ? arg_outer : DEFAULT_OUTER;
+		_this.color = arg_color;
+		return _this;
+	}
+
+	_createClass(Star, [{
+		key: 'draw',
+		value: function draw() {
+			// DO NOT RENDER	
+			if (this.color == 'none') {
+				return;
+			}
+
+			var pos_h = this.pos_h();
+			var pos_v = this.pos_v();
+
+			var inner_h = this.domain_h().range_to_screen(this._inner);
+			var inner_v = this.domain_v().range_to_screen(this._inner);
+			var inner = Math.min(inner_h, inner_v);
+
+			var outer_h = this.domain_h().range_to_screen(this._outer);
+			var outer_v = this.domain_v().range_to_screen(this._outer);
+			var outer = Math.min(outer_h, outer_v);
+
+			var spikes = typeof this._spikes == 'number' ? this._spikes : DEFAULT_SPIKES;
+
+			var i = void 0,
+			    a = void 0,
+			    x = void 0,
+			    y = void 0;
+			var points = [];
+			var degrees = 360 / spikes;
+
+			for (i = 0; i < spikes; i++) {
+				a = i * degrees + 90;
+				x = outer + inner * Math.cos(a * Math.PI / 180);
+				y = outer + inner * Math.sin(a * Math.PI / 180);
+
+				points.push([x, y]);
+
+				a += degrees / 2;
+				x = outer + outer * Math.cos(a * Math.PI / 180);
+				y = outer + outer * Math.sin(a * Math.PI / 180);
+
+				points.push([x, y]);
+			}
+
+			this._shape = this.space().svg().polygon(new SVG.PointArray(points)).center(pos_h, pos_v);
+
+			this.draw_color();
+
+			return this;
+		}
+	}]);
+
+	return Star;
+}(_drawable2.default);
+
+exports.default = Star;
+
+
+},{"./drawable":529,"devapt-core-common/dist/js/utils/types":107}],539:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -68032,7 +69028,7 @@ var FeaturedTerminal = function (_Terminal) {
 	_inherits(FeaturedTerminal, _Terminal);
 
 	/**
-  * Create an instance of TerminalMathJS.
+  * Create an instance of FeaturedTerminal.
   * @extends Terminal
   * 
   * 	API:
@@ -68056,9 +69052,14 @@ var FeaturedTerminal = function (_Terminal) {
 
 		_this._workers = [];
 		_this._features = {};
+		_this._features_scopes = {};
 		_this._aliases = {};
 		_this._mode = undefined;
+		_this._default_feature_name;
 
+		if (!_types2.default.isObject(window.devapt().func_features)) {
+			window.devapt().func_features = {};
+		}
 		_this.load_features();
 
 		// this.enable_trace()
@@ -68077,16 +69078,40 @@ var FeaturedTerminal = function (_Terminal) {
 		value: function load_features() {
 			var _this2 = this;
 
-			var features_config = this.get_state_value('features', {});
 			var runtime = this.get_runtime();
 
-			console.log(context + ':load_features:features_config', features_config);
+			this._default_feature_name = this.get_state_value('default_feature', undefined);
+			var required_features_view = this.get_state_value('required_features', []);
+			var features_view = this.get_state_value('features', {});
+
+			var all_features_app = runtime.get_state_store().get_state().get('features', {}).toJS();
+			var required_features_app = {};
+			required_features_view.forEach(function (feature_name) {
+				if (feature_name in all_features_app) {
+					required_features_app[feature_name] = all_features_app[feature_name];
+				}
+			});
+
+			var features_config = _lodash2.default.merge(features_view, required_features_app);
+
+			// DEBUG
+			// console.log(context + ':load_features:features_view', features_view)
+			// console.log(context + ':load_features:features_app', features_app)
+			// console.log(context + ':load_features:features_config', features_config)
 
 			var assets = [];
 			this._aliases = {};
 			_lodash2.default.forEach(features_config, function (feature_config, feature_key) {
-				var feature_name = feature_config && feature_config.name ? feature_config.name + '' : feature_key + '';
-				_this2.info('load feature:[' + feature_name + ']');
+				feature_config.name = feature_config.name ? feature_config.name : feature_key;
+				var feature_name = feature_config.name;
+				var feature_type = feature_config.type + '';
+				_this2.info('load feature:[' + feature_name + '] of type [' + feature_type + ']');
+
+				if (feature_type.toLocaleLowerCase() != 'terminal') {
+					return;
+				}
+
+				feature_config.terminal = _this2;
 
 				var log_context = context + ':load_features:terminal=[' + _this2.get_name() + ']:feature=[' + feature_name + ']';
 				var feature = new _terminal_feature2.default(runtime, feature_config, log_context);
@@ -68097,7 +69122,7 @@ var FeaturedTerminal = function (_Terminal) {
 
 				var feature_assets = feature.get_assets();
 				if (_types2.default.isNotEmptyArray(feature_assets)) {
-					assets = _lodash2.default.merge(feature_assets, assets);
+					assets = _lodash2.default.concat(feature_assets, assets);
 				}
 
 				var feature_aliases = feature.get_aliases();
@@ -68108,6 +69133,7 @@ var FeaturedTerminal = function (_Terminal) {
 				}
 
 				_this2._features[feature_name] = feature;
+				_this2._features_scopes[feature_name] = {};
 			});
 
 			// LOAD FEATURES ASSETS
@@ -68190,19 +69216,73 @@ var FeaturedTerminal = function (_Terminal) {
 		key: '_set_mode',
 		value: function _set_mode(arg_checked_mode) {
 			this._mode = arg_checked_mode;
+			// const default_prompt = this.get_state_value('prompt', '>')
+			var input_jqo = $('#' + this.get_dom_id());
+			var new_prompt = arg_checked_mode + '>';
+			var cmd = input_jqo.data('cmd');
+			cmd.prompt(new_prompt);
 		}
 
 		/**
    * Get terminal mode: Numerical, algebrical, plot.
-   * @private
    * 
    * @returns {string}
    */
 
 	}, {
-		key: '_get_mode',
-		value: function _get_mode() {
+		key: 'get_mode',
+		value: function get_mode() {
 			return this._mode;
+		}
+
+		/**
+   * Get terminal features.
+   * 
+   * @returns {string}
+   */
+
+	}, {
+		key: 'get_features',
+		value: function get_features() {
+			return this._features;
+		}
+
+		/**
+   * Get terminal features aliases.
+   * 
+   * @returns {string}
+   */
+
+	}, {
+		key: 'get_aliases',
+		value: function get_aliases() {
+			return this._aliases;
+		}
+
+		/**
+   * Get terminal feature scope.
+   * 
+   * @param {string} arg_name - feature name.
+   * 
+   * @returns {object} - feature scope/context inside this terminal component.
+   */
+
+	}, {
+		key: 'get_feature_scope',
+		value: function get_feature_scope(arg_name) {
+			return this._features_scopes[arg_name];
+		}
+
+		/**
+   * Get terminal canvas id.
+   * 
+   * @returns {string}
+   */
+
+	}, {
+		key: 'get_canvas_id',
+		value: function get_canvas_id() {
+			return this.get_state_value('canvas_id', undefined);
 		}
 
 		/**
@@ -68216,22 +69296,74 @@ var FeaturedTerminal = function (_Terminal) {
 	}, {
 		key: 'eval',
 		value: function _eval(arg_expression) {
-			var mode_expression = arg_expression + '';
-			var split_spaces = mode_expression.split(' ', LIMIT_SPACES_IN_EXPRESSION);
-			var switch_mode = split_spaces.length > 0 ? this.switch_mode(split_spaces[0]) : false;
-			var expression = switch_mode ? split_spaces.slice(1).join(' ') : arg_expression;
-			var mode = this._get_mode();
+			var _this3 = this;
 
-			var feature = mode in this._features ? this._features[mode] : undefined;
+			// ENABLE DEFAULT FEATURE
+			if (!this._mode && this._default_feature_name) {
+				this.switch_mode(this._default_feature_name);
+			}
+
+			var str_expression = arg_expression + '';
+			var split_spaces = str_expression.split(' ', LIMIT_SPACES_IN_EXPRESSION);
+
+			var part0 = split_spaces[0];
+			var part1 = split_spaces[1];
+
+			var switch_mode = split_spaces.length > 0 ? this.switch_mode(part0) : false;
+			var expression = switch_mode ? split_spaces.slice(1).join(' ') : arg_expression;
+			var mode = this.get_mode();
+
+			var feature = undefined;
+			if (switch_mode) {
+				feature = mode in this._features ? this._features[mode] : undefined;
+			}
 
 			if (!feature) {
-				console.log(context + ':feature not found');
-				return Promise.reject('feature not found [' + arg_expression + '] with mode [' + mode + '] and expression [' + expression + ']');
+				var _ret = function () {
+					// SEARCH COMMAND INTO FEATURES
+					var cmd = part0;
+					var lexer_assign = new RegExp(/^\s*([a-zA-Z]{1}[a-zA-Z0-9_]*)?\s*=([a-zA-Z]{1}[a-zA-Z0-9_]*){1}\s*/);
+					var lexer_call = new RegExp(/^\s*([a-zA-Z]{1}[a-zA-Z0-9_]*){1}\s*/);
+					var lexer_assign_parts = lexer_assign.exec(part0);
+					var lexer_call_parts = lexer_call.exec(part0);
+					if (Array.isArray(lexer_assign_parts) && lexer_assign_parts.length > 2) {
+						cmd = lexer_assign_parts[2];
+					} else if (Array.isArray(lexer_call_parts) && lexer_call_parts.length > 1) {
+						cmd = lexer_call_parts[1];
+					}
+
+					_lodash2.default.forEach(_this3._features, function (feature_obj, feature_name) {
+						if (feature) return;
+
+						if (feature_obj.has_command(cmd)) {
+							feature = feature_obj;
+						}
+					});
+
+					if (!feature) {
+						if (mode) {
+							feature = mode in _this3._features ? _this3._features[mode] : undefined;
+						}
+						if (!feature) {
+							var error = 'feature not found [' + arg_expression + '] with mode [' + mode + '] and expression [' + expression + ']';
+							console.log(context + ':error');
+							return {
+								v: Promise.resolve({ value: undefined, error: error, str: undefined })
+							};
+						}
+					}
+				}();
+
+				if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
 			}
 
 			console.log('feature found [' + feature.get_name() + '] with mode [' + mode + '] and expression [' + expression + ']');
 
-			return feature.eval(expression);
+			if (_types2.default.isNotEmptyString(expression)) {
+				return feature.eval(expression);
+			}
+
+			return Promise.resolve({ value: undefined, error: undefined, str: undefined });
 		}
 	}]);
 
@@ -68241,7 +69373,7 @@ var FeaturedTerminal = function (_Terminal) {
 exports.default = FeaturedTerminal;
 
 
-},{"./terminal":535,"./terminal_feature":536,"devapt-core-common/dist/js/utils/types":107,"lodash":556}],535:[function(require,module,exports){
+},{"./terminal":540,"./terminal_feature":541,"devapt-core-common/dist/js/utils/types":107,"lodash":561}],540:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68338,13 +69470,13 @@ var Terminal = function (_Component) {
    * 
    * @param {string} arg_expression - expression to evaluate.
    * 
-   * @returns {Promise} - eval result promise of: { error:'', value:'' } on failure or { value:'' } on success.
+   * @returns {Promise} - eval result promise of: { error:'...', value:'...' } on failure or { value:'...' } on success.
    */
 
 	}, {
 		key: 'eval',
 		value: function _eval(arg_expression) {
-			return Promise.resolve({ value: arg_expression });
+			return Promise.resolve({ value: arg_expression, error: undefined, str: undefined });
 		}
 
 		/**
@@ -68384,15 +69516,16 @@ var Terminal = function (_Component) {
 				var result_promise = self.eval(command);
 				result_promise.then(function (result) {
 					if (result.error) {
-						str_result = result.error + ' [' + result.value + ']';
+						str_result = result.error + ' [' + result.str + ']';
 						terminal_out_result_jqo.css('color', 'red');
 					} else if (result.warning) {
-						str_result = result.value + ' with warning [' + result.warning + ']';
+						str_result = result.str + ' with warning [' + result.warning + ']';
 						terminal_out_result_jqo.css('color', 'green');
 					} else {
-						str_result = result.value;
+						str_result = result.str;
 						terminal_out_result_jqo.css('color', 'green');
 					}
+					str_result = str_result ? str_result : '';
 					terminal_out_result_jqo.text(str_result);
 
 					if (history_jqo) {
@@ -68462,16 +69595,18 @@ var Terminal = function (_Component) {
 exports.default = Terminal;
 
 
-},{"devapt-core-browser/dist/js/base/component":5}],536:[function(require,module,exports){
+},{"devapt-core-browser/dist/js/base/component":5}],541:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
 
 var _types = require('devapt-core-common/dist/js/utils/types');
 
@@ -68492,7 +69627,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // NPM IMPORTS
-// import assert from 'assert'
+
 
 // COMMON IMPORTS
 
@@ -68504,7 +69639,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var plugin_name = 'Labs';
-var context = plugin_name + '/terminal_mathjs';
+var context = plugin_name + '/terminal_feature';
 
 /**
  * @file Terminal stateless Feature class.
@@ -68514,8 +69649,11 @@ var context = plugin_name + '/terminal_mathjs';
  * 
  * @example
  * 	API
- * 		->eval(expression):Promise - evaluate a string expression.
- * 
+ * 		->eval(expression):Promise - evaluate a string expression and returns
+ *           an object {
+ *               error:string : failure message,
+ *               value:string : success message
+ *           }
  * 		->get_name():string - get command name (INHERITED).
  * 		->get_type():string - get command type (INHERITED).
  * 		->get_settings():object - get instance type (INHERITED).
@@ -68527,7 +69665,7 @@ var context = plugin_name + '/terminal_mathjs';
  * 
  * 		->get_aliases():array - get feature aliases strings array.
  * 		->get_worker_url():string - get worker file url string.
- * 		->get_func_name():string - get processing function name.
+ * 		->get_func_name():string - get processing function file url string.
  * 		->get_assets():array - array of assets id strings or assets definition (id, url) objects.
  */
 
@@ -68566,10 +69704,21 @@ var TerminalFeature = function (_Feature) {
 		_this.is_terminal_feature = true;
 
 		var worker_url = _this.get_worker_url();
+		var func_name = _this.get_func_name();
 		var name = _this.get_name();
+
+		_this._request_counter = 0;
 		_this._worker = undefined;
+		_this._func_name = undefined;
+		_this._terminal = arg_settings.terminal;
+		_this._commands_names = arg_settings.commands ? Object.keys(arg_settings.commands) : [];
+
 		if (_types2.default.isNotEmptyString(worker_url)) {
 			_this._worker = new _web_worker2.default(name + '_worker', worker_url);
+		}
+
+		if (_types2.default.isNotEmptyString(func_name)) {
+			_this._func_name = func_name;
 		}
 		return _this;
 	}
@@ -68593,39 +69742,43 @@ var TerminalFeature = function (_Feature) {
 				var response_promise = this._worker.submit_request(arg_expression);
 
 				return response_promise.then(function (worker_result) {
-					console.log(context + ':eval:expression=[%s] worker_result=', arg_expression, worker_result);
+					console.log(context + ':eval worker:expression=[%s] worker_result=', arg_expression, worker_result);
 
 					var result_str = worker_result.str;
 
-					console.log(context + ':eval:expression=[%s] result_str=', arg_expression, result_str);
-					return { value: result_str };
-				}).catch(function (error) {
-					console.log(context + ':eval:expression=[%s] error=', arg_expression, error);
-					return error;
+					console.log(context + ':eval worker:expression=[%s] result_str=', arg_expression, result_str);
+					return { str: result_str, value: worker_result.value, error: worker_result.error };
+				}).catch(function (e) {
+					console.log(context + ':eval worker:expression=[%s] error=', arg_expression, e);
+					return { str: undefined, value: undefined, error: e.toString() };
 				});
 			}
 
 			// EXECUTE METHOD
-			if (_types2.default.isNotEmptyString(this.get_func_name()) && this.get_func_name() in this) {
-				var _ret = function () {
-					var method_name = _this2.get_func_name();
+			if (this._func_name && _types2.default.isObject(window.devapt().func_features) && _types2.default.isFunction(window.devapt().func_features[this._func_name])) {
+				var func_cb = function func_cb(resolve, reject) {
+					++_this2._request_counter;
+					var result = window.devapt().func_features[_this2._func_name](_this2, { data: arg_expression, id: _this2._request_counter });
+					if (result.error) {
+						reject(result.error);
+						return;
+					}
+					resolve(result);
+				};
 
-					var fn_task = function fn_task(resolve, reject) {
-						_this2[method_name](arg_expression, resolve, reject);
-					};
+				return new Promise(func_cb).then(function (response) {
+					console.log(context + ':eval func:expression=[%s] response=', arg_expression, response);
 
-					var task_promise = new Promise(fn_task).then(function (result) {
-						return { value: result ? result : 'done' };
-					}).catch(function (e) {
-						return { error: e, value: 'error' };
-					});
-
-					return {
-						v: task_promise
-					};
-				}();
-
-				if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+					var result = response.result ? response.result : { value: undefined, str: undefined, error: 'no result in func response' };
+					var value_str = result.str;
+					if (result.value && !result.str) {
+						value_str = result.value + '';
+					}
+					return { str: value_str, value: result.value, error: result.error };
+				}).catch(function (e) {
+					console.log(context + ':eval func:expression=[%s] error=', arg_expression, e);
+					return { error: e, str: 'error', value: undefined };
+				});
 			}
 
 			return Promise.reject('nothing to do');
@@ -68672,6 +69825,18 @@ var TerminalFeature = function (_Feature) {
 		}
 
 		/**
+   * Get feature terminal component instance.
+   * 
+   * @returns {Terminal}
+   */
+
+	}, {
+		key: 'get_terminal',
+		value: function get_terminal() {
+			return this._terminal;
+		}
+
+		/**
    * Get Worker instance.
    * 
    * @returns {object}
@@ -68704,7 +69869,7 @@ var TerminalFeature = function (_Feature) {
 	}, {
 		key: 'get_func_name',
 		value: function get_func_name() {
-			return _types2.default.isObject(this._settings) && _types2.default.isString(this._settings.func_name) ? this._settings.func_name : undefined;
+			return this._settings.func_name;
 		}
 
 		/**
@@ -68716,7 +69881,52 @@ var TerminalFeature = function (_Feature) {
 	}, {
 		key: 'get_assets',
 		value: function get_assets() {
-			return _types2.default.isObject(this._settings) && _types2.default.isString(this._settings.assets) ? this._settings.assets : undefined;
+			return _types2.default.isObject(this._settings) && _types2.default.isArray(this._settings.assets) ? this._settings.assets : undefined;
+		}
+
+		/**
+   * Get commands map.
+   * 
+   * @returns {object}
+   */
+
+	}, {
+		key: 'get_commands',
+		value: function get_commands() {
+			return _types2.default.isObject(this._settings) && _types2.default.isObject(this._settings.commands) ? this._settings.commands : undefined;
+		}
+
+		/**
+   * Test command name.
+   * 
+   * @param {string} arg_name - command name.
+   * 
+   * @returns {boolean}
+   */
+
+	}, {
+		key: 'has_command',
+		value: function has_command(arg_name) {
+			return this._commands_names.indexOf(arg_name) > -1;
+		}
+
+		/**
+   * Get command object.
+   * 
+   * @param {string} arg_name - command name.
+   * 
+   * @returns {object}
+   */
+
+	}, {
+		key: 'get_command',
+		value: function get_command(arg_name) {
+			if (_types2.default.isNotEmptyString(arg_name) && arg_name in this._settings.commands) {
+				var cmd = this._settings.commands[arg_name];
+				cmd.name = arg_name;
+				return cmd;
+			}
+			return undefined;
 		}
 
 		/**
@@ -68728,8 +69938,6 @@ var TerminalFeature = function (_Feature) {
 	}, {
 		key: 'is_valid',
 		value: function is_valid() {
-			// return super.is_valid()
-			// 	&& (this.get_worker() || this.get_func_name())
 			var b = true;
 			b = b && _types2.default.isString(this.get_name()) && this.get_name() != 'no name';
 			b = b && _types2.default.isString(this.get_type()) && this.get_type() != 'no type';
@@ -68747,7 +69955,7 @@ var TerminalFeature = function (_Feature) {
 exports.default = TerminalFeature;
 
 
-},{"devapt-core-browser/dist/js/base/feature":11,"devapt-core-browser/dist/js/base/web_worker":13,"devapt-core-common/dist/js/utils/types":107}],537:[function(require,module,exports){
+},{"devapt-core-browser/dist/js/base/feature":11,"devapt-core-browser/dist/js/base/web_worker":13,"devapt-core-common/dist/js/utils/types":107,"path":562}],542:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68837,7 +70045,7 @@ exports.default = function () {
 };
 
 
-},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"virtual-dom/h":578}],538:[function(require,module,exports){
+},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"virtual-dom/h":583}],543:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -69283,7 +70491,7 @@ exports.default = function () {
 };
 
 
-},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107}],539:[function(require,module,exports){
+},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/utils/types":107}],544:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -69292,7 +70500,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = 'Labs';
 
 
-},{}],540:[function(require,module,exports){
+},{}],545:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -69786,7 +70994,7 @@ var objectKeys = Object.keys || function (obj) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"util/":577}],541:[function(require,module,exports){
+},{"util/":582}],546:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -69902,13 +71110,13 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],542:[function(require,module,exports){
+},{}],547:[function(require,module,exports){
 
-},{}],543:[function(require,module,exports){
+},{}],548:[function(require,module,exports){
 arguments[4][110][0].apply(exports,arguments)
-},{"dup":110}],544:[function(require,module,exports){
-arguments[4][542][0].apply(exports,arguments)
-},{"dup":542}],545:[function(require,module,exports){
+},{"dup":110}],549:[function(require,module,exports){
+arguments[4][547][0].apply(exports,arguments)
+},{"dup":547}],550:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -70020,7 +71228,7 @@ exports.allocUnsafeSlow = function allocUnsafeSlow(size) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"buffer":546}],546:[function(require,module,exports){
+},{"buffer":551}],551:[function(require,module,exports){
 (function (global){
 /*!
  * The buffer module from node.js, for the browser.
@@ -71813,7 +73021,7 @@ function isnan (val) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"base64-js":541,"ieee754":550,"isarray":555}],547:[function(require,module,exports){
+},{"base64-js":546,"ieee754":555,"isarray":560}],552:[function(require,module,exports){
 (function (Buffer){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -71924,9 +73132,9 @@ function objectToString(o) {
 }
 
 }).call(this,{"isBuffer":require("../../is-buffer/index.js")})
-},{"../../is-buffer/index.js":554}],548:[function(require,module,exports){
+},{"../../is-buffer/index.js":559}],553:[function(require,module,exports){
 arguments[4][137][0].apply(exports,arguments)
-},{"dup":137,"individual/one-version":552}],549:[function(require,module,exports){
+},{"dup":137,"individual/one-version":557}],554:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -72230,7 +73438,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],550:[function(require,module,exports){
+},{}],555:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = nBytes * 8 - mLen - 1
@@ -72316,13 +73524,13 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],551:[function(require,module,exports){
+},{}],556:[function(require,module,exports){
 arguments[4][153][0].apply(exports,arguments)
-},{"dup":153}],552:[function(require,module,exports){
+},{"dup":153}],557:[function(require,module,exports){
 arguments[4][154][0].apply(exports,arguments)
-},{"./index.js":551,"dup":154}],553:[function(require,module,exports){
+},{"./index.js":556,"dup":154}],558:[function(require,module,exports){
 arguments[4][155][0].apply(exports,arguments)
-},{"dup":155}],554:[function(require,module,exports){
+},{"dup":155}],559:[function(require,module,exports){
 /*!
  * Determine if an object is a Buffer
  *
@@ -72345,16 +73553,16 @@ function isSlowBuffer (obj) {
   return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
 }
 
-},{}],555:[function(require,module,exports){
+},{}],560:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],556:[function(require,module,exports){
+},{}],561:[function(require,module,exports){
 arguments[4][20][0].apply(exports,arguments)
-},{"dup":20}],557:[function(require,module,exports){
+},{"dup":20}],562:[function(require,module,exports){
 (function (process){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -72582,7 +73790,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":559}],558:[function(require,module,exports){
+},{"_process":564}],563:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -72629,7 +73837,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 }
 
 }).call(this,require('_process'))
-},{"_process":559}],559:[function(require,module,exports){
+},{"_process":564}],564:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -72811,7 +74019,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],560:[function(require,module,exports){
+},{}],565:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.4.1 by @mathias */
 ;(function(root) {
@@ -73348,10 +74556,10 @@ process.umask = function() { return 0; };
 }(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],561:[function(require,module,exports){
+},{}],566:[function(require,module,exports){
 module.exports = require("./lib/_stream_duplex.js")
 
-},{"./lib/_stream_duplex.js":562}],562:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":567}],567:[function(require,module,exports){
 // a duplex stream is just a stream that is both readable and writable.
 // Since JS doesn't have multiple prototypal inheritance, this class
 // prototypally inherits from Readable, and then parasitically from
@@ -73427,7 +74635,7 @@ function forEach(xs, f) {
     f(xs[i], i);
   }
 }
-},{"./_stream_readable":564,"./_stream_writable":566,"core-util-is":547,"inherits":553,"process-nextick-args":558}],563:[function(require,module,exports){
+},{"./_stream_readable":569,"./_stream_writable":571,"core-util-is":552,"inherits":558,"process-nextick-args":563}],568:[function(require,module,exports){
 // a passthrough stream.
 // basically just the most minimal sort of Transform stream.
 // Every written chunk gets output as-is.
@@ -73454,7 +74662,7 @@ function PassThrough(options) {
 PassThrough.prototype._transform = function (chunk, encoding, cb) {
   cb(null, chunk);
 };
-},{"./_stream_transform":565,"core-util-is":547,"inherits":553}],564:[function(require,module,exports){
+},{"./_stream_transform":570,"core-util-is":552,"inherits":558}],569:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -74398,7 +75606,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this,require('_process'))
-},{"./_stream_duplex":562,"./internal/streams/BufferList":567,"_process":559,"buffer":546,"buffer-shims":545,"core-util-is":547,"events":549,"inherits":553,"isarray":555,"process-nextick-args":558,"string_decoder/":573,"util":542}],565:[function(require,module,exports){
+},{"./_stream_duplex":567,"./internal/streams/BufferList":572,"_process":564,"buffer":551,"buffer-shims":550,"core-util-is":552,"events":554,"inherits":558,"isarray":560,"process-nextick-args":563,"string_decoder/":578,"util":547}],570:[function(require,module,exports){
 // a transform stream is a readable/writable stream where you do
 // something with the data.  Sometimes it's called a "filter",
 // but that's not a great name for it, since that implies a thing where
@@ -74581,7 +75789,7 @@ function done(stream, er, data) {
 
   return stream.push(null);
 }
-},{"./_stream_duplex":562,"core-util-is":547,"inherits":553}],566:[function(require,module,exports){
+},{"./_stream_duplex":567,"core-util-is":552,"inherits":558}],571:[function(require,module,exports){
 (function (process){
 // A bit simpler than readable streams.
 // Implement an async ._write(chunk, encoding, cb), and it'll handle all
@@ -75138,7 +76346,7 @@ function CorkedRequest(state) {
   };
 }
 }).call(this,require('_process'))
-},{"./_stream_duplex":562,"_process":559,"buffer":546,"buffer-shims":545,"core-util-is":547,"events":549,"inherits":553,"process-nextick-args":558,"util-deprecate":574}],567:[function(require,module,exports){
+},{"./_stream_duplex":567,"_process":564,"buffer":551,"buffer-shims":550,"core-util-is":552,"events":554,"inherits":558,"process-nextick-args":563,"util-deprecate":579}],572:[function(require,module,exports){
 'use strict';
 
 var Buffer = require('buffer').Buffer;
@@ -75203,10 +76411,10 @@ BufferList.prototype.concat = function (n) {
   }
   return ret;
 };
-},{"buffer":546,"buffer-shims":545}],568:[function(require,module,exports){
+},{"buffer":551,"buffer-shims":550}],573:[function(require,module,exports){
 module.exports = require("./lib/_stream_passthrough.js")
 
-},{"./lib/_stream_passthrough.js":563}],569:[function(require,module,exports){
+},{"./lib/_stream_passthrough.js":568}],574:[function(require,module,exports){
 (function (process){
 var Stream = (function (){
   try {
@@ -75226,13 +76434,13 @@ if (!process.browser && process.env.READABLE_STREAM === 'disable' && Stream) {
 }
 
 }).call(this,require('_process'))
-},{"./lib/_stream_duplex.js":562,"./lib/_stream_passthrough.js":563,"./lib/_stream_readable.js":564,"./lib/_stream_transform.js":565,"./lib/_stream_writable.js":566,"_process":559}],570:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":567,"./lib/_stream_passthrough.js":568,"./lib/_stream_readable.js":569,"./lib/_stream_transform.js":570,"./lib/_stream_writable.js":571,"_process":564}],575:[function(require,module,exports){
 module.exports = require("./lib/_stream_transform.js")
 
-},{"./lib/_stream_transform.js":565}],571:[function(require,module,exports){
+},{"./lib/_stream_transform.js":570}],576:[function(require,module,exports){
 module.exports = require("./lib/_stream_writable.js")
 
-},{"./lib/_stream_writable.js":566}],572:[function(require,module,exports){
+},{"./lib/_stream_writable.js":571}],577:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -75361,7 +76569,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":549,"inherits":553,"readable-stream/duplex.js":561,"readable-stream/passthrough.js":568,"readable-stream/readable.js":569,"readable-stream/transform.js":570,"readable-stream/writable.js":571}],573:[function(require,module,exports){
+},{"events":554,"inherits":558,"readable-stream/duplex.js":566,"readable-stream/passthrough.js":573,"readable-stream/readable.js":574,"readable-stream/transform.js":575,"readable-stream/writable.js":576}],578:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -75584,7 +76792,7 @@ function base64DetectIncompleteChar(buffer) {
   this.charLength = this.charReceived ? 3 : 0;
 }
 
-},{"buffer":546}],574:[function(require,module,exports){
+},{"buffer":551}],579:[function(require,module,exports){
 (function (global){
 
 /**
@@ -75655,16 +76863,16 @@ function config (name) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],575:[function(require,module,exports){
+},{}],580:[function(require,module,exports){
 arguments[4][155][0].apply(exports,arguments)
-},{"dup":155}],576:[function(require,module,exports){
+},{"dup":155}],581:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],577:[function(require,module,exports){
+},{}],582:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -76254,33 +77462,33 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":576,"_process":559,"inherits":575}],578:[function(require,module,exports){
+},{"./support/isBuffer":581,"_process":564,"inherits":580}],583:[function(require,module,exports){
 arguments[4][482][0].apply(exports,arguments)
-},{"./virtual-hyperscript/index.js":581,"dup":482}],579:[function(require,module,exports){
+},{"./virtual-hyperscript/index.js":586,"dup":482}],584:[function(require,module,exports){
 arguments[4][485][0].apply(exports,arguments)
-},{"dup":485,"ev-store":548}],580:[function(require,module,exports){
+},{"dup":485,"ev-store":553}],585:[function(require,module,exports){
 arguments[4][486][0].apply(exports,arguments)
-},{"dup":486}],581:[function(require,module,exports){
+},{"dup":486}],586:[function(require,module,exports){
 arguments[4][487][0].apply(exports,arguments)
-},{"../vnode/is-thunk":583,"../vnode/is-vhook":584,"../vnode/is-vnode":585,"../vnode/is-vtext":586,"../vnode/is-widget":587,"../vnode/vnode.js":589,"../vnode/vtext.js":590,"./hooks/ev-hook.js":579,"./hooks/soft-set-hook.js":580,"./parse-tag.js":582,"dup":487,"x-is-array":591}],582:[function(require,module,exports){
+},{"../vnode/is-thunk":588,"../vnode/is-vhook":589,"../vnode/is-vnode":590,"../vnode/is-vtext":591,"../vnode/is-widget":592,"../vnode/vnode.js":594,"../vnode/vtext.js":595,"./hooks/ev-hook.js":584,"./hooks/soft-set-hook.js":585,"./parse-tag.js":587,"dup":487,"x-is-array":596}],587:[function(require,module,exports){
 arguments[4][488][0].apply(exports,arguments)
-},{"browser-split":543,"dup":488}],583:[function(require,module,exports){
+},{"browser-split":548,"dup":488}],588:[function(require,module,exports){
 arguments[4][34][0].apply(exports,arguments)
-},{"dup":34}],584:[function(require,module,exports){
+},{"dup":34}],589:[function(require,module,exports){
 arguments[4][35][0].apply(exports,arguments)
-},{"dup":35}],585:[function(require,module,exports){
+},{"dup":35}],590:[function(require,module,exports){
 arguments[4][36][0].apply(exports,arguments)
-},{"./version":588,"dup":36}],586:[function(require,module,exports){
+},{"./version":593,"dup":36}],591:[function(require,module,exports){
 arguments[4][37][0].apply(exports,arguments)
-},{"./version":588,"dup":37}],587:[function(require,module,exports){
+},{"./version":593,"dup":37}],592:[function(require,module,exports){
 arguments[4][38][0].apply(exports,arguments)
-},{"dup":38}],588:[function(require,module,exports){
+},{"dup":38}],593:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"dup":39}],589:[function(require,module,exports){
+},{"dup":39}],594:[function(require,module,exports){
 arguments[4][40][0].apply(exports,arguments)
-},{"./is-thunk":583,"./is-vhook":584,"./is-vnode":585,"./is-widget":587,"./version":588,"dup":40}],590:[function(require,module,exports){
+},{"./is-thunk":588,"./is-vhook":589,"./is-vnode":590,"./is-widget":592,"./version":593,"dup":40}],595:[function(require,module,exports){
 arguments[4][42][0].apply(exports,arguments)
-},{"./version":588,"dup":42}],591:[function(require,module,exports){
+},{"./version":593,"dup":42}],596:[function(require,module,exports){
 arguments[4][45][0].apply(exports,arguments)
 },{"dup":45}],"labs_plugin":[function(require,module,exports){
 (function (__dirname){
@@ -76404,6 +77612,14 @@ var _canvas_svgjs = require('./js_features/svgjs/components/canvas_svgjs');
 
 var _canvas_svgjs2 = _interopRequireDefault(_canvas_svgjs);
 
+var _factory = require('./js_features/svgjs/svg/factory');
+
+var _factory2 = _interopRequireDefault(_factory);
+
+var _space = require('./js_features/svgjs/svg/space');
+
+var _space2 = _interopRequireDefault(_space);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -76469,10 +77685,17 @@ var LabsRenderingPlugin = function (_RenderingPlugin) {
 	function LabsRenderingPlugin(arg_runtime, arg_manager) {
 		_classCallCheck(this, LabsRenderingPlugin);
 
+		// const modules_dir = '../../node_modules'
+
+
 		// const assets_dir = '../../public/assets'
 		var _this = _possibleConstructorReturn(this, (LabsRenderingPlugin.__proto__ || Object.getPrototypeOf(LabsRenderingPlugin)).call(this, arg_runtime, arg_manager, plugin_name, '1.0.0'));
 
 		var bower_dir = '../../bower_components';
+
+		_this.add_public_asset('js', '/' + plugin_name + '/jsep.js', _path2.default.join(__dirname, bower_dir, 'jsep-0.3.3/jsep.js'));
+		_this.add_public_asset('js', '/' + plugin_name + '/jsep.min.js', _path2.default.join(__dirname, bower_dir, 'jsep-0.3.3/jsep.min.js'));
+		_this.add_public_asset('js', '/' + plugin_name + '/jsep.min.js.map', _path2.default.join(__dirname, bower_dir, 'jsep-0.3.3/jsep.min.js.map'));
 
 		_this.add_public_asset('js', '/' + plugin_name + '/algebrite.js', _path2.default.join(__dirname, bower_dir, 'Algebrite/dist/algebrite.bundle-for-browser.js'));
 		_this.add_public_asset('js', '/' + plugin_name + '/crossfilter.js', _path2.default.join(__dirname, bower_dir, 'crossfilter2/crossfilter.js'));
@@ -76526,12 +77749,28 @@ var LabsRenderingPlugin = function (_RenderingPlugin) {
 
 		var dist_dir = __dirname + '/../../dist/';
 		_this.add_public_asset('js', '/' + plugin_name + '/devapt-features-labs.js', _path2.default.join(dist_dir, 'devapt-features-labs.js'));
+
 		_this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js', _path2.default.join(dist_dir, 'js/js_features/mathjs/workers', 'worker_mathjs.js'));
 		_this.add_public_asset('js', '/' + plugin_name + '/worker_mathjs.js.map', _path2.default.join(dist_dir, 'js/js_features/mathjs/workers', 'worker_mathjs.js.map'));
-		_this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js', _path2.default.join(dist_dir, 'js/js_features/algebrite/workers', 'worker_algebrite.js'));
-		_this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js.map', _path2.default.join(dist_dir, 'js/js_features/algebrite/workers', 'worker_algebrite.js.map'));
+
 		_this.add_public_asset('js', '/' + plugin_name + '/mathjs_features.js', _path2.default.join(dist_dir, 'mathjs_features.js'));
 		_this.add_public_asset('js', '/' + plugin_name + '/mathjs_features.js.map', _path2.default.join(dist_dir, 'mathjs_features.js.map'));
+
+		_this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js', _path2.default.join(dist_dir, 'js/js_features/algebrite/workers', 'worker_algebrite.js'));
+		_this.add_public_asset('js', '/' + plugin_name + '/worker_algebrite.js.map', _path2.default.join(dist_dir, 'js/js_features/algebrite/workers', 'worker_algebrite.js.map'));
+
+		_this.add_public_asset('js', '/' + plugin_name + '/func_help.js', _path2.default.join(dist_dir, 'js/js_features/help', 'func_help.js'));
+		_this.add_public_asset('js', '/' + plugin_name + '/func_help.js.map', _path2.default.join(dist_dir, 'js/js_features/help', 'func_help.js.map'));
+
+		_this.add_public_asset('js', '/' + plugin_name + '/func_draw.js', _path2.default.join(dist_dir, 'js/js_features/draw', 'func_draw.js'));
+		_this.add_public_asset('js', '/' + plugin_name + '/func_draw.js.map', _path2.default.join(dist_dir, 'js/js_features/draw', 'func_draw.js.map'));
+
+		_this.add_public_asset('js', '/' + plugin_name + '/func_expression.js', _path2.default.join(dist_dir, 'js/js_features/draw', 'func_expression.js'));
+		_this.add_public_asset('js', '/' + plugin_name + '/func_expression.js.map', _path2.default.join(dist_dir, 'js/js_features/draw', 'func_expression.js.map'));
+
+		// this.add_public_asset('js', '/' + plugin_name + '/svg_features.js',         path.join(dist_dir, 'js/js_features/svgjs/svg',              'svg_features.js') )
+		// this.add_public_asset('js', '/' + plugin_name + '/svg_features.js.map',     path.join(dist_dir, 'js/js_features/svgjs/svg',              'svg_features.js.map') )
+
 
 		var fonts = ['KaTeX_AMS-Regular', 'KaTeX_Caligraphic-Bold', 'KaTeX_Caligraphic-Regular', 'KaTeX_Fraktur-Bold', 'KaTeX_Fraktur-Regular', 'KaTeX_Main-Bold', 'KaTeX_Main-Italic', 'KaTeX_Main-Regular', 'KaTeX_Math-BoldItalic', 'KaTeX_Math-Italic', 'KaTeX_Math-Regular', 'KaTeX_SansSerif-Bold', 'KaTeX_SansSerif-Italic', 'KaTeX_SansSerif-Regular', 'KaTeX_Script-Regular', 'KaTeX_Size1-Regular', 'KaTeX_Size2-Regular', 'KaTeX_Size3-Regular', 'KaTeX_Size4-Regular', 'KaTeX_Typewriter-Regular'];
 		fonts.forEach(function (font_name) {
@@ -76680,6 +77919,9 @@ var LabsRenderingPlugin = function (_RenderingPlugin) {
 				case 'terminal_algebrite':
 				case 'function-plot':
 				case 'function_plot':
+
+				case 'svgfactory':
+				case 'svgspace':
 					return true;
 			}
 
@@ -76745,6 +77987,11 @@ var LabsRenderingPlugin = function (_RenderingPlugin) {
 				case 'function-plot':
 				case 'function_plot':
 					return _function_plot2.default;
+
+				case 'svgfactory':
+					return _factory2.default;
+				case 'svgspace':
+					return _space2.default;
 			}
 
 			// assert(false, context + ':get_class:bad class name')
@@ -76831,4 +78078,4 @@ exports.default = LabsRenderingPlugin;
 
 
 }).call(this,"/dist\\js")
-},{"./base/components/canvas":500,"./base/components/workspace":501,"./base/rendering_functions/lab":505,"./base/rendering_functions/workspace":506,"./base/rendering_functions/workspace_about":507,"./base/rendering_functions/workspace_manuals":508,"./base/rendering_functions/workspace_projects":509,"./base/rendering_functions/workspace_sources":510,"./js_features/algebrite/components/terminal_algebrite":513,"./js_features/algebrite/rendering_functions/terminal_algebrite":514,"./js_features/function_plot/components/function_plot":515,"./js_features/function_plot/rendering_functions/function_plot":516,"./js_features/math_pretty/components/math_pretty":517,"./js_features/mathjs/components/terminal_mathjs":518,"./js_features/mathjs/rendering_functions/terminal_mathjs":519,"./js_features/mathjs/rendering_functions/terminal_mathjs_plot":520,"./js_features/matterjs/components/canvas_matterjs":521,"./js_features/physicsjs/components/canvas_physicsjs":522,"./js_features/svgjs/components/canvas_svgjs":525,"./js_features/terminal/components/featured_terminal":534,"./js_features/terminal/components/terminal":535,"./js_features/terminal/rendering_functions/terminal":537,"./js_features/terminal/rendering_functions/terminal_workspace":538,"assert":540,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/plugins/rendering_plugin":58,"devapt-core-common/dist/js/utils/types":107,"path":557}]},{},[512]);
+},{"./base/components/canvas":500,"./base/components/workspace":501,"./base/rendering_functions/lab":505,"./base/rendering_functions/workspace":506,"./base/rendering_functions/workspace_about":507,"./base/rendering_functions/workspace_manuals":508,"./base/rendering_functions/workspace_projects":509,"./base/rendering_functions/workspace_sources":510,"./js_features/algebrite/components/terminal_algebrite":513,"./js_features/algebrite/rendering_functions/terminal_algebrite":514,"./js_features/function_plot/components/function_plot":515,"./js_features/function_plot/rendering_functions/function_plot":516,"./js_features/math_pretty/components/math_pretty":517,"./js_features/mathjs/components/terminal_mathjs":518,"./js_features/mathjs/rendering_functions/terminal_mathjs":519,"./js_features/mathjs/rendering_functions/terminal_mathjs_plot":520,"./js_features/matterjs/components/canvas_matterjs":521,"./js_features/physicsjs/components/canvas_physicsjs":522,"./js_features/svgjs/components/canvas_svgjs":525,"./js_features/svgjs/svg/factory":531,"./js_features/svgjs/svg/space":537,"./js_features/terminal/components/featured_terminal":539,"./js_features/terminal/components/terminal":540,"./js_features/terminal/rendering_functions/terminal":542,"./js_features/terminal/rendering_functions/terminal_workspace":543,"assert":545,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":52,"devapt-core-common/dist/js/plugins/rendering_plugin":58,"devapt-core-common/dist/js/utils/types":107,"path":562}]},{},[512]);

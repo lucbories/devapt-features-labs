@@ -47,9 +47,45 @@ export default class Drawable
 		this._space = space
 		this._owner = owner
 		this._position = new Position(position)
-		this._type = type
 		this._children = []
 		this._shape = undefined
+		this._methods = {
+			x:true,
+			y:true,
+			pos_h:true,
+			pos_v:true,
+			move:true
+		}
+
+		this.type = type
+		this.color = undefined
+		this.fill = false
+		this.line_width = 1
+		this.background_color = 'white'
+	}
+
+
+	add_method(arg_method_name)
+	{
+		this._methods[arg_method_name] = true
+	}
+
+
+	has_method(arg_method_name)
+	{
+		return arg_method_name in this._methods
+	}
+
+
+	get_method(arg_method_name)
+	{
+		return (arg_method_name in this) ? this[arg_method_name] : ( (arg_method_name in this.prototype) ? this.prototype[arg_method_name] : undefined)
+	}
+
+
+	get_methods_names()
+	{
+		return Object.keys(this._methods)
 	}
 
 
@@ -90,7 +126,7 @@ export default class Drawable
 
 	type()
 	{
-		return this._type
+		return this.type
 	}
 
 
@@ -118,14 +154,17 @@ export default class Drawable
 		return this._space._domains_by_index[1]
 	}
 
-	pos_h()
+	pos_h(arg_value=undefined)
 	{
-		return this.domain_h().range_to_screen(this.h())
+		const value = arg_value != undefined ? arg_value : this.h()
+		return this._space._pad_h + this.domain_h().range_to_screen(value)
 	}
 
-	pos_v()
+	pos_v(arg_value=undefined)
 	{
-		return this.domain_v().range_to_screen(this.v())
+		const value = arg_value != undefined ? arg_value : this.v()
+		const bottom = this.domain_v().range_to_screen( this.domain_v().size() )
+		return this._space._pad_v + bottom - this.domain_v().range_to_screen(value)
 	}
 
 	h()
@@ -157,6 +196,41 @@ export default class Drawable
 	draw()
 	{
 		// TO IMPLEMENT IN SUB CLASSES
+		return this
+	}
+
+
+	draw_color()
+	{
+		if (this.color)
+		{
+			if (this.fill)
+			{
+				this._shape.fill({ color:this.color, opacity:1 })
+			} else {
+				this._shape.fill({ color:this.background_color, opacity:0.1 })
+				const options = {
+					width:this.line_width,
+					color:this.color ? this.color : 'blue'/*,
+					linecap:'round'*/
+				}
+				this._shape.stroke(options)
+			}
+		}
+	}
+
+
+	move(arg_x, arg_y, arg_z)
+	{
+		const pos_h = this.domain_h().range_to_screen(arg_x)
+		const pos_v = this.domain_v().range_to_screen(arg_y)
+		this.position([arg_x, arg_y])
+		
+		if (this._shape)
+		{
+			this._shape.move(pos_h, pos_v)
+		}
+
 		return this
 	}
 

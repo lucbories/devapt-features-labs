@@ -8,6 +8,7 @@ import T from 'devapt-core-common/dist/js/utils/types'
 
 // PLUGIN IMPORTS
 import Drawable from './drawable'
+import Point from './point'
 
 
 const plugin_name = 'Labs' 
@@ -37,46 +38,55 @@ export default class Circle extends Drawable
 	 * 
 	 * @returns {nothing}
 	 */
-	constructor(arg_space, arg_owner, arg_position, arg_color=undefined, arg_radius)
+	constructor(arg_space, arg_owner, arg_position, arg_color=undefined, arg_radius, arg_fill = false)
 	{
 		super(arg_space, arg_owner, arg_position, 'circle')
 
 		this.is_svg_circle = true
 
-		this._radius = arg_radius
-		this._color = arg_color // '#f06'
+		this.radius = arg_radius
+		this.color = arg_color // '#f06'
+		this.fill = arg_fill
+		this.line_width = 1
+
+		this.add_method('point')
 	}
 
 
 
 	draw()
 	{
+		// DO NOT RENDER	
+		if (this.color == 'none')
+		{
+			return
+		}
+
+		// RENDER
 		const pos_h = this.pos_h()
 		const pos_v = this.pos_v()
-		const diameter_h = this.domain_h().range_to_screen(2 * this._radius)
-		const diameter_v = this.domain_v().range_to_screen(2 * this._radius)
+		const diameter_h = this.domain_h().range_to_screen(2 * this.radius)
+		const diameter_v = this.domain_v().range_to_screen(2 * this.radius)
 		const diameter = Math.min(diameter_h, diameter_v)
 
 		this._shape = this.space().svg()
 		.circle(diameter)
-		.move(pos_h, pos_v)
-		// .fill('none')
+		.center(pos_h, pos_v)
 
-		if (this._color)
-		{
-			this._shape.fill(this._color)
-		}
+		this.draw_color()
 
 		return this
 	}
 
 
-	point(arg_degrees_angle, arg_color='red')
+	point(arg_degrees_angle, arg_color='red', arg_render='xcross', arg_size=5)
 	{
 		const radian_angle = arg_degrees_angle * Math.PI / 180
-		const pos_h = this.pos_h() + this.domain_h().range_to_screen( Math.cos(radian_angle) * this._radius)
-		const pos_v = this.pos_v() + this.domain_v().range_to_screen( Math.sin(radian_angle) * this._radius)
+		const pos_h = this.pos_h() + this.domain_h().range_to_screen( Math.cos(radian_angle) * this.radius)
+		const pos_v = this.pos_v() - this.domain_v().range_to_screen( Math.sin(radian_angle) * this.radius)
 
-		return this.space().svg().point(pos_h, pos_v).fill(arg_color)
+		const point = new Point(this._space, this, [pos_h, pos_v], arg_color, arg_render, arg_size)
+		point.draw()
+		return point
 	}
 }

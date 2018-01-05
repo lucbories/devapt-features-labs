@@ -47,11 +47,11 @@ export default class LineArrow extends Drawable
 	 */
 	constructor(arg_space, arg_owner, arg_position, arg_color=undefined, arg_arrow_start, arg_arrow_end, arg_line_width, arg_arrow_h, arg_arrow_v, arg_length_or_position, arg_angle_or_nothing)
 	{
-		super(arg_space, arg_owner, arg_position, 'rectangle')
+		super(arg_space, arg_owner, arg_position, 'linearrow')
 
-		this.is_svg_rectangle = true
+		this.is_svg_linearrow = true
 
-		this._color = arg_color
+		this.color = arg_color
 
 		this._line_length = T.isNumber(arg_length_or_position) ? arg_length_or_position : undefined
 		this._line_angle = T.isNumber(arg_angle_or_nothing) ? arg_angle_or_nothing : undefined
@@ -73,6 +73,12 @@ export default class LineArrow extends Drawable
 
 	draw()
 	{
+		// DO NOT RENDER	
+		if (this.color == 'none')
+		{
+			return
+		}
+
 		// SCALE
 		// const size_h = this.domain_h().range_to_screen(this._width)
 		// const size_v = this.domain_v().range_to_screen(this._height)
@@ -118,8 +124,8 @@ export default class LineArrow extends Drawable
 		}
 		if ( T.isNumber(end_h) && T.isNumber(end_v) )
 		{
-			this._line_end_position_h = this.domain_h().range_to_screen(end_h)
-			this._line_end_position_v = this.domain_v().range_to_screen(end_v)
+			this._line_end_position_h = this.pos_h(end_h)
+			this._line_end_position_v = this.pos_v(end_v)
 		}
 		if ( ! T.isNumber(this._line_end_position_h) || ! T.isNumber(this._line_end_position_v) )
 		{
@@ -129,7 +135,7 @@ export default class LineArrow extends Drawable
 
 		const options = {
 			width:this._line_width,
-			color:this._color ? this._color : 'black'/*,
+			color:this.color ? this.color : 'black'/*,
 			linecap:'round'*/
 		}
 

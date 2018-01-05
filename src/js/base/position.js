@@ -28,7 +28,7 @@ const context = plugin_name + '/drawing/position'
  * 		->z(v):number - get|set position z value.
  * 		->t(v):number - get|set position t value.
  */
-export default class Angle extends Vector
+export default class Position extends Vector
 {
 	/**
 	 * Create an instance of Position.

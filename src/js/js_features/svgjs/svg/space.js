@@ -84,12 +84,14 @@ export default class Space extends Drawable
 		this._width = arg_px_width
 		this._height = arg_px_height
 		this._viewbox = undefined
+		this._pad_h = 5
+		this._pad_v = 5
 
 		this._domains = []
 		this._domains_by_index = {}
 		this._domains_by_name = {}
 
-		this._svg = SVG(this._dom_id).size(this._width, this._height)
+		this._svg = SVG(this._dom_id).size(this._width + 2*this._pad_h, this._height + 2*this._pad_v)
 
 		this._set_domains(arg_domains_cfgs)
 	}
@@ -106,7 +108,7 @@ export default class Space extends Drawable
 		const width = this._width
 		const height = this._height
 
-		this._viewbox = this._svg.viewbox(0, 0, width, height)
+		this._viewbox = this._svg.viewbox(0, 0, width + 2*this._pad_h, height + 2*this._pad_v)
 
 		return this
 	}
@@ -114,7 +116,7 @@ export default class Space extends Drawable
 
 	background(arg_color='#dde3e1')
 	{
-		this._svg
+		return this._svg
 		.rect(this._width, this._height)
 		.fill(arg_color)
 	}
@@ -122,7 +124,7 @@ export default class Space extends Drawable
 
 	axis_center_h(arg_color='#fff', arg_width=5, arg_dashes='5,5')
 	{
-		this._svg
+		return this._svg
 		.line(this._width/2, 0, this._width/2, this._height)
 		.stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes })
 	}
@@ -130,7 +132,7 @@ export default class Space extends Drawable
 
 	axis_center_v(arg_color='#fff', arg_width=5, arg_dashes='5,5')
 	{
-		this._svg
+		return this._svg
 		.line(0, this._height/2, this._width, this._height/2)
 		.stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes })
 	}
@@ -140,7 +142,7 @@ export default class Space extends Drawable
 	{
 		const posh = this.domain_h().range_to_screen(0)
 
-		this._svg
+		return this._svg
 		.line(posh, 0, posh, this._height)
 		.stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes })
 	}
@@ -150,7 +152,7 @@ export default class Space extends Drawable
 	{
 		const posv = this.domain_v().range_to_screen(0)
 
-		this._svg
+		return this._svg
 		.line(0, posv, this._width, posv)
 		.stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes })
 	}

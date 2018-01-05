@@ -9,7 +9,8 @@
 				"items":[
 					{
 						"label":"Amazing Labs",
-						"items":[
+						"items":[],
+						"itemsold":[
 							{ "command":"labs_display_home_cmd" },
 							{ "command":"labs_display_num_calculus_cmd" },
 							{ "command":"labs_display_alg_calculus_cmd" },

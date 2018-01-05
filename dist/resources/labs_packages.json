@@ -14,7 +14,13 @@
 			],
 			"includes":[],
 			"commands":"labs_commands.json",
-			"services":"labs_services.json"
+			"services":"labs_services.json",
+			"features":[
+				"help/labs_features_help.json",
+				"draw/labs_features_draw.json",
+				"algebrite/labs_features_algebrite.json",
+				"mathjs/labs_features_mathjs.json"
+			]
 		},
 		"labs_pendulum_pkg":"./pendulum/labs_pendulum_packages.json"
 	}

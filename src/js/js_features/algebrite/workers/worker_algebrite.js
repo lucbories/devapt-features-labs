@@ -12,50 +12,52 @@ self.importScripts('algebrite.js')
  * 
  * @example
  * 	INPUT:  { id:integer, data:Object }
- * 	OUTPUT: { id:integer, result:{ node:Object, str:String }, error:string|null }
+ * 	OUTPUT: { id:integer, result:{ node:Object, str:String, error:string|null } }
  * 
  */
 self.addEventListener('message',
 	function(event)
 	{
+		// BUILD RESPONSE
+		var response = {
+			id: request.id,
+			result: {
+				value:null,
+				str: null,
+				error: null
+			}
+		}
+
+		// CHECK INPUTS
 		if (! event || ! event.data)
 		{
 			console.warn(context + ':on message:bad event.data')
-			return
+			response.result.error = context + ':bad event.data'
+			return response
 		}
 
 		var request = event.data
 		var request_str = null
-		var result_node = null
 		var result_str = null
-		var err = null
-		var node = undefined
-		var code = undefined
 
+		// CHECK REQUEST
 		if (! request.data || ! request.id)
 		{
 			console.warn(context + ':on message:bad request.data or request.id:request=', request)
-			return
+			response.result.error = context + ':bad request.data or request.id'
+			return response
 		}
+		response.id = request.id
 
 		try {
 			// GET RESULT STRING
 			request_str = JSON.parse(request.data) + ''
 			result_str = self.window.Algebrite.run(request_str)
+			response.result.str = result_str
 		}
 		catch (e) {
 			console.warn(context + ':on message:eval error=', e.toString())
-			err = e
-		}
-
-		// BUILD RESPONSE
-		var response = {
-			id: request.id,
-			result: {
-				node:undefined,
-				str: result_str
-			},
-			error: err
+			response.result.error = e.toString()
 		}
 
 		// SEND RESPONSE

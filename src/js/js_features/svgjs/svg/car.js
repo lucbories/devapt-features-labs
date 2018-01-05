@@ -46,7 +46,7 @@ export default class Car extends Drawable
 
 		this._width = arg_width
 		this._height = arg_height
-		this._color = arg_color
+		this.color = arg_color
 	}
 
 
@@ -87,10 +87,10 @@ export default class Car extends Drawable
 		.move(65, 40)
 		.fill('grey')
 
-		if (this._color)
+		if (this.color)
 		{
-			shape_1.fill(this._color)
-			shape_2.fill(this._color)
+			shape_1.fill(this.color)
+			shape_2.fill(this.color)
 		}
 
 		// BUILD
