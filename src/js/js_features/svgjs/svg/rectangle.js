@@ -59,10 +59,10 @@ export default class Rectangle extends Drawable
 			return
 		}
 
-		const pos_h = this.pos_h()
-		const pos_v = this.pos_v()
-		const size_h = this.domain_h().range_to_screen(this._width)
-		const size_v = this.domain_v().range_to_screen(this._height)
+		const pos_h = this.h()
+		const pos_v = this.v()
+		const size_h = this.space().project_x(this._width)
+		const size_v = this.space().project_y(this._height)
 
 		this._shape = this.space().svg()
 		.rect(size_h, size_v)
@@ -75,6 +75,4 @@ export default class Rectangle extends Drawable
 
 		return this
 	}
-
-	
 }

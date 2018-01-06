@@ -60,11 +60,11 @@ export default class Polygon extends Drawable
 			return
 		}
 
-		const pos_h = this.pos_h()
-		const pos_v = this.pos_v()
+		const pos_h = this.h()
+		const pos_v = this.v()
 		
-		const radius_h = this.domain_h().range_to_screen(this._radius)
-		const radius_v = this.domain_v().range_to_screen(this._radius)
+		const radius_h = this.space().project_x(this._radius)
+		const radius_v = this.space().project_y(this._radius)
 		const radius   = Math.min(radius_h, radius_v)
 
 		const edges   = typeof this._edges  == 'number' ? this._edges  : DEFAULT_EDGES
@@ -91,6 +91,4 @@ export default class Polygon extends Drawable
 
 		return this
 	}
-
-	
 }

@@ -77,8 +77,8 @@ export default class Canvas extends Component
 		console.log(context + ':process:scene:', arg_scene)
 		
 		// PREPARE DRAWING SPACE
-		const width  = arg_space.drawing && arg_space.drawing.horizontal && arg_space.drawing.horizontal.pixels  ? arg_space.drawing.horizontal.pixels  : 500
-		const height = arg_space.drawing && arg_space.drawing.vertical   && arg_space.drawing.vertical.pixels    ? arg_space.drawing.vertical.pixels    : 500
+		const width  = arg_space.drawing && arg_space.drawing.horizontal && arg_space.drawing.horizontal.pixels  ? arg_space.drawing.horizontal.pixels  : undefined
+		const height = arg_space.drawing && arg_space.drawing.vertical   && arg_space.drawing.vertical.pixels    ? arg_space.drawing.vertical.pixels    : undefined
 		const dom_id = this.get_dom_id()
 		console.log(context + ':process:dom_id:', dom_id)
 

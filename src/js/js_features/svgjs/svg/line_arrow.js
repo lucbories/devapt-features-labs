@@ -55,10 +55,8 @@ export default class LineArrow extends Drawable
 
 		this._line_length = T.isNumber(arg_length_or_position) ? arg_length_or_position : undefined
 		this._line_angle = T.isNumber(arg_angle_or_nothing) ? arg_angle_or_nothing : undefined
+		
 		this._line_end_position = this._line_length ? undefined : arg_length_or_position
-
-		this._line_end_position_h = undefined
-		this._line_end_position_v = undefined
 
 		this._arrow_start = T.isBoolean(arg_arrow_start) ? arg_arrow_start : false
 		this._arrow_end   = T.isBoolean(arg_arrow_end) ? arg_arrow_end : false
@@ -67,30 +65,14 @@ export default class LineArrow extends Drawable
 
 		this._arrow_h  = T.isNumber(arg_arrow_h) ? arg_arrow_h : DEFAULT_ARROW_H
 		this._arrow_v  = T.isNumber(arg_arrow_v) ? arg_arrow_v : DEFAULT_ARROW_V
+
+		this._init_end()
 	}
 
 
-
-	draw()
+	_init_end()
 	{
-		// DO NOT RENDER	
-		if (this.color == 'none')
-		{
-			return
-		}
-
-		// SCALE
-		// const size_h = this.domain_h().range_to_screen(this._width)
-		// const size_v = this.domain_v().range_to_screen(this._height)
-		// const size = Math.max(size_h, size_v)
-
-		// START POINT
-		const pos_h = this.pos_h()
-		const pos_v = this.pos_v()
-
-		// END POINT
-		let end_h = undefined
-		let end_v = undefined
+		// BUILD END PIXEL WITH ANGLE AND LENGTH
 		if ( T.isNumber(this._line_length) && T.isNumber(this._line_angle) )
 		{
 			// CONVERT DEGREES TO RADIAN
@@ -102,36 +84,56 @@ export default class LineArrow extends Drawable
 			// AC = line length
 			// cos(O) = AB/AC 
 			// sin(O) = BC/AC
-			end_h = this.h() + Math.cos(this._line_angle) * this._line_length // AB=cos(O) * AC
-			end_v = this.v() - Math.sin(this._line_angle) * this._line_length // BC=sin(O) * AC
-		} else {
-			if ( T.isArray(this._line_end_position) && this._line_end_position.length == 2 && T.isNumber(this._line_end_position[0])  && T.isNumber(this._line_end_position[1]) )
+			const end_x = this.x() + Math.cos(this._line_angle) * this._line_length // AB=cos(O) * AC
+			const end_y = this.y() - Math.sin(this._line_angle) * this._line_length // BC=sin(O) * AC
+
+			this._line_end_position = new Position([end_x, end_y])
+			this._line_end_pixel = this.project(this._line_end_position)
+		}
+		
+		// BUILD END PIXEL WITH A POSITION
+		else {
+			// END POSITION IS AN ARRAY
+			if ( T.isArray(this._line_end_position) && this._line_end_position.length == 2 )
 			{
-				if (T.isNumber(this._line_end_position[0]))
+				if (T.isNumber(this._line_end_position[0]) && T.isNumber(this._line_end_position[1]) )
 				{
-					end_h = this._line_end_position[0]
-				}
-				if (T.isNumber(this._line_end_position[1]))
-				{
-					end_v = this._line_end_position[1]
+					this._line_end_position = new Position([this._line_end_position])
 				}
 			}
-			if ( T.isObject(this._line_end_position) && this._line_end_position.is_drawing_vector)
+
+			// END POSITION IS A VECTOR
+			if ( T.isObject(this._line_end_position) && this._line_end_position.is_vector)
 			{
-				end_h = this._line_end_position.value(0)
-				end_v = this._line_end_position.value(1)
+				this._line_end_pixel = this.project(this._line_end_position)
 			}
 		}
-		if ( T.isNumber(end_h) && T.isNumber(end_v) )
-		{
-			this._line_end_position_h = this.pos_h(end_h)
-			this._line_end_position_v = this.pos_v(end_v)
-		}
-		if ( ! T.isNumber(this._line_end_position_h) || ! T.isNumber(this._line_end_position_v) )
+	}
+
+
+	draw()
+	{
+		// DO NOT RENDER	
+		if (this.color == 'none')
 		{
 			return
 		}
 
+		// START PIXEL
+		const start_h = this.h()
+		const start_v = this.v()
+		if ( ! T.isNumber(start_h) || ! T.isNumber(start_v) )
+		{
+			return
+		}
+
+		// END PIXEL
+		const end_h = this._line_end_pixel.h()
+		const end_v = this._line_end_pixel.v()
+		if ( ! T.isNumber(end_h) || ! T.isNumber(end_v) )
+		{
+			return
+		}
 
 		const options = {
 			width:this._line_width,
@@ -139,26 +141,26 @@ export default class LineArrow extends Drawable
 			linecap:'round'*/
 		}
 
-		console.log(context + ':draw:line:pos_h=%d pos_v=%d end_h=%d end_v=%d', pos_h, pos_v, this._line_end_position_h, this._line_end_position_v)
+		console.log(context + ':draw:line_arrow:start_h=%d start_v=%d end_h=%d end_v=%d', start_h, start_v, end_h, end_v)
 		const line = this.space().svg()
-		.line(pos_h, pos_v, this._line_end_position_h, this._line_end_position_v)
+		.line(start_h, start_v, end_h, end_v)
 		.stroke(options)
 		
-		const angle = Math.atan2(this._line_end_position_v - pos_v, this._line_end_position_h - pos_h)
+		const angle = Math.atan2(end_v - start_v, end_h - start_h)
 		const arrow_width_h = this._arrow_h
 		const arrow_width_v = this._arrow_v
 
-		const to_h_1 = this._line_end_position_h - arrow_width_h * Math.cos(angle-Math.PI/6)
-		const to_v_1 = this._line_end_position_v - arrow_width_v * Math.sin(angle-Math.PI/6)
-		const to_h_2 = this._line_end_position_h - arrow_width_h * Math.cos(angle+Math.PI/6)
-		const to_v_2 = this._line_end_position_v - arrow_width_v * Math.sin(angle+Math.PI/6)
+		const to_h_1 = end_h - arrow_width_h * Math.cos(angle-Math.PI/6)
+		const to_v_1 = end_v - arrow_width_v * Math.sin(angle-Math.PI/6)
+		const to_h_2 = end_h - arrow_width_h * Math.cos(angle+Math.PI/6)
+		const to_v_2 = end_v - arrow_width_v * Math.sin(angle+Math.PI/6)
 		
 		const arrow_1 = this.space().svg()
-		.line(this._line_end_position_h, this._line_end_position_v, to_h_1, to_v_1)
+		.line(end_h, end_v, to_h_1, to_v_1)
 		.stroke(options)
 
 		const arrow_2 = this.space().svg()
-		.line(this._line_end_position_h, this._line_end_position_v, to_h_2, to_v_2)
+		.line(end_h, end_v, to_h_2, to_v_2)
 		.stroke(options)
 
 		
@@ -169,6 +171,4 @@ export default class LineArrow extends Drawable
 
 		return this
 	}
-
-	
 }

@@ -62,7 +62,7 @@ export default class CanvasSvgJS extends Canvas
 	{
 		super.prepare_space(arg_dom_id, arg_width, arg_height, arg_space, arg_scene)
 		
-		this._space = new Space(arg_dom_id, arg_width, arg_height, arg_space.domains)
+		this._space = new Space(arg_dom_id, arg_space.domains, arg_width, arg_height)
 		this._space.draw()
 		this._space.background()
 		this._space.axis_center_h()

@@ -63,10 +63,10 @@ export default class Circle extends Drawable
 		}
 
 		// RENDER
-		const pos_h = this.pos_h()
-		const pos_v = this.pos_v()
-		const diameter_h = this.domain_h().range_to_screen(2 * this.radius)
-		const diameter_v = this.domain_v().range_to_screen(2 * this.radius)
+		const pos_h = this.h()
+		const pos_v = this.v()
+		const diameter_h = this.space().project_x(2 * this.radius)
+		const diameter_v = this.space().project_y(2 * this.radius)
 		const diameter = Math.min(diameter_h, diameter_v)
 
 		this._shape = this.space().svg()
@@ -82,8 +82,8 @@ export default class Circle extends Drawable
 	point(arg_degrees_angle, arg_color='red', arg_render='xcross', arg_size=5)
 	{
 		const radian_angle = arg_degrees_angle * Math.PI / 180
-		const pos_h = this.pos_h() + this.domain_h().range_to_screen( Math.cos(radian_angle) * this.radius)
-		const pos_v = this.pos_v() - this.domain_v().range_to_screen( Math.sin(radian_angle) * this.radius)
+		const pos_h = this.h() + this.space().project_x( Math.cos(radian_angle) * this.radius)
+		const pos_v = this.v() - this.space().project_y( Math.sin(radian_angle) * this.radius)
 
 		const point = new Point(this._space, this, [pos_h, pos_v], arg_color, arg_render, arg_size)
 		point.draw()

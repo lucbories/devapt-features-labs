@@ -63,15 +63,15 @@ export default class Star extends Drawable
 			return
 		}
 
-		const pos_h = this.pos_h()
-		const pos_v = this.pos_v()
+		const pos_h = this.h()
+		const pos_v = this.v()
 
-		const inner_h = this.domain_h().range_to_screen(this._inner)
-		const inner_v = this.domain_v().range_to_screen(this._inner)
+		const inner_h = this.space().project_x(this._inner)
+		const inner_v = this.space().project_y(this._inner)
 		const inner   = Math.min(inner_h, inner_v)
 
-		const outer_h = this.domain_h().range_to_screen(this._outer)
-		const outer_v = this.domain_v().range_to_screen(this._outer)
+		const outer_h = this.space().project_x(this._outer)
+		const outer_v = this.space().project_y(this._outer)
 		const outer   = Math.min(outer_h, outer_v)
 
 		const spikes   = typeof this._spikes  == 'number' ? this._spikes  : DEFAULT_SPIKES
@@ -103,6 +103,4 @@ export default class Star extends Drawable
 
 		return this
 	}
-
-	
 }

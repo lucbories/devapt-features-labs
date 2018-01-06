@@ -60,25 +60,25 @@
 					]
 				},
 				"*.pos_h":{
-					"usage":"{shape}.pos_h()",
+					"usage":"{shape}.h()",
 					"description":"get shape horizontal pixel coordonate.",
 					"operands":[],
 					"returns":"horizontal pixel coordonate",
 					"examples":[
 						{
-							"command":"c1.pos_h()",
+							"command":"c1.h()",
 							"result":"145"
 						}
 					]
 				},
 				"*.pos_v":{
-					"usage":"{shape}.pos_v()",
+					"usage":"{shape}.v()",
 					"description":"get shape vertical pixel coordonate.",
 					"operands":[],
 					"returns":"vertical pixel coordonate",
 					"examples":[
 						{
-							"command":"c1.pos_v()",
+							"command":"c1.v()",
 							"result":"135"
 						}
 					]

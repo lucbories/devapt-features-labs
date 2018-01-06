@@ -62,11 +62,11 @@ export default class Point extends Drawable
 		}
 
 		// RENDER
-		const pos_h = this.pos_h()
-		const pos_v = this.pos_v()
+		const pos_h = this.h()
+		const pos_v = this.v()
 
-		const size_h = this.domain_h().range_to_screen(this.size)
-		const size_v = this.domain_v().range_to_screen(this.size)
+		const size_h = this.space().project_x(this.size)
+		const size_v = this.space().project_y(this.size)
 		const size = Math.min(size_h, size_v)
 
 		const svg = this.space().svg()

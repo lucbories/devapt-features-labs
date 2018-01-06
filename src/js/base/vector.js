@@ -44,7 +44,7 @@ export default class Vector
 	 */
 	constructor(arg_values)
 	{
-		this.is_drawing_vector = true
+		this.is_vector = true
 
 		this._items = undefined
 		
@@ -95,7 +95,7 @@ export default class Vector
 	{
 		console.log(context + ':values:', arg_values)
 
-		if ( T.isObject(arg_values) && arg_values.is_drawing_vector )
+		if ( T.isObject(arg_values) && arg_values.is_vector )
 		{
 			this._set_values( arg_values.values() )
 			return this
@@ -108,6 +108,13 @@ export default class Vector
 		}
 
 		return this._items
+	}
+
+
+	init(arg_count, arg_value=0)
+	{
+		this._items = new Array(arg_count).fill(arg_value)
+		return this
 	}
 
 

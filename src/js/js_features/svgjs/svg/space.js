@@ -7,6 +7,8 @@ import T from 'devapt-core-common/dist/js/utils/types'
 // DEVAPT CORE BROWSER IMPORTS
 
 // PLUGIN IMPORTS
+import Pixel from '../../../base/pixel'
+import PixelBox from '../../../base/pixelbox'
 import Position from '../../../base/position'
 import Vector from '../../../base/vector'
 import Domain from '../../../base/domain'
@@ -14,7 +16,7 @@ import Drawable from './drawable'
 
 
 const plugin_name = 'Labs' 
-const context = plugin_name + '/svg/space'
+const context = plugin_name + '/base/space'
 
 const DEFAULT_DOMAINS_SIZE  = 500
 const DEFAULT_DOMAINS_START = 0
@@ -40,7 +42,9 @@ DOMAINS EXAMPLE
 
 
 /**
- * @file Drawing space class.
+ * @file Space class.
+ * 
+ * Map a multidimensional position ([x,y,z,t] for example) onto a PixelBox (part of the screen).
  * 
  * @author Luc BORIES
  * @license Apache-2.0
@@ -73,27 +77,45 @@ export default class Space extends Drawable
 	 * 
 	 * @returns {nothing}
 	 */
-	constructor(arg_dom_id, arg_px_width, arg_px_height, arg_domains_cfgs)
+	constructor(arg_dom_id, arg_domains, arg_px_width=undefined, arg_px_height=undefined)
 	{
 		super(undefined, undefined, new Vector([0,0,0]), 'space')
 		super._space = this
 
 		this.is_svg_space = true
 
+		// BUILD SVG
 		this._dom_id = arg_dom_id
-		this._width = arg_px_width
-		this._height = arg_px_height
-		this._viewbox = undefined
-		this._pad_h = 5
-		this._pad_v = 5
+		this._svg = SVG(this._dom_id)
+		if ( T.isNumber(arg_px_width) && T.isNumber(arg_px_height) )
+		{
+			this._svg.size(arg_px_width, arg_px_height)
+		}
+		this._svg_viewbox = this._svg.viewbox()
 
+		// BUILD PIXEL BOX
+		const box_settings = {
+			origin_h:0,
+			origin_v:0,
+			margin_h:0,
+			margin_v:0,
+			padding_h:5,
+			padding_v:5,
+			width:this._svg_viewbox.width,
+			height:this._svg_viewbox.height
+		}
+		this._pixelbox = new PixelBox(box_settings)
+		
+		// BUILD DOMAINS
 		this._domains = []
 		this._domains_by_index = {}
 		this._domains_by_name = {}
+		this._set_domains(arg_domains)
 
-		this._svg = SVG(this._dom_id).size(this._width + 2*this._pad_h, this._height + 2*this._pad_v)
-
-		this._set_domains(arg_domains_cfgs)
+		// INIT TRANSFORMATIONS
+		const scales = new Vector()
+		this._scales = scales.init(1, this._domains.length)
+		// const rotate
 	}
 
 
@@ -102,22 +124,101 @@ export default class Space extends Drawable
 		return this._svg
 	}
 
-	
-	draw()
+
+	pixelbox()
 	{
-		const width = this._width
-		const height = this._height
+		return this._pixelbox
+	}
 
-		this._viewbox = this._svg.viewbox(0, 0, width + 2*this._pad_h, height + 2*this._pad_v)
+	domain_x()
+	{
+		return ('x' in this._domains_by_name) ? this._domains_by_name['x'] : undefined
+	}
 
-		return this
+	domain_y()
+	{
+		return ('y' in this._domains_by_name) ? this._domains_by_name['y'] : undefined
+	}
+
+	domain_z()
+	{
+		return ('z' in this._domains_by_name) ? this._domains_by_name['z'] : undefined
+	}
+
+	domain_t()
+	{
+		return ('t' in this._domains_by_name) ? this._domains_by_name['t'] : undefined
+	}
+
+
+	/*
+
+		Projection N dimensions to 2 dimensions
+		Position->Pixel ratios
+		Boxing filter
+	*/
+	
+	/**
+	 * Project a multi-dimenstional position to a 2d Pixel.
+	 * 
+	 * @param {Postion} arg_position - multi-dimenstional position to project.
+	 * 
+	 * @returns {Pixel}
+	 */
+	project(arg_position)
+	{
+		if (this._domains.length <= 2)
+		{
+			return this.project_2d(arg_position)
+		}
+
+		return undefined
+	}
+
+
+	project_2d(arg_position)
+	{
+		const h = this.project_x(arg_position.x())
+		const v = this.project_y(arg_position.y())
+		return new Pixel(h, v)
+	}
+
+
+	project_x(arg_position_x)
+	{
+		const domaine_x = this.domain_x()
+		const h = domaine_x ? domaine_x.range_to_screen( arg_position_x ) : 0
+
+		return this._pixelbox.get_boxed_h(h)
+	}
+
+
+	project_y(arg_position_y)
+	{
+		const domaine_y = this.domain_y()
+		const v = domaine_y ? domaine_y.range_to_screen( arg_position_y ) : 0
+
+		return  this._pixelbox.get_boxed_v(v)
+	}
+
+
+	rotate()
+	{
+	}
+
+	translate()
+	{
+	}
+
+	scale()
+	{
 	}
 
 
 	background(arg_color='#dde3e1')
 	{
 		return this._svg
-		.rect(this._width, this._height)
+		.rect(this._pixelbox.get_usable().width, this._pixelbox.get_usable().height)
 		.fill(arg_color)
 	}
 
@@ -125,7 +226,7 @@ export default class Space extends Drawable
 	axis_center_h(arg_color='#fff', arg_width=5, arg_dashes='5,5')
 	{
 		return this._svg
-		.line(this._width/2, 0, this._width/2, this._height)
+		.line(this._pixelbox.get_usable().width/2, 0, this._pixelbox.get_usable().width/2, this._pixelbox.get_usable().height)
 		.stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes })
 	}
 
@@ -133,27 +234,27 @@ export default class Space extends Drawable
 	axis_center_v(arg_color='#fff', arg_width=5, arg_dashes='5,5')
 	{
 		return this._svg
-		.line(0, this._height/2, this._width, this._height/2)
+		.line(0, this._pixelbox.get_usable().height/2, this._pixelbox.get_usable().width, this._pixelbox.get_usable().height/2)
 		.stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes })
 	}
 
 
 	axis_h(arg_color='#fff', arg_width=5, arg_dashes='5,5')
 	{
-		const posh = this.domain_h().range_to_screen(0)
+		const posh = this.project_x(0)
 
 		return this._svg
-		.line(posh, 0, posh, this._height)
+		.line(posh, 0, posh, this._pixelbox.get_usable().height)
 		.stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes })
 	}
 
 
 	axis_v(arg_color='#fff', arg_width=5, arg_dashes='5,5')
 	{
-		const posv = this.domain_v().range_to_screen(0)
+		const posv = this.project_y(0)
 
 		return this._svg
-		.line(0, posv, this._width, posv)
+		.line(0, posv, this._pixelbox.get_usable().width, posv)
 		.stroke({ width: arg_width, color: arg_color, dasharray: arg_dashes })
 	}
 

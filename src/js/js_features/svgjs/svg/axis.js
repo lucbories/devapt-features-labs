@@ -48,12 +48,12 @@ export default class Axis extends LineArrow
 		this.is_svg_axis = true
 
 		this._domain = arg_domain == 'x' ? 'x' : 'y'
-		this.color = arg_color ? arg_color : 'blue'
 		this._width = arg_width ? arg_width : 1
 		this._dashes = '' // '5,5'
 		
+		this.color = arg_color ? arg_color : 'blue'
 
-		const domain = this._domain == 'x' ? this.domain_h() : this.domain_v()
+		const domain = this._domain == 'x' ? this.domain_x() : this.domain_y()
 		const start = domain.start()
 		const end   = domain.end()
 
@@ -84,24 +84,21 @@ export default class Axis extends LineArrow
 
 		super.draw()
 		
-		const domain = this._domain == 'x' ? this.domain_h() : this.domain_v()
+		const domain = this._domain == 'x' ? this.domain_x() : this.domain_y()
 		const start = domain.start()
 		const step  = domain.step()
 		const end   = domain.end()
 
-		const pos_orig_h = this.pos_h()
-		const pos_orig_v = this.pos_v()
-
-		const pos_start = domain.range_to_screen(start) + pos_orig_h
-		const pos_end   = domain.range_to_screen(end) + pos_orig_v
+		const pixel = this.project( new Position([start, end]) )
+		const h_start = pixel.h() + this.h()
 		
 		
 		if (this._domain == 'x')
 		{
-			const r1 = this.space().svg().rect(2, 4).move(pos_start, pos_orig_v - 2)
+			const r1 = this.space().svg().rect(2, 4).move(h_start, this.v() - 2)
 			this._shape.add(r1)
 		} else {
-			const r1 = this.space().svg().rect(4, 2).move(pos_orig_h - 2, pos_orig_v - 2)
+			const r1 = this.space().svg().rect(4, 2).move(this.h() - 2, this.v() - 2)
 			this._shape.add(r1)
 		}
 

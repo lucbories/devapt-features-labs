@@ -337,7 +337,7 @@ function func_draw_get_scope(arg_terminal)
 					name:'y'
 				}
 			]
-			scope.svg_space = new SvgSpace(canvas_id, canvas_width, canvas_height, domains)
+			scope.svg_space = new SvgSpace(canvas_id, domains, canvas_width, canvas_height)
 			scope.svg_factory = new SvgFactory(scope.svg_space)
 		}
 		// if (! scope._svg)

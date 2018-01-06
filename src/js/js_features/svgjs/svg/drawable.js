@@ -7,7 +7,9 @@ import T from 'devapt-core-common/dist/js/utils/types'
 // DEVAPT CORE BROWSER IMPORTS
 
 // PLUGIN IMPORTS
+import Methodeable from '../../../base/methodeable'
 import Position from '../../../base/position'
+import Pixel from '../../../base/pixel'
 
 
 const plugin_name = 'Labs' 
@@ -30,7 +32,7 @@ const DEFAULT_POSITION = [0,0,0]
  * 		->type():string - get drawable type.
  * 
  */
-export default class Drawable
+export default class Drawable extends Methodeable
 {
 	/**
 	 * Create an instance of Drawable.
@@ -39,6 +41,7 @@ export default class Drawable
 	 */
 	constructor(space, owner, position, type)
 	{
+		super()
 		this.is_svg_drawable = true
 
 		console.log(context + ':constructor:type:', type)
@@ -47,45 +50,26 @@ export default class Drawable
 		this._space = space
 		this._owner = owner
 		this._position = new Position(position)
+		this._position_pixel = type != 'space' ? this.project(this._position) : undefined
+
 		this._children = []
 		this._shape = undefined
 		this._methods = {
 			x:true,
 			y:true,
-			pos_h:true,
-			pos_v:true,
+			z:true,
+			t:true,
+			h:true,
+			v:true,
 			move:true
 		}
 
+		// PUBLIC PROPERTIES
 		this.type = type
 		this.color = undefined
 		this.fill = false
 		this.line_width = 1
 		this.background_color = 'white'
-	}
-
-
-	add_method(arg_method_name)
-	{
-		this._methods[arg_method_name] = true
-	}
-
-
-	has_method(arg_method_name)
-	{
-		return arg_method_name in this._methods
-	}
-
-
-	get_method(arg_method_name)
-	{
-		return (arg_method_name in this) ? this[arg_method_name] : ( (arg_method_name in this.prototype) ? this.prototype[arg_method_name] : undefined)
-	}
-
-
-	get_methods_names()
-	{
-		return Object.keys(this._methods)
 	}
 
 
@@ -124,18 +108,17 @@ export default class Drawable
 	}
 
 
-	type()
+
+	position(arg_postion)
 	{
-		return this.type
-	}
-
-
-
-	position(value)
-	{
-		if ( T.isArray(value) || this._is_vector(value) )
+		if (arg_postion !== undefined)
 		{
-			this._position.values(value)
+			if ( T.isArray(arg_postion) || this._is_vector(arg_postion) )
+			{
+				this._position.values(arg_postion)
+				this._position_pixel = this._space.project(this._position)
+			}
+			
 			return this
 		}
 
@@ -143,38 +126,23 @@ export default class Drawable
 	}
 
 
-
-	domain_h()
+	project(arg_position)
 	{
-		return this._space._domains_by_index[0]
-	}
-
-	domain_v()
-	{
-		return this._space._domains_by_index[1]
-	}
-
-	pos_h(arg_value=undefined)
-	{
-		const value = arg_value != undefined ? arg_value : this.h()
-		return this._space._pad_h + this.domain_h().range_to_screen(value)
-	}
-
-	pos_v(arg_value=undefined)
-	{
-		const value = arg_value != undefined ? arg_value : this.v()
-		const bottom = this.domain_v().range_to_screen( this.domain_v().size() )
-		return this._space._pad_v + bottom - this.domain_v().range_to_screen(value)
+		if ( T.isArray(arg_position) || this._is_vector(arg_position) )
+		{
+			return this._space.project(arg_position)
+		}
+		return new Pixel(0, 0)
 	}
 
 	h()
 	{
-		return this._position.value(0)
+		return this._position_pixel.h()
 	}
 
 	v()
 	{
-		return this._position.value(1)
+		return this._position_pixel.v()
 	}
 
 	x()
@@ -190,6 +158,11 @@ export default class Drawable
 	z()
 	{
 		return this._position.value(2)
+	}
+
+	t()
+	{
+		return this._position.value(3)
 	}
 
 
@@ -220,51 +193,37 @@ export default class Drawable
 	}
 
 
-	move(arg_x, arg_y, arg_z)
+	/**
+	 * Move shape at given position.
+	 * 
+	 * @param {Position} arg_position 
+	 * 
+	 * @returns {Drawable} - this
+	 */
+	move(arg_position)
 	{
-		const pos_h = this.domain_h().range_to_screen(arg_x)
-		const pos_v = this.domain_v().range_to_screen(arg_y)
-		this.position([arg_x, arg_y])
+		this._position.values(arg_position)
+		this._position_pixel = this.project(this._position)
 		
 		if (this._shape)
 		{
-			this._shape.move(pos_h, pos_v)
+			this._shape.move(pixel.h(), pixel.v())
 		}
 
 		return this
 	}
 
 
-
-	// move(x, y, z)
-	// {
-	// 	this._children.forEach(
-	// 		(child)=>{
-	// 			child.move(x, y)
-	// 		}
-	// 	)
-	// }
-
-
-
-	// _is_vector(value)
-	// {
-	// 	return T.isObject(value) && value.is_drawing_vector
-	// }
-
-
-	// _to_array(value, default_value = [])
-	// {
-	// 	if ( T.isArray(value) )
-	// 	{
-	// 		return value
-	// 	}
-
-	// 	if ( T.isObject(value) && value.is_drawing_vector )
-	// 	{
-	// 		return value.values()
-	// 	}
-
-	// 	return default_value
-	// }
+	/**
+	 * Test if operand is a Vector instance.
+	 * @private
+	 * 
+	 * @param {any} arg_value 
+	 * 
+	 * @returns {boolean}
+	 */
+	_is_vector(arg_value)
+	{
+		return T.isObject(arg_value) && arg_value.is_vector
+	}
 }

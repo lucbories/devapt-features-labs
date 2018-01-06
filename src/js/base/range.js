@@ -48,7 +48,7 @@ export default class Range
 	 */
 	constructor(arg_start, arg_end, arg_step)
 	{
-		this.is_drawing_vector = true
+		this.is_vector = true
 
 		this._start = undefined
 		this._end = undefined

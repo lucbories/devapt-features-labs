@@ -53,13 +53,13 @@ export default class Car extends Drawable
 
 	draw()
 	{
-		const pos_h = this.pos_h()
-		const pos_v = this.pos_v()
+		const pos_h = this.h()
+		const pos_v = this.v()
 		console.log(context + ':draw:pos_h=%d', pos_h)
 		console.log(context + ':draw:pos_v=%d', pos_v)
 
-		const size_h = this.domain_h().range_to_screen(this._width)
-		const size_v = this.domain_v().range_to_screen(this._height)
+		const size_h = this.space().project_x(this._width)
+		const size_v = this.space().project_y(this._height)
 		console.log(context + ':draw:width=%d', this._width)
 		console.log(context + ':draw:height=%d', this._height)
 		console.log(context + ':draw:size_h=%d', size_h)
@@ -107,8 +107,8 @@ export default class Car extends Drawable
 		this._shape.move(pos_h, pos_v).scale(scale)
 
 		// ANIMATE
-		const rot_point_h = this.domain_h().range_to_screen(50)*scale
-		const rot_point_v = this.domain_v().range_to_screen(40)*scale
+		const rot_point_h = this.space().project_x(50)*scale
+		const rot_point_v = this.space().project_y(40)*scale
 		this._shape.move(0, pos_v)
 		// .rotate(25, rot_point_h, rot_point_v)
 		.rotate(25)

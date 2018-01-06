@@ -61,11 +61,11 @@ export default class Position extends Vector
 	{
 		if ( T.isNumber(arg_value) )
 		{
-			this._set_value(0, arg_value)
+			this._set_value(1, arg_value)
 			return this
 		}
 
-		return this._get_value(0, 0)
+		return this._get_value(1, 0)
 	}
 
 
@@ -73,11 +73,11 @@ export default class Position extends Vector
 	{
 		if ( T.isNumber(arg_value) )
 		{
-			this._set_value(0, arg_value)
+			this._set_value(2, arg_value)
 			return this
 		}
 
-		return this._get_value(0, 0)
+		return this._get_value(2, 0)
 	}
 
 
@@ -85,10 +85,10 @@ export default class Position extends Vector
 	{
 		if ( T.isNumber(arg_value) )
 		{
-			this._set_value(0, arg_value)
+			this._set_value(3, arg_value)
 			return this
 		}
 
-		return this._get_value(0, 0)
+		return this._get_value(3, 0)
 	}
 }
