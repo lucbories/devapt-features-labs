@@ -184,6 +184,54 @@ export default class FeaturedTerminal extends Terminal
 
 
 	/**
+	 * Init Terminal command handler.
+	 * 
+	 * @returns {nothing}
+	 */
+	init_terminal()
+	{
+		this.enter_group('init_terminal')
+		super.init_terminal()
+
+		// EXECUTE INIT SCRIPT
+		const script = this.get_state_value('script', [])
+		let promise = Promise.resolve()
+		T.isArray(script) && script.forEach(
+			(line)=>{
+				promise = promise.then( ()=>this.eval(line) )
+			}
+		)
+
+		this.enter_group('init_terminal')
+	}
+
+	
+
+	/**
+	 * Get terminal feature instance.
+	 * 
+	 * @param {string} 	arg_feature_name - terminal feature name.
+	 * 
+	 * @returns {TermainalFeature} - terminal feature instance.
+	 */
+	get_feature(arg_feature_name)
+	{
+		if (arg_feature_name in this._features)
+		{
+			return this._features[arg_feature_name]
+		}
+		
+		if (arg_feature_name in this._aliases)
+		{
+			return this._aliases[arg_feature_name]
+		}
+
+		return undefined
+	}
+
+
+
+	/**
 	 * Switch terminal mode: Numeric, algebric, plot.
 	 * 
 	 * @param {string} 	arg_new_mode - terminal new mode.
@@ -375,7 +423,7 @@ export default class FeaturedTerminal extends Terminal
 
 		if ( T.isNotEmptyString(expression) )
 		{
-			return feature.eval(expression)
+			return feature.eval(expression, this.get_feature_scope(feature.get_name()))
 		}
 
 		return Promise.resolve( { value:undefined, error:undefined, str:undefined } )

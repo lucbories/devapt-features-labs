@@ -19,7 +19,7 @@ var mathjs_cfg_1 = {
 // 	precision: 128,
 // 	epsilon: 1e-127
 // }
-var scope = {
+var global_worker_scope = {
 	scope_item1:4
 }
 self.math.config(mathjs_cfg_1)
@@ -27,16 +27,14 @@ self.math.config(mathjs_cfg_1)
 
 // IMPORTS FEATURES
 var feature = {
-	const123:123,
-	x2:function(x){ return x*2 },
 	scope:function(){
-		var keys = Object.keys(scope)
+		var keys = Object.keys(global_worker_scope)
 		var value = undefined
 		var str = 'Scope:\n'
 		keys.forEach(
 			function(key)
 			{
-				value = scope[key]
+				value = global_worker_scope[key]
 				value = (typeof value == 'function') ? 'function' : value + ''
 				str += 'key=[' + key + '] value=[' + value + ']\n'
 			}
@@ -60,11 +58,6 @@ features_names.forEach(
 		feature_items_names.forEach(
 			function(item_name)
 			{
-				// if (item_name.length > 0 && item_name[0] == '_')
-				// {
-				// 	return
-				// }
-				
 				var feature_item = feature_items[item_name]
 				// console.log('item_name=[%s]:', item_name, feature_item)
 
@@ -72,9 +65,10 @@ features_names.forEach(
 				{
 					feature_item.transform = function(opd1, opd2, opd3, opd4)
 					{
-						return self.mathjs_features[feature_name][item_name](scope, opd1, opd2, opd3, opd4)
+						return self.mathjs_features[feature_name][item_name](global_worker_scope, opd1, opd2, opd3, opd4)
 					}
 				}
+
 				feature_items[item_name] = feature_item
 				feature_item = undefined
 			}
@@ -121,6 +115,7 @@ self.addEventListener('message',
 		var result_str = null
 		var node = undefined
 		var code = undefined
+		var scope = undefined
 
 		// CHECK REQUEST
 		if (! request.data || ! request.id)
@@ -130,10 +125,18 @@ self.addEventListener('message',
 			return response
 		}
 		response.id = request.id
+		request.data = JSON.parse(request.data)
+		if (! request.data.expr || ! request.data.scope)
+		{
+			console.warn(context + ':on message:bad request.data.expr or request.data.scope:request=', request)
+			response.result.error = 'bad request.data.expr or request.data.scope'
+			return response
+		}
 
 		try {
 			// GET RESULT NODE
-			request_str = JSON.parse(request.data) + ''
+			scope = Object.assign({}, request.data.scope, global_worker_scope)
+			request_str = request.data.expr + ''
 			node = self.math.parse(request_str, scope)
 			code = node.compile()
 			result_node = code.eval(scope)

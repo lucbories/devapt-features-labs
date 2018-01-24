@@ -7,6 +7,9 @@ import T from 'devapt-core-common/dist/js/utils/types'
 // DEVAPT CORE BROWSER IMPORTS
 
 // PLUGIN IMPORTS
+import Position from '../../../base/position'
+import Space from './space'
+import PlotF from './plotf'
 import Circle from './circle'
 import Ellipse from './ellipse'
 import Rectangle from './rectangle'
@@ -74,6 +77,15 @@ export default class Factory
 	}
 
 
+	set(arg_name, arg_shape)
+	{
+		if ( T.isObject(arg_shape) && arg_shape.is_svg_drawable )
+		{
+			this._shapes[arg_name] = arg_shape
+		}
+	}
+
+
 	count()
 	{
 		return this._shapes_counter
@@ -103,112 +115,124 @@ export default class Factory
 		const name = T.isNotEmptyString(arg_shape_cfg.name) ? arg_shape_cfg.name : 'shape-' + this._shapes_counter
 
 		// GET POSITION AND COLOR
-		const position = T.isArray(arg_shape_cfg.position) && arg_shape_cfg.position.length >= 2 ? arg_shape_cfg.position : [0,0,0]
+		const position_array = T.isArray(arg_shape_cfg.position) && arg_shape_cfg.position.length >= 2 ? arg_shape_cfg.position : [0,0,0]
 		const color = arg_shape_cfg.color
+
+		// GET SPACE
+		let space = this._space
+		if ( T.isObject(arg_shape_cfg) && T.isObject(arg_shape_cfg.space) && arg_shape_cfg.space.is_svg_space)
+		{
+			space = arg_shape_cfg.space
+		}
+
+		// GET OPERANDS
+		const position_end = T.isArray(arg_shape_cfg.position_end) && arg_shape_cfg.position_end.length >= 2 ? arg_shape_cfg.position_end : [0,0,0]
+		const domain = arg_shape_cfg.domain
+		const radius = T.isNumber(arg_shape_cfg.radius) && arg_shape_cfg.radius > 0 ? arg_shape_cfg.radius : 50
+		const edges  = T.isNumber(arg_shape_cfg.edges)  && arg_shape_cfg.edges  > 0 ? arg_shape_cfg.edges  : 5
+		const width  = T.isNumber(arg_shape_cfg.width)  && arg_shape_cfg.width  > 0 ? arg_shape_cfg.width  : 100
+		const height = T.isNumber(arg_shape_cfg.height) && arg_shape_cfg.height > 0 ? arg_shape_cfg.height : 100
+		const render = T.isNotEmptyString(arg_shape_cfg.render) ? arg_shape_cfg.render : undefined
+		const size   = T.isNumber(arg_shape_cfg.size)   && arg_shape_cfg.size   > 0 ? arg_shape_cfg.size : undefined
+		const inner  = T.isNumber(arg_shape_cfg.inner)  && arg_shape_cfg.inner  > 0 ? arg_shape_cfg.inner : 50
+		const outer  = T.isNumber(arg_shape_cfg.outer)  && arg_shape_cfg.outer  > 0 ? arg_shape_cfg.outer : 50
+		const spikes = T.isNumber(arg_shape_cfg.spikes) && arg_shape_cfg.spikes > 0 ? arg_shape_cfg.spikes : 5
+		const plot_fn= T.isFunction(arg_shape_cfg.plot_fn) ? arg_shape_cfg.plot_fn : undefined
+		
+		let shape = undefined
 
 		// LOOKUP TYPE CLASS
 		switch(type.toLocaleLowerCase()) {
+			case 'space': {
+				console.log(context + ':create:space width=[%d] height=[%d] color=[%s]:', width, height, color, position_array)
+
+				const position = new Position(position_array)
+				const position_pixel = space.project(position)
+				const domains_settings = T.isArray(arg_shape_cfg.domains) ? arg_shape_cfg.domains : []
+				const pixelbox_settings = {
+					origin_h:position_pixel.h(),
+					origin_v:position_pixel.v(),
+					margin_h: T.isNumber(arg_shape_cfg.margin_h)  ? arg_shape_cfg.margin_h  : 0,
+					margin_v: T.isNumber(arg_shape_cfg.margin_v)  ? arg_shape_cfg.margin_v  : 0,
+					padding_h:T.isNumber(arg_shape_cfg.padding_h) ? arg_shape_cfg.padding_h : 5,
+					padding_v:T.isNumber(arg_shape_cfg.padding_v) ? arg_shape_cfg.padding_v : 5,
+					width:    T.isNumber(arg_shape_cfg.width)     ? arg_shape_cfg.width     : 100,
+					height:   T.isNumber(arg_shape_cfg.height)    ? arg_shape_cfg.height    : 100
+				}
+				const space_settings = {
+					background_color:color,
+					grid:{ step_h:10, step_v:20, color:'green', size:3, format:'circle' },
+					axis:{
+						x:{ color:'red',  size:2 },
+						y:{ color:'blue', size:1 }
+					}
+				}
+				shape = new Space(space.svg(), domains_settings, pixelbox_settings, space_settings)
+				shape._space = space
+				break
+			}
+			case 'plotf': {
+				console.log(context + ':create:plotf color=[%s]:', color, position_array)
+				shape = new PlotF(space, space, position_array, plot_fn, color, render, size)
+				break
+			}
 			case 'circle':
 			case 'cir': {
-				const radius = T.isNumber(arg_shape_cfg.radius) && arg_shape_cfg.radius > 0 ? arg_shape_cfg.radius : 100
-				console.log(context + ':process_scene_item:circle radius=[%d] color=[%s]:', radius, color, position)
-
-				const shape = new Circle(this._space, this._space, position, color, radius)
-				shape.draw()
-				this._shapes[name] = shape
+				console.log(context + ':create:circle radius=[%d] color=[%s]:', radius, color, position_array)
+				shape = new Circle(space, space, position_array, color, radius)
 				break
 			}
 
 			case 'p':
 			case 'point': {
-				const render = T.isNotEmptyString(arg_shape_cfg.render) ? arg_shape_cfg.render : undefined
-				const size = T.isNumber(arg_shape_cfg.size) && arg_shape_cfg.size > 0 ? arg_shape_cfg.size : undefined
-				console.log(context + ':process_scene_item:point size=[%d] color=[%s] render=[%s]:', size, color, position, render)
-
-				const shape = new Point(this._space, this._space, position, color, render, size)
-				shape.draw()
-				this._shapes[name] = shape
+				console.log(context + ':create:point size=[%d] color=[%s] render=[%s]:', size, color, position_array, render)
+				shape = new Point(space, space, position_array, color, render, size)
 				break
 			}
 
 			case 'ellipse':
 			case 'ell': {
-				const width  = T.isNumber(arg_shape_cfg.width)  && arg_shape_cfg.width  > 0 ? arg_shape_cfg.width  : 100
-				const height = T.isNumber(arg_shape_cfg.height) && arg_shape_cfg.height > 0 ? arg_shape_cfg.height : 100
-				console.log(context + ':process_scene_item:ellipse width=[%d] height=[%d] color=[%s]:', width, height, color, position)
-
-				const shape = new Ellipse(this._space, this._space, position, color, width, height)
-				shape.draw()
-				this._shapes[name] = shape
+				console.log(context + ':create:ellipse width=[%d] height=[%d] color=[%s]:', width, height, color, position_array)
+				shape = new Ellipse(space, space, position_array, color, width, height)
 				break
 			}
 
 			case 'rectangle':
 			case 'rect': {
-				const width  = T.isNumber(arg_shape_cfg.width)  && arg_shape_cfg.width  > 0 ? arg_shape_cfg.width  : 100
-				const height = T.isNumber(arg_shape_cfg.height) && arg_shape_cfg.height > 0 ? arg_shape_cfg.height : 100
-				console.log(context + ':process_scene_item:rectangle width=[%d] height=[%d] color=[%s]:', width, height, color, position)
-
-				const shape = new Rectangle(this._space, this._space, position, color, width, height)
-				shape.draw()
-				this._shapes[name] = shape
+				console.log(context + ':create:rectangle width=[%d] height=[%d] color=[%s]:', width, height, color, position_array)
+				shape = new Rectangle(space, space, position_array, color, width, height)
 				break
 			}
 
 			case 'line': {
-				const position_end = T.isArray(arg_shape_cfg.position_end) && arg_shape_cfg.position_end.length >= 2 ? arg_shape_cfg.position_end : [0,0,0]
-				const width  = T.isNumber(arg_shape_cfg.width)  && arg_shape_cfg.width  > 0 ? arg_shape_cfg.width  : 1
-				console.log(context + ':process_scene_item:line width=[%d] color=[%s]:', width, color, position, position_end)
-
-				const shape = new Line(this._space, this._space, position, position_end, color, width)
-				shape.draw()
-				this._shapes[name] = shape
+				console.log(context + ':create:line width=[%d] color=[%s]:', width, color, position_array, position_end)
+				shape = new Line(space, space, position_array, position_end, color, width)
 				break
 			}
 
 			case 'axis': {
-				const domain = arg_shape_cfg.domain
-				const width  = T.isNumber(arg_shape_cfg.width)  && arg_shape_cfg.width  > 0 ? arg_shape_cfg.width  : 1
-				console.log(context + ':process_scene_item:line domain=[%s] color=[%s] width=[%d]:', domain, color, width, position)
-
-				const shape = new Axis(this._space, this._space, position, domain, color, width)
-				shape.draw()
-				this._shapes[name] = shape
+				console.log(context + ':create:line domain=[%s] color=[%s] width=[%d]:', domain, color, width, position_array)
+				shape = new Axis(space, space, position_array, domain, color, width)
 				break
 			}
 
 			case 'polygon':
 			case 'pol': {
-				const radius = T.isNumber(arg_shape_cfg.radius) && arg_shape_cfg.radius > 0 ? arg_shape_cfg.radius : 50
-				const edges  = T.isNumber(arg_shape_cfg.edges)  && arg_shape_cfg.edges  > 0 ? arg_shape_cfg.edges  : 5
-				console.log(context + ':process_scene_item:polygon edges=[%d] radius=[%d] color=[%s]:', edges, radius, color, position)
-
-				const shape = new Polygon(this._space, this._space, position, color, edges, radius)
-				shape.draw()
-				this._shapes[name] = shape
+				console.log(context + ':create:polygon edges=[%d] radius=[%d] color=[%s]:', edges, radius, color, position_array)
+				shape = new Polygon(space, space, position_array, color, edges, radius)
 				break
 			}
 
 			case 'star': {
-				const inner = T.isNumber(arg_shape_cfg.inner) && arg_shape_cfg.inner > 0 ? arg_shape_cfg.inner : 50
-				const outer = T.isNumber(arg_shape_cfg.outer) && arg_shape_cfg.outer > 0 ? arg_shape_cfg.outer : 50
-				const spikes  = T.isNumber(arg_shape_cfg.spikes)  && arg_shape_cfg.spikes > 0 ? arg_shape_cfg.spikes : 5
-				console.log(context + ':process_scene_item:star spikes=[%d] inner=[%d] outer=[%d] color=[%s]:', spikes, inner, outer, color, position)
-
-				const shape = new Star(this._space, this._space, position, color, spikes, inner, outer)
-				shape.draw()
-				this._shapes[name] = shape
+				console.log(context + ':create:star spikes=[%d] inner=[%d] outer=[%d] color=[%s]:', spikes, inner, outer, color, position_array)
+				shape = new Star(space, space, position_array, color, spikes, inner, outer)
 				break
 			}
 
 			case 'car': {
-				const width  = T.isNumber(arg_shape_cfg.width)  && arg_shape_cfg.width  > 0 ? arg_shape_cfg.width  : 100
-				const height = T.isNumber(arg_shape_cfg.height) && arg_shape_cfg.height > 0 ? arg_shape_cfg.height : 100
-				console.log(context + ':process_scene_item:car width=[%d] height=[%d] color=[%s]:', width, height, color, position)
+				console.log(context + ':create:car width=[%d] height=[%d] color=[%s]:', width, height, color, position_array)
 
-				const shape = new Car(this._space, this._space, position, color, width, height)
-				shape.draw()
-				this._shapes[name] = shape
+				shape = new Car(space, space, position_array, color, width, height)
 				break
 			}
 
@@ -227,12 +251,24 @@ export default class Factory
 
 				const end = T.isNotEmptyArray(arg_shape_cfg.end) ? arg_shape_cfg.end : undefined
 
-				console.log(context + ':process_scene_item:line arrow line_width=[%d] length=[%d] angle=[%d] end=[%s] color=[%s]:', line_width, length, angle, end, color, position)
+				console.log(context + ':create:line arrow line_width=[%d] length=[%d] angle=[%d] end=[%s] color=[%s]:', line_width, length, angle, end, color, position_array)
 
-				const shape = new LineArrow(this._space, this._space, position, color, arrow_start, arrow_end, line_width, arrow_h, arrow_v, (end ? end : length), angle)
-				shape.draw()
-				this._shapes[name] = shape
+				shape = new LineArrow(space, space, position_array, color, arrow_start, arrow_end, line_width, arrow_h, arrow_v, (end ? end : length), angle)
 				break
+			}
+		}
+
+		if (shape)
+		{
+			this._shapes[name] = shape
+			const result = shape.draw()
+			if (result.then)
+			{
+				result.then(
+					()=>{ space.svg_shape().add(shape.svg_shape()) }
+				)
+			} else {
+				space.svg_shape().add(shape.svg_shape())
 			}
 		}
 

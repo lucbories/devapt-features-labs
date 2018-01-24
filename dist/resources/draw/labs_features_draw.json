@@ -11,7 +11,8 @@
 			"assets":[
 				{ "id":"js-jsep", "type":"js", "url":"plugins/Labs/jsep.js" },
 				{ "id":"js-expr", "type":"js", "url":"plugins/Labs/func_expression.js" },
-				{ "id":"js-draw", "type":"js", "url":"plugins/Labs/func_draw.js" }
+				{ "id":"js-draw", "type":"js", "url":"plugins/Labs/func_draw.js" },
+				{ "id":"js-draw-factory", "type":"js", "url":"plugins/Labs/func_draw_factory.js" }
 			],
 			"commands":{
 				"*.move":{

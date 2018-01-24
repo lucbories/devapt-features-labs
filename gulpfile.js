@@ -27,7 +27,14 @@ var DST_MATHJS_WEBWORKER_INDEX = './dist/js/js_features/mathjs/labs_features/mat
 var DST_MATHJS_WEBWORKER_BUNDLE = 'mathjs_features.js'
 
 const BABEL_CONFIG = {
-	presets: ['es2015']
+	"presets": [
+	  ["@babel/preset-env", { "modules": false, "useBuiltIns":false, "debug":false } ],
+	  ["@babel/preset-es2015"]
+	],
+	"ignore": [],
+	"plugins":[
+//	  ["@babel/plugin-transform-react-jsx", { "pragma": "h" }]
+	]
 }
 
 
@@ -81,26 +88,8 @@ gulp.task('build_browser_bundle',
 			.external('client_runtime')
 			.external('forge-browser')
 			.external('ui')
-			// .external('devapt-core-browser')
-			// .ignore('devapt-core-browser')
-			// .ignore('devapt-core-browser/dist/js/commands/command')
-			// .ignore('devapt-core-browser/dist/js/commands/worker_command')
-			// .external('component')
-			// .external('stated_dom')
-			// .external('binding_stream')
-			// .external('component/stated_dom')
-			// .exclude('devapt-core-browser')
-			// .exclude('devapt-core-browser/dist/js/commands/command') 
-			// .external('devapt-core-browser/dist/js/**/*')
-			// .on('prebundle', (bundler)=>{
-			// 	bundler.require('lodash')
-			// 	bundler.require('devapt-core-browser/**/*')
-			// 	bundler.require('devapt-core-browser/dist/js/base/*')
-			// 	bundler.require('devapt-core-browser/dist/js/commands/command')
-			// 	bundler.require('devapt-core-browser/dist/js/commands/worker_command')
-			// 	bundler.require('devapt-core-browser/dist/js/base/binding/binding_stream')
-			// })
 			.require('./dist/js/rendering_plugin.js', { expose:'labs_plugin' } )
+			.require('@babel/polyfill', { expose:"@babel/polyfill" })
 			.bundle()
 			.pipe( source(DST_BROWSER_BUNDLE) )
 			.pipe( new Buffer() )

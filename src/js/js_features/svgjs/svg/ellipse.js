@@ -61,8 +61,8 @@ export default class Ellipse extends Drawable
 
 		const pos_h = this.h()
 		const pos_v = this.v()
-		const size_h = this.space().project_x(this._width)
-		const size_v = this.space().project_y(this._height)
+		const size_h = this.space().range_to_screen_h(this._width)
+		const size_v = this.space().range_to_screen_v(this._height)
 
 		this._shape = this.space().svg()
 		.ellipse(size_h, size_v)

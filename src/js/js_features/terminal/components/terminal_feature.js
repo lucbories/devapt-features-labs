@@ -101,15 +101,18 @@ export default class TerminalFeature extends Feature
 	 * Evaluate a string expression.
 	 * 
 	 * @param {string} arg_expression - expression to evaluate.
+	 * @param {object} arg_scope - eval scope.
 	 * 
 	 * @returns {Promise} - eval result promise of: { error:'', value:'' } on failure or { value:'' } on success.
 	 */
-	eval(arg_expression)
+	eval(arg_expression, arg_scope)
 	{
 		// EXECUTE WEB WORKER
 		if (this._worker)
 		{
-			const response_promise = this._worker.submit_request(arg_expression)
+			const request = { expr:arg_expression, scope:arg_scope }
+			// const response_promise = this._worker.submit_request(JSON.stringify(request))
+			const response_promise = this._worker.submit_request(request)
 			
 			return response_promise
 			.then(

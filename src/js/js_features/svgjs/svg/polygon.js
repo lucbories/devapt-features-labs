@@ -63,8 +63,8 @@ export default class Polygon extends Drawable
 		const pos_h = this.h()
 		const pos_v = this.v()
 		
-		const radius_h = this.space().project_x(this._radius)
-		const radius_v = this.space().project_y(this._radius)
+		const radius_h = this.space().range_to_screen_h(this._radius)
+		const radius_v = this.space().range_to_screen_v(this._radius)
 		const radius   = Math.min(radius_h, radius_v)
 
 		const edges   = typeof this._edges  == 'number' ? this._edges  : DEFAULT_EDGES

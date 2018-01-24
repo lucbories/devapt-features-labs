@@ -66,12 +66,12 @@ export default class Star extends Drawable
 		const pos_h = this.h()
 		const pos_v = this.v()
 
-		const inner_h = this.space().project_x(this._inner)
-		const inner_v = this.space().project_y(this._inner)
+		const inner_h = this.space().range_to_screen_h(this._inner)
+		const inner_v = this.space().range_to_screen_v(this._inner)
 		const inner   = Math.min(inner_h, inner_v)
 
-		const outer_h = this.space().project_x(this._outer)
-		const outer_v = this.space().project_y(this._outer)
+		const outer_h = this.space().range_to_screen_h(this._outer)
+		const outer_v = this.space().range_to_screen_v(this._outer)
 		const outer   = Math.min(outer_h, outer_v)
 
 		const spikes   = typeof this._spikes  == 'number' ? this._spikes  : DEFAULT_SPIKES

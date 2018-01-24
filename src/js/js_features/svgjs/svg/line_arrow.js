@@ -8,6 +8,7 @@ import T from 'devapt-core-common/dist/js/utils/types'
 
 // PLUGIN IMPORTS
 import Drawable from './drawable'
+import Position from '../../../base/position'
 
 
 const plugin_name = 'Labs' 
@@ -66,12 +67,14 @@ export default class LineArrow extends Drawable
 		this._arrow_h  = T.isNumber(arg_arrow_h) ? arg_arrow_h : DEFAULT_ARROW_H
 		this._arrow_v  = T.isNumber(arg_arrow_v) ? arg_arrow_v : DEFAULT_ARROW_V
 
-		this._init_end()
+		this._init_done = false
 	}
 
 
 	_init_end()
 	{
+		this._init_done = true
+
 		// BUILD END PIXEL WITH ANGLE AND LENGTH
 		if ( T.isNumber(this._line_length) && T.isNumber(this._line_angle) )
 		{
@@ -98,7 +101,7 @@ export default class LineArrow extends Drawable
 			{
 				if (T.isNumber(this._line_end_position[0]) && T.isNumber(this._line_end_position[1]) )
 				{
-					this._line_end_position = new Position([this._line_end_position])
+					this._line_end_position = new Position(this._line_end_position)
 				}
 			}
 
@@ -119,6 +122,11 @@ export default class LineArrow extends Drawable
 			return
 		}
 
+		if (! this._init_done )
+		{
+			this._init_end()
+		}
+		
 		// START PIXEL
 		const start_h = this.h()
 		const start_v = this.v()

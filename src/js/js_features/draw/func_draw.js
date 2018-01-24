@@ -4,6 +4,10 @@ const DRAW_FEATURE_NAME = 'draw'
 const DRAW_FEATURE_FUNC_NAME = 'func_draw'
 const context = plugin_name + '/' + DRAW_FEATURE_NAME + '/' + DRAW_FEATURE_FUNC_NAME
 
+const DRAW_FACTORY_FUNC_NAME = 'func_draw_factory'
+
+// require("@babel/polyfill")
+
 
 /**
  * Draw feature.
@@ -87,7 +91,29 @@ window.devapt().func_features[DRAW_FEATURE_FUNC_NAME] = func_draw
 const resolver = window.devapt().ui().get_rendering_class_resolver()
 const SvgFactory = resolver('SvgFactory')
 const SvgSpace = resolver('SvgSpace')
+let draw_session_scope = undefined
 
+
+const shapes_map = {
+	'space':'space',
+	'plotf':'plotf',
+	'circle':'circle',
+	'cir':'circle',
+	'rectangle':'rectangle',
+	'rect':'rectangle',
+	'square':'square',
+	'sqr':'square',
+	'point':'point',
+	'p':'point',
+	'line':'line',
+	'l':'line',
+	'grid':'grid',
+	'g':'grid',
+	'polygon':'polygon',
+	'pol':'polygon',
+	'star':'star',
+	's':'star'
+}
 
 
 /**
@@ -100,15 +126,23 @@ function func_draw_process_request(arg_terminal_feature, arg_request_str='', arg
 	arg_response.result.str = undefined
 
 	const EXPR_FEATURE_FUNC_NAME = 'func_expression'
+	const func_draw_factory = window.devapt().func_features[DRAW_FACTORY_FUNC_NAME]
 	const func_expr_process = window.devapt().func_features[EXPR_FEATURE_FUNC_NAME]
 
 	const terminal = func_draw_get_terminal(arg_terminal_feature)
-	const scope = func_draw_get_scope(terminal)
-	if (! terminal || ! scope)
+	draw_session_scope = draw_session_scope ? draw_session_scope : func_draw_get_scope(terminal)
+	if (! terminal || ! draw_session_scope)
 	{
 		arg_response.result.error = 'terminal or scope not found'
-		return
+		return undefined
 	}
+
+	Object.keys(shapes_map).forEach(
+		(shape_alias)=>{
+			draw_session_scope._svg_space[shape_alias] = func_draw_factory(arg_terminal_feature, shapes_map, 'rootspace', draw_session_scope, shapes_map[shape_alias], draw_session_scope._svg_space)
+			draw_session_scope._svg_space.add_method(shape_alias)
+		}
+	)
 
 	// TEST IF ASSIGN EXPRESSION
 	let assign_name = undefined
@@ -120,166 +154,75 @@ function func_draw_process_request(arg_terminal_feature, arg_request_str='', arg
 		arg_request_str = parts[2]
 		console.log('func_draw_process_request:assign_name=' + assign_name + ' arg_request_str=' + arg_request_str)
 	}
-	assign_name = assign_name ? assign_name : 'S' + scope.svg_factory.count()
+	assign_name = assign_name ? assign_name : 'S' + draw_session_scope._svg_factory.count()
+	
+	Object.keys(shapes_map).forEach(
+		(shape_type)=>{
+			if (shape_type in draw_session_scope) return
 
-	const enhanced_scope = Object.assign({}, scope)
-	
-	enhanced_scope.circle = (opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)=>{ return func_draw_circle(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10) }
-	enhanced_scope.cir = enhanced_scope.circle
-	
-	enhanced_scope.rectangle = (opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)=>{ return func_draw_rect(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10) }
-	enhanced_scope.rect = enhanced_scope.rectangle
-	
-	enhanced_scope.square = (opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)=>{ return func_draw_square(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10) }
-	enhanced_scope.sqr = enhanced_scope.square
-	
-	enhanced_scope.point = (opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)=>{ return func_draw_point(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10) }
-	enhanced_scope.p = enhanced_scope.point
-	
-	enhanced_scope.line = (opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)=>{ return func_draw_line(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10) }
-	enhanced_scope.l = enhanced_scope.line
-	
-	enhanced_scope.axis = (opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)=>{ return func_draw_axis(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10) }
-	enhanced_scope.a = enhanced_scope.axis
-	
-	enhanced_scope.grid = (opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)=>{ return func_draw_grid(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10) }
-	enhanced_scope.g = enhanced_scope.grid
-	
-	enhanced_scope.polygon = (opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)=>{ return func_draw_polygon(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10) }
-	enhanced_scope.pol = enhanced_scope.polygon
-	
-	enhanced_scope.star = (opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)=>{ return func_draw_star(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10) }
-	enhanced_scope.s = enhanced_scope.star
+			const factory_fn = func_draw_factory(arg_terminal_feature, shapes_map, assign_name, draw_session_scope, shapes_map[shape_type], draw_session_scope._svg_space)
 
-	const eval_result = func_expr_process(enhanced_scope, arg_request_str)
+			draw_session_scope[shape_type] = factory_fn
+		}
+	)
+
+
+	// EVAL EXPRESSION
+	const eval_result = func_expr_process(draw_session_scope, arg_request_str)
 	console.log('func_draw_process_request:eval_result=', eval_result)
 
-	if (! eval_result.exception)
+	// PROCESS EVAL ERRORS
+	let error_msg = undefined
+	if (eval_result.exception)
 	{
-		if (! arg_response.result.str)
-		{
-			arg_response.result.str = (eval_result.value.result && eval_result.value.result.str) ? eval_result.value.result.str + '' : eval_result.value + ''
-		}
-		if (! arg_response.result.value)
-		{
-			arg_response.result.value = (eval_result.value.result && eval_result.value.result.value) ? eval_result.value.result.value : eval_result.value
-		}
+		error_msg = 'bad request string:[' + arg_request_str + ']\n evaluated with exception [' + eval_result.exception.toString() + ']\n'
 	}
-	if (assign_name)
+	if (eval_result.errors.length > 0)
 	{
-		scope[assign_name] = arg_response.result.value
+		error_msg = error_msg ? error_msg : ''
+		error_msg += 'with errors:\n'
+		eval_result.errors.forEach(
+			(error)=>{
+				arg_response.error += 'error:[' + error + ']'
+			}
+		)
 	}
-	
-	if (eval_result.errors.length == 0)
+	if (eval_result.value && eval_result.value.error)
 	{
+		error_msg = error_msg ? error_msg : ''
+		error_msg += 'factory error:[' + eval_result.value.error + ']'
+	}
+	if (error_msg)
+	{
+		arg_response.result.error = error_msg
+		
 		return arg_response
 	}
 
-	arg_response.error = 'bad request string:[' + arg_request_str + ']'
+	// PROCESS EVAL OUTPUT
+	let output_msg = arg_response.result.str ? arg_response.result.str : ''
+	if (eval_result.value && eval_result.value.message)
+	{
+		output_msg += '\n' +  eval_result.value.message
+	}
+
+
+	// 	if (! arg_response.result.value)
+	// 	{
+	// 		arg_response.result.value = (eval_result && eval_result.value && eval_result.value.result && eval_result.value.result.value) ? eval_result.value.result.value : eval_result.value
+	// 	}
+	// }
+	if (assign_name)
+	{
+		if (eval_result.value && eval_result.value.value)
+		{
+			draw_session_scope[assign_name] = eval_result.value.value
+		} else {
+			draw_session_scope[assign_name] = eval_result.value
+		}
+	}
+
 	return arg_response
-}
-
-
-function func_draw_circle(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-{
-	console.log('func_draw:enhanced_scope.circle:opd1,..opd10', opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-	
-	arg_response.result.str = 'draw:circle x=' + opd1 + ' y=' + opd2 + ' r=' + opd3 + ' c=' + opd4
-
-	scope.svg_factory.create({ type:'circle', name:assign_name, position:[opd1, opd2], radius:opd3, color:opd4 })
-	
-	arg_response.result.value = scope.svg_factory.get(assign_name)
-	return arg_response.result.value
-}
-
-function func_draw_rect(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-{
-	console.log('func_draw:enhanced_scope.rectangle:opd1,..opd10', opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-	
-	arg_response.result.str = 'func_draw:rectangle x=' + opd1 + ' y=' + opd2 + ' w=' + opd3 + ' h=' + opd4 + ' c=' + opd5
-
-	scope.svg_factory.create({ type:'rect', name:assign_name, position:[opd1, opd2], width:opd3, height:opd4, color:opd5 })
-	
-	arg_response.result.value = scope.svg_factory.get(assign_name)
-	return arg_response.result.value
-}
-
-function func_draw_square(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-{
-	console.log('func_draw:enhanced_scope.square:opd1,..opd10', opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-	return func_draw_rect(arg_response, assign_name, scope, opd1, opd2, opd3, opd3, opd4, opd5, opd6, opd7, opd8, opd9)
-}
-
-function func_draw_point(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-{
-	console.log('func_draw:enhanced_scope.point:opd1,..opd10', opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-	
-	arg_response.result.str = 'func_draw:point x=' + opd1 + ' y=' + opd2 + ' c=' + opd3 + ' r=' + opd4 + ' s=' + opd5
-
-	scope.svg_factory.create({ type:'point', name:assign_name, position:[opd1, opd2], color:opd3, render:opd4, size:opd5 })
-	
-	arg_response.result.value = scope.svg_factory.get(assign_name)
-	return arg_response.result.value
-}
-
-function func_draw_line(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-{
-	console.log('func_draw:enhanced_scope.line:opd1,..opd10', opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-	
-	arg_response.result.str = 'func_draw:line x1=' + opd1 + ' y1=' + opd2 + ' x2=' + opd3 + ' y2=' + opd4 + ' c=' + opd5 + ' w=' + opd6
-
-	scope.svg_factory.create({ type:'line', name:assign_name, position:[opd1, opd2], position_end:[opd3, opd4], color:opd5, width:opd6 })
-	
-	arg_response.result.value = scope.svg_factory.get(assign_name)
-	return arg_response.result.value
-}
-
-function func_draw_axis(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-{
-	console.log('func_draw:enhanced_scope.axis:opd1,..opd10', opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-	
-	arg_response.result.str = 'func_draw:axis origin.x=' + opd1 + ' origin.y=' + opd2 + ' domain=' + opd3 + ' c=' + opd4 + ' w=' + opd5
-
-	scope.svg_factory.create({ type:'axis', name:assign_name, position:[opd1, opd2], domain:opd3, color:opd4, width:opd5 })
-	
-	arg_response.result.value = scope.svg_factory.get(assign_name)
-	return arg_response.result.value
-}
-
-function func_draw_grid(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-{
-	console.log('func_draw:enhanced_scope.grid:opd1,..opd10', opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-	
-	arg_response.result.str = 'func_draw:grid x=' + opd1 + ' y=' + opd2 + ' w=' + opd3 + ' h=' + opd4 + ' c=' + opd5
-
-	scope.svg_factory.create({ type:'grid', name:assign_name, position:[opd1, opd2], width:opd3, height:opd4, color:opd5 })
-	
-	arg_response.result.value = scope.svg_factory.get(assign_name)
-	return arg_response.result.value
-}
-
-function func_draw_polygon(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-{
-	console.log('func_draw:enhanced_scope.polygon:opd1,..opd10', opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-	
-	arg_response.result.str = 'draw:polygon x=' + opd1 + ' y=' + opd2 + ' c=' + opd3 + ' e=' + opd4 + ' r=' + opd5
-
-	scope.svg_factory.create({ type:'polygon', name:assign_name, position:[opd1, opd2], color:opd3, edges:opd4, radius:opd5 })
-	
-	arg_response.result.value = scope.svg_factory.get(assign_name)
-	return arg_response.result.value
-}
-
-function func_draw_star(arg_response, assign_name, scope, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-{
-	console.log('func_draw:enhanced_scope.star:opd1,..opd10', opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
-	
-	arg_response.result.str = 'draw:star x=' + opd1 + ' y=' + opd2 + ' c=' + opd3 + ' s=' + opd4 + ' i=' + opd5 + ' o=' + opd6
-
-	scope.svg_factory.create({ type:'star', name:assign_name, position:[opd1, opd2], color:opd3, spikes:opd4, inner:opd5, outer:opd6 })
-	
-	arg_response.result.value = scope.svg_factory.get(assign_name)
-	return arg_response.result.value
 }
 
 
@@ -304,49 +247,47 @@ function func_draw_get_scope(arg_terminal)
 {
 	if (arg_terminal)
 	{
-		const scope = arg_terminal.get_feature_scope(DRAW_FEATURE_NAME)
-		if (! scope.stack)
+		const terminal_session_scope = arg_terminal.get_feature_scope(DRAW_FEATURE_NAME)
+		if (! terminal_session_scope._stack)
 		{
-			scope.stack = []
-		}
-		if (! scope.shapes)
-		{
-			scope.shapes = {}
+			terminal_session_scope._stack = []
 		}
 
-		const canvas_id = arg_terminal.get_canvas_id()
-		if (! scope.svg_space)
+		if (! terminal_session_scope._svg)
 		{
-			const canvas_width = 300
-			const canvas_height = 200
+			const parent_id = arg_terminal.get_canvas_id()
+			const parent_element = document.getElementById(parent_id)
+			terminal_session_scope._svg = SVG(parent_id).size(parent_element.offsetWidth, parent_element.offsetHeight)
+		}
+		if (! terminal_session_scope._svg_space)
+		{
+			const svg_canavs_viewbox = terminal_session_scope._svg.viewbox()
+			const canvas_width = svg_canavs_viewbox.width
+			const canvas_height = svg_canavs_viewbox.height
 			const domains = [
 				{
 					index:0,
-					size:canvas_width,
 					start:0,
 					end:canvas_width - 1,
-					step:1,
+					step:10,
 					name:'x'
 				},
 				{
 					index:1,
-					size:canvas_height,
 					start:0,
 					end:canvas_height - 1,
-					step:1,
+					step:10,
 					name:'y'
 				}
 			]
-			scope.svg_space = new SvgSpace(canvas_id, domains, canvas_width, canvas_height)
-			scope.svg_factory = new SvgFactory(scope.svg_space)
+			const pixelbox_settings = undefined
+			terminal_session_scope._svg_space = new SvgSpace(terminal_session_scope._svg, domains, pixelbox_settings)
+			terminal_session_scope._svg_factory = new SvgFactory(terminal_session_scope._svg_space)
+			terminal_session_scope._svg_factory.set('rootspace', terminal_session_scope._svg_space)
+			terminal_session_scope['rootspace'] = terminal_session_scope._svg_space
+			terminal_session_scope['rs'] = terminal_session_scope._svg_space
 		}
-		// if (! scope._svg)
-		// {
-		// 	console.log(context + ':func_draw_get_scope:create scope')
-		// 	scope._svg = SVG(canvas_id).size(300, 200)
-		// 	scope._shapes = []
-		// }
-		return scope
+		return terminal_session_scope
 	}
 	return undefined
 }

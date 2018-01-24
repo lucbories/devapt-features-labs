@@ -306,8 +306,9 @@ module.exports = require('./dest/build');
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
+exports.default = void 0;
 
 /*
 
@@ -351,277 +352,290 @@ r is the radius of the sphere.
 φ1, φ2: latitude of point 1 and latitude of point 2, in radians.
 λ1, λ2: longitude of point 1 and longitude of point 2, in radians.
 */
-
 var AVERAGE_RADIUS_OF_EARTH_KM = 6371;
 
 function func_to_radians(scope, angle) {
-	return angle / 180.0 * Math.PI;
+  return angle / 180.0 * Math.PI;
 }
 
 function func_distance(scope, lat1, lng1, lat2, lng2) {
-	var lat_dist = func_to_radians(scope, lat1 - lat2);
-	var lng_dist = func_to_radians(scope, lng1 - lng2);
+  var lat_dist = func_to_radians(scope, lat1 - lat2);
+  var lng_dist = func_to_radians(scope, lng1 - lng2);
+  var sin_lat = Math.sin(lat_dist / 2);
+  var sin_lng = Math.sin(lng_dist / 2);
+  var a = sin_lat * sin_lat + Math.cos(func_to_radians(scope, lat1)) * Math.cos(func_to_radians(scope, lat2)) * sin_lng * sin_lng;
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); // DEBUG
+  // console.log('lat1', lat1, 'lat2', lat2)
+  // console.log('lng1', lng1, 'lng2', lng2)
+  // console.log('lat_dist', lat_dist)
+  // console.log('lng_dist', lng_dist)
+  // console.log('sin_lat', sin_lat)
+  // console.log('sin_lng', sin_lng)
+  // console.log('a', a)
+  // console.log('c', c)
 
-	var sin_lat = Math.sin(lat_dist / 2);
-	var sin_lng = Math.sin(lng_dist / 2);
-
-	var a = sin_lat * sin_lat + Math.cos(func_to_radians(scope, lat1)) * Math.cos(func_to_radians(scope, lat2)) * sin_lng * sin_lng;
-	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-	// DEBUG
-	// console.log('lat1', lat1, 'lat2', lat2)
-	// console.log('lng1', lng1, 'lng2', lng2)
-	// console.log('lat_dist', lat_dist)
-	// console.log('lng_dist', lng_dist)
-	// console.log('sin_lat', sin_lat)
-	// console.log('sin_lng', sin_lng)
-	// console.log('a', a)
-	// console.log('c', c)
-
-	return AVERAGE_RADIUS_OF_EARTH_KM * c;
+  return AVERAGE_RADIUS_OF_EARTH_KM * c;
 }
 
-exports.default = {
-	geom: {
-		distance: func_distance,
-		to_radians: func_to_radians
-	}
+var _default = {
+  geom: {
+    distance: func_distance,
+    to_radians: func_to_radians
+  }
 };
+exports.default = _default;
 
 
 },{}],4:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _index = require('../../../../../bower_components/llang/index');
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function fact(x) {
-	if (x <= 0) {
-		return 0;
-	}
-	if (x > 100) {
-		return 0;
-	}
-
-	var i,
-	    result = 1;
-	for (i = 1; i <= x; i++) {
-		result = result * i;
-	}
-	return result;
-}
-
-function choose(n, k) {
-	return fact(n) / (fact(k) * fact(n - k));
-}
-
-exports.default = {
-	feat1: {
-		const456: 456,
-		propositional_calculus: function propositional_calculus(scope, formula_str, values) {
-			return _index2.default.evaluate(formula_str, values);
-		},
-		pascal_fact: function pascal_fact(scope, x) {
-			return fact(x);
-		},
-		pascal_triangle: function pascal_triangle(scope, lines) {
-			if (lines < 2) {
-				lines = 2;
-			}
-			if (lines > 10) {
-				lines = 10;
-			}
-
-			/*
-   	(n,k) = n!/k!(n-k)!
-   	
-   				(0,0)
-   				1
-   			(1,0)	(1,1)
-   			1		1
-   		(2,0)	(2,1)	(2,2)
-   		1		2		1
-   	(3,0)	(3,1)	(3,2)	(3,3)
-   	1		3		3		1
-   	...
-   */
-			var triangle = [[1], [1, 1]];
-			var line = undefined;
-			var n = 2,
-			    k = 0;
-			for (; n <= lines; n++) {
-				line = [1];
-				for (k = 1; k < n; k++) {
-					line.push(choose(n, k));
-				}
-				line.push(1);
-				triangle.push(line);
-			}
-			return triangle;
-		}
-	}
-};
-
-
-},{"../../../../../bower_components/llang/index":2}],5:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function cleanString(str) {
-	return str.replace(/[^\w\s]|_/g, ' ').replace(/\s+/g, ' ').toLowerCase();
-}
-
-function extractSubstr(str, regexp) {
-	return cleanString(str).match(regexp) || [];
-}
-
-function getWordsByNonWhiteSpace(str) {
-	return extractSubstr(str, /\S+/g);
-}
-
-function getWordsByWordBoundaries(str) {
-	return extractSubstr(str, /\b[a-z\d]+\b/g);
-}
-
-function wordMap(str) {
-	return getWordsByWordBoundaries(str).reduce(function (map, word) {
-		map[word] = (map[word] || 0) + 1;
-		return map;
-	}, {});
-}
-
-function mapToTuples(map) {
-	return Object.keys(map).map(function (key) {
-		return [key, map[key]];
-	});
-}
-
-function mapToSortedTuples(map, sortFn, sortOrder) {
-	return mapToTuples(map).sort(function (a, b) {
-		return sortFn.call(undefined, a, b, sortOrder);
-	});
-}
-
-function countWords(str) {
-	return getWordsByWordBoundaries(str).length;
-}
-
-function wordFrequency(str) {
-	return mapToSortedTuples(wordMap(str), function (a, b, order) {
-		if (b[1] > a[1]) {
-			return order[1] * -1;
-		} else if (a[1] > b[1]) {
-			return order[1] * 1;
-		} else {
-			return order[0] * (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
-		}
-	}, [1, -1]);
-}
-
-function printTuples(tuples) {
-	return tuples.map(function (tuple) {
-		return padStr(tuple[0], ' ', 12, 1) + ' -> ' + tuple[1];
-	}).join('\n');
-}
-
-function padStr(str, ch, width, dir) {
-	return (width <= str.length ? str : padStr(dir < 0 ? ch + str : str + ch, ch, width, dir)).substr(0, width);
-}
-
-exports.default = {
-	string_features: {
-		chars: function chars(scope, v) {
-			var vtype = typeof v === 'undefined' ? 'undefined' : _typeof(v);
-			if (vtype != 'string') {
-				return [];
-			}
-			return Array.from(v);
-		},
-		chars_count: function chars_count(scope, v) {
-			var vtype = typeof v === 'undefined' ? 'undefined' : _typeof(v);
-			if (vtype != 'string') {
-				return 0;
-			}
-			return v.length;
-		},
-		chars_frequency: function chars_frequency(scope, v) {
-			var vtype = typeof v === 'undefined' ? 'undefined' : _typeof(v);
-			if (vtype != 'string') {
-				return [];
-			}
-			var f = function f(map, c) {
-				map[c] = (map[c] || 0) + 1;
-				return map;
-			};
-			var map = Array.from(v).reduce(f, {});
-
-			return Object.keys(map).map(function (key) {
-				return [key, map[key]];
-			});
-		},
-		words: function words(scope, v) {
-			var vtype = typeof v === 'undefined' ? 'undefined' : _typeof(v);
-			if (vtype != 'string') {
-				return [];
-			}
-			return getWordsByWordBoundaries(v);
-		},
-		words_count: function words_count(scope, v) {
-			var vtype = typeof v === 'undefined' ? 'undefined' : _typeof(v);
-			if (vtype != 'string') {
-				return 0;
-			}
-			return countWords(v);
-		},
-		words_frequency: function words_frequency(scope, v) {
-			var vtype = typeof v === 'undefined' ? 'undefined' : _typeof(v);
-			if (vtype != 'string') {
-				return [];
-			}
-			return wordFrequency(v);
-		}
-	}
-};
-
-
-},{}],"mathjs_features":[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _feature_distance = require('./feature_distance');
-
-var _feature_distance2 = _interopRequireDefault(_feature_distance);
-
-var _features_ = require('./features_1');
-
-var _features_2 = _interopRequireDefault(_features_);
-
-var _features_3 = require('./features_2');
-
-var _features_4 = _interopRequireDefault(_features_3);
+var _index = _interopRequireDefault(require("../../../../../bower_components/llang/index"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var features = Object.assign({}, _feature_distance2.default, _features_2.default, _features_4.default);
+function fact(x) {
+  if (x <= 0) {
+    return 0;
+  }
 
-// console.log('features', features)
+  if (x > 100) {
+    return 0;
+  }
 
-exports.default = features;
+  var i,
+      result = 1;
+
+  for (i = 1; i <= x; i++) {
+    result = result * i;
+  }
+
+  return result;
+}
+
+function choose(n, k) {
+  return fact(n) / (fact(k) * fact(n - k));
+}
+
+var _default = {
+  feat1: {
+    const456: 456,
+    propositional_calculus: function propositional_calculus(scope, formula_str, values) {
+      return _index.default.evaluate(formula_str, values);
+    },
+    pascal_fact: function pascal_fact(scope, x) {
+      return fact(x);
+    },
+    pascal_triangle: function pascal_triangle(scope, lines) {
+      if (lines < 2) {
+        lines = 2;
+      }
+
+      if (lines > 10) {
+        lines = 10;
+      }
+      /*
+      	(n,k) = n!/k!(n-k)!
+      	
+      				(0,0)
+      				1
+      			(1,0)	(1,1)
+      			1		1
+      		(2,0)	(2,1)	(2,2)
+      		1		2		1
+      	(3,0)	(3,1)	(3,2)	(3,3)
+      	1		3		3		1
+      	...
+      */
+
+
+      var triangle = [[1], [1, 1]];
+      var line = undefined;
+      var n = 2,
+          k = 0;
+
+      for (; n <= lines; n++) {
+        line = [1];
+
+        for (k = 1; k < n; k++) {
+          line.push(choose(n, k));
+        }
+
+        line.push(1);
+        triangle.push(line);
+      }
+
+      return triangle;
+    }
+  }
+};
+exports.default = _default;
+
+
+},{"../../../../../bower_components/llang/index":2}],5:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function cleanString(str) {
+  return str.replace(/[^\w\s]|_/g, ' ').replace(/\s+/g, ' ').toLowerCase();
+}
+
+function extractSubstr(str, regexp) {
+  return cleanString(str).match(regexp) || [];
+}
+
+function getWordsByNonWhiteSpace(str) {
+  return extractSubstr(str, /\S+/g);
+}
+
+function getWordsByWordBoundaries(str) {
+  return extractSubstr(str, /\b[a-z\d]+\b/g);
+}
+
+function wordMap(str) {
+  return getWordsByWordBoundaries(str).reduce(function (map, word) {
+    map[word] = (map[word] || 0) + 1;
+    return map;
+  }, {});
+}
+
+function mapToTuples(map) {
+  return Object.keys(map).map(function (key) {
+    return [key, map[key]];
+  });
+}
+
+function mapToSortedTuples(map, sortFn, sortOrder) {
+  return mapToTuples(map).sort(function (a, b) {
+    return sortFn.call(undefined, a, b, sortOrder);
+  });
+}
+
+function countWords(str) {
+  return getWordsByWordBoundaries(str).length;
+}
+
+function wordFrequency(str) {
+  return mapToSortedTuples(wordMap(str), function (a, b, order) {
+    if (b[1] > a[1]) {
+      return order[1] * -1;
+    } else if (a[1] > b[1]) {
+      return order[1] * 1;
+    } else {
+      return order[0] * (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
+    }
+  }, [1, -1]);
+}
+
+function printTuples(tuples) {
+  return tuples.map(function (tuple) {
+    return padStr(tuple[0], ' ', 12, 1) + ' -> ' + tuple[1];
+  }).join('\n');
+}
+
+function padStr(str, ch, width, dir) {
+  return (width <= str.length ? str : padStr(dir < 0 ? ch + str : str + ch, ch, width, dir)).substr(0, width);
+}
+
+var _default = {
+  string_features: {
+    chars: function chars(scope, v) {
+      var vtype = _typeof(v);
+
+      if (vtype != 'string') {
+        return [];
+      }
+
+      return Array.from(v);
+    },
+    chars_count: function chars_count(scope, v) {
+      var vtype = _typeof(v);
+
+      if (vtype != 'string') {
+        return 0;
+      }
+
+      return v.length;
+    },
+    chars_frequency: function chars_frequency(scope, v) {
+      var vtype = _typeof(v);
+
+      if (vtype != 'string') {
+        return [];
+      }
+
+      var f = function f(map, c) {
+        map[c] = (map[c] || 0) + 1;
+        return map;
+      };
+
+      var map = Array.from(v).reduce(f, {});
+      return Object.keys(map).map(function (key) {
+        return [key, map[key]];
+      });
+    },
+    words: function words(scope, v) {
+      var vtype = _typeof(v);
+
+      if (vtype != 'string') {
+        return [];
+      }
+
+      return getWordsByWordBoundaries(v);
+    },
+    words_count: function words_count(scope, v) {
+      var vtype = _typeof(v);
+
+      if (vtype != 'string') {
+        return 0;
+      }
+
+      return countWords(v);
+    },
+    words_frequency: function words_frequency(scope, v) {
+      var vtype = _typeof(v);
+
+      if (vtype != 'string') {
+        return [];
+      }
+
+      return wordFrequency(v);
+    }
+  }
+};
+exports.default = _default;
+
+
+},{}],"mathjs_features":[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _feature_distance = _interopRequireDefault(require("./feature_distance"));
+
+var _features_ = _interopRequireDefault(require("./features_1"));
+
+var _features_2 = _interopRequireDefault(require("./features_2"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var features = Object.assign({}, _feature_distance.default, _features_.default, _features_2.default); // console.log('features', features)
+
+var _default = features;
+exports.default = _default;
 
 
 },{"./feature_distance":3,"./features_1":4,"./features_2":5}]},{},["mathjs_features"]);

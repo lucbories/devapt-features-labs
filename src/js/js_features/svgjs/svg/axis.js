@@ -41,8 +41,7 @@ export default class Axis extends LineArrow
 	 */
 	constructor(arg_space, arg_owner, arg_pos_orig, arg_domain, arg_color=undefined, arg_width)
 	{
-		// super(arg_space, arg_owner, arg_pos_orig, 'axis')
-		super(arg_space, arg_owner, arg_pos_orig, arg_color, false, true, arg_width, 5, 5, 0, 0)
+		super(arg_space, arg_owner, arg_pos_orig, arg_color, false, true, arg_width, 5, 5, [100,100], undefined)
 		
 		this.type = 'axis'
 		this.is_svg_axis = true
@@ -53,22 +52,21 @@ export default class Axis extends LineArrow
 		
 		this.color = arg_color ? arg_color : 'blue'
 
-		const domain = this._domain == 'x' ? this.domain_x() : this.domain_y()
+		const domain = this._domain == 'x' ? arg_space.domain_x() : arg_space.domain_y()
 		const start = domain.start()
 		const end   = domain.end()
-
-		const pos_orig_h = this.h()
-		const pos_orig_v = this.v()
-
-		const pos_end   = end - start
 
 		this._line_length = undefined
 		this._line_angle = undefined
 		if (this._domain == 'x')
 		{
-			this._line_end_position = new Position([pos_end, pos_orig_v])
+			// this._position.x(start)
+			// this._position.y(0)
+			this._line_end_position = new Position([end, 0])
 		} else {
-			this._line_end_position = new Position([pos_orig_h, pos_end])
+			// this._position.x(0)
+			// this._position.y(start)
+			this._line_end_position = new Position([0, end])
 		}
 	}
 
@@ -84,21 +82,21 @@ export default class Axis extends LineArrow
 
 		super.draw()
 		
-		const domain = this._domain == 'x' ? this.domain_x() : this.domain_y()
+		const domain = this._domain == 'x' ? this._space.domain_x() : this._space.domain_y()
 		const start = domain.start()
 		const step  = domain.step()
 		const end   = domain.end()
 
-		const pixel = this.project( new Position([start, end]) )
-		const h_start = pixel.h() + this.h()
 		
 		
 		if (this._domain == 'x')
 		{
-			const r1 = this.space().svg().rect(2, 4).move(h_start, this.v() - 2)
+			const pixel = this.project( new Position([start, 0, 0, 0]) )
+			const r1 = this.space().svg().rect(2, 4).move(pixel.h(), pixel.v() - 2)
 			this._shape.add(r1)
 		} else {
-			const r1 = this.space().svg().rect(4, 2).move(this.h() - 2, this.v() - 2)
+			const pixel = this.project( new Position([0, start, 0, 0]) )
+			const r1 = this.space().svg().rect(4, 2).move(pixel.h() - 2, pixel.v() - 2)
 			this._shape.add(r1)
 		}
 

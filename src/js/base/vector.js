@@ -93,7 +93,7 @@ export default class Vector
 
 	values(arg_values)
 	{
-		console.log(context + ':values:', arg_values)
+		// console.log(context + ':values:', arg_values)
 
 		if ( T.isObject(arg_values) && arg_values.is_vector )
 		{

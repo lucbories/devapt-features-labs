@@ -4,6 +4,8 @@ const EXPR_FEATURE_NAME = 'expression'
 const EXPR_FEATURE_FUNC_NAME = 'func_expression'
 const context = plugin_name + '/' + EXPR_FEATURE_NAME + '/' + EXPR_FEATURE_FUNC_NAME
 
+// require("@babel/polyfill")
+
 
 /**
  * Expression feature.
@@ -40,6 +42,11 @@ window.devapt().func_features[EXPR_FEATURE_FUNC_NAME] = func_expr_process
 /**
  * Process request.
  * @private
+ * 
+ * @param {object} arg_scope    - evaluation scope.
+ * @param {string} arg_expr_str - string expression to evaluate.
+ * 
+ * @returns {object} - expression evalution result: { expr:string, scope:object, errors:Array, value:any, exception:undefined|Exception }
  */
 function func_expr_process(arg_scope, arg_expr_str='')
 {
@@ -55,6 +62,13 @@ function func_expr_process(arg_scope, arg_expr_str='')
 
 	try {
 		result.value = func_expr_eval(arg_scope, parse_tree, result.errors)
+		if ( (typeof result.value == 'string') && result.value in arg_scope)
+		{
+			if ( result.value.length > 0 && result.value[0] != '_' && typeof arg_scope[result.value] != 'function' )
+			{
+				return arg_scope[result.value]
+			}
+		}
 	}
 	catch(e) {
 		result.exception = e
@@ -79,7 +93,13 @@ function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_error
 
 	switch(arg_expr_tree.type) {
 		case 'Literal':             return arg_expr_tree.value
-		case 'Identifier':          return arg_expr_tree.name
+		case 'Identifier': {
+			if (arg_expr_tree.name.length > 0 && arg_expr_tree.name[0] != '_') {
+				return arg_expr_tree.name
+			}
+			arg_errors.push('Identifier:bad value [' + arg_expr_tree.name + ']')
+			return undefined
+		}
 		case 'BinaryExpression':{
 			try{
 				const op = arg_expr_tree.operator
@@ -98,10 +118,10 @@ function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_error
 				return undefined
 			}
 		}
-		case 'UnnaryExpression':{
+		case 'UnaryExpression':{
 			try{
 				const op = arg_expr_tree.operator
-				const left_tree   = arg_expr_tree.left
+				const left_tree   = arg_expr_tree.argument
 				const left_value  = func_expr_eval(arg_scope, left_tree, arg_errors)
 				switch(op){
 					case '+': return left_value
@@ -192,13 +212,12 @@ function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_error
 					return undefined
 				}
 				const object_instance = arg_scope[object_name]
-				if (! object_instance)
+				if (! object_instance || ! object_instance.get_method)
 				{
 					arg_errors.push('CallExpression:method object not found in scope or bad object:[' + object_name + ']')
 					return undefined
 				}
 
-				// const object_method = object_instance[method_name] || object_instance.prototype[method_name]
 				const object_method = object_instance.get_method(method_name)
 				if (! object_method)
 				{
@@ -211,16 +230,28 @@ function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_error
 					return object_method.apply(object_instance)
 				}
 				
-				// const operands = [object_instance].concat(opds_results)
-				// return object_method.apply(...operands)
-				return object_method.apply(object_instance, opds_results)
-				// switch(opds_results.length) {
-				// 	case 0: return object_instance.prototype[object_method]()
-				// 	case 1: return object_instance.prototype[object_method](opds_results[0])
-				// 	case 2: return object_instance.prototype[object_method](opds_results[0],opds_results[1])
-				// }
-				// return object_instance[object_method](...opds_results)
+				const call_result = object_method.apply(object_instance, opds_results)
+				if (call_result.error)
+				{
+					return call_result.errors
+				}
+				return call_result.value
 			}
+		}
+		case 'ArrayExpression':{
+			const items_expressions = arg_expr_tree.elements
+			const items = []
+			items_expressions.forEach(
+				(item_expr)=>{
+					items.push( func_expr_eval(arg_scope, item_expr, arg_errors) )
+				}
+			)
+			return items
+		}
+		default:{
+			console.log('func_expr_eval:scope=', arg_scope)
+			console.log('func_expr_eval:arg_expr_tree=', arg_expr_tree)
+			console.log('func_expr_eval:arg_errors=', arg_errors)
 		}
 	}
 

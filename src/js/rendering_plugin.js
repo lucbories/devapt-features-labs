@@ -10,30 +10,30 @@ import DefaultRenderingPlugin from 'devapt-core-common/dist/js/default_plugins/r
 // PLUGIN IMPORTS
 
 // BASE FEATURE
-import lab_fn                from './base/rendering_functions/lab'
-import workspace_fn          from './base/rendering_functions/workspace'
+// import lab_fn                from './base/rendering_functions/lab'
+// import workspace_fn          from './base/rendering_functions/workspace'
 import workspace_about_fn    from './base/rendering_functions/workspace_about'
 import workspace_manuals_fn  from './base/rendering_functions/workspace_manuals'
 import workspace_sources_fn  from './base/rendering_functions/workspace_sources'
 import workspace_projects_fn from './base/rendering_functions/workspace_projects'
 import Canvas                from './base/components/canvas'
 // import Lab                   from './base/components/lab'
-import Workspace             from './base/components/workspace'
+// import Workspace             from './base/components/workspace'
 
 // TERMINAL FEATURE
 import Terminal                from './js_features/terminal/components/terminal'
 import FeaturedTerminal        from './js_features/terminal/components/featured_terminal'
 import terminal_fn             from './js_features/terminal/rendering_functions/terminal'
-import terminal_workspace_fn   from './js_features/terminal/rendering_functions/terminal_workspace'
+// import terminal_workspace_fn   from './js_features/terminal/rendering_functions/terminal_workspace'
 
 // ALGEBRITE FEATURE
-import TerminalAlgebrite       from './js_features/algebrite/components/terminal_algebrite'
-import terminal_algebrite_fn   from './js_features/algebrite/rendering_functions/terminal_algebrite'
+// import TerminalAlgebrite       from './js_features/algebrite/components/terminal_algebrite'
+// import terminal_algebrite_fn   from './js_features/algebrite/rendering_functions/terminal_algebrite'
 
 // MATHJS FEATURE
-import TerminalMathJS          from './js_features/mathjs/components/terminal_mathjs'
-import terminal_mathjs_fn      from './js_features/mathjs/rendering_functions/terminal_mathjs'
-import terminal_mathjs_plot_fn from './js_features/mathjs/rendering_functions/terminal_mathjs_plot'
+// import TerminalMathJS          from './js_features/mathjs/components/terminal_mathjs'
+// import terminal_mathjs_fn      from './js_features/mathjs/rendering_functions/terminal_mathjs'
+// import terminal_mathjs_plot_fn from './js_features/mathjs/rendering_functions/terminal_mathjs_plot'
 
 // FUNCTION PLOT FEATURE
 import FunctionPlot            from './js_features/function_plot/components/function_plot'
@@ -157,6 +157,9 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 		this.add_public_asset('js', '/' + plugin_name + '/func_draw.js',            path.join(dist_dir, 'js/js_features/draw',              'func_draw.js') )
 		this.add_public_asset('js', '/' + plugin_name + '/func_draw.js.map',        path.join(dist_dir, 'js/js_features/draw',              'func_draw.js.map') )
 		
+		this.add_public_asset('js', '/' + plugin_name + '/func_draw_factory.js',     path.join(dist_dir, 'js/js_features/draw',             'func_draw_factory.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/func_draw_factory.js.map', path.join(dist_dir, 'js/js_features/draw',             'func_draw_factory.js.map') )
+
 		this.add_public_asset('js', '/' + plugin_name + '/func_expression.js',      path.join(dist_dir, 'js/js_features/draw',              'func_expression.js') )
 		this.add_public_asset('js', '/' + plugin_name + '/func_expression.js.map',  path.join(dist_dir, 'js/js_features/draw',              'func_expression.js.map') )
 		
@@ -238,7 +241,7 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 		
 		switch(arg_class_name.toLocaleLowerCase())
 		{
-			case 'workspace':				return new Workspace(arg_name, arg_settings, arg_state)
+			// case 'workspace':				return new Workspace(arg_name, arg_settings, arg_state)
 			// case 'lab':						return new Lab(arg_name, arg_settings, arg_state)
 			case 'canvas':					return new Canvas(arg_name, arg_settings, arg_state)
 			
@@ -259,14 +262,14 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 			case 'featured-terminal':
 			case 'featured_terminal':		return new FeaturedTerminal(arg_name, arg_settings, arg_state)
 			
-			case 'terminal-mathjs':
-			case 'terminal_mathjs':			return new TerminalMathJS(arg_name, arg_settings, arg_state)
+			// case 'terminal-mathjs':
+			// case 'terminal_mathjs':			return new TerminalMathJS(arg_name, arg_settings, arg_state)
 			
-			case 'terminal-mathjs-plot':
-			case 'terminal_mathjs_plot':	return new TerminalMathJSPlot(arg_name, arg_settings, arg_state)
+			// case 'terminal-mathjs-plot':
+			// case 'terminal_mathjs_plot':	return new TerminalMathJSPlot(arg_name, arg_settings, arg_state)
 			
-			case 'terminal-algebrite':
-			case 'terminal_algebrite':		return new TerminalAlgebrite(arg_name, arg_settings, arg_state)
+			// case 'terminal-algebrite':
+			// case 'terminal_algebrite':		return new TerminalAlgebrite(arg_name, arg_settings, arg_state)
 			
 			case 'function-plot':
 			case 'function_plot':			return new FunctionPlot(arg_name, arg_settings, arg_state)
@@ -293,7 +296,7 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 		switch(arg_class_name.toLocaleLowerCase())
 		{
 			// case 'lab':						return Lab
-			case 'workspace':				return Workspace
+			// case 'workspace':				return Workspace
 			case 'canvas':					return Canvas
 
 			case 'canvas-svgjs':
@@ -313,14 +316,14 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 			case 'featured-terminal':
 			case 'featured_terminal':		return FeaturedTerminal
 
-			case 'terminal-mathjs':
-			case 'terminal_mathjs':			return TerminalMathJS
+			// case 'terminal-mathjs':
+			// case 'terminal_mathjs':			return TerminalMathJS
 
-			case 'terminal-mathjs-plot':
-			case 'terminal_mathjs_plot':	return TerminalMathJSPlot
+			// case 'terminal-mathjs-plot':
+			// case 'terminal_mathjs_plot':	return TerminalMathJSPlot
 
-			case 'terminal-algebrite':
-			case 'terminal_algebrite':		return TerminalAlgebrite
+			// case 'terminal-algebrite':
+			// case 'terminal_algebrite':		return TerminalAlgebrite
 
 			case 'function-plot':
 			case 'function_plot':			return FunctionPlot
@@ -360,12 +363,12 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 			case 'terminal':
 			case 'featured-terminal':
 			case 'featured_terminal':
-			case 'terminal-mathjs':
-			case 'terminal_mathjs':
-			case 'terminal-mathjs_plot':
-			case 'terminal_mathjs_plot':
-			case 'terminal-algebrite':
-			case 'terminal_algebrite':
+			// case 'terminal-mathjs':
+			// case 'terminal_mathjs':
+			// case 'terminal-mathjs_plot':
+			// case 'terminal_mathjs_plot':
+			// case 'terminal-algebrite':
+			// case 'terminal_algebrite':
 			case 'function-plot':
 			case 'function_plot':
 
@@ -396,8 +399,8 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 		
 		switch(arg_type.toLocaleLowerCase())
 		{
-			case 'lab':						return lab_fn
-			case 'workspace':				return workspace_fn
+			// case 'lab':						return lab_fn
+			// case 'workspace':				return workspace_fn
 
 			case 'workspace-about':			return workspace_about_fn
 			case 'workspace-manuals':		return workspace_manuals_fn
@@ -419,17 +422,17 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 			case 'featured-terminal':
 			case 'featured_terminal':		return terminal_fn
 			
-			case 'terminal-algebrite':		return terminal_algebrite_fn
-			case 'terminal-mathjs':			return terminal_mathjs_fn
-			case 'terminal-mathjs_plot':	return terminal_mathjs_plot_fn
+			// case 'terminal-algebrite':		return terminal_algebrite_fn
+			// case 'terminal-mathjs':			return terminal_mathjs_fn
+			// case 'terminal-mathjs_plot':	return terminal_mathjs_plot_fn
 			case 'function-plot':			return function_plot_fn
-			case 'terminal-workspace':		return terminal_workspace_fn
+			// case 'terminal-workspace':		return terminal_workspace_fn
 
-			case 'terminal_algebrite':		return terminal_algebrite_fn
-			case 'terminal_mathjs':			return terminal_mathjs_fn
-			case 'terminal_mathjs_plot':	return terminal_mathjs_plot_fn
+			// case 'terminal_algebrite':		return terminal_algebrite_fn
+			// case 'terminal_mathjs':			return terminal_mathjs_fn
+			// case 'terminal_mathjs_plot':	return terminal_mathjs_plot_fn
 			case 'function_plot':			return function_plot_fn
-			case 'terminal_workspace':		return terminal_workspace_fn
+			// case 'terminal_workspace':		return terminal_workspace_fn
 		}
 
 		// console.log(context + ':find_rendering_function:type not found for [%s]', arg_type)

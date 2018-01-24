@@ -7,7 +7,9 @@ import T from 'devapt-core-common/dist/js/utils/types'
 // DEVAPT CORE BROWSER IMPORTS
 
 // PLUGIN IMPORTS
+import Position from '../../../base/position'
 import Drawable from './drawable'
+import Line from './line'
 
 
 const plugin_name = 'Labs' 
@@ -49,6 +51,8 @@ export default class Point extends Drawable
 		this.color  = arg_color
 		this.render = arg_render
 		this.size   = arg_size
+
+		this.add_method('line')
 	}
 
 
@@ -65,9 +69,9 @@ export default class Point extends Drawable
 		const pos_h = this.h()
 		const pos_v = this.v()
 
-		const size_h = this.space().project_x(this.size)
-		const size_v = this.space().project_y(this.size)
-		const size = Math.min(size_h, size_v)
+		// const size_h = this.space().project_x(this.size)
+		// const size_v = this.space().project_y(this.size)
+		// const size = Math.min(size_h, size_v)
 
 		const svg = this.space().svg()
 
@@ -80,38 +84,53 @@ export default class Point extends Drawable
 		switch (this.render) {
 			case 'square':
 				this._shape = svg
-				.rect(2*size_h, 2*size_v)
-				.move(pos_h - size_h, pos_v - size_v)
+				.rect(2*this.size, 2*this.size)
+				.move(pos_h - this.size, pos_v - size_v)
 				.fill('none')
 				this.draw_color()
 				break
 			case 'cross':
 				this._shape = svg.group()
-				this._shape.add( svg.line(pos_h - size, pos_v, pos_h + size, pos_v) )
-				this._shape.add( svg.line(pos_h, pos_v - size, pos_h, pos_v + size) )
+				this._shape.add( svg.line(pos_h - this.size, pos_v, pos_h + this.size, pos_v) )
+				this._shape.add( svg.line(pos_h, pos_v - this.size, pos_h, pos_v + this.size) )
 				this.draw_color()
 				break
 			case 'xcross':
 				this._shape = svg.group()
-				this._shape.add( svg.line(pos_h - size, pos_v - size, pos_h + size, pos_v + size) )
-				this._shape.add( svg.line(pos_h - size, pos_v + size, pos_h + size, pos_v - size) )
+				this._shape.add( svg.line(pos_h - this.size, pos_v - this.size, pos_h + this.size, pos_v + this.size) )
+				this._shape.add( svg.line(pos_h - this.size, pos_v + this.size, pos_h + this.size, pos_v - this.size) )
 				this.draw_color()
 				break
 			case 'point':
 				this._shape = svg.point(pos_h, pos_v).fill(this.color)
 				break
 			case 'disk':
-				this._shape = svg.circle(2*size).fill(this.color)
+				this._shape = svg.circle(2*this.size).fill(this.color)
 				this._shape.move(pos_h, pos_v)
 				break
 			case 'circle':
 			default:{
-				this._shape = svg.circle(2*size).fill('none').stroke(options)
+				this._shape = svg.circle(2*this.size).fill('none').stroke(options)
 				this._shape.center(pos_h, pos_v)
 				break
 			}
 		}
 
 		return this
+	}
+
+
+	line(arg_position, arg_color='blue', arg_width=1)
+	{
+		if ( T.isArray(arg_position) )
+		{
+			arg_position = new Position(arg_position)
+		}
+		else if ( T.isObject(arg_position) && arg_position.is_svg_drawable )
+		{
+			arg_position = arg_position.position()
+		}
+
+		return new Line(this.space(), this, this.position(), arg_position, arg_color, arg_width).draw()
 	}
 }

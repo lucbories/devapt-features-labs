@@ -9,6 +9,7 @@ import T from 'devapt-core-common/dist/js/utils/types'
 // PLUGIN IMPORTS
 import Drawable from './drawable'
 import Point from './point'
+import Space from './space'
 
 
 const plugin_name = 'Labs' 
@@ -45,11 +46,14 @@ export default class Circle extends Drawable
 		this.is_svg_circle = true
 
 		this.radius = arg_radius
-		this.color = arg_color // '#f06'
+		this.color = arg_color
 		this.fill = arg_fill
 		this.line_width = 1
 
+		this._center = undefined
+
 		this.add_method('point')
+		this.add_method('center')
 	}
 
 
@@ -65,14 +69,21 @@ export default class Circle extends Drawable
 		// RENDER
 		const pos_h = this.h()
 		const pos_v = this.v()
-		const diameter_h = this.space().project_x(2 * this.radius)
-		const diameter_v = this.space().project_y(2 * this.radius)
-		const diameter = Math.min(diameter_h, diameter_v)
+		const radius_h = this.space().range_to_screen_h(this.radius)
+		const radius_v = this.space().range_to_screen_v(this.radius)
 
-		this._shape = this.space().svg()
-		.circle(diameter)
-		.center(pos_h, pos_v)
-
+		if (radius_h != radius_v)
+		{
+			this._shape = this.space().svg()
+			.ellipse(2*radius_h, 2*radius_v)
+			.center(pos_h, pos_v)
+		} else {
+			const diameter = 2 * radius_h
+			this._shape = this.space().svg()
+			.circle(diameter)
+			.center(pos_h, pos_v)
+		}
+		
 		this.draw_color()
 
 		return this
@@ -81,12 +92,61 @@ export default class Circle extends Drawable
 
 	point(arg_degrees_angle, arg_color='red', arg_render='xcross', arg_size=5)
 	{
+		// TODO TAKE DIMENSIONS FROM CIRCLE (x,y) or (y,z) or (x,t) or...
 		const radian_angle = arg_degrees_angle * Math.PI / 180
-		const pos_h = this.h() + this.space().project_x( Math.cos(radian_angle) * this.radius)
-		const pos_v = this.v() - this.space().project_y( Math.sin(radian_angle) * this.radius)
+		const x = this.x() + Math.cos(radian_angle) * this.radius
+		const y = this.y() + Math.sin(radian_angle) * this.radius
 
-		const point = new Point(this._space, this, [pos_h, pos_v], arg_color, arg_render, arg_size)
+		const point = new Point(this._space, this, [x, y], arg_color, arg_render, arg_size)
 		point.draw()
+
+		this._children.push(point)
+
 		return point
+	}
+
+
+	center(arg_color='red', arg_render='xcross', arg_size=5)
+	{
+		if (this._center)
+		{
+			return this._center
+		}
+
+		// TODO TAKE DIMENSIONS FROM CIRCLE (x,y) or (y,z) or (x,t) or...
+		const x = this.x()
+		const y = this.y()
+
+		this._center = new Point(this._space, this, [x, y], arg_color, arg_render, arg_size)
+		this._center.draw()
+		
+		this.add_child(this._center)
+
+		return this._center
+	}
+
+
+	ray(arg_degrees_angle, arg_length, arg_color='red', arg_render='xcross', arg_size=5, arg_line_color='red', arg_line_width=1)
+	{
+		if (! this._center)
+		{
+			this.center(arg_color, arg_render, arg_size)
+		}
+
+		// TODO TAKE DIMENSIONS FROM CIRCLE (x,y) or (y,z) or (x,t) or...
+		const radian_angle = arg_degrees_angle * Math.PI / 180
+		const x = this.x() + Math.cos(radian_angle) * arg_length
+		const y = this.y() + Math.sin(radian_angle) * arg_length
+
+		const point = new Point(this._space, this, [x, y], arg_color, arg_render, arg_size)
+		point.draw()
+
+		this._children.push(point)
+
+		const line = this._center.line(point, arg_line_color, arg_line_width)
+		
+		this._children.push(line)
+		
+		return line
 	}
 }

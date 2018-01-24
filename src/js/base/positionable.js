@@ -7,107 +7,85 @@ import T from 'devapt-core-common/dist/js/utils/types'
 // DEVAPT CORE BROWSER IMPORTS
 
 // PLUGIN IMPORTS
-import Projectable from '../../../base/projectable'
-// import Position from '../../../base/position'
-// import Pixel from '../../../base/pixel'
+import Methodeable from '../../../base/methodeable'
+import Position from '../../../base/position'
+import Pixel from '../../../base/pixel'
 
 
 const plugin_name = 'Labs' 
-const context = plugin_name + '/svg/drawable'
+const context = plugin_name + '/svg/positionable'
+
+// const DEFAULT_POSITION = [0,0,0,0]
 
 
 
 /**
- * @file Drawiable base item class.
+ * @file Positionable base item class.
  * 
  * @author Luc BORIES
  * @license Apache-2.0
  * 
- * @example
- * 	API
- * 		->owner():Drawable - get drawable owner.
- * 		->children():Drawable array - get drawable children.
- * 		->type():string - get drawable type.
- * 
  */
-export default class Drawable extends Projectable
+export default class Positionable extends Methodeable
 {
 	/**
 	 * Create an instance of Drawable.
 	 * 
 	 * @returns {nothing}
 	 */
-	constructor(space, owner, position, type)
+	constructor(space, position)
 	{
-		super(space, position)
-		this.is_svg_drawable = true
+		super()
+		this.is_svg_positionable = true
 
 		// console.log(context + ':constructor:type:', type)
 		// console.log(context + ':constructor:position:', position)
 
-		this._owner = owner
-		this._shape = undefined
-		this._methods = {
-			x:true,
-			y:true,
-			z:true,
-			t:true,
-			h:true,
-			v:true,
-			move:true
-		}
-
-		// PUBLIC PROPERTIES
-		this.type = type
-		this.color = undefined
-		this.fill = false
-		this.line_width = 1
-		this.background_color = 'white'
-	}
-
-	svg_shape()
-	{
-		return this._shape
+		this._space = space
+		this._position = new Position(position)
 	}
 
 
-	owner(value)
+	space()
 	{
-		if ( T.isObject(value) && value.is_svg_drawable )
+		return this._space
+	}
+
+
+
+	position(arg_postion)
+	{
+		if (arg_postion !== undefined)
 		{
-			this._owner = value
-			this._owner.add_child(value)
+			if ( T.isArray(arg_postion) || this._is_vector(arg_postion) )
+			{
+				this._position.values(arg_postion)
+			}
+			
 			return this
 		}
 
-		return this._owner
+		return this._position
 	}
 
-
-	draw()
+	x()
 	{
-		// TO IMPLEMENT IN SUB CLASSES
-		return this
+		return this._position.value(0)
 	}
 
-
-	draw_color()
+	y()
 	{
-		if (this.color)
-		{
-			if (this.fill)
-			{
-				this._shape.fill({ color:this.color, opacity:1 })
-			} else {
-				this._shape.fill({ color:this.background_color, opacity:0.1 })
-				const options = {
-					width:this.line_width,
-					color:this.color ? this.color : 'blue'/*,
-					linecap:'round'*/
-				}
-				this._shape.stroke(options)
-			}
-		}
+		return this._position.value(1)
+	}
+
+	z()
+	{
+		return this._position.value(2)
+	}
+
+	t()
+	{
+		return this._position.value(3)
 	}
 
 
