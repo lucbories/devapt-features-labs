@@ -49,9 +49,9 @@ import CanvasPhysicsJS         from './js_features/physicsjs/components/canvas_p
 import CanvasMatterJS          from './js_features/matterjs/components/canvas_matterjs'
 
 // SVGJS FEATURE
-import CanvasSvgJS             from './js_features/svgjs/components/canvas_svgjs'
-import SvgFactory              from './js_features/svgjs/svg/factory'
-import SvgSpace                from './js_features/svgjs/svg/space'
+import CanvasSvgJS             from './svgjs/components/canvas_svgjs'
+import SvgFactory              from './svgjs/shapes/factory'
+import SvgSpace                from './svgjs/shapes/space'
 
 
 const plugin_name = 'Labs' 

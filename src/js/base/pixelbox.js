@@ -7,7 +7,7 @@ import T from 'devapt-core-common/dist/js/utils/types'
 // DEVAPT CORE BROWSER IMPORTS
 
 // PLUGIN IMPORTS
-import Pixel from './pixel'
+import PixelPoint from './pixelpoint'
 
 
 const plugin_name = 'Labs' 
@@ -28,7 +28,7 @@ const DEFAULT_MARGIN_V  = 0
  * @file PixelBox class.
  * 
  * A PixelBox encapsulate a drawing zone into a canvas.
- * A Pixel has two coordinate, horizontal (0 at left, >0 at right) and vertical (0 at top, >0 at bottom). 
+ * A PixelPoint has two coordinate, horizontal (0 at left, >0 at right) and vertical (0 at top, >0 at bottom). 
  * 
  * @author Luc BORIES
  * @license Apache-2.0
@@ -152,9 +152,9 @@ export default class PixelBox
 	/**
 	 * Get a box bounded pixel.
 	 * 
-	 * @param {Pixel} arg_pixel - pixel instance.
+	 * @param {PixelPoint} arg_pixel - pixel instance.
 	 * 
-	 * @returns {Pixel} - same pixel value with or without update.
+	 * @returns {PixelPoint} - same pixel value with or without update.
 	 */
 	get_boxed_pixel(arg_pixel, arg_map_to_limit=false)
 	{

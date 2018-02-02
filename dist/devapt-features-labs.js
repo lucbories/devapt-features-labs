@@ -12,7 +12,7 @@ if (global._babelPolyfill) {
 
 global._babelPolyfill = true;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"core-js/shim":938,"regenerator-runtime/runtime":965}],1:[function(require,module,exports){
+},{"core-js/shim":943,"regenerator-runtime/runtime":970}],1:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -169,7 +169,7 @@ function (_BindingStream) {
 exports.default = BindingService;
 
 
-},{"./binding_stream":3,"assert":611,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/messaging/stream":125,"devapt-core-common/dist/js/utils/types":177,"util":972}],2:[function(require,module,exports){
+},{"./binding_stream":3,"assert":616,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/messaging/stream":125,"devapt-core-common/dist/js/utils/types":177,"util":977}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -384,7 +384,7 @@ function (_BindingStream) {
 exports.default = BindingServiceTimeline;
 
 
-},{"./binding_stream":3,"assert":611,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/messaging/stream":125,"devapt-core-common/dist/js/utils/transform":176,"devapt-core-common/dist/js/utils/types":177,"util":972}],3:[function(require,module,exports){
+},{"./binding_stream":3,"assert":616,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/messaging/stream":125,"devapt-core-common/dist/js/utils/transform":176,"devapt-core-common/dist/js/utils/types":177,"util":977}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -825,7 +825,7 @@ function () {
 exports.default = BindingStream;
 
 
-},{"assert":611,"core-js/modules/es6.array.from":81,"core-js/modules/es6.promise":84,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/utils/transform":176,"devapt-core-common/dist/js/utils/types":177,"devapt-core-common/dist/js/utils/uid.js":178,"util":972}],4:[function(require,module,exports){
+},{"assert":616,"core-js/modules/es6.array.from":81,"core-js/modules/es6.promise":84,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/utils/transform":176,"devapt-core-common/dist/js/utils/types":177,"devapt-core-common/dist/js/utils/uid.js":178,"util":977}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1227,7 +1227,7 @@ function () {
 exports.default = BindingLoader;
 
 
-},{"./binding_service":1,"./binding_service_timeline":2,"./binding_stream":3,"assert":611,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/messaging/stream":125,"devapt-core-common/dist/js/utils/types":177,"lodash":90,"util":972}],5:[function(require,module,exports){
+},{"./binding_service":1,"./binding_service_timeline":2,"./binding_stream":3,"assert":616,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/messaging/stream":125,"devapt-core-common/dist/js/utils/types":177,"lodash":90,"util":977}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1484,7 +1484,7 @@ function (_StatedDom) {
 exports.default = Component;
 
 
-},{"./component/stated_dom":10,"assert":611,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/utils/types":177,"lodash":90}],6:[function(require,module,exports){
+},{"./component/stated_dom":10,"assert":616,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/utils/types":177,"lodash":90}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1725,7 +1725,7 @@ function (_RenderedDom) {
 exports.default = BoundDom;
 
 
-},{"../binding/bindings_loader":4,"./rendered_dom":8,"assert":611,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/utils/types":177,"devapt-core-common/dist/js/utils/uid.js":178,"lodash":90}],7:[function(require,module,exports){
+},{"../binding/bindings_loader":4,"./rendered_dom":8,"assert":616,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/utils/types":177,"devapt-core-common/dist/js/utils/uid.js":178,"lodash":90}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2565,7 +2565,7 @@ function (_Dom) {
 exports.default = RenderedDDom;
 
 
-},{"./dom":7,"assert":611,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.promise":84,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/utils/types":177,"lodash":90}],9:[function(require,module,exports){
+},{"./dom":7,"assert":616,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.promise":84,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/utils/types":177,"lodash":90}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3042,7 +3042,7 @@ function () {
 exports.default = Rendering;
 
 
-},{"assert":611,"core-js/modules/es6.promise":84,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/rendering/rendering_factory":146,"devapt-core-common/dist/js/rendering/rendering_resolver":149,"devapt-core-common/dist/js/utils/types":177,"dom-delegate":87,"vdom-parser":91,"virtual-dom/create-element":94,"virtual-dom/diff":95,"virtual-dom/patch":96}],10:[function(require,module,exports){
+},{"assert":616,"core-js/modules/es6.promise":84,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/rendering/rendering_factory":146,"devapt-core-common/dist/js/rendering/rendering_resolver":149,"devapt-core-common/dist/js/utils/types":177,"dom-delegate":87,"vdom-parser":91,"virtual-dom/create-element":94,"virtual-dom/diff":95,"virtual-dom/patch":96}],10:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3548,7 +3548,7 @@ function (_BoundDom) {
 exports.default = StatedDom;
 
 
-},{"./bound_dom":6,"assert":611,"core-js/modules/es6.function.name":82,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.promise":84,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/utils/types":177,"devapt-core-common/dist/js/utils/uid.js":178,"lodash":90}],11:[function(require,module,exports){
+},{"./bound_dom":6,"assert":616,"core-js/modules/es6.function.name":82,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.promise":84,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/utils/types":177,"devapt-core-common/dist/js/utils/uid.js":178,"lodash":90}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3895,7 +3895,7 @@ function (_Loggable) {
 exports.default = NameTypeSettingsLoggable;
 
 
-},{"assert":611,"core-js/modules/es6.function.name":82,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/base/loggable":118,"devapt-core-common/dist/js/utils/types":177}],13:[function(require,module,exports){
+},{"assert":616,"core-js/modules/es6.function.name":82,"core-js/modules/es6.object.set-prototype-of":83,"core-js/modules/es6.symbol":85,"devapt-core-common/dist/js/base/loggable":118,"devapt-core-common/dist/js/utils/types":177}],13:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6133,7 +6133,7 @@ if (typeof document !== 'undefined') {
 module.exports = doccy;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"min-document":613}],89:[function(require,module,exports){
+},{"min-document":618}],89:[function(require,module,exports){
 "use strict";
 
 module.exports = function isObject(x) {
@@ -25545,7 +25545,7 @@ var Instance = function (_Stateable) {
 exports.default = Instance;
 
 
-},{"../topology/registry/index":158,"../utils/is_browser":174,"../utils/types":177,"../utils/uid":178,"./runtime":119,"./stateable":121,"assert":611}],118:[function(require,module,exports){
+},{"../topology/registry/index":158,"../utils/is_browser":174,"../utils/types":177,"../utils/uid":178,"./runtime":119,"./stateable":121,"assert":616}],118:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26095,7 +26095,7 @@ var Loggable = function () {
 exports.default = Loggable;
 
 
-},{"../utils/types":177,"assert":611}],119:[function(require,module,exports){
+},{"../utils/types":177,"assert":616}],119:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26372,7 +26372,7 @@ var Settingsable = function (_Errorable) {
 exports.default = Settingsable;
 
 
-},{"../utils/types":177,"./errorable":116,"assert":611,"immutable":222}],121:[function(require,module,exports){
+},{"../utils/types":177,"./errorable":116,"assert":616,"immutable":222}],121:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26738,7 +26738,7 @@ var Stateable = function (_Settingsable) {
 exports.default = Stateable;
 
 
-},{"../utils/types":177,"./settingsable":120,"assert":611,"immutable":222}],122:[function(require,module,exports){
+},{"../utils/types":177,"./settingsable":120,"assert":616,"immutable":222}],122:[function(require,module,exports){
 (function (__dirname){
 'use strict';
 
@@ -27023,7 +27023,7 @@ exports.default = DefaultDefaultRendering;
 
 
 }).call(this,"/node_modules\\devapt-core-common\\dist\\js\\default_plugins")
-},{"../plugins/rendering_plugin":128,"../rendering/index":137,"../utils/types":177,"assert":611,"path":949}],123:[function(require,module,exports){
+},{"../plugins/rendering_plugin":128,"../rendering/index":137,"../utils/types":177,"assert":616,"path":954}],123:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27926,7 +27926,7 @@ var Stream = function () {
 exports.default = Stream;
 
 
-},{"../utils/types":177,"assert":611,"baconjs":179}],126:[function(require,module,exports){
+},{"../utils/types":177,"assert":616,"baconjs":179}],126:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28148,7 +28148,7 @@ var FeaturesPlugin = function (_Plugin) {
 exports.default = FeaturesPlugin;
 
 
-},{"../utils/types":177,"./plugin":127,"assert":611}],127:[function(require,module,exports){
+},{"../utils/types":177,"./plugin":127,"assert":616}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28321,7 +28321,7 @@ var Plugin = function (_Instance) {
 exports.default = Plugin;
 
 
-},{"../base/instance":117,"../utils/types":177,"assert":611}],128:[function(require,module,exports){
+},{"../base/instance":117,"../utils/types":177,"assert":616}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28570,7 +28570,7 @@ var RenderingPlugin = function (_FeaturesPlugin) {
 exports.default = RenderingPlugin;
 
 
-},{"../utils/types":177,"./features_plugin":126,"assert":611}],129:[function(require,module,exports){
+},{"../utils/types":177,"./features_plugin":126,"assert":616}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30914,7 +30914,7 @@ var RenderingBuilder = function (_RenderingBuilderAsse) {
 exports.default = RenderingBuilder;
 
 
-},{"../utils/is_browser":174,"../utils/types":177,"./rendering_builder_assets":145,"./rendering_factory":146,"./rendering_resolver":149,"assert":611,"lodash":227}],145:[function(require,module,exports){
+},{"../utils/is_browser":174,"../utils/types":177,"./rendering_builder_assets":145,"./rendering_factory":146,"./rendering_resolver":149,"assert":616,"lodash":227}],145:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31194,7 +31194,7 @@ var RenderingBuilderAssets = function (_Loggable) {
 exports.default = RenderingBuilderAssets;
 
 
-},{"../base/loggable":118,"../utils/types":177,"assert":611}],146:[function(require,module,exports){
+},{"../base/loggable":118,"../utils/types":177,"assert":616}],146:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32153,7 +32153,7 @@ var RenderingResult = function () {
 exports.default = RenderingResult;
 
 
-},{"../utils/is_browser":174,"../utils/types":177,"../utils/uid":178,"assert":611,"html-to-vdom":209,"lodash":227,"vdom-as-json":547,"virtual-dom/create-element":551,"virtual-dom/vnode/vnode":566,"virtual-dom/vnode/vtext":568}],151:[function(require,module,exports){
+},{"../utils/is_browser":174,"../utils/types":177,"../utils/uid":178,"assert":616,"html-to-vdom":209,"lodash":227,"vdom-as-json":547,"virtual-dom/create-element":551,"virtual-dom/vnode/vnode":566,"virtual-dom/vnode/vtext":568}],151:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32962,7 +32962,7 @@ var StateStore = function (_Loggable) {
 exports.default = StateStore;
 
 
-},{"../base/loggable":118,"../utils/types":177,"assert":611}],158:[function(require,module,exports){
+},{"../base/loggable":118,"../utils/types":177,"assert":616}],158:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33191,7 +33191,7 @@ function load_application(logs, arg_app_name, arg_app_config, arg_config_package
 exports.default = load_application;
 
 
-},{"../../../utils/parser/parser":175,"../../../utils/types":177,"assert":611,"path":949}],161:[function(require,module,exports){
+},{"../../../utils/parser/parser":175,"../../../utils/types":177,"assert":616,"path":954}],161:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33519,7 +33519,7 @@ function load_config(arg_state, arg_initial_config, arg_base_dir, arg_world_dir,
 exports.default = load_config;
 
 
-},{"../../../loggers/logger_console_standalone":124,"../../../utils/types":177,"./default_config_app":159,"./load_deployments":163,"./load_nodes":164,"./load_plugins":166,"./load_security":167,"./load_tenants":170,"assert":611,"path":949}],163:[function(require,module,exports){
+},{"../../../loggers/logger_console_standalone":124,"../../../utils/types":177,"./default_config_app":159,"./load_deployments":163,"./load_nodes":164,"./load_plugins":166,"./load_security":167,"./load_tenants":170,"assert":616,"path":954}],163:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33633,7 +33633,7 @@ function load_service(logs, arg_app_name, arg_svc_name, arg_deployed_svc_obj, ar
 exports.default = load_deployments;
 
 
-},{"../../../utils/types":177,"assert":611}],164:[function(require,module,exports){
+},{"../../../utils/types":177,"assert":616}],164:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33743,7 +33743,7 @@ function load_node_servers(logs, arg_servers_config, arg_node_name, arg_host /*,
 exports.default = load_nodes;
 
 
-},{"../../../utils/types":177,"assert":611}],165:[function(require,module,exports){
+},{"../../../utils/types":177,"assert":616}],165:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -34250,7 +34250,7 @@ function load_package_template(logs, arg_package_name, arg_package_config, arg_c
 exports.default = load_packages;
 
 
-},{"../../../utils/attributes_iterator":173,"../../../utils/parser/parser":175,"../../../utils/types":177,"assert":611,"lodash":227,"path":949}],166:[function(require,module,exports){
+},{"../../../utils/attributes_iterator":173,"../../../utils/parser/parser":175,"../../../utils/types":177,"assert":616,"lodash":227,"path":954}],166:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -34309,7 +34309,7 @@ function load_plugins(logs, arg_plugins_config /*, arg_base_dir*/) {
 exports.default = load_plugins;
 
 
-},{"../../../utils/types":177,"assert":611}],167:[function(require,module,exports){
+},{"../../../utils/types":177,"assert":616}],167:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -34424,7 +34424,7 @@ function load_security(logs, arg_security_config, arg_base_dir) {
 exports.default = load_security;
 
 
-},{"../../../utils/parser/parser":175,"../../../utils/types":177,"./load_security_authentication":168,"./load_security_authorization":169,"assert":611,"path":949}],168:[function(require,module,exports){
+},{"../../../utils/parser/parser":175,"../../../utils/types":177,"./load_security_authentication":168,"./load_security_authorization":169,"assert":616,"path":954}],168:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -34680,7 +34680,7 @@ function load_tenant(logs, arg_tenant_name, arg_tenant_config, arg_plugins, arg_
 exports.default = load_tenants;
 
 
-},{"../../../utils/types":177,"./load_applications":161,"./load_packages":165,"assert":611,"lodash":227,"path":949}],171:[function(require,module,exports){
+},{"../../../utils/types":177,"./load_applications":161,"./load_packages":165,"assert":616,"lodash":227,"path":954}],171:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -34945,7 +34945,7 @@ var RegistryStore = function (_MapStore) {
 exports.default = RegistryStore;
 
 
-},{"../../state_store/map_store":156,"../../utils/types":177,"assert":611}],172:[function(require,module,exports){
+},{"../../state_store/map_store":156,"../../utils/types":177,"assert":616}],172:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35328,7 +35328,7 @@ var parser = {
 exports.default = parser;
 
 
-},{"fs":615}],176:[function(require,module,exports){
+},{"fs":620}],176:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35711,7 +35711,7 @@ var transform = exports.transform = function transform(arg_xform) {
 };
 
 
-},{"../utils/types":177,"assert":611,"ramda":228}],177:[function(require,module,exports){
+},{"../utils/types":177,"assert":616,"ramda":228}],177:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40511,7 +40511,7 @@ function decode (str) {
     });
 }
 
-},{"./entities.json":196,"punycode":951}],195:[function(require,module,exports){
+},{"./entities.json":196,"punycode":956}],195:[function(require,module,exports){
 var punycode = require('punycode');
 var revEntities = require('./reversed.json');
 
@@ -40552,7 +40552,7 @@ function encode (str, opts) {
     return chars.join('');
 }
 
-},{"./reversed.json":198,"punycode":951}],196:[function(require,module,exports){
+},{"./reversed.json":198,"punycode":956}],196:[function(require,module,exports){
 module.exports={
     "Aacute;": "\u00C1",
     "Aacute": "\u00C1",
@@ -44350,7 +44350,7 @@ function EvStore(elem) {
 
 },{"individual/one-version":224}],208:[function(require,module,exports){
 arguments[4][88][0].apply(exports,arguments)
-},{"dup":88,"min-document":613}],209:[function(require,module,exports){
+},{"dup":88,"min-document":618}],209:[function(require,module,exports){
 var convertHTML = require('./lib/html-to-vdom');
 module.exports = function initializeConverter (dependencies) {
     if (!dependencies.VNode || !dependencies.VText) {
@@ -45226,7 +45226,7 @@ Parser.prototype.done = Parser.prototype.end;
 
 module.exports = Parser;
 
-},{"./Tokenizer.js":219,"events":941,"inherits":225}],217:[function(require,module,exports){
+},{"./Tokenizer.js":219,"events":946,"inherits":225}],217:[function(require,module,exports){
 module.exports = ProxyHandler;
 
 function ProxyHandler(cbs){
@@ -46224,7 +46224,7 @@ WritableStream.prototype._write = function(chunk, encoding, cb){
 	this._parser.write(chunk);
 	cb();
 };
-},{"./Parser.js":216,"buffer":617,"inherits":225,"readable-stream":613,"stream":967,"string_decoder":968}],221:[function(require,module,exports){
+},{"./Parser.js":216,"buffer":622,"inherits":225,"readable-stream":618,"stream":972,"string_decoder":973}],221:[function(require,module,exports){
 var Parser = require("./Parser.js"),
     DomHandler = require("domhandler");
 
@@ -62933,94 +62933,6 @@ exports.default = void 0;
 
 var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
 
-var _range = _interopRequireDefault(require("./range"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/drawing/domain';
-/**
- * @file Domain class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- * @example
- * 	API
- * 		->...
- * 
- */
-
-var Domain =
-/*#__PURE__*/
-function (_Range) {
-  _inherits(Domain, _Range);
-
-  /**
-   * Create an instance of a Domain.
-   * 
-   * @param {string} arg_name   - domain name.
-   * @param {number} arg_index  - domain index.
-   * @param {number} arg_start  - range start value.
-   * @param {number} arg_end    - range end value.
-   * @param {number} arg_step   - range step value.
-   * 
-   * @returns {nothing}
-   */
-  function Domain(arg_name, arg_index, arg_start, arg_end, arg_step) {
-    var _this;
-
-    _classCallCheck(this, Domain);
-
-    _this = _possibleConstructorReturn(this, (Domain.__proto__ || Object.getPrototypeOf(Domain)).call(this, arg_start, arg_end, arg_step));
-    _this.is_drawing_domain = true;
-    _this._name = arg_name;
-    _this._index = arg_index;
-    return _this;
-  }
-
-  _createClass(Domain, [{
-    key: "name",
-    value: function name() {
-      return this._name;
-    }
-  }, {
-    key: "index",
-    value: function index() {
-      return this._index;
-    }
-  }]);
-
-  return Domain;
-}(_range.default);
-
-exports.default = Domain;
-
-
-},{"./range":576,"devapt-core-common/dist/js/utils/types":177}],572:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
@@ -63086,7 +62998,7 @@ function () {
 exports.default = Methodeable;
 
 
-},{"devapt-core-common/dist/js/utils/types":177}],573:[function(require,module,exports){
+},{"devapt-core-common/dist/js/utils/types":177}],572:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -63096,124 +63008,7 @@ exports.default = void 0;
 
 var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
 
-var _vector = _interopRequireDefault(require("./vector"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/base/pixel';
-/**
- * @file Pixel class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- * @example
- * 	API
- * 		->h(v):number - get|set horizontal value.
- * 		->v(v):number - get|set vertical value.
- */
-
-var Pixel =
-/*#__PURE__*/
-function () {
-  /**
-   * Create an instance of Position.
-   * 
-   * @param {number} arg_pixel_h - pixel horizontal coordonate.
-   * @param {number} arg_pixel_v - pixel vertical coordonate.
-   * 
-   * @returns {nothing}
-   */
-  function Pixel(arg_pixel_h, arg_pixel_v) {
-    _classCallCheck(this, Pixel);
-
-    this.is_pixel = true;
-    this._h = 0;
-    this._v = 0;
-    this.h(arg_pixel_h);
-    this.v(arg_pixel_v);
-  }
-  /**
-   * Set or get pixel horizontal coordonate.
-   * 
-   * @param {number} arg_value - pixel horizontal coordonate.
-   * 
-   * @returns {number|Pixel} - returns number with setter, returns this for setter.
-   */
-
-
-  _createClass(Pixel, [{
-    key: "h",
-    value: function h(arg_value) {
-      if (_types.default.isNumber(arg_value)) {
-        this._h = arg_value;
-        return this;
-      }
-
-      if (_types.default.isString(arg_value)) {
-        try {
-          this._h = parseInt(arg_value);
-        } catch (e) {}
-
-        return this;
-      }
-
-      return this._h;
-    }
-    /**
-     * Set or get pixel vertical coordonate.
-     * 
-     * @param {number} arg_value - pixel vertical coordonate.
-     * 
-     * @returns {number|Pixel} - returns number with setter, returns this for setter.
-     */
-
-  }, {
-    key: "v",
-    value: function v(arg_value) {
-      if (_types.default.isNumber(arg_value)) {
-        this._v = arg_value;
-        return this;
-      }
-
-      if (_types.default.isString(arg_value)) {
-        try {
-          this._v = parseInt(arg_value);
-        } catch (e) {}
-
-        return this;
-      }
-
-      return this._v;
-    }
-  }]);
-
-  return Pixel;
-}();
-
-exports.default = Pixel;
-
-
-},{"./vector":581,"devapt-core-common/dist/js/utils/types":177}],574:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _pixel = _interopRequireDefault(require("./pixel"));
+var _pixelpoint = _interopRequireDefault(require("./pixelpoint"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -63239,7 +63034,7 @@ var DEFAULT_MARGIN_V = 0;
  * @file PixelBox class.
  * 
  * A PixelBox encapsulate a drawing zone into a canvas.
- * A Pixel has two coordinate, horizontal (0 at left, >0 at right) and vertical (0 at top, >0 at bottom). 
+ * A PixelPoint has two coordinate, horizontal (0 at left, >0 at right) and vertical (0 at top, >0 at bottom). 
  * 
  * @author Luc BORIES
  * @license Apache-2.0
@@ -63366,9 +63161,9 @@ function () {
     /**
      * Get a box bounded pixel.
      * 
-     * @param {Pixel} arg_pixel - pixel instance.
+     * @param {PixelPoint} arg_pixel - pixel instance.
      * 
-     * @returns {Pixel} - same pixel value with or without update.
+     * @returns {PixelPoint} - same pixel value with or without update.
      */
 
   }, {
@@ -63421,7 +63216,7 @@ function () {
 exports.default = PixelBox;
 
 
-},{"./pixel":573,"devapt-core-common/dist/js/utils/types":177}],575:[function(require,module,exports){
+},{"./pixelpoint":573,"devapt-core-common/dist/js/utils/types":177}],573:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -63431,123 +63226,7 @@ exports.default = void 0;
 
 var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
 
-var _vector = _interopRequireDefault(require("./vector"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/drawing/position';
-/**
- * @file Position class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- * @example
- * 	API
- * 		->x(v):number - get|set position x value.
- * 		->y(v):number - get|set position y value.
- * 		->z(v):number - get|set position z value.
- * 		->t(v):number - get|set position t value.
- */
-
-var Position =
-/*#__PURE__*/
-function (_Vector) {
-  _inherits(Position, _Vector);
-
-  /**
-   * Create an instance of Position.
-   * 
-   * @param {array|Vector|Position} arg_position_value - position value.
-   * 
-   * @returns {nothing}
-   */
-  function Position(arg_position_value) {
-    var _this;
-
-    _classCallCheck(this, Position);
-
-    _this = _possibleConstructorReturn(this, (Position.__proto__ || Object.getPrototypeOf(Position)).call(this, arg_position_value));
-    _this.is_drawing_position = true;
-    return _this;
-  }
-
-  _createClass(Position, [{
-    key: "x",
-    value: function x(arg_value) {
-      if (_types.default.isNumber(arg_value)) {
-        this._set_value(0, arg_value);
-
-        return this;
-      }
-
-      return this._get_value(0, 0);
-    }
-  }, {
-    key: "y",
-    value: function y(arg_value) {
-      if (_types.default.isNumber(arg_value)) {
-        this._set_value(1, arg_value);
-
-        return this;
-      }
-
-      return this._get_value(1, 0);
-    }
-  }, {
-    key: "z",
-    value: function z(arg_value) {
-      if (_types.default.isNumber(arg_value)) {
-        this._set_value(2, arg_value);
-
-        return this;
-      }
-
-      return this._get_value(2, 0);
-    }
-  }, {
-    key: "t",
-    value: function t(arg_value) {
-      if (_types.default.isNumber(arg_value)) {
-        this._set_value(3, arg_value);
-
-        return this;
-      }
-
-      return this._get_value(3, 0);
-    }
-  }]);
-
-  return Position;
-}(_vector.default);
-
-exports.default = Position;
-
-
-},{"./vector":581,"devapt-core-common/dist/js/utils/types":177}],576:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+var _vector = _interopRequireDefault(require("../math/vector"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -63559,105 +63238,102 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-// DEVAPT CORE BROWSER IMPORTS
-// PLUGIN IMPORTS
 var plugin_name = 'Labs';
-var context = plugin_name + '/drawing/range';
+var context = plugin_name + '/base/pixel';
 /**
- * @file Range class.
+ * @file Pixel class.
  * 
  * @author Luc BORIES
  * @license Apache-2.0
  * 
  * @example
  * 	API
- * 		->size():number - get range size.
- * 		->count():number - get range steps count.
- * 
- * 		->start():number - get range start.
- * 		->start(v):this  - set range start.
- * 
- * 		->end():number - get range end.
- * 		->end(v):this  - set range end.
- * 
- * 		->step():number - get range step.
- * 		->step(v):this  - set range step.
+ * 		->h(v):number - get|set horizontal value.
+ * 		->v(v):number - get|set vertical value.
  */
 
-var Range =
+var Pixel =
 /*#__PURE__*/
 function () {
   /**
-   * Create an instance of a Range.
+   * Create an instance of Position.
    * 
-   * @param {number} arg_start - range start.
-   * @param {number} arg_end   - range end.
-   * @param {number} arg_step  - range step.
+   * @param {number} arg_pixel_h - pixel horizontal coordonate.
+   * @param {number} arg_pixel_v - pixel vertical coordonate.
    * 
    * @returns {nothing}
    */
-  function Range(arg_start, arg_end, arg_step) {
-    _classCallCheck(this, Range);
+  function Pixel(arg_pixel_h, arg_pixel_v) {
+    _classCallCheck(this, Pixel);
 
-    this.is_vector = true;
-    this._start = undefined;
-    this._end = undefined;
-    this._step = undefined;
-    this.start(arg_start);
-    this.end(arg_end);
-    this.step(arg_step);
+    this.is_pixel = true;
+    this._h = 0;
+    this._v = 0;
+    this.h(arg_pixel_h);
+    this.v(arg_pixel_v);
   }
+  /**
+   * Set or get pixel horizontal coordonate.
+   * 
+   * @param {number} arg_value - pixel horizontal coordonate.
+   * 
+   * @returns {number|Pixel} - returns number with setter, returns this for setter.
+   */
 
-  _createClass(Range, [{
-    key: "size",
-    value: function size() {
-      return this._end - this._start;
-    }
-  }, {
-    key: "count",
-    value: function count() {
-      var size = this._end - this._start;
-      return size % this._step;
-    }
-  }, {
-    key: "start",
-    value: function start(arg_value) {
+
+  _createClass(Pixel, [{
+    key: "h",
+    value: function h(arg_value) {
       if (_types.default.isNumber(arg_value)) {
-        this._start = arg_value;
+        this._h = arg_value;
         return this;
       }
 
-      return this._start;
-    }
-  }, {
-    key: "end",
-    value: function end(arg_value) {
-      if (_types.default.isNumber(arg_value)) {
-        this._end = arg_value;
+      if (_types.default.isString(arg_value)) {
+        try {
+          this._h = parseInt(arg_value);
+        } catch (e) {}
+
         return this;
       }
 
-      return this._end;
+      return this._h;
     }
+    /**
+     * Set or get pixel vertical coordonate.
+     * 
+     * @param {number} arg_value - pixel vertical coordonate.
+     * 
+     * @returns {number|Pixel} - returns number with setter, returns this for setter.
+     */
+
   }, {
-    key: "step",
-    value: function step(arg_value) {
+    key: "v",
+    value: function v(arg_value) {
       if (_types.default.isNumber(arg_value)) {
-        this._step = arg_value;
+        this._v = arg_value;
         return this;
       }
 
-      return this._step;
+      if (_types.default.isString(arg_value)) {
+        try {
+          this._v = parseInt(arg_value);
+        } catch (e) {}
+
+        return this;
+      }
+
+      return this._v;
     }
   }]);
 
-  return Range;
+  return Pixel;
 }();
 
-exports.default = Range;
+exports.default = Pixel;
 
 
-},{"devapt-core-common/dist/js/utils/types":177}],577:[function(require,module,exports){
+},{"../math/vector":598,"devapt-core-common/dist/js/utils/types":177}],574:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -63780,7 +63456,7 @@ var _default = function _default() {
 exports.default = _default;
 
 
-},{"../../plugin_name":610,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/utils/types":177,"virtual-dom/h":973}],578:[function(require,module,exports){
+},{"../../plugin_name":599,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/utils/types":177,"virtual-dom/h":978}],575:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -63892,7 +63568,7 @@ var _default = function _default() {
 exports.default = _default;
 
 
-},{"../../plugin_name":610,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/utils/types":177,"virtual-dom/h":973}],579:[function(require,module,exports){
+},{"../../plugin_name":599,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/utils/types":177,"virtual-dom/h":978}],576:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -64004,7 +63680,7 @@ var _default = function _default() {
 exports.default = _default;
 
 
-},{"../../plugin_name":610,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/utils/types":177,"virtual-dom/h":973}],580:[function(require,module,exports){
+},{"../../plugin_name":599,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/utils/types":177,"virtual-dom/h":978}],577:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -64116,7 +63792,7 @@ var _default = function _default() {
 exports.default = _default;
 
 
-},{"../../plugin_name":610,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/utils/types":177,"virtual-dom/h":973}],581:[function(require,module,exports){
+},{"../../plugin_name":599,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/utils/types":177,"virtual-dom/h":978}],578:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -64125,6 +63801,453 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _vector = _interopRequireDefault(require("../math/vector"));
+
+var _geoitem = _interopRequireDefault(require("./geoitem"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/geometry/geopoint';
+/**
+ * @file GeoPoint class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ * @example
+ * 	API extends GeoItem
+ *      ->vector():Vector - get coordinates vector.
+ * 
+ *      ->vector():Vector - get coordinate vector.
+ * 
+ *      ->size():number - get coordinate vector size.
+ *      ->size(size):this - set coordinate vector size.
+ * 
+ *      ->values():array - get vector coordinates values array.
+ *      ->values(values):this - set vector coordinates values array.
+ * 
+ *      ->value(index):number - get coordinate value at index.
+ *      ->value(index, value) - set coordinate value at index.
+ * 
+ * 		->x():number - get position x value.
+ * 		->y():number - get position y value.
+ * 		->z():number - get position z value.
+ * 		->t():number - get position t value.
+ * 
+ * 		->x(v):this - set position x value.
+ * 		->y(v):this - set position y value.
+ * 		->z(v):this - set position z value.
+ * 		->t(v):this - set position t value.
+ */
+
+var GeoPoint =
+/*#__PURE__*/
+function (_GeoItem) {
+  _inherits(GeoPoint, _GeoItem);
+
+  /**
+   * Create an instance of GeoPoint.
+   * 
+   * @param {array|Vector|GeoPoint} arg_position_value - position value.
+   * 
+   * @returns {nothing}
+   */
+  function GeoPoint(arg_position_value) {
+    var _this;
+
+    _classCallCheck(this, GeoPoint);
+
+    _this = _possibleConstructorReturn(this, (GeoPoint.__proto__ || Object.getPrototypeOf(GeoPoint)).call(this));
+    _this.is_geopoint = true;
+    var values = _types.default.isArray(arg_position_value) || _this._is_vector(arg_position_value) ? arg_position_value : [0, 0, 0, 0];
+    values = _types.default.isObject(arg_position_value) && arg_position_value.is_geopoint ? arg_position_value.values() : arg_position_value;
+    _this._vector = new _vector.default(values);
+    return _this;
+  }
+  /**
+   * Get all points.
+   * 
+   * @returns {array} - GeoPoint array.
+   */
+
+
+  _createClass(GeoPoint, [{
+    key: "get_points",
+    value: function get_points() {
+      return [];
+    }
+    /**
+     * Get vector.
+     * 
+     * @returns {Vector}
+     */
+
+  }, {
+    key: "vector",
+    value: function vector() {
+      return this._vector;
+    }
+    /**
+     * Get/set vector size.
+     * 
+     * @param {Number|nothing} arg_size - vector size (optional).
+     * 
+     * @returns {Number|This}
+     */
+
+  }, {
+    key: "size",
+    value: function size(arg_size) {
+      return this._vector.size(arg_size);
+    }
+    /**
+     * Get/set vector values.
+     * 
+     * @param {array|nothing} arg_values - vector values (optional).
+     * 
+     * @returns {array|This}
+     */
+
+  }, {
+    key: "values",
+    value: function values(arg_values) {
+      return this._vector.values(arg_values);
+    }
+    /**
+     * Get/set vector item.
+     * 
+     * @param {Number} arg_index - vector index.
+     * @param {Number|nothing} arg_value- vector value (optional).
+     * 
+     * @returns {Number|This}
+     */
+
+  }, {
+    key: "value",
+    value: function value(arg_index, arg_value) {
+      return this._vector.value(arg_index, arg_value);
+    }
+    /**
+     * Get X position number (vector index is 0).
+     * 
+     * @param {Number|Nothing} arg_value - x position value (optional).
+     * 
+     * @returns {Number|This} - x position value or this instance.
+     */
+
+  }, {
+    key: "x",
+    value: function x(arg_value) {
+      if (_types.default.isNumber(arg_value)) {
+        this._set_value(0, arg_value);
+
+        return this;
+      }
+
+      return this._get_value(0, 0);
+    }
+    /**
+     * Get Y position number (vector index is 1).
+     * 
+     * @param {Number|Nothing} arg_value - y position value (optional).
+     * 
+     * @returns {Number|This} - y position value or this instance.
+     */
+
+  }, {
+    key: "y",
+    value: function y(arg_value) {
+      if (_types.default.isNumber(arg_value)) {
+        this._set_value(1, arg_value);
+
+        return this;
+      }
+
+      return this._get_value(1, 0);
+    }
+    /**
+     * Get Z position number (vector index is 2).
+     * 
+     * @param {Number|Nothing} arg_value - z position value (optional).
+     * 
+     * @returns {Number|This} - z position value or this instance.
+     */
+
+  }, {
+    key: "z",
+    value: function z(arg_value) {
+      if (_types.default.isNumber(arg_value)) {
+        this._set_value(2, arg_value);
+
+        return this;
+      }
+
+      return this._get_value(2, 0);
+    }
+    /**
+     * Get T position number (vector index is 3).
+     * 
+     * @param {Number|Nothing} arg_value - t position value (optional).
+     * 
+     * @returns {Number|This} - t position value or this instance.
+     */
+
+  }, {
+    key: "t",
+    value: function t(arg_value) {
+      if (_types.default.isNumber(arg_value)) {
+        this._set_value(3, arg_value);
+
+        return this;
+      }
+
+      return this._get_value(3, 0);
+    }
+  }]);
+
+  return GeoPoint;
+}(_geoitem.default);
+
+exports.default = GeoPoint;
+
+
+},{"../math/vector":598,"./geoitem":580,"devapt-core-common/dist/js/utils/types":177}],579:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _range = _interopRequireDefault(require("../math/range"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/geometry/geodomain';
+/**
+ * @file GeoDomain class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ * @example
+ * 	API
+ * 		->...
+ * 
+ */
+
+var GeoDomain =
+/*#__PURE__*/
+function (_Range) {
+  _inherits(GeoDomain, _Range);
+
+  /**
+   * Create an instance of a Domain.
+   * 
+   * @param {string} arg_name   - domain name.
+   * @param {number} arg_index  - domain index.
+   * @param {number} arg_start  - range start value.
+   * @param {number} arg_end    - range end value.
+   * @param {number} arg_step   - range step value.
+   * 
+   * @returns {nothing}
+   */
+  function GeoDomain(arg_name, arg_index, arg_start, arg_end, arg_step) {
+    var _this;
+
+    _classCallCheck(this, GeoDomain);
+
+    _this = _possibleConstructorReturn(this, (GeoDomain.__proto__ || Object.getPrototypeOf(GeoDomain)).call(this, arg_start, arg_end, arg_step));
+    _this.is_drawing_domain = true;
+    _this._name = arg_name;
+    _this._index = arg_index;
+    return _this;
+  }
+
+  _createClass(GeoDomain, [{
+    key: "name",
+    value: function name() {
+      return this._name;
+    }
+  }, {
+    key: "index",
+    value: function index() {
+      return this._index;
+    }
+  }]);
+
+  return GeoDomain;
+}(_range.default);
+
+exports.default = GeoDomain;
+
+
+},{"../math/range":597,"devapt-core-common/dist/js/utils/types":177}],580:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// NPM IMPORTS
+// DEVAPT CORE COMMON IMPORTS
+// import T from 'devapt-core-common/dist/js/utils/types'
+// DEVAPT CORE BROWSER IMPORTS
+// PLUGIN IMPORTS
+var plugin_name = 'Labs';
+var context = plugin_name + '/geometry/geoitem';
+/**
+ * @file GeoItem class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var GeoItem =
+/*#__PURE__*/
+function () {
+  /**
+   * Create an instance of GeoItem.
+   * 
+   * @returns {nothing}
+   */
+  function GeoItem() {
+    _classCallCheck(this, GeoItem);
+
+    this.is_geoitem = true;
+  }
+  /**
+   * Get all points.
+   * 
+   * @returns {array} - GeoPoint array.
+   */
+
+
+  _createClass(GeoItem, [{
+    key: "get_points",
+    value: function get_points() {
+      return [];
+    }
+    /**
+     * Get position at given index.
+     * 
+     * @param {integer} arg_index - coordinate index.
+     * 
+     * @returns {GeoPoint} - position point at index.
+     */
+
+  }, {
+    key: "get_point",
+    value: function get_point(arg_index) {
+      arg_index = T.isInteger(arg_index) && arg_index >= 0 ? arg_index : 0;
+      var points = this.get_points();
+      return arg_index < points.length ? points[arg_index] : undefined;
+    }
+    /**
+     * Set position values at index.
+     * 
+     * @param {integer} arg_index - coordinate index.
+     * @param {array|Vector|GeoPoint} arg_values - position values.
+     * 
+     * @returns {this} - this instance.
+     */
+
+  }, {
+    key: "set_point",
+    value: function set_point(arg_index, arg_values) {
+      if (T.isInteger(arg_index) && arg_index >= 0) {
+        var points = this.get_points();
+
+        if (arg_index < points.length) {
+          var point = points[arg_index];
+
+          if (T.isObject(arg_values) && arg_values.is_geopoint) {
+            point.values(arg_values.values());
+            return this;
+          }
+
+          if (T.isObject(arg_values) && arg_values.is_vector) {
+            point.values(arg_values);
+            return this;
+          }
+
+          if (T.isArray(arg_values)) {
+            point.values(arg_values);
+            return this;
+          }
+        }
+      }
+
+      return this;
+    }
+  }]);
+
+  return GeoItem;
+}();
+
+exports.default = GeoItem;
+
+
+},{}],581:[function(require,module,exports){
+arguments[4][578][0].apply(exports,arguments)
+},{"../math/vector":598,"./geoitem":580,"devapt-core-common/dist/js/utils/types":177,"dup":578}],582:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _geopoint = _interopRequireDefault(require("./geopoint"));
+
+var _geoitem = _interopRequireDefault(require("./geoitem"));
+
+var _geodomain = _interopRequireDefault(require("./geodomain"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -64136,140 +64259,253 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-// DEVAPT CORE BROWSER IMPORTS
-// PLUGIN IMPORTS
 var plugin_name = 'Labs';
-var context = plugin_name + '/drawing/vector';
+var context = plugin_name + '/geometry/geospace';
 /**
- * @file Vector class.
+ * @file GeoSpace class.
  * 
  * @author Luc BORIES
  * @license Apache-2.0
  * 
- * @example
- * 	API
- * 		->size():number - get vector size.
- * 		->size(v):this - set vector size (schrink or expand).
- * 
- * 		->values():array - get vector values.
- * 		->values(v):this - set vector values.
- * 
- *      ->value(index):number  - gett value at index.
- *      ->value(index, v):this - set value at index.
- * 
  */
 
-var Vector =
+var GeoSpace =
 /*#__PURE__*/
 function () {
   /**
-   * Create an instance of Vector.
+   * Create an instance of GeoSpace.
    * 
-   * @param {array|Vector} arg_values - vector values.
+   * @param {array} arg_domains - dimensions domains configurations array.
    * 
    * @returns {nothing}
    */
-  function Vector(arg_values) {
-    _classCallCheck(this, Vector);
+  function GeoSpace(arg_domains) {
+    _classCallCheck(this, GeoSpace);
 
-    this.is_vector = true;
-    this._items = undefined;
-    this.values(arg_values);
+    this.is_geospace = true; // BUILD DOMAINS
+
+    this._domains = [];
+    this._domains_by_index = {};
+    this._domains_by_name = {};
+
+    this._set_domains(arg_domains);
   }
+  /**
+   * Get all space domains array.
+   * 
+   * @returns {array}
+   */
 
-  _createClass(Vector, [{
-    key: "size",
-    value: function size(arg_value) {
-      if (_types.default.isNumber(arg_value)) {
-        if (arg_value < this._items.length) {
-          var i;
 
-          for (i = arg_value + 1; i < this._items.length; i++) {
-            delete this._items[i];
-          }
-        } else if (arg_value > this._items.length) {
-          var _i;
+  _createClass(GeoSpace, [{
+    key: "domains",
+    value: function domains() {
+      return this._domains;
+    }
+    /**
+     * Get X domain if it exists or undefined.
+     * 
+     * @returns {Domain|undefined}
+     */
 
-          for (_i = this._items.length; _i < arg_value; _i++) {
-            this._items.push(0);
-          }
-        }
+  }, {
+    key: "domain_x",
+    value: function domain_x() {
+      return 'x' in this._domains_by_name ? this._domains_by_name['x'] : undefined;
+    }
+    /**
+     * Get Y domain if it exists or undefined.
+     * 
+     * @returns {Domain|undefined}
+     */
 
-        return this;
-      }
+  }, {
+    key: "domain_y",
+    value: function domain_y() {
+      return 'y' in this._domains_by_name ? this._domains_by_name['y'] : undefined;
+    }
+    /**
+     * Get Z domain if it exists or undefined.
+     * 
+     * @returns {Domain|undefined}
+     */
 
-      return this._items.length;
+  }, {
+    key: "domain_z",
+    value: function domain_z() {
+      return 'z' in this._domains_by_name ? this._domains_by_name['z'] : undefined;
+    }
+    /**
+     * Get T domain if it exists or undefined.
+     * 
+     * @returns {Domain|undefined}
+     */
+
+  }, {
+    key: "domain_t",
+    value: function domain_t() {
+      return 't' in this._domains_by_name ? this._domains_by_name['t'] : undefined;
     }
   }, {
-    key: "value",
-    value: function value(arg_index, arg_value) {
-      if (_types.default.isNumber(arg_value)) {
-        this._set_value(arg_index, arg_value);
+    key: "rotate",
+    value: function rotate() {}
+  }, {
+    key: "translate",
+    value: function translate() {}
+  }, {
+    key: "scale",
+    value: function scale() {}
+  }, {
+    key: "get_origin_position",
+    value: function get_origin_position() {
+      var positions = [];
+      var count = this._domains.length;
+      var i = 0;
 
-        return this;
+      for (i; i < count; i++) {
+        positions.push(0);
       }
 
-      return this._get_value(arg_index);
+      return new Position(positions);
     }
   }, {
-    key: "values",
-    value: function values(arg_values) {
-      // console.log(context + ':values:', arg_values)
-      if (_types.default.isObject(arg_values) && arg_values.is_vector) {
-        this._set_values(arg_values.values());
+    key: "get_start_position",
+    value: function get_start_position() {
+      var positions = [];
+      var count = this._domains.length;
+      var i = 0;
 
-        return this;
-      }
-
-      if (_types.default.isArray(arg_values)) {
-        this._set_values(arg_values);
-
-        return this;
+      for (i; i < count; i++) {
+        var domain = this._domains_by_index[i];
+        positions.push(domain.start());
       }
 
-      return this._items;
+      return new Position(positions);
     }
   }, {
-    key: "init",
-    value: function init(arg_count) {
-      var arg_value = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-      this._items = new Array(arg_count).fill(arg_value);
-      return this;
-    }
-  }, {
-    key: "_set_values",
-    value: function _set_values(values) {
-      if (_types.default.isArray(values) && values.length > 1) {
-        this._items = values;
+    key: "get_end_position",
+    value: function get_end_position() {
+      var positions = [];
+      var count = this._domains.length;
+      var i = 0;
+
+      for (i; i < count; i++) {
+        var domain = this._domains_by_index[i];
+        positions.push(domain.end());
       }
+
+      return new Position(positions);
     }
   }, {
-    key: "_get_value",
-    value: function _get_value(arg_index) {
-      if (_types.default.isNumber(arg_index) && arg_index >= 0 && arg_index < this._items.length) {
-        return this._items[arg_index];
+    key: "_set_domains",
+    value: function _set_domains(arg_domains) {
+      var _this = this;
+
+      if (!_types.default.isNotEmptyArray(arg_domains)) {
+        return;
       }
-    }
-  }, {
-    key: "_set_value",
-    value: function _set_value(arg_index, arg_value) {
-      if (_types.default.isNumber(arg_index) && _types.default.isNumber(arg_value) && arg_index >= 0) {
-        if (arg_index < this._items.length) {
-          this._items[arg_index] = arg_value;
-        } else if (arg_index == this._items.length) {
-          this._items.push(arg_value);
-        }
-      }
+
+      var index, start, end, step, name, domain;
+      arg_domains.forEach(function (domain_cfg, i) {
+        index = _types.default.isNumber(domain_cfg.index) ? domain_cfg.index : i;
+        start = _types.default.isNumber(domain_cfg.start) ? domain_cfg.start : DEFAULT_DOMAINS_START;
+        end = _types.default.isNumber(domain_cfg.end) ? domain_cfg.end : DEFAULT_DOMAINS_END;
+        step = _types.default.isNumber(domain_cfg.step) ? domain_cfg.step : DEFAULT_DOMAINS_STEP;
+        name = _types.default.isNotEmptyString(domain_cfg.name) ? domain_cfg.name : 'domains[' + i + ']';
+        domain = new _geodomain.default(name, index, start, end, step);
+
+        _this._domains.push(domain);
+
+        _this._domains_by_index[index] = domain;
+        _this._domains_by_name[name] = domain;
+      });
     }
   }]);
 
-  return Vector;
+  return GeoSpace;
 }();
 
-exports.default = Vector;
+exports.default = GeoSpace;
 
 
-},{"devapt-core-common/dist/js/utils/types":177}],582:[function(require,module,exports){
+},{"./geodomain":579,"./geoitem":580,"./geopoint":581,"devapt-core-common/dist/js/utils/types":177}],583:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _pixelpoint = _interopRequireDefault(require("../base/pixelpoint"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// PLUGIN IMPORT
+
+/*
+    Mapping explanation:
+    
+    range_start	range_end	pixel_width		ratio	pixel_start	pixel_end	pixel_range_0	pixel_range_50
+    0			99			1000			10		0			1000		0				500
+    50			100			1000			20		0			1000		-1000			0
+    -50			50			1000			10		0			1000		500				1000
+
+*/
+var project_2dto2d_euclide = function project_2dto2d_euclide(arg_position, arg_space, arg_plan, arg_direction) {
+  var h1 = range_to_screen_h(arg_position.x(), arg_space);
+  var v1 = range_to_screen_v(arg_position.y(), arg_space);
+  return new _pixelpoint.default(h1, v1);
+};
+
+function range_to_screen_h(arg_position_x, arg_space) {
+  var arg_default = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+  var arg_from_zero = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  var domaine_x = arg_space.domain_x();
+  if (!domaine_x) return arg_default;
+  /*
+      Mapping of x between A and B into h between C and D:
+          h = (x-A)*|CD|/|AB| + C
+  */
+
+  var c = 0; // done with arg_space.pixelbox().get_boxed_h(h, true)
+
+  var ab = Math.abs(domaine_x.end() - domaine_x.start()) + (domaine_x.start() <= 0 ? 1 : 0);
+
+  var cd = arg_space.pixelbox()._usable_width;
+
+  var x_a = arg_position_x - (arg_from_zero ? 0 : domaine_x.start());
+  var h = x_a * cd / ab + c;
+  console.log('project_2dto2d_euclide:range_to_screen_h:x=[%d] c=[%d] ab=[%d] cd=[%d] x_a=[%d] h=[%d]', arg_position_x, c, ab, cd, x_a, h);
+  return h;
+}
+
+function range_to_screen_v(arg_position_y, arg_space) {
+  var arg_default = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+  var arg_from_zero = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  var domaine_y = arg_space.domain_y();
+  if (!domaine_y) return arg_default;
+  /*
+      Mapping of y between A and B into v between C and D:
+          v = (y-A)*|CD|/|AB| + C
+  */
+
+  var c = 0; // done with arg_space.pixelbox().get_boxed_v(v, true)
+
+  var ab = Math.abs(domaine_y.end() - domaine_y.start()) + (domaine_y.start() <= 0 ? 1 : 0);
+
+  var cd = arg_space.pixelbox()._usable_height;
+
+  var y_a = arg_position_y - (arg_from_zero ? 0 : domaine_y.start());
+  var v = y_a * cd / ab + c;
+  console.log('project_2dto2d_euclide:range_to_screen_v:y=[%d] c=[%d] ab=[%d] cd=[%d] y_a=[%d] v=[%d]', arg_position_y, c, ab, cd, y_a, v);
+  return v;
+}
+
+var _default = project_2dto2d_euclide;
+exports.default = _default;
+
+
+},{"../base/pixelpoint":573}],584:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -64321,7 +64557,7 @@ var _default = _rendering_plugin.default;
 exports.default = _default;
 
 
-},{"./rendering_plugin":"labs_plugin"}],583:[function(require,module,exports){
+},{"./rendering_plugin":"labs_plugin"}],585:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -64888,7 +65124,7 @@ function (_Component) {
 exports.default = FunctionPlot;
 
 
-},{"assert":611,"devapt-core-browser/dist/js/base/component":5,"devapt-core-common/dist/js/utils/types":177}],584:[function(require,module,exports){
+},{"assert":616,"devapt-core-browser/dist/js/base/component":5,"devapt-core-common/dist/js/utils/types":177}],586:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -64994,7 +65230,7 @@ var _default = function _default() {
 exports.default = _default;
 
 
-},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/utils/types":177,"virtual-dom/h":973}],585:[function(require,module,exports){
+},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/utils/types":177,"virtual-dom/h":978}],587:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -65205,7 +65441,7 @@ function (_Component) {
 exports.default = MathPretty;
 
 
-},{"devapt-core-browser/dist/js/base/component":5,"devapt-core-common/dist/js/utils/types":177}],586:[function(require,module,exports){
+},{"devapt-core-browser/dist/js/base/component":5,"devapt-core-common/dist/js/utils/types":177}],588:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -65335,7 +65571,7 @@ function (_Canvas) {
 exports.default = CanvasMatterJS;
 
 
-},{"../../../base/components/canvas":570,"devapt-core-common/dist/js/utils/types":177}],587:[function(require,module,exports){
+},{"../../../base/components/canvas":570,"devapt-core-common/dist/js/utils/types":177}],589:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -65907,7 +66143,7 @@ function (_Canvas) {
 exports.default = CanvasPhysicsJS;
 
 
-},{"../../../base/components/canvas":570,"../shapes/factory":588,"devapt-core-common/dist/js/utils/types":177}],588:[function(require,module,exports){
+},{"../../../base/components/canvas":570,"../shapes/factory":590,"devapt-core-common/dist/js/utils/types":177}],590:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -66184,7 +66420,7 @@ function () {
 exports.default = Factory;
 
 
-},{"./pendulum":589,"devapt-core-common/dist/js/utils/types":177,"lodash":948}],589:[function(require,module,exports){
+},{"./pendulum":591,"devapt-core-common/dist/js/utils/types":177,"lodash":953}],591:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -66596,2856 +66832,7 @@ function () {
 exports.default = PhysicsJSPendulum;
 
 
-},{"./factory":588,"assert":611,"devapt-core-common/dist/js/utils/types":177,"lodash":948}],590:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _canvas = _interopRequireDefault(require("../../../base/components/canvas"));
-
-var _factory = _interopRequireDefault(require("../svg/factory"));
-
-var _space = _interopRequireDefault(require("../svg/space"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return _get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/canvas_svgjs';
-
-var CanvasSvgJS =
-/*#__PURE__*/
-function (_Canvas) {
-  _inherits(CanvasSvgJS, _Canvas);
-
-  /**
-   * Create an instance.
-   * 
-   * 	API:
-   *      ->...
-   * 
-   * @param {object} arg_runtime     - client runtime.
-   * @param {object} arg_state       - component state.
-   * @param {string} arg_log_context - context of traces of this instance (optional).
-   * 
-   * @returns {nothing}
-   */
-  function CanvasSvgJS(arg_runtime, arg_state, arg_log_context) {
-    var _this;
-
-    _classCallCheck(this, CanvasSvgJS);
-
-    _this = _possibleConstructorReturn(this, (CanvasSvgJS.__proto__ || Object.getPrototypeOf(CanvasSvgJS)).call(this, arg_runtime, arg_state, arg_log_context ? arg_log_context : context));
-    _this.is_canvas_svgjs = true;
-
-    _this.add_assets_dependancy('js-svgjs');
-
-    _this._space = undefined;
-    _this._factory = undefined; // this.enable_trace()
-
-    return _this;
-  }
-  /**
-   * Prepare drawing space.
-   * 
-   * @param {string} 	arg_dom_id - DOM element id.
-   * @param {number} arg_width - DOM element width.
-   * @param {number} arg_height - DOM element height.
-   * @param {object} arg_space - drawing space configuration.
-   * @param {object} arg_scene - drawing shapes.
-   * 
-   * @returns {nothing}
-   */
-
-
-  _createClass(CanvasSvgJS, [{
-    key: "prepare_space",
-    value: function prepare_space(arg_dom_id, arg_width, arg_height, arg_space, arg_scene) {
-      _get(CanvasSvgJS.prototype.__proto__ || Object.getPrototypeOf(CanvasSvgJS.prototype), "prepare_space", this).call(this, arg_dom_id, arg_width, arg_height, arg_space, arg_scene);
-
-      this._space = new _space.default(arg_dom_id, arg_space.domains, arg_width, arg_height);
-
-      this._space.draw();
-
-      this._space.background();
-
-      this._space.axis_center_h();
-
-      this._space.axis_center_v();
-
-      this._factory = new _factory.default(this._space);
-    }
-    /**
-     * Process drawing item.
-     * 
-     * @param {object} arg_scene_item - scene item to draw.
-     * 
-     * @returns {nothing}
-     */
-
-  }, {
-    key: "process_scene_item",
-    value: function process_scene_item(arg_scene_item) {
-      _get(CanvasSvgJS.prototype.__proto__ || Object.getPrototypeOf(CanvasSvgJS.prototype), "process_scene_item", this).call(this, arg_scene_item);
-
-      this._factory.create(arg_scene_item);
-    }
-    /**
-     * Finish drawing space.
-     * 
-     * @returns {nothing}
-     */
-
-  }, {
-    key: "finish_space",
-    value: function finish_space() {
-      console.log(context + ':finish_space');
-    }
-  }]);
-
-  return CanvasSvgJS;
-}(_canvas.default);
-
-exports.default = CanvasSvgJS;
-
-
-},{"../../../base/components/canvas":570,"../svg/factory":596,"../svg/space":604,"devapt-core-common/dist/js/utils/types":177}],591:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _line_arrow = _interopRequireDefault(require("./line_arrow"));
-
-var _position = _interopRequireDefault(require("../../../base/position"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return _get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/axis';
-var DEFAULT_RADIUS = 1;
-/**
- * @file Drawing axis class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var Axis =
-/*#__PURE__*/
-function (_LineArrow) {
-  _inherits(Axis, _LineArrow);
-
-  /**
-   * Create a shape instance.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
-   * @param {array|Vector} arg_pos_orig - shape origin position.
-   * @param {array|Vector} arg_domain   - axis domain.
-   * @param {string}		 arg_color    - shape color.
-   * @param {number}       arg_width    - shape width in pixels.
-   * 
-   * @returns {nothing}
-   */
-  function Axis(arg_space, arg_owner, arg_pos_orig, arg_domain) {
-    var _this;
-
-    var arg_color = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : undefined;
-    var arg_width = arguments.length > 5 ? arguments[5] : undefined;
-
-    _classCallCheck(this, Axis);
-
-    _this = _possibleConstructorReturn(this, (Axis.__proto__ || Object.getPrototypeOf(Axis)).call(this, arg_space, arg_owner, arg_pos_orig, arg_color, false, true, arg_width, 5, 5, [100, 100], undefined));
-    _this.type = 'axis';
-    _this.is_svg_axis = true;
-    _this._domain = arg_domain == 'x' ? 'x' : 'y';
-    _this._width = arg_width ? arg_width : 1;
-    _this._dashes = ''; // '5,5'
-
-    _this.color = arg_color ? arg_color : 'blue';
-    var domain = _this._domain == 'x' ? arg_space.domain_x() : arg_space.domain_y();
-    var start = domain.start();
-    var end = domain.end();
-    _this._line_length = undefined;
-    _this._line_angle = undefined;
-
-    if (_this._domain == 'x') {
-      // this._position.x(start)
-      // this._position.y(0)
-      _this._line_end_position = new _position.default([end, 0]);
-    } else {
-      // this._position.x(0)
-      // this._position.y(start)
-      _this._line_end_position = new _position.default([0, end]);
-    }
-
-    return _this;
-  }
-
-  _createClass(Axis, [{
-    key: "draw",
-    value: function draw() {
-      // DO NOT RENDER	
-      if (this.color == 'none') {
-        return;
-      }
-
-      _get(Axis.prototype.__proto__ || Object.getPrototypeOf(Axis.prototype), "draw", this).call(this);
-
-      var domain = this._domain == 'x' ? this._space.domain_x() : this._space.domain_y();
-      var start = domain.start();
-      var step = domain.step();
-      var end = domain.end();
-
-      if (this._domain == 'x') {
-        var pixel = this.project(new _position.default([start, 0, 0, 0]));
-        var r1 = this.space().svg().rect(2, 4).move(pixel.h(), pixel.v() - 2);
-
-        this._shape.add(r1);
-      } else {
-        var _pixel = this.project(new _position.default([0, start, 0, 0]));
-
-        var _r = this.space().svg().rect(4, 2).move(_pixel.h() - 2, _pixel.v() - 2);
-
-        this._shape.add(_r);
-      }
-
-      if (this.color && this._width) {
-        this._shape.stroke({
-          color: this.color,
-          width: this._width,
-          dasharray: this._dashes
-        });
-      }
-
-      return this;
-    }
-  }]);
-
-  return Axis;
-}(_line_arrow.default);
-
-exports.default = Axis;
-
-
-},{"../../../base/position":575,"./line_arrow":598,"devapt-core-common/dist/js/utils/types":177}],592:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _drawable = _interopRequireDefault(require("./drawable"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/car';
-var DEFAULT_RADIUS = 1;
-/**
- * @file Drawing car class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var Car =
-/*#__PURE__*/
-function (_Drawable) {
-  _inherits(Car, _Drawable);
-
-  /**
-   * Create a shape instance.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
-   * @param {array|Vector} arg_position - shape position.
-   * @param {string}		 arg_color    - shape color.
-   * @param {number}       arg_width    - shape width.
-   * @param {number}       arg_height   - shape height.
-   * 
-   * @returns {nothing}
-   */
-  function Car(arg_space, arg_owner, arg_position) {
-    var _this;
-
-    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
-    var arg_width = arguments.length > 4 ? arguments[4] : undefined;
-    var arg_height = arguments.length > 5 ? arguments[5] : undefined;
-
-    _classCallCheck(this, Car);
-
-    _this = _possibleConstructorReturn(this, (Car.__proto__ || Object.getPrototypeOf(Car)).call(this, arg_space, arg_owner, arg_position, 'car'));
-    _this.is_svg_rectangle = true;
-    _this._width = arg_width;
-    _this._height = arg_height;
-    _this.color = arg_color;
-    return _this;
-  }
-
-  _createClass(Car, [{
-    key: "draw",
-    value: function draw() {
-      var _this2 = this;
-
-      var pos_h = this.h();
-      var pos_v = this.v();
-      console.log(context + ':draw:pos_h=%d', pos_h);
-      console.log(context + ':draw:pos_v=%d', pos_v);
-      var size_h = this.space().project_x(this._width);
-      var size_v = this.space().project_y(this._height);
-      console.log(context + ':draw:width=%d', this._width);
-      console.log(context + ':draw:height=%d', this._height);
-      console.log(context + ':draw:size_h=%d', size_h);
-      console.log(context + ':draw:size_v=%d', size_v); // DRAW SHAPE OF SIZE x:1-100 y:1-100
-
-      var shape_1 = this.space().svg().rect(60, 30).move(20, 0).fill('blue');
-      var shape_2 = this.space().svg().rect(100, 20).move(0, 30).fill('red');
-      var shape_3 = this.space().svg().circle(20).move(15, 40).fill('grey');
-      var shape_4 = this.space().svg().circle(20).move(65, 40).fill('grey');
-
-      if (this.color) {
-        shape_1.fill(this.color);
-        shape_2.fill(this.color);
-      } // BUILD
-
-
-      this._shape = this.space().svg().group();
-
-      this._shape.add(shape_1);
-
-      this._shape.add(shape_2);
-
-      this._shape.add(shape_3);
-
-      this._shape.add(shape_4); // SCALE
-
-
-      var scale = Math.max(size_v, size_h) / 100;
-      console.log(context + ':draw:scale=%d', scale);
-
-      this._shape.move(pos_h, pos_v).scale(scale); // ANIMATE
-
-
-      var rot_point_h = this.space().project_x(50) * scale;
-      var rot_point_v = this.space().project_y(40) * scale;
-
-      this._shape.move(0, pos_v) // .rotate(25, rot_point_h, rot_point_v)
-      .rotate(25).animate({
-        duration: 3000,
-        delay: '1s',
-        ease: '-'
-      }).move(pos_h + size_h * 0.8, pos_v).afterAll(function () {
-        _this2._shape.move(0, pos_v);
-      }).loop(3);
-
-      this._shape.mouseover(function () {
-        _this2._shape.pause();
-      });
-
-      this._shape.mouseout(function () {
-        _this2._shape.play();
-      });
-
-      return this;
-    }
-  }]);
-
-  return Car;
-}(_drawable.default);
-
-exports.default = Car;
-
-
-},{"./drawable":594,"devapt-core-common/dist/js/utils/types":177}],593:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _drawable = _interopRequireDefault(require("./drawable"));
-
-var _point = _interopRequireDefault(require("./point"));
-
-var _space = _interopRequireDefault(require("./space"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/circle';
-var DEFAULT_RADIUS = 1;
-/**
- * @file Drawing circle class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var Circle =
-/*#__PURE__*/
-function (_Drawable) {
-  _inherits(Circle, _Drawable);
-
-  /**
-   * Create a shape instance.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
-   * @param {array|Vector} arg_position - shape position.
-   * @param {string}		 arg_color    - shape color.
-   * @param {number}       arg_radius   - shape radius.
-   * 
-   * @returns {nothing}
-   */
-  function Circle(arg_space, arg_owner, arg_position) {
-    var _this;
-
-    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
-    var arg_radius = arguments.length > 4 ? arguments[4] : undefined;
-    var arg_fill = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : false;
-
-    _classCallCheck(this, Circle);
-
-    _this = _possibleConstructorReturn(this, (Circle.__proto__ || Object.getPrototypeOf(Circle)).call(this, arg_space, arg_owner, arg_position, 'circle'));
-    _this.is_svg_circle = true;
-    _this.radius = arg_radius;
-    _this.color = arg_color;
-    _this.fill = arg_fill;
-    _this.line_width = 1;
-    _this._center = undefined;
-
-    _this.add_method('point');
-
-    _this.add_method('center');
-
-    return _this;
-  }
-
-  _createClass(Circle, [{
-    key: "draw",
-    value: function draw() {
-      // DO NOT RENDER	
-      if (this.color == 'none') {
-        return;
-      } // RENDER
-
-
-      var pos_h = this.h();
-      var pos_v = this.v();
-      var radius_h = this.space().range_to_screen_h(this.radius);
-      var radius_v = this.space().range_to_screen_v(this.radius);
-
-      if (radius_h != radius_v) {
-        this._shape = this.space().svg().ellipse(2 * radius_h, 2 * radius_v).center(pos_h, pos_v);
-      } else {
-        var diameter = 2 * radius_h;
-        this._shape = this.space().svg().circle(diameter).center(pos_h, pos_v);
-      }
-
-      this.draw_color();
-      return this;
-    }
-  }, {
-    key: "point",
-    value: function point(arg_degrees_angle) {
-      var arg_color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'red';
-      var arg_render = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'xcross';
-      var arg_size = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 5;
-      // TODO TAKE DIMENSIONS FROM CIRCLE (x,y) or (y,z) or (x,t) or...
-      var radian_angle = arg_degrees_angle * Math.PI / 180;
-      var x = this.x() + Math.cos(radian_angle) * this.radius;
-      var y = this.y() + Math.sin(radian_angle) * this.radius;
-      var point = new _point.default(this._space, this, [x, y], arg_color, arg_render, arg_size);
-      point.draw();
-
-      this._children.push(point);
-
-      return point;
-    }
-  }, {
-    key: "center",
-    value: function center() {
-      var arg_color = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'red';
-      var arg_render = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'xcross';
-      var arg_size = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 5;
-
-      if (this._center) {
-        return this._center;
-      } // TODO TAKE DIMENSIONS FROM CIRCLE (x,y) or (y,z) or (x,t) or...
-
-
-      var x = this.x();
-      var y = this.y();
-      this._center = new _point.default(this._space, this, [x, y], arg_color, arg_render, arg_size);
-
-      this._center.draw();
-
-      this.add_child(this._center);
-      return this._center;
-    }
-  }, {
-    key: "ray",
-    value: function ray(arg_degrees_angle, arg_length) {
-      var arg_color = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'red';
-      var arg_render = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'xcross';
-      var arg_size = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 5;
-      var arg_line_color = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 'red';
-      var arg_line_width = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : 1;
-
-      if (!this._center) {
-        this.center(arg_color, arg_render, arg_size);
-      } // TODO TAKE DIMENSIONS FROM CIRCLE (x,y) or (y,z) or (x,t) or...
-
-
-      var radian_angle = arg_degrees_angle * Math.PI / 180;
-      var x = this.x() + Math.cos(radian_angle) * arg_length;
-      var y = this.y() + Math.sin(radian_angle) * arg_length;
-      var point = new _point.default(this._space, this, [x, y], arg_color, arg_render, arg_size);
-      point.draw();
-
-      this._children.push(point);
-
-      var line = this._center.line(point, arg_color, arg_line_color, arg_line_width);
-
-      this._children.push(line);
-
-      return line;
-    }
-  }]);
-
-  return Circle;
-}(_drawable.default);
-
-exports.default = Circle;
-
-
-},{"./drawable":594,"./point":600,"./space":604,"devapt-core-common/dist/js/utils/types":177}],594:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _methodeable = _interopRequireDefault(require("../../../base/methodeable"));
-
-var _position = _interopRequireDefault(require("../../../base/position"));
-
-var _pixel = _interopRequireDefault(require("../../../base/pixel"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/drawable';
-var DEFAULT_POSITION = [0, 0, 0];
-/**
- * @file Drawiable base item class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- * @example
- * 	API
- * 		->owner():Drawable - get drawable owner.
- * 		->children():Drawable array - get drawable children.
- * 		->type():string - get drawable type.
- * 
- */
-
-var Drawable =
-/*#__PURE__*/
-function (_Methodeable) {
-  _inherits(Drawable, _Methodeable);
-
-  /**
-   * Create an instance of Drawable.
-   * 
-   * @returns {nothing}
-   */
-  function Drawable(space, owner, position, type) {
-    var _this;
-
-    _classCallCheck(this, Drawable);
-
-    _this = _possibleConstructorReturn(this, (Drawable.__proto__ || Object.getPrototypeOf(Drawable)).call(this));
-    _this.is_svg_drawable = true; // console.log(context + ':constructor:type:', type)
-    // console.log(context + ':constructor:position:', position)
-
-    _this._space = space;
-    _this._owner = owner;
-    _this._position = new _position.default(position);
-    _this._position_pixel = type != 'space' ? _this.project(_this._position) : undefined;
-    _this._children = [];
-    _this._shape = undefined;
-    _this._methods = {
-      x: true,
-      y: true,
-      z: true,
-      t: true,
-      h: true,
-      v: true,
-      move: true // PUBLIC PROPERTIES
-
-    };
-    _this.type = type;
-    _this.color = undefined;
-    _this.fill = false;
-    _this.line_width = 1;
-    _this.background_color = 'white';
-    return _this;
-  }
-
-  _createClass(Drawable, [{
-    key: "space",
-    value: function space() {
-      return this._space;
-    }
-  }, {
-    key: "svg_shape",
-    value: function svg_shape() {
-      return this._shape;
-    }
-  }, {
-    key: "owner",
-    value: function owner(value) {
-      if (_types.default.isObject(value) && value.is_svg_drawable) {
-        this._owner = value;
-
-        this._owner.add_child(value);
-
-        return this;
-      }
-
-      return this._owner;
-    }
-  }, {
-    key: "children",
-    value: function children() {
-      return this._children;
-    }
-  }, {
-    key: "add_child",
-    value: function add_child(value) {
-      if (_types.default.isObject(value) && value.is_svg_drawable) {
-        this._children.push(value);
-      }
-
-      return this;
-    }
-  }, {
-    key: "position",
-    value: function position(arg_postion) {
-      if (arg_postion !== undefined) {
-        if (_types.default.isArray(arg_postion) || this._is_vector(arg_postion)) {
-          this._position.values(arg_postion);
-
-          this._position_pixel = this._space.project(this._position);
-        }
-
-        return this;
-      }
-
-      return this._position;
-    }
-  }, {
-    key: "project",
-    value: function project(arg_position) {
-      var arg_space = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this._space;
-
-      if (_types.default.isArray(arg_position) || this._is_vector(arg_position)) {
-        var without_boxing = false;
-        return this._space.project(arg_position, without_boxing, arg_space);
-      }
-
-      return new _pixel.default(0, 0);
-    }
-  }, {
-    key: "h",
-    value: function h() {
-      return this._position_pixel.h();
-    }
-  }, {
-    key: "v",
-    value: function v() {
-      return this._position_pixel.v();
-    }
-  }, {
-    key: "x",
-    value: function x() {
-      return this._position.value(0);
-    }
-  }, {
-    key: "y",
-    value: function y() {
-      return this._position.value(1);
-    }
-  }, {
-    key: "z",
-    value: function z() {
-      return this._position.value(2);
-    }
-  }, {
-    key: "t",
-    value: function t() {
-      return this._position.value(3);
-    }
-  }, {
-    key: "draw",
-    value: function draw() {
-      // TO IMPLEMENT IN SUB CLASSES
-      return this;
-    }
-  }, {
-    key: "draw_color",
-    value: function draw_color() {
-      if (this.color) {
-        if (this.fill) {
-          this._shape.fill({
-            color: this.color,
-            opacity: 1
-          });
-        } else {
-          this._shape.fill({
-            color: this.background_color,
-            opacity: 0.1
-          });
-
-          var options = {
-            width: this.line_width,
-            color: this.color ? this.color : 'blue'
-            /*,
-            linecap:'round'*/
-
-          };
-
-          this._shape.stroke(options);
-        }
-      }
-    }
-    /**
-     * Move shape at given position.
-     * 
-     * @param {Position} arg_position 
-     * 
-     * @returns {Drawable} - this
-     */
-
-  }, {
-    key: "move",
-    value: function move(arg_position, arg_opd2) {
-      if (_types.default.isNumber(arg_position) && _types.default.isNumber(arg_opd2)) {
-        arg_position = [arg_position, arg_opd2];
-      }
-
-      this._position.values(arg_position);
-
-      this._position_pixel = this.project(this._position, this._space);
-
-      if (this._shape) {
-        var h = this._position_pixel.h();
-
-        var v = this._position_pixel.v();
-
-        console.log(context + ':move:x=[%d] y=[%d] h=[%d] v=[%d]', arg_position[0], arg_position[1], h, v, this._shape);
-
-        this._shape.x(h).y(v);
-      } // MOVE CHILDREN
-
-
-      this._children.forEach(function (child) {
-        return child.move(arg_position);
-      });
-
-      return this;
-    }
-    /**
-     * Test if operand is a Vector instance.
-     * @private
-     * 
-     * @param {any} arg_value 
-     * 
-     * @returns {boolean}
-     */
-
-  }, {
-    key: "_is_vector",
-    value: function _is_vector(arg_value) {
-      return _types.default.isObject(arg_value) && arg_value.is_vector;
-    }
-  }]);
-
-  return Drawable;
-}(_methodeable.default);
-
-exports.default = Drawable;
-
-
-},{"../../../base/methodeable":572,"../../../base/pixel":573,"../../../base/position":575,"devapt-core-common/dist/js/utils/types":177}],595:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _drawable = _interopRequireDefault(require("./drawable"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/ellipse';
-var DEFAULT_RADIUS = 1;
-/**
- * @file Drawing ellipse class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var Ellipse =
-/*#__PURE__*/
-function (_Drawable) {
-  _inherits(Ellipse, _Drawable);
-
-  /**
-   * Create a shape instance.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
-   * @param {array|Vector} arg_position - shape position.
-   * @param {string}		 arg_color    - shape color.
-   * @param {number}       arg_width    - shape width.
-   * @param {number}       arg_height   - shape height.
-   * 
-   * @returns {nothing}
-   */
-  function Ellipse(arg_space, arg_owner, arg_position) {
-    var _this;
-
-    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
-    var arg_width = arguments.length > 4 ? arguments[4] : undefined;
-    var arg_height = arguments.length > 5 ? arguments[5] : undefined;
-
-    _classCallCheck(this, Ellipse);
-
-    _this = _possibleConstructorReturn(this, (Ellipse.__proto__ || Object.getPrototypeOf(Ellipse)).call(this, arg_space, arg_owner, arg_position, 'circle'));
-    _this.is_svg_ellipse = true;
-    _this._width = arg_width;
-    _this._height = arg_height;
-    _this.color = arg_color;
-    return _this;
-  }
-
-  _createClass(Ellipse, [{
-    key: "draw",
-    value: function draw() {
-      // DO NOT RENDER	
-      if (this.color == 'none') {
-        return;
-      }
-
-      var pos_h = this.h();
-      var pos_v = this.v();
-      var size_h = this.space().range_to_screen_h(this._width);
-      var size_v = this.space().range_to_screen_v(this._height);
-      this._shape = this.space().svg().ellipse(size_h, size_v).center(pos_h, pos_v);
-
-      if (this.color) {
-        this._shape.fill(this.color);
-      }
-
-      return this;
-    }
-  }]);
-
-  return Ellipse;
-}(_drawable.default);
-
-exports.default = Ellipse;
-
-
-},{"./drawable":594,"devapt-core-common/dist/js/utils/types":177}],596:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _position = _interopRequireDefault(require("../../../base/position"));
-
-var _space = _interopRequireDefault(require("./space"));
-
-var _plotf = _interopRequireDefault(require("./plotf"));
-
-var _circle = _interopRequireDefault(require("./circle"));
-
-var _ellipse = _interopRequireDefault(require("./ellipse"));
-
-var _rectangle = _interopRequireDefault(require("./rectangle"));
-
-var _car = _interopRequireDefault(require("./car"));
-
-var _point = _interopRequireDefault(require("./point"));
-
-var _line_arrow = _interopRequireDefault(require("./line_arrow"));
-
-var _line = _interopRequireDefault(require("./line"));
-
-var _axis = _interopRequireDefault(require("./axis"));
-
-var _polygon = _interopRequireDefault(require("./polygon"));
-
-var _star = _interopRequireDefault(require("./star"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/factory';
-/**
- * @file Drawing car class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var Factory =
-/*#__PURE__*/
-function () {
-  /**
-   * Create a shapes factory.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * 
-   * @returns {nothing}
-   */
-  function Factory(arg_space) {
-    _classCallCheck(this, Factory);
-
-    this.is_svg_factory = true;
-    this._space = arg_space;
-    this._shapes = {};
-    this._shapes_counter = 0;
-  }
-
-  _createClass(Factory, [{
-    key: "space",
-    value: function space() {
-      return this._space;
-    }
-  }, {
-    key: "svg",
-    value: function svg() {
-      return this.space().svg();
-    }
-  }, {
-    key: "shapes",
-    value: function shapes() {
-      return this._shapes;
-    }
-  }, {
-    key: "get",
-    value: function get(arg_name) {
-      return this._shapes[arg_name];
-    }
-  }, {
-    key: "set",
-    value: function set(arg_name, arg_shape) {
-      if (_types.default.isObject(arg_shape) && arg_shape.is_svg_drawable) {
-        this._shapes[arg_name] = arg_shape;
-      }
-    }
-  }, {
-    key: "count",
-    value: function count() {
-      return this._shapes_counter;
-    }
-  }, {
-    key: "types",
-    value: function types() {
-      return ['cir', 'circle', 'rect', 'rectangle', 'line', 'axis', 'grid', 'ell', 'ellipse', 'p', 'point', 'car', 'arrow', 'line_arrow'];
-    }
-  }, {
-    key: "create",
-    value: function create(arg_shape_cfg) {
-      console.log(context + ':create:shape cfg:', arg_shape_cfg); // GET TYPE
-
-      var type = arg_shape_cfg.type;
-
-      if (!_types.default.isNotEmptyString(type)) {
-        return this;
-      } // GET NAME
-
-
-      this._shapes_counter++;
-      var name = _types.default.isNotEmptyString(arg_shape_cfg.name) ? arg_shape_cfg.name : 'shape-' + this._shapes_counter; // GET POSITION AND COLOR
-
-      var position_array = _types.default.isArray(arg_shape_cfg.position) && arg_shape_cfg.position.length >= 2 ? arg_shape_cfg.position : [0, 0, 0];
-      var color = arg_shape_cfg.color; // GET SPACE
-
-      var space = this._space;
-
-      if (_types.default.isObject(arg_shape_cfg) && _types.default.isObject(arg_shape_cfg.space) && arg_shape_cfg.space.is_svg_space) {
-        space = arg_shape_cfg.space;
-      } // GET OPERANDS
-
-
-      var position_end = _types.default.isArray(arg_shape_cfg.position_end) && arg_shape_cfg.position_end.length >= 2 ? arg_shape_cfg.position_end : [0, 0, 0];
-      var domain = arg_shape_cfg.domain;
-      var radius = _types.default.isNumber(arg_shape_cfg.radius) && arg_shape_cfg.radius > 0 ? arg_shape_cfg.radius : 50;
-      var edges = _types.default.isNumber(arg_shape_cfg.edges) && arg_shape_cfg.edges > 0 ? arg_shape_cfg.edges : 5;
-      var width = _types.default.isNumber(arg_shape_cfg.width) && arg_shape_cfg.width > 0 ? arg_shape_cfg.width : 100;
-      var height = _types.default.isNumber(arg_shape_cfg.height) && arg_shape_cfg.height > 0 ? arg_shape_cfg.height : 100;
-      var render = _types.default.isNotEmptyString(arg_shape_cfg.render) ? arg_shape_cfg.render : undefined;
-      var size = _types.default.isNumber(arg_shape_cfg.size) && arg_shape_cfg.size > 0 ? arg_shape_cfg.size : undefined;
-      var inner = _types.default.isNumber(arg_shape_cfg.inner) && arg_shape_cfg.inner > 0 ? arg_shape_cfg.inner : 50;
-      var outer = _types.default.isNumber(arg_shape_cfg.outer) && arg_shape_cfg.outer > 0 ? arg_shape_cfg.outer : 50;
-      var spikes = _types.default.isNumber(arg_shape_cfg.spikes) && arg_shape_cfg.spikes > 0 ? arg_shape_cfg.spikes : 5;
-      var plot_fn = _types.default.isFunction(arg_shape_cfg.plot_fn) ? arg_shape_cfg.plot_fn : undefined;
-      var shape = undefined; // LOOKUP TYPE CLASS
-
-      switch (type.toLocaleLowerCase()) {
-        case 'space':
-          {
-            console.log(context + ':create:space width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
-            var position = new _position.default(position_array);
-            var position_pixel = space.project(position);
-            var domains_settings = _types.default.isArray(arg_shape_cfg.domains) ? arg_shape_cfg.domains : [];
-            var pixelbox_settings = {
-              origin_h: position_pixel.h(),
-              origin_v: position_pixel.v(),
-              margin_h: _types.default.isNumber(arg_shape_cfg.margin_h) ? arg_shape_cfg.margin_h : 0,
-              margin_v: _types.default.isNumber(arg_shape_cfg.margin_v) ? arg_shape_cfg.margin_v : 0,
-              padding_h: _types.default.isNumber(arg_shape_cfg.padding_h) ? arg_shape_cfg.padding_h : 5,
-              padding_v: _types.default.isNumber(arg_shape_cfg.padding_v) ? arg_shape_cfg.padding_v : 5,
-              width: _types.default.isNumber(arg_shape_cfg.width) ? arg_shape_cfg.width : 100,
-              height: _types.default.isNumber(arg_shape_cfg.height) ? arg_shape_cfg.height : 100
-            };
-            var space_settings = {
-              background_color: color,
-              grid: {
-                step_h: 10,
-                step_v: 20,
-                color: 'green',
-                size: 3,
-                format: 'circle'
-              },
-              axis: {
-                x: {
-                  color: 'red',
-                  size: 2
-                },
-                y: {
-                  color: 'blue',
-                  size: 1
-                }
-              }
-            };
-            shape = new _space.default(space.svg(), domains_settings, pixelbox_settings, space_settings);
-            shape._space = space;
-            break;
-          }
-
-        case 'plotf':
-          {
-            console.log(context + ':create:plotf color=[%s]:', color, position_array);
-            shape = new _plotf.default(space, space, position_array, plot_fn, color, render, size);
-            break;
-          }
-
-        case 'circle':
-        case 'cir':
-          {
-            console.log(context + ':create:circle radius=[%d] color=[%s]:', radius, color, position_array);
-            shape = new _circle.default(space, space, position_array, color, radius);
-            break;
-          }
-
-        case 'p':
-        case 'point':
-          {
-            console.log(context + ':create:point size=[%d] color=[%s] render=[%s]:', size, color, position_array, render);
-            shape = new _point.default(space, space, position_array, color, render, size);
-            break;
-          }
-
-        case 'ellipse':
-        case 'ell':
-          {
-            console.log(context + ':create:ellipse width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
-            shape = new _ellipse.default(space, space, position_array, color, width, height);
-            break;
-          }
-
-        case 'rectangle':
-        case 'rect':
-          {
-            console.log(context + ':create:rectangle width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
-            shape = new _rectangle.default(space, space, position_array, color, width, height);
-            break;
-          }
-
-        case 'line':
-          {
-            console.log(context + ':create:line width=[%d] color=[%s]:', width, color, position_array, position_end);
-            shape = new _line.default(space, space, position_array, position_end, color, width);
-            break;
-          }
-
-        case 'axis':
-          {
-            console.log(context + ':create:line domain=[%s] color=[%s] width=[%d]:', domain, color, width, position_array);
-            shape = new _axis.default(space, space, position_array, domain, color, width);
-            break;
-          }
-
-        case 'polygon':
-        case 'pol':
-          {
-            console.log(context + ':create:polygon edges=[%d] radius=[%d] color=[%s]:', edges, radius, color, position_array);
-            shape = new _polygon.default(space, space, position_array, color, edges, radius);
-            break;
-          }
-
-        case 'star':
-          {
-            console.log(context + ':create:star spikes=[%d] inner=[%d] outer=[%d] color=[%s]:', spikes, inner, outer, color, position_array);
-            shape = new _star.default(space, space, position_array, color, spikes, inner, outer);
-            break;
-          }
-
-        case 'car':
-          {
-            console.log(context + ':create:car width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
-            shape = new _car.default(space, space, position_array, color, width, height);
-            break;
-          }
-
-        case 'arrow':
-        case 'line_arrow':
-          {
-            var arrow_start = _types.default.isBoolean(arg_shape_cfg.has_arrow_start) ? arg_shape_cfg.has_arrow_start : false;
-            var arrow_end = _types.default.isBoolean(arg_shape_cfg.has_arrow_end) ? arg_shape_cfg.has_arrow_end : true;
-            var line_width = _types.default.isNumber(arg_shape_cfg.line_width) && arg_shape_cfg.line_width > 0 ? arg_shape_cfg.line_width : 1;
-            var arrow_h = _types.default.isNumber(arg_shape_cfg.arrow_h) && arg_shape_cfg.arrow_h > 0 ? arg_shape_cfg.arrow_h : 10;
-            var arrow_v = _types.default.isNumber(arg_shape_cfg.arrow_v) && arg_shape_cfg.arrow_v > 0 ? arg_shape_cfg.arrow_v : 10;
-            var length = _types.default.isNumber(arg_shape_cfg.length) && arg_shape_cfg.length > 0 ? arg_shape_cfg.length : undefined;
-            var angle = _types.default.isNumber(arg_shape_cfg.angle) && arg_shape_cfg.angle >= 0 ? arg_shape_cfg.angle : undefined;
-            var end = _types.default.isNotEmptyArray(arg_shape_cfg.end) ? arg_shape_cfg.end : undefined;
-            console.log(context + ':create:line arrow line_width=[%d] length=[%d] angle=[%d] end=[%s] color=[%s]:', line_width, length, angle, end, color, position_array);
-            shape = new _line_arrow.default(space, space, position_array, color, arrow_start, arrow_end, line_width, arrow_h, arrow_v, end ? end : length, angle);
-            break;
-          }
-      }
-
-      if (shape) {
-        this._shapes[name] = shape;
-        var result = shape.draw();
-
-        if (result.then) {
-          result.then(function () {
-            space.svg_shape().add(shape.svg_shape());
-          });
-        } else {
-          space.svg_shape().add(shape.svg_shape());
-        }
-      }
-
-      return this;
-    }
-  }]);
-
-  return Factory;
-}();
-
-exports.default = Factory;
-
-
-},{"../../../base/position":575,"./axis":591,"./car":592,"./circle":593,"./ellipse":595,"./line":597,"./line_arrow":598,"./plotf":599,"./point":600,"./polygon":601,"./rectangle":603,"./space":604,"./star":605,"devapt-core-common/dist/js/utils/types":177}],597:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _drawable = _interopRequireDefault(require("./drawable"));
-
-var _position = _interopRequireDefault(require("../../../base/position"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/line';
-var DEFAULT_RADIUS = 1;
-/**
- * @file Drawing line class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var Line =
-/*#__PURE__*/
-function (_Drawable) {
-  _inherits(Line, _Drawable);
-
-  /**
-   * Create a shape instance.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
-   * @param {array|Vector} arg_pos_begin- shape position begin.
-   * @param {array|Vector} arg_pos_end - shape position end.
-   * @param {string}		 arg_color    - shape color.
-   * @param {number}       arg_width    - shape width in pixels.
-   * 
-   * @returns {nothing}
-   */
-  function Line(arg_space, arg_owner, arg_pos_begin, arg_pos_end) {
-    var _this;
-
-    var arg_color = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : undefined;
-    var arg_width = arguments.length > 5 ? arguments[5] : undefined;
-
-    _classCallCheck(this, Line);
-
-    _this = _possibleConstructorReturn(this, (Line.__proto__ || Object.getPrototypeOf(Line)).call(this, arg_space, arg_owner, arg_pos_begin, 'line'));
-    _this.is_svg_line = true;
-    _this._pos_end = new _position.default([0, 0]);
-
-    if (_types.default.isArray(arg_pos_end) || _this._is_vector(arg_pos_end)) {
-      _this._pos_end.values(arg_pos_end);
-    }
-
-    _this._pos_end_pixel = _this.space().project(_this._pos_end);
-    _this.color = arg_color ? arg_color : 'blue';
-    _this._width = arg_width ? arg_width : 1;
-    return _this;
-  }
-
-  _createClass(Line, [{
-    key: "draw",
-    value: function draw() {
-      // DO NOT RENDER	
-      if (this.color == 'none') {
-        return;
-      }
-
-      var pos_begin_h = this.h();
-      var pos_begin_v = this.v();
-
-      var pos_end_h = this._pos_end_pixel.h();
-
-      var pos_end_v = this._pos_end_pixel.v();
-
-      this._shape = this.space().svg().line(pos_begin_h, pos_begin_v, pos_end_h, pos_end_v);
-
-      if (this.color && this._width) {
-        this._shape.stroke({
-          color: this.color,
-          width: this._width
-        });
-      }
-
-      return this;
-    }
-  }]);
-
-  return Line;
-}(_drawable.default);
-
-exports.default = Line;
-
-
-},{"../../../base/position":575,"./drawable":594,"devapt-core-common/dist/js/utils/types":177}],598:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _drawable = _interopRequireDefault(require("./drawable"));
-
-var _position = _interopRequireDefault(require("../../../base/position"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/line_arrow';
-var DEFAULT_LINE_WIDTH = 1;
-var DEFAULT_ARROW_H = 10;
-var DEFAULT_ARROW_V = 10;
-/**
- * @file Drawing a line with an arrow.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var LineArrow =
-/*#__PURE__*/
-function (_Drawable) {
-  _inherits(LineArrow, _Drawable);
-
-  /**
-   * Create a shape instance.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
-   * @param {array|Vector} arg_position - shape position.
-   * @param {string}		 arg_color    - shape color.
-   * @param {boolean}      arg_arrow_start - shape has an arrow at start point.
-   * @param {boolean}      arg_arrow_end   - shape has an arrow at end point.
-   * @param {number}       arg_line_width   - shape .
-   * @param {number}       arg_arrow_h   - shape .
-   * @param {number}       arg_arrow_v   - shape .
-   * @param {number}       arg_length_or_position   - shape .
-   * @param {number}       arg_angle_or_nothing   - shape .
-   * 
-   * @returns {nothing}
-   */
-  function LineArrow(arg_space, arg_owner, arg_position) {
-    var _this;
-
-    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
-    var arg_arrow_start = arguments.length > 4 ? arguments[4] : undefined;
-    var arg_arrow_end = arguments.length > 5 ? arguments[5] : undefined;
-    var arg_line_width = arguments.length > 6 ? arguments[6] : undefined;
-    var arg_arrow_h = arguments.length > 7 ? arguments[7] : undefined;
-    var arg_arrow_v = arguments.length > 8 ? arguments[8] : undefined;
-    var arg_length_or_position = arguments.length > 9 ? arguments[9] : undefined;
-    var arg_angle_or_nothing = arguments.length > 10 ? arguments[10] : undefined;
-
-    _classCallCheck(this, LineArrow);
-
-    _this = _possibleConstructorReturn(this, (LineArrow.__proto__ || Object.getPrototypeOf(LineArrow)).call(this, arg_space, arg_owner, arg_position, 'linearrow'));
-    _this.is_svg_linearrow = true;
-    _this.color = arg_color;
-    _this._line_length = _types.default.isNumber(arg_length_or_position) ? arg_length_or_position : undefined;
-    _this._line_angle = _types.default.isNumber(arg_angle_or_nothing) ? arg_angle_or_nothing : undefined;
-    _this._line_end_position = _this._line_length ? undefined : arg_length_or_position;
-    _this._arrow_start = _types.default.isBoolean(arg_arrow_start) ? arg_arrow_start : false;
-    _this._arrow_end = _types.default.isBoolean(arg_arrow_end) ? arg_arrow_end : false;
-    _this._line_width = _types.default.isNumber(arg_line_width) ? arg_line_width : DEFAULT_LINE_WIDTH;
-    _this._arrow_h = _types.default.isNumber(arg_arrow_h) ? arg_arrow_h : DEFAULT_ARROW_H;
-    _this._arrow_v = _types.default.isNumber(arg_arrow_v) ? arg_arrow_v : DEFAULT_ARROW_V;
-    _this._init_done = false;
-    return _this;
-  }
-
-  _createClass(LineArrow, [{
-    key: "_init_end",
-    value: function _init_end() {
-      this._init_done = true; // BUILD END PIXEL WITH ANGLE AND LENGTH
-
-      if (_types.default.isNumber(this._line_length) && _types.default.isNumber(this._line_angle)) {
-        // CONVERT DEGREES TO RADIAN
-        var degrees_angle = this._line_angle;
-        this._line_angle = degrees_angle * Math.PI / 180;
-        console.log(context + ':draw:degrees_angle= this._line_angle=', degrees_angle, this._line_angle); // O=angle(AB,AC) and angle(AB,BC)=PI/2 radian
-        // AC = line length
-        // cos(O) = AB/AC 
-        // sin(O) = BC/AC
-
-        var end_x = this.x() + Math.cos(this._line_angle) * this._line_length; // AB=cos(O) * AC
-
-
-        var end_y = this.y() - Math.sin(this._line_angle) * this._line_length; // BC=sin(O) * AC
-
-
-        this._line_end_position = new _position.default([end_x, end_y]);
-        this._line_end_pixel = this.project(this._line_end_position);
-      } // BUILD END PIXEL WITH A POSITION
-      else {
-          // END POSITION IS AN ARRAY
-          if (_types.default.isArray(this._line_end_position) && this._line_end_position.length == 2) {
-            if (_types.default.isNumber(this._line_end_position[0]) && _types.default.isNumber(this._line_end_position[1])) {
-              this._line_end_position = new _position.default(this._line_end_position);
-            }
-          } // END POSITION IS A VECTOR
-
-
-          if (_types.default.isObject(this._line_end_position) && this._line_end_position.is_vector) {
-            this._line_end_pixel = this.project(this._line_end_position);
-          }
-        }
-    }
-  }, {
-    key: "draw",
-    value: function draw() {
-      // DO NOT RENDER	
-      if (this.color == 'none') {
-        return;
-      }
-
-      if (!this._init_done) {
-        this._init_end();
-      } // START PIXEL
-
-
-      var start_h = this.h();
-      var start_v = this.v();
-
-      if (!_types.default.isNumber(start_h) || !_types.default.isNumber(start_v)) {
-        return;
-      } // END PIXEL
-
-
-      var end_h = this._line_end_pixel.h();
-
-      var end_v = this._line_end_pixel.v();
-
-      if (!_types.default.isNumber(end_h) || !_types.default.isNumber(end_v)) {
-        return;
-      }
-
-      var options = {
-        width: this._line_width,
-        color: this.color ? this.color : 'black'
-        /*,
-        linecap:'round'*/
-
-      };
-      console.log(context + ':draw:line_arrow:start_h=%d start_v=%d end_h=%d end_v=%d', start_h, start_v, end_h, end_v);
-      var line = this.space().svg().line(start_h, start_v, end_h, end_v).stroke(options);
-      var angle = Math.atan2(end_v - start_v, end_h - start_h);
-      var arrow_width_h = this._arrow_h;
-      var arrow_width_v = this._arrow_v;
-      var to_h_1 = end_h - arrow_width_h * Math.cos(angle - Math.PI / 6);
-      var to_v_1 = end_v - arrow_width_v * Math.sin(angle - Math.PI / 6);
-      var to_h_2 = end_h - arrow_width_h * Math.cos(angle + Math.PI / 6);
-      var to_v_2 = end_v - arrow_width_v * Math.sin(angle + Math.PI / 6);
-      var arrow_1 = this.space().svg().line(end_h, end_v, to_h_1, to_v_1).stroke(options);
-      var arrow_2 = this.space().svg().line(end_h, end_v, to_h_2, to_v_2).stroke(options);
-      this._shape = this.space().svg().group();
-
-      this._shape.add(line);
-
-      this._shape.add(arrow_1);
-
-      this._shape.add(arrow_2);
-
-      return this;
-    }
-  }]);
-
-  return LineArrow;
-}(_drawable.default);
-
-exports.default = LineArrow;
-
-
-},{"../../../base/position":575,"./drawable":594,"devapt-core-common/dist/js/utils/types":177}],599:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _position = _interopRequireDefault(require("../../../base/position"));
-
-var _drawable = _interopRequireDefault(require("./drawable"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return _sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/plotf';
-var DEFAULT_RENDER = 'circle';
-var DEFAULT_SIZE = 2;
-var DEFAULT_COLOR = 'red';
-/**
- * @file Drawing Plot f(x) class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var PlotF =
-/*#__PURE__*/
-function (_Drawable) {
-  _inherits(PlotF, _Drawable);
-
-  /**
-   * Create a shape instance.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
-   * @param {array|Vector} arg_position - shape position.
-   * @param {function}     arg_function - plot function f(scope)=>{ loops_count:integer, fstep:f(step, scope)=>Position }.
-   * @param {string}		 arg_color    - shape color.
-   * @param {string}       arg_render   - shape rendering:cross, xcross, circle, disk, point.
-   * @param {number}       arg_size     - shape rendering size.
-   * 
-   * @returns {nothing}
-   */
-  function PlotF(arg_space, arg_owner, arg_position, arg_function) {
-    var _this;
-
-    var arg_color = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : DEFAULT_COLOR;
-    var arg_render = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : DEFAULT_RENDER;
-    var arg_size = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : DEFAULT_SIZE;
-
-    _classCallCheck(this, PlotF);
-
-    _this = _possibleConstructorReturn(this, (PlotF.__proto__ || Object.getPrototypeOf(PlotF)).call(this, arg_space, arg_owner, arg_position, 'point'));
-    _this.is_svg_point = true;
-    _this._function = _types.default.isFunction(arg_function) ? arg_function : undefined;
-    _this.color = arg_color;
-    _this.render = arg_render;
-    _this.size = arg_size;
-    return _this;
-  }
-
-  _createClass(PlotF, [{
-    key: "draw",
-    value: function draw() {
-      var _this2 = this;
-
-      // DO NOT RENDER	
-      if (this.color == 'none') {
-        return this;
-      } // const pos_h = this.h()
-      // const pos_v = this.v()
-      // const bottom_left_pixel = this.space().pixelbox().get_usable().bottom_left
-
-
-      var height_pixel = this.space().pixelbox().get_usable().height;
-      var width_pixel = this.space().pixelbox().get_usable().width;
-      var top_left_pixel = this.space().pixelbox().get_usable().top_left;
-      var pos_h = top_left_pixel.h;
-      var pos_v = top_left_pixel.v;
-
-      if (!this._function) {
-        console.warn(context + ':draw:bad function');
-        return this;
-      }
-
-      var f_record = this._function({
-        x: 45
-      });
-
-      var loops_count = f_record && f_record.loops_count ? Math.floor(f_record.loops_count) : 0;
-      var f_step = f_record && f_record.fstep ? f_record.fstep : undefined;
-      var f_scope = f_record && f_record.scope ? f_record.scope : undefined; // console.warn(context + ':draw:function record', f_record, loops_count, f_step, f_scope)
-
-      if (!_types.default.isNumber(loops_count) || !_types.default.isFunction(f_step) || !_types.default.isObject(f_scope)) {
-        console.warn(context + ':draw:bad function record');
-        return this;
-      } // LOOP
-
-
-      var points = new Array(loops_count);
-
-      var add_point = function add_point(arg_index, arg_point) {
-        var position = _types.default.isArray(arg_point) ? new _position.default(arg_point) : arg_point;
-
-        var pixel_point = _this2.space().project(position, _this2.space());
-
-        var h = pos_h + pixel_point.h();
-        var v = pos_v + height_pixel - pixel_point.v(); // CHECK h and v
-
-        h = h < pos_h ? pos_h : h;
-        h = h > pos_h + width_pixel ? pos_h + width_pixel : h;
-        v = v < pos_v ? pos_v : v;
-        v = v > pos_v + height_pixel ? pos_v + height_pixel : v;
-        points[arg_index] = [h, v];
-      };
-
-      var f_index = 0;
-      var point = undefined;
-      var promises = new Array(loops_count);
-
-      var _loop = function _loop() {
-        point = f_step(f_index, f_scope);
-        var point_index = f_index;
-
-        if (point) {
-          // TODO GENERALIZE TO N DIMENSIONS
-          if (point[0].then && point[1].then) {
-            var point_promise = Promise.all([point[0], point[1]]);
-            promises[f_index] = point_promise.then(function (_ref) {
-              var _ref2 = _slicedToArray(_ref, 2),
-                  px = _ref2[0],
-                  py = _ref2[1];
-
-              var x = _types.default.isObject(px) ? px.value : px;
-              var y = _types.default.isObject(py) ? py.value : py;
-              add_point(point_index, [x, y]);
-            });
-            return "continue";
-          }
-
-          if (point[0].then) {
-            promises[f_index] = point[0].then(function (px) {
-              var py = point[1];
-              var x = _types.default.isObject(px) ? px.value : px;
-              var y = _types.default.isObject(py) ? py.value : py;
-              add_point(point_index, [x, y]);
-            });
-            return "continue";
-          }
-
-          if (point[1].then) {
-            var px = point[0];
-            promises[f_index] = point[1].then(function (py) {
-              var x = _types.default.isObject(px) ? px.value : px;
-              var y = _types.default.isObject(py) ? py.value : py;
-              add_point(point_index, [x, y]);
-            });
-            return "continue";
-          }
-
-          add_point(f_index, point);
-        }
-      };
-
-      for (f_index; f_index < loops_count; f_index++) {
-        var _ret = _loop();
-
-        if (_ret === "continue") continue;
-      } // RENDER
-
-
-      var svg = this.space().svg();
-      var promise = Promise.all(promises).then(function () {
-        var svg_points = new SVG.PointArray(points);
-        _this2._shape = svg.polyline(svg_points);
-
-        _this2.draw_color();
-
-        return _this2;
-      });
-      return promise;
-    }
-  }]);
-
-  return PlotF;
-}(_drawable.default);
-
-exports.default = PlotF;
-
-
-},{"../../../base/position":575,"./drawable":594,"devapt-core-common/dist/js/utils/types":177}],600:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _position = _interopRequireDefault(require("../../../base/position"));
-
-var _drawable = _interopRequireDefault(require("./drawable"));
-
-var _line = _interopRequireDefault(require("./line"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/point';
-var DEFAULT_RENDER = 'circle';
-var DEFAULT_SIZE = 2;
-var DEFAULT_COLOR = 'red';
-/**
- * @file Drawing point class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var Point =
-/*#__PURE__*/
-function (_Drawable) {
-  _inherits(Point, _Drawable);
-
-  /**
-   * Create a shape instance.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
-   * @param {array|Vector} arg_position - shape position.
-   * @param {string}		 arg_color    - shape color.
-   * @param {string}       arg_render   - shape rendering:cross, xcross, circle, disk, point.
-   * @param {number}       arg_size     - shape rendering size.
-   * 
-   * @returns {nothing}
-   */
-  function Point(arg_space, arg_owner, arg_position) {
-    var _this;
-
-    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : DEFAULT_COLOR;
-    var arg_render = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : DEFAULT_RENDER;
-    var arg_size = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : DEFAULT_SIZE;
-
-    _classCallCheck(this, Point);
-
-    _this = _possibleConstructorReturn(this, (Point.__proto__ || Object.getPrototypeOf(Point)).call(this, arg_space, arg_owner, arg_position, 'point'));
-    _this.is_svg_point = true;
-    _this.color = arg_color;
-    _this.render = arg_render;
-    _this.size = arg_size;
-
-    _this.add_method('line');
-
-    return _this;
-  }
-
-  _createClass(Point, [{
-    key: "draw",
-    value: function draw() {
-      // DO NOT RENDER	
-      if (this.color == 'none') {
-        return;
-      } // RENDER
-
-
-      var pos_h = this.h();
-      var pos_v = this.v(); // const size_h = this.space().project_x(this.size)
-      // const size_v = this.space().project_y(this.size)
-      // const size = Math.min(size_h, size_v)
-
-      var svg = this.space().svg();
-      var options = {
-        width: this.size,
-        color: this.color ? this.color : 'blue'
-        /*,
-        linecap:'round'*/
-
-      };
-
-      switch (this.render) {
-        case 'square':
-          this._shape = svg.rect(2 * this.size, 2 * this.size).move(pos_h - this.size, pos_v - size_v).fill('none');
-          this.draw_color();
-          break;
-
-        case 'cross':
-          this._shape = svg.group();
-
-          this._shape.add(svg.line(pos_h - this.size, pos_v, pos_h + this.size, pos_v));
-
-          this._shape.add(svg.line(pos_h, pos_v - this.size, pos_h, pos_v + this.size));
-
-          this.draw_color();
-          break;
-
-        case 'xcross':
-          this._shape = svg.group();
-
-          this._shape.add(svg.line(pos_h - this.size, pos_v - this.size, pos_h + this.size, pos_v + this.size));
-
-          this._shape.add(svg.line(pos_h - this.size, pos_v + this.size, pos_h + this.size, pos_v - this.size));
-
-          this.draw_color();
-          break;
-
-        case 'point':
-          this._shape = svg.point(pos_h, pos_v).fill(this.color);
-          break;
-
-        case 'disk':
-          this._shape = svg.circle(2 * this.size).fill(this.color);
-
-          this._shape.move(pos_h, pos_v);
-
-          break;
-
-        case 'circle':
-        default:
-          {
-            this._shape = svg.circle(2 * this.size).fill('none').stroke(options);
-
-            this._shape.center(pos_h, pos_v);
-
-            break;
-          }
-      }
-
-      return this;
-    }
-  }, {
-    key: "line",
-    value: function line(arg_position) {
-      var arg_color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'blue';
-      var arg_width = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-
-      if (_types.default.isArray(arg_position)) {
-        arg_position = new _position.default(arg_position);
-      } else if (_types.default.isObject(arg_position) && arg_position.is_svg_drawable) {
-        arg_position = arg_position.position();
-      }
-
-      return new _line.default(this.space(), this, this.position(), arg_position, arg_color, arg_width).draw();
-    }
-  }]);
-
-  return Point;
-}(_drawable.default);
-
-exports.default = Point;
-
-
-},{"../../../base/position":575,"./drawable":594,"./line":597,"devapt-core-common/dist/js/utils/types":177}],601:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _drawable = _interopRequireDefault(require("./drawable"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/polygon';
-var DEFAULT_EDGES = 5;
-var DEFAULT_RADIUS = 50;
-/**
- * @file Drawing polygon class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var Polygon =
-/*#__PURE__*/
-function (_Drawable) {
-  _inherits(Polygon, _Drawable);
-
-  /**
-   * Create a shape instance.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
-   * @param {array|Vector} arg_position - shape position.
-   * @param {string}		 arg_color    - shape color.
-   * @param {number}       arg_edges    - shape edges count.
-   * @param {number}       arg_radius   - shape radius.
-   * 
-   * @returns {nothing}
-   */
-  function Polygon(arg_space, arg_owner, arg_position) {
-    var _this;
-
-    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
-    var arg_edges = arguments.length > 4 ? arguments[4] : undefined;
-    var arg_radius = arguments.length > 5 ? arguments[5] : undefined;
-
-    _classCallCheck(this, Polygon);
-
-    _this = _possibleConstructorReturn(this, (Polygon.__proto__ || Object.getPrototypeOf(Polygon)).call(this, arg_space, arg_owner, arg_position, 'polygon'));
-    _this.is_svg_polygon = true;
-    _this._edges = typeof arg_edges == 'number' ? arg_edges : DEFAULT_EDGES;
-    _this._radius = typeof arg_radius == 'number' ? arg_radius : DEFAULT_RADIUS;
-    _this.color = arg_color;
-    return _this;
-  }
-
-  _createClass(Polygon, [{
-    key: "draw",
-    value: function draw() {
-      // DO NOT RENDER	
-      if (this.color == 'none') {
-        return;
-      }
-
-      var pos_h = this.h();
-      var pos_v = this.v();
-      var radius_h = this.space().range_to_screen_h(this._radius);
-      var radius_v = this.space().range_to_screen_v(this._radius);
-      var radius = Math.min(radius_h, radius_v);
-      var edges = typeof this._edges == 'number' ? this._edges : DEFAULT_EDGES;
-      var i, a, x, y;
-      var points = [];
-      var degrees = 360 / edges;
-
-      for (i = 0; i < edges; i++) {
-        a = i * degrees - 90;
-        x = radius + radius * Math.cos(a * Math.PI / 180);
-        y = radius + radius * Math.sin(a * Math.PI / 180);
-        points.push([x, y]);
-      }
-
-      this._shape = this.space().svg().polygon(new SVG.PointArray(points)).center(pos_h, pos_v);
-      this.draw_color();
-      return this;
-    }
-  }]);
-
-  return Polygon;
-}(_drawable.default);
-
-exports.default = Polygon;
-
-
-},{"./drawable":594,"devapt-core-common/dist/js/utils/types":177}],602:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _pixel = _interopRequireDefault(require("../../../base/pixel"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// PLUGIN IMPORT
-var project_2dto2d_euclide = function project_2dto2d_euclide(arg_position, arg_space) {
-  var h1 = range_to_screen_h(arg_position.x(), arg_space);
-  var h2 = arg_space.pixelbox().get_boxed_h(h1, true);
-  console.log('project_2dto2d_euclide:range_to_screen_h:x=[%d] h1=[%d] h2=[%d]', arg_position.x(), h1, h2);
-  var v1 = range_to_screen_v(arg_position.y(), arg_space);
-  var v2 = arg_space.pixelbox().get_boxed_v(v1, true);
-  console.log('project_2dto2d_euclide:range_to_screen_v:y=[%d] v1=[%d] v2=[%d]', arg_position.y(), v1, v2);
-  return new _pixel.default(h2, v2);
-};
-
-var project_2dto2d_euclide_without_boxing = function project_2dto2d_euclide_without_boxing(arg_position, arg_space) {
-  var arg_default = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  var arg_from_zero = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var h1 = range_to_screen_h(arg_position.x(), arg_space, arg_default, arg_from_zero);
-  var v1 = range_to_screen_v(arg_position.y(), arg_space, arg_default, arg_from_zero);
-  return new _pixel.default(h1, v1);
-};
-/*
-    Mapping explanation:
-    
-    range_start	range_end	pixel_width		ratio	pixel_start	pixel_end	pixel_range_0	pixel_range_50
-    0			99			1000			10		0			1000		0				500
-    50			100			1000			20		0			1000		-1000			0
-    -50			50			1000			10		0			1000		500				1000
-
-*/
-
-
-function range_to_screen_h(arg_position_x, arg_space) {
-  var arg_default = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  var arg_from_zero = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var domaine_x = arg_space.domain_x();
-  if (!domaine_x) return arg_default;
-  /*
-      Mapping of x between A and B into h between C and D:
-          h = (x-A)*|CD|/|AB| + C
-  */
-
-  var c = 0; // done with arg_space.pixelbox().get_boxed_h(h, true)
-
-  var ab = Math.abs(domaine_x.end() - domaine_x.start()) + (domaine_x.start() <= 0 ? 1 : 0);
-
-  var cd = arg_space.pixelbox()._usable_width;
-
-  var x_a = arg_position_x - (arg_from_zero ? 0 : domaine_x.start());
-  var h = x_a * cd / ab + c;
-  console.log('project_2dto2d_euclide:range_to_screen_h:x=[%d] c=[%d] ab=[%d] cd=[%d] x_a=[%d] h=[%d]', arg_position_x, c, ab, cd, x_a, h);
-  return h;
-}
-
-function range_to_screen_v(arg_position_y, arg_space) {
-  var arg_default = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  var arg_from_zero = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  var domaine_y = arg_space.domain_y();
-  if (!domaine_y) return arg_default;
-  /*
-      Mapping of y between A and B into v between C and D:
-          v = (y-A)*|CD|/|AB| + C
-  */
-
-  var c = 0; // done with arg_space.pixelbox().get_boxed_v(v, true)
-
-  var ab = Math.abs(domaine_y.end() - domaine_y.start()) + (domaine_y.start() <= 0 ? 1 : 0);
-
-  var cd = arg_space.pixelbox()._usable_height;
-
-  var y_a = arg_position_y - (arg_from_zero ? 0 : domaine_y.start());
-  var v = y_a * cd / ab + c;
-  console.log('project_2dto2d_euclide:range_to_screen_v:y=[%d] c=[%d] ab=[%d] cd=[%d] y_a=[%d] v=[%d]', arg_position_y, c, ab, cd, y_a, v);
-  return v;
-}
-
-var _default = {
-  project: project_2dto2d_euclide,
-  project_without_boxing: project_2dto2d_euclide_without_boxing
-};
-exports.default = _default;
-
-
-},{"../../../base/pixel":573}],603:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _drawable = _interopRequireDefault(require("./drawable"));
-
-var _position = _interopRequireDefault(require("../../../base/position"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/rectangle';
-var DEFAULT_RADIUS = 1;
-/**
- * @file Drawing rectangle class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var Rectangle =
-/*#__PURE__*/
-function (_Drawable) {
-  _inherits(Rectangle, _Drawable);
-
-  /**
-   * Create a shape instance.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
-   * @param {array|Vector} arg_position - shape position.
-   * @param {string}		 arg_color    - shape color.
-   * @param {number}       arg_width    - shape width.
-   * @param {number}       arg_height   - shape height.
-   * 
-   * @returns {nothing}
-   */
-  function Rectangle(arg_space, arg_owner, arg_position) {
-    var _this;
-
-    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
-    var arg_width = arguments.length > 4 ? arguments[4] : undefined;
-    var arg_height = arguments.length > 5 ? arguments[5] : undefined;
-
-    _classCallCheck(this, Rectangle);
-
-    _this = _possibleConstructorReturn(this, (Rectangle.__proto__ || Object.getPrototypeOf(Rectangle)).call(this, arg_space, arg_owner, arg_position, 'rectangle'));
-    _this.is_svg_rectangle = true;
-    _this._width = arg_width;
-    _this._height = arg_height;
-    _this.color = arg_color;
-    return _this;
-  }
-
-  _createClass(Rectangle, [{
-    key: "draw",
-    value: function draw() {
-      // DO NOT RENDER	
-      if (this.color == 'none') {
-        return;
-      }
-
-      var pos_h = this.h();
-      var pos_v = this.v();
-      var size_h = this.space().range_to_screen_h(this._width, this.space());
-      var size_v = this.space().range_to_screen_v(this._height, this.space());
-      this._shape = this.space().svg().rect(size_h, size_v).move(pos_h, pos_v - size_v);
-
-      if (this.color) {
-        this._shape.fill(this.color);
-      }
-
-      return this;
-    }
-  }]);
-
-  return Rectangle;
-}(_drawable.default);
-
-exports.default = Rectangle;
-
-
-},{"../../../base/position":575,"./drawable":594,"devapt-core-common/dist/js/utils/types":177}],604:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _pixel = _interopRequireDefault(require("../../../base/pixel"));
-
-var _pixelbox = _interopRequireDefault(require("../../../base/pixelbox"));
-
-var _position = _interopRequireDefault(require("../../../base/position"));
-
-var _vector = _interopRequireDefault(require("../../../base/vector"));
-
-var _domain = _interopRequireDefault(require("../../../base/domain"));
-
-var _drawable = _interopRequireDefault(require("./drawable"));
-
-var _axis = _interopRequireDefault(require("./axis"));
-
-var _project_2dto2d_euclide = _interopRequireDefault(require("./project_2dto2d_euclide"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function _set(object, property, value, receiver) { var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent !== null) { _set(parent, property, value, receiver); } } else if ("value" in desc && desc.writable) { desc.value = value; } else { var setter = desc.set; if (setter !== undefined) { setter.call(receiver, value); } } return value; }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/base/space';
-var DEFAULT_DOMAINS_SIZE = 500;
-var DEFAULT_DOMAINS_START = 0;
-var DEFAULT_DOMAINS_END = 10;
-var DEFAULT_DOMAINS_STEP = 1;
-/*
-DOMAINS EXAMPLE
-[
-	{
-		"name":"d0",
-		"start":0,
-		"end":10,
-		"step":1
-	},
-	{
-		"name":"d1",
-		"start":0,
-		"end":10,
-		"step":1
-	}
-]
-*/
-
-/**
- * @file Space class.
- * 
- * Map a multidimensional position ([x,y,z,t] for example) onto a PixelBox (part of the screen).
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- * @example
- * 	API
- * 		->owner():Drawable - get drawable owner (INHERITED).
- * 		->children():Drawable array - get drawable children (INHERITED).
- * 		->type():string - get drawable type (INHERITED).
- * 
- * 
- *      ->zoom():Zoom - get zoom object.
- *      ->zoom(value):this - update zoom object.
- *      ->zoom_in(step):this - update zoom object.
- *      ->zoom_out(step):this - update zoom object.
- * 
- * 		->translate(Vector pos, Vector tr):this - translate shape.
- * 		->rotate(Vector pos, Angle angle):this - rotate shape.
- * 
- */
-
-var Space =
-/*#__PURE__*/
-function (_Drawable) {
-  _inherits(Space, _Drawable);
-
-  /**
-   * Create an instance of Space.
-   * 
-   * @param {SVG.Element} arg_svg_canvas        - canvas element.
-   * @param {array}       arg_domains_settings  - dimensions domains configurations array.
-   * @param {object}      arg_pixelbox_settings - space PixelBox instance settings (optional)
-   * @param {object}      arg_drawing_settings  - space drawing settings (optional)
-   * 
-   * @returns {nothing}
-   */
-  function Space(arg_svg_canvas, arg_domains_settings) {
-    var _this;
-
-    var arg_pixelbox_settings = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
-    var arg_drawing_settings = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
-
-    _classCallCheck(this, Space);
-
-    _this = _possibleConstructorReturn(this, (Space.__proto__ || Object.getPrototypeOf(Space)).call(this, undefined, undefined, new _vector.default([0, 0, 0, 0]), 'space'));
-
-    _set(Space.prototype.__proto__ || Object.getPrototypeOf(Space.prototype), "_space", _assertThisInitialized(_this), _this);
-    /**
-     * Class type flag
-     * @type {boolean}
-     */
-
-
-    _this.is_svg_space = true; // BUILD SVG
-
-    _this._svg = arg_svg_canvas; // BUILD PIXEL BOX
-
-    var svg_canavs_viewbox = _this._svg.viewbox();
-
-    var box_settings = {
-      origin_h: 0,
-      origin_v: 0,
-      margin_h: 0,
-      margin_v: 0,
-      padding_h: 5,
-      padding_v: 5,
-      width: svg_canavs_viewbox.width,
-      height: svg_canavs_viewbox.height
-    };
-    _this._pixelbox = new _pixelbox.default(arg_pixelbox_settings ? arg_pixelbox_settings : box_settings); // BUILD DOMAINS
-
-    _this._domains = [];
-    _this._domains_by_index = {};
-    _this._domains_by_name = {};
-
-    _this._set_domains(arg_domains_settings); // BUILD DRAWING SETTINGS
-
-
-    _this._shape = _this._svg.group();
-    _this._drawing_settings = arg_drawing_settings;
-
-    if (_types.default.isString(_this._drawing_settings.background_color)) {
-      _this.background(_this._drawing_settings.background_color);
-    }
-
-    if (_types.default.isObject(_this._drawing_settings.axis)) {} // TODO
-    // INIT TRANSFORMATIONS
-    // const scales = new Vector()
-    // this._scales = scales.init(1, this._domains.length)
-    // const rotate
-
-
-    _this._axis = {}; // PUBLIC METHODS
-
-    _this.add_method('background');
-
-    _this.add_method('grid');
-
-    _this.add_method('axis');
-
-    _this.add_method('axis_h');
-
-    _this.add_method('axis_v');
-
-    return _this;
-  }
-  /**
-   * Get SVG canvas element instance.
-   * 
-   * @returns {object}
-   */
-
-
-  _createClass(Space, [{
-    key: "svg",
-    value: function svg() {
-      return this._svg;
-    }
-    /**
-     * Get space PixelBox instance.
-     * 
-     * @returns {PixelBox}
-     */
-
-  }, {
-    key: "pixelbox",
-    value: function pixelbox() {
-      return this._pixelbox;
-    }
-    /**
-     * Get all space domains array.
-     * 
-     * @returns {array}
-     */
-
-  }, {
-    key: "domains",
-    value: function domains() {
-      return this._domains;
-    }
-    /**
-     * Get X domain if it exists or undefined.
-     * 
-     * @returns {Domain|undefined}
-     */
-
-  }, {
-    key: "domain_x",
-    value: function domain_x() {
-      return 'x' in this._domains_by_name ? this._domains_by_name['x'] : undefined;
-    }
-    /**
-     * Get Y domain if it exists or undefined.
-     * 
-     * @returns {Domain|undefined}
-     */
-
-  }, {
-    key: "domain_y",
-    value: function domain_y() {
-      return 'y' in this._domains_by_name ? this._domains_by_name['y'] : undefined;
-    }
-    /**
-     * Get Z domain if it exists or undefined.
-     * 
-     * @returns {Domain|undefined}
-     */
-
-  }, {
-    key: "domain_z",
-    value: function domain_z() {
-      return 'z' in this._domains_by_name ? this._domains_by_name['z'] : undefined;
-    }
-    /**
-     * Get T domain if it exists or undefined.
-     * 
-     * @returns {Domain|undefined}
-     */
-
-  }, {
-    key: "domain_t",
-    value: function domain_t() {
-      return 't' in this._domains_by_name ? this._domains_by_name['t'] : undefined;
-    }
-    /*
-    
-    	Projection N dimensions to 2 dimensions
-    	Position->Pixel ratios
-    	Boxing filter
-    */
-
-    /**
-     * Project a multi-dimenstional position to a 2d Pixel.
-     * 
-     * @param {Array|Postion} arg_position - multi-dimenstional position to project.
-     * 
-     * @returns {Pixel}
-     */
-
-  }, {
-    key: "project",
-    value: function project(arg_position) {
-      var arg_without_boxing = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-      var arg_space = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this;
-
-      if (Array.isArray(arg_position)) {
-        arg_position = new _position.default(arg_position);
-      }
-
-      if (arg_space._domains.length <= 2) {
-        if (arg_without_boxing) {
-          return _project_2dto2d_euclide.default.project_without_boxing(arg_position, arg_space);
-        }
-
-        return _project_2dto2d_euclide.default.project(arg_position, arg_space);
-      }
-
-      return undefined;
-    }
-  }, {
-    key: "project_x",
-    value: function project_x(arg_position_x) {
-      var arg_space = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this;
-      var tmp_position = new _position.default([arg_position_x, 0]);
-      return _project_2dto2d_euclide.default.project(tmp_position, arg_space).h();
-    }
-  }, {
-    key: "project_y",
-    value: function project_y(arg_position_y) {
-      var arg_space = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this;
-      var tmp_position = new _position.default([arg_position_y, 0]);
-      return _project_2dto2d_euclide.default.project(tmp_position, arg_space).v();
-    }
-  }, {
-    key: "range_to_screen_h",
-    value: function range_to_screen_h(arg_position_x) {
-      var arg_space = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this;
-      var tmp_position = new _position.default([arg_position_x, 0]);
-      return _project_2dto2d_euclide.default.project_without_boxing(tmp_position, arg_space, 0, true).h();
-    }
-  }, {
-    key: "range_to_screen_v",
-    value: function range_to_screen_v(arg_position_y) {
-      var arg_space = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this;
-      var tmp_position = new _position.default([0, arg_position_y]);
-      return _project_2dto2d_euclide.default.project_without_boxing(tmp_position, arg_space, 0, true).v();
-    }
-  }, {
-    key: "rotate",
-    value: function rotate() {}
-  }, {
-    key: "translate",
-    value: function translate() {}
-  }, {
-    key: "scale",
-    value: function scale() {}
-  }, {
-    key: "background",
-    value: function background() {
-      var arg_color = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '#dde3e1';
-
-      var pixelbox = this._pixelbox.get_usable();
-
-      var background = this._svg.rect(pixelbox.width, pixelbox.height).move(pixelbox.top_left.h, pixelbox.top_left.v).fill(arg_color);
-
-      this._shape.add(background);
-
-      return background;
-    }
-  }, {
-    key: "axis",
-    value: function axis(arg_domain_name) {
-      var arg_color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '#fff';
-      var arg_width = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-      var position = this.get_origin_position();
-      var domain = arg_domain_name == 'x' ? this.domain_x() : this.domain_y();
-      var start = domain.start();
-      var end = domain.end();
-      position.value(domain.index(), domain.start());
-      var axis = new _axis.default(this, this, position, arg_domain_name, arg_color, arg_width);
-      axis.draw();
-
-      this._shape.add(axis.svg_shape());
-
-      this._axis[arg_domain_name] = axis;
-      return axis;
-    }
-  }, {
-    key: "get_origin_position",
-    value: function get_origin_position() {
-      var positions = [];
-      var count = this._domains.length;
-      var i = 0;
-
-      for (i; i < count; i++) {
-        positions.push(0);
-      }
-
-      return new _position.default(positions);
-    }
-  }, {
-    key: "get_start_position",
-    value: function get_start_position() {
-      var positions = [];
-      var count = this._domains.length;
-      var i = 0;
-
-      for (i; i < count; i++) {
-        var domain = this._domains_by_index[i];
-        positions.push(domain.start());
-      }
-
-      return new _position.default(positions);
-    }
-  }, {
-    key: "get_end_position",
-    value: function get_end_position() {
-      var positions = [];
-      var count = this._domains.length;
-      var i = 0;
-
-      for (i; i < count; i++) {
-        var domain = this._domains_by_index[i];
-        positions.push(domain.end());
-      }
-
-      return new _position.default(positions);
-    }
-  }, {
-    key: "_set_domains",
-    value: function _set_domains(arg_domains) {
-      var _this2 = this;
-
-      if (!_types.default.isNotEmptyArray(arg_domains)) {
-        return;
-      }
-
-      var index, start, end, step, name, domain;
-      arg_domains.forEach(function (domain_cfg, i) {
-        index = _types.default.isNumber(domain_cfg.index) ? domain_cfg.index : i;
-        start = _types.default.isNumber(domain_cfg.start) ? domain_cfg.start : DEFAULT_DOMAINS_START;
-        end = _types.default.isNumber(domain_cfg.end) ? domain_cfg.end : DEFAULT_DOMAINS_END;
-        step = _types.default.isNumber(domain_cfg.step) ? domain_cfg.step : DEFAULT_DOMAINS_STEP;
-        name = _types.default.isNotEmptyString(domain_cfg.name) ? domain_cfg.name : 'domains[' + i + ']';
-        domain = new _domain.default(name, index, start, end, step);
-
-        _this2._domains.push(domain);
-
-        _this2._domains_by_index[index] = domain;
-        _this2._domains_by_name[name] = domain;
-      });
-    }
-  }]);
-
-  return Space;
-}(_drawable.default);
-
-exports.default = Space;
-
-
-},{"../../../base/domain":571,"../../../base/pixel":573,"../../../base/pixelbox":574,"../../../base/position":575,"../../../base/vector":581,"./axis":591,"./drawable":594,"./project_2dto2d_euclide":602,"devapt-core-common/dist/js/utils/types":177}],605:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
-
-var _drawable = _interopRequireDefault(require("./drawable"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var plugin_name = 'Labs';
-var context = plugin_name + '/svg/star';
-var DEFAULT_INNER = 50;
-var DEFAULT_OUTER = 50;
-var DEFAULT_SPIKES = 5;
-/**
- * @file Drawing polygon class.
- * 
- * @author Luc BORIES
- * @license Apache-2.0
- * 
- */
-
-var Star =
-/*#__PURE__*/
-function (_Drawable) {
-  _inherits(Star, _Drawable);
-
-  /**
-   * Create a shape instance.
-   * 
-   * @param {Space}        arg_space    - drawing space.
-   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
-   * @param {array|Vector} arg_position - shape position.
-   * @param {string}		 arg_color    - shape color.
-   * @param {number}       arg_spikes   - shape spikes count.
-   * @param {number}       arg_inner    - shape inner.
-   * @param {number}       arg_outer    - shape outer.
-   * 
-   * @returns {nothing}
-   */
-  function Star(arg_space, arg_owner, arg_position) {
-    var _this;
-
-    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
-    var arg_spikes = arguments.length > 4 ? arguments[4] : undefined;
-    var arg_inner = arguments.length > 5 ? arguments[5] : undefined;
-    var arg_outer = arguments.length > 6 ? arguments[6] : undefined;
-
-    _classCallCheck(this, Star);
-
-    _this = _possibleConstructorReturn(this, (Star.__proto__ || Object.getPrototypeOf(Star)).call(this, arg_space, arg_owner, arg_position, 'star'));
-    _this.is_svg_star = true;
-    _this._spikes = typeof arg_spikes == 'number' ? arg_spikes : DEFAULT_SPIKES;
-    _this._inner = typeof arg_inner == 'number' ? arg_inner : DEFAULT_INNER;
-    _this._outer = typeof arg_outer == 'number' ? arg_outer : DEFAULT_OUTER;
-    _this.color = arg_color;
-    return _this;
-  }
-
-  _createClass(Star, [{
-    key: "draw",
-    value: function draw() {
-      // DO NOT RENDER	
-      if (this.color == 'none') {
-        return;
-      }
-
-      var pos_h = this.h();
-      var pos_v = this.v();
-      var inner_h = this.space().range_to_screen_h(this._inner);
-      var inner_v = this.space().range_to_screen_v(this._inner);
-      var inner = Math.min(inner_h, inner_v);
-      var outer_h = this.space().range_to_screen_h(this._outer);
-      var outer_v = this.space().range_to_screen_v(this._outer);
-      var outer = Math.min(outer_h, outer_v);
-      var spikes = typeof this._spikes == 'number' ? this._spikes : DEFAULT_SPIKES;
-      var i, a, x, y;
-      var points = [];
-      var degrees = 360 / spikes;
-
-      for (i = 0; i < spikes; i++) {
-        a = i * degrees + 90;
-        x = outer + inner * Math.cos(a * Math.PI / 180);
-        y = outer + inner * Math.sin(a * Math.PI / 180);
-        points.push([x, y]);
-        a += degrees / 2;
-        x = outer + outer * Math.cos(a * Math.PI / 180);
-        y = outer + outer * Math.sin(a * Math.PI / 180);
-        points.push([x, y]);
-      }
-
-      this._shape = this.space().svg().polygon(new SVG.PointArray(points)).center(pos_h, pos_v);
-      this.draw_color();
-      return this;
-    }
-  }]);
-
-  return Star;
-}(_drawable.default);
-
-exports.default = Star;
-
-
-},{"./drawable":594,"devapt-core-common/dist/js/utils/types":177}],606:[function(require,module,exports){
+},{"./factory":590,"assert":616,"devapt-core-common/dist/js/utils/types":177,"lodash":953}],592:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -69882,7 +67269,7 @@ function (_Terminal) {
 exports.default = FeaturedTerminal;
 
 
-},{"./terminal":607,"./terminal_feature":608,"devapt-core-common/dist/js/utils/types":177,"lodash":948}],607:[function(require,module,exports){
+},{"./terminal":593,"./terminal_feature":594,"devapt-core-common/dist/js/utils/types":177,"lodash":953}],593:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70098,7 +67485,7 @@ function (_Component) {
 exports.default = Terminal;
 
 
-},{"devapt-core-browser/dist/js/base/component":5}],608:[function(require,module,exports){
+},{"devapt-core-browser/dist/js/base/component":5}],594:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70471,7 +67858,7 @@ function (_Feature) {
 exports.default = TerminalFeature;
 
 
-},{"devapt-core-browser/dist/js/base/feature":11,"devapt-core-browser/dist/js/base/web_worker":13,"devapt-core-common/dist/js/utils/types":177,"path":949}],609:[function(require,module,exports){
+},{"devapt-core-browser/dist/js/base/feature":11,"devapt-core-browser/dist/js/base/web_worker":13,"devapt-core-common/dist/js/utils/types":177,"path":954}],595:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70555,7 +67942,533 @@ var _default = function _default() {
 exports.default = _default;
 
 
-},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"virtual-dom/h":973}],610:[function(require,module,exports){
+},{"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"virtual-dom/h":978}],596:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// DEVAPT CORE BROWSER IMPORTS
+// PLUGIN IMPORTS
+var plugin_name = 'Labs';
+var context = plugin_name + '/math/angle';
+var DEFAULT_ANGLE_UNIT = 'degree';
+var DEFAULT_ANGLE_VALUE = 0;
+/**
+ * @file Angle class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ * @example
+ * 	API
+ * 		->unit():string - get angle unit.
+ * 		->value(v, unit):Angle - set angle value.
+ * 
+ */
+
+var Angle =
+/*#__PURE__*/
+function () {
+  /**
+   * Create an instance of Vector.
+   * 
+   * @returns {nothing}
+   */
+  function Angle(value, unit) {
+    _classCallCheck(this, Angle);
+
+    this.is_drawing_angle = true;
+    this._unit = undefined;
+    this._value = undefined;
+
+    this._set_unit(unit);
+
+    this._set_value(value, unit);
+  }
+
+  _createClass(Angle, [{
+    key: "unit",
+    value: function unit(_unit) {
+      if (_unit) {
+        this._set_unit(_unit);
+
+        return this;
+      }
+
+      return this._unit;
+    }
+  }, {
+    key: "value",
+    value: function value(_value, arg_unit) {
+      if (_value) {
+        this._set_value(_value);
+
+        if (arg_unit) {
+          this._set_unit(arg_unit);
+        }
+
+        return this;
+      }
+
+      var unit = this._normalize_unit(arg_unit);
+
+      if (unit == this._unit) {
+        return this._value;
+      }
+
+      return this._to_value(this._value, this._unit, unit);
+    }
+  }, {
+    key: "_set_unit",
+    value: function _set_unit(unit) {
+      if (!_types.default.isString(unit)) {
+        unit = DEFAULT_ANGLE_UNIT;
+      }
+
+      switch (unit.toLocalLowerCase()) {
+        case 'deg':
+        case 'degree':
+          this._update_value(this._unit, 'degree');
+
+          this._unit = 'degree';
+          break;
+
+        case 'rad':
+        case 'radian':
+          this._update_value(this._unit, 'radian');
+
+          this._unit = 'radian';
+          break;
+      }
+    }
+  }, {
+    key: "_normalize_unit",
+    value: function _normalize_unit(arg_unit) {
+      switch (arg_unit.toLocalLowerCase()) {
+        case 'deg':
+        case 'degree':
+          return 'degree';
+
+        case 'rad':
+        case 'radian':
+          return 'radian';
+      }
+
+      return undefined;
+    }
+  }, {
+    key: "_set_value",
+    value: function _set_value(value) {
+      if (_types.default.isNumber(value)) {
+        this._value = value;
+        return;
+      }
+
+      if (_types.default.isString(value)) {
+        switch (value) {
+          case 'PI':
+            this._value = Math.PI;
+            break;
+
+          case '2PI':
+            this._value = 2 * Math.PI;
+            break;
+
+          case '3PI':
+            this._value = 3 * Math.PI;
+            break;
+
+          case '4PI':
+            this._value = 4 * Math.PI;
+            break;
+
+          case '2xPI':
+            this._value = 2 * Math.PI;
+            break;
+
+          case '3xPI':
+            this._value = 3 * Math.PI;
+            break;
+
+          case '4xPI':
+            this._value = 4 * Math.PI;
+            break;
+
+          case 'PI/2':
+            this._value = Math.PI / 2;
+            break;
+
+          case 'PI/3':
+            this._value = Math.PI / 3;
+            break;
+
+          case 'PI/4':
+            this._value = Math.PI / 4;
+            break;
+
+          case 'PI/5':
+            this._value = Math.PI / 5;
+            break;
+
+          case 'PI/6':
+            this._value = Math.PI / 6;
+            break;
+
+          case 'PI/7':
+            this._value = Math.PI / 7;
+            break;
+
+          case 'PI/8':
+            this._value = Math.PI / 8;
+            break;
+
+          case 'PI/9':
+            this._value = Math.PI / 9;
+            break;
+
+          case 'PI/10':
+            this._value = Math.PI / 10;
+            break;
+
+          case 'PI/11':
+            this._value = Math.PI / 11;
+            break;
+
+          case 'PI/12':
+            this._value = Math.PI / 1;
+            break;
+        }
+      }
+    }
+  }, {
+    key: "_update_value",
+    value: function _update_value(old_unit, new_unit) {
+      this._value = this._to_value(this._value, old_unit, new_unit);
+    }
+  }, {
+    key: "_to_value",
+    value: function _to_value(old_value, old_unit, new_unit) {
+      if (!_types.default.isString(old_unit) || !_types.default.isString(new_unit)) {
+        return undefined;
+      }
+
+      if (old_unit == new_unit) {
+        return undefined;
+      }
+
+      switch (new_unit) {
+        case 'degree':
+          if (old_unit == 'radian') {
+            return 180 * old_value / Math.PI;
+          }
+
+          break;
+
+        case 'radian':
+          if (old_unit == 'degree') {
+            return Math.PI * old_value / 180;
+          }
+
+          break;
+      }
+
+      return undefined;
+    }
+  }]);
+
+  return Angle;
+}();
+
+exports.default = Angle;
+
+
+},{"devapt-core-common/dist/js/utils/types":177}],597:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// DEVAPT CORE BROWSER IMPORTS
+// PLUGIN IMPORTS
+var plugin_name = 'Labs';
+var context = plugin_name + '/math/range';
+/**
+ * @file Range class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ * @example
+ * 	API
+ * 		->size():number - get range size.
+ * 		->count():number - get range steps count.
+ * 
+ * 		->start():number - get range start.
+ * 		->start(v):this  - set range start.
+ * 
+ * 		->end():number - get range end.
+ * 		->end(v):this  - set range end.
+ * 
+ * 		->step():number - get range step.
+ * 		->step(v):this  - set range step.
+ */
+
+var Range =
+/*#__PURE__*/
+function () {
+  /**
+   * Create an instance of a Range.
+   * 
+   * @param {number} arg_start - range start.
+   * @param {number} arg_end   - range end.
+   * @param {number} arg_step  - range step.
+   * 
+   * @returns {nothing}
+   */
+  function Range(arg_start, arg_end, arg_step) {
+    _classCallCheck(this, Range);
+
+    this.is_range = true;
+    this._start = undefined;
+    this._end = undefined;
+    this._step = undefined;
+    this.start(arg_start);
+    this.end(arg_end);
+    this.step(arg_step);
+  }
+
+  _createClass(Range, [{
+    key: "size",
+    value: function size() {
+      return this._end - this._start;
+    }
+  }, {
+    key: "count",
+    value: function count() {
+      var size = this._end - this._start;
+      return size % this._step;
+    }
+  }, {
+    key: "start",
+    value: function start(arg_value) {
+      if (_types.default.isNumber(arg_value)) {
+        this._start = arg_value;
+        return this;
+      }
+
+      return this._start;
+    }
+  }, {
+    key: "end",
+    value: function end(arg_value) {
+      if (_types.default.isNumber(arg_value)) {
+        this._end = arg_value;
+        return this;
+      }
+
+      return this._end;
+    }
+  }, {
+    key: "step",
+    value: function step(arg_value) {
+      if (_types.default.isNumber(arg_value)) {
+        this._step = arg_value;
+        return this;
+      }
+
+      return this._step;
+    }
+  }]);
+
+  return Range;
+}();
+
+exports.default = Range;
+
+
+},{"devapt-core-common/dist/js/utils/types":177}],598:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// DEVAPT CORE BROWSER IMPORTS
+// PLUGIN IMPORTS
+var plugin_name = 'Labs';
+var context = plugin_name + '/math/vector';
+/**
+ * @file Vector class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ * @example
+ * 	API
+ * 		->size():number - get vector size.
+ * 		->size(v):this - set vector size (schrink or expand).
+ * 
+ * 		->values():array - get vector values.
+ * 		->values(v):this - set vector values.
+ * 
+ *      ->value(index):number  - gett value at index.
+ *      ->value(index, v):this - set value at index.
+ * 
+ */
+
+var Vector =
+/*#__PURE__*/
+function () {
+  /**
+   * Create an instance of Vector.
+   * 
+   * @param {array|Vector} arg_values - vector values.
+   * 
+   * @returns {nothing}
+   */
+  function Vector(arg_values) {
+    _classCallCheck(this, Vector);
+
+    this.is_vector = true;
+    this._items = undefined;
+    this.values(arg_values);
+  }
+
+  _createClass(Vector, [{
+    key: "size",
+    value: function size(arg_value) {
+      if (_types.default.isNumber(arg_value)) {
+        if (arg_value < this._items.length) {
+          var i;
+
+          for (i = arg_value + 1; i < this._items.length; i++) {
+            delete this._items[i];
+          }
+        } else if (arg_value > this._items.length) {
+          var _i;
+
+          for (_i = this._items.length; _i < arg_value; _i++) {
+            this._items.push(0);
+          }
+        }
+
+        return this;
+      }
+
+      return this._items.length;
+    }
+  }, {
+    key: "value",
+    value: function value(arg_index, arg_value) {
+      if (_types.default.isNumber(arg_value)) {
+        this._set_value(arg_index, arg_value);
+
+        return this;
+      }
+
+      return this._get_value(arg_index);
+    }
+  }, {
+    key: "values",
+    value: function values(arg_values) {
+      // console.log(context + ':values:', arg_values)
+      if (_types.default.isObject(arg_values) && arg_values.is_vector) {
+        this._set_values(arg_values.values());
+
+        return this;
+      }
+
+      if (_types.default.isArray(arg_values)) {
+        this._set_values(arg_values);
+
+        return this;
+      }
+
+      return this._items;
+    }
+  }, {
+    key: "init",
+    value: function init(arg_count) {
+      var arg_value = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+      this._items = new Array(arg_count).fill(arg_value);
+      return this;
+    }
+  }, {
+    key: "_set_values",
+    value: function _set_values(values) {
+      if (_types.default.isArray(values) && values.length > 1) {
+        this._items = values;
+      }
+    }
+  }, {
+    key: "_get_value",
+    value: function _get_value(arg_index) {
+      if (_types.default.isNumber(arg_index) && arg_index >= 0 && arg_index < this._items.length) {
+        return this._items[arg_index];
+      }
+    }
+  }, {
+    key: "_set_value",
+    value: function _set_value(arg_index, arg_value) {
+      if (_types.default.isNumber(arg_index) && _types.default.isNumber(arg_value) && arg_index >= 0) {
+        if (arg_index < this._items.length) {
+          this._items[arg_index] = arg_value;
+        } else if (arg_index == this._items.length) {
+          this._items.push(arg_value);
+        }
+      }
+    }
+  }]);
+
+  return Vector;
+}();
+
+exports.default = Vector;
+
+
+},{"devapt-core-common/dist/js/utils/types":177}],599:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70566,7 +68479,3002 @@ var _default = 'Labs';
 exports.default = _default;
 
 
-},{}],611:[function(require,module,exports){
+},{}],600:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _canvas = _interopRequireDefault(require("../../base/components/canvas"));
+
+var _factory = _interopRequireDefault(require("../shapes/factory"));
+
+var _space = _interopRequireDefault(require("../shapes/space"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return _get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/canvas_svgjs';
+
+var CanvasSvgJS =
+/*#__PURE__*/
+function (_Canvas) {
+  _inherits(CanvasSvgJS, _Canvas);
+
+  /**
+   * Create an instance.
+   * 
+   * 	API:
+   *      ->...
+   * 
+   * @param {object} arg_runtime     - client runtime.
+   * @param {object} arg_state       - component state.
+   * @param {string} arg_log_context - context of traces of this instance (optional).
+   * 
+   * @returns {nothing}
+   */
+  function CanvasSvgJS(arg_runtime, arg_state, arg_log_context) {
+    var _this;
+
+    _classCallCheck(this, CanvasSvgJS);
+
+    _this = _possibleConstructorReturn(this, (CanvasSvgJS.__proto__ || Object.getPrototypeOf(CanvasSvgJS)).call(this, arg_runtime, arg_state, arg_log_context ? arg_log_context : context));
+    _this.is_canvas_svgjs = true;
+
+    _this.add_assets_dependancy('js-svgjs');
+
+    _this._space = undefined;
+    _this._factory = undefined; // this.enable_trace()
+
+    return _this;
+  }
+  /**
+   * Prepare drawing space.
+   * 
+   * @param {string} 	arg_dom_id - DOM element id.
+   * @param {number} arg_width - DOM element width.
+   * @param {number} arg_height - DOM element height.
+   * @param {object} arg_space - drawing space configuration.
+   * @param {object} arg_scene - drawing shapes.
+   * 
+   * @returns {nothing}
+   */
+
+
+  _createClass(CanvasSvgJS, [{
+    key: "prepare_space",
+    value: function prepare_space(arg_dom_id, arg_width, arg_height, arg_space, arg_scene) {
+      _get(CanvasSvgJS.prototype.__proto__ || Object.getPrototypeOf(CanvasSvgJS.prototype), "prepare_space", this).call(this, arg_dom_id, arg_width, arg_height, arg_space, arg_scene);
+
+      this._space = new _space.default(arg_dom_id, arg_space.domains, arg_width, arg_height);
+
+      this._space.draw();
+
+      this._space.background();
+
+      this._space.axis_center_h();
+
+      this._space.axis_center_v();
+
+      this._factory = new _factory.default(this._space);
+    }
+    /**
+     * Process drawing item.
+     * 
+     * @param {object} arg_scene_item - scene item to draw.
+     * 
+     * @returns {nothing}
+     */
+
+  }, {
+    key: "process_scene_item",
+    value: function process_scene_item(arg_scene_item) {
+      _get(CanvasSvgJS.prototype.__proto__ || Object.getPrototypeOf(CanvasSvgJS.prototype), "process_scene_item", this).call(this, arg_scene_item);
+
+      this._factory.create(arg_scene_item);
+    }
+    /**
+     * Finish drawing space.
+     * 
+     * @returns {nothing}
+     */
+
+  }, {
+    key: "finish_space",
+    value: function finish_space() {
+      console.log(context + ':finish_space');
+    }
+  }]);
+
+  return CanvasSvgJS;
+}(_canvas.default);
+
+exports.default = CanvasSvgJS;
+
+
+},{"../../base/components/canvas":570,"../shapes/factory":607,"../shapes/space":614,"devapt-core-common/dist/js/utils/types":177}],601:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _geometricable = _interopRequireDefault(require("./geometricable"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svgjs/drawable';
+/**
+ * @file Drawiable base item class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ * @example
+ * 	API
+ * 		->owner():Drawable - get drawable owner.
+ * 		->type():string - get drawable type.
+ * 
+ */
+
+var Drawable =
+/*#__PURE__*/
+function (_Geometricable) {
+  _inherits(Drawable, _Geometricable);
+
+  /**
+   * Create an instance of Drawable.
+   * 
+   * @param {SvgSpace} arg_space    - drawable space instance.
+   * @param {Drawable} arg_owner    - drawable owner instance.
+   * @param {GeoPoint} arg_position - geometric position.
+   * @param {string}   arg_type     - svg shape type name.
+   * 
+   * @returns {nothing}
+   */
+  function Drawable(arg_space, arg_owner, arg_position, arg_type) {
+    var _this;
+
+    _classCallCheck(this, Drawable);
+
+    _this = _possibleConstructorReturn(this, (Drawable.__proto__ || Object.getPrototypeOf(Drawable)).call(this, arg_space, arg_position));
+    _this.is_svg_drawable = true; // console.log(context + ':constructor:type:', arg_type)
+    // console.log(context + ':constructor:position:', arg_position)
+
+    _this._owner = arg_owner;
+    _this._shape = undefined;
+    _this._methods = {
+      x: true,
+      y: true,
+      z: true,
+      t: true,
+      h: true,
+      v: true,
+      move: true
+    };
+    _this._children = []; // PUBLIC PROPERTIES
+
+    _this.type = arg_type;
+    _this.color = undefined;
+    _this.fill = false;
+    _this.line_width = 1;
+    _this.background_color = 'white';
+    return _this;
+  }
+
+  _createClass(Drawable, [{
+    key: "svg_shape",
+    value: function svg_shape() {
+      return this._shape;
+    }
+  }, {
+    key: "owner",
+    value: function owner(value) {
+      if (_types.default.isObject(value) && value.is_svg_drawable) {
+        this._owner = value;
+
+        this._owner.add_child(value);
+
+        return this;
+      }
+
+      return this._owner;
+    }
+  }, {
+    key: "draw",
+    value: function draw() {
+      // TO IMPLEMENT IN SUB CLASSES
+      return this;
+    }
+  }, {
+    key: "draw_color",
+    value: function draw_color() {
+      if (this.color) {
+        if (this.fill) {
+          this._shape.fill({
+            color: this.color,
+            opacity: 1
+          });
+        } else {
+          this._shape.fill({
+            color: this.background_color,
+            opacity: 0.1
+          });
+
+          var options = {
+            width: this.line_width,
+            color: this.color ? this.color : 'blue'
+            /*,
+            linecap:'round'*/
+
+          };
+
+          this._shape.stroke(options);
+        }
+      }
+    }
+    /** 
+     * Get all Projectable children instances.
+     * 
+     * @returns {array}
+    */
+
+  }, {
+    key: "children",
+    value: function children() {
+      return this._children;
+    }
+    /**
+     * Add a children element.
+     * 
+     * @param {Projectable} value - Projectable instance.
+     * 
+     * @returns {this} - for chainable calls.
+     */
+
+  }, {
+    key: "add_child",
+    value: function add_child(value) {
+      if (_types.default.isObject(value) && value.is_svg_projectable) {
+        this._children.push(value);
+      }
+
+      return this;
+    }
+    /**
+     * Project positions and all children positions.
+     * 
+     * @returns {nothing}
+     */
+
+  }, {
+    key: "project",
+    value: function project() {
+      var _this2 = this;
+
+      this._geopositions.forEach(function (geopos, index) {
+        _this2._pixelpositions[index] = _this2.space().project(geopos);
+      });
+
+      this._children.forEach(function (child) {
+        child.project();
+      });
+    }
+    /**
+     * Get horizontal projected position coordinate.
+     * 
+     * @param {integer} arg_index - position index (optional).
+     * 
+     * @returns {Number}
+     */
+
+  }, {
+    key: "h",
+    value: function h() {
+      var arg_index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+      return this._pixelpositions[arg_index].h();
+    }
+    /**
+     * Get vertical projected position coordinate.
+     * 
+     * @param {integer} arg_index - position index (optional).
+     * 
+     * @returns {Number}
+     */
+
+  }, {
+    key: "v",
+    value: function v() {
+      var arg_index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+      return this._pixelpositions[arg_index].v();
+    }
+  }]);
+
+  return Drawable;
+}(_geometricable.default);
+
+exports.default = Drawable;
+
+
+},{"./geometricable":602,"devapt-core-common/dist/js/utils/types":177}],602:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _methodeable = _interopRequireDefault(require("../base/methodeable"));
+
+var _pixelpoint = _interopRequireDefault(require("../base/pixelpoint"));
+
+var _geopoint = _interopRequireDefault(require("../geometry/geopoint"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svgjs/geometricable';
+/**
+ * @file Geometricable base item class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Geometricable =
+/*#__PURE__*/
+function (_Methodeable) {
+  _inherits(Geometricable, _Methodeable);
+
+  /**
+   * Create an instance of Geometricable.
+   * 
+   * @param {GeoSpace} arg_geospace - geometric space instance.
+   * @param {GeoPoint} arg_geopoint - geometric position into given space instance.
+   * 
+   * @returns {nothing}
+   */
+  function Geometricable(arg_geospace, arg_geopoint) {
+    var _this;
+
+    _classCallCheck(this, Geometricable);
+
+    _this = _possibleConstructorReturn(this, (Geometricable.__proto__ || Object.getPrototypeOf(Geometricable)).call(this));
+    _this.is_geometricable = true;
+    _this._geospace = arg_geospace;
+    _this._geoposition = arg_geopoint;
+    _this._geo_items = [_this._geoposition];
+    _this._pixelposition = new _pixelpoint.default(0, 0);
+    _this._pixelpositions = [_this._pixelposition];
+    return _this;
+  }
+  /**
+   * Get GeoSpace instance.
+   * 
+   * @returns {GeoSpace}
+   */
+
+
+  _createClass(Geometricable, [{
+    key: "geospace",
+    value: function geospace() {
+      return this._geospace;
+    }
+    /**
+     * Get all geo items.
+     * 
+     * @returns {array}
+     */
+
+  }, {
+    key: "geo_items",
+    value: function geo_items() {
+      return this._geo_items;
+    }
+    /**
+     * Register an other GeoPoint.
+     * 
+     * @param {GeoPoint} arg_point - position.
+     * 
+     * @returns {this}
+     */
+
+  }, {
+    key: "add_point",
+    value: function add_point(arg_point) {
+      if (_types.default.isObject(arg_point) && arg_point.is_geopoint) {
+        this._geo_items.push(arg_point);
+
+        this._pixelpositions.push(new _pixelpoint.default(0, 0));
+      }
+    }
+    /**
+     * Get or set geometric position.
+     * 
+     * @param {GeoPoint} arg_position - (optional)
+     * 
+     * @returns {GeoPoint|This}
+     */
+
+  }, {
+    key: "position",
+    value: function position() {
+      var arg_position = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+
+      if (arg_position !== undefined) {
+        if (_types.default.isArray(arg_position) || this._is_vector(arg_position)) {
+          this._geoposition.values(arg_position);
+        }
+
+        return this;
+      }
+
+      return this._geoposition;
+    }
+    /**
+     * Get or set geometric position for X domain.
+     * 
+     * @param {Number} arg_value - geometric space X domain position (optional).
+     * 
+     * @returns {GeoPoint|This}
+     */
+
+  }, {
+    key: "x",
+    value: function x(arg_value) {
+      return this._geoposition.x(arg_value);
+    }
+    /**
+     * Get or set geometric position for Y domain.
+     * 
+     * @param {Number} arg_value - geometric space Y domain position (optional).
+     * 
+     * @returns {GeoPoint|This}
+     */
+
+  }, {
+    key: "y",
+    value: function y(arg_value) {
+      return this._geoposition.y(arg_value);
+    }
+    /**
+     * Get or set geometric position for X domain.
+     * 
+     * @param {Number} arg_value - geometric space X domain position (optional).
+     * 
+     * @returns {GeoPoint|This}
+     */
+
+  }, {
+    key: "z",
+    value: function z(arg_value) {
+      return this._geoposition.z(arg_value);
+    }
+    /**
+     * Get or set geometric position for T domain.
+     * 
+     * @param {Number} arg_value - geometric space T domain position (optional).
+     * 
+     * @returns {GeoPoint|This}
+     */
+
+  }, {
+    key: "t",
+    value: function t(arg_value) {
+      return this._geoposition.t(arg_value);
+    }
+    /**
+     * Project positions and all children positions.
+     * @abstract
+     * 
+     * @returns {nothing}
+     */
+
+  }, {
+    key: "project",
+    value: function project() {}
+    /**
+     * Move shape at given position.
+     * 	- this.move(10, 10)
+     *  - this.move( new GeoPoint([0,0]) )
+     *  - this.move( [0,0] )
+     * 
+     * @param {GeoPoint|Number} arg_position 
+     * @param {Number}          arg_opd2 (optional)
+     * 
+     * @returns {This}
+     */
+
+  }, {
+    key: "move",
+    value: function move(arg_position, arg_opd2) {
+      if (_types.default.isNumber(arg_position) && _types.default.isNumber(arg_opd2)) {
+        arg_position = [arg_position, arg_opd2];
+      }
+
+      this._geoposition.values(arg_position);
+
+      this.project();
+
+      if (this._shape) {
+        var h = this._pixelposition.h();
+
+        var v = this._pixelposition.v();
+
+        console.log(context + ':move:x=[%d] y=[%d] h=[%d] v=[%d]', arg_position[0], arg_position[1], h, v, this._shape);
+
+        this._shape.x(h).y(v);
+      } // MOVE CHILDREN
+
+
+      this._children.forEach(function (child) {
+        return child.move(arg_position);
+      });
+
+      return this;
+    }
+    /**
+     * Test if operand is a Vector instance.
+     * @private
+     * 
+     * @param {any} arg_value 
+     * 
+     * @returns {boolean}
+     */
+
+  }, {
+    key: "_is_vector",
+    value: function _is_vector(arg_value) {
+      return _types.default.isObject(arg_value) && arg_value.is_vector;
+    }
+  }]);
+
+  return Geometricable;
+}(_methodeable.default);
+
+exports.default = Geometricable;
+
+
+},{"../base/methodeable":571,"../base/pixelpoint":573,"../geometry/geopoint":581,"devapt-core-common/dist/js/utils/types":177}],603:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _line_arrow = _interopRequireDefault(require("./line_arrow"));
+
+var _geopoint = _interopRequireDefault(require("../../geometry/geopoint"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return _get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svgjs/shapes/axis';
+var DEFAULT_RADIUS = 1;
+/**
+ * @file Drawing axis class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Axis =
+/*#__PURE__*/
+function (_LineArrow) {
+  _inherits(Axis, _LineArrow);
+
+  /**
+   * Create a shape instance.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector} arg_pos_orig - shape origin position.
+   * @param {array|Vector} arg_domain   - axis domain.
+   * @param {string}		 arg_color    - shape color.
+   * @param {number}       arg_width    - shape width in pixels.
+   * 
+   * @returns {nothing}
+   */
+  function Axis(arg_space, arg_owner, arg_pos_orig, arg_domain) {
+    var _this;
+
+    var arg_color = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : undefined;
+    var arg_width = arguments.length > 5 ? arguments[5] : undefined;
+
+    _classCallCheck(this, Axis);
+
+    _this = _possibleConstructorReturn(this, (Axis.__proto__ || Object.getPrototypeOf(Axis)).call(this, arg_space, arg_owner, arg_pos_orig, arg_color, false, true, arg_width, 5, 5, [100, 100], undefined));
+    _this.type = 'axis';
+    _this.is_svg_axis = true;
+    _this._line_length = undefined;
+    _this._line_angle = undefined;
+    _this._domain = arg_domain == 'x' ? 'x' : 'y';
+    _this._width = arg_width ? arg_width : 1;
+    _this._dashes = ''; // '5,5'
+
+    _this.color = arg_color ? arg_color : 'blue';
+    var domain = _this._domain == 'x' ? arg_space.domain_x() : arg_space.domain_y();
+    var start = domain.start();
+    var end = domain.end();
+
+    if (_this._domain == 'x') {
+      _this.add_point(new _geopoint.default([start, 0, 0, 0])); // Point at 1
+
+
+      _this.add_point(new _geopoint.default([end, 0, 0, 0])); // Point at 2
+      // this._line_end_position = new GeoPoint([end, 0])
+
+    } else {
+      _this.add_point(new _geopoint.default([0, start, 0, 0])); // Point at 1
+
+
+      _this.add_point(new _geopoint.default([0, end, 0, 0])); // Point at 2
+      // this._line_end_position = new GeoPoint([0, end])
+
+    }
+
+    return _this;
+  }
+
+  _createClass(Axis, [{
+    key: "draw",
+    value: function draw() {
+      // DO NOT RENDER	
+      if (this.color == 'none') {
+        return;
+      }
+
+      _get(Axis.prototype.__proto__ || Object.getPrototypeOf(Axis.prototype), "draw", this).call(this);
+
+      var domain = this._domain == 'x' ? this._space.domain_x() : this._space.domain_y(); // const start = domain.start()
+      // const step  = domain.step()
+      // const end   = domain.end()
+
+      if (this._domain == 'x') {
+        // const pixel = this.project( new Position([start, 0, 0, 0]) )
+        var h1 = this.h(1);
+        var v1 = this.v(1);
+        var r1 = this.space().svg().rect(2, 4).move(h1, v1 - 2);
+
+        this._shape.add(r1);
+      } else {
+        // const pixel = this.project( new Position([0, start, 0, 0]) )
+        var _h = this.h(1);
+
+        var _v = this.v(1);
+
+        var _r = this.space().svg().rect(4, 2).move(_h - 2, _v - 2);
+
+        this._shape.add(_r);
+      }
+
+      if (this.color && this._width) {
+        this._shape.stroke({
+          color: this.color,
+          width: this._width,
+          dasharray: this._dashes
+        });
+      }
+
+      return this;
+    }
+  }]);
+
+  return Axis;
+}(_line_arrow.default);
+
+exports.default = Axis;
+
+
+},{"../../geometry/geopoint":581,"./line_arrow":609,"devapt-core-common/dist/js/utils/types":177}],604:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _drawable = _interopRequireDefault(require("../drawable"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svg/car';
+var DEFAULT_RADIUS = 1;
+/**
+ * @file Drawing car class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Car =
+/*#__PURE__*/
+function (_Drawable) {
+  _inherits(Car, _Drawable);
+
+  /**
+   * Create a shape instance.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector} arg_position - shape position.
+   * @param {string}		 arg_color    - shape color.
+   * @param {number}       arg_width    - shape width.
+   * @param {number}       arg_height   - shape height.
+   * 
+   * @returns {nothing}
+   */
+  function Car(arg_space, arg_owner, arg_position) {
+    var _this;
+
+    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
+    var arg_width = arguments.length > 4 ? arguments[4] : undefined;
+    var arg_height = arguments.length > 5 ? arguments[5] : undefined;
+
+    _classCallCheck(this, Car);
+
+    _this = _possibleConstructorReturn(this, (Car.__proto__ || Object.getPrototypeOf(Car)).call(this, arg_space, arg_owner, arg_position, 'car'));
+    _this.is_svg_rectangle = true;
+    _this._width = arg_width;
+    _this._height = arg_height;
+    _this.color = arg_color;
+    return _this;
+  }
+
+  _createClass(Car, [{
+    key: "draw",
+    value: function draw() {
+      var _this2 = this;
+
+      var pos_h = this.h();
+      var pos_v = this.v();
+      console.log(context + ':draw:pos_h=%d', pos_h);
+      console.log(context + ':draw:pos_v=%d', pos_v);
+      var size_h = this.space().project_x(this._width);
+      var size_v = this.space().project_y(this._height);
+      console.log(context + ':draw:width=%d', this._width);
+      console.log(context + ':draw:height=%d', this._height);
+      console.log(context + ':draw:size_h=%d', size_h);
+      console.log(context + ':draw:size_v=%d', size_v); // DRAW SHAPE OF SIZE x:1-100 y:1-100
+
+      var shape_1 = this.space().svg().rect(60, 30).move(20, 0).fill('blue');
+      var shape_2 = this.space().svg().rect(100, 20).move(0, 30).fill('red');
+      var shape_3 = this.space().svg().circle(20).move(15, 40).fill('grey');
+      var shape_4 = this.space().svg().circle(20).move(65, 40).fill('grey');
+
+      if (this.color) {
+        shape_1.fill(this.color);
+        shape_2.fill(this.color);
+      } // BUILD
+
+
+      this._shape = this.space().svg().group();
+
+      this._shape.add(shape_1);
+
+      this._shape.add(shape_2);
+
+      this._shape.add(shape_3);
+
+      this._shape.add(shape_4); // SCALE
+
+
+      var scale = Math.max(size_v, size_h) / 100;
+      console.log(context + ':draw:scale=%d', scale);
+
+      this._shape.move(pos_h, pos_v).scale(scale); // ANIMATE
+
+
+      var rot_point_h = this.space().project_x(50) * scale;
+      var rot_point_v = this.space().project_y(40) * scale;
+
+      this._shape.move(0, pos_v) // .rotate(25, rot_point_h, rot_point_v)
+      .rotate(25).animate({
+        duration: 3000,
+        delay: '1s',
+        ease: '-'
+      }).move(pos_h + size_h * 0.8, pos_v).afterAll(function () {
+        _this2._shape.move(0, pos_v);
+      }).loop(3);
+
+      this._shape.mouseover(function () {
+        _this2._shape.pause();
+      });
+
+      this._shape.mouseout(function () {
+        _this2._shape.play();
+      });
+
+      return this;
+    }
+  }]);
+
+  return Car;
+}(_drawable.default);
+
+exports.default = Car;
+
+
+},{"../drawable":601,"devapt-core-common/dist/js/utils/types":177}],605:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _drawable = _interopRequireDefault(require("../drawable"));
+
+var _point = _interopRequireDefault(require("./point"));
+
+var _space = _interopRequireDefault(require("./space"));
+
+var _geopoint = _interopRequireDefault(require("../../geometry/geopoint"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svgjs/shapes/circle';
+var DEFAULT_RADIUS = 1;
+/**
+ * @file Drawing circle class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Circle =
+/*#__PURE__*/
+function (_Drawable) {
+  _inherits(Circle, _Drawable);
+
+  /**
+   * Create a shape instance.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector} arg_position - shape position.
+   * @param {string}		 arg_color    - shape color.
+   * @param {number}       arg_radius   - shape radius.
+   * 
+   * @returns {nothing}
+   */
+  function Circle(arg_space, arg_owner, arg_position) {
+    var _this;
+
+    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
+    var arg_radius = arguments.length > 4 ? arguments[4] : undefined;
+    var arg_fill = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : false;
+
+    _classCallCheck(this, Circle);
+
+    _this = _possibleConstructorReturn(this, (Circle.__proto__ || Object.getPrototypeOf(Circle)).call(this, arg_space, arg_owner, arg_position, 'circle'));
+    _this.is_svg_circle = true;
+    _this.radius = arg_radius;
+    _this.color = arg_color;
+    _this.fill = arg_fill;
+    _this.line_width = 1;
+    var point0degree = [_this.x() + _this.radius, _this.y(), 0, 0];
+    var point90degree = [_this.x(), _this.y() + _this.radius, 0, 0];
+
+    _this.add_point(new _geopoint.default(point0degree)); // Point at 1
+
+
+    _this.add_point(new _geopoint.default(point90degree)); // Point at 2
+
+
+    _this._svg_center = undefined;
+
+    _this.add_method('point');
+
+    _this.add_method('center');
+
+    return _this;
+  }
+
+  _createClass(Circle, [{
+    key: "draw",
+    value: function draw() {
+      // DO NOT RENDER	
+      if (this.color == 'none') {
+        return;
+      } // RENDER
+
+
+      var pos_h = this.h(0);
+      var pos_v = this.v(0);
+      var radius_h = this.h(1) - pos_h;
+      var radius_v = this.v(2) - pos_v;
+
+      if (radius_h != radius_v) {
+        this._shape = this.space().svg().ellipse(2 * radius_h, 2 * radius_v).center(pos_h, pos_v);
+      } else {
+        var diameter = 2 * radius_h;
+        this._shape = this.space().svg().circle(diameter).center(pos_h, pos_v);
+      }
+
+      this.draw_color();
+      return this;
+    }
+  }, {
+    key: "point",
+    value: function point(arg_degrees_angle) {
+      var arg_color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'red';
+      var arg_render = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'xcross';
+      var arg_size = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 5;
+      // TODO TAKE DIMENSIONS FROM CIRCLE (x,y) or (y,z) or (x,t) or...
+      var radian_angle = arg_degrees_angle * Math.PI / 180;
+      var x = this.x() + Math.cos(radian_angle) * this.radius;
+      var y = this.y() + Math.sin(radian_angle) * this.radius;
+      var point = new _point.default(this._space, this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size);
+      point.project();
+      point.draw();
+      this.add_child(point);
+      return point;
+    }
+  }, {
+    key: "center",
+    value: function center() {
+      var arg_color = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'red';
+      var arg_render = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'xcross';
+      var arg_size = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 5;
+
+      if (this._svg_center) {
+        return this._svg_center;
+      } // TODO TAKE DIMENSIONS FROM CIRCLE (x,y) or (y,z) or (x,t) or...
+
+
+      var x = this.x();
+      var y = this.y();
+      this._svg_center = new _point.default(this._space, this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size);
+
+      this._svg_center.project();
+
+      this._svg_center.draw();
+
+      this.add_child(this._svg_center);
+      return this._svg_center;
+    }
+  }, {
+    key: "ray",
+    value: function ray(arg_degrees_angle, arg_length) {
+      var arg_color = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'red';
+      var arg_render = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'xcross';
+      var arg_size = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 5;
+      var arg_line_color = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 'red';
+      var arg_line_width = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : 1;
+
+      if (!this._svg_center) {
+        this.center(arg_color, arg_render, arg_size);
+      } // TODO TAKE DIMENSIONS FROM CIRCLE (x,y) or (y,z) or (x,t) or...
+
+
+      var radian_angle = arg_degrees_angle * Math.PI / 180;
+      var x = this.x() + Math.cos(radian_angle) * arg_length;
+      var y = this.y() + Math.sin(radian_angle) * arg_length;
+      var point = new _point.default(this._space, this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size);
+      point.project();
+      point.draw();
+      this.add_child(point);
+
+      var line = this._svg_center.line(point, arg_line_color, arg_line_width);
+
+      line.project();
+      line.draw();
+      this.add_child(line);
+      return line;
+    }
+  }]);
+
+  return Circle;
+}(_drawable.default);
+
+exports.default = Circle;
+
+
+},{"../../geometry/geopoint":581,"../drawable":601,"./point":611,"./space":614,"devapt-core-common/dist/js/utils/types":177}],606:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _drawable = _interopRequireDefault(require("../drawable"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svg/ellipse';
+var DEFAULT_RADIUS = 1;
+/**
+ * @file Drawing ellipse class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Ellipse =
+/*#__PURE__*/
+function (_Drawable) {
+  _inherits(Ellipse, _Drawable);
+
+  /**
+   * Create a shape instance.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector} arg_position - shape position.
+   * @param {string}		 arg_color    - shape color.
+   * @param {number}       arg_width    - shape width.
+   * @param {number}       arg_height   - shape height.
+   * 
+   * @returns {nothing}
+   */
+  function Ellipse(arg_space, arg_owner, arg_position) {
+    var _this;
+
+    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
+    var arg_width = arguments.length > 4 ? arguments[4] : undefined;
+    var arg_height = arguments.length > 5 ? arguments[5] : undefined;
+
+    _classCallCheck(this, Ellipse);
+
+    _this = _possibleConstructorReturn(this, (Ellipse.__proto__ || Object.getPrototypeOf(Ellipse)).call(this, arg_space, arg_owner, arg_position, 'circle'));
+    _this.is_svg_ellipse = true;
+    _this._width = arg_width;
+    _this._height = arg_height;
+    _this.color = arg_color;
+    var point0degree = [_this.x() + _this._width, _this.y(), 0, 0];
+    var point90degree = [_this.x(), _this.y() + _this._height, 0, 0];
+
+    _this.add_point(new GeoPoint(point45degree)); // Point at 1
+
+
+    _this.add_point(new GeoPoint(point90degree)); // Point at 2
+
+
+    return _this;
+  }
+
+  _createClass(Ellipse, [{
+    key: "draw",
+    value: function draw() {
+      // DO NOT RENDER	
+      if (this.color == 'none') {
+        return;
+      }
+
+      var pos_h = this.h(0);
+      var pos_v = this.v(0);
+      var size_h = this.h(1) - pos_h;
+      var size_v = this.v(2) - pos_v;
+      this._shape = this.space().svg().ellipse(size_h, size_v).center(pos_h, pos_v);
+
+      if (this.color) {
+        this._shape.fill(this.color);
+      }
+
+      return this;
+    }
+  }]);
+
+  return Ellipse;
+}(_drawable.default);
+
+exports.default = Ellipse;
+
+
+},{"../drawable":601,"devapt-core-common/dist/js/utils/types":177}],607:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _geopoint = _interopRequireDefault(require("../../geometry/geopoint"));
+
+var _space = _interopRequireDefault(require("./space"));
+
+var _plotf = _interopRequireDefault(require("./plotf"));
+
+var _circle = _interopRequireDefault(require("./circle"));
+
+var _ellipse = _interopRequireDefault(require("./ellipse"));
+
+var _rectangle = _interopRequireDefault(require("./rectangle"));
+
+var _car = _interopRequireDefault(require("./car"));
+
+var _point = _interopRequireDefault(require("./point"));
+
+var _line_arrow = _interopRequireDefault(require("./line_arrow"));
+
+var _line = _interopRequireDefault(require("./line"));
+
+var _axis = _interopRequireDefault(require("./axis"));
+
+var _polygon = _interopRequireDefault(require("./polygon"));
+
+var _star = _interopRequireDefault(require("./star"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svgjs/shapes/factory';
+/**
+ * @file Drawing car class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Factory =
+/*#__PURE__*/
+function () {
+  /**
+   * Create a shapes factory.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * 
+   * @returns {nothing}
+   */
+  function Factory(arg_space) {
+    _classCallCheck(this, Factory);
+
+    this.is_svg_factory = true;
+    this._space = arg_space;
+    this._shapes = {};
+    this._shapes_counter = 0;
+  }
+
+  _createClass(Factory, [{
+    key: "space",
+    value: function space() {
+      return this._space;
+    }
+  }, {
+    key: "svg",
+    value: function svg() {
+      return this.space().svg();
+    }
+  }, {
+    key: "shapes",
+    value: function shapes() {
+      return this._shapes;
+    }
+  }, {
+    key: "get",
+    value: function get(arg_name) {
+      return this._shapes[arg_name];
+    }
+  }, {
+    key: "set",
+    value: function set(arg_name, arg_shape) {
+      if (_types.default.isObject(arg_shape) && arg_shape.is_svg_drawable) {
+        this._shapes[arg_name] = arg_shape;
+      }
+    }
+  }, {
+    key: "count",
+    value: function count() {
+      return this._shapes_counter;
+    }
+  }, {
+    key: "types",
+    value: function types() {
+      return ['cir', 'circle', 'rect', 'rectangle', 'line', 'axis', 'grid', 'ell', 'ellipse', 'p', 'point', 'car', 'arrow', 'line_arrow'];
+    }
+  }, {
+    key: "create",
+    value: function create(arg_shape_cfg) {
+      console.log(context + ':create:shape cfg:', arg_shape_cfg); // GET TYPE
+
+      var type = arg_shape_cfg.type;
+
+      if (!_types.default.isNotEmptyString(type)) {
+        return this;
+      } // GET NAME
+
+
+      this._shapes_counter++;
+      var name = _types.default.isNotEmptyString(arg_shape_cfg.name) ? arg_shape_cfg.name : 'shape-' + this._shapes_counter; // GET POSITION AND COLOR
+
+      var position_array = _types.default.isArray(arg_shape_cfg.position) && arg_shape_cfg.position.length >= 2 ? arg_shape_cfg.position : [0, 0, 0];
+      var color = arg_shape_cfg.color; // GET SPACE
+
+      var space = this._space;
+
+      if (_types.default.isObject(arg_shape_cfg) && _types.default.isObject(arg_shape_cfg.space) && arg_shape_cfg.space.is_svg_space) {
+        space = arg_shape_cfg.space;
+      } // GET OPERANDS
+
+
+      var position_end = _types.default.isArray(arg_shape_cfg.position_end) && arg_shape_cfg.position_end.length >= 2 ? arg_shape_cfg.position_end : [0, 0, 0];
+      var domain = arg_shape_cfg.domain;
+      var radius = _types.default.isNumber(arg_shape_cfg.radius) && arg_shape_cfg.radius > 0 ? arg_shape_cfg.radius : 50;
+      var edges = _types.default.isNumber(arg_shape_cfg.edges) && arg_shape_cfg.edges > 0 ? arg_shape_cfg.edges : 5;
+      var width = _types.default.isNumber(arg_shape_cfg.width) && arg_shape_cfg.width > 0 ? arg_shape_cfg.width : 100;
+      var height = _types.default.isNumber(arg_shape_cfg.height) && arg_shape_cfg.height > 0 ? arg_shape_cfg.height : 100;
+      var render = _types.default.isNotEmptyString(arg_shape_cfg.render) ? arg_shape_cfg.render : undefined;
+      var size = _types.default.isNumber(arg_shape_cfg.size) && arg_shape_cfg.size > 0 ? arg_shape_cfg.size : undefined;
+      var inner = _types.default.isNumber(arg_shape_cfg.inner) && arg_shape_cfg.inner > 0 ? arg_shape_cfg.inner : 50;
+      var outer = _types.default.isNumber(arg_shape_cfg.outer) && arg_shape_cfg.outer > 0 ? arg_shape_cfg.outer : 50;
+      var spikes = _types.default.isNumber(arg_shape_cfg.spikes) && arg_shape_cfg.spikes > 0 ? arg_shape_cfg.spikes : 5;
+      var plot_fn = _types.default.isFunction(arg_shape_cfg.plot_fn) ? arg_shape_cfg.plot_fn : undefined;
+      var shape = undefined; // LOOKUP TYPE CLASS
+
+      switch (type.toLocaleLowerCase()) {
+        case 'space':
+          {
+            console.log(context + ':create:space width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
+            var position = new _geopoint.default(position_array);
+            var position_pixel = space.project(position);
+            var domains_settings = _types.default.isArray(arg_shape_cfg.domains) ? arg_shape_cfg.domains : [];
+            var pixelbox_settings = {
+              origin_h: position_pixel.h(),
+              origin_v: position_pixel.v(),
+              margin_h: _types.default.isNumber(arg_shape_cfg.margin_h) ? arg_shape_cfg.margin_h : 0,
+              margin_v: _types.default.isNumber(arg_shape_cfg.margin_v) ? arg_shape_cfg.margin_v : 0,
+              padding_h: _types.default.isNumber(arg_shape_cfg.padding_h) ? arg_shape_cfg.padding_h : 5,
+              padding_v: _types.default.isNumber(arg_shape_cfg.padding_v) ? arg_shape_cfg.padding_v : 5,
+              width: _types.default.isNumber(arg_shape_cfg.width) ? arg_shape_cfg.width : 100,
+              height: _types.default.isNumber(arg_shape_cfg.height) ? arg_shape_cfg.height : 100
+            };
+            var space_settings = {
+              background_color: color,
+              grid: {
+                step_h: 10,
+                step_v: 20,
+                color: 'green',
+                size: 3,
+                format: 'circle'
+              },
+              axis: {
+                x: {
+                  color: 'red',
+                  size: 2
+                },
+                y: {
+                  color: 'blue',
+                  size: 1
+                }
+              }
+            };
+            shape = new _space.default(space.svg(), domains_settings, pixelbox_settings, space_settings);
+            shape._space = space;
+            break;
+          }
+
+        case 'plotf':
+          {
+            console.log(context + ':create:plotf color=[%s]:', color, position_array);
+            shape = new _plotf.default(space, space, position_array, plot_fn, color, render, size);
+            break;
+          }
+
+        case 'circle':
+        case 'cir':
+          {
+            console.log(context + ':create:circle radius=[%d] color=[%s]:', radius, color, position_array);
+            shape = new _circle.default(space, space, position_array, color, radius);
+            break;
+          }
+
+        case 'p':
+        case 'point':
+          {
+            console.log(context + ':create:point size=[%d] color=[%s] render=[%s]:', size, color, position_array, render);
+            shape = new _point.default(space, space, position_array, color, render, size);
+            break;
+          }
+
+        case 'ellipse':
+        case 'ell':
+          {
+            console.log(context + ':create:ellipse width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
+            shape = new _ellipse.default(space, space, position_array, color, width, height);
+            break;
+          }
+
+        case 'rectangle':
+        case 'rect':
+          {
+            console.log(context + ':create:rectangle width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
+            shape = new _rectangle.default(space, space, position_array, color, width, height);
+            break;
+          }
+
+        case 'line':
+          {
+            console.log(context + ':create:line width=[%d] color=[%s]:', width, color, position_array, position_end);
+            shape = new _line.default(space, space, position_array, position_end, color, width);
+            break;
+          }
+
+        case 'axis':
+          {
+            console.log(context + ':create:line domain=[%s] color=[%s] width=[%d]:', domain, color, width, position_array);
+            shape = new _axis.default(space, space, position_array, domain, color, width);
+            break;
+          }
+
+        case 'polygon':
+        case 'pol':
+          {
+            console.log(context + ':create:polygon edges=[%d] radius=[%d] color=[%s]:', edges, radius, color, position_array);
+            shape = new _polygon.default(space, space, position_array, color, edges, radius);
+            break;
+          }
+
+        case 'star':
+          {
+            console.log(context + ':create:star spikes=[%d] inner=[%d] outer=[%d] color=[%s]:', spikes, inner, outer, color, position_array);
+            shape = new _star.default(space, space, position_array, color, spikes, inner, outer);
+            break;
+          }
+
+        case 'car':
+          {
+            console.log(context + ':create:car width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
+            shape = new _car.default(space, space, position_array, color, width, height);
+            break;
+          }
+
+        case 'arrow':
+        case 'line_arrow':
+          {
+            var arrow_start = _types.default.isBoolean(arg_shape_cfg.has_arrow_start) ? arg_shape_cfg.has_arrow_start : false;
+            var arrow_end = _types.default.isBoolean(arg_shape_cfg.has_arrow_end) ? arg_shape_cfg.has_arrow_end : true;
+            var line_width = _types.default.isNumber(arg_shape_cfg.line_width) && arg_shape_cfg.line_width > 0 ? arg_shape_cfg.line_width : 1;
+            var arrow_h = _types.default.isNumber(arg_shape_cfg.arrow_h) && arg_shape_cfg.arrow_h > 0 ? arg_shape_cfg.arrow_h : 10;
+            var arrow_v = _types.default.isNumber(arg_shape_cfg.arrow_v) && arg_shape_cfg.arrow_v > 0 ? arg_shape_cfg.arrow_v : 10;
+            var length = _types.default.isNumber(arg_shape_cfg.length) && arg_shape_cfg.length > 0 ? arg_shape_cfg.length : undefined;
+            var angle = _types.default.isNumber(arg_shape_cfg.angle) && arg_shape_cfg.angle >= 0 ? arg_shape_cfg.angle : undefined;
+
+            var _position_end = _types.default.isNotEmptyArray(arg_shape_cfg.end) ? arg_shape_cfg.end : undefined;
+
+            console.log(context + ':create:line arrow line_width=[%d] length=[%d] angle=[%d] end=[%s] color=[%s]:', line_width, length, angle, end, color, position_array);
+            shape = new _line_arrow.default(space, space, position_array, _position_end, length, angle, color, arrow_start, arrow_end, line_width, arrow_h, arrow_v);
+            break;
+          }
+      }
+
+      if (shape) {
+        this._shapes[name] = shape;
+        shape.project();
+        var result = shape.draw();
+
+        if (result.then) {
+          result.then(function () {
+            space.svg_shape().add(shape.svg_shape());
+          });
+        } else {
+          space.svg_shape().add(shape.svg_shape());
+        }
+      }
+
+      return this;
+    }
+  }]);
+
+  return Factory;
+}();
+
+exports.default = Factory;
+
+
+},{"../../geometry/geopoint":581,"./axis":603,"./car":604,"./circle":605,"./ellipse":606,"./line":608,"./line_arrow":609,"./plotf":610,"./point":611,"./polygon":612,"./rectangle":613,"./space":614,"./star":615,"devapt-core-common/dist/js/utils/types":177}],608:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _drawable = _interopRequireDefault(require("../drawable"));
+
+var _geopoint = _interopRequireDefault(require("../../geometry/geopoint"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svgjs/shapes/line';
+var DEFAULT_RADIUS = 1;
+/**
+ * @file Drawing line class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Line =
+/*#__PURE__*/
+function (_Drawable) {
+  _inherits(Line, _Drawable);
+
+  /**
+   * Create a shape instance.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector} arg_pos_begin- shape position begin.
+   * @param {array|Vector} arg_pos_end - shape position end.
+   * @param {string}		 arg_color    - shape color.
+   * @param {number}       arg_width    - shape width in pixels.
+   * 
+   * @returns {nothing}
+   */
+  function Line(arg_space, arg_owner, arg_pos_begin, arg_pos_end) {
+    var _this;
+
+    var arg_color = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : undefined;
+    var arg_width = arguments.length > 5 ? arguments[5] : undefined;
+
+    _classCallCheck(this, Line);
+
+    _this = _possibleConstructorReturn(this, (Line.__proto__ || Object.getPrototypeOf(Line)).call(this, arg_space, arg_owner, arg_pos_begin, 'line'));
+    _this.is_svg_line = true;
+
+    _this.add_point(new _geopoint.default(arg_pos_end)); // End geoPoint at 1
+
+
+    _this.color = arg_color ? arg_color : 'blue';
+    _this._width = arg_width ? arg_width : 1;
+    return _this;
+  }
+
+  _createClass(Line, [{
+    key: "draw",
+    value: function draw() {
+      // DO NOT RENDER	
+      if (this.color == 'none') {
+        return;
+      }
+
+      var pos_begin_h = this.h(0);
+      var pos_begin_v = this.v(0);
+      var pos_end_h = this.h(1);
+      var pos_end_v = this.v(1);
+      this._shape = this.space().svg().line(pos_begin_h, pos_begin_v, pos_end_h, pos_end_v);
+
+      if (this.color && this._width) {
+        this._shape.stroke({
+          color: this.color,
+          width: this._width
+        });
+      }
+
+      return this;
+    }
+  }]);
+
+  return Line;
+}(_drawable.default);
+
+exports.default = Line;
+
+
+},{"../../geometry/geopoint":581,"../drawable":601,"devapt-core-common/dist/js/utils/types":177}],609:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _line = _interopRequireDefault(require("./line"));
+
+var _angle = _interopRequireDefault(require("../../math/angle"));
+
+var _geopoint = _interopRequireDefault(require("../../geometry/geopoint"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svg/line_arrow';
+var DEFAULT_LINE_WIDTH = 1;
+var DEFAULT_ARROW_H = 10;
+var DEFAULT_ARROW_V = 10;
+/**
+ * @file Drawing a line with an arrow.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var LineArrow =
+/*#__PURE__*/
+function (_Line) {
+  _inherits(LineArrow, _Line);
+
+  /**
+   * Create a shape instance.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector|GeoPoint} arg_begin_point - shape begin position.
+   * @param {array|Vector|GeoPoint} arg_end_point_or_nothing - shape begin position.
+   * @param {number}       arg_length_or_nothing   - shape .
+   * @param {number}       arg_angle_or_nothing   - shape .
+   * @param {string}		 arg_color    - shape color.
+   * @param {boolean}      arg_arrow_start - shape has an arrow at start point.
+   * @param {boolean}      arg_arrow_end   - shape has an arrow at end point.
+   * @param {number}       arg_line_width   - shape .
+   * @param {number}       arg_arrow_h   - shape .
+   * @param {number}       arg_arrow_v   - shape .
+   * 
+   * @returns {nothing}
+   */
+  function LineArrow(arg_space, arg_owner, arg_begin_point, arg_end_point_or_nothing, arg_length_or_nothing, arg_angle_or_nothing) {
+    var _this;
+
+    var arg_color = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : undefined;
+    var arg_arrow_start = arguments.length > 7 ? arguments[7] : undefined;
+    var arg_arrow_end = arguments.length > 8 ? arguments[8] : undefined;
+    var arg_line_width = arguments.length > 9 ? arguments[9] : undefined;
+    var arg_arrow_h = arguments.length > 10 ? arguments[10] : undefined;
+    var arg_arrow_v = arguments.length > 11 ? arguments[11] : undefined;
+
+    _classCallCheck(this, LineArrow);
+
+    // SET END POINT
+    var end_point = undefined;
+    var angle = undefined;
+    var length = undefined;
+
+    if (_types.default.isObject(arg_end_point_or_nothing) && arg_end_point_or_nothing.is_geopoint) {
+      end_point = arg_end_point_or_nothing;
+    } else if (_types.default.isObject(arg_end_point_or_nothing) && arg_end_point_or_nothing.is_vector) {
+      end_point = new _geopoint.default(arg_end_point_or_nothing);
+    } else if (_types.default.isArray(arg_end_point_or_nothing)) {
+      end_point = new _geopoint.default(arg_end_point_or_nothing);
+    } else if (_types.default.isNumber(arg_length_or_nothing)) {
+      length = arg_length_or_nothing;
+
+      if (_types.default.isNumber(arg_angle_or_nothing)) {
+        angle = new _angle.default(arg_angle_or_nothing, 'degree').value(undefined, 'rad');
+      } else if (_types.default.isString(arg_angle_or_nothing)) {
+        angle = new _angle.default(arg_angle_or_nothing, 'rad').value();
+      } // O=angle(AB,AC) and angle(AB,BC)=PI/2 radian
+      // AC = line length
+      // cos(O) = AB/AC 
+      // sin(O) = BC/AC
+
+
+      var end_x = _this.x() + Math.cos(angle) * length; // AB=cos(O) * AC
+
+      var end_y = _this.y() - Math.sin(angle) * length; // BC=sin(O) * AC
+
+      end_point = new _geopoint.default([end_x, end_y, 0, 0]);
+    }
+
+    _this = _possibleConstructorReturn(this, (LineArrow.__proto__ || Object.getPrototypeOf(LineArrow)).call(this, arg_space, arg_owner, arg_begin_point, end_point, arg_color, arg_line_width));
+    _this.is_svg_linearrow = true;
+    _this._line_angle = angle;
+    _this._line_length = length;
+    _this.color = arg_color;
+    _this._arrow_start = _types.default.isBoolean(arg_arrow_start) ? arg_arrow_start : false;
+    _this._arrow_end = _types.default.isBoolean(arg_arrow_end) ? arg_arrow_end : false;
+    _this._line_width = _types.default.isNumber(arg_line_width) ? arg_line_width : DEFAULT_LINE_WIDTH;
+    _this._arrow_h = _types.default.isNumber(arg_arrow_h) ? arg_arrow_h : DEFAULT_ARROW_H;
+    _this._arrow_v = _types.default.isNumber(arg_arrow_v) ? arg_arrow_v : DEFAULT_ARROW_V;
+    _this._init_done = false;
+    return _this;
+  }
+
+  _createClass(LineArrow, [{
+    key: "draw",
+    value: function draw() {
+      // DO NOT RENDER	
+      if (this.color == 'none') {
+        return;
+      } // START PIXEL
+
+
+      var start_h = this.h();
+      var start_v = this.v();
+
+      if (!_types.default.isNumber(start_h) || !_types.default.isNumber(start_v)) {
+        return;
+      } // END PIXEL
+
+
+      var end_h = this._line_end_pixel.h();
+
+      var end_v = this._line_end_pixel.v();
+
+      if (!_types.default.isNumber(end_h) || !_types.default.isNumber(end_v)) {
+        return;
+      }
+
+      var options = {
+        width: this._line_width,
+        color: this.color ? this.color : 'black'
+        /*,
+        linecap:'round'*/
+
+      };
+      console.log(context + ':draw:line_arrow:start_h=%d start_v=%d end_h=%d end_v=%d', start_h, start_v, end_h, end_v);
+      var line = this.space().svg().line(start_h, start_v, end_h, end_v).stroke(options);
+      var angle = Math.atan2(end_v - start_v, end_h - start_h);
+      var arrow_width_h = this._arrow_h;
+      var arrow_width_v = this._arrow_v;
+      var to_h_1 = end_h - arrow_width_h * Math.cos(angle - Math.PI / 6);
+      var to_v_1 = end_v - arrow_width_v * Math.sin(angle - Math.PI / 6);
+      var to_h_2 = end_h - arrow_width_h * Math.cos(angle + Math.PI / 6);
+      var to_v_2 = end_v - arrow_width_v * Math.sin(angle + Math.PI / 6);
+      var arrow_1 = this.space().svg().line(end_h, end_v, to_h_1, to_v_1).stroke(options);
+      var arrow_2 = this.space().svg().line(end_h, end_v, to_h_2, to_v_2).stroke(options);
+      this._shape = this.space().svg().group();
+
+      this._shape.add(line);
+
+      this._shape.add(arrow_1);
+
+      this._shape.add(arrow_2);
+
+      return this;
+    }
+  }]);
+
+  return LineArrow;
+}(_line.default);
+
+exports.default = LineArrow;
+
+
+},{"../../geometry/geopoint":581,"../../math/angle":596,"./line":608,"devapt-core-common/dist/js/utils/types":177}],610:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _geopoint = _interopRequireDefault(require("../../geometry/geopoint"));
+
+var _drawable = _interopRequireDefault(require("../drawable"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return _sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svgjs/shapes/plotf';
+var DEFAULT_RENDER = 'circle';
+var DEFAULT_SIZE = 2;
+var DEFAULT_COLOR = 'red';
+/**
+ * @file Drawing Plot f(x) class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var PlotF =
+/*#__PURE__*/
+function (_Drawable) {
+  _inherits(PlotF, _Drawable);
+
+  /**
+   * Create a shape instance.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector} arg_position - shape position.
+   * @param {function}     arg_function - plot function f(scope)=>{ loops_count:integer, fstep:f(step, scope)=>Position }.
+   * @param {string}		 arg_color    - shape color.
+   * @param {string}       arg_render   - shape rendering:cross, xcross, circle, disk, point.
+   * @param {number}       arg_size     - shape rendering size.
+   * 
+   * @returns {nothing}
+   */
+  function PlotF(arg_space, arg_owner, arg_position, arg_function) {
+    var _this;
+
+    var arg_color = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : DEFAULT_COLOR;
+    var arg_render = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : DEFAULT_RENDER;
+    var arg_size = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : DEFAULT_SIZE;
+
+    _classCallCheck(this, PlotF);
+
+    _this = _possibleConstructorReturn(this, (PlotF.__proto__ || Object.getPrototypeOf(PlotF)).call(this, arg_space, arg_owner, arg_position, 'point'));
+    _this.is_svg_plotf = true;
+    _this._function = _types.default.isFunction(arg_function) ? arg_function : undefined;
+    _this.color = arg_color;
+    _this.render = arg_render;
+    _this.size = arg_size;
+    return _this;
+  }
+
+  _createClass(PlotF, [{
+    key: "draw",
+    value: function draw() {
+      var _this2 = this;
+
+      // DO NOT RENDER	
+      if (this.color == 'none') {
+        return this;
+      } // const pos_h = this.h()
+      // const pos_v = this.v()
+      // const bottom_left_pixel = this.space().pixelbox().get_usable().bottom_left
+
+
+      var height_pixel = this.space().pixelbox().get_usable().height;
+      var width_pixel = this.space().pixelbox().get_usable().width;
+      var top_left_pixel = this.space().pixelbox().get_usable().top_left;
+      var pos_h = top_left_pixel.h;
+      var pos_v = top_left_pixel.v;
+
+      if (!this._function) {
+        console.warn(context + ':draw:bad function');
+        return this;
+      }
+
+      var f_record = this._function({
+        x: 45
+      });
+
+      var loops_count = f_record && f_record.loops_count ? Math.floor(f_record.loops_count) : 0;
+      var f_step = f_record && f_record.fstep ? f_record.fstep : undefined;
+      var f_scope = f_record && f_record.scope ? f_record.scope : undefined; // console.warn(context + ':draw:function record', f_record, loops_count, f_step, f_scope)
+
+      if (!_types.default.isNumber(loops_count) || !_types.default.isFunction(f_step) || !_types.default.isObject(f_scope)) {
+        console.warn(context + ':draw:bad function record');
+        return this;
+      } // LOOP
+
+
+      var points = new Array(loops_count);
+
+      var add_point = function add_point(arg_index, arg_point) {
+        var position = _types.default.isArray(arg_point) ? new _geopoint.default(arg_point) : arg_point;
+
+        var pixel_point = _this2.space().project(position, _this2.space());
+
+        var h = pos_h + pixel_point.h();
+        var v = pos_v + height_pixel - pixel_point.v(); // CHECK h and v
+
+        h = h < pos_h ? pos_h : h;
+        h = h > pos_h + width_pixel ? pos_h + width_pixel : h;
+        v = v < pos_v ? pos_v : v;
+        v = v > pos_v + height_pixel ? pos_v + height_pixel : v;
+        points[arg_index] = [h, v];
+      };
+
+      var f_index = 0;
+      var point = undefined;
+      var promises = new Array(loops_count);
+
+      var _loop = function _loop() {
+        point = f_step(f_index, f_scope);
+        var point_index = f_index;
+
+        if (point) {
+          // TODO GENERALIZE TO N DIMENSIONS
+          if (point[0].then && point[1].then) {
+            var point_promise = Promise.all([point[0], point[1]]);
+            promises[f_index] = point_promise.then(function (_ref) {
+              var _ref2 = _slicedToArray(_ref, 2),
+                  px = _ref2[0],
+                  py = _ref2[1];
+
+              var x = _types.default.isObject(px) ? px.value : px;
+              var y = _types.default.isObject(py) ? py.value : py;
+              add_point(point_index, [x, y]);
+            });
+            return "continue";
+          }
+
+          if (point[0].then) {
+            promises[f_index] = point[0].then(function (px) {
+              var py = point[1];
+              var x = _types.default.isObject(px) ? px.value : px;
+              var y = _types.default.isObject(py) ? py.value : py;
+              add_point(point_index, [x, y]);
+            });
+            return "continue";
+          }
+
+          if (point[1].then) {
+            var px = point[0];
+            promises[f_index] = point[1].then(function (py) {
+              var x = _types.default.isObject(px) ? px.value : px;
+              var y = _types.default.isObject(py) ? py.value : py;
+              add_point(point_index, [x, y]);
+            });
+            return "continue";
+          }
+
+          add_point(f_index, point);
+        }
+      };
+
+      for (f_index; f_index < loops_count; f_index++) {
+        var _ret = _loop();
+
+        if (_ret === "continue") continue;
+      } // RENDER
+
+
+      var svg = this.space().svg();
+      var promise = Promise.all(promises).then(function () {
+        var svg_points = new SVG.PointArray(points);
+        _this2._shape = svg.polyline(svg_points);
+
+        _this2.draw_color();
+
+        return _this2;
+      });
+      return promise;
+    }
+  }]);
+
+  return PlotF;
+}(_drawable.default);
+
+exports.default = PlotF;
+
+
+},{"../../geometry/geopoint":581,"../drawable":601,"devapt-core-common/dist/js/utils/types":177}],611:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _drawable = _interopRequireDefault(require("../drawable"));
+
+var _GeoPoint = _interopRequireDefault(require("../../geometry/GeoPoint"));
+
+var _line = _interopRequireDefault(require("./line"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svgjs/shapes/point';
+var DEFAULT_RENDER = 'circle';
+var DEFAULT_SIZE = 2;
+var DEFAULT_COLOR = 'red';
+/**
+ * @file Drawing point class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Point =
+/*#__PURE__*/
+function (_Drawable) {
+  _inherits(Point, _Drawable);
+
+  /**
+   * Create a shape instance.
+   * 
+   * @param {SvgSpace}     arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector} arg_position - shape position.
+   * @param {string}		 arg_color    - shape color.
+   * @param {string}       arg_render   - shape rendering:cross, xcross, circle, disk, point.
+   * @param {number}       arg_size     - shape rendering size.
+   * 
+   * @returns {nothing}
+   */
+  function Point(arg_space, arg_owner, arg_position) {
+    var _this;
+
+    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : DEFAULT_COLOR;
+    var arg_render = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : DEFAULT_RENDER;
+    var arg_size = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : DEFAULT_SIZE;
+
+    _classCallCheck(this, Point);
+
+    _this = _possibleConstructorReturn(this, (Point.__proto__ || Object.getPrototypeOf(Point)).call(this, arg_space, arg_owner, new _GeoPoint.default(arg_position), 'point'));
+    _this.is_svg_point = true;
+    _this.color = arg_color;
+    _this.render = arg_render;
+    _this.size = arg_size;
+
+    _this.add_method('line');
+
+    return _this;
+  }
+
+  _createClass(Point, [{
+    key: "draw",
+    value: function draw() {
+      // DO NOT RENDER	
+      if (this.color == 'none') {
+        return;
+      } // RENDER
+
+
+      var pos_h = this.h();
+      var pos_v = this.v();
+      var svg = this.space().svg();
+      var options = {
+        width: this.size,
+        color: this.color ? this.color : 'blue'
+        /*,
+        linecap:'round'*/
+
+      };
+
+      switch (this.render) {
+        case 'square':
+          this._shape = svg.rect(2 * this.size, 2 * this.size).move(pos_h - this.size, pos_v - size_v).fill('none');
+          this.draw_color();
+          break;
+
+        case 'cross':
+          this._shape = svg.group();
+
+          this._shape.add(svg.line(pos_h - this.size, pos_v, pos_h + this.size, pos_v));
+
+          this._shape.add(svg.line(pos_h, pos_v - this.size, pos_h, pos_v + this.size));
+
+          this.draw_color();
+          break;
+
+        case 'xcross':
+          this._shape = svg.group();
+
+          this._shape.add(svg.line(pos_h - this.size, pos_v - this.size, pos_h + this.size, pos_v + this.size));
+
+          this._shape.add(svg.line(pos_h - this.size, pos_v + this.size, pos_h + this.size, pos_v - this.size));
+
+          this.draw_color();
+          break;
+
+        case 'point':
+          this._shape = svg.point(pos_h, pos_v).fill(this.color);
+          break;
+
+        case 'disk':
+          this._shape = svg.circle(2 * this.size).fill(this.color);
+
+          this._shape.move(pos_h, pos_v);
+
+          break;
+
+        case 'circle':
+        default:
+          {
+            this._shape = svg.circle(2 * this.size).fill('none').stroke(options);
+
+            this._shape.center(pos_h, pos_v);
+
+            break;
+          }
+      }
+
+      return this;
+    }
+    /**
+     * Draw a line from this point to given point or shape.
+     * 
+     * @param {GeoPoint|Drawable} arg_position 
+     * @param {string} arg_color 
+     * @param {integer} arg_width 
+     */
+
+  }, {
+    key: "line",
+    value: function line(arg_position) {
+      var arg_color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'blue';
+      var arg_width = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+
+      if (_types.default.isArray(arg_position)) {
+        arg_position = new _GeoPoint.default(arg_position);
+      } else if (_types.default.isObject(arg_position) && arg_position.is_svg_drawable) {
+        arg_position = arg_position.position();
+      }
+
+      return new _line.default(this.space(), this, this.position(), arg_position, arg_color, arg_width).draw();
+    }
+  }]);
+
+  return Point;
+}(_drawable.default);
+
+exports.default = Point;
+
+
+},{"../../geometry/GeoPoint":578,"../drawable":601,"./line":608,"devapt-core-common/dist/js/utils/types":177}],612:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _drawable = _interopRequireDefault(require("../drawable"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svg/polygon';
+var DEFAULT_EDGES = 5;
+var DEFAULT_RADIUS = 50;
+/**
+ * @file Drawing polygon class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Polygon =
+/*#__PURE__*/
+function (_Drawable) {
+  _inherits(Polygon, _Drawable);
+
+  /**
+   * Create a shape instance.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector} arg_position - shape position.
+   * @param {string}		 arg_color    - shape color.
+   * @param {number}       arg_edges    - shape edges count.
+   * @param {number}       arg_radius   - shape radius.
+   * 
+   * @returns {nothing}
+   */
+  function Polygon(arg_space, arg_owner, arg_position) {
+    var _this;
+
+    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
+    var arg_edges = arguments.length > 4 ? arguments[4] : undefined;
+    var arg_radius = arguments.length > 5 ? arguments[5] : undefined;
+
+    _classCallCheck(this, Polygon);
+
+    _this = _possibleConstructorReturn(this, (Polygon.__proto__ || Object.getPrototypeOf(Polygon)).call(this, arg_space, arg_owner, arg_position, 'polygon'));
+    _this.is_svg_polygon = true;
+    _this._edges = typeof arg_edges == 'number' ? arg_edges : DEFAULT_EDGES;
+    _this._radius = typeof arg_radius == 'number' ? arg_radius : DEFAULT_RADIUS;
+    _this.color = arg_color;
+    return _this;
+  }
+
+  _createClass(Polygon, [{
+    key: "draw",
+    value: function draw() {
+      // DO NOT RENDER	
+      if (this.color == 'none') {
+        return;
+      }
+
+      var pos_h = this.h();
+      var pos_v = this.v();
+      var radius_h = this.space().range_to_screen_h(this._radius);
+      var radius_v = this.space().range_to_screen_v(this._radius);
+      var radius = Math.min(radius_h, radius_v);
+      var edges = typeof this._edges == 'number' ? this._edges : DEFAULT_EDGES;
+      var i, a, x, y;
+      var points = [];
+      var degrees = 360 / edges;
+
+      for (i = 0; i < edges; i++) {
+        a = i * degrees - 90;
+        x = radius + radius * Math.cos(a * Math.PI / 180);
+        y = radius + radius * Math.sin(a * Math.PI / 180);
+        points.push([x, y]);
+      }
+
+      this._shape = this.space().svg().polygon(new SVG.PointArray(points)).center(pos_h, pos_v);
+      this.draw_color();
+      return this;
+    }
+  }]);
+
+  return Polygon;
+}(_drawable.default);
+
+exports.default = Polygon;
+
+
+},{"../drawable":601,"devapt-core-common/dist/js/utils/types":177}],613:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _drawable = _interopRequireDefault(require("../drawable"));
+
+var _geopoint = _interopRequireDefault(require("../../geometry/geopoint"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svgjs/shapes/rectangle';
+var DEFAULT_RADIUS = 1;
+/**
+ * @file Drawing rectangle class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Rectangle =
+/*#__PURE__*/
+function (_Drawable) {
+  _inherits(Rectangle, _Drawable);
+
+  /**
+   * Create a shape instance.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector} arg_position - shape position.
+   * @param {string}		 arg_color    - shape color.
+   * @param {number}       arg_width    - shape width.
+   * @param {number}       arg_height   - shape height.
+   * 
+   * @returns {nothing}
+   */
+  function Rectangle(arg_space, arg_owner, arg_position) {
+    var _this;
+
+    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
+    var arg_width = arguments.length > 4 ? arguments[4] : undefined;
+    var arg_height = arguments.length > 5 ? arguments[5] : undefined;
+
+    _classCallCheck(this, Rectangle);
+
+    _this = _possibleConstructorReturn(this, (Rectangle.__proto__ || Object.getPrototypeOf(Rectangle)).call(this, arg_space, arg_owner, arg_position, 'rectangle'));
+    _this.is_svg_rectangle = true;
+    _this._width = arg_width;
+    _this._height = arg_height;
+    _this.color = arg_color;
+    return _this;
+  }
+
+  _createClass(Rectangle, [{
+    key: "draw",
+    value: function draw() {
+      // DO NOT RENDER	
+      if (this.color == 'none') {
+        return;
+      }
+
+      var pos_h = this.h();
+      var pos_v = this.v();
+      var size_h = this.space().range_to_screen_h(this._width, this.space());
+      var size_v = this.space().range_to_screen_v(this._height, this.space());
+      this._shape = this.space().svg().rect(size_h, size_v).move(pos_h, pos_v - size_v);
+
+      if (this.color) {
+        this._shape.fill(this.color);
+      }
+
+      return this;
+    }
+  }]);
+
+  return Rectangle;
+}(_drawable.default);
+
+exports.default = Rectangle;
+
+
+},{"../../geometry/geopoint":581,"../drawable":601,"devapt-core-common/dist/js/utils/types":177}],614:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _pixelpoint = _interopRequireDefault(require("../../base/pixelpoint"));
+
+var _pixelbox = _interopRequireDefault(require("../../base/pixelbox"));
+
+var _vector = _interopRequireDefault(require("../../math/vector"));
+
+var _geopoint = _interopRequireDefault(require("../../geometry/geopoint"));
+
+var _geodomain = _interopRequireDefault(require("../../geometry/geodomain"));
+
+var _geospace = _interopRequireDefault(require("../../geometry/geospace"));
+
+var _projection_fn_2dto2d_euclidian = _interopRequireDefault(require("../../geometry/projection_fn_2dto2d_euclidian"));
+
+var _axis = _interopRequireDefault(require("./axis"));
+
+var _drawable = _interopRequireDefault(require("../drawable"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _set(object, property, value, receiver) { var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent !== null) { _set(parent, property, value, receiver); } } else if ("value" in desc && desc.writable) { desc.value = value; } else { var setter = desc.set; if (setter !== undefined) { setter.call(receiver, value); } } return value; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svgjs/shape/space';
+var DEFAULT_DOMAINS_SIZE = 500;
+var DEFAULT_DOMAINS_START = 0;
+var DEFAULT_DOMAINS_END = 10;
+var DEFAULT_DOMAINS_STEP = 1;
+/**
+ * @file Space class.
+ * 
+ * Map a multidimensional position ([x,y,z,t] for example) onto a PixelBox (part of the screen).
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ * @example
+ * 	API
+ * 		->owner():Drawable - get drawable owner (INHERITED).
+ * 		->children():Drawable array - get drawable children (INHERITED).
+ * 		->type():string - get drawable type (INHERITED).
+ * 
+ * 
+ *      ->zoom():Zoom - get zoom object.
+ *      ->zoom(value):this - update zoom object.
+ *      ->zoom_in(step):this - update zoom object.
+ *      ->zoom_out(step):this - update zoom object.
+ * 
+ * 		->translate(Vector pos, Vector tr):this - translate shape.
+ * 		->rotate(Vector pos, Angle angle):this - rotate shape.
+ * 
+ * DOMAINS EXAMPLE
+ * [
+ * 	{
+ * 		"name":"d0",
+ * 		"start":0,
+ * 		"end":10,
+ * 		"step":1
+ * 	},
+ * 	{
+ * 		"name":"d1",
+ * 		"start":0,
+ * 		"end":10,
+ * 		"step":1
+ * 	}
+ * ]
+ */
+
+var Space =
+/*#__PURE__*/
+function (_Drawable) {
+  _inherits(Space, _Drawable);
+
+  /**
+   * Create an instance of Space.
+   * 
+   * @param {SVG.Element} arg_svg_canvas        - canvas element.
+   * @param {array}       arg_domains_settings  - dimensions domains configurations array.
+   * @param {object}      arg_pixelbox_settings - space PixelBox instance settings (optional)
+   * @param {object}      arg_drawing_settings  - space drawing settings (optional)
+   * 
+   * @returns {nothing}
+   */
+  function Space(arg_svg_canvas, arg_domains_settings) {
+    var _this;
+
+    var arg_pixelbox_settings = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
+    var arg_drawing_settings = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
+    _classCallCheck(this, Space);
+
+    _this = _possibleConstructorReturn(this, (Space.__proto__ || Object.getPrototypeOf(Space)).call(this, undefined, undefined, new _vector.default([0, 0, 0, 0]), 'space'));
+
+    _set(Space.prototype.__proto__ || Object.getPrototypeOf(Space.prototype), "_space", _assertThisInitialized(_this), _this);
+    /**
+     * Class type flag
+     * @type {boolean}
+     */
+
+
+    _this.is_svg_space = true; // BUILD SVG
+
+    _this._svg = arg_svg_canvas; // BUILD PIXEL BOX
+
+    var svg_canavs_viewbox = _this._svg.viewbox();
+
+    var box_settings = {
+      origin_h: 0,
+      origin_v: 0,
+      margin_h: 0,
+      margin_v: 0,
+      padding_h: 5,
+      padding_v: 5,
+      width: svg_canavs_viewbox.width,
+      height: svg_canavs_viewbox.height
+    };
+    _this._pixelbox = new _pixelbox.default(arg_pixelbox_settings ? arg_pixelbox_settings : box_settings); // BUILD GEOMETRIC ITEMS
+
+    _this._geospace = new _geospace.default(arg_domains_settings);
+    _this._geoplan = undefined;
+    _this._proj_direction = undefined;
+    _this._proj_fn = _projection_fn_2dto2d_euclidian.default;
+    _this._geoprojection = _this.create_projection(_this._geospace, _this._proj_plan, _this._proj_direction, _this._proj_fn); // BUILD DRAWING SETTINGS
+
+    _this._shape = _this._svg.group();
+    _this._drawing_settings = arg_drawing_settings;
+
+    if (_types.default.isString(_this._drawing_settings.background_color)) {
+      _this.background(_this._drawing_settings.background_color);
+    }
+
+    if (_types.default.isObject(_this._drawing_settings.axis)) {// TODO
+    }
+
+    _this._axis = {}; // PUBLIC METHODS
+
+    _this.add_method('background');
+
+    _this.add_method('grid');
+
+    _this.add_method('axis');
+
+    _this.add_method('axis_h');
+
+    _this.add_method('axis_v');
+
+    return _this;
+  }
+  /**
+   * Get SVG canvas element instance.
+   * 
+   * @returns {object}
+   */
+
+
+  _createClass(Space, [{
+    key: "svg",
+    value: function svg() {
+      return this._svg;
+    }
+    /**
+     * Get space PixelBox instance.
+     * 
+     * @returns {PixelBox}
+     */
+
+  }, {
+    key: "pixelbox",
+    value: function pixelbox() {
+      return this._pixelbox;
+    }
+    /**
+     * Get all space domains array.
+     * 
+     * @returns {array}
+     */
+
+  }, {
+    key: "domains",
+    value: function domains() {
+      return this._geospace.domains();
+    }
+    /**
+     * Get X domain if it exists or undefined.
+     * 
+     * @returns {Domain|undefined}
+     */
+
+  }, {
+    key: "domain_x",
+    value: function domain_x() {
+      return this._geospace.domain_x();
+    }
+    /**
+     * Get Y domain if it exists or undefined.
+     * 
+     * @returns {Domain|undefined}
+     */
+
+  }, {
+    key: "domain_y",
+    value: function domain_y() {
+      return this._geospace.domain_y();
+    }
+    /**
+     * Get Z domain if it exists or undefined.
+     * 
+     * @returns {Domain|undefined}
+     */
+
+  }, {
+    key: "domain_z",
+    value: function domain_z() {
+      return this._geospace.domain_z();
+    }
+    /**
+     * Get T domain if it exists or undefined.
+     * 
+     * @returns {Domain|undefined}
+     */
+
+  }, {
+    key: "domain_t",
+    value: function domain_t() {
+      return this._geospace.domain_t();
+    }
+    /**
+     * Create GeoProjection instance.
+     * 
+     * @param {GeoSpace}    arg_space 
+     * @param {GeoTriPoint} arg_plan 
+     * @param {GeoBiPoint}  arg_direction 
+     * @param {Function}    arg_projection_fn 
+     * 
+     * @returns {GeoProjection}
+     */
+
+  }, {
+    key: "create_projection",
+    value: function create_projection(arg_space, arg_plan, arg_direction, arg_projection_fn) {
+      var space_is_valid = _types.default.isObject(arg_space) && arg_space.is_geospace;
+      var direction_is_valid = _types.default.isObject(arg_direction) && arg_direction.is_geobipoint;
+
+      var fn_is_valid = _types.default.isFunction(arg_projection_fn);
+
+      if (space_is_valid && direction_is_valid && fn_is_valid) {
+        return new GeoProjection(arg_space, arg_plan, arg_direction, arg_projection_fn);
+      }
+
+      return undefined;
+    }
+    /**
+     * Project a multi-dimenstional position to a 2d Pixel.
+     * 
+     * @param {Array|Vector|GeoPoint} arg_position       - multi-dimenstional position to project.
+     * @param {boolean}               arg_without_boxing - true for no pixel boxing.
+     * @param {SvgSpace}              arg_space          - SvgSpace instance to use for projection.
+     * 
+     * @returns {PixelPoint}
+     */
+
+  }, {
+    key: "project",
+    value: function project(arg_position) {
+      var arg_without_boxing = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var arg_space = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this;
+
+      if (Array.isArray(arg_position)) {
+        arg_position = new _geopoint.default(arg_position);
+      }
+
+      if (arg_space._geoprojection) {
+        var projected_pos = arg_space._geoprojection.project(arg_position);
+
+        if (arg_without_boxing) {
+          return projected_pos;
+        }
+
+        return this._pixelbox.get_boxed_pixel(projected_pos);
+      }
+
+      return undefined;
+    }
+  }, {
+    key: "project_x",
+    value: function project_x(arg_position_x) {
+      var arg_space = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this;
+      var tmp_position = new _geopoint.default([arg_position_x, 0]);
+      return this.project(tmp_position, false, arg_space).h();
+    }
+  }, {
+    key: "project_y",
+    value: function project_y(arg_position_y) {
+      var arg_space = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this;
+      var tmp_position = new _geopoint.default([arg_position_y, 0]);
+      return this.project(tmp_position, false, arg_space).v();
+    }
+  }, {
+    key: "range_to_screen_h",
+    value: function range_to_screen_h(arg_position_x) {
+      var arg_space = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this;
+      var tmp_position = new _geopoint.default([arg_position_x, 0]);
+      return this.project(tmp_position, true, arg_space).h();
+    }
+  }, {
+    key: "range_to_screen_v",
+    value: function range_to_screen_v(arg_position_y) {
+      var arg_space = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this;
+      var tmp_position = new _geopoint.default([0, arg_position_y]);
+      return this.project(tmp_position, true, arg_space).v();
+    }
+  }, {
+    key: "rotate",
+    value: function rotate() {}
+  }, {
+    key: "translate",
+    value: function translate() {}
+  }, {
+    key: "scale",
+    value: function scale() {}
+  }, {
+    key: "background",
+    value: function background() {
+      var arg_color = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '#dde3e1';
+
+      var pixelbox = this._pixelbox.get_usable();
+
+      var background = this._svg.rect(pixelbox.width, pixelbox.height).move(pixelbox.top_left.h, pixelbox.top_left.v).fill(arg_color);
+
+      this._shape.add(background);
+
+      return background;
+    }
+  }, {
+    key: "axis",
+    value: function axis(arg_domain_name) {
+      var arg_color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '#fff';
+      var arg_width = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+      var position = this.get_origin_position();
+      var domain = arg_domain_name == 'x' ? this.domain_x() : this.domain_y();
+      var start = domain.start();
+      var end = domain.end();
+      position.value(domain.index(), domain.start());
+      var axis = new _axis.default(this, this, position, arg_domain_name, arg_color, arg_width);
+      axis.draw();
+
+      this._shape.add(axis.svg_shape());
+
+      this._axis[arg_domain_name] = axis;
+      return axis;
+    }
+  }, {
+    key: "get_origin_position",
+    value: function get_origin_position() {
+      var positions = [];
+      var count = this._domains.length;
+      var i = 0;
+
+      for (i; i < count; i++) {
+        positions.push(0);
+      }
+
+      return new _geopoint.default(positions);
+    }
+  }, {
+    key: "get_start_position",
+    value: function get_start_position() {
+      var positions = [];
+      var count = this._domains.length;
+      var i = 0;
+
+      for (i; i < count; i++) {
+        var domain = this._domains_by_index[i];
+        positions.push(domain.start());
+      }
+
+      return new _geopoint.default(positions);
+    }
+  }, {
+    key: "get_end_position",
+    value: function get_end_position() {
+      var positions = [];
+      var count = this._domains.length;
+      var i = 0;
+
+      for (i; i < count; i++) {
+        var domain = this._domains_by_index[i];
+        positions.push(domain.end());
+      }
+
+      return new _geopoint.default(positions);
+    } // _set_domains(arg_domains)
+    // {
+    // 	if (! T.isNotEmptyArray(arg_domains))
+    // 	{
+    // 		return
+    // 	}
+    // 	let index, start, end, step, name, domain
+    // 	arg_domains.forEach(
+    // 		(domain_cfg, i)=>{
+    // 			index   = T.isNumber(domain_cfg.index)   ? domain_cfg.index   : i
+    // 			start   = T.isNumber(domain_cfg.start)   ? domain_cfg.start   : DEFAULT_DOMAINS_START
+    // 			end     = T.isNumber(domain_cfg.end)     ? domain_cfg.end     : DEFAULT_DOMAINS_END
+    // 			step    = T.isNumber(domain_cfg.step)    ? domain_cfg.step    : DEFAULT_DOMAINS_STEP
+    // 			name    = T.isNotEmptyString(domain_cfg.name) ? domain_cfg.name  : 'domains[' + i +']'
+    // 			domain = new GeoDomain(name, index, start, end, step)
+    // 			this._domains.push(domain)
+    // 			this._domains_by_index[index] = domain
+    // 			this._domains_by_name[name] = domain
+    // 		}
+    // 	)
+    // }
+
+  }]);
+
+  return Space;
+}(_drawable.default);
+
+exports.default = Space;
+
+
+},{"../../base/pixelbox":572,"../../base/pixelpoint":573,"../../geometry/geodomain":579,"../../geometry/geopoint":581,"../../geometry/geospace":582,"../../geometry/projection_fn_2dto2d_euclidian":583,"../../math/vector":598,"../drawable":601,"./axis":603,"devapt-core-common/dist/js/utils/types":177}],615:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _types = _interopRequireDefault(require("devapt-core-common/dist/js/utils/types"));
+
+var _drawable = _interopRequireDefault(require("../drawable"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var plugin_name = 'Labs';
+var context = plugin_name + '/svg/star';
+var DEFAULT_INNER = 50;
+var DEFAULT_OUTER = 50;
+var DEFAULT_SPIKES = 5;
+/**
+ * @file Drawing polygon class.
+ * 
+ * @author Luc BORIES
+ * @license Apache-2.0
+ * 
+ */
+
+var Star =
+/*#__PURE__*/
+function (_Drawable) {
+  _inherits(Star, _Drawable);
+
+  /**
+   * Create a shape instance.
+   * 
+   * @param {Space}        arg_space    - drawing space.
+   * @param {Drawable}     arg_owner    - parent shape (or undefined for top Space).
+   * @param {array|Vector} arg_position - shape position.
+   * @param {string}		 arg_color    - shape color.
+   * @param {number}       arg_spikes   - shape spikes count.
+   * @param {number}       arg_inner    - shape inner.
+   * @param {number}       arg_outer    - shape outer.
+   * 
+   * @returns {nothing}
+   */
+  function Star(arg_space, arg_owner, arg_position) {
+    var _this;
+
+    var arg_color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
+    var arg_spikes = arguments.length > 4 ? arguments[4] : undefined;
+    var arg_inner = arguments.length > 5 ? arguments[5] : undefined;
+    var arg_outer = arguments.length > 6 ? arguments[6] : undefined;
+
+    _classCallCheck(this, Star);
+
+    _this = _possibleConstructorReturn(this, (Star.__proto__ || Object.getPrototypeOf(Star)).call(this, arg_space, arg_owner, arg_position, 'star'));
+    _this.is_svg_star = true;
+    _this._spikes = typeof arg_spikes == 'number' ? arg_spikes : DEFAULT_SPIKES;
+    _this._inner = typeof arg_inner == 'number' ? arg_inner : DEFAULT_INNER;
+    _this._outer = typeof arg_outer == 'number' ? arg_outer : DEFAULT_OUTER;
+    _this.color = arg_color;
+    return _this;
+  }
+
+  _createClass(Star, [{
+    key: "draw",
+    value: function draw() {
+      // DO NOT RENDER	
+      if (this.color == 'none') {
+        return;
+      }
+
+      var pos_h = this.h();
+      var pos_v = this.v();
+      var inner_h = this.space().range_to_screen_h(this._inner);
+      var inner_v = this.space().range_to_screen_v(this._inner);
+      var inner = Math.min(inner_h, inner_v);
+      var outer_h = this.space().range_to_screen_h(this._outer);
+      var outer_v = this.space().range_to_screen_v(this._outer);
+      var outer = Math.min(outer_h, outer_v);
+      var spikes = typeof this._spikes == 'number' ? this._spikes : DEFAULT_SPIKES;
+      var i, a, x, y;
+      var points = [];
+      var degrees = 360 / spikes;
+
+      for (i = 0; i < spikes; i++) {
+        a = i * degrees + 90;
+        x = outer + inner * Math.cos(a * Math.PI / 180);
+        y = outer + inner * Math.sin(a * Math.PI / 180);
+        points.push([x, y]);
+        a += degrees / 2;
+        x = outer + outer * Math.cos(a * Math.PI / 180);
+        y = outer + outer * Math.sin(a * Math.PI / 180);
+        points.push([x, y]);
+      }
+
+      this._shape = this.space().svg().polygon(new SVG.PointArray(points)).center(pos_h, pos_v);
+      this.draw_color();
+      return this;
+    }
+  }]);
+
+  return Star;
+}(_drawable.default);
+
+exports.default = Star;
+
+
+},{"../drawable":601,"devapt-core-common/dist/js/utils/types":177}],616:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -71060,7 +71968,7 @@ var objectKeys = Object.keys || function (obj) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"util/":972}],612:[function(require,module,exports){
+},{"util/":977}],617:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -71176,13 +72084,13 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],613:[function(require,module,exports){
+},{}],618:[function(require,module,exports){
 
-},{}],614:[function(require,module,exports){
+},{}],619:[function(require,module,exports){
 arguments[4][180][0].apply(exports,arguments)
-},{"dup":180}],615:[function(require,module,exports){
-arguments[4][613][0].apply(exports,arguments)
-},{"dup":613}],616:[function(require,module,exports){
+},{"dup":180}],620:[function(require,module,exports){
+arguments[4][618][0].apply(exports,arguments)
+},{"dup":618}],621:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -71368,7 +72276,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],617:[function(require,module,exports){
+},{}],622:[function(require,module,exports){
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -73084,16 +73992,16 @@ function numberIsNaN (obj) {
   return obj !== obj // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":612,"ieee754":942}],618:[function(require,module,exports){
+},{"base64-js":617,"ieee754":947}],623:[function(require,module,exports){
 arguments[4][14][0].apply(exports,arguments)
-},{"dup":14}],619:[function(require,module,exports){
+},{"dup":14}],624:[function(require,module,exports){
 var cof = require('./_cof');
 module.exports = function (it, msg) {
   if (typeof it != 'number' && cof(it) != 'Number') throw TypeError(msg);
   return +it;
 };
 
-},{"./_cof":633}],620:[function(require,module,exports){
+},{"./_cof":638}],625:[function(require,module,exports){
 // 22.1.3.31 Array.prototype[@@unscopables]
 var UNSCOPABLES = require('./_wks')('unscopables');
 var ArrayProto = Array.prototype;
@@ -73102,11 +74010,11 @@ module.exports = function (key) {
   ArrayProto[UNSCOPABLES][key] = true;
 };
 
-},{"./_hide":657,"./_wks":740}],621:[function(require,module,exports){
+},{"./_hide":662,"./_wks":745}],626:[function(require,module,exports){
 arguments[4][15][0].apply(exports,arguments)
-},{"dup":15}],622:[function(require,module,exports){
+},{"dup":15}],627:[function(require,module,exports){
 arguments[4][16][0].apply(exports,arguments)
-},{"./_is-object":666,"dup":16}],623:[function(require,module,exports){
+},{"./_is-object":671,"dup":16}],628:[function(require,module,exports){
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 'use strict';
 var toObject = require('./_to-object');
@@ -73134,7 +74042,7 @@ module.exports = [].copyWithin || function copyWithin(target /* = 0 */, start /*
   } return O;
 };
 
-},{"./_to-absolute-index":725,"./_to-length":729,"./_to-object":730}],624:[function(require,module,exports){
+},{"./_to-absolute-index":730,"./_to-length":734,"./_to-object":735}],629:[function(require,module,exports){
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 'use strict';
 var toObject = require('./_to-object');
@@ -73151,7 +74059,7 @@ module.exports = function fill(value /* , start = 0, end = @length */) {
   return O;
 };
 
-},{"./_to-absolute-index":725,"./_to-length":729,"./_to-object":730}],625:[function(require,module,exports){
+},{"./_to-absolute-index":730,"./_to-length":734,"./_to-object":735}],630:[function(require,module,exports){
 var forOf = require('./_for-of');
 
 module.exports = function (iter, ITERATOR) {
@@ -73160,9 +74068,9 @@ module.exports = function (iter, ITERATOR) {
   return result;
 };
 
-},{"./_for-of":654}],626:[function(require,module,exports){
+},{"./_for-of":659}],631:[function(require,module,exports){
 arguments[4][17][0].apply(exports,arguments)
-},{"./_to-absolute-index":725,"./_to-iobject":728,"./_to-length":729,"dup":17}],627:[function(require,module,exports){
+},{"./_to-absolute-index":730,"./_to-iobject":733,"./_to-length":734,"dup":17}],632:[function(require,module,exports){
 // 0 -> Array#forEach
 // 1 -> Array#map
 // 2 -> Array#filter
@@ -73208,7 +74116,7 @@ module.exports = function (TYPE, $create) {
   };
 };
 
-},{"./_array-species-create":630,"./_ctx":640,"./_iobject":662,"./_to-length":729,"./_to-object":730}],628:[function(require,module,exports){
+},{"./_array-species-create":635,"./_ctx":645,"./_iobject":667,"./_to-length":734,"./_to-object":735}],633:[function(require,module,exports){
 var aFunction = require('./_a-function');
 var toObject = require('./_to-object');
 var IObject = require('./_iobject');
@@ -73238,7 +74146,7 @@ module.exports = function (that, callbackfn, aLen, memo, isRight) {
   return memo;
 };
 
-},{"./_a-function":618,"./_iobject":662,"./_to-length":729,"./_to-object":730}],629:[function(require,module,exports){
+},{"./_a-function":623,"./_iobject":667,"./_to-length":734,"./_to-object":735}],634:[function(require,module,exports){
 var isObject = require('./_is-object');
 var isArray = require('./_is-array');
 var SPECIES = require('./_wks')('species');
@@ -73256,7 +74164,7 @@ module.exports = function (original) {
   } return C === undefined ? Array : C;
 };
 
-},{"./_is-array":664,"./_is-object":666,"./_wks":740}],630:[function(require,module,exports){
+},{"./_is-array":669,"./_is-object":671,"./_wks":745}],635:[function(require,module,exports){
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
 var speciesConstructor = require('./_array-species-constructor');
 
@@ -73264,7 +74172,7 @@ module.exports = function (original, length) {
   return new (speciesConstructor(original))(length);
 };
 
-},{"./_array-species-constructor":629}],631:[function(require,module,exports){
+},{"./_array-species-constructor":634}],636:[function(require,module,exports){
 'use strict';
 var aFunction = require('./_a-function');
 var isObject = require('./_is-object');
@@ -73291,11 +74199,11 @@ module.exports = Function.bind || function bind(that /* , ...args */) {
   return bound;
 };
 
-},{"./_a-function":618,"./_invoke":661,"./_is-object":666}],632:[function(require,module,exports){
+},{"./_a-function":623,"./_invoke":666,"./_is-object":671}],637:[function(require,module,exports){
 arguments[4][18][0].apply(exports,arguments)
-},{"./_cof":633,"./_wks":740,"dup":18}],633:[function(require,module,exports){
+},{"./_cof":638,"./_wks":745,"dup":18}],638:[function(require,module,exports){
 arguments[4][19][0].apply(exports,arguments)
-},{"dup":19}],634:[function(require,module,exports){
+},{"dup":19}],639:[function(require,module,exports){
 'use strict';
 var dP = require('./_object-dp').f;
 var create = require('./_object-create');
@@ -73441,7 +74349,7 @@ module.exports = {
   }
 };
 
-},{"./_an-instance":621,"./_ctx":640,"./_descriptors":644,"./_for-of":654,"./_iter-define":670,"./_iter-step":672,"./_meta":680,"./_object-create":685,"./_object-dp":686,"./_redefine-all":705,"./_set-species":711,"./_validate-collection":737}],635:[function(require,module,exports){
+},{"./_an-instance":626,"./_ctx":645,"./_descriptors":649,"./_for-of":659,"./_iter-define":675,"./_iter-step":677,"./_meta":685,"./_object-create":690,"./_object-dp":691,"./_redefine-all":710,"./_set-species":716,"./_validate-collection":742}],640:[function(require,module,exports){
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var classof = require('./_classof');
 var from = require('./_array-from-iterable');
@@ -73452,7 +74360,7 @@ module.exports = function (NAME) {
   };
 };
 
-},{"./_array-from-iterable":625,"./_classof":632}],636:[function(require,module,exports){
+},{"./_array-from-iterable":630,"./_classof":637}],641:[function(require,module,exports){
 'use strict';
 var redefineAll = require('./_redefine-all');
 var getWeak = require('./_meta').getWeak;
@@ -73539,7 +74447,7 @@ module.exports = {
   ufstore: uncaughtFrozenStore
 };
 
-},{"./_an-instance":621,"./_an-object":622,"./_array-methods":627,"./_for-of":654,"./_has":656,"./_is-object":666,"./_meta":680,"./_redefine-all":705,"./_validate-collection":737}],637:[function(require,module,exports){
+},{"./_an-instance":626,"./_an-object":627,"./_array-methods":632,"./_for-of":659,"./_has":661,"./_is-object":671,"./_meta":685,"./_redefine-all":710,"./_validate-collection":742}],642:[function(require,module,exports){
 'use strict';
 var global = require('./_global');
 var $export = require('./_export');
@@ -73626,13 +74534,13 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
   return C;
 };
 
-},{"./_an-instance":621,"./_export":648,"./_fails":650,"./_for-of":654,"./_global":655,"./_inherit-if-required":660,"./_is-object":666,"./_iter-detect":671,"./_meta":680,"./_redefine":706,"./_redefine-all":705,"./_set-to-string-tag":712}],638:[function(require,module,exports){
+},{"./_an-instance":626,"./_export":653,"./_fails":655,"./_for-of":659,"./_global":660,"./_inherit-if-required":665,"./_is-object":671,"./_iter-detect":676,"./_meta":685,"./_redefine":711,"./_redefine-all":710,"./_set-to-string-tag":717}],643:[function(require,module,exports){
 arguments[4][20][0].apply(exports,arguments)
-},{"dup":20}],639:[function(require,module,exports){
+},{"dup":20}],644:[function(require,module,exports){
 arguments[4][21][0].apply(exports,arguments)
-},{"./_object-dp":686,"./_property-desc":704,"dup":21}],640:[function(require,module,exports){
+},{"./_object-dp":691,"./_property-desc":709,"dup":21}],645:[function(require,module,exports){
 arguments[4][22][0].apply(exports,arguments)
-},{"./_a-function":618,"dup":22}],641:[function(require,module,exports){
+},{"./_a-function":623,"dup":22}],646:[function(require,module,exports){
 'use strict';
 // 20.3.4.36 / 15.9.5.43 Date.prototype.toISOString()
 var fails = require('./_fails');
@@ -73660,7 +74568,7 @@ module.exports = (fails(function () {
     ':' + lz(d.getUTCSeconds()) + '.' + (m > 99 ? m : '0' + lz(m)) + 'Z';
 } : $toISOString;
 
-},{"./_fails":650}],642:[function(require,module,exports){
+},{"./_fails":655}],647:[function(require,module,exports){
 'use strict';
 var anObject = require('./_an-object');
 var toPrimitive = require('./_to-primitive');
@@ -73671,19 +74579,19 @@ module.exports = function (hint) {
   return toPrimitive(anObject(this), hint != NUMBER);
 };
 
-},{"./_an-object":622,"./_to-primitive":731}],643:[function(require,module,exports){
+},{"./_an-object":627,"./_to-primitive":736}],648:[function(require,module,exports){
 arguments[4][23][0].apply(exports,arguments)
-},{"dup":23}],644:[function(require,module,exports){
+},{"dup":23}],649:[function(require,module,exports){
 arguments[4][24][0].apply(exports,arguments)
-},{"./_fails":650,"dup":24}],645:[function(require,module,exports){
+},{"./_fails":655,"dup":24}],650:[function(require,module,exports){
 arguments[4][25][0].apply(exports,arguments)
-},{"./_global":655,"./_is-object":666,"dup":25}],646:[function(require,module,exports){
+},{"./_global":660,"./_is-object":671,"dup":25}],651:[function(require,module,exports){
 arguments[4][26][0].apply(exports,arguments)
-},{"dup":26}],647:[function(require,module,exports){
+},{"dup":26}],652:[function(require,module,exports){
 arguments[4][27][0].apply(exports,arguments)
-},{"./_object-gops":692,"./_object-keys":695,"./_object-pie":696,"dup":27}],648:[function(require,module,exports){
+},{"./_object-gops":697,"./_object-keys":700,"./_object-pie":701,"dup":27}],653:[function(require,module,exports){
 arguments[4][28][0].apply(exports,arguments)
-},{"./_core":638,"./_ctx":640,"./_global":655,"./_hide":657,"./_redefine":706,"dup":28}],649:[function(require,module,exports){
+},{"./_core":643,"./_ctx":645,"./_global":660,"./_hide":662,"./_redefine":711,"dup":28}],654:[function(require,module,exports){
 var MATCH = require('./_wks')('match');
 module.exports = function (KEY) {
   var re = /./;
@@ -73697,9 +74605,9 @@ module.exports = function (KEY) {
   } return true;
 };
 
-},{"./_wks":740}],650:[function(require,module,exports){
+},{"./_wks":745}],655:[function(require,module,exports){
 arguments[4][29][0].apply(exports,arguments)
-},{"dup":29}],651:[function(require,module,exports){
+},{"dup":29}],656:[function(require,module,exports){
 'use strict';
 var hide = require('./_hide');
 var redefine = require('./_redefine');
@@ -73729,7 +74637,7 @@ module.exports = function (KEY, length, exec) {
   }
 };
 
-},{"./_defined":643,"./_fails":650,"./_hide":657,"./_redefine":706,"./_wks":740}],652:[function(require,module,exports){
+},{"./_defined":648,"./_fails":655,"./_hide":662,"./_redefine":711,"./_wks":745}],657:[function(require,module,exports){
 'use strict';
 // 21.2.5.3 get RegExp.prototype.flags
 var anObject = require('./_an-object');
@@ -73744,7 +74652,7 @@ module.exports = function () {
   return result;
 };
 
-},{"./_an-object":622}],653:[function(require,module,exports){
+},{"./_an-object":627}],658:[function(require,module,exports){
 'use strict';
 // https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
 var isArray = require('./_is-array');
@@ -73785,19 +74693,19 @@ function flattenIntoArray(target, original, source, sourceLen, start, depth, map
 
 module.exports = flattenIntoArray;
 
-},{"./_ctx":640,"./_is-array":664,"./_is-object":666,"./_to-length":729,"./_wks":740}],654:[function(require,module,exports){
+},{"./_ctx":645,"./_is-array":669,"./_is-object":671,"./_to-length":734,"./_wks":745}],659:[function(require,module,exports){
 arguments[4][30][0].apply(exports,arguments)
-},{"./_an-object":622,"./_ctx":640,"./_is-array-iter":663,"./_iter-call":668,"./_to-length":729,"./core.get-iterator-method":741,"dup":30}],655:[function(require,module,exports){
+},{"./_an-object":627,"./_ctx":645,"./_is-array-iter":668,"./_iter-call":673,"./_to-length":734,"./core.get-iterator-method":746,"dup":30}],660:[function(require,module,exports){
 arguments[4][31][0].apply(exports,arguments)
-},{"dup":31}],656:[function(require,module,exports){
+},{"dup":31}],661:[function(require,module,exports){
 arguments[4][32][0].apply(exports,arguments)
-},{"dup":32}],657:[function(require,module,exports){
+},{"dup":32}],662:[function(require,module,exports){
 arguments[4][33][0].apply(exports,arguments)
-},{"./_descriptors":644,"./_object-dp":686,"./_property-desc":704,"dup":33}],658:[function(require,module,exports){
+},{"./_descriptors":649,"./_object-dp":691,"./_property-desc":709,"dup":33}],663:[function(require,module,exports){
 arguments[4][34][0].apply(exports,arguments)
-},{"./_global":655,"dup":34}],659:[function(require,module,exports){
+},{"./_global":660,"dup":34}],664:[function(require,module,exports){
 arguments[4][35][0].apply(exports,arguments)
-},{"./_descriptors":644,"./_dom-create":645,"./_fails":650,"dup":35}],660:[function(require,module,exports){
+},{"./_descriptors":649,"./_dom-create":650,"./_fails":655,"dup":35}],665:[function(require,module,exports){
 var isObject = require('./_is-object');
 var setPrototypeOf = require('./_set-proto').set;
 module.exports = function (that, target, C) {
@@ -73808,15 +74716,15 @@ module.exports = function (that, target, C) {
   } return that;
 };
 
-},{"./_is-object":666,"./_set-proto":710}],661:[function(require,module,exports){
+},{"./_is-object":671,"./_set-proto":715}],666:[function(require,module,exports){
 arguments[4][36][0].apply(exports,arguments)
-},{"dup":36}],662:[function(require,module,exports){
+},{"dup":36}],667:[function(require,module,exports){
 arguments[4][37][0].apply(exports,arguments)
-},{"./_cof":633,"dup":37}],663:[function(require,module,exports){
+},{"./_cof":638,"dup":37}],668:[function(require,module,exports){
 arguments[4][38][0].apply(exports,arguments)
-},{"./_iterators":673,"./_wks":740,"dup":38}],664:[function(require,module,exports){
+},{"./_iterators":678,"./_wks":745,"dup":38}],669:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"./_cof":633,"dup":39}],665:[function(require,module,exports){
+},{"./_cof":638,"dup":39}],670:[function(require,module,exports){
 // 20.1.2.3 Number.isInteger(number)
 var isObject = require('./_is-object');
 var floor = Math.floor;
@@ -73824,9 +74732,9 @@ module.exports = function isInteger(it) {
   return !isObject(it) && isFinite(it) && floor(it) === it;
 };
 
-},{"./_is-object":666}],666:[function(require,module,exports){
+},{"./_is-object":671}],671:[function(require,module,exports){
 arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],667:[function(require,module,exports){
+},{"dup":40}],672:[function(require,module,exports){
 // 7.2.8 IsRegExp(argument)
 var isObject = require('./_is-object');
 var cof = require('./_cof');
@@ -73836,9 +74744,9 @@ module.exports = function (it) {
   return isObject(it) && ((isRegExp = it[MATCH]) !== undefined ? !!isRegExp : cof(it) == 'RegExp');
 };
 
-},{"./_cof":633,"./_is-object":666,"./_wks":740}],668:[function(require,module,exports){
+},{"./_cof":638,"./_is-object":671,"./_wks":745}],673:[function(require,module,exports){
 arguments[4][41][0].apply(exports,arguments)
-},{"./_an-object":622,"dup":41}],669:[function(require,module,exports){
+},{"./_an-object":627,"dup":41}],674:[function(require,module,exports){
 'use strict';
 var create = require('./_object-create');
 var descriptor = require('./_property-desc');
@@ -73853,7 +74761,7 @@ module.exports = function (Constructor, NAME, next) {
   setToStringTag(Constructor, NAME + ' Iterator');
 };
 
-},{"./_hide":657,"./_object-create":685,"./_property-desc":704,"./_set-to-string-tag":712,"./_wks":740}],670:[function(require,module,exports){
+},{"./_hide":662,"./_object-create":690,"./_property-desc":709,"./_set-to-string-tag":717,"./_wks":745}],675:[function(require,module,exports){
 'use strict';
 var LIBRARY = require('./_library');
 var $export = require('./_export');
@@ -73925,18 +74833,18 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
   return methods;
 };
 
-},{"./_export":648,"./_has":656,"./_hide":657,"./_iter-create":669,"./_iterators":673,"./_library":674,"./_object-gpo":693,"./_redefine":706,"./_set-to-string-tag":712,"./_wks":740}],671:[function(require,module,exports){
+},{"./_export":653,"./_has":661,"./_hide":662,"./_iter-create":674,"./_iterators":678,"./_library":679,"./_object-gpo":698,"./_redefine":711,"./_set-to-string-tag":717,"./_wks":745}],676:[function(require,module,exports){
 arguments[4][42][0].apply(exports,arguments)
-},{"./_wks":740,"dup":42}],672:[function(require,module,exports){
+},{"./_wks":745,"dup":42}],677:[function(require,module,exports){
 module.exports = function (done, value) {
   return { value: value, done: !!done };
 };
 
-},{}],673:[function(require,module,exports){
+},{}],678:[function(require,module,exports){
 arguments[4][43][0].apply(exports,arguments)
-},{"dup":43}],674:[function(require,module,exports){
+},{"dup":43}],679:[function(require,module,exports){
 arguments[4][44][0].apply(exports,arguments)
-},{"dup":44}],675:[function(require,module,exports){
+},{"dup":44}],680:[function(require,module,exports){
 // 20.2.2.14 Math.expm1(x)
 var $expm1 = Math.expm1;
 module.exports = (!$expm1
@@ -73948,7 +74856,7 @@ module.exports = (!$expm1
   return (x = +x) == 0 ? x : x > -1e-6 && x < 1e-6 ? x + x * x / 2 : Math.exp(x) - 1;
 } : $expm1;
 
-},{}],676:[function(require,module,exports){
+},{}],681:[function(require,module,exports){
 // 20.2.2.16 Math.fround(x)
 var sign = require('./_math-sign');
 var pow = Math.pow;
@@ -73973,13 +74881,13 @@ module.exports = Math.fround || function fround(x) {
   return $sign * result;
 };
 
-},{"./_math-sign":679}],677:[function(require,module,exports){
+},{"./_math-sign":684}],682:[function(require,module,exports){
 // 20.2.2.20 Math.log1p(x)
 module.exports = Math.log1p || function log1p(x) {
   return (x = +x) > -1e-8 && x < 1e-8 ? x - x * x / 2 : Math.log(1 + x);
 };
 
-},{}],678:[function(require,module,exports){
+},{}],683:[function(require,module,exports){
 // https://rwaldron.github.io/proposal-math-extensions/
 module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh) {
   if (
@@ -73999,16 +74907,16 @@ module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh)
   return (x - inLow) * (outHigh - outLow) / (inHigh - inLow) + outLow;
 };
 
-},{}],679:[function(require,module,exports){
+},{}],684:[function(require,module,exports){
 // 20.2.2.28 Math.sign(x)
 module.exports = Math.sign || function sign(x) {
   // eslint-disable-next-line no-self-compare
   return (x = +x) == 0 || x != x ? x : x < 0 ? -1 : 1;
 };
 
-},{}],680:[function(require,module,exports){
+},{}],685:[function(require,module,exports){
 arguments[4][45][0].apply(exports,arguments)
-},{"./_fails":650,"./_has":656,"./_is-object":666,"./_object-dp":686,"./_uid":735,"dup":45}],681:[function(require,module,exports){
+},{"./_fails":655,"./_has":661,"./_is-object":671,"./_object-dp":691,"./_uid":740,"dup":45}],686:[function(require,module,exports){
 var Map = require('./es6.map');
 var $export = require('./_export');
 var shared = require('./_shared')('metadata');
@@ -74061,11 +74969,11 @@ module.exports = {
   exp: exp
 };
 
-},{"./_export":648,"./_shared":714,"./es6.map":771,"./es6.weak-map":877}],682:[function(require,module,exports){
+},{"./_export":653,"./_shared":719,"./es6.map":776,"./es6.weak-map":882}],687:[function(require,module,exports){
 arguments[4][46][0].apply(exports,arguments)
-},{"./_cof":633,"./_global":655,"./_task":724,"dup":46}],683:[function(require,module,exports){
+},{"./_cof":638,"./_global":660,"./_task":729,"dup":46}],688:[function(require,module,exports){
 arguments[4][47][0].apply(exports,arguments)
-},{"./_a-function":618,"dup":47}],684:[function(require,module,exports){
+},{"./_a-function":623,"dup":47}],689:[function(require,module,exports){
 'use strict';
 // 19.1.2.1 Object.assign(target, source, ...)
 var getKeys = require('./_object-keys');
@@ -74101,13 +75009,13 @@ module.exports = !$assign || require('./_fails')(function () {
   } return T;
 } : $assign;
 
-},{"./_fails":650,"./_iobject":662,"./_object-gops":692,"./_object-keys":695,"./_object-pie":696,"./_to-object":730}],685:[function(require,module,exports){
+},{"./_fails":655,"./_iobject":667,"./_object-gops":697,"./_object-keys":700,"./_object-pie":701,"./_to-object":735}],690:[function(require,module,exports){
 arguments[4][48][0].apply(exports,arguments)
-},{"./_an-object":622,"./_dom-create":645,"./_enum-bug-keys":646,"./_html":658,"./_object-dps":687,"./_shared-key":713,"dup":48}],686:[function(require,module,exports){
+},{"./_an-object":627,"./_dom-create":650,"./_enum-bug-keys":651,"./_html":663,"./_object-dps":692,"./_shared-key":718,"dup":48}],691:[function(require,module,exports){
 arguments[4][49][0].apply(exports,arguments)
-},{"./_an-object":622,"./_descriptors":644,"./_ie8-dom-define":659,"./_to-primitive":731,"dup":49}],687:[function(require,module,exports){
+},{"./_an-object":627,"./_descriptors":649,"./_ie8-dom-define":664,"./_to-primitive":736,"dup":49}],692:[function(require,module,exports){
 arguments[4][50][0].apply(exports,arguments)
-},{"./_an-object":622,"./_descriptors":644,"./_object-dp":686,"./_object-keys":695,"dup":50}],688:[function(require,module,exports){
+},{"./_an-object":627,"./_descriptors":649,"./_object-dp":691,"./_object-keys":700,"dup":50}],693:[function(require,module,exports){
 'use strict';
 // Forced replacement prototype accessors methods
 module.exports = require('./_library') || !require('./_fails')(function () {
@@ -74118,15 +75026,15 @@ module.exports = require('./_library') || !require('./_fails')(function () {
   delete require('./_global')[K];
 });
 
-},{"./_fails":650,"./_global":655,"./_library":674}],689:[function(require,module,exports){
+},{"./_fails":655,"./_global":660,"./_library":679}],694:[function(require,module,exports){
 arguments[4][51][0].apply(exports,arguments)
-},{"./_descriptors":644,"./_has":656,"./_ie8-dom-define":659,"./_object-pie":696,"./_property-desc":704,"./_to-iobject":728,"./_to-primitive":731,"dup":51}],690:[function(require,module,exports){
+},{"./_descriptors":649,"./_has":661,"./_ie8-dom-define":664,"./_object-pie":701,"./_property-desc":709,"./_to-iobject":733,"./_to-primitive":736,"dup":51}],695:[function(require,module,exports){
 arguments[4][52][0].apply(exports,arguments)
-},{"./_object-gopn":691,"./_to-iobject":728,"dup":52}],691:[function(require,module,exports){
+},{"./_object-gopn":696,"./_to-iobject":733,"dup":52}],696:[function(require,module,exports){
 arguments[4][53][0].apply(exports,arguments)
-},{"./_enum-bug-keys":646,"./_object-keys-internal":694,"dup":53}],692:[function(require,module,exports){
+},{"./_enum-bug-keys":651,"./_object-keys-internal":699,"dup":53}],697:[function(require,module,exports){
 arguments[4][54][0].apply(exports,arguments)
-},{"dup":54}],693:[function(require,module,exports){
+},{"dup":54}],698:[function(require,module,exports){
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has = require('./_has');
 var toObject = require('./_to-object');
@@ -74141,13 +75049,13 @@ module.exports = Object.getPrototypeOf || function (O) {
   } return O instanceof Object ? ObjectProto : null;
 };
 
-},{"./_has":656,"./_shared-key":713,"./_to-object":730}],694:[function(require,module,exports){
+},{"./_has":661,"./_shared-key":718,"./_to-object":735}],699:[function(require,module,exports){
 arguments[4][55][0].apply(exports,arguments)
-},{"./_array-includes":626,"./_has":656,"./_shared-key":713,"./_to-iobject":728,"dup":55}],695:[function(require,module,exports){
+},{"./_array-includes":631,"./_has":661,"./_shared-key":718,"./_to-iobject":733,"dup":55}],700:[function(require,module,exports){
 arguments[4][56][0].apply(exports,arguments)
-},{"./_enum-bug-keys":646,"./_object-keys-internal":694,"dup":56}],696:[function(require,module,exports){
+},{"./_enum-bug-keys":651,"./_object-keys-internal":699,"dup":56}],701:[function(require,module,exports){
 arguments[4][57][0].apply(exports,arguments)
-},{"dup":57}],697:[function(require,module,exports){
+},{"dup":57}],702:[function(require,module,exports){
 // most Object methods by ES6 should accept primitives
 var $export = require('./_export');
 var core = require('./_core');
@@ -74159,7 +75067,7 @@ module.exports = function (KEY, exec) {
   $export($export.S + $export.F * fails(function () { fn(1); }), 'Object', exp);
 };
 
-},{"./_core":638,"./_export":648,"./_fails":650}],698:[function(require,module,exports){
+},{"./_core":643,"./_export":653,"./_fails":655}],703:[function(require,module,exports){
 var getKeys = require('./_object-keys');
 var toIObject = require('./_to-iobject');
 var isEnum = require('./_object-pie').f;
@@ -74177,7 +75085,7 @@ module.exports = function (isEntries) {
   };
 };
 
-},{"./_object-keys":695,"./_object-pie":696,"./_to-iobject":728}],699:[function(require,module,exports){
+},{"./_object-keys":700,"./_object-pie":701,"./_to-iobject":733}],704:[function(require,module,exports){
 // all object keys, includes non-enumerable and symbols
 var gOPN = require('./_object-gopn');
 var gOPS = require('./_object-gops');
@@ -74189,7 +75097,7 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
   return getSymbols ? keys.concat(getSymbols(it)) : keys;
 };
 
-},{"./_an-object":622,"./_global":655,"./_object-gopn":691,"./_object-gops":692}],700:[function(require,module,exports){
+},{"./_an-object":627,"./_global":660,"./_object-gopn":696,"./_object-gops":697}],705:[function(require,module,exports){
 var $parseFloat = require('./_global').parseFloat;
 var $trim = require('./_string-trim').trim;
 
@@ -74199,7 +75107,7 @@ module.exports = 1 / $parseFloat(require('./_string-ws') + '-0') !== -Infinity ?
   return result === 0 && string.charAt(0) == '-' ? -0 : result;
 } : $parseFloat;
 
-},{"./_global":655,"./_string-trim":722,"./_string-ws":723}],701:[function(require,module,exports){
+},{"./_global":660,"./_string-trim":727,"./_string-ws":728}],706:[function(require,module,exports){
 var $parseInt = require('./_global').parseInt;
 var $trim = require('./_string-trim').trim;
 var ws = require('./_string-ws');
@@ -74210,24 +75118,24 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
   return $parseInt(string, (radix >>> 0) || (hex.test(string) ? 16 : 10));
 } : $parseInt;
 
-},{"./_global":655,"./_string-trim":722,"./_string-ws":723}],702:[function(require,module,exports){
+},{"./_global":660,"./_string-trim":727,"./_string-ws":728}],707:[function(require,module,exports){
 arguments[4][58][0].apply(exports,arguments)
-},{"dup":58}],703:[function(require,module,exports){
+},{"dup":58}],708:[function(require,module,exports){
 arguments[4][59][0].apply(exports,arguments)
-},{"./_an-object":622,"./_is-object":666,"./_new-promise-capability":683,"dup":59}],704:[function(require,module,exports){
+},{"./_an-object":627,"./_is-object":671,"./_new-promise-capability":688,"dup":59}],709:[function(require,module,exports){
 arguments[4][60][0].apply(exports,arguments)
-},{"dup":60}],705:[function(require,module,exports){
+},{"dup":60}],710:[function(require,module,exports){
 arguments[4][61][0].apply(exports,arguments)
-},{"./_redefine":706,"dup":61}],706:[function(require,module,exports){
+},{"./_redefine":711,"dup":61}],711:[function(require,module,exports){
 arguments[4][62][0].apply(exports,arguments)
-},{"./_core":638,"./_global":655,"./_has":656,"./_hide":657,"./_uid":735,"dup":62}],707:[function(require,module,exports){
+},{"./_core":643,"./_global":660,"./_has":661,"./_hide":662,"./_uid":740,"dup":62}],712:[function(require,module,exports){
 // 7.2.9 SameValue(x, y)
 module.exports = Object.is || function is(x, y) {
   // eslint-disable-next-line no-self-compare
   return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
 };
 
-},{}],708:[function(require,module,exports){
+},{}],713:[function(require,module,exports){
 'use strict';
 // https://tc39.github.io/proposal-setmap-offrom/
 var $export = require('./_export');
@@ -74257,7 +75165,7 @@ module.exports = function (COLLECTION) {
   } });
 };
 
-},{"./_a-function":618,"./_ctx":640,"./_export":648,"./_for-of":654}],709:[function(require,module,exports){
+},{"./_a-function":623,"./_ctx":645,"./_export":653,"./_for-of":659}],714:[function(require,module,exports){
 'use strict';
 // https://tc39.github.io/proposal-setmap-offrom/
 var $export = require('./_export');
@@ -74271,19 +75179,19 @@ module.exports = function (COLLECTION) {
   } });
 };
 
-},{"./_export":648}],710:[function(require,module,exports){
+},{"./_export":653}],715:[function(require,module,exports){
 arguments[4][63][0].apply(exports,arguments)
-},{"./_an-object":622,"./_ctx":640,"./_is-object":666,"./_object-gopd":689,"dup":63}],711:[function(require,module,exports){
+},{"./_an-object":627,"./_ctx":645,"./_is-object":671,"./_object-gopd":694,"dup":63}],716:[function(require,module,exports){
 arguments[4][64][0].apply(exports,arguments)
-},{"./_descriptors":644,"./_global":655,"./_object-dp":686,"./_wks":740,"dup":64}],712:[function(require,module,exports){
+},{"./_descriptors":649,"./_global":660,"./_object-dp":691,"./_wks":745,"dup":64}],717:[function(require,module,exports){
 arguments[4][65][0].apply(exports,arguments)
-},{"./_has":656,"./_object-dp":686,"./_wks":740,"dup":65}],713:[function(require,module,exports){
+},{"./_has":661,"./_object-dp":691,"./_wks":745,"dup":65}],718:[function(require,module,exports){
 arguments[4][66][0].apply(exports,arguments)
-},{"./_shared":714,"./_uid":735,"dup":66}],714:[function(require,module,exports){
+},{"./_shared":719,"./_uid":740,"dup":66}],719:[function(require,module,exports){
 arguments[4][67][0].apply(exports,arguments)
-},{"./_global":655,"dup":67}],715:[function(require,module,exports){
+},{"./_global":660,"dup":67}],720:[function(require,module,exports){
 arguments[4][68][0].apply(exports,arguments)
-},{"./_a-function":618,"./_an-object":622,"./_wks":740,"dup":68}],716:[function(require,module,exports){
+},{"./_a-function":623,"./_an-object":627,"./_wks":745,"dup":68}],721:[function(require,module,exports){
 'use strict';
 var fails = require('./_fails');
 
@@ -74294,7 +75202,7 @@ module.exports = function (method, arg) {
   });
 };
 
-},{"./_fails":650}],717:[function(require,module,exports){
+},{"./_fails":655}],722:[function(require,module,exports){
 var toInteger = require('./_to-integer');
 var defined = require('./_defined');
 // true  -> String#at
@@ -74313,7 +75221,7 @@ module.exports = function (TO_STRING) {
   };
 };
 
-},{"./_defined":643,"./_to-integer":727}],718:[function(require,module,exports){
+},{"./_defined":648,"./_to-integer":732}],723:[function(require,module,exports){
 // helper for String#{startsWith, endsWith, includes}
 var isRegExp = require('./_is-regexp');
 var defined = require('./_defined');
@@ -74323,7 +75231,7 @@ module.exports = function (that, searchString, NAME) {
   return String(defined(that));
 };
 
-},{"./_defined":643,"./_is-regexp":667}],719:[function(require,module,exports){
+},{"./_defined":648,"./_is-regexp":672}],724:[function(require,module,exports){
 var $export = require('./_export');
 var fails = require('./_fails');
 var defined = require('./_defined');
@@ -74344,7 +75252,7 @@ module.exports = function (NAME, exec) {
   }), 'String', O);
 };
 
-},{"./_defined":643,"./_export":648,"./_fails":650}],720:[function(require,module,exports){
+},{"./_defined":648,"./_export":653,"./_fails":655}],725:[function(require,module,exports){
 // https://github.com/tc39/proposal-string-pad-start-end
 var toLength = require('./_to-length');
 var repeat = require('./_string-repeat');
@@ -74362,7 +75270,7 @@ module.exports = function (that, maxLength, fillString, left) {
   return left ? stringFiller + S : S + stringFiller;
 };
 
-},{"./_defined":643,"./_string-repeat":721,"./_to-length":729}],721:[function(require,module,exports){
+},{"./_defined":648,"./_string-repeat":726,"./_to-length":734}],726:[function(require,module,exports){
 'use strict';
 var toInteger = require('./_to-integer');
 var defined = require('./_defined');
@@ -74376,7 +75284,7 @@ module.exports = function repeat(count) {
   return res;
 };
 
-},{"./_defined":643,"./_to-integer":727}],722:[function(require,module,exports){
+},{"./_defined":648,"./_to-integer":732}],727:[function(require,module,exports){
 var $export = require('./_export');
 var defined = require('./_defined');
 var fails = require('./_fails');
@@ -74408,15 +75316,15 @@ var trim = exporter.trim = function (string, TYPE) {
 
 module.exports = exporter;
 
-},{"./_defined":643,"./_export":648,"./_fails":650,"./_string-ws":723}],723:[function(require,module,exports){
+},{"./_defined":648,"./_export":653,"./_fails":655,"./_string-ws":728}],728:[function(require,module,exports){
 module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
   '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
-},{}],724:[function(require,module,exports){
+},{}],729:[function(require,module,exports){
 arguments[4][69][0].apply(exports,arguments)
-},{"./_cof":633,"./_ctx":640,"./_dom-create":645,"./_global":655,"./_html":658,"./_invoke":661,"dup":69}],725:[function(require,module,exports){
+},{"./_cof":638,"./_ctx":645,"./_dom-create":650,"./_global":660,"./_html":663,"./_invoke":666,"dup":69}],730:[function(require,module,exports){
 arguments[4][70][0].apply(exports,arguments)
-},{"./_to-integer":727,"dup":70}],726:[function(require,module,exports){
+},{"./_to-integer":732,"dup":70}],731:[function(require,module,exports){
 // https://tc39.github.io/ecma262/#sec-toindex
 var toInteger = require('./_to-integer');
 var toLength = require('./_to-length');
@@ -74428,17 +75336,17 @@ module.exports = function (it) {
   return length;
 };
 
-},{"./_to-integer":727,"./_to-length":729}],727:[function(require,module,exports){
+},{"./_to-integer":732,"./_to-length":734}],732:[function(require,module,exports){
 arguments[4][71][0].apply(exports,arguments)
-},{"dup":71}],728:[function(require,module,exports){
+},{"dup":71}],733:[function(require,module,exports){
 arguments[4][72][0].apply(exports,arguments)
-},{"./_defined":643,"./_iobject":662,"dup":72}],729:[function(require,module,exports){
+},{"./_defined":648,"./_iobject":667,"dup":72}],734:[function(require,module,exports){
 arguments[4][73][0].apply(exports,arguments)
-},{"./_to-integer":727,"dup":73}],730:[function(require,module,exports){
+},{"./_to-integer":732,"dup":73}],735:[function(require,module,exports){
 arguments[4][74][0].apply(exports,arguments)
-},{"./_defined":643,"dup":74}],731:[function(require,module,exports){
+},{"./_defined":648,"dup":74}],736:[function(require,module,exports){
 arguments[4][75][0].apply(exports,arguments)
-},{"./_is-object":666,"dup":75}],732:[function(require,module,exports){
+},{"./_is-object":671,"dup":75}],737:[function(require,module,exports){
 'use strict';
 if (require('./_descriptors')) {
   var LIBRARY = require('./_library');
@@ -74920,7 +75828,7 @@ if (require('./_descriptors')) {
   };
 } else module.exports = function () { /* empty */ };
 
-},{"./_an-instance":621,"./_array-copy-within":623,"./_array-fill":624,"./_array-includes":626,"./_array-methods":627,"./_classof":632,"./_ctx":640,"./_descriptors":644,"./_export":648,"./_fails":650,"./_global":655,"./_has":656,"./_hide":657,"./_is-array-iter":663,"./_is-object":666,"./_iter-detect":671,"./_iterators":673,"./_library":674,"./_object-create":685,"./_object-dp":686,"./_object-gopd":689,"./_object-gopn":691,"./_object-gpo":693,"./_property-desc":704,"./_redefine-all":705,"./_set-species":711,"./_species-constructor":715,"./_to-absolute-index":725,"./_to-index":726,"./_to-integer":727,"./_to-length":729,"./_to-object":730,"./_to-primitive":731,"./_typed":734,"./_typed-buffer":733,"./_uid":735,"./_wks":740,"./core.get-iterator-method":741,"./es6.array.iterator":752}],733:[function(require,module,exports){
+},{"./_an-instance":626,"./_array-copy-within":628,"./_array-fill":629,"./_array-includes":631,"./_array-methods":632,"./_classof":637,"./_ctx":645,"./_descriptors":649,"./_export":653,"./_fails":655,"./_global":660,"./_has":661,"./_hide":662,"./_is-array-iter":668,"./_is-object":671,"./_iter-detect":676,"./_iterators":678,"./_library":679,"./_object-create":690,"./_object-dp":691,"./_object-gopd":694,"./_object-gopn":696,"./_object-gpo":698,"./_property-desc":709,"./_redefine-all":710,"./_set-species":716,"./_species-constructor":720,"./_to-absolute-index":730,"./_to-index":731,"./_to-integer":732,"./_to-length":734,"./_to-object":735,"./_to-primitive":736,"./_typed":739,"./_typed-buffer":738,"./_uid":740,"./_wks":745,"./core.get-iterator-method":746,"./es6.array.iterator":757}],738:[function(require,module,exports){
 'use strict';
 var global = require('./_global');
 var DESCRIPTORS = require('./_descriptors');
@@ -75198,7 +76106,7 @@ hide($DataView[PROTOTYPE], $typed.VIEW, true);
 exports[ARRAY_BUFFER] = $ArrayBuffer;
 exports[DATA_VIEW] = $DataView;
 
-},{"./_an-instance":621,"./_array-fill":624,"./_descriptors":644,"./_fails":650,"./_global":655,"./_hide":657,"./_library":674,"./_object-dp":686,"./_object-gopn":691,"./_redefine-all":705,"./_set-to-string-tag":712,"./_to-index":726,"./_to-integer":727,"./_to-length":729,"./_typed":734}],734:[function(require,module,exports){
+},{"./_an-instance":626,"./_array-fill":629,"./_descriptors":649,"./_fails":655,"./_global":660,"./_hide":662,"./_library":679,"./_object-dp":691,"./_object-gopn":696,"./_redefine-all":710,"./_set-to-string-tag":717,"./_to-index":731,"./_to-integer":732,"./_to-length":734,"./_typed":739}],739:[function(require,module,exports){
 var global = require('./_global');
 var hide = require('./_hide');
 var uid = require('./_uid');
@@ -75228,30 +76136,30 @@ module.exports = {
   VIEW: VIEW
 };
 
-},{"./_global":655,"./_hide":657,"./_uid":735}],735:[function(require,module,exports){
+},{"./_global":660,"./_hide":662,"./_uid":740}],740:[function(require,module,exports){
 arguments[4][76][0].apply(exports,arguments)
-},{"dup":76}],736:[function(require,module,exports){
+},{"dup":76}],741:[function(require,module,exports){
 var global = require('./_global');
 var navigator = global.navigator;
 
 module.exports = navigator && navigator.userAgent || '';
 
-},{"./_global":655}],737:[function(require,module,exports){
+},{"./_global":660}],742:[function(require,module,exports){
 var isObject = require('./_is-object');
 module.exports = function (it, TYPE) {
   if (!isObject(it) || it._t !== TYPE) throw TypeError('Incompatible receiver, ' + TYPE + ' required!');
   return it;
 };
 
-},{"./_is-object":666}],738:[function(require,module,exports){
+},{"./_is-object":671}],743:[function(require,module,exports){
 arguments[4][77][0].apply(exports,arguments)
-},{"./_core":638,"./_global":655,"./_library":674,"./_object-dp":686,"./_wks-ext":739,"dup":77}],739:[function(require,module,exports){
+},{"./_core":643,"./_global":660,"./_library":679,"./_object-dp":691,"./_wks-ext":744,"dup":77}],744:[function(require,module,exports){
 arguments[4][78][0].apply(exports,arguments)
-},{"./_wks":740,"dup":78}],740:[function(require,module,exports){
+},{"./_wks":745,"dup":78}],745:[function(require,module,exports){
 arguments[4][79][0].apply(exports,arguments)
-},{"./_global":655,"./_shared":714,"./_uid":735,"dup":79}],741:[function(require,module,exports){
+},{"./_global":660,"./_shared":719,"./_uid":740,"dup":79}],746:[function(require,module,exports){
 arguments[4][80][0].apply(exports,arguments)
-},{"./_classof":632,"./_core":638,"./_iterators":673,"./_wks":740,"dup":80}],742:[function(require,module,exports){
+},{"./_classof":637,"./_core":643,"./_iterators":678,"./_wks":745,"dup":80}],747:[function(require,module,exports){
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = require('./_export');
 
@@ -75259,7 +76167,7 @@ $export($export.P, 'Array', { copyWithin: require('./_array-copy-within') });
 
 require('./_add-to-unscopables')('copyWithin');
 
-},{"./_add-to-unscopables":620,"./_array-copy-within":623,"./_export":648}],743:[function(require,module,exports){
+},{"./_add-to-unscopables":625,"./_array-copy-within":628,"./_export":653}],748:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var $every = require('./_array-methods')(4);
@@ -75271,7 +76179,7 @@ $export($export.P + $export.F * !require('./_strict-method')([].every, true), 'A
   }
 });
 
-},{"./_array-methods":627,"./_export":648,"./_strict-method":716}],744:[function(require,module,exports){
+},{"./_array-methods":632,"./_export":653,"./_strict-method":721}],749:[function(require,module,exports){
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 var $export = require('./_export');
 
@@ -75279,7 +76187,7 @@ $export($export.P, 'Array', { fill: require('./_array-fill') });
 
 require('./_add-to-unscopables')('fill');
 
-},{"./_add-to-unscopables":620,"./_array-fill":624,"./_export":648}],745:[function(require,module,exports){
+},{"./_add-to-unscopables":625,"./_array-fill":629,"./_export":653}],750:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var $filter = require('./_array-methods')(2);
@@ -75291,7 +76199,7 @@ $export($export.P + $export.F * !require('./_strict-method')([].filter, true), '
   }
 });
 
-},{"./_array-methods":627,"./_export":648,"./_strict-method":716}],746:[function(require,module,exports){
+},{"./_array-methods":632,"./_export":653,"./_strict-method":721}],751:[function(require,module,exports){
 'use strict';
 // 22.1.3.9 Array.prototype.findIndex(predicate, thisArg = undefined)
 var $export = require('./_export');
@@ -75307,7 +76215,7 @@ $export($export.P + $export.F * forced, 'Array', {
 });
 require('./_add-to-unscopables')(KEY);
 
-},{"./_add-to-unscopables":620,"./_array-methods":627,"./_export":648}],747:[function(require,module,exports){
+},{"./_add-to-unscopables":625,"./_array-methods":632,"./_export":653}],752:[function(require,module,exports){
 'use strict';
 // 22.1.3.8 Array.prototype.find(predicate, thisArg = undefined)
 var $export = require('./_export');
@@ -75323,7 +76231,7 @@ $export($export.P + $export.F * forced, 'Array', {
 });
 require('./_add-to-unscopables')(KEY);
 
-},{"./_add-to-unscopables":620,"./_array-methods":627,"./_export":648}],748:[function(require,module,exports){
+},{"./_add-to-unscopables":625,"./_array-methods":632,"./_export":653}],753:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var $forEach = require('./_array-methods')(0);
@@ -75336,9 +76244,9 @@ $export($export.P + $export.F * !STRICT, 'Array', {
   }
 });
 
-},{"./_array-methods":627,"./_export":648,"./_strict-method":716}],749:[function(require,module,exports){
+},{"./_array-methods":632,"./_export":653,"./_strict-method":721}],754:[function(require,module,exports){
 arguments[4][81][0].apply(exports,arguments)
-},{"./_create-property":639,"./_ctx":640,"./_export":648,"./_is-array-iter":663,"./_iter-call":668,"./_iter-detect":671,"./_to-length":729,"./_to-object":730,"./core.get-iterator-method":741,"dup":81}],750:[function(require,module,exports){
+},{"./_create-property":644,"./_ctx":645,"./_export":653,"./_is-array-iter":668,"./_iter-call":673,"./_iter-detect":676,"./_to-length":734,"./_to-object":735,"./core.get-iterator-method":746,"dup":81}],755:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var $indexOf = require('./_array-includes')(false);
@@ -75355,13 +76263,13 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !require('./_strict-method')($
   }
 });
 
-},{"./_array-includes":626,"./_export":648,"./_strict-method":716}],751:[function(require,module,exports){
+},{"./_array-includes":631,"./_export":653,"./_strict-method":721}],756:[function(require,module,exports){
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
 var $export = require('./_export');
 
 $export($export.S, 'Array', { isArray: require('./_is-array') });
 
-},{"./_export":648,"./_is-array":664}],752:[function(require,module,exports){
+},{"./_export":653,"./_is-array":669}],757:[function(require,module,exports){
 'use strict';
 var addToUnscopables = require('./_add-to-unscopables');
 var step = require('./_iter-step');
@@ -75397,7 +76305,7 @@ addToUnscopables('keys');
 addToUnscopables('values');
 addToUnscopables('entries');
 
-},{"./_add-to-unscopables":620,"./_iter-define":670,"./_iter-step":672,"./_iterators":673,"./_to-iobject":728}],753:[function(require,module,exports){
+},{"./_add-to-unscopables":625,"./_iter-define":675,"./_iter-step":677,"./_iterators":678,"./_to-iobject":733}],758:[function(require,module,exports){
 'use strict';
 // 22.1.3.13 Array.prototype.join(separator)
 var $export = require('./_export');
@@ -75411,7 +76319,7 @@ $export($export.P + $export.F * (require('./_iobject') != Object || !require('./
   }
 });
 
-},{"./_export":648,"./_iobject":662,"./_strict-method":716,"./_to-iobject":728}],754:[function(require,module,exports){
+},{"./_export":653,"./_iobject":667,"./_strict-method":721,"./_to-iobject":733}],759:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var toIObject = require('./_to-iobject');
@@ -75435,7 +76343,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !require('./_strict-method')($
   }
 });
 
-},{"./_export":648,"./_strict-method":716,"./_to-integer":727,"./_to-iobject":728,"./_to-length":729}],755:[function(require,module,exports){
+},{"./_export":653,"./_strict-method":721,"./_to-integer":732,"./_to-iobject":733,"./_to-length":734}],760:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var $map = require('./_array-methods')(1);
@@ -75447,7 +76355,7 @@ $export($export.P + $export.F * !require('./_strict-method')([].map, true), 'Arr
   }
 });
 
-},{"./_array-methods":627,"./_export":648,"./_strict-method":716}],756:[function(require,module,exports){
+},{"./_array-methods":632,"./_export":653,"./_strict-method":721}],761:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var createProperty = require('./_create-property');
@@ -75468,7 +76376,7 @@ $export($export.S + $export.F * require('./_fails')(function () {
   }
 });
 
-},{"./_create-property":639,"./_export":648,"./_fails":650}],757:[function(require,module,exports){
+},{"./_create-property":644,"./_export":653,"./_fails":655}],762:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var $reduce = require('./_array-reduce');
@@ -75480,7 +76388,7 @@ $export($export.P + $export.F * !require('./_strict-method')([].reduceRight, tru
   }
 });
 
-},{"./_array-reduce":628,"./_export":648,"./_strict-method":716}],758:[function(require,module,exports){
+},{"./_array-reduce":633,"./_export":653,"./_strict-method":721}],763:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var $reduce = require('./_array-reduce');
@@ -75492,7 +76400,7 @@ $export($export.P + $export.F * !require('./_strict-method')([].reduce, true), '
   }
 });
 
-},{"./_array-reduce":628,"./_export":648,"./_strict-method":716}],759:[function(require,module,exports){
+},{"./_array-reduce":633,"./_export":653,"./_strict-method":721}],764:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var html = require('./_html');
@@ -75522,7 +76430,7 @@ $export($export.P + $export.F * require('./_fails')(function () {
   }
 });
 
-},{"./_cof":633,"./_export":648,"./_fails":650,"./_html":658,"./_to-absolute-index":725,"./_to-length":729}],760:[function(require,module,exports){
+},{"./_cof":638,"./_export":653,"./_fails":655,"./_html":663,"./_to-absolute-index":730,"./_to-length":734}],765:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var $some = require('./_array-methods')(3);
@@ -75534,7 +76442,7 @@ $export($export.P + $export.F * !require('./_strict-method')([].some, true), 'Ar
   }
 });
 
-},{"./_array-methods":627,"./_export":648,"./_strict-method":716}],761:[function(require,module,exports){
+},{"./_array-methods":632,"./_export":653,"./_strict-method":721}],766:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var aFunction = require('./_a-function');
@@ -75559,16 +76467,16 @@ $export($export.P + $export.F * (fails(function () {
   }
 });
 
-},{"./_a-function":618,"./_export":648,"./_fails":650,"./_strict-method":716,"./_to-object":730}],762:[function(require,module,exports){
+},{"./_a-function":623,"./_export":653,"./_fails":655,"./_strict-method":721,"./_to-object":735}],767:[function(require,module,exports){
 require('./_set-species')('Array');
 
-},{"./_set-species":711}],763:[function(require,module,exports){
+},{"./_set-species":716}],768:[function(require,module,exports){
 // 20.3.3.1 / 15.9.4.4 Date.now()
 var $export = require('./_export');
 
 $export($export.S, 'Date', { now: function () { return new Date().getTime(); } });
 
-},{"./_export":648}],764:[function(require,module,exports){
+},{"./_export":653}],769:[function(require,module,exports){
 // 20.3.4.36 / 15.9.5.43 Date.prototype.toISOString()
 var $export = require('./_export');
 var toISOString = require('./_date-to-iso-string');
@@ -75578,7 +76486,7 @@ $export($export.P + $export.F * (Date.prototype.toISOString !== toISOString), 'D
   toISOString: toISOString
 });
 
-},{"./_date-to-iso-string":641,"./_export":648}],765:[function(require,module,exports){
+},{"./_date-to-iso-string":646,"./_export":653}],770:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var toObject = require('./_to-object');
@@ -75596,13 +76504,13 @@ $export($export.P + $export.F * require('./_fails')(function () {
   }
 });
 
-},{"./_export":648,"./_fails":650,"./_to-object":730,"./_to-primitive":731}],766:[function(require,module,exports){
+},{"./_export":653,"./_fails":655,"./_to-object":735,"./_to-primitive":736}],771:[function(require,module,exports){
 var TO_PRIMITIVE = require('./_wks')('toPrimitive');
 var proto = Date.prototype;
 
 if (!(TO_PRIMITIVE in proto)) require('./_hide')(proto, TO_PRIMITIVE, require('./_date-to-primitive'));
 
-},{"./_date-to-primitive":642,"./_hide":657,"./_wks":740}],767:[function(require,module,exports){
+},{"./_date-to-primitive":647,"./_hide":662,"./_wks":745}],772:[function(require,module,exports){
 var DateProto = Date.prototype;
 var INVALID_DATE = 'Invalid Date';
 var TO_STRING = 'toString';
@@ -75616,13 +76524,13 @@ if (new Date(NaN) + '' != INVALID_DATE) {
   });
 }
 
-},{"./_redefine":706}],768:[function(require,module,exports){
+},{"./_redefine":711}],773:[function(require,module,exports){
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 var $export = require('./_export');
 
 $export($export.P, 'Function', { bind: require('./_bind') });
 
-},{"./_bind":631,"./_export":648}],769:[function(require,module,exports){
+},{"./_bind":636,"./_export":653}],774:[function(require,module,exports){
 'use strict';
 var isObject = require('./_is-object');
 var getPrototypeOf = require('./_object-gpo');
@@ -75637,9 +76545,9 @@ if (!(HAS_INSTANCE in FunctionProto)) require('./_object-dp').f(FunctionProto, H
   return false;
 } });
 
-},{"./_is-object":666,"./_object-dp":686,"./_object-gpo":693,"./_wks":740}],770:[function(require,module,exports){
+},{"./_is-object":671,"./_object-dp":691,"./_object-gpo":698,"./_wks":745}],775:[function(require,module,exports){
 arguments[4][82][0].apply(exports,arguments)
-},{"./_descriptors":644,"./_object-dp":686,"dup":82}],771:[function(require,module,exports){
+},{"./_descriptors":649,"./_object-dp":691,"dup":82}],776:[function(require,module,exports){
 'use strict';
 var strong = require('./_collection-strong');
 var validate = require('./_validate-collection');
@@ -75660,7 +76568,7 @@ module.exports = require('./_collection')(MAP, function (get) {
   }
 }, strong, true);
 
-},{"./_collection":637,"./_collection-strong":634,"./_validate-collection":737}],772:[function(require,module,exports){
+},{"./_collection":642,"./_collection-strong":639,"./_validate-collection":742}],777:[function(require,module,exports){
 // 20.2.2.3 Math.acosh(x)
 var $export = require('./_export');
 var log1p = require('./_math-log1p');
@@ -75680,7 +76588,7 @@ $export($export.S + $export.F * !($acosh
   }
 });
 
-},{"./_export":648,"./_math-log1p":677}],773:[function(require,module,exports){
+},{"./_export":653,"./_math-log1p":682}],778:[function(require,module,exports){
 // 20.2.2.5 Math.asinh(x)
 var $export = require('./_export');
 var $asinh = Math.asinh;
@@ -75692,7 +76600,7 @@ function asinh(x) {
 // Tor Browser bug: Math.asinh(0) -> -0
 $export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', { asinh: asinh });
 
-},{"./_export":648}],774:[function(require,module,exports){
+},{"./_export":653}],779:[function(require,module,exports){
 // 20.2.2.7 Math.atanh(x)
 var $export = require('./_export');
 var $atanh = Math.atanh;
@@ -75704,7 +76612,7 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
   }
 });
 
-},{"./_export":648}],775:[function(require,module,exports){
+},{"./_export":653}],780:[function(require,module,exports){
 // 20.2.2.9 Math.cbrt(x)
 var $export = require('./_export');
 var sign = require('./_math-sign');
@@ -75715,7 +76623,7 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648,"./_math-sign":679}],776:[function(require,module,exports){
+},{"./_export":653,"./_math-sign":684}],781:[function(require,module,exports){
 // 20.2.2.11 Math.clz32(x)
 var $export = require('./_export');
 
@@ -75725,7 +76633,7 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],777:[function(require,module,exports){
+},{"./_export":653}],782:[function(require,module,exports){
 // 20.2.2.12 Math.cosh(x)
 var $export = require('./_export');
 var exp = Math.exp;
@@ -75736,20 +76644,20 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],778:[function(require,module,exports){
+},{"./_export":653}],783:[function(require,module,exports){
 // 20.2.2.14 Math.expm1(x)
 var $export = require('./_export');
 var $expm1 = require('./_math-expm1');
 
 $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', { expm1: $expm1 });
 
-},{"./_export":648,"./_math-expm1":675}],779:[function(require,module,exports){
+},{"./_export":653,"./_math-expm1":680}],784:[function(require,module,exports){
 // 20.2.2.16 Math.fround(x)
 var $export = require('./_export');
 
 $export($export.S, 'Math', { fround: require('./_math-fround') });
 
-},{"./_export":648,"./_math-fround":676}],780:[function(require,module,exports){
+},{"./_export":653,"./_math-fround":681}],785:[function(require,module,exports){
 // 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
 var $export = require('./_export');
 var abs = Math.abs;
@@ -75776,7 +76684,7 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],781:[function(require,module,exports){
+},{"./_export":653}],786:[function(require,module,exports){
 // 20.2.2.18 Math.imul(x, y)
 var $export = require('./_export');
 var $imul = Math.imul;
@@ -75795,7 +76703,7 @@ $export($export.S + $export.F * require('./_fails')(function () {
   }
 });
 
-},{"./_export":648,"./_fails":650}],782:[function(require,module,exports){
+},{"./_export":653,"./_fails":655}],787:[function(require,module,exports){
 // 20.2.2.21 Math.log10(x)
 var $export = require('./_export');
 
@@ -75805,13 +76713,13 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],783:[function(require,module,exports){
+},{"./_export":653}],788:[function(require,module,exports){
 // 20.2.2.20 Math.log1p(x)
 var $export = require('./_export');
 
 $export($export.S, 'Math', { log1p: require('./_math-log1p') });
 
-},{"./_export":648,"./_math-log1p":677}],784:[function(require,module,exports){
+},{"./_export":653,"./_math-log1p":682}],789:[function(require,module,exports){
 // 20.2.2.22 Math.log2(x)
 var $export = require('./_export');
 
@@ -75821,13 +76729,13 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],785:[function(require,module,exports){
+},{"./_export":653}],790:[function(require,module,exports){
 // 20.2.2.28 Math.sign(x)
 var $export = require('./_export');
 
 $export($export.S, 'Math', { sign: require('./_math-sign') });
 
-},{"./_export":648,"./_math-sign":679}],786:[function(require,module,exports){
+},{"./_export":653,"./_math-sign":684}],791:[function(require,module,exports){
 // 20.2.2.30 Math.sinh(x)
 var $export = require('./_export');
 var expm1 = require('./_math-expm1');
@@ -75844,7 +76752,7 @@ $export($export.S + $export.F * require('./_fails')(function () {
   }
 });
 
-},{"./_export":648,"./_fails":650,"./_math-expm1":675}],787:[function(require,module,exports){
+},{"./_export":653,"./_fails":655,"./_math-expm1":680}],792:[function(require,module,exports){
 // 20.2.2.33 Math.tanh(x)
 var $export = require('./_export');
 var expm1 = require('./_math-expm1');
@@ -75858,7 +76766,7 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648,"./_math-expm1":675}],788:[function(require,module,exports){
+},{"./_export":653,"./_math-expm1":680}],793:[function(require,module,exports){
 // 20.2.2.34 Math.trunc(x)
 var $export = require('./_export');
 
@@ -75868,7 +76776,7 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],789:[function(require,module,exports){
+},{"./_export":653}],794:[function(require,module,exports){
 'use strict';
 var global = require('./_global');
 var has = require('./_has');
@@ -75939,13 +76847,13 @@ if (!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')) {
   require('./_redefine')(global, NUMBER, $Number);
 }
 
-},{"./_cof":633,"./_descriptors":644,"./_fails":650,"./_global":655,"./_has":656,"./_inherit-if-required":660,"./_object-create":685,"./_object-dp":686,"./_object-gopd":689,"./_object-gopn":691,"./_redefine":706,"./_string-trim":722,"./_to-primitive":731}],790:[function(require,module,exports){
+},{"./_cof":638,"./_descriptors":649,"./_fails":655,"./_global":660,"./_has":661,"./_inherit-if-required":665,"./_object-create":690,"./_object-dp":691,"./_object-gopd":694,"./_object-gopn":696,"./_redefine":711,"./_string-trim":727,"./_to-primitive":736}],795:[function(require,module,exports){
 // 20.1.2.1 Number.EPSILON
 var $export = require('./_export');
 
 $export($export.S, 'Number', { EPSILON: Math.pow(2, -52) });
 
-},{"./_export":648}],791:[function(require,module,exports){
+},{"./_export":653}],796:[function(require,module,exports){
 // 20.1.2.2 Number.isFinite(number)
 var $export = require('./_export');
 var _isFinite = require('./_global').isFinite;
@@ -75956,13 +76864,13 @@ $export($export.S, 'Number', {
   }
 });
 
-},{"./_export":648,"./_global":655}],792:[function(require,module,exports){
+},{"./_export":653,"./_global":660}],797:[function(require,module,exports){
 // 20.1.2.3 Number.isInteger(number)
 var $export = require('./_export');
 
 $export($export.S, 'Number', { isInteger: require('./_is-integer') });
 
-},{"./_export":648,"./_is-integer":665}],793:[function(require,module,exports){
+},{"./_export":653,"./_is-integer":670}],798:[function(require,module,exports){
 // 20.1.2.4 Number.isNaN(number)
 var $export = require('./_export');
 
@@ -75973,7 +76881,7 @@ $export($export.S, 'Number', {
   }
 });
 
-},{"./_export":648}],794:[function(require,module,exports){
+},{"./_export":653}],799:[function(require,module,exports){
 // 20.1.2.5 Number.isSafeInteger(number)
 var $export = require('./_export');
 var isInteger = require('./_is-integer');
@@ -75985,31 +76893,31 @@ $export($export.S, 'Number', {
   }
 });
 
-},{"./_export":648,"./_is-integer":665}],795:[function(require,module,exports){
+},{"./_export":653,"./_is-integer":670}],800:[function(require,module,exports){
 // 20.1.2.6 Number.MAX_SAFE_INTEGER
 var $export = require('./_export');
 
 $export($export.S, 'Number', { MAX_SAFE_INTEGER: 0x1fffffffffffff });
 
-},{"./_export":648}],796:[function(require,module,exports){
+},{"./_export":653}],801:[function(require,module,exports){
 // 20.1.2.10 Number.MIN_SAFE_INTEGER
 var $export = require('./_export');
 
 $export($export.S, 'Number', { MIN_SAFE_INTEGER: -0x1fffffffffffff });
 
-},{"./_export":648}],797:[function(require,module,exports){
+},{"./_export":653}],802:[function(require,module,exports){
 var $export = require('./_export');
 var $parseFloat = require('./_parse-float');
 // 20.1.2.12 Number.parseFloat(string)
 $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', { parseFloat: $parseFloat });
 
-},{"./_export":648,"./_parse-float":700}],798:[function(require,module,exports){
+},{"./_export":653,"./_parse-float":705}],803:[function(require,module,exports){
 var $export = require('./_export');
 var $parseInt = require('./_parse-int');
 // 20.1.2.13 Number.parseInt(string, radix)
 $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', { parseInt: $parseInt });
 
-},{"./_export":648,"./_parse-int":701}],799:[function(require,module,exports){
+},{"./_export":653,"./_parse-int":706}],804:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var toInteger = require('./_to-integer');
@@ -76125,7 +77033,7 @@ $export($export.P + $export.F * (!!$toFixed && (
   }
 });
 
-},{"./_a-number-value":619,"./_export":648,"./_fails":650,"./_string-repeat":721,"./_to-integer":727}],800:[function(require,module,exports){
+},{"./_a-number-value":624,"./_export":653,"./_fails":655,"./_string-repeat":726,"./_to-integer":732}],805:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var $fails = require('./_fails');
@@ -76145,28 +77053,28 @@ $export($export.P + $export.F * ($fails(function () {
   }
 });
 
-},{"./_a-number-value":619,"./_export":648,"./_fails":650}],801:[function(require,module,exports){
+},{"./_a-number-value":624,"./_export":653,"./_fails":655}],806:[function(require,module,exports){
 // 19.1.3.1 Object.assign(target, source)
 var $export = require('./_export');
 
 $export($export.S + $export.F, 'Object', { assign: require('./_object-assign') });
 
-},{"./_export":648,"./_object-assign":684}],802:[function(require,module,exports){
+},{"./_export":653,"./_object-assign":689}],807:[function(require,module,exports){
 var $export = require('./_export');
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 $export($export.S, 'Object', { create: require('./_object-create') });
 
-},{"./_export":648,"./_object-create":685}],803:[function(require,module,exports){
+},{"./_export":653,"./_object-create":690}],808:[function(require,module,exports){
 var $export = require('./_export');
 // 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
 $export($export.S + $export.F * !require('./_descriptors'), 'Object', { defineProperties: require('./_object-dps') });
 
-},{"./_descriptors":644,"./_export":648,"./_object-dps":687}],804:[function(require,module,exports){
+},{"./_descriptors":649,"./_export":653,"./_object-dps":692}],809:[function(require,module,exports){
 var $export = require('./_export');
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
 $export($export.S + $export.F * !require('./_descriptors'), 'Object', { defineProperty: require('./_object-dp').f });
 
-},{"./_descriptors":644,"./_export":648,"./_object-dp":686}],805:[function(require,module,exports){
+},{"./_descriptors":649,"./_export":653,"./_object-dp":691}],810:[function(require,module,exports){
 // 19.1.2.5 Object.freeze(O)
 var isObject = require('./_is-object');
 var meta = require('./_meta').onFreeze;
@@ -76177,7 +77085,7 @@ require('./_object-sap')('freeze', function ($freeze) {
   };
 });
 
-},{"./_is-object":666,"./_meta":680,"./_object-sap":697}],806:[function(require,module,exports){
+},{"./_is-object":671,"./_meta":685,"./_object-sap":702}],811:[function(require,module,exports){
 // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
 var toIObject = require('./_to-iobject');
 var $getOwnPropertyDescriptor = require('./_object-gopd').f;
@@ -76188,13 +77096,13 @@ require('./_object-sap')('getOwnPropertyDescriptor', function () {
   };
 });
 
-},{"./_object-gopd":689,"./_object-sap":697,"./_to-iobject":728}],807:[function(require,module,exports){
+},{"./_object-gopd":694,"./_object-sap":702,"./_to-iobject":733}],812:[function(require,module,exports){
 // 19.1.2.7 Object.getOwnPropertyNames(O)
 require('./_object-sap')('getOwnPropertyNames', function () {
   return require('./_object-gopn-ext').f;
 });
 
-},{"./_object-gopn-ext":690,"./_object-sap":697}],808:[function(require,module,exports){
+},{"./_object-gopn-ext":695,"./_object-sap":702}],813:[function(require,module,exports){
 // 19.1.2.9 Object.getPrototypeOf(O)
 var toObject = require('./_to-object');
 var $getPrototypeOf = require('./_object-gpo');
@@ -76205,7 +77113,7 @@ require('./_object-sap')('getPrototypeOf', function () {
   };
 });
 
-},{"./_object-gpo":693,"./_object-sap":697,"./_to-object":730}],809:[function(require,module,exports){
+},{"./_object-gpo":698,"./_object-sap":702,"./_to-object":735}],814:[function(require,module,exports){
 // 19.1.2.11 Object.isExtensible(O)
 var isObject = require('./_is-object');
 
@@ -76215,7 +77123,7 @@ require('./_object-sap')('isExtensible', function ($isExtensible) {
   };
 });
 
-},{"./_is-object":666,"./_object-sap":697}],810:[function(require,module,exports){
+},{"./_is-object":671,"./_object-sap":702}],815:[function(require,module,exports){
 // 19.1.2.12 Object.isFrozen(O)
 var isObject = require('./_is-object');
 
@@ -76225,7 +77133,7 @@ require('./_object-sap')('isFrozen', function ($isFrozen) {
   };
 });
 
-},{"./_is-object":666,"./_object-sap":697}],811:[function(require,module,exports){
+},{"./_is-object":671,"./_object-sap":702}],816:[function(require,module,exports){
 // 19.1.2.13 Object.isSealed(O)
 var isObject = require('./_is-object');
 
@@ -76235,12 +77143,12 @@ require('./_object-sap')('isSealed', function ($isSealed) {
   };
 });
 
-},{"./_is-object":666,"./_object-sap":697}],812:[function(require,module,exports){
+},{"./_is-object":671,"./_object-sap":702}],817:[function(require,module,exports){
 // 19.1.3.10 Object.is(value1, value2)
 var $export = require('./_export');
 $export($export.S, 'Object', { is: require('./_same-value') });
 
-},{"./_export":648,"./_same-value":707}],813:[function(require,module,exports){
+},{"./_export":653,"./_same-value":712}],818:[function(require,module,exports){
 // 19.1.2.14 Object.keys(O)
 var toObject = require('./_to-object');
 var $keys = require('./_object-keys');
@@ -76251,7 +77159,7 @@ require('./_object-sap')('keys', function () {
   };
 });
 
-},{"./_object-keys":695,"./_object-sap":697,"./_to-object":730}],814:[function(require,module,exports){
+},{"./_object-keys":700,"./_object-sap":702,"./_to-object":735}],819:[function(require,module,exports){
 // 19.1.2.15 Object.preventExtensions(O)
 var isObject = require('./_is-object');
 var meta = require('./_meta').onFreeze;
@@ -76262,7 +77170,7 @@ require('./_object-sap')('preventExtensions', function ($preventExtensions) {
   };
 });
 
-},{"./_is-object":666,"./_meta":680,"./_object-sap":697}],815:[function(require,module,exports){
+},{"./_is-object":671,"./_meta":685,"./_object-sap":702}],820:[function(require,module,exports){
 // 19.1.2.17 Object.seal(O)
 var isObject = require('./_is-object');
 var meta = require('./_meta').onFreeze;
@@ -76273,9 +77181,9 @@ require('./_object-sap')('seal', function ($seal) {
   };
 });
 
-},{"./_is-object":666,"./_meta":680,"./_object-sap":697}],816:[function(require,module,exports){
+},{"./_is-object":671,"./_meta":685,"./_object-sap":702}],821:[function(require,module,exports){
 arguments[4][83][0].apply(exports,arguments)
-},{"./_export":648,"./_set-proto":710,"dup":83}],817:[function(require,module,exports){
+},{"./_export":653,"./_set-proto":715,"dup":83}],822:[function(require,module,exports){
 'use strict';
 // 19.1.3.6 Object.prototype.toString()
 var classof = require('./_classof');
@@ -76287,21 +77195,21 @@ if (test + '' != '[object z]') {
   }, true);
 }
 
-},{"./_classof":632,"./_redefine":706,"./_wks":740}],818:[function(require,module,exports){
+},{"./_classof":637,"./_redefine":711,"./_wks":745}],823:[function(require,module,exports){
 var $export = require('./_export');
 var $parseFloat = require('./_parse-float');
 // 18.2.4 parseFloat(string)
 $export($export.G + $export.F * (parseFloat != $parseFloat), { parseFloat: $parseFloat });
 
-},{"./_export":648,"./_parse-float":700}],819:[function(require,module,exports){
+},{"./_export":653,"./_parse-float":705}],824:[function(require,module,exports){
 var $export = require('./_export');
 var $parseInt = require('./_parse-int');
 // 18.2.5 parseInt(string, radix)
 $export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
 
-},{"./_export":648,"./_parse-int":701}],820:[function(require,module,exports){
+},{"./_export":653,"./_parse-int":706}],825:[function(require,module,exports){
 arguments[4][84][0].apply(exports,arguments)
-},{"./_a-function":618,"./_an-instance":621,"./_classof":632,"./_core":638,"./_ctx":640,"./_export":648,"./_for-of":654,"./_global":655,"./_is-object":666,"./_iter-detect":671,"./_library":674,"./_microtask":682,"./_new-promise-capability":683,"./_perform":702,"./_promise-resolve":703,"./_redefine-all":705,"./_set-species":711,"./_set-to-string-tag":712,"./_species-constructor":715,"./_task":724,"./_wks":740,"dup":84}],821:[function(require,module,exports){
+},{"./_a-function":623,"./_an-instance":626,"./_classof":637,"./_core":643,"./_ctx":645,"./_export":653,"./_for-of":659,"./_global":660,"./_is-object":671,"./_iter-detect":676,"./_library":679,"./_microtask":687,"./_new-promise-capability":688,"./_perform":707,"./_promise-resolve":708,"./_redefine-all":710,"./_set-species":716,"./_set-to-string-tag":717,"./_species-constructor":720,"./_task":729,"./_wks":745,"dup":84}],826:[function(require,module,exports){
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
 var $export = require('./_export');
 var aFunction = require('./_a-function');
@@ -76319,7 +77227,7 @@ $export($export.S + $export.F * !require('./_fails')(function () {
   }
 });
 
-},{"./_a-function":618,"./_an-object":622,"./_export":648,"./_fails":650,"./_global":655}],822:[function(require,module,exports){
+},{"./_a-function":623,"./_an-object":627,"./_export":653,"./_fails":655,"./_global":660}],827:[function(require,module,exports){
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
 var $export = require('./_export');
 var create = require('./_object-create');
@@ -76368,7 +77276,7 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
   }
 });
 
-},{"./_a-function":618,"./_an-object":622,"./_bind":631,"./_export":648,"./_fails":650,"./_global":655,"./_is-object":666,"./_object-create":685}],823:[function(require,module,exports){
+},{"./_a-function":623,"./_an-object":627,"./_bind":636,"./_export":653,"./_fails":655,"./_global":660,"./_is-object":671,"./_object-create":690}],828:[function(require,module,exports){
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
 var dP = require('./_object-dp');
 var $export = require('./_export');
@@ -76393,7 +77301,7 @@ $export($export.S + $export.F * require('./_fails')(function () {
   }
 });
 
-},{"./_an-object":622,"./_export":648,"./_fails":650,"./_object-dp":686,"./_to-primitive":731}],824:[function(require,module,exports){
+},{"./_an-object":627,"./_export":653,"./_fails":655,"./_object-dp":691,"./_to-primitive":736}],829:[function(require,module,exports){
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
 var $export = require('./_export');
 var gOPD = require('./_object-gopd').f;
@@ -76406,7 +77314,7 @@ $export($export.S, 'Reflect', {
   }
 });
 
-},{"./_an-object":622,"./_export":648,"./_object-gopd":689}],825:[function(require,module,exports){
+},{"./_an-object":627,"./_export":653,"./_object-gopd":694}],830:[function(require,module,exports){
 'use strict';
 // 26.1.5 Reflect.enumerate(target)
 var $export = require('./_export');
@@ -76434,7 +77342,7 @@ $export($export.S, 'Reflect', {
   }
 });
 
-},{"./_an-object":622,"./_export":648,"./_iter-create":669}],826:[function(require,module,exports){
+},{"./_an-object":627,"./_export":653,"./_iter-create":674}],831:[function(require,module,exports){
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
 var gOPD = require('./_object-gopd');
 var $export = require('./_export');
@@ -76446,7 +77354,7 @@ $export($export.S, 'Reflect', {
   }
 });
 
-},{"./_an-object":622,"./_export":648,"./_object-gopd":689}],827:[function(require,module,exports){
+},{"./_an-object":627,"./_export":653,"./_object-gopd":694}],832:[function(require,module,exports){
 // 26.1.8 Reflect.getPrototypeOf(target)
 var $export = require('./_export');
 var getProto = require('./_object-gpo');
@@ -76458,7 +77366,7 @@ $export($export.S, 'Reflect', {
   }
 });
 
-},{"./_an-object":622,"./_export":648,"./_object-gpo":693}],828:[function(require,module,exports){
+},{"./_an-object":627,"./_export":653,"./_object-gpo":698}],833:[function(require,module,exports){
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
 var gOPD = require('./_object-gopd');
 var getPrototypeOf = require('./_object-gpo');
@@ -76481,7 +77389,7 @@ function get(target, propertyKey /* , receiver */) {
 
 $export($export.S, 'Reflect', { get: get });
 
-},{"./_an-object":622,"./_export":648,"./_has":656,"./_is-object":666,"./_object-gopd":689,"./_object-gpo":693}],829:[function(require,module,exports){
+},{"./_an-object":627,"./_export":653,"./_has":661,"./_is-object":671,"./_object-gopd":694,"./_object-gpo":698}],834:[function(require,module,exports){
 // 26.1.9 Reflect.has(target, propertyKey)
 var $export = require('./_export');
 
@@ -76491,7 +77399,7 @@ $export($export.S, 'Reflect', {
   }
 });
 
-},{"./_export":648}],830:[function(require,module,exports){
+},{"./_export":653}],835:[function(require,module,exports){
 // 26.1.10 Reflect.isExtensible(target)
 var $export = require('./_export');
 var anObject = require('./_an-object');
@@ -76504,13 +77412,13 @@ $export($export.S, 'Reflect', {
   }
 });
 
-},{"./_an-object":622,"./_export":648}],831:[function(require,module,exports){
+},{"./_an-object":627,"./_export":653}],836:[function(require,module,exports){
 // 26.1.11 Reflect.ownKeys(target)
 var $export = require('./_export');
 
 $export($export.S, 'Reflect', { ownKeys: require('./_own-keys') });
 
-},{"./_export":648,"./_own-keys":699}],832:[function(require,module,exports){
+},{"./_export":653,"./_own-keys":704}],837:[function(require,module,exports){
 // 26.1.12 Reflect.preventExtensions(target)
 var $export = require('./_export');
 var anObject = require('./_an-object');
@@ -76528,7 +77436,7 @@ $export($export.S, 'Reflect', {
   }
 });
 
-},{"./_an-object":622,"./_export":648}],833:[function(require,module,exports){
+},{"./_an-object":627,"./_export":653}],838:[function(require,module,exports){
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
 var $export = require('./_export');
 var setProto = require('./_set-proto');
@@ -76545,7 +77453,7 @@ if (setProto) $export($export.S, 'Reflect', {
   }
 });
 
-},{"./_export":648,"./_set-proto":710}],834:[function(require,module,exports){
+},{"./_export":653,"./_set-proto":715}],839:[function(require,module,exports){
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
 var dP = require('./_object-dp');
 var gOPD = require('./_object-gopd');
@@ -76578,7 +77486,7 @@ function set(target, propertyKey, V /* , receiver */) {
 
 $export($export.S, 'Reflect', { set: set });
 
-},{"./_an-object":622,"./_export":648,"./_has":656,"./_is-object":666,"./_object-dp":686,"./_object-gopd":689,"./_object-gpo":693,"./_property-desc":704}],835:[function(require,module,exports){
+},{"./_an-object":627,"./_export":653,"./_has":661,"./_is-object":671,"./_object-dp":691,"./_object-gopd":694,"./_object-gpo":698,"./_property-desc":709}],840:[function(require,module,exports){
 var global = require('./_global');
 var inheritIfRequired = require('./_inherit-if-required');
 var dP = require('./_object-dp').f;
@@ -76623,14 +77531,14 @@ if (require('./_descriptors') && (!CORRECT_NEW || require('./_fails')(function (
 
 require('./_set-species')('RegExp');
 
-},{"./_descriptors":644,"./_fails":650,"./_flags":652,"./_global":655,"./_inherit-if-required":660,"./_is-regexp":667,"./_object-dp":686,"./_object-gopn":691,"./_redefine":706,"./_set-species":711,"./_wks":740}],836:[function(require,module,exports){
+},{"./_descriptors":649,"./_fails":655,"./_flags":657,"./_global":660,"./_inherit-if-required":665,"./_is-regexp":672,"./_object-dp":691,"./_object-gopn":696,"./_redefine":711,"./_set-species":716,"./_wks":745}],841:[function(require,module,exports){
 // 21.2.5.3 get RegExp.prototype.flags()
 if (require('./_descriptors') && /./g.flags != 'g') require('./_object-dp').f(RegExp.prototype, 'flags', {
   configurable: true,
   get: require('./_flags')
 });
 
-},{"./_descriptors":644,"./_flags":652,"./_object-dp":686}],837:[function(require,module,exports){
+},{"./_descriptors":649,"./_flags":657,"./_object-dp":691}],842:[function(require,module,exports){
 // @@match logic
 require('./_fix-re-wks')('match', 1, function (defined, MATCH, $match) {
   // 21.1.3.11 String.prototype.match(regexp)
@@ -76642,7 +77550,7 @@ require('./_fix-re-wks')('match', 1, function (defined, MATCH, $match) {
   }, $match];
 });
 
-},{"./_fix-re-wks":651}],838:[function(require,module,exports){
+},{"./_fix-re-wks":656}],843:[function(require,module,exports){
 // @@replace logic
 require('./_fix-re-wks')('replace', 2, function (defined, REPLACE, $replace) {
   // 21.1.3.14 String.prototype.replace(searchValue, replaceValue)
@@ -76656,7 +77564,7 @@ require('./_fix-re-wks')('replace', 2, function (defined, REPLACE, $replace) {
   }, $replace];
 });
 
-},{"./_fix-re-wks":651}],839:[function(require,module,exports){
+},{"./_fix-re-wks":656}],844:[function(require,module,exports){
 // @@search logic
 require('./_fix-re-wks')('search', 1, function (defined, SEARCH, $search) {
   // 21.1.3.15 String.prototype.search(regexp)
@@ -76668,7 +77576,7 @@ require('./_fix-re-wks')('search', 1, function (defined, SEARCH, $search) {
   }, $search];
 });
 
-},{"./_fix-re-wks":651}],840:[function(require,module,exports){
+},{"./_fix-re-wks":656}],845:[function(require,module,exports){
 // @@split logic
 require('./_fix-re-wks')('split', 2, function (defined, SPLIT, $split) {
   'use strict';
@@ -76741,7 +77649,7 @@ require('./_fix-re-wks')('split', 2, function (defined, SPLIT, $split) {
   }, $split];
 });
 
-},{"./_fix-re-wks":651,"./_is-regexp":667}],841:[function(require,module,exports){
+},{"./_fix-re-wks":656,"./_is-regexp":672}],846:[function(require,module,exports){
 'use strict';
 require('./es6.regexp.flags');
 var anObject = require('./_an-object');
@@ -76768,7 +77676,7 @@ if (require('./_fails')(function () { return $toString.call({ source: 'a', flags
   });
 }
 
-},{"./_an-object":622,"./_descriptors":644,"./_fails":650,"./_flags":652,"./_redefine":706,"./es6.regexp.flags":836}],842:[function(require,module,exports){
+},{"./_an-object":627,"./_descriptors":649,"./_fails":655,"./_flags":657,"./_redefine":711,"./es6.regexp.flags":841}],847:[function(require,module,exports){
 'use strict';
 var strong = require('./_collection-strong');
 var validate = require('./_validate-collection');
@@ -76784,7 +77692,7 @@ module.exports = require('./_collection')(SET, function (get) {
   }
 }, strong);
 
-},{"./_collection":637,"./_collection-strong":634,"./_validate-collection":737}],843:[function(require,module,exports){
+},{"./_collection":642,"./_collection-strong":639,"./_validate-collection":742}],848:[function(require,module,exports){
 'use strict';
 // B.2.3.2 String.prototype.anchor(name)
 require('./_string-html')('anchor', function (createHTML) {
@@ -76793,7 +77701,7 @@ require('./_string-html')('anchor', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],844:[function(require,module,exports){
+},{"./_string-html":724}],849:[function(require,module,exports){
 'use strict';
 // B.2.3.3 String.prototype.big()
 require('./_string-html')('big', function (createHTML) {
@@ -76802,7 +77710,7 @@ require('./_string-html')('big', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],845:[function(require,module,exports){
+},{"./_string-html":724}],850:[function(require,module,exports){
 'use strict';
 // B.2.3.4 String.prototype.blink()
 require('./_string-html')('blink', function (createHTML) {
@@ -76811,7 +77719,7 @@ require('./_string-html')('blink', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],846:[function(require,module,exports){
+},{"./_string-html":724}],851:[function(require,module,exports){
 'use strict';
 // B.2.3.5 String.prototype.bold()
 require('./_string-html')('bold', function (createHTML) {
@@ -76820,7 +77728,7 @@ require('./_string-html')('bold', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],847:[function(require,module,exports){
+},{"./_string-html":724}],852:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var $at = require('./_string-at')(false);
@@ -76831,7 +77739,7 @@ $export($export.P, 'String', {
   }
 });
 
-},{"./_export":648,"./_string-at":717}],848:[function(require,module,exports){
+},{"./_export":653,"./_string-at":722}],853:[function(require,module,exports){
 // 21.1.3.6 String.prototype.endsWith(searchString [, endPosition])
 'use strict';
 var $export = require('./_export');
@@ -76853,7 +77761,7 @@ $export($export.P + $export.F * require('./_fails-is-regexp')(ENDS_WITH), 'Strin
   }
 });
 
-},{"./_export":648,"./_fails-is-regexp":649,"./_string-context":718,"./_to-length":729}],849:[function(require,module,exports){
+},{"./_export":653,"./_fails-is-regexp":654,"./_string-context":723,"./_to-length":734}],854:[function(require,module,exports){
 'use strict';
 // B.2.3.6 String.prototype.fixed()
 require('./_string-html')('fixed', function (createHTML) {
@@ -76862,7 +77770,7 @@ require('./_string-html')('fixed', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],850:[function(require,module,exports){
+},{"./_string-html":724}],855:[function(require,module,exports){
 'use strict';
 // B.2.3.7 String.prototype.fontcolor(color)
 require('./_string-html')('fontcolor', function (createHTML) {
@@ -76871,7 +77779,7 @@ require('./_string-html')('fontcolor', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],851:[function(require,module,exports){
+},{"./_string-html":724}],856:[function(require,module,exports){
 'use strict';
 // B.2.3.8 String.prototype.fontsize(size)
 require('./_string-html')('fontsize', function (createHTML) {
@@ -76880,7 +77788,7 @@ require('./_string-html')('fontsize', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],852:[function(require,module,exports){
+},{"./_string-html":724}],857:[function(require,module,exports){
 var $export = require('./_export');
 var toAbsoluteIndex = require('./_to-absolute-index');
 var fromCharCode = String.fromCharCode;
@@ -76905,7 +77813,7 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
   }
 });
 
-},{"./_export":648,"./_to-absolute-index":725}],853:[function(require,module,exports){
+},{"./_export":653,"./_to-absolute-index":730}],858:[function(require,module,exports){
 // 21.1.3.7 String.prototype.includes(searchString, position = 0)
 'use strict';
 var $export = require('./_export');
@@ -76919,7 +77827,7 @@ $export($export.P + $export.F * require('./_fails-is-regexp')(INCLUDES), 'String
   }
 });
 
-},{"./_export":648,"./_fails-is-regexp":649,"./_string-context":718}],854:[function(require,module,exports){
+},{"./_export":653,"./_fails-is-regexp":654,"./_string-context":723}],859:[function(require,module,exports){
 'use strict';
 // B.2.3.9 String.prototype.italics()
 require('./_string-html')('italics', function (createHTML) {
@@ -76928,7 +77836,7 @@ require('./_string-html')('italics', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],855:[function(require,module,exports){
+},{"./_string-html":724}],860:[function(require,module,exports){
 'use strict';
 var $at = require('./_string-at')(true);
 
@@ -76947,7 +77855,7 @@ require('./_iter-define')(String, 'String', function (iterated) {
   return { value: point, done: false };
 });
 
-},{"./_iter-define":670,"./_string-at":717}],856:[function(require,module,exports){
+},{"./_iter-define":675,"./_string-at":722}],861:[function(require,module,exports){
 'use strict';
 // B.2.3.10 String.prototype.link(url)
 require('./_string-html')('link', function (createHTML) {
@@ -76956,7 +77864,7 @@ require('./_string-html')('link', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],857:[function(require,module,exports){
+},{"./_string-html":724}],862:[function(require,module,exports){
 var $export = require('./_export');
 var toIObject = require('./_to-iobject');
 var toLength = require('./_to-length');
@@ -76976,7 +77884,7 @@ $export($export.S, 'String', {
   }
 });
 
-},{"./_export":648,"./_to-iobject":728,"./_to-length":729}],858:[function(require,module,exports){
+},{"./_export":653,"./_to-iobject":733,"./_to-length":734}],863:[function(require,module,exports){
 var $export = require('./_export');
 
 $export($export.P, 'String', {
@@ -76984,7 +77892,7 @@ $export($export.P, 'String', {
   repeat: require('./_string-repeat')
 });
 
-},{"./_export":648,"./_string-repeat":721}],859:[function(require,module,exports){
+},{"./_export":653,"./_string-repeat":726}],864:[function(require,module,exports){
 'use strict';
 // B.2.3.11 String.prototype.small()
 require('./_string-html')('small', function (createHTML) {
@@ -76993,7 +77901,7 @@ require('./_string-html')('small', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],860:[function(require,module,exports){
+},{"./_string-html":724}],865:[function(require,module,exports){
 // 21.1.3.18 String.prototype.startsWith(searchString [, position ])
 'use strict';
 var $export = require('./_export');
@@ -77013,7 +77921,7 @@ $export($export.P + $export.F * require('./_fails-is-regexp')(STARTS_WITH), 'Str
   }
 });
 
-},{"./_export":648,"./_fails-is-regexp":649,"./_string-context":718,"./_to-length":729}],861:[function(require,module,exports){
+},{"./_export":653,"./_fails-is-regexp":654,"./_string-context":723,"./_to-length":734}],866:[function(require,module,exports){
 'use strict';
 // B.2.3.12 String.prototype.strike()
 require('./_string-html')('strike', function (createHTML) {
@@ -77022,7 +77930,7 @@ require('./_string-html')('strike', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],862:[function(require,module,exports){
+},{"./_string-html":724}],867:[function(require,module,exports){
 'use strict';
 // B.2.3.13 String.prototype.sub()
 require('./_string-html')('sub', function (createHTML) {
@@ -77031,7 +77939,7 @@ require('./_string-html')('sub', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],863:[function(require,module,exports){
+},{"./_string-html":724}],868:[function(require,module,exports){
 'use strict';
 // B.2.3.14 String.prototype.sup()
 require('./_string-html')('sup', function (createHTML) {
@@ -77040,7 +77948,7 @@ require('./_string-html')('sup', function (createHTML) {
   };
 });
 
-},{"./_string-html":719}],864:[function(require,module,exports){
+},{"./_string-html":724}],869:[function(require,module,exports){
 'use strict';
 // 21.1.3.25 String.prototype.trim()
 require('./_string-trim')('trim', function ($trim) {
@@ -77049,9 +77957,9 @@ require('./_string-trim')('trim', function ($trim) {
   };
 });
 
-},{"./_string-trim":722}],865:[function(require,module,exports){
+},{"./_string-trim":727}],870:[function(require,module,exports){
 arguments[4][85][0].apply(exports,arguments)
-},{"./_an-object":622,"./_descriptors":644,"./_enum-keys":647,"./_export":648,"./_fails":650,"./_global":655,"./_has":656,"./_hide":657,"./_is-array":664,"./_is-object":666,"./_library":674,"./_meta":680,"./_object-create":685,"./_object-dp":686,"./_object-gopd":689,"./_object-gopn":691,"./_object-gopn-ext":690,"./_object-gops":692,"./_object-keys":695,"./_object-pie":696,"./_property-desc":704,"./_redefine":706,"./_set-to-string-tag":712,"./_shared":714,"./_to-iobject":728,"./_to-primitive":731,"./_uid":735,"./_wks":740,"./_wks-define":738,"./_wks-ext":739,"dup":85}],866:[function(require,module,exports){
+},{"./_an-object":627,"./_descriptors":649,"./_enum-keys":652,"./_export":653,"./_fails":655,"./_global":660,"./_has":661,"./_hide":662,"./_is-array":669,"./_is-object":671,"./_library":679,"./_meta":685,"./_object-create":690,"./_object-dp":691,"./_object-gopd":694,"./_object-gopn":696,"./_object-gopn-ext":695,"./_object-gops":697,"./_object-keys":700,"./_object-pie":701,"./_property-desc":709,"./_redefine":711,"./_set-to-string-tag":717,"./_shared":719,"./_to-iobject":733,"./_to-primitive":736,"./_uid":740,"./_wks":745,"./_wks-define":743,"./_wks-ext":744,"dup":85}],871:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var $typed = require('./_typed');
@@ -77099,76 +78007,76 @@ $export($export.P + $export.U + $export.F * require('./_fails')(function () {
 
 require('./_set-species')(ARRAY_BUFFER);
 
-},{"./_an-object":622,"./_export":648,"./_fails":650,"./_global":655,"./_is-object":666,"./_set-species":711,"./_species-constructor":715,"./_to-absolute-index":725,"./_to-length":729,"./_typed":734,"./_typed-buffer":733}],867:[function(require,module,exports){
+},{"./_an-object":627,"./_export":653,"./_fails":655,"./_global":660,"./_is-object":671,"./_set-species":716,"./_species-constructor":720,"./_to-absolute-index":730,"./_to-length":734,"./_typed":739,"./_typed-buffer":738}],872:[function(require,module,exports){
 var $export = require('./_export');
 $export($export.G + $export.W + $export.F * !require('./_typed').ABV, {
   DataView: require('./_typed-buffer').DataView
 });
 
-},{"./_export":648,"./_typed":734,"./_typed-buffer":733}],868:[function(require,module,exports){
+},{"./_export":653,"./_typed":739,"./_typed-buffer":738}],873:[function(require,module,exports){
 require('./_typed-array')('Float32', 4, function (init) {
   return function Float32Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-},{"./_typed-array":732}],869:[function(require,module,exports){
+},{"./_typed-array":737}],874:[function(require,module,exports){
 require('./_typed-array')('Float64', 8, function (init) {
   return function Float64Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-},{"./_typed-array":732}],870:[function(require,module,exports){
+},{"./_typed-array":737}],875:[function(require,module,exports){
 require('./_typed-array')('Int16', 2, function (init) {
   return function Int16Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-},{"./_typed-array":732}],871:[function(require,module,exports){
+},{"./_typed-array":737}],876:[function(require,module,exports){
 require('./_typed-array')('Int32', 4, function (init) {
   return function Int32Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-},{"./_typed-array":732}],872:[function(require,module,exports){
+},{"./_typed-array":737}],877:[function(require,module,exports){
 require('./_typed-array')('Int8', 1, function (init) {
   return function Int8Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-},{"./_typed-array":732}],873:[function(require,module,exports){
+},{"./_typed-array":737}],878:[function(require,module,exports){
 require('./_typed-array')('Uint16', 2, function (init) {
   return function Uint16Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-},{"./_typed-array":732}],874:[function(require,module,exports){
+},{"./_typed-array":737}],879:[function(require,module,exports){
 require('./_typed-array')('Uint32', 4, function (init) {
   return function Uint32Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-},{"./_typed-array":732}],875:[function(require,module,exports){
+},{"./_typed-array":737}],880:[function(require,module,exports){
 require('./_typed-array')('Uint8', 1, function (init) {
   return function Uint8Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-},{"./_typed-array":732}],876:[function(require,module,exports){
+},{"./_typed-array":737}],881:[function(require,module,exports){
 require('./_typed-array')('Uint8', 1, function (init) {
   return function Uint8ClampedArray(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 }, true);
 
-},{"./_typed-array":732}],877:[function(require,module,exports){
+},{"./_typed-array":737}],882:[function(require,module,exports){
 'use strict';
 var each = require('./_array-methods')(0);
 var redefine = require('./_redefine');
@@ -77229,7 +78137,7 @@ if (fails(function () { return new $WeakMap().set((Object.freeze || Object)(tmp)
   });
 }
 
-},{"./_array-methods":627,"./_collection":637,"./_collection-weak":636,"./_fails":650,"./_is-object":666,"./_meta":680,"./_object-assign":684,"./_redefine":706,"./_validate-collection":737}],878:[function(require,module,exports){
+},{"./_array-methods":632,"./_collection":642,"./_collection-weak":641,"./_fails":655,"./_is-object":671,"./_meta":685,"./_object-assign":689,"./_redefine":711,"./_validate-collection":742}],883:[function(require,module,exports){
 'use strict';
 var weak = require('./_collection-weak');
 var validate = require('./_validate-collection');
@@ -77245,7 +78153,7 @@ require('./_collection')(WEAK_SET, function (get) {
   }
 }, weak, false, true);
 
-},{"./_collection":637,"./_collection-weak":636,"./_validate-collection":737}],879:[function(require,module,exports){
+},{"./_collection":642,"./_collection-weak":641,"./_validate-collection":742}],884:[function(require,module,exports){
 'use strict';
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatMap
 var $export = require('./_export');
@@ -77269,7 +78177,7 @@ $export($export.P, 'Array', {
 
 require('./_add-to-unscopables')('flatMap');
 
-},{"./_a-function":618,"./_add-to-unscopables":620,"./_array-species-create":630,"./_export":648,"./_flatten-into-array":653,"./_to-length":729,"./_to-object":730}],880:[function(require,module,exports){
+},{"./_a-function":623,"./_add-to-unscopables":625,"./_array-species-create":635,"./_export":653,"./_flatten-into-array":658,"./_to-length":734,"./_to-object":735}],885:[function(require,module,exports){
 'use strict';
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatten
 var $export = require('./_export');
@@ -77292,7 +78200,7 @@ $export($export.P, 'Array', {
 
 require('./_add-to-unscopables')('flatten');
 
-},{"./_add-to-unscopables":620,"./_array-species-create":630,"./_export":648,"./_flatten-into-array":653,"./_to-integer":727,"./_to-length":729,"./_to-object":730}],881:[function(require,module,exports){
+},{"./_add-to-unscopables":625,"./_array-species-create":635,"./_export":653,"./_flatten-into-array":658,"./_to-integer":732,"./_to-length":734,"./_to-object":735}],886:[function(require,module,exports){
 'use strict';
 // https://github.com/tc39/Array.prototype.includes
 var $export = require('./_export');
@@ -77306,7 +78214,7 @@ $export($export.P, 'Array', {
 
 require('./_add-to-unscopables')('includes');
 
-},{"./_add-to-unscopables":620,"./_array-includes":626,"./_export":648}],882:[function(require,module,exports){
+},{"./_add-to-unscopables":625,"./_array-includes":631,"./_export":653}],887:[function(require,module,exports){
 // https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-09/sept-25.md#510-globalasap-for-enqueuing-a-microtask
 var $export = require('./_export');
 var microtask = require('./_microtask')();
@@ -77320,7 +78228,7 @@ $export($export.G, {
   }
 });
 
-},{"./_cof":633,"./_export":648,"./_global":655,"./_microtask":682}],883:[function(require,module,exports){
+},{"./_cof":638,"./_export":653,"./_global":660,"./_microtask":687}],888:[function(require,module,exports){
 // https://github.com/ljharb/proposal-is-error
 var $export = require('./_export');
 var cof = require('./_cof');
@@ -77331,27 +78239,27 @@ $export($export.S, 'Error', {
   }
 });
 
-},{"./_cof":633,"./_export":648}],884:[function(require,module,exports){
+},{"./_cof":638,"./_export":653}],889:[function(require,module,exports){
 // https://github.com/tc39/proposal-global
 var $export = require('./_export');
 
 $export($export.G, { global: require('./_global') });
 
-},{"./_export":648,"./_global":655}],885:[function(require,module,exports){
+},{"./_export":653,"./_global":660}],890:[function(require,module,exports){
 // https://tc39.github.io/proposal-setmap-offrom/#sec-map.from
 require('./_set-collection-from')('Map');
 
-},{"./_set-collection-from":708}],886:[function(require,module,exports){
+},{"./_set-collection-from":713}],891:[function(require,module,exports){
 // https://tc39.github.io/proposal-setmap-offrom/#sec-map.of
 require('./_set-collection-of')('Map');
 
-},{"./_set-collection-of":709}],887:[function(require,module,exports){
+},{"./_set-collection-of":714}],892:[function(require,module,exports){
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export = require('./_export');
 
 $export($export.P + $export.R, 'Map', { toJSON: require('./_collection-to-json')('Map') });
 
-},{"./_collection-to-json":635,"./_export":648}],888:[function(require,module,exports){
+},{"./_collection-to-json":640,"./_export":653}],893:[function(require,module,exports){
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = require('./_export');
 
@@ -77361,13 +78269,13 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],889:[function(require,module,exports){
+},{"./_export":653}],894:[function(require,module,exports){
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = require('./_export');
 
 $export($export.S, 'Math', { DEG_PER_RAD: Math.PI / 180 });
 
-},{"./_export":648}],890:[function(require,module,exports){
+},{"./_export":653}],895:[function(require,module,exports){
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = require('./_export');
 var RAD_PER_DEG = 180 / Math.PI;
@@ -77378,7 +78286,7 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],891:[function(require,module,exports){
+},{"./_export":653}],896:[function(require,module,exports){
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = require('./_export');
 var scale = require('./_math-scale');
@@ -77390,7 +78298,7 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648,"./_math-fround":676,"./_math-scale":678}],892:[function(require,module,exports){
+},{"./_export":653,"./_math-fround":681,"./_math-scale":683}],897:[function(require,module,exports){
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
 var $export = require('./_export');
 
@@ -77403,7 +78311,7 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],893:[function(require,module,exports){
+},{"./_export":653}],898:[function(require,module,exports){
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
 var $export = require('./_export');
 
@@ -77421,7 +78329,7 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],894:[function(require,module,exports){
+},{"./_export":653}],899:[function(require,module,exports){
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
 var $export = require('./_export');
 
@@ -77434,13 +78342,13 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],895:[function(require,module,exports){
+},{"./_export":653}],900:[function(require,module,exports){
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = require('./_export');
 
 $export($export.S, 'Math', { RAD_PER_DEG: 180 / Math.PI });
 
-},{"./_export":648}],896:[function(require,module,exports){
+},{"./_export":653}],901:[function(require,module,exports){
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = require('./_export');
 var DEG_PER_RAD = Math.PI / 180;
@@ -77451,13 +78359,13 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],897:[function(require,module,exports){
+},{"./_export":653}],902:[function(require,module,exports){
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = require('./_export');
 
 $export($export.S, 'Math', { scale: require('./_math-scale') });
 
-},{"./_export":648,"./_math-scale":678}],898:[function(require,module,exports){
+},{"./_export":653,"./_math-scale":683}],903:[function(require,module,exports){
 // http://jfbastien.github.io/papers/Math.signbit.html
 var $export = require('./_export');
 
@@ -77466,7 +78374,7 @@ $export($export.S, 'Math', { signbit: function signbit(x) {
   return (x = +x) != x ? x : x == 0 ? 1 / x == Infinity : x > 0;
 } });
 
-},{"./_export":648}],899:[function(require,module,exports){
+},{"./_export":653}],904:[function(require,module,exports){
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
 var $export = require('./_export');
 
@@ -77484,7 +78392,7 @@ $export($export.S, 'Math', {
   }
 });
 
-},{"./_export":648}],900:[function(require,module,exports){
+},{"./_export":653}],905:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var toObject = require('./_to-object');
@@ -77498,7 +78406,7 @@ require('./_descriptors') && $export($export.P + require('./_object-forced-pam')
   }
 });
 
-},{"./_a-function":618,"./_descriptors":644,"./_export":648,"./_object-dp":686,"./_object-forced-pam":688,"./_to-object":730}],901:[function(require,module,exports){
+},{"./_a-function":623,"./_descriptors":649,"./_export":653,"./_object-dp":691,"./_object-forced-pam":693,"./_to-object":735}],906:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var toObject = require('./_to-object');
@@ -77512,7 +78420,7 @@ require('./_descriptors') && $export($export.P + require('./_object-forced-pam')
   }
 });
 
-},{"./_a-function":618,"./_descriptors":644,"./_export":648,"./_object-dp":686,"./_object-forced-pam":688,"./_to-object":730}],902:[function(require,module,exports){
+},{"./_a-function":623,"./_descriptors":649,"./_export":653,"./_object-dp":691,"./_object-forced-pam":693,"./_to-object":735}],907:[function(require,module,exports){
 // https://github.com/tc39/proposal-object-values-entries
 var $export = require('./_export');
 var $entries = require('./_object-to-array')(true);
@@ -77523,7 +78431,7 @@ $export($export.S, 'Object', {
   }
 });
 
-},{"./_export":648,"./_object-to-array":698}],903:[function(require,module,exports){
+},{"./_export":653,"./_object-to-array":703}],908:[function(require,module,exports){
 // https://github.com/tc39/proposal-object-getownpropertydescriptors
 var $export = require('./_export');
 var ownKeys = require('./_own-keys');
@@ -77547,7 +78455,7 @@ $export($export.S, 'Object', {
   }
 });
 
-},{"./_create-property":639,"./_export":648,"./_object-gopd":689,"./_own-keys":699,"./_to-iobject":728}],904:[function(require,module,exports){
+},{"./_create-property":644,"./_export":653,"./_object-gopd":694,"./_own-keys":704,"./_to-iobject":733}],909:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var toObject = require('./_to-object');
@@ -77567,7 +78475,7 @@ require('./_descriptors') && $export($export.P + require('./_object-forced-pam')
   }
 });
 
-},{"./_descriptors":644,"./_export":648,"./_object-forced-pam":688,"./_object-gopd":689,"./_object-gpo":693,"./_to-object":730,"./_to-primitive":731}],905:[function(require,module,exports){
+},{"./_descriptors":649,"./_export":653,"./_object-forced-pam":693,"./_object-gopd":694,"./_object-gpo":698,"./_to-object":735,"./_to-primitive":736}],910:[function(require,module,exports){
 'use strict';
 var $export = require('./_export');
 var toObject = require('./_to-object');
@@ -77587,7 +78495,7 @@ require('./_descriptors') && $export($export.P + require('./_object-forced-pam')
   }
 });
 
-},{"./_descriptors":644,"./_export":648,"./_object-forced-pam":688,"./_object-gopd":689,"./_object-gpo":693,"./_to-object":730,"./_to-primitive":731}],906:[function(require,module,exports){
+},{"./_descriptors":649,"./_export":653,"./_object-forced-pam":693,"./_object-gopd":694,"./_object-gpo":698,"./_to-object":735,"./_to-primitive":736}],911:[function(require,module,exports){
 // https://github.com/tc39/proposal-object-values-entries
 var $export = require('./_export');
 var $values = require('./_object-to-array')(false);
@@ -77598,7 +78506,7 @@ $export($export.S, 'Object', {
   }
 });
 
-},{"./_export":648,"./_object-to-array":698}],907:[function(require,module,exports){
+},{"./_export":653,"./_object-to-array":703}],912:[function(require,module,exports){
 'use strict';
 // https://github.com/zenparsing/es-observable
 var $export = require('./_export');
@@ -77799,7 +78707,7 @@ $export($export.G, { Observable: $Observable });
 
 require('./_set-species')('Observable');
 
-},{"./_a-function":618,"./_an-instance":621,"./_an-object":622,"./_core":638,"./_export":648,"./_for-of":654,"./_global":655,"./_hide":657,"./_microtask":682,"./_redefine-all":705,"./_set-species":711,"./_wks":740}],908:[function(require,module,exports){
+},{"./_a-function":623,"./_an-instance":626,"./_an-object":627,"./_core":643,"./_export":653,"./_for-of":659,"./_global":660,"./_hide":662,"./_microtask":687,"./_redefine-all":710,"./_set-species":716,"./_wks":745}],913:[function(require,module,exports){
 // https://github.com/tc39/proposal-promise-finally
 'use strict';
 var $export = require('./_export');
@@ -77821,7 +78729,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
   );
 } });
 
-},{"./_core":638,"./_export":648,"./_global":655,"./_promise-resolve":703,"./_species-constructor":715}],909:[function(require,module,exports){
+},{"./_core":643,"./_export":653,"./_global":660,"./_promise-resolve":708,"./_species-constructor":720}],914:[function(require,module,exports){
 'use strict';
 // https://github.com/tc39/proposal-promise-try
 var $export = require('./_export');
@@ -77835,7 +78743,7 @@ $export($export.S, 'Promise', { 'try': function (callbackfn) {
   return promiseCapability.promise;
 } });
 
-},{"./_export":648,"./_new-promise-capability":683,"./_perform":702}],910:[function(require,module,exports){
+},{"./_export":653,"./_new-promise-capability":688,"./_perform":707}],915:[function(require,module,exports){
 var metadata = require('./_metadata');
 var anObject = require('./_an-object');
 var toMetaKey = metadata.key;
@@ -77845,7 +78753,7 @@ metadata.exp({ defineMetadata: function defineMetadata(metadataKey, metadataValu
   ordinaryDefineOwnMetadata(metadataKey, metadataValue, anObject(target), toMetaKey(targetKey));
 } });
 
-},{"./_an-object":622,"./_metadata":681}],911:[function(require,module,exports){
+},{"./_an-object":627,"./_metadata":686}],916:[function(require,module,exports){
 var metadata = require('./_metadata');
 var anObject = require('./_an-object');
 var toMetaKey = metadata.key;
@@ -77862,7 +78770,7 @@ metadata.exp({ deleteMetadata: function deleteMetadata(metadataKey, target /* , 
   return !!targetMetadata.size || store['delete'](target);
 } });
 
-},{"./_an-object":622,"./_metadata":681}],912:[function(require,module,exports){
+},{"./_an-object":627,"./_metadata":686}],917:[function(require,module,exports){
 var Set = require('./es6.set');
 var from = require('./_array-from-iterable');
 var metadata = require('./_metadata');
@@ -77883,7 +78791,7 @@ metadata.exp({ getMetadataKeys: function getMetadataKeys(target /* , targetKey *
   return ordinaryMetadataKeys(anObject(target), arguments.length < 2 ? undefined : toMetaKey(arguments[1]));
 } });
 
-},{"./_an-object":622,"./_array-from-iterable":625,"./_metadata":681,"./_object-gpo":693,"./es6.set":842}],913:[function(require,module,exports){
+},{"./_an-object":627,"./_array-from-iterable":630,"./_metadata":686,"./_object-gpo":698,"./es6.set":847}],918:[function(require,module,exports){
 var metadata = require('./_metadata');
 var anObject = require('./_an-object');
 var getPrototypeOf = require('./_object-gpo');
@@ -77902,7 +78810,7 @@ metadata.exp({ getMetadata: function getMetadata(metadataKey, target /* , target
   return ordinaryGetMetadata(metadataKey, anObject(target), arguments.length < 3 ? undefined : toMetaKey(arguments[2]));
 } });
 
-},{"./_an-object":622,"./_metadata":681,"./_object-gpo":693}],914:[function(require,module,exports){
+},{"./_an-object":627,"./_metadata":686,"./_object-gpo":698}],919:[function(require,module,exports){
 var metadata = require('./_metadata');
 var anObject = require('./_an-object');
 var ordinaryOwnMetadataKeys = metadata.keys;
@@ -77912,7 +78820,7 @@ metadata.exp({ getOwnMetadataKeys: function getOwnMetadataKeys(target /* , targe
   return ordinaryOwnMetadataKeys(anObject(target), arguments.length < 2 ? undefined : toMetaKey(arguments[1]));
 } });
 
-},{"./_an-object":622,"./_metadata":681}],915:[function(require,module,exports){
+},{"./_an-object":627,"./_metadata":686}],920:[function(require,module,exports){
 var metadata = require('./_metadata');
 var anObject = require('./_an-object');
 var ordinaryGetOwnMetadata = metadata.get;
@@ -77923,7 +78831,7 @@ metadata.exp({ getOwnMetadata: function getOwnMetadata(metadataKey, target /* , 
     , arguments.length < 3 ? undefined : toMetaKey(arguments[2]));
 } });
 
-},{"./_an-object":622,"./_metadata":681}],916:[function(require,module,exports){
+},{"./_an-object":627,"./_metadata":686}],921:[function(require,module,exports){
 var metadata = require('./_metadata');
 var anObject = require('./_an-object');
 var getPrototypeOf = require('./_object-gpo');
@@ -77941,7 +78849,7 @@ metadata.exp({ hasMetadata: function hasMetadata(metadataKey, target /* , target
   return ordinaryHasMetadata(metadataKey, anObject(target), arguments.length < 3 ? undefined : toMetaKey(arguments[2]));
 } });
 
-},{"./_an-object":622,"./_metadata":681,"./_object-gpo":693}],917:[function(require,module,exports){
+},{"./_an-object":627,"./_metadata":686,"./_object-gpo":698}],922:[function(require,module,exports){
 var metadata = require('./_metadata');
 var anObject = require('./_an-object');
 var ordinaryHasOwnMetadata = metadata.has;
@@ -77952,7 +78860,7 @@ metadata.exp({ hasOwnMetadata: function hasOwnMetadata(metadataKey, target /* , 
     , arguments.length < 3 ? undefined : toMetaKey(arguments[2]));
 } });
 
-},{"./_an-object":622,"./_metadata":681}],918:[function(require,module,exports){
+},{"./_an-object":627,"./_metadata":686}],923:[function(require,module,exports){
 var $metadata = require('./_metadata');
 var anObject = require('./_an-object');
 var aFunction = require('./_a-function');
@@ -77969,21 +78877,21 @@ $metadata.exp({ metadata: function metadata(metadataKey, metadataValue) {
   };
 } });
 
-},{"./_a-function":618,"./_an-object":622,"./_metadata":681}],919:[function(require,module,exports){
+},{"./_a-function":623,"./_an-object":627,"./_metadata":686}],924:[function(require,module,exports){
 // https://tc39.github.io/proposal-setmap-offrom/#sec-set.from
 require('./_set-collection-from')('Set');
 
-},{"./_set-collection-from":708}],920:[function(require,module,exports){
+},{"./_set-collection-from":713}],925:[function(require,module,exports){
 // https://tc39.github.io/proposal-setmap-offrom/#sec-set.of
 require('./_set-collection-of')('Set');
 
-},{"./_set-collection-of":709}],921:[function(require,module,exports){
+},{"./_set-collection-of":714}],926:[function(require,module,exports){
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export = require('./_export');
 
 $export($export.P + $export.R, 'Set', { toJSON: require('./_collection-to-json')('Set') });
 
-},{"./_collection-to-json":635,"./_export":648}],922:[function(require,module,exports){
+},{"./_collection-to-json":640,"./_export":653}],927:[function(require,module,exports){
 'use strict';
 // https://github.com/mathiasbynens/String.prototype.at
 var $export = require('./_export');
@@ -77995,7 +78903,7 @@ $export($export.P, 'String', {
   }
 });
 
-},{"./_export":648,"./_string-at":717}],923:[function(require,module,exports){
+},{"./_export":653,"./_string-at":722}],928:[function(require,module,exports){
 'use strict';
 // https://tc39.github.io/String.prototype.matchAll/
 var $export = require('./_export');
@@ -78027,7 +78935,7 @@ $export($export.P, 'String', {
   }
 });
 
-},{"./_defined":643,"./_export":648,"./_flags":652,"./_is-regexp":667,"./_iter-create":669,"./_to-length":729}],924:[function(require,module,exports){
+},{"./_defined":648,"./_export":653,"./_flags":657,"./_is-regexp":672,"./_iter-create":674,"./_to-length":734}],929:[function(require,module,exports){
 'use strict';
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = require('./_export');
@@ -78041,7 +78949,7 @@ $export($export.P + $export.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(userAge
   }
 });
 
-},{"./_export":648,"./_string-pad":720,"./_user-agent":736}],925:[function(require,module,exports){
+},{"./_export":653,"./_string-pad":725,"./_user-agent":741}],930:[function(require,module,exports){
 'use strict';
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = require('./_export');
@@ -78055,7 +78963,7 @@ $export($export.P + $export.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(userAge
   }
 });
 
-},{"./_export":648,"./_string-pad":720,"./_user-agent":736}],926:[function(require,module,exports){
+},{"./_export":653,"./_string-pad":725,"./_user-agent":741}],931:[function(require,module,exports){
 'use strict';
 // https://github.com/sebmarkbage/ecmascript-string-left-right-trim
 require('./_string-trim')('trimLeft', function ($trim) {
@@ -78064,7 +78972,7 @@ require('./_string-trim')('trimLeft', function ($trim) {
   };
 }, 'trimStart');
 
-},{"./_string-trim":722}],927:[function(require,module,exports){
+},{"./_string-trim":727}],932:[function(require,module,exports){
 'use strict';
 // https://github.com/sebmarkbage/ecmascript-string-left-right-trim
 require('./_string-trim')('trimRight', function ($trim) {
@@ -78073,35 +78981,35 @@ require('./_string-trim')('trimRight', function ($trim) {
   };
 }, 'trimEnd');
 
-},{"./_string-trim":722}],928:[function(require,module,exports){
+},{"./_string-trim":727}],933:[function(require,module,exports){
 require('./_wks-define')('asyncIterator');
 
-},{"./_wks-define":738}],929:[function(require,module,exports){
+},{"./_wks-define":743}],934:[function(require,module,exports){
 require('./_wks-define')('observable');
 
-},{"./_wks-define":738}],930:[function(require,module,exports){
+},{"./_wks-define":743}],935:[function(require,module,exports){
 // https://github.com/tc39/proposal-global
 var $export = require('./_export');
 
 $export($export.S, 'System', { global: require('./_global') });
 
-},{"./_export":648,"./_global":655}],931:[function(require,module,exports){
+},{"./_export":653,"./_global":660}],936:[function(require,module,exports){
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.from
 require('./_set-collection-from')('WeakMap');
 
-},{"./_set-collection-from":708}],932:[function(require,module,exports){
+},{"./_set-collection-from":713}],937:[function(require,module,exports){
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.of
 require('./_set-collection-of')('WeakMap');
 
-},{"./_set-collection-of":709}],933:[function(require,module,exports){
+},{"./_set-collection-of":714}],938:[function(require,module,exports){
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.from
 require('./_set-collection-from')('WeakSet');
 
-},{"./_set-collection-from":708}],934:[function(require,module,exports){
+},{"./_set-collection-from":713}],939:[function(require,module,exports){
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.of
 require('./_set-collection-of')('WeakSet');
 
-},{"./_set-collection-of":709}],935:[function(require,module,exports){
+},{"./_set-collection-of":714}],940:[function(require,module,exports){
 var $iterators = require('./es6.array.iterator');
 var getKeys = require('./_object-keys');
 var redefine = require('./_redefine');
@@ -78161,7 +79069,7 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
   }
 }
 
-},{"./_global":655,"./_hide":657,"./_iterators":673,"./_object-keys":695,"./_redefine":706,"./_wks":740,"./es6.array.iterator":752}],936:[function(require,module,exports){
+},{"./_global":660,"./_hide":662,"./_iterators":678,"./_object-keys":700,"./_redefine":711,"./_wks":745,"./es6.array.iterator":757}],941:[function(require,module,exports){
 var $export = require('./_export');
 var $task = require('./_task');
 $export($export.G + $export.B, {
@@ -78169,7 +79077,7 @@ $export($export.G + $export.B, {
   clearImmediate: $task.clear
 });
 
-},{"./_export":648,"./_task":724}],937:[function(require,module,exports){
+},{"./_export":653,"./_task":729}],942:[function(require,module,exports){
 // ie9- setTimeout & setInterval additional parameters fix
 var global = require('./_global');
 var $export = require('./_export');
@@ -78191,7 +79099,7 @@ $export($export.G + $export.B + $export.F * MSIE, {
   setInterval: wrap(global.setInterval)
 });
 
-},{"./_export":648,"./_global":655,"./_user-agent":736}],938:[function(require,module,exports){
+},{"./_export":653,"./_global":660,"./_user-agent":741}],943:[function(require,module,exports){
 require('./modules/es6.symbol');
 require('./modules/es6.object.create');
 require('./modules/es6.object.define-property');
@@ -78390,7 +79298,7 @@ require('./modules/web.immediate');
 require('./modules/web.dom.iterable');
 module.exports = require('./modules/_core');
 
-},{"./modules/_core":638,"./modules/es6.array.copy-within":742,"./modules/es6.array.every":743,"./modules/es6.array.fill":744,"./modules/es6.array.filter":745,"./modules/es6.array.find":747,"./modules/es6.array.find-index":746,"./modules/es6.array.for-each":748,"./modules/es6.array.from":749,"./modules/es6.array.index-of":750,"./modules/es6.array.is-array":751,"./modules/es6.array.iterator":752,"./modules/es6.array.join":753,"./modules/es6.array.last-index-of":754,"./modules/es6.array.map":755,"./modules/es6.array.of":756,"./modules/es6.array.reduce":758,"./modules/es6.array.reduce-right":757,"./modules/es6.array.slice":759,"./modules/es6.array.some":760,"./modules/es6.array.sort":761,"./modules/es6.array.species":762,"./modules/es6.date.now":763,"./modules/es6.date.to-iso-string":764,"./modules/es6.date.to-json":765,"./modules/es6.date.to-primitive":766,"./modules/es6.date.to-string":767,"./modules/es6.function.bind":768,"./modules/es6.function.has-instance":769,"./modules/es6.function.name":770,"./modules/es6.map":771,"./modules/es6.math.acosh":772,"./modules/es6.math.asinh":773,"./modules/es6.math.atanh":774,"./modules/es6.math.cbrt":775,"./modules/es6.math.clz32":776,"./modules/es6.math.cosh":777,"./modules/es6.math.expm1":778,"./modules/es6.math.fround":779,"./modules/es6.math.hypot":780,"./modules/es6.math.imul":781,"./modules/es6.math.log10":782,"./modules/es6.math.log1p":783,"./modules/es6.math.log2":784,"./modules/es6.math.sign":785,"./modules/es6.math.sinh":786,"./modules/es6.math.tanh":787,"./modules/es6.math.trunc":788,"./modules/es6.number.constructor":789,"./modules/es6.number.epsilon":790,"./modules/es6.number.is-finite":791,"./modules/es6.number.is-integer":792,"./modules/es6.number.is-nan":793,"./modules/es6.number.is-safe-integer":794,"./modules/es6.number.max-safe-integer":795,"./modules/es6.number.min-safe-integer":796,"./modules/es6.number.parse-float":797,"./modules/es6.number.parse-int":798,"./modules/es6.number.to-fixed":799,"./modules/es6.number.to-precision":800,"./modules/es6.object.assign":801,"./modules/es6.object.create":802,"./modules/es6.object.define-properties":803,"./modules/es6.object.define-property":804,"./modules/es6.object.freeze":805,"./modules/es6.object.get-own-property-descriptor":806,"./modules/es6.object.get-own-property-names":807,"./modules/es6.object.get-prototype-of":808,"./modules/es6.object.is":812,"./modules/es6.object.is-extensible":809,"./modules/es6.object.is-frozen":810,"./modules/es6.object.is-sealed":811,"./modules/es6.object.keys":813,"./modules/es6.object.prevent-extensions":814,"./modules/es6.object.seal":815,"./modules/es6.object.set-prototype-of":816,"./modules/es6.object.to-string":817,"./modules/es6.parse-float":818,"./modules/es6.parse-int":819,"./modules/es6.promise":820,"./modules/es6.reflect.apply":821,"./modules/es6.reflect.construct":822,"./modules/es6.reflect.define-property":823,"./modules/es6.reflect.delete-property":824,"./modules/es6.reflect.enumerate":825,"./modules/es6.reflect.get":828,"./modules/es6.reflect.get-own-property-descriptor":826,"./modules/es6.reflect.get-prototype-of":827,"./modules/es6.reflect.has":829,"./modules/es6.reflect.is-extensible":830,"./modules/es6.reflect.own-keys":831,"./modules/es6.reflect.prevent-extensions":832,"./modules/es6.reflect.set":834,"./modules/es6.reflect.set-prototype-of":833,"./modules/es6.regexp.constructor":835,"./modules/es6.regexp.flags":836,"./modules/es6.regexp.match":837,"./modules/es6.regexp.replace":838,"./modules/es6.regexp.search":839,"./modules/es6.regexp.split":840,"./modules/es6.regexp.to-string":841,"./modules/es6.set":842,"./modules/es6.string.anchor":843,"./modules/es6.string.big":844,"./modules/es6.string.blink":845,"./modules/es6.string.bold":846,"./modules/es6.string.code-point-at":847,"./modules/es6.string.ends-with":848,"./modules/es6.string.fixed":849,"./modules/es6.string.fontcolor":850,"./modules/es6.string.fontsize":851,"./modules/es6.string.from-code-point":852,"./modules/es6.string.includes":853,"./modules/es6.string.italics":854,"./modules/es6.string.iterator":855,"./modules/es6.string.link":856,"./modules/es6.string.raw":857,"./modules/es6.string.repeat":858,"./modules/es6.string.small":859,"./modules/es6.string.starts-with":860,"./modules/es6.string.strike":861,"./modules/es6.string.sub":862,"./modules/es6.string.sup":863,"./modules/es6.string.trim":864,"./modules/es6.symbol":865,"./modules/es6.typed.array-buffer":866,"./modules/es6.typed.data-view":867,"./modules/es6.typed.float32-array":868,"./modules/es6.typed.float64-array":869,"./modules/es6.typed.int16-array":870,"./modules/es6.typed.int32-array":871,"./modules/es6.typed.int8-array":872,"./modules/es6.typed.uint16-array":873,"./modules/es6.typed.uint32-array":874,"./modules/es6.typed.uint8-array":875,"./modules/es6.typed.uint8-clamped-array":876,"./modules/es6.weak-map":877,"./modules/es6.weak-set":878,"./modules/es7.array.flat-map":879,"./modules/es7.array.flatten":880,"./modules/es7.array.includes":881,"./modules/es7.asap":882,"./modules/es7.error.is-error":883,"./modules/es7.global":884,"./modules/es7.map.from":885,"./modules/es7.map.of":886,"./modules/es7.map.to-json":887,"./modules/es7.math.clamp":888,"./modules/es7.math.deg-per-rad":889,"./modules/es7.math.degrees":890,"./modules/es7.math.fscale":891,"./modules/es7.math.iaddh":892,"./modules/es7.math.imulh":893,"./modules/es7.math.isubh":894,"./modules/es7.math.rad-per-deg":895,"./modules/es7.math.radians":896,"./modules/es7.math.scale":897,"./modules/es7.math.signbit":898,"./modules/es7.math.umulh":899,"./modules/es7.object.define-getter":900,"./modules/es7.object.define-setter":901,"./modules/es7.object.entries":902,"./modules/es7.object.get-own-property-descriptors":903,"./modules/es7.object.lookup-getter":904,"./modules/es7.object.lookup-setter":905,"./modules/es7.object.values":906,"./modules/es7.observable":907,"./modules/es7.promise.finally":908,"./modules/es7.promise.try":909,"./modules/es7.reflect.define-metadata":910,"./modules/es7.reflect.delete-metadata":911,"./modules/es7.reflect.get-metadata":913,"./modules/es7.reflect.get-metadata-keys":912,"./modules/es7.reflect.get-own-metadata":915,"./modules/es7.reflect.get-own-metadata-keys":914,"./modules/es7.reflect.has-metadata":916,"./modules/es7.reflect.has-own-metadata":917,"./modules/es7.reflect.metadata":918,"./modules/es7.set.from":919,"./modules/es7.set.of":920,"./modules/es7.set.to-json":921,"./modules/es7.string.at":922,"./modules/es7.string.match-all":923,"./modules/es7.string.pad-end":924,"./modules/es7.string.pad-start":925,"./modules/es7.string.trim-left":926,"./modules/es7.string.trim-right":927,"./modules/es7.symbol.async-iterator":928,"./modules/es7.symbol.observable":929,"./modules/es7.system.global":930,"./modules/es7.weak-map.from":931,"./modules/es7.weak-map.of":932,"./modules/es7.weak-set.from":933,"./modules/es7.weak-set.of":934,"./modules/web.dom.iterable":935,"./modules/web.immediate":936,"./modules/web.timers":937}],939:[function(require,module,exports){
+},{"./modules/_core":643,"./modules/es6.array.copy-within":747,"./modules/es6.array.every":748,"./modules/es6.array.fill":749,"./modules/es6.array.filter":750,"./modules/es6.array.find":752,"./modules/es6.array.find-index":751,"./modules/es6.array.for-each":753,"./modules/es6.array.from":754,"./modules/es6.array.index-of":755,"./modules/es6.array.is-array":756,"./modules/es6.array.iterator":757,"./modules/es6.array.join":758,"./modules/es6.array.last-index-of":759,"./modules/es6.array.map":760,"./modules/es6.array.of":761,"./modules/es6.array.reduce":763,"./modules/es6.array.reduce-right":762,"./modules/es6.array.slice":764,"./modules/es6.array.some":765,"./modules/es6.array.sort":766,"./modules/es6.array.species":767,"./modules/es6.date.now":768,"./modules/es6.date.to-iso-string":769,"./modules/es6.date.to-json":770,"./modules/es6.date.to-primitive":771,"./modules/es6.date.to-string":772,"./modules/es6.function.bind":773,"./modules/es6.function.has-instance":774,"./modules/es6.function.name":775,"./modules/es6.map":776,"./modules/es6.math.acosh":777,"./modules/es6.math.asinh":778,"./modules/es6.math.atanh":779,"./modules/es6.math.cbrt":780,"./modules/es6.math.clz32":781,"./modules/es6.math.cosh":782,"./modules/es6.math.expm1":783,"./modules/es6.math.fround":784,"./modules/es6.math.hypot":785,"./modules/es6.math.imul":786,"./modules/es6.math.log10":787,"./modules/es6.math.log1p":788,"./modules/es6.math.log2":789,"./modules/es6.math.sign":790,"./modules/es6.math.sinh":791,"./modules/es6.math.tanh":792,"./modules/es6.math.trunc":793,"./modules/es6.number.constructor":794,"./modules/es6.number.epsilon":795,"./modules/es6.number.is-finite":796,"./modules/es6.number.is-integer":797,"./modules/es6.number.is-nan":798,"./modules/es6.number.is-safe-integer":799,"./modules/es6.number.max-safe-integer":800,"./modules/es6.number.min-safe-integer":801,"./modules/es6.number.parse-float":802,"./modules/es6.number.parse-int":803,"./modules/es6.number.to-fixed":804,"./modules/es6.number.to-precision":805,"./modules/es6.object.assign":806,"./modules/es6.object.create":807,"./modules/es6.object.define-properties":808,"./modules/es6.object.define-property":809,"./modules/es6.object.freeze":810,"./modules/es6.object.get-own-property-descriptor":811,"./modules/es6.object.get-own-property-names":812,"./modules/es6.object.get-prototype-of":813,"./modules/es6.object.is":817,"./modules/es6.object.is-extensible":814,"./modules/es6.object.is-frozen":815,"./modules/es6.object.is-sealed":816,"./modules/es6.object.keys":818,"./modules/es6.object.prevent-extensions":819,"./modules/es6.object.seal":820,"./modules/es6.object.set-prototype-of":821,"./modules/es6.object.to-string":822,"./modules/es6.parse-float":823,"./modules/es6.parse-int":824,"./modules/es6.promise":825,"./modules/es6.reflect.apply":826,"./modules/es6.reflect.construct":827,"./modules/es6.reflect.define-property":828,"./modules/es6.reflect.delete-property":829,"./modules/es6.reflect.enumerate":830,"./modules/es6.reflect.get":833,"./modules/es6.reflect.get-own-property-descriptor":831,"./modules/es6.reflect.get-prototype-of":832,"./modules/es6.reflect.has":834,"./modules/es6.reflect.is-extensible":835,"./modules/es6.reflect.own-keys":836,"./modules/es6.reflect.prevent-extensions":837,"./modules/es6.reflect.set":839,"./modules/es6.reflect.set-prototype-of":838,"./modules/es6.regexp.constructor":840,"./modules/es6.regexp.flags":841,"./modules/es6.regexp.match":842,"./modules/es6.regexp.replace":843,"./modules/es6.regexp.search":844,"./modules/es6.regexp.split":845,"./modules/es6.regexp.to-string":846,"./modules/es6.set":847,"./modules/es6.string.anchor":848,"./modules/es6.string.big":849,"./modules/es6.string.blink":850,"./modules/es6.string.bold":851,"./modules/es6.string.code-point-at":852,"./modules/es6.string.ends-with":853,"./modules/es6.string.fixed":854,"./modules/es6.string.fontcolor":855,"./modules/es6.string.fontsize":856,"./modules/es6.string.from-code-point":857,"./modules/es6.string.includes":858,"./modules/es6.string.italics":859,"./modules/es6.string.iterator":860,"./modules/es6.string.link":861,"./modules/es6.string.raw":862,"./modules/es6.string.repeat":863,"./modules/es6.string.small":864,"./modules/es6.string.starts-with":865,"./modules/es6.string.strike":866,"./modules/es6.string.sub":867,"./modules/es6.string.sup":868,"./modules/es6.string.trim":869,"./modules/es6.symbol":870,"./modules/es6.typed.array-buffer":871,"./modules/es6.typed.data-view":872,"./modules/es6.typed.float32-array":873,"./modules/es6.typed.float64-array":874,"./modules/es6.typed.int16-array":875,"./modules/es6.typed.int32-array":876,"./modules/es6.typed.int8-array":877,"./modules/es6.typed.uint16-array":878,"./modules/es6.typed.uint32-array":879,"./modules/es6.typed.uint8-array":880,"./modules/es6.typed.uint8-clamped-array":881,"./modules/es6.weak-map":882,"./modules/es6.weak-set":883,"./modules/es7.array.flat-map":884,"./modules/es7.array.flatten":885,"./modules/es7.array.includes":886,"./modules/es7.asap":887,"./modules/es7.error.is-error":888,"./modules/es7.global":889,"./modules/es7.map.from":890,"./modules/es7.map.of":891,"./modules/es7.map.to-json":892,"./modules/es7.math.clamp":893,"./modules/es7.math.deg-per-rad":894,"./modules/es7.math.degrees":895,"./modules/es7.math.fscale":896,"./modules/es7.math.iaddh":897,"./modules/es7.math.imulh":898,"./modules/es7.math.isubh":899,"./modules/es7.math.rad-per-deg":900,"./modules/es7.math.radians":901,"./modules/es7.math.scale":902,"./modules/es7.math.signbit":903,"./modules/es7.math.umulh":904,"./modules/es7.object.define-getter":905,"./modules/es7.object.define-setter":906,"./modules/es7.object.entries":907,"./modules/es7.object.get-own-property-descriptors":908,"./modules/es7.object.lookup-getter":909,"./modules/es7.object.lookup-setter":910,"./modules/es7.object.values":911,"./modules/es7.observable":912,"./modules/es7.promise.finally":913,"./modules/es7.promise.try":914,"./modules/es7.reflect.define-metadata":915,"./modules/es7.reflect.delete-metadata":916,"./modules/es7.reflect.get-metadata":918,"./modules/es7.reflect.get-metadata-keys":917,"./modules/es7.reflect.get-own-metadata":920,"./modules/es7.reflect.get-own-metadata-keys":919,"./modules/es7.reflect.has-metadata":921,"./modules/es7.reflect.has-own-metadata":922,"./modules/es7.reflect.metadata":923,"./modules/es7.set.from":924,"./modules/es7.set.of":925,"./modules/es7.set.to-json":926,"./modules/es7.string.at":927,"./modules/es7.string.match-all":928,"./modules/es7.string.pad-end":929,"./modules/es7.string.pad-start":930,"./modules/es7.string.trim-left":931,"./modules/es7.string.trim-right":932,"./modules/es7.symbol.async-iterator":933,"./modules/es7.symbol.observable":934,"./modules/es7.system.global":935,"./modules/es7.weak-map.from":936,"./modules/es7.weak-map.of":937,"./modules/es7.weak-set.from":938,"./modules/es7.weak-set.of":939,"./modules/web.dom.iterable":940,"./modules/web.immediate":941,"./modules/web.timers":942}],944:[function(require,module,exports){
 (function (Buffer){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -78501,9 +79409,9 @@ function objectToString(o) {
 }
 
 }).call(this,{"isBuffer":require("../../is-buffer/index.js")})
-},{"../../is-buffer/index.js":946}],940:[function(require,module,exports){
+},{"../../is-buffer/index.js":951}],945:[function(require,module,exports){
 arguments[4][207][0].apply(exports,arguments)
-},{"dup":207,"individual/one-version":944}],941:[function(require,module,exports){
+},{"dup":207,"individual/one-version":949}],946:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -78807,7 +79715,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],942:[function(require,module,exports){
+},{}],947:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = nBytes * 8 - mLen - 1
@@ -78893,13 +79801,13 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],943:[function(require,module,exports){
+},{}],948:[function(require,module,exports){
 arguments[4][223][0].apply(exports,arguments)
-},{"dup":223}],944:[function(require,module,exports){
+},{"dup":223}],949:[function(require,module,exports){
 arguments[4][224][0].apply(exports,arguments)
-},{"./index.js":943,"dup":224}],945:[function(require,module,exports){
+},{"./index.js":948,"dup":224}],950:[function(require,module,exports){
 arguments[4][225][0].apply(exports,arguments)
-},{"dup":225}],946:[function(require,module,exports){
+},{"dup":225}],951:[function(require,module,exports){
 /*!
  * Determine if an object is a Buffer
  *
@@ -78922,16 +79830,16 @@ function isSlowBuffer (obj) {
   return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
 }
 
-},{}],947:[function(require,module,exports){
+},{}],952:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],948:[function(require,module,exports){
+},{}],953:[function(require,module,exports){
 arguments[4][90][0].apply(exports,arguments)
-},{"dup":90}],949:[function(require,module,exports){
+},{"dup":90}],954:[function(require,module,exports){
 (function (process){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -79159,7 +80067,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":616}],950:[function(require,module,exports){
+},{"_process":621}],955:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -79206,7 +80114,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 }
 
 }).call(this,require('_process'))
-},{"_process":616}],951:[function(require,module,exports){
+},{"_process":621}],956:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.4.1 by @mathias */
 ;(function(root) {
@@ -79743,10 +80651,10 @@ function nextTick(fn, arg1, arg2, arg3) {
 }(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],952:[function(require,module,exports){
+},{}],957:[function(require,module,exports){
 module.exports = require('./lib/_stream_duplex.js');
 
-},{"./lib/_stream_duplex.js":953}],953:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":958}],958:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -79871,7 +80779,7 @@ function forEach(xs, f) {
     f(xs[i], i);
   }
 }
-},{"./_stream_readable":955,"./_stream_writable":957,"core-util-is":939,"inherits":945,"process-nextick-args":950}],954:[function(require,module,exports){
+},{"./_stream_readable":960,"./_stream_writable":962,"core-util-is":944,"inherits":950,"process-nextick-args":955}],959:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -79919,7 +80827,7 @@ function PassThrough(options) {
 PassThrough.prototype._transform = function (chunk, encoding, cb) {
   cb(null, chunk);
 };
-},{"./_stream_transform":956,"core-util-is":939,"inherits":945}],955:[function(require,module,exports){
+},{"./_stream_transform":961,"core-util-is":944,"inherits":950}],960:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -80929,7 +81837,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./_stream_duplex":953,"./internal/streams/BufferList":958,"./internal/streams/destroy":959,"./internal/streams/stream":960,"_process":616,"core-util-is":939,"events":941,"inherits":945,"isarray":947,"process-nextick-args":950,"safe-buffer":966,"string_decoder/":968,"util":613}],956:[function(require,module,exports){
+},{"./_stream_duplex":958,"./internal/streams/BufferList":963,"./internal/streams/destroy":964,"./internal/streams/stream":965,"_process":621,"core-util-is":944,"events":946,"inherits":950,"isarray":952,"process-nextick-args":955,"safe-buffer":971,"string_decoder/":973,"util":618}],961:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -81144,7 +82052,7 @@ function done(stream, er, data) {
 
   return stream.push(null);
 }
-},{"./_stream_duplex":953,"core-util-is":939,"inherits":945}],957:[function(require,module,exports){
+},{"./_stream_duplex":958,"core-util-is":944,"inherits":950}],962:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -81811,7 +82719,7 @@ Writable.prototype._destroy = function (err, cb) {
   cb(err);
 };
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./_stream_duplex":953,"./internal/streams/destroy":959,"./internal/streams/stream":960,"_process":616,"core-util-is":939,"inherits":945,"process-nextick-args":950,"safe-buffer":966,"util-deprecate":969}],958:[function(require,module,exports){
+},{"./_stream_duplex":958,"./internal/streams/destroy":964,"./internal/streams/stream":965,"_process":621,"core-util-is":944,"inherits":950,"process-nextick-args":955,"safe-buffer":971,"util-deprecate":974}],963:[function(require,module,exports){
 'use strict';
 
 /*<replacement>*/
@@ -81886,7 +82794,7 @@ module.exports = function () {
 
   return BufferList;
 }();
-},{"safe-buffer":966}],959:[function(require,module,exports){
+},{"safe-buffer":971}],964:[function(require,module,exports){
 'use strict';
 
 /*<replacement>*/
@@ -81959,13 +82867,13 @@ module.exports = {
   destroy: destroy,
   undestroy: undestroy
 };
-},{"process-nextick-args":950}],960:[function(require,module,exports){
+},{"process-nextick-args":955}],965:[function(require,module,exports){
 module.exports = require('events').EventEmitter;
 
-},{"events":941}],961:[function(require,module,exports){
+},{"events":946}],966:[function(require,module,exports){
 module.exports = require('./readable').PassThrough
 
-},{"./readable":962}],962:[function(require,module,exports){
+},{"./readable":967}],967:[function(require,module,exports){
 exports = module.exports = require('./lib/_stream_readable.js');
 exports.Stream = exports;
 exports.Readable = exports;
@@ -81974,13 +82882,13 @@ exports.Duplex = require('./lib/_stream_duplex.js');
 exports.Transform = require('./lib/_stream_transform.js');
 exports.PassThrough = require('./lib/_stream_passthrough.js');
 
-},{"./lib/_stream_duplex.js":953,"./lib/_stream_passthrough.js":954,"./lib/_stream_readable.js":955,"./lib/_stream_transform.js":956,"./lib/_stream_writable.js":957}],963:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":958,"./lib/_stream_passthrough.js":959,"./lib/_stream_readable.js":960,"./lib/_stream_transform.js":961,"./lib/_stream_writable.js":962}],968:[function(require,module,exports){
 module.exports = require('./readable').Transform
 
-},{"./readable":962}],964:[function(require,module,exports){
+},{"./readable":967}],969:[function(require,module,exports){
 module.exports = require('./lib/_stream_writable.js');
 
-},{"./lib/_stream_writable.js":957}],965:[function(require,module,exports){
+},{"./lib/_stream_writable.js":962}],970:[function(require,module,exports){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -82709,7 +83617,7 @@ module.exports = require('./lib/_stream_writable.js');
   (function() { return this })() || Function("return this")()
 );
 
-},{}],966:[function(require,module,exports){
+},{}],971:[function(require,module,exports){
 /* eslint-disable node/no-deprecated-api */
 var buffer = require('buffer')
 var Buffer = buffer.Buffer
@@ -82773,7 +83681,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
   return buffer.SlowBuffer(size)
 }
 
-},{"buffer":617}],967:[function(require,module,exports){
+},{"buffer":622}],972:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -82902,7 +83810,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":941,"inherits":945,"readable-stream/duplex.js":952,"readable-stream/passthrough.js":961,"readable-stream/readable.js":962,"readable-stream/transform.js":963,"readable-stream/writable.js":964}],968:[function(require,module,exports){
+},{"events":946,"inherits":950,"readable-stream/duplex.js":957,"readable-stream/passthrough.js":966,"readable-stream/readable.js":967,"readable-stream/transform.js":968,"readable-stream/writable.js":969}],973:[function(require,module,exports){
 'use strict';
 
 var Buffer = require('safe-buffer').Buffer;
@@ -83175,7 +84083,7 @@ function simpleWrite(buf) {
 function simpleEnd(buf) {
   return buf && buf.length ? this.write(buf) : '';
 }
-},{"safe-buffer":966}],969:[function(require,module,exports){
+},{"safe-buffer":971}],974:[function(require,module,exports){
 (function (global){
 
 /**
@@ -83246,16 +84154,16 @@ function config (name) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],970:[function(require,module,exports){
+},{}],975:[function(require,module,exports){
 arguments[4][225][0].apply(exports,arguments)
-},{"dup":225}],971:[function(require,module,exports){
+},{"dup":225}],976:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],972:[function(require,module,exports){
+},{}],977:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -83845,33 +84753,33 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":971,"_process":616,"inherits":970}],973:[function(require,module,exports){
+},{"./support/isBuffer":976,"_process":621,"inherits":975}],978:[function(require,module,exports){
 arguments[4][552][0].apply(exports,arguments)
-},{"./virtual-hyperscript/index.js":976,"dup":552}],974:[function(require,module,exports){
+},{"./virtual-hyperscript/index.js":981,"dup":552}],979:[function(require,module,exports){
 arguments[4][555][0].apply(exports,arguments)
-},{"dup":555,"ev-store":940}],975:[function(require,module,exports){
+},{"dup":555,"ev-store":945}],980:[function(require,module,exports){
 arguments[4][556][0].apply(exports,arguments)
-},{"dup":556}],976:[function(require,module,exports){
+},{"dup":556}],981:[function(require,module,exports){
 arguments[4][557][0].apply(exports,arguments)
-},{"../vnode/is-thunk":978,"../vnode/is-vhook":979,"../vnode/is-vnode":980,"../vnode/is-vtext":981,"../vnode/is-widget":982,"../vnode/vnode.js":984,"../vnode/vtext.js":985,"./hooks/ev-hook.js":974,"./hooks/soft-set-hook.js":975,"./parse-tag.js":977,"dup":557,"x-is-array":986}],977:[function(require,module,exports){
+},{"../vnode/is-thunk":983,"../vnode/is-vhook":984,"../vnode/is-vnode":985,"../vnode/is-vtext":986,"../vnode/is-widget":987,"../vnode/vnode.js":989,"../vnode/vtext.js":990,"./hooks/ev-hook.js":979,"./hooks/soft-set-hook.js":980,"./parse-tag.js":982,"dup":557,"x-is-array":991}],982:[function(require,module,exports){
 arguments[4][558][0].apply(exports,arguments)
-},{"browser-split":614,"dup":558}],978:[function(require,module,exports){
+},{"browser-split":619,"dup":558}],983:[function(require,module,exports){
 arguments[4][104][0].apply(exports,arguments)
-},{"dup":104}],979:[function(require,module,exports){
+},{"dup":104}],984:[function(require,module,exports){
 arguments[4][105][0].apply(exports,arguments)
-},{"dup":105}],980:[function(require,module,exports){
+},{"dup":105}],985:[function(require,module,exports){
 arguments[4][106][0].apply(exports,arguments)
-},{"./version":983,"dup":106}],981:[function(require,module,exports){
+},{"./version":988,"dup":106}],986:[function(require,module,exports){
 arguments[4][107][0].apply(exports,arguments)
-},{"./version":983,"dup":107}],982:[function(require,module,exports){
+},{"./version":988,"dup":107}],987:[function(require,module,exports){
 arguments[4][108][0].apply(exports,arguments)
-},{"dup":108}],983:[function(require,module,exports){
+},{"dup":108}],988:[function(require,module,exports){
 arguments[4][109][0].apply(exports,arguments)
-},{"dup":109}],984:[function(require,module,exports){
+},{"dup":109}],989:[function(require,module,exports){
 arguments[4][110][0].apply(exports,arguments)
-},{"./is-thunk":978,"./is-vhook":979,"./is-vnode":980,"./is-widget":982,"./version":983,"dup":110}],985:[function(require,module,exports){
+},{"./is-thunk":983,"./is-vhook":984,"./is-vnode":985,"./is-widget":987,"./version":988,"dup":110}],990:[function(require,module,exports){
 arguments[4][112][0].apply(exports,arguments)
-},{"./version":983,"dup":112}],986:[function(require,module,exports){
+},{"./version":988,"dup":112}],991:[function(require,module,exports){
 arguments[4][115][0].apply(exports,arguments)
 },{"dup":115}],"labs_plugin":[function(require,module,exports){
 (function (__dirname){
@@ -83918,11 +84826,11 @@ var _canvas_physicsjs = _interopRequireDefault(require("./js_features/physicsjs/
 
 var _canvas_matterjs = _interopRequireDefault(require("./js_features/matterjs/components/canvas_matterjs"));
 
-var _canvas_svgjs = _interopRequireDefault(require("./js_features/svgjs/components/canvas_svgjs"));
+var _canvas_svgjs = _interopRequireDefault(require("./svgjs/components/canvas_svgjs"));
 
-var _factory = _interopRequireDefault(require("./js_features/svgjs/svg/factory"));
+var _factory = _interopRequireDefault(require("./svgjs/shapes/factory"));
 
-var _space = _interopRequireDefault(require("./js_features/svgjs/svg/space"));
+var _space = _interopRequireDefault(require("./svgjs/shapes/space"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84357,4 +85265,4 @@ exports.default = LabsRenderingPlugin;
 
 
 }).call(this,"/dist\\js")
-},{"./base/components/canvas":570,"./base/rendering_functions/workspace_about":577,"./base/rendering_functions/workspace_manuals":578,"./base/rendering_functions/workspace_projects":579,"./base/rendering_functions/workspace_sources":580,"./js_features/function_plot/components/function_plot":583,"./js_features/function_plot/rendering_functions/function_plot":584,"./js_features/math_pretty/components/math_pretty":585,"./js_features/matterjs/components/canvas_matterjs":586,"./js_features/physicsjs/components/canvas_physicsjs":587,"./js_features/svgjs/components/canvas_svgjs":590,"./js_features/svgjs/svg/factory":596,"./js_features/svgjs/svg/space":604,"./js_features/terminal/components/featured_terminal":606,"./js_features/terminal/components/terminal":607,"./js_features/terminal/rendering_functions/terminal":609,"assert":611,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/plugins/rendering_plugin":128,"devapt-core-common/dist/js/utils/types":177,"path":949}]},{},[582]);
+},{"./base/components/canvas":570,"./base/rendering_functions/workspace_about":574,"./base/rendering_functions/workspace_manuals":575,"./base/rendering_functions/workspace_projects":576,"./base/rendering_functions/workspace_sources":577,"./js_features/function_plot/components/function_plot":585,"./js_features/function_plot/rendering_functions/function_plot":586,"./js_features/math_pretty/components/math_pretty":587,"./js_features/matterjs/components/canvas_matterjs":588,"./js_features/physicsjs/components/canvas_physicsjs":589,"./js_features/terminal/components/featured_terminal":592,"./js_features/terminal/components/terminal":593,"./js_features/terminal/rendering_functions/terminal":595,"./svgjs/components/canvas_svgjs":600,"./svgjs/shapes/factory":607,"./svgjs/shapes/space":614,"assert":616,"devapt-core-common/dist/js/default_plugins/rendering_default_plugin":122,"devapt-core-common/dist/js/plugins/rendering_plugin":128,"devapt-core-common/dist/js/utils/types":177,"path":954}]},{},[584]);
