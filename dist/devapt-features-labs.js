@@ -63955,12 +63955,12 @@ function (_GeoItem) {
     key: "x",
     value: function x(arg_value) {
       if (_types.default.isNumber(arg_value)) {
-        this._set_value(0, arg_value);
+        this._vector._set_value(0, arg_value);
 
         return this;
       }
 
-      return this._get_value(0, 0);
+      return this._vector._get_value(0, 0);
     }
     /**
      * Get Y position number (vector index is 1).
@@ -63974,12 +63974,12 @@ function (_GeoItem) {
     key: "y",
     value: function y(arg_value) {
       if (_types.default.isNumber(arg_value)) {
-        this._set_value(1, arg_value);
+        this._vector._set_value(1, arg_value);
 
         return this;
       }
 
-      return this._get_value(1, 0);
+      return this._vector._get_value(1, 0);
     }
     /**
      * Get Z position number (vector index is 2).
@@ -63998,7 +63998,7 @@ function (_GeoItem) {
         return this;
       }
 
-      return this._get_value(2, 0);
+      return this._vector._get_value(2, 0);
     }
     /**
      * Get T position number (vector index is 3).
@@ -64017,7 +64017,7 @@ function (_GeoItem) {
         return this;
       }
 
-      return this._get_value(3, 0);
+      return this._vector._get_value(3, 0);
     }
   }]);
 
@@ -68675,10 +68675,11 @@ function (_Geometricable) {
 
     _classCallCheck(this, Drawable);
 
-    _this = _possibleConstructorReturn(this, (Drawable.__proto__ || Object.getPrototypeOf(Drawable)).call(this, arg_space, arg_position));
+    _this = _possibleConstructorReturn(this, (Drawable.__proto__ || Object.getPrototypeOf(Drawable)).call(this, arg_space ? arg_space._geospace : undefined, arg_position));
     _this.is_svg_drawable = true; // console.log(context + ':constructor:type:', arg_type)
     // console.log(context + ':constructor:position:', arg_position)
 
+    _this._svg_space = arg_space;
     _this._owner = arg_owner;
     _this._shape = undefined;
     _this._methods = {
@@ -68703,7 +68704,12 @@ function (_Geometricable) {
   _createClass(Drawable, [{
     key: "svg_shape",
     value: function svg_shape() {
-      return this._shape;
+      return this._svg_shape;
+    }
+  }, {
+    key: "svg_space",
+    value: function svg_space() {
+      return this._svg_space;
     }
   }, {
     key: "owner",
@@ -68790,8 +68796,8 @@ function (_Geometricable) {
     value: function project() {
       var _this2 = this;
 
-      this._geopositions.forEach(function (geopos, index) {
-        _this2._pixelpositions[index] = _this2.space().project(geopos);
+      this._geo_items.forEach(function (geopos, index) {
+        _this2._pixelpositions[index] = _this2.svg_space().project(geopos);
       });
 
       this._children.forEach(function (child) {
@@ -68897,6 +68903,12 @@ function (_Methodeable) {
     _this = _possibleConstructorReturn(this, (Geometricable.__proto__ || Object.getPrototypeOf(Geometricable)).call(this));
     _this.is_geometricable = true;
     _this._geospace = arg_geospace;
+
+    if (_types.default.isArray(arg_geopoint)) {
+      console.warn(context + ':geopoint is an array !');
+      debugger;
+    }
+
     _this._geoposition = arg_geopoint;
     _this._geo_items = [_this._geoposition];
     _this._pixelposition = new _pixelpoint.default(0, 0);
@@ -68911,8 +68923,8 @@ function (_Methodeable) {
 
 
   _createClass(Geometricable, [{
-    key: "geospace",
-    value: function geospace() {
+    key: "geo_space",
+    value: function geo_space() {
       return this._geospace;
     }
     /**
@@ -69201,7 +69213,7 @@ function (_LineArrow) {
 
       _get(Axis.prototype.__proto__ || Object.getPrototypeOf(Axis.prototype), "draw", this).call(this);
 
-      var domain = this._domain == 'x' ? this._space.domain_x() : this._space.domain_y(); // const start = domain.start()
+      var domain = this._domain == 'x' ? this.geo_space().domain_x() : this.geo_space().domain_y(); // const start = domain.start()
       // const step  = domain.step()
       // const end   = domain.end()
 
@@ -69209,7 +69221,7 @@ function (_LineArrow) {
         // const pixel = this.project( new Position([start, 0, 0, 0]) )
         var h1 = this.h(1);
         var v1 = this.v(1);
-        var r1 = this.space().svg().rect(2, 4).move(h1, v1 - 2);
+        var r1 = this.svg_space().svg().rect(2, 4).move(h1, v1 - 2);
 
         this._shape.add(r1);
       } else {
@@ -69218,7 +69230,7 @@ function (_LineArrow) {
 
         var _v = this.v(1);
 
-        var _r = this.space().svg().rect(4, 2).move(_h - 2, _v - 2);
+        var _r = this.svg_space().svg().rect(4, 2).move(_h - 2, _v - 2);
 
         this._shape.add(_r);
       }
@@ -69323,17 +69335,17 @@ function (_Drawable) {
       var pos_v = this.v();
       console.log(context + ':draw:pos_h=%d', pos_h);
       console.log(context + ':draw:pos_v=%d', pos_v);
-      var size_h = this.space().project_x(this._width);
-      var size_v = this.space().project_y(this._height);
+      var size_h = this.svg_space().project_x(this._width);
+      var size_v = this.svg_space().project_y(this._height);
       console.log(context + ':draw:width=%d', this._width);
       console.log(context + ':draw:height=%d', this._height);
       console.log(context + ':draw:size_h=%d', size_h);
       console.log(context + ':draw:size_v=%d', size_v); // DRAW SHAPE OF SIZE x:1-100 y:1-100
 
-      var shape_1 = this.space().svg().rect(60, 30).move(20, 0).fill('blue');
-      var shape_2 = this.space().svg().rect(100, 20).move(0, 30).fill('red');
-      var shape_3 = this.space().svg().circle(20).move(15, 40).fill('grey');
-      var shape_4 = this.space().svg().circle(20).move(65, 40).fill('grey');
+      var shape_1 = this.svg_space().svg().rect(60, 30).move(20, 0).fill('blue');
+      var shape_2 = this.svg_space().svg().rect(100, 20).move(0, 30).fill('red');
+      var shape_3 = this.svg_space().svg().circle(20).move(15, 40).fill('grey');
+      var shape_4 = this.svg_space().svg().circle(20).move(65, 40).fill('grey');
 
       if (this.color) {
         shape_1.fill(this.color);
@@ -69341,7 +69353,7 @@ function (_Drawable) {
       } // BUILD
 
 
-      this._shape = this.space().svg().group();
+      this._shape = this.svg_space().svg().group();
 
       this._shape.add(shape_1);
 
@@ -69358,8 +69370,8 @@ function (_Drawable) {
       this._shape.move(pos_h, pos_v).scale(scale); // ANIMATE
 
 
-      var rot_point_h = this.space().project_x(50) * scale;
-      var rot_point_v = this.space().project_y(40) * scale;
+      var rot_point_h = this.svg_space().project_x(50) * scale;
+      var rot_point_v = this.svg_space().project_y(40) * scale;
 
       this._shape.move(0, pos_v) // .rotate(25, rot_point_h, rot_point_v)
       .rotate(25).animate({
@@ -69497,10 +69509,10 @@ function (_Drawable) {
       var radius_v = this.v(2) - pos_v;
 
       if (radius_h != radius_v) {
-        this._shape = this.space().svg().ellipse(2 * radius_h, 2 * radius_v).center(pos_h, pos_v);
+        this._shape = this.svg_space().svg().ellipse(2 * radius_h, 2 * radius_v).center(pos_h, pos_v);
       } else {
         var diameter = 2 * radius_h;
-        this._shape = this.space().svg().circle(diameter).center(pos_h, pos_v);
+        this._shape = this.svg_space().svg().circle(diameter).center(pos_h, pos_v);
       }
 
       this.draw_color();
@@ -69516,7 +69528,7 @@ function (_Drawable) {
       var radian_angle = arg_degrees_angle * Math.PI / 180;
       var x = this.x() + Math.cos(radian_angle) * this.radius;
       var y = this.y() + Math.sin(radian_angle) * this.radius;
-      var point = new _point.default(this._space, this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size);
+      var point = new _point.default(this.svg_space(), this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size);
       point.project();
       point.draw();
       this.add_child(point);
@@ -69536,7 +69548,7 @@ function (_Drawable) {
 
       var x = this.x();
       var y = this.y();
-      this._svg_center = new _point.default(this._space, this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size);
+      this._svg_center = new _point.default(this.svg_space(), this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size);
 
       this._svg_center.project();
 
@@ -69562,7 +69574,7 @@ function (_Drawable) {
       var radian_angle = arg_degrees_angle * Math.PI / 180;
       var x = this.x() + Math.cos(radian_angle) * arg_length;
       var y = this.y() + Math.sin(radian_angle) * arg_length;
-      var point = new _point.default(this._space, this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size);
+      var point = new _point.default(this.svg_space(), this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size);
       point.project();
       point.draw();
       this.add_child(point);
@@ -69676,7 +69688,7 @@ function (_Drawable) {
       var pos_v = this.v(0);
       var size_h = this.h(1) - pos_h;
       var size_v = this.v(2) - pos_v;
-      this._shape = this.space().svg().ellipse(size_h, size_v).center(pos_h, pos_v);
+      this._shape = this.svg_space().svg().ellipse(size_h, size_v).center(pos_h, pos_v);
 
       if (this.color) {
         this._shape.fill(this.color);
@@ -69820,6 +69832,7 @@ function () {
       var name = _types.default.isNotEmptyString(arg_shape_cfg.name) ? arg_shape_cfg.name : 'shape-' + this._shapes_counter; // GET POSITION AND COLOR
 
       var position_array = _types.default.isArray(arg_shape_cfg.position) && arg_shape_cfg.position.length >= 2 ? arg_shape_cfg.position : [0, 0, 0];
+      var position = new _geopoint.default(position_array);
       var color = arg_shape_cfg.color; // GET SPACE
 
       var space = this._space;
@@ -69847,7 +69860,6 @@ function () {
         case 'space':
           {
             console.log(context + ':create:space width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
-            var position = new _geopoint.default(position_array);
             var position_pixel = space.project(position);
             var domains_settings = _types.default.isArray(arg_shape_cfg.domains) ? arg_shape_cfg.domains : [];
             var pixelbox_settings = {
@@ -69881,14 +69893,14 @@ function () {
               }
             };
             shape = new _space.default(space.svg(), domains_settings, pixelbox_settings, space_settings);
-            shape._space = space;
+            shape._svg_space = space;
             break;
           }
 
         case 'plotf':
           {
             console.log(context + ':create:plotf color=[%s]:', color, position_array);
-            shape = new _plotf.default(space, space, position_array, plot_fn, color, render, size);
+            shape = new _plotf.default(space, space, position, plot_fn, color, render, size);
             break;
           }
 
@@ -69896,7 +69908,7 @@ function () {
         case 'cir':
           {
             console.log(context + ':create:circle radius=[%d] color=[%s]:', radius, color, position_array);
-            shape = new _circle.default(space, space, position_array, color, radius);
+            shape = new _circle.default(space, space, position, color, radius);
             break;
           }
 
@@ -69904,7 +69916,7 @@ function () {
         case 'point':
           {
             console.log(context + ':create:point size=[%d] color=[%s] render=[%s]:', size, color, position_array, render);
-            shape = new _point.default(space, space, position_array, color, render, size);
+            shape = new _point.default(space, space, position, color, render, size);
             break;
           }
 
@@ -69912,7 +69924,7 @@ function () {
         case 'ell':
           {
             console.log(context + ':create:ellipse width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
-            shape = new _ellipse.default(space, space, position_array, color, width, height);
+            shape = new _ellipse.default(space, space, position, color, width, height);
             break;
           }
 
@@ -69920,21 +69932,21 @@ function () {
         case 'rect':
           {
             console.log(context + ':create:rectangle width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
-            shape = new _rectangle.default(space, space, position_array, color, width, height);
+            shape = new _rectangle.default(space, space, position, color, width, height);
             break;
           }
 
         case 'line':
           {
             console.log(context + ':create:line width=[%d] color=[%s]:', width, color, position_array, position_end);
-            shape = new _line.default(space, space, position_array, position_end, color, width);
+            shape = new _line.default(space, space, position, position_end, color, width);
             break;
           }
 
         case 'axis':
           {
             console.log(context + ':create:line domain=[%s] color=[%s] width=[%d]:', domain, color, width, position_array);
-            shape = new _axis.default(space, space, position_array, domain, color, width);
+            shape = new _axis.default(space, space, position, domain, color, width);
             break;
           }
 
@@ -69942,21 +69954,21 @@ function () {
         case 'pol':
           {
             console.log(context + ':create:polygon edges=[%d] radius=[%d] color=[%s]:', edges, radius, color, position_array);
-            shape = new _polygon.default(space, space, position_array, color, edges, radius);
+            shape = new _polygon.default(space, space, position, color, edges, radius);
             break;
           }
 
         case 'star':
           {
             console.log(context + ':create:star spikes=[%d] inner=[%d] outer=[%d] color=[%s]:', spikes, inner, outer, color, position_array);
-            shape = new _star.default(space, space, position_array, color, spikes, inner, outer);
+            shape = new _star.default(space, space, position, color, spikes, inner, outer);
             break;
           }
 
         case 'car':
           {
             console.log(context + ':create:car width=[%d] height=[%d] color=[%s]:', width, height, color, position_array);
-            shape = new _car.default(space, space, position_array, color, width, height);
+            shape = new _car.default(space, space, position, color, width, height);
             break;
           }
 
@@ -69974,7 +69986,7 @@ function () {
             var _position_end = _types.default.isNotEmptyArray(arg_shape_cfg.end) ? arg_shape_cfg.end : undefined;
 
             console.log(context + ':create:line arrow line_width=[%d] length=[%d] angle=[%d] end=[%s] color=[%s]:', line_width, length, angle, end, color, position_array);
-            shape = new _line_arrow.default(space, space, position_array, _position_end, length, angle, color, arrow_start, arrow_end, line_width, arrow_h, arrow_v);
+            shape = new _line_arrow.default(space, space, position, _position_end, length, angle, color, arrow_start, arrow_end, line_width, arrow_h, arrow_v);
             break;
           }
       }
@@ -70092,7 +70104,7 @@ function (_Drawable) {
       var pos_begin_v = this.v(0);
       var pos_end_h = this.h(1);
       var pos_end_v = this.v(1);
-      this._shape = this.space().svg().line(pos_begin_h, pos_begin_v, pos_end_h, pos_end_v);
+      this._shape = this.svg_space().svg().line(pos_begin_h, pos_begin_v, pos_end_h, pos_end_v);
 
       if (this.color && this._width) {
         this._shape.stroke({
@@ -70269,7 +70281,7 @@ function (_Line) {
 
       };
       console.log(context + ':draw:line_arrow:start_h=%d start_v=%d end_h=%d end_v=%d', start_h, start_v, end_h, end_v);
-      var line = this.space().svg().line(start_h, start_v, end_h, end_v).stroke(options);
+      var line = this.svg_space().svg().line(start_h, start_v, end_h, end_v).stroke(options);
       var angle = Math.atan2(end_v - start_v, end_h - start_h);
       var arrow_width_h = this._arrow_h;
       var arrow_width_v = this._arrow_v;
@@ -70277,9 +70289,9 @@ function (_Line) {
       var to_v_1 = end_v - arrow_width_v * Math.sin(angle - Math.PI / 6);
       var to_h_2 = end_h - arrow_width_h * Math.cos(angle + Math.PI / 6);
       var to_v_2 = end_v - arrow_width_v * Math.sin(angle + Math.PI / 6);
-      var arrow_1 = this.space().svg().line(end_h, end_v, to_h_1, to_v_1).stroke(options);
-      var arrow_2 = this.space().svg().line(end_h, end_v, to_h_2, to_v_2).stroke(options);
-      this._shape = this.space().svg().group();
+      var arrow_1 = this.svg_space().svg().line(end_h, end_v, to_h_1, to_v_1).stroke(options);
+      var arrow_2 = this.svg_space().svg().line(end_h, end_v, to_h_2, to_v_2).stroke(options);
+      this._shape = this.svg_space().svg().group();
 
       this._shape.add(line);
 
@@ -70390,12 +70402,12 @@ function (_Drawable) {
         return this;
       } // const pos_h = this.h()
       // const pos_v = this.v()
-      // const bottom_left_pixel = this.space().pixelbox().get_usable().bottom_left
+      // const bottom_left_pixel = this.svg_space().pixelbox().get_usable().bottom_left
 
 
-      var height_pixel = this.space().pixelbox().get_usable().height;
-      var width_pixel = this.space().pixelbox().get_usable().width;
-      var top_left_pixel = this.space().pixelbox().get_usable().top_left;
+      var height_pixel = this.svg_space().pixelbox().get_usable().height;
+      var width_pixel = this.svg_space().pixelbox().get_usable().width;
+      var top_left_pixel = this.svg_space().pixelbox().get_usable().top_left;
       var pos_h = top_left_pixel.h;
       var pos_v = top_left_pixel.v;
 
@@ -70423,7 +70435,7 @@ function (_Drawable) {
       var add_point = function add_point(arg_index, arg_point) {
         var position = _types.default.isArray(arg_point) ? new _geopoint.default(arg_point) : arg_point;
 
-        var pixel_point = _this2.space().project(position, _this2.space());
+        var pixel_point = _this2.svg_space().project(position, _this2.svg_space());
 
         var h = pos_h + pixel_point.h();
         var v = pos_v + height_pixel - pixel_point.v(); // CHECK h and v
@@ -70490,7 +70502,7 @@ function (_Drawable) {
       } // RENDER
 
 
-      var svg = this.space().svg();
+      var svg = this.svg_space().svg();
       var promise = Promise.all(promises).then(function () {
         var svg_points = new SVG.PointArray(points);
         _this2._shape = svg.polyline(svg_points);
@@ -70602,7 +70614,7 @@ function (_Drawable) {
 
       var pos_h = this.h();
       var pos_v = this.v();
-      var svg = this.space().svg();
+      var svg = this.svg_space().svg();
       var options = {
         width: this.size,
         color: this.color ? this.color : 'blue'
@@ -70681,7 +70693,7 @@ function (_Drawable) {
         arg_position = arg_position.position();
       }
 
-      return new _line.default(this.space(), this, this.position(), arg_position, arg_color, arg_width).draw();
+      return new _line.default(this.svg_space(), this, this.position(), arg_position, arg_color, arg_width).draw();
     }
   }]);
 
@@ -70775,8 +70787,8 @@ function (_Drawable) {
 
       var pos_h = this.h();
       var pos_v = this.v();
-      var radius_h = this.space().range_to_screen_h(this._radius);
-      var radius_v = this.space().range_to_screen_v(this._radius);
+      var radius_h = this.svg_space().range_to_screen_h(this._radius);
+      var radius_v = this.svg_space().range_to_screen_v(this._radius);
       var radius = Math.min(radius_h, radius_v);
       var edges = typeof this._edges == 'number' ? this._edges : DEFAULT_EDGES;
       var i, a, x, y;
@@ -70790,7 +70802,7 @@ function (_Drawable) {
         points.push([x, y]);
       }
 
-      this._shape = this.space().svg().polygon(new SVG.PointArray(points)).center(pos_h, pos_v);
+      this._shape = this.svg_space().svg().polygon(new SVG.PointArray(points)).center(pos_h, pos_v);
       this.draw_color();
       return this;
     }
@@ -70887,9 +70899,9 @@ function (_Drawable) {
 
       var pos_h = this.h();
       var pos_v = this.v();
-      var size_h = this.space().range_to_screen_h(this._width, this.space());
-      var size_v = this.space().range_to_screen_v(this._height, this.space());
-      this._shape = this.space().svg().rect(size_h, size_v).move(pos_h, pos_v - size_v);
+      var size_h = this.svg_space().range_to_screen_h(this._width, this.svg_space());
+      var size_v = this.svg_space().range_to_screen_v(this._height, this.svg_space());
+      this._shape = this.svg_space().svg().rect(size_h, size_v).move(pos_h, pos_v - size_v);
 
       if (this.color) {
         this._shape.fill(this.color);
@@ -71024,7 +71036,7 @@ function (_Drawable) {
 
     _this = _possibleConstructorReturn(this, (Space.__proto__ || Object.getPrototypeOf(Space)).call(this, undefined, undefined, new _vector.default([0, 0, 0, 0]), 'space'));
 
-    _set(Space.prototype.__proto__ || Object.getPrototypeOf(Space.prototype), "_space", _assertThisInitialized(_this), _this);
+    _set(Space.prototype.__proto__ || Object.getPrototypeOf(Space.prototype), "_svg_space", _assertThisInitialized(_this), _this);
     /**
      * Class type flag
      * @type {boolean}
@@ -71172,11 +71184,13 @@ function (_Drawable) {
     key: "create_projection",
     value: function create_projection(arg_space, arg_plan, arg_direction, arg_projection_fn) {
       var space_is_valid = _types.default.isObject(arg_space) && arg_space.is_geospace;
+      var plan_is_valid = _types.default.isObject(arg_plan) && arg_plan.is_geotripoint;
       var direction_is_valid = _types.default.isObject(arg_direction) && arg_direction.is_geobipoint;
 
-      var fn_is_valid = _types.default.isFunction(arg_projection_fn);
+      var fn_is_valid = _types.default.isFunction(arg_projection_fn); // if (space_is_valid && plan_is_valid && direction_is_valid && fn_is_valid)
 
-      if (space_is_valid && direction_is_valid && fn_is_valid) {
+
+      if (space_is_valid && fn_is_valid) {
         return new GeoProjection(arg_space, arg_plan, arg_direction, arg_projection_fn);
       }
 
@@ -71440,11 +71454,11 @@ function (_Drawable) {
 
       var pos_h = this.h();
       var pos_v = this.v();
-      var inner_h = this.space().range_to_screen_h(this._inner);
-      var inner_v = this.space().range_to_screen_v(this._inner);
+      var inner_h = this.svg_space().range_to_screen_h(this._inner);
+      var inner_v = this.svg_space().range_to_screen_v(this._inner);
       var inner = Math.min(inner_h, inner_v);
-      var outer_h = this.space().range_to_screen_h(this._outer);
-      var outer_v = this.space().range_to_screen_v(this._outer);
+      var outer_h = this.svg_space().range_to_screen_h(this._outer);
+      var outer_v = this.svg_space().range_to_screen_v(this._outer);
       var outer = Math.min(outer_h, outer_v);
       var spikes = typeof this._spikes == 'number' ? this._spikes : DEFAULT_SPIKES;
       var i, a, x, y;
@@ -71462,7 +71476,7 @@ function (_Drawable) {
         points.push([x, y]);
       }
 
-      this._shape = this.space().svg().polygon(new SVG.PointArray(points)).center(pos_h, pos_v);
+      this._shape = this.svg_space().svg().polygon(new SVG.PointArray(points)).center(pos_h, pos_v);
       this.draw_color();
       return this;
     }
