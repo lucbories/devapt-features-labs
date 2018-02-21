@@ -84,9 +84,9 @@ export default class LabsRenderingPlugin extends RenderingPlugin
 		// const assets_dir = '../../public/assets'
 		const bower_dir = '../../bower_components'
 
-		this.add_public_asset('js', '/' + plugin_name + '/jsep.js',              path.join(__dirname, bower_dir, 'jsep-0.3.3/jsep.js') )
-		this.add_public_asset('js', '/' + plugin_name + '/jsep.min.js',          path.join(__dirname, bower_dir, 'jsep-0.3.3/jsep.min.js') )
-		this.add_public_asset('js', '/' + plugin_name + '/jsep.min.js.map',      path.join(__dirname, bower_dir, 'jsep-0.3.3/jsep.min.js.map') )
+		this.add_public_asset('js', '/' + plugin_name + '/jsep.js',              path.join(__dirname, bower_dir, 'jsep/src/jsep.js') )
+		this.add_public_asset('js', '/' + plugin_name + '/jsep.min.js',          path.join(__dirname, bower_dir, 'jsep/src/jsep.js') )
+		// this.add_public_asset('js', '/' + plugin_name + '/jsep.min.js.map',      path.join(__dirname, bower_dir, 'jsep/src/jsep.map') )
 
 		this.add_public_asset('js', '/' + plugin_name + '/algebrite.js',          path.join(__dirname, bower_dir, 'Algebrite/dist/algebrite.bundle-for-browser.js') )
 		this.add_public_asset('js', '/' + plugin_name + '/crossfilter.js',        path.join(__dirname, bower_dir, 'crossfilter2/crossfilter.js') )

@@ -214,4 +214,19 @@ export default class GeoPoint extends GeoItem
 
 		return this._vector._get_value(3, 0)
 	}
+
+
+
+	/**
+	 * Test if operand is a Vector instance.
+	 * @private
+	 * 
+	 * @param {any} arg_value 
+	 * 
+	 * @returns {boolean}
+	 */
+	_is_vector(arg_value)
+	{
+		return T.isObject(arg_value) && arg_value.is_vector
+	}
 }

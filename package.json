@@ -48,8 +48,9 @@
   ],
   "dependencies": {
     "core-js": "^2.5.3",
-    "devapt-core-browser": "^2.0.x",
-    "devapt-core-common": "^2.1.x",
+    "devapt-core-browser": ">=2.0.0",
+    "devapt-core-common": ">=2.0.0",
+    "devapt-core-services": ">=2.0.0",
     "lodash": "^4.17.4",
     "virtual-dom": ">=2.1.1"
   },

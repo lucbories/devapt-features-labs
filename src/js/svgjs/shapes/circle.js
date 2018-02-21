@@ -7,10 +7,10 @@ import T from 'devapt-core-common/dist/js/utils/types'
 // DEVAPT CORE BROWSER IMPORTS
 
 // PLUGIN IMPORTS
-import Drawable from '../drawable'
-import SvgPoint from './point'
-import SvgSpace from './space'
-import GeoPoint from '../../geometry/geopoint'
+import Drawable    from '../drawable'
+import SvgPoint    from './point'
+import SvgSpace    from './space'
+import GeoPoint    from '../../geometry/geopoint'
 
 
 const plugin_name = 'Labs' 
@@ -76,7 +76,7 @@ export default class Circle extends Drawable
 		const pos_h = this.h(0)
 		const pos_v = this.v(0)
 		const radius_h = this.h(1) - pos_h
-		const radius_v = this.v(2) - pos_v
+		const radius_v = pos_v - this.v(2)
 
 		if (radius_h != radius_v)
 		{
@@ -103,7 +103,7 @@ export default class Circle extends Drawable
 		const x = this.x() + Math.cos(radian_angle) * this.radius
 		const y = this.y() + Math.sin(radian_angle) * this.radius
 
-		const point = new SvgPoint(this.svg_space(), this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size)
+		const point = new SvgPoint(this.svg_space(), this, new GeoPoint([x, y, 0, 0]), arg_color, arg_render, arg_size)
 		point.project()
 		point.draw()
 
@@ -124,7 +124,7 @@ export default class Circle extends Drawable
 		const x = this.x()
 		const y = this.y()
 
-		this._svg_center = new SvgPoint(this.svg_space(), this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size)
+		this._svg_center = new SvgPoint(this.svg_space(), this, new GeoPoint([x, y, 0, 0]), arg_color, arg_render, arg_size)
 		this._svg_center.project()
 		this._svg_center.draw()
 		
@@ -146,7 +146,7 @@ export default class Circle extends Drawable
 		const x = this.x() + Math.cos(radian_angle) * arg_length
 		const y = this.y() + Math.sin(radian_angle) * arg_length
 
-		const point = new SvgPoint(this.svg_space(), this, new GeoPosition([x, y, 0, 0]), arg_color, arg_render, arg_size)
+		const point = new SvgPoint(this.svg_space(), this, new GeoPoint([x, y, 0, 0]), arg_color, arg_render, arg_size)
 		point.project()
 		point.draw()
 

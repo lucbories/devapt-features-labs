@@ -159,6 +159,7 @@ export default class Terminal extends Component
 		)
 
 		input_jqo.css('background-color', 'steelblue')
+		input_jqo.css('color', 'black')
 		input_jqo.css('height', '30px')
 		input_jqo.css('padding-top', '10px')
 

@@ -24,8 +24,8 @@
   "dependencies": {
     "mathjs": ">=3.8.1",
     "Algebrite": "davidedc/Algebrite",
-    "llang": "pnevyk/llang#^0.0.2",
-    "morph-expressions": "abukurov/morph-expressions#^0.0.4",
+    "llang": "pnevyk/llang#>=0.0.2",
+    "morph-expressions": "abukurov/morph-expressions#>=0.0.4",
     "sylvester": "jcoglan/sylvester#^0.1.3",
     "whs": ">=1.1.5",
     "jquery.terminal": "<1.0.0",
@@ -40,7 +40,8 @@
     "katex": ">=0.7.1",
     "Matter": "matterjs#^0.12.0",
     "PhysicsJS": "physicsjs#^0.7.0",
-    "svg.js": "^2.6.3"
+    "svg.js": ">=2.6.3",
+    "jsep": "^0.3.3"
   },
   "resolutions": {
     "d3": ">=4"

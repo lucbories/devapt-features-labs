@@ -100,6 +100,6 @@ export default class GeoProjection
 			arg_position = new GeoPoint(arg_position)
 		}
 
-		return this._projection_fn.project(arg_position, this._space, this._plan, this._direction)
+		return this._projection_fn(arg_position, this._space, this._plan, this._direction)
 	}
 }

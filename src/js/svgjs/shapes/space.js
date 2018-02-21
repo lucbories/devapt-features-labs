@@ -13,6 +13,9 @@ import Vector     from '../../math/vector'
 import GeoPoint   from '../../geometry/geopoint'
 import GeoDomain  from '../../geometry/geodomain'
 import GeoSpace   from '../../geometry/geospace'
+import GeoPlan    from '../../geometry/geoplan'
+import GeoLine    from '../../geometry/geoline'
+import GeoProjection  from '../../geometry/geoprojection'
 import projection_fn_euclidian from '../../geometry/projection_fn_2dto2d_euclidian'
 import Axis       from './axis'
 import Drawable   from '../drawable'
@@ -108,14 +111,15 @@ export default class Space extends Drawable
 		this._pixelbox = new PixelBox(arg_pixelbox_settings ? arg_pixelbox_settings : box_settings)
 		
 		// BUILD GEOMETRIC ITEMS
-		this._geospace = new GeoSpace(arg_domains_settings)
-		this._geoplan = undefined
-		this._proj_direction = undefined
-		this._proj_fn = projection_fn_euclidian
-		this._geoprojection = this.create_projection(this._geospace, this._proj_plan, this._proj_direction, this._proj_fn)
+		this._geospace       = new GeoSpace(arg_domains_settings, this._pixelbox)
+		this._proj_plan      = new GeoPlan(new GeoPoint([0,0,0,0]), new GeoPoint([0,1,0,0]), new GeoPoint([1,0,0]))
+		this._proj_direction = new GeoLine(new GeoPoint([1,0,1,0]), new GeoPoint([1,0,0,0]))
+		this._proj_fn        = projection_fn_euclidian
+		this._geoprojection  = this.create_projection(this._geospace, this._proj_plan, this._proj_direction, this._proj_fn)
 
 		// BUILD DRAWING SETTINGS
 		this._shape = this._svg.group()
+		// this._svg_shape = this._svg.group()
 		this._drawing_settings = arg_drawing_settings
 		if ( T.isString(this._drawing_settings.background_color) )
 		{
@@ -323,7 +327,7 @@ export default class Space extends Drawable
 			.rect(pixelbox.width, pixelbox.height)
 			.move(pixelbox.top_left.h, pixelbox.top_left.v)
 			.fill(arg_color)
-		this._shape.add(background)
+		this._svg_shape.add(background)
 		return background
 	}
 
@@ -339,7 +343,7 @@ export default class Space extends Drawable
 
 		const axis = new Axis(this, this, position, arg_domain_name, arg_color, arg_width)
 		axis.draw()
-		this._shape.add(axis.svg_shape())
+		this._svg_shape.add(axis.svg_shape())
 		this._axis[arg_domain_name] = axis
 
 		return axis

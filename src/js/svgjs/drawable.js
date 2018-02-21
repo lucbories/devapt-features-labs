@@ -47,6 +47,7 @@ export default class Drawable extends Geometricable
 		// console.log(context + ':constructor:type:', arg_type)
 		// console.log(context + ':constructor:position:', arg_position)
 
+		// this._svg_shape = undefined
 		this._svg_space = arg_space
 		this._owner = arg_owner
 		this._shape = undefined
@@ -71,7 +72,8 @@ export default class Drawable extends Geometricable
 
 	svg_shape()
 	{
-		return this._svg_shape
+		return this._shape
+		// return this._svg_shape
 	}
 
 	svg_space()

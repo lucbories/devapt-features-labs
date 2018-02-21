@@ -8,7 +8,7 @@ import T from 'devapt-core-common/dist/js/utils/types'
 
 // PLUGIN IMPORTS
 import Drawable from '../drawable'
-import GeoPoint from '../../geometry/GeoPoint'
+import GeoPoint from '../../geometry/geopoint'
 import Line from './line'
 
 

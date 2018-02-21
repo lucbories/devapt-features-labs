@@ -7,8 +7,8 @@ import T from 'devapt-core-common/dist/js/utils/types'
 // DEVAPT CORE BROWSER IMPORTS
 
 // PLUGIN IMPORTS
-import GeoPoint from './geopoint'
-import GeoItem from './geoitem'
+import GeoPoint  from './geopoint'
+import GeoItem   from './geoitem'
 import GeoDomain from './geodomain'
 
 
@@ -31,10 +31,11 @@ export default class GeoSpace
 	 * Create an instance of GeoSpace.
 	 * 
 	 * @param {array} arg_domains - dimensions domains configurations array.
+	 * @param {PixelBox} arg_pixelbox - bounding pixel box.
 	 * 
 	 * @returns {nothing}
 	 */
-	constructor(arg_domains)
+	constructor(arg_domains, arg_pixelbox)
 	{
 		this.is_geospace = true
 		
@@ -43,6 +44,19 @@ export default class GeoSpace
 		this._domains_by_index = {}
 		this._domains_by_name = {}
 		this._set_domains(arg_domains)
+
+		this._pixelbox = arg_pixelbox
+	}
+
+
+	/**
+	 * Get space PixelBox instance.
+	 * 
+	 * @returns {PixelBox}
+	 */
+	pixelbox()
+	{
+		return this._pixelbox
 	}
 
 	
