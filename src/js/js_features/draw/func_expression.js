@@ -67,7 +67,14 @@ function func_expr_process(arg_scope, arg_expr_str='', arg_name_str=undefined)
 		{
 			if ( result.value.length > 0 && result.value[0] != '_' && typeof arg_scope[result.value] != 'function' )
 			{
-				return arg_scope[result.value]
+				return {
+					value:{
+						message:result.value,
+						result:arg_scope[result.value]
+					},
+					errors:[],
+					exception:undefined
+				}
 			}
 		}
 	}

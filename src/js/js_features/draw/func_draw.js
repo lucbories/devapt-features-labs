@@ -69,7 +69,7 @@ const DRAW_FACTORY_FUNC_NAME = 'func_draw_factory'
 	try {
 		// GET RESULT STRING
 		request_str = request.data
-		func_draw_process_request(arg_terminal_feature, request_str, response)
+		response = func_draw_process_request(arg_terminal_feature, request_str, response)
 	}
 	catch (e) {
 		console.warn(context + ':eval error=', e.toString())
@@ -200,11 +200,13 @@ function func_draw_process_request(arg_terminal_feature, arg_request_str='', arg
 	}
 
 	// PROCESS EVAL OUTPUT
-	let output_msg = arg_response.result.str ? arg_response.result.str : ''
+	let output_msg = arg_response.result.str ? arg_response.result.str + '\n' : ''
 	if (eval_result.value && eval_result.value.message)
 	{
-		output_msg += '\n' +  eval_result.value.message
+		output_msg += eval_result.value.message
 	}
+	arg_response.result.str = output_msg
+	arg_response.result.value = eval_result.value.result
 
 
 	// 	if (! arg_response.result.value)
@@ -212,7 +214,7 @@ function func_draw_process_request(arg_terminal_feature, arg_request_str='', arg
 	// 		arg_response.result.value = (eval_result && eval_result.value && eval_result.value.result && eval_result.value.result.value) ? eval_result.value.result.value : eval_result.value
 	// 	}
 	// }
-	if (assign_name)
+	if (parts && parts[1])
 	{
 		if (eval_result.value && eval_result.value.value)
 		{

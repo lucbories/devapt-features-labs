@@ -64,6 +64,9 @@ export default class Drawable extends Geometricable
 		}
 		this._children = []
 
+		this.add_method('clear')
+		this.add_method('clear_children')
+
 		// PUBLIC PROPERTIES
 		this.type = arg_type
 		this.color = undefined
@@ -236,5 +239,39 @@ export default class Drawable extends Geometricable
 	v(arg_index=0)
 	{
 		return this._pixelpositions[arg_index].v()
+	}
+
+
+
+	/**
+	 * Clear children instances and svg shapes.
+	 * 
+	 * @returns {this}
+	 */
+	clear()
+	{
+		// CLEAR CHILDREN
+		this.clear_children()
+
+		// DELETE SVG SHAPE
+		delete this._shape
+		this._shape
+	}
+
+
+
+	/**
+	 * Clear children instances and svg shapes.
+	 * 
+	 * @returns {this}
+	 */
+	clear_children()
+	{
+		// CLEAR CHILDREN
+		for(child of this._children)
+		{
+			child.clear()
+		}
+		this._children = []
 	}
 }
