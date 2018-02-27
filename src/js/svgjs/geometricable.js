@@ -206,6 +206,8 @@ export default class Geometricable extends Methodeable
 		{
 			arg_position = [arg_position, arg_opd2]
 		}
+		const prev_h = this._pixelposition.h()
+		const prev_v = this._pixelposition.v()
 		this._geoposition.values(arg_position)
 		this.project()
 		
@@ -214,9 +216,14 @@ export default class Geometricable extends Methodeable
 			const h = this._pixelposition.h()
 			const v = this._pixelposition.v()
 
-			console.log(context + ':move:x=[%d] y=[%d] h=[%d] v=[%d]', arg_position[0], arg_position[1], h, v, this._shape)
+			const dh = h - prev_h
+			const dv = v - prev_v
+
+			// DEBUG
+			// console.log(context + ':move:x=[%d] y=[%d]', arg_position[0], arg_position[1],  this._shape)
+			console.log(context + ':move:dh=[%d] dv=[%d] prev_h=[%d] prev_v=[%d] h=[%d] v=[%d]', dh, dv, prev_h, prev_v, h, v)
 			
-			this._shape.x(h).y(v)
+			this._shape.x(dh).y(dv)
 		}
 
 		// MOVE CHILDREN

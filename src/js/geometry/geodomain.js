@@ -48,6 +48,7 @@ export default class GeoDomain extends Range
 
 		this._name = arg_name
 		this._index = arg_index
+		this._is_continue = false
 	}
 
 

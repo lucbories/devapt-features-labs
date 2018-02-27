@@ -119,7 +119,6 @@ export default class Space extends Drawable
 
 		// BUILD DRAWING SETTINGS
 		this._shape = this._svg.group()
-		// this._svg_shape = this._svg.group()
 		this._drawing_settings = arg_drawing_settings
 		if ( T.isString(this._drawing_settings.background_color) )
 		{
@@ -222,6 +221,22 @@ export default class Space extends Drawable
 
 
 	/**
+	 * Draw shape.
+	 * @private
+	 */
+	_draw_self()
+	{
+		// this.project()
+		
+		// DO NOT RENDER	
+		if (this.color == 'none')
+		{
+			return
+		}
+	}
+
+
+	/**
 	 * Create GeoProjection instance.
 	 * 
 	 * @param {GeoSpace}    arg_space 
@@ -258,26 +273,46 @@ export default class Space extends Drawable
 	 * 
 	 * @returns {PixelPoint}
 	 */
-	project(arg_position, arg_without_boxing=false, arg_space=this)
+	project_position(arg_position, arg_without_boxing=false, arg_space=this)
 	{
+		// CHECK SPACE
+		if (! arg_space)
+		{
+			console.warn(context + ':project:bad space instance')
+			return undefined
+		}
+
+		// CHECK POSITION
+		if (! arg_position)
+		{
+			console.warn(context + ':project:bad position')
+			return undefined
+		}
 		if ( Array.isArray(arg_position) )
 		{
 			arg_position = new GeoPoint(arg_position)
 		}
-
-		if (arg_space._geoprojection)
+		if ( T.isObject(arg_position) && arg_position.is_vector )
 		{
-			const projected_pos = arg_space._geoprojection.project(arg_position)
-
-			if (arg_without_boxing)
-			{
-				return projected_pos
-			}
-
-			return this._pixelbox.get_boxed_pixel(projected_pos)
+			arg_position = new GeoPoint(arg_position.values())
 		}
 
-		return undefined
+		// CHECK PROJECTION
+		if (! arg_space._geoprojection)
+		{
+			console.warn(context + ':project:bad geo projection')
+			return undefined
+		}
+
+		// PROJECT POSITIONS
+		const projected_pos = arg_space._geoprojection.project_position(arg_position)
+
+		if (arg_without_boxing)
+		{
+			return projected_pos
+		}
+
+		return this._pixelbox.get_boxed_pixel(projected_pos)
 	}
 
 
@@ -285,25 +320,25 @@ export default class Space extends Drawable
 	project_x(arg_position_x, arg_space=this)
 	{
 		const tmp_position = new GeoPoint([arg_position_x, 0])
-		return this.project(tmp_position, false, arg_space).h()
+		return this.project_position(tmp_position, false, arg_space).h()
 	}
 
 	project_y(arg_position_y, arg_space=this)
 	{
 		const tmp_position = new GeoPoint([arg_position_y, 0])
-		return this.project(tmp_position, false, arg_space).v()
+		return this.project_position(tmp_position, false, arg_space).v()
 	}
 
 	range_to_screen_h(arg_position_x, arg_space=this)
 	{
 		const tmp_position = new GeoPoint([arg_position_x, 0])
-		return this.project(tmp_position, true, arg_space).h()
+		return this.project_position(tmp_position, true, arg_space).h()
 	}
 	
 	range_to_screen_v(arg_position_y, arg_space=this)
 	{
 		const tmp_position = new GeoPoint([0, arg_position_y])
-		return this.project(tmp_position, true, arg_space).v()
+		return this.project_position(tmp_position, true, arg_space).v()
 	}
 
 
@@ -327,7 +362,7 @@ export default class Space extends Drawable
 			.rect(pixelbox.width, pixelbox.height)
 			.move(pixelbox.top_left.h, pixelbox.top_left.v)
 			.fill(arg_color)
-		this._svg_shape.add(background)
+		this._shape.add(background)
 		return background
 	}
 
@@ -343,7 +378,7 @@ export default class Space extends Drawable
 
 		const axis = new Axis(this, this, position, arg_domain_name, arg_color, arg_width)
 		axis.draw()
-		this._svg_shape.add(axis.svg_shape())
+		this._shape.add(axis.svg_shape())
 		this._axis[arg_domain_name] = axis
 
 		return axis

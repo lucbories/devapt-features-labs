@@ -55,7 +55,7 @@ export default class Star extends Drawable
 
 
 
-	draw()
+	_draw_self()
 	{
 		// DO NOT RENDER	
 		if (this.color == 'none')

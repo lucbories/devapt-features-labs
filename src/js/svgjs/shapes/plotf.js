@@ -57,7 +57,7 @@ export default class PlotF extends Drawable
 
 
 
-	draw()
+	_draw_self()
 	{
 		// DO NOT RENDER	
 		if (this.color == 'none')
@@ -98,7 +98,7 @@ export default class PlotF extends Drawable
 
 		const add_point = (arg_index, arg_point)=>{
 			const position = T.isArray(arg_point) ? new Position(arg_point) : arg_point
-			const pixel_point = this.svg_space().project(position, this.svg_space())
+			const pixel_point = this.svg_space().project_position(position, this.svg_space())
 			let h = pos_h + pixel_point.h()
 			let v = pos_v + height_pixel - pixel_point.v()
 

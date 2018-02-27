@@ -49,8 +49,10 @@ export default class Drawable extends Geometricable
 
 		// this._svg_shape = undefined
 		this._svg_space = arg_space
-		this._owner = arg_owner
+		this._owner = undefined
+		this.owner(arg_owner)
 		this._shape = undefined
+		this._shape_owner_added = false
 		this._methods = {
 			x:true,
 			y:true,
@@ -94,10 +96,36 @@ export default class Drawable extends Geometricable
 		return this._owner
 	}
 
+	_set_svg_owner()
+	{
+		if (! this._shape_owner_added && this._shape && this._owner && this._owner._shape && this._owner._shape.type == 'g')
+		{
+			this._owner._shape.add(this._shape)
+			this._shape_owner_added = true
+		}
+	}
+
+
+	_draw_self()
+	{
+		return this
+	}
+
 
 	draw()
 	{
 		// TO IMPLEMENT IN SUB CLASSES
+		const promise = this._draw_self()
+		if (promise && promise.then)
+		{
+			promise.then(
+				()=>{
+					this._set_svg_owner()
+				}
+			)
+		} else {
+			this._set_svg_owner()
+		}
 		return this
 	}
 
@@ -147,6 +175,7 @@ export default class Drawable extends Geometricable
 		if ( T.isObject(value) && value.is_svg_projectable )
 		{
 			this._children.push(value)
+			value._set_svg_owner()
 		}
 		return this
 	}
@@ -162,7 +191,15 @@ export default class Drawable extends Geometricable
 	{
 		this._geo_items.forEach(
 			(geopos, index)=>{
-				this._pixelpositions[index] = this.svg_space().project(geopos)
+				const cur_pixelpos = this._pixelpositions[index]
+				const new_pixelpos = this.svg_space().project_position(geopos)
+				if (! cur_pixelpos)
+				{
+					this._pixelpositions[index] = new_pixelpos
+				} else {
+					cur_pixelpos.h(new_pixelpos.h())
+					cur_pixelpos.v(new_pixelpos.v())
+				}
 			}
 		)
 

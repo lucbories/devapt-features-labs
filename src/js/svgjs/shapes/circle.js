@@ -64,7 +64,7 @@ export default class Circle extends Drawable
 
 
 
-	draw()
+	_draw_self()
 	{
 		// DO NOT RENDER	
 		if (this.color == 'none')
@@ -96,14 +96,26 @@ export default class Circle extends Drawable
 	}
 
 
-	point(arg_degrees_angle, arg_color='red', arg_render='xcross', arg_size=5)
+	point(arg_name_str, arg_degrees_angle, arg_color='red', arg_render='xcross', arg_size=5)
 	{
+		if ( T.isNotEmptyString(arg_name_str) && arg_name_str.substr(0, 8) == '##NAME##')
+		{
+			arg_name_str = ('' + arg_name_str).substr(8)
+		} else {
+			arg_size = arg_render
+			arg_render = arg_color
+			arg_color = arg_degrees_angle
+			arg_degrees_angle = arg_degrees_angle
+			arg_name_str = 'no name'
+		}
+
 		// TODO TAKE DIMENSIONS FROM CIRCLE (x,y) or (y,z) or (x,t) or...
 		const radian_angle = arg_degrees_angle * Math.PI / 180
 		const x = this.x() + Math.cos(radian_angle) * this.radius
 		const y = this.y() + Math.sin(radian_angle) * this.radius
 
 		const point = new SvgPoint(this.svg_space(), this, new GeoPoint([x, y, 0, 0]), arg_color, arg_render, arg_size)
+		point.name = arg_name_str
 		point.project()
 		point.draw()
 
@@ -113,8 +125,18 @@ export default class Circle extends Drawable
 	}
 
 
-	center(arg_color='red', arg_render='xcross', arg_size=5)
+	center(arg_name_str, arg_color='red', arg_render='xcross', arg_size=5)
 	{
+		if ( T.isNotEmptyString(arg_name_str) && arg_name_str.substr(0, 8) == '##NAME##')
+		{
+			arg_name_str = ('' + arg_name_str).substr(8)
+		} else {
+			arg_size = arg_render
+			arg_render = arg_color
+			arg_color = arg_name_str
+			arg_name_str = 'no name'
+		}
+
 		if (this._svg_center)
 		{
 			return this._svg_center
@@ -134,8 +156,22 @@ export default class Circle extends Drawable
 	}
 
 
-	ray(arg_degrees_angle, arg_length, arg_color='red', arg_render='xcross', arg_size=5, arg_line_color='red', arg_line_width=1)
+	ray(arg_name_str, arg_degrees_angle, arg_length, arg_color='red', arg_render='xcross', arg_size=5, arg_line_color='red', arg_line_width=1)
 	{
+		if ( T.isNotEmptyString(arg_name_str) && arg_name_str.substr(0, 8) == '##NAME##')
+		{
+			arg_name_str = ('' + arg_name_str).substr(8)
+		} else {
+			arg_line_width = arg_line_color
+			arg_line_color = arg_size
+			arg_size = arg_render
+			arg_render = arg_color
+			arg_color = arg_length
+			arg_length = arg_degrees_angle
+			arg_degrees_angle = arg_name_str
+			arg_name_str = 'no name'
+		}
+
 		if (! this._svg_center)
 		{
 			this.center(arg_color, arg_render, arg_size)

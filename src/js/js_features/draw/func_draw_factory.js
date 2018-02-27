@@ -32,7 +32,21 @@ function func_draw_factory(arg_terminal_feature, arg_shapes_map, arg_assign_name
 {
 	return (opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)=>{
 
-		console.log('func_draw_factory:type=[%s] opd1=[%s],opd2=[%s],opd3=[%s],opd4=[%s],opd5=[%s],opd6=[%s],opd7=[%s],opd8=[%s],opd9=[%s],opd=10[%s]', arg_shape_type, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
+		if (opd1 && ('' + opd1).substr(0, 8) == '##NAME##')
+		{
+			arg_assign_name = ('' + opd1).substr(8)
+			opd1 = opd2
+			opd2 = opd3
+			opd3 = opd4
+			opd4 = opd5
+			opd5 = opd6
+			opd6 = opd7
+			opd7 = opd8
+			opd8 = opd9
+			opd9 = opd10
+			opd10 = undefined
+		}
+		console.log('func_draw_factory:name=[%s] type=[%s] opd1=[%s],opd2=[%s],opd3=[%s],opd4=[%s],opd5=[%s],opd6=[%s],opd7=[%s],opd8=[%s],opd9=[%s],opd=10[%s]', arg_assign_name, arg_shape_type, opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)
 
 		let factory_result = {
 			is_shape_factory_result:true,

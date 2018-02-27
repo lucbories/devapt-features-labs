@@ -154,7 +154,7 @@ function func_draw_process_request(arg_terminal_feature, arg_request_str='', arg
 		arg_request_str = parts[2]
 		console.log('func_draw_process_request:assign_name=' + assign_name + ' arg_request_str=' + arg_request_str)
 	}
-	assign_name = assign_name ? assign_name : 'S' + draw_session_scope._svg_factory.count()
+	assign_name = assign_name ? assign_name : 'Shape' + draw_session_scope._svg_factory.count()
 	
 	Object.keys(shapes_map).forEach(
 		(shape_type)=>{
@@ -168,7 +168,7 @@ function func_draw_process_request(arg_terminal_feature, arg_request_str='', arg
 
 
 	// EVAL EXPRESSION
-	const eval_result = func_expr_process(draw_session_scope, arg_request_str)
+	const eval_result = func_expr_process(draw_session_scope, arg_request_str, assign_name)
 	console.log('func_draw_process_request:eval_result=', eval_result)
 
 	// PROCESS EVAL ERRORS
@@ -284,6 +284,7 @@ function func_draw_get_scope(arg_terminal)
 			terminal_session_scope._svg_space = new SvgSpace(terminal_session_scope._svg, domains, pixelbox_settings)
 			terminal_session_scope._svg_factory = new SvgFactory(terminal_session_scope._svg_space)
 			terminal_session_scope._svg_factory.set('rootspace', terminal_session_scope._svg_space)
+			terminal_session_scope._svg_space.name = 'rootspace'
 			terminal_session_scope['rootspace'] = terminal_session_scope._svg_space
 			terminal_session_scope['rs'] = terminal_session_scope._svg_space
 		}

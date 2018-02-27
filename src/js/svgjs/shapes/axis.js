@@ -73,7 +73,7 @@ export default class Axis extends LineArrow
 
 
 
-	draw()
+	_draw_self()
 	{
 		// DO NOT RENDER	
 		if (this.color == 'none')
@@ -81,7 +81,7 @@ export default class Axis extends LineArrow
 			return
 		}
 
-		super.draw()
+		super._draw_self()
 		
 		const domain = this._domain == 'x' ? this.geo_space().domain_x() : this.geo_space().domain_y()
 		// const start = domain.start()
@@ -90,13 +90,13 @@ export default class Axis extends LineArrow
 		
 		if (this._domain == 'x')
 		{
-			// const pixel = this.project( new Position([start, 0, 0, 0]) )
+			// const pixel = this.project_position( new Position([start, 0, 0, 0]) )
 			const h1 = this.h(1)
 			const v1 = this.v(1)
 			const r1 = this.svg_space().svg().rect(2, 4).move(h1, v1 - 2)
 			this._shape.add(r1)
 		} else {
-			// const pixel = this.project( new Position([0, start, 0, 0]) )
+			// const pixel = this.project_position( new Position([0, start, 0, 0]) )
 			const h1 = this.h(1)
 			const v1 = this.v(1)
 			const r1 = this.svg_space().svg().rect(4, 2).move(h1 - 2, v1 - 2)

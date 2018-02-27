@@ -88,7 +88,7 @@ export default class GeoProjection
 	 * 
 	 * @returns {PixelPoint}
 	 */
-	project(arg_position)
+	project_position(arg_position)
 	{
 		if (! this.is_valid())
 		{

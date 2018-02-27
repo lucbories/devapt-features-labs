@@ -147,7 +147,7 @@ export default class Factory
 			case 'space': {
 				console.log(context + ':create:space width=[%d] height=[%d] color=[%s]:', width, height, color, position_array)
 
-				const position_pixel = space.project(position)
+				const position_pixel = space.project_position(position)
 				const domains_settings = T.isArray(arg_shape_cfg.domains) ? arg_shape_cfg.domains : []
 				const pixelbox_settings = {
 					origin_h:position_pixel.h(),
@@ -261,16 +261,17 @@ export default class Factory
 		if (shape)
 		{
 			this._shapes[name] = shape
+			shape.name = name
 			shape.project()
 			const result = shape.draw()
-			if (result.then)
-			{
-				result.then(
-					()=>{ space.svg_shape().add(shape.svg_shape()) }
-				)
-			} else {
-				space.svg_shape().add(shape.svg_shape())
-			}
+			// if (result.then)
+			// {
+			// 	result.then(
+			// 		()=>{ space.svg_shape().add(shape.svg_shape()) }
+			// 	)
+			// } else {
+			// 	space.svg_shape().add(shape.svg_shape())
+			// }
 		}
 
 		return this

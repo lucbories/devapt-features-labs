@@ -52,7 +52,7 @@ export default class Rectangle extends Drawable
 
 
 
-	draw()
+	_draw_self()
 	{
 		// DO NOT RENDER	
 		if (this.color == 'none')

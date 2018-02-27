@@ -1,6 +1,6 @@
 
 // PLUGIN IMPORT
-import Pixel from '../base/pixelpoint'
+import PixelPoint from '../base/pixelpoint'
 
 
 
@@ -13,12 +13,21 @@ import Pixel from '../base/pixelpoint'
     -50			50			1000			10		0			1000		500				1000
 
 */
+/**
+ * Project a position to a plan through a line.
+ * @param {GeoPoint} arg_position - position point instance.
+ * @param {GeoSpace} arg_space    - contextual space.
+ * @param {Gepla} arg_plan        - target plan.
+ * @param {GeoLine} arg_direction - projection line.
+ * 
+ * @returns {PixelPoint}
+ */
 const project_2dto2d_euclide=(arg_position, arg_space, arg_plan, arg_direction)=>{
     
     const h1 = range_to_screen_h(arg_position.x(), arg_space)
     const v1 = range_to_screen_v(arg_position.y(), arg_space)
  
-    return new Pixel(h1, v1)
+    return new PixelPoint(h1, v1)
 }
 
 

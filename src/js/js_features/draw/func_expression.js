@@ -45,10 +45,11 @@ window.devapt().func_features[EXPR_FEATURE_FUNC_NAME] = func_expr_process
  * 
  * @param {object} arg_scope    - evaluation scope.
  * @param {string} arg_expr_str - string expression to evaluate.
+ * @param {string} arg_name_str - string name for object creation.
  * 
  * @returns {object} - expression evalution result: { expr:string, scope:object, errors:Array, value:any, exception:undefined|Exception }
  */
-function func_expr_process(arg_scope, arg_expr_str='')
+function func_expr_process(arg_scope, arg_expr_str='', arg_name_str=undefined)
 {
 	const result = {
 		expr:arg_expr_str,
@@ -61,7 +62,7 @@ function func_expr_process(arg_scope, arg_expr_str='')
 	const parse_tree = jsep( arg_expr_str)
 
 	try {
-		result.value = func_expr_eval(arg_scope, parse_tree, result.errors)
+		result.value = func_expr_eval(arg_scope, parse_tree, result.errors, arg_name_str)
 		if ( (typeof result.value == 'string') && result.value in arg_scope)
 		{
 			if ( result.value.length > 0 && result.value[0] != '_' && typeof arg_scope[result.value] != 'function' )
@@ -83,7 +84,7 @@ function func_expr_process(arg_scope, arg_expr_str='')
  * Process request.
  * @private
  */
-function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_errors=[] )
+function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_errors=[], arg_name_str )
 {
 	const context = 'func_expr_eval:'
 
@@ -105,8 +106,8 @@ function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_error
 				const op = arg_expr_tree.operator
 				const left_tree   = arg_expr_tree.left
 				const right_tree  = arg_expr_tree.right
-				const left_value  = func_expr_eval(arg_scope, left_tree, arg_errors)
-				const right_value = func_expr_eval(arg_scope, right_tree, arg_errors)
+				const left_value  = func_expr_eval(arg_scope, left_tree, arg_errors, arg_name_str)
+				const right_value = func_expr_eval(arg_scope, right_tree, arg_errors, arg_name_str)
 				switch(op){
 					case '+': return left_value + right_value
 					case '-': return left_value - right_value
@@ -122,7 +123,7 @@ function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_error
 			try{
 				const op = arg_expr_tree.operator
 				const left_tree   = arg_expr_tree.argument
-				const left_value  = func_expr_eval(arg_scope, left_tree, arg_errors)
+				const left_value  = func_expr_eval(arg_scope, left_tree, arg_errors, arg_name_str)
 				switch(op){
 					case '+': return left_value
 					case '-': return - left_value
@@ -134,8 +135,8 @@ function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_error
 			}
 		}
 		case 'MemberExpression': {
-			const obj_name = func_expr_eval(arg_scope, arg_expr_tree.object)
-			const att_name = func_expr_eval(arg_scope, arg_expr_tree.property)
+			const obj_name = func_expr_eval(arg_scope, arg_expr_tree.object,   arg_errors, arg_name_str)
+			const att_name = func_expr_eval(arg_scope, arg_expr_tree.property, arg_errors, arg_name_str)
 			if (! obj_name || ! att_name)
 			{
 				arg_errors.push('MemberExpression:bad object/attribute name')
@@ -166,12 +167,16 @@ function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_error
 
 			// EVAL OPERANDS
 			const opds_results = []
+			if (arg_name_str)
+			{
+				opds_results.push('##NAME##' + arg_name_str)
+			}
 			if (opds && opds.length > 0)
 			{
 				opds.forEach(
 					(opd, index)=>{
 						// console.log('func_expr_eval:CallExpression:opd=', opd)
-						const opd_result = func_expr_eval(arg_scope, opd, arg_errors)
+						const opd_result = func_expr_eval(arg_scope, opd, arg_errors, arg_name_str)
 						// console.log('func_expr_eval:CallExpression:opd_result=', opd_result)
 						opds_results.push(opd_result)
 					}
@@ -243,7 +248,7 @@ function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_error
 			const items = []
 			items_expressions.forEach(
 				(item_expr)=>{
-					items.push( func_expr_eval(arg_scope, item_expr, arg_errors) )
+					items.push( func_expr_eval(arg_scope, item_expr, arg_errors, arg_name_str) )
 				}
 			)
 			return items
@@ -252,6 +257,7 @@ function func_expr_eval(arg_scope={}, arg_expr_tree={ type:undefined}, arg_error
 			console.log('func_expr_eval:scope=', arg_scope)
 			console.log('func_expr_eval:arg_expr_tree=', arg_expr_tree)
 			console.log('func_expr_eval:arg_errors=', arg_errors)
+			console.log('func_expr_eval:arg_name_str=', arg_name_str)
 		}
 	}
 

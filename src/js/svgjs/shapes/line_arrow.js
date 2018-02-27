@@ -106,7 +106,7 @@ export default class LineArrow extends Line
 	}
 
 
-	draw()
+	_draw_self()
 	{
 		// DO NOT RENDER	
 		if (this.color == 'none')

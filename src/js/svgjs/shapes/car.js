@@ -51,7 +51,7 @@ export default class Car extends Drawable
 
 
 
-	draw()
+	_draw_self()
 	{
 		const pos_h = this.h()
 		const pos_v = this.v()
