@@ -123,6 +123,38 @@ export default class GeoPoint extends GeoItem
 
 
 	/**
+	 * Add vector values.
+	 * 
+	 * @param {array} arg_values - vector values.
+	 * 
+	 * @returns {This}
+	 */
+	add_values(arg_values)
+	{
+		if ( ! T.isNotEmptyArray(arg_values) )
+		{
+			console.warn(context + ':add_values:bad given array:', arg_values)
+			return
+		}
+		if (arg_values.length != this._vector.values.length)
+		{
+			console.warn(context + ':add_values:no same vectors length:arg_values,this.values:', arg_values, this._vector.values)
+			return
+		}
+
+		let index = 0
+		for(value of arg_values)
+		{
+			const this_value = this._vector.value(index)
+			this._vector.value(index, this_value + value)
+		}
+		
+		return this
+	}
+
+
+
+	/**
 	 * Get/set vector item.
 	 * 
 	 * @param {Number} arg_index - vector index.

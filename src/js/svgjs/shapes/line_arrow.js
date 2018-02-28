@@ -140,29 +140,55 @@ export default class LineArrow extends Line
 		const line = this.svg_space().svg()
 		.line(start_h, start_v, end_h, end_v)
 		.stroke(options)
-		
-		const angle = Math.atan2(end_v - start_v, end_h - start_h)
-		const arrow_width_h = this._arrow_h
-		const arrow_width_v = this._arrow_v
 
-		const to_h_1 = end_h - arrow_width_h * Math.cos(angle-Math.PI/6)
-		const to_v_1 = end_v - arrow_width_v * Math.sin(angle-Math.PI/6)
-		const to_h_2 = end_h - arrow_width_h * Math.cos(angle+Math.PI/6)
-		const to_v_2 = end_v - arrow_width_v * Math.sin(angle+Math.PI/6)
-		
-		const arrow_1 = this.svg_space().svg()
-		.line(end_h, end_v, to_h_1, to_v_1)
-		.stroke(options)
-
-		const arrow_2 = this.svg_space().svg()
-		.line(end_h, end_v, to_h_2, to_v_2)
-		.stroke(options)
-
-		
 		this._shape = this.svg_space().svg().group()
 		this._shape.add(line)
-		this._shape.add(arrow_1)
-		this._shape.add(arrow_2)
+		
+		if (this._arrow_start)
+		{
+			const angle = Math.atan2(start_v - end_v, start_h - end_h)
+			const arrow_width_h = this._arrow_h
+			const arrow_width_v = this._arrow_v
+
+			const to_h_1 = start_h + arrow_width_h * Math.cos(angle-Math.PI/6)
+			const to_v_1 = start_v - arrow_width_v * Math.sin(angle-Math.PI/6)
+			const to_h_2 = start_h + arrow_width_h * Math.cos(angle+Math.PI/6)
+			const to_v_2 = start_v - arrow_width_v * Math.sin(angle+Math.PI/6)
+			
+			const arrow_1_start = this.svg_space().svg()
+			.line(start_h, start_v, to_h_1, to_v_1)
+			.stroke(options)
+
+			const arrow_2_start = this.svg_space().svg()
+			.line(start_h, start_v, to_h_2, to_v_2)
+			.stroke(options)
+
+			this._shape.add(arrow_1_start)
+			this._shape.add(arrow_2_start)
+		}
+
+		if (this._arrow_end)
+		{
+			const angle = Math.atan2(end_v - start_v, end_h - start_h)
+			const arrow_width_h = this._arrow_h
+			const arrow_width_v = this._arrow_v
+
+			const to_h_1 = end_h - arrow_width_h * Math.cos(angle-Math.PI/6)
+			const to_v_1 = end_v - arrow_width_v * Math.sin(angle-Math.PI/6)
+			const to_h_2 = end_h - arrow_width_h * Math.cos(angle+Math.PI/6)
+			const to_v_2 = end_v - arrow_width_v * Math.sin(angle+Math.PI/6)
+			
+			const arrow_1_end = this.svg_space().svg()
+			.line(end_h, end_v, to_h_1, to_v_1)
+			.stroke(options)
+
+			const arrow_2_end = this.svg_space().svg()
+			.line(end_h, end_v, to_h_2, to_v_2)
+			.stroke(options)
+
+			this._shape.add(arrow_1_end)
+			this._shape.add(arrow_2_end)
+		}
 
 		return this
 	}

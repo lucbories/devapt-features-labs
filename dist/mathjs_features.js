@@ -398,6 +398,11 @@ var _index = _interopRequireDefault(require("../../../../../bower_components/lla
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*
+
+e^x = lim(n->+infini)( (1+x/n)^n )
+
+*/
 function fact(x) {
   if (x <= 0) {
     return 0;
