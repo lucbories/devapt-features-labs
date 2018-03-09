@@ -91,7 +91,6 @@ window.devapt().func_features[DRAW_FEATURE_FUNC_NAME] = func_draw
 const resolver = window.devapt().ui().get_rendering_class_resolver()
 const SvgFactory = resolver('SvgFactory')
 const SvgSpace = resolver('SvgSpace')
-let draw_session_scope = undefined
 
 
 const shapes_map = {
@@ -130,17 +129,31 @@ function func_draw_process_request(arg_terminal_feature, arg_request_str='', arg
 	const func_expr_process = window.devapt().func_features[EXPR_FEATURE_FUNC_NAME]
 
 	const terminal = func_draw_get_terminal(arg_terminal_feature)
-	draw_session_scope = draw_session_scope ? draw_session_scope : func_draw_get_scope(terminal)
+	const draw_session_scope = func_draw_get_scope(terminal)
 	if (! terminal || ! draw_session_scope)
 	{
 		arg_response.result.error = 'terminal or scope not found'
 		return undefined
 	}
 
+	const svg_space = draw_session_scope.get_private_item('svg_space')
+	if (! svg_space)
+	{
+		arg_response.result.error = 'scope svg space not found'
+		return undefined
+	}
+
+	const svg_factory = draw_session_scope.get_private_item('svg_factory')
+	if (! svg_factory)
+	{
+		arg_response.result.error = 'scope svg factory not found'
+		return undefined
+	}
+
 	Object.keys(shapes_map).forEach(
 		(shape_alias)=>{
-			draw_session_scope._svg_space[shape_alias] = func_draw_factory(arg_terminal_feature, shapes_map, 'rootspace', draw_session_scope, shapes_map[shape_alias], draw_session_scope._svg_space)
-			draw_session_scope._svg_space.add_method(shape_alias)
+			svg_space[shape_alias] = func_draw_factory(arg_terminal_feature, shapes_map, 'rootspace', draw_session_scope, shapes_map[shape_alias], svg_space)
+			svg_space.add_method(shape_alias)
 		}
 	)
 
@@ -154,21 +167,21 @@ function func_draw_process_request(arg_terminal_feature, arg_request_str='', arg
 		arg_request_str = parts[2]
 		console.log('func_draw_process_request:assign_name=' + assign_name + ' arg_request_str=' + arg_request_str)
 	}
-	assign_name = assign_name ? assign_name : 'Shape' + draw_session_scope._svg_factory.count()
+	assign_name = assign_name ? assign_name : 'Shape' + svg_factory.count()
 	
 	Object.keys(shapes_map).forEach(
 		(shape_type)=>{
-			if (shape_type in draw_session_scope) return
+			if ( draw_session_scope.get_public_item(shape_type) ) return
 
-			const factory_fn = func_draw_factory(arg_terminal_feature, shapes_map, assign_name, draw_session_scope, shapes_map[shape_type], draw_session_scope._svg_space)
+			const factory_fn = func_draw_factory(arg_terminal_feature, shapes_map, assign_name, draw_session_scope, shapes_map[shape_type], svg_space)
 
-			draw_session_scope[shape_type] = factory_fn
+			draw_session_scope.set_public_item(shape_type, factory_fn)
 		}
 	)
 
 
 	// EVAL EXPRESSION
-	const eval_result = func_expr_process(draw_session_scope, arg_request_str, assign_name)
+	const eval_result = func_expr_process(draw_session_scope.get_public_items(), arg_request_str, assign_name)
 	console.log('func_draw_process_request:eval_result=', eval_result)
 
 	// PROCESS EVAL ERRORS
@@ -218,9 +231,9 @@ function func_draw_process_request(arg_terminal_feature, arg_request_str='', arg
 	{
 		if (eval_result.value && eval_result.value.value)
 		{
-			draw_session_scope[assign_name] = eval_result.value.value
+			draw_session_scope.set_public_item(assign_name, eval_result.value.value)
 		} else {
-			draw_session_scope[assign_name] = eval_result.value
+			draw_session_scope.set_public_item(assign_name, eval_result.value)
 		}
 	}
 
@@ -250,20 +263,23 @@ function func_draw_get_scope(arg_terminal)
 	if (arg_terminal)
 	{
 		const terminal_session_scope = arg_terminal.get_feature_scope(DRAW_FEATURE_NAME)
-		if (! terminal_session_scope._stack)
-		{
-			terminal_session_scope._stack = []
-		}
 
-		if (! terminal_session_scope._svg)
+		terminal_session_scope.init_private_item('stack', [])
+		
+
+		let svg = terminal_session_scope.get_private_item('svg')
+		if (! svg)
 		{
 			const parent_id = arg_terminal.get_canvas_id()
 			const parent_element = document.getElementById(parent_id)
-			terminal_session_scope._svg = SVG(parent_id).size(parent_element.offsetWidth, parent_element.offsetHeight)
+			svg = SVG(parent_id).size(parent_element.offsetWidth, parent_element.offsetHeight)
+			terminal_session_scope.set_private_item('svg', svg)
 		}
-		if (! terminal_session_scope._svg_space)
+		
+		let svg_space = terminal_session_scope.get_private_item('svg_space')
+		if (! svg_space)
 		{
-			const svg_canavs_viewbox = terminal_session_scope._svg.viewbox()
+			const svg_canavs_viewbox = svg.viewbox()
 			const canvas_width = svg_canavs_viewbox.width
 			const canvas_height = svg_canavs_viewbox.height
 			const domains = [
@@ -283,12 +299,16 @@ function func_draw_get_scope(arg_terminal)
 				}
 			]
 			const pixelbox_settings = undefined
-			terminal_session_scope._svg_space = new SvgSpace(terminal_session_scope._svg, domains, pixelbox_settings)
-			terminal_session_scope._svg_factory = new SvgFactory(terminal_session_scope._svg_space)
-			terminal_session_scope._svg_factory.set('rootspace', terminal_session_scope._svg_space)
-			terminal_session_scope._svg_space.name = 'rootspace'
-			terminal_session_scope['rootspace'] = terminal_session_scope._svg_space
-			terminal_session_scope['rs'] = terminal_session_scope._svg_space
+
+			const svg_space   = new SvgSpace(svg, domains, pixelbox_settings)
+			const svg_factory = new SvgFactory(svg_space)
+			svg_factory.set('rootspace', svg_space)
+			svg_space.name = 'rootspace'
+
+			terminal_session_scope.set_private_item('svg_space',   svg_space)
+			terminal_session_scope.set_private_item('svg_factory', svg_factory)
+			terminal_session_scope.set_public_item('rootspace', svg_space)
+			terminal_session_scope.set_public_item('rs', svg_space)
 		}
 		return terminal_session_scope
 	}

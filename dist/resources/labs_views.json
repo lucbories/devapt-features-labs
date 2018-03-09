@@ -50,8 +50,8 @@
 									},
 									"settings":{
 										"style":{
-											"min-width":"200px",
-											"min-height":"200px",
+											"min-width":"500px",
+											"min-height":"300px",
 											"width":"100%",
 											"height":"100%",
 											"overflow":"off"
@@ -69,18 +69,15 @@
 								"canvas_id":"lab_screen_default_canvas",
 								"default_feature":"help",
 								"required_features":["help", "draw", "mathjs", "algebrite"],
-								"features":{
-									"algebrite2":{
-										"type":"terminal",
-										"worker_url":"/labs_assets/plugins/FEATURE_PLUGIN/worker_algebrite.js",
-										"about":"",
-										"help":"",
-										"refdoc":"",
-										"func_name":null,
-										"aliases":["alg2"]
-									}
-								},
+								"features":{},
 								"script":[
+									"draw",
+									"s1=space(0,300,400,150,green, [[0,10,1,x],[-2,2,0.1,y]])",
+									"s1.plotf(fx, \"sin(x)\", yellow)",
+									"s2=space(0,140,400,0,blue, [[0,10,1,x],[0,100,1,y]])",
+									"s2.plotf(fx, \"3.0*10^8/10^8\", yellow)"
+								],
+								"script2":[
 									"draw",
 									"c1=rootspace.circle(50,50,20,blue)",
 									"c1.point(75,red,cross,3)",

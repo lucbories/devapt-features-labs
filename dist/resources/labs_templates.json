@@ -1,0 +1,56 @@
+{
+	"templates":{
+		"views":{
+			"lab_screens_template":{
+				"type":"tabs",
+				"state":{
+					"items":[
+						{ "title":"1-Canvas", "content":"lab_screen_default_canvas" }
+					]
+				},
+				"settings":{},
+				"children":{
+					"lab_screen_default_canvas":{
+						"type":"container",
+						"state":{
+							"space":{
+								"unused_drawing":{
+									"horizontal":{
+										"pixels":300
+									},
+									"vertical":{
+										"pixels":300
+									}
+								}
+							}
+						},
+						"settings":{
+							"style":{
+								"min-width":"200px",
+								"min-height":"200px",
+								"width":"100%",
+								"height":"100%",
+								"overflow":"off"
+							}
+						},
+						"children":{}
+					}
+				}
+			},
+			"lab_terminal_template":{
+				"type":"featured-terminal",
+				"state":{
+					"prompt":"labs>",
+					"history_id":"lab_screen_default_console",
+					"canvas_id":"lab_screen_default_canvas",
+					"default_feature":"help",
+					"required_features":["help", "draw", "mathjs", "algebrite"],
+					"features":{},
+					"script":[]
+				},
+				"settings":{},
+				"children":{}
+			}
+		}
+	}
+}

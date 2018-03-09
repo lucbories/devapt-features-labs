@@ -69,6 +69,12 @@
 						}
 					],
 					"returns":"array"
+				},
+				"scope":{
+					"usage":"scope",
+					"description":"get a list of all available constant, variables and function of the scope.",
+					"operands":[],
+					"returns":"array"
 				}
 			}
 		}

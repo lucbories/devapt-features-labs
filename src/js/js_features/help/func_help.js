@@ -1,8 +1,8 @@
 
 const plugin_name = 'Labs'
-const DRAW_FEATURE_NAME = 'help'
-const DRAW_FEATURE_FUNC_NAME = 'func_help'
-const context = plugin_name + '/' + DRAW_FEATURE_NAME + '/' + DRAW_FEATURE_FUNC_NAME
+const HELP_FEATURE_NAME = 'help'
+const HELP_FEATURE_FUNC_NAME = 'func_help'
+const context = plugin_name + '/' + HELP_FEATURE_NAME + '/' + HELP_FEATURE_FUNC_NAME
 
 
 /**
@@ -68,7 +68,7 @@ if (! window.devapt().func_features)
 {
     window.devapt().func_features = {}
 }
-window.devapt().func_features[DRAW_FEATURE_FUNC_NAME] = func_help
+window.devapt().func_features[HELP_FEATURE_FUNC_NAME] = func_help
 
 
 
@@ -104,6 +104,12 @@ function func_help_process_request(arg_terminal_feature, arg_request_str='', arg
         case 'al':
         case 'aliases': {
             func_help_cmd_aliases(arg_terminal_feature, arg_response, cmd, opd1, opd2, opd3)
+            return arg_response
+        }
+
+        case 'env':
+        case 'scope': {
+            func_help_cmd_scope(arg_terminal_feature, arg_response, cmd, opd1, opd2, opd3)
             return arg_response
         }
     }
@@ -313,6 +319,92 @@ function func_help_format_aliases(arg_aliases)
     arg_aliases.forEach(
         (alias)=>{
             str += alias + '\n'
+        }
+    )
+    return str
+}
+
+
+
+/**
+ * @private
+ */
+function func_help_get_terminal(arg_terminal_feature)
+{
+	const has_valid_terminal = arg_terminal_feature && arg_terminal_feature.is_terminal_feature
+		&& arg_terminal_feature.get_terminal() && arg_terminal_feature.get_terminal().is_featured_terminal
+	
+	return has_valid_terminal ? arg_terminal_feature.get_terminal() : undefined
+}
+
+
+function func_help_cmd_scope(arg_terminal_feature, arg_response, cmd, opd1, opd2, opd3)
+{
+    arg_response.result.value = []
+    if ( arg_terminal_feature && arg_terminal_feature.is_terminal_feature && arg_terminal_feature._terminal)
+    {
+        const terminal = func_help_get_terminal(arg_terminal_feature)
+        if (! terminal)
+        {
+            arg_response.result.error = 'no valid terminal'
+            return arg_response
+        }
+
+        const features = arg_terminal_feature._terminal.get_features()
+        if (! features)
+        {
+            arg_response.result.error = 'no features'
+            return arg_response
+        }
+
+        const scope_items = []
+        for(let feature_name in features)
+        {
+            const terminal_session_scope = terminal.get_feature_scope(feature_name)
+            if (! terminal_session_scope)
+            {
+                arg_response.result.error = 'func_help_cmd_scope:no valid terminal session scope for feature [' + feature_name + ']'
+                return arg_response
+            }
+
+            const public_scope = terminal_session_scope.get_public_items()
+            console.log(context + ':func_help_cmd_scope:public_scope=', public_scope)
+
+            let item_type;
+            for(let item_name in public_scope)
+            {
+                const item = public_scope[item_name]
+
+                item_type = 'variable'
+                if (typeof item == 'function')
+                {
+                    item_type = 'function'
+                }
+                else if (Array.isArray(item))
+                {
+                    item_type = 'array variable'
+                }
+
+                scope_items.push([feature_name, item_type, item_name])
+            }
+        }
+        console.log(context + ':func_help_cmd_scope:scope_items=', scope_items)
+
+        // arg_response.result.value = JSON.stringify(aliases)
+        arg_response.result.value = scope_items
+        arg_response.result.str = func_help_format_scope(scope_items)
+    }
+}
+
+function func_help_format_scope(arg_scope_items)
+{
+    let str = ''
+    arg_scope_items.forEach(
+        (scope_item_array)=>{
+            const feature_name = scope_item_array[0]
+            const type = scope_item_array[1]
+            const name = scope_item_array[2]
+            str += feature_name + ':' + type + ':' + name + '\n'
         }
     )
     return str

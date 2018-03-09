@@ -30,6 +30,23 @@ window.devapt().func_features[DRAW_FEATURE_FUNC_NAME] = func_draw_factory
  */
 function func_draw_factory(arg_terminal_feature, arg_shapes_map, arg_assign_name, arg_session_scope, arg_shape_type, arg_space)
 {
+	if (! arg_session_scope)
+	{
+		return 'func_draw_factory:scope not found'
+	}
+
+	const svg_space = arg_session_scope.get_private_item('svg_space')
+	if (! svg_space)
+	{
+		return 'func_draw_factory:scope svg space not found'
+	}
+
+	const svg_factory = arg_session_scope.get_private_item('svg_factory')
+	if (! svg_factory)
+	{
+		return 'func_draw_factory:scope svg factory not found'
+	}
+
 	return (opd1, opd2, opd3, opd4, opd5, opd6, opd7, opd8, opd9, opd10)=>{
 
 		if (opd1 && ('' + opd1).substr(0, 8) == '##NAME##')
@@ -75,8 +92,8 @@ function func_draw_factory(arg_terminal_feature, arg_shapes_map, arg_assign_name
 						}
 					)
 				}
-				arg_session_scope._svg_factory.create({ type:'space', space:arg_space, name:arg_assign_name, position:[opd1, opd2], width:opd3, height:opd4, color:opd5, domains:domains_array })
-				const space = arg_session_scope._svg_factory.get(arg_assign_name)
+				svg_factory.create({ type:'space', space:arg_space, name:arg_assign_name, position:[opd1, opd2], width:opd3, height:opd4, color:opd5, domains:domains_array })
+				const space = svg_factory.get(arg_assign_name)
 				Object.keys(arg_shapes_map).forEach(
 					(shape_alias)=>{
 						space[shape_alias] = func_draw_factory(arg_terminal_feature, arg_shapes_map, arg_assign_name, arg_session_scope, arg_shapes_map[shape_alias], space)
@@ -143,39 +160,39 @@ function func_draw_factory(arg_terminal_feature, arg_shapes_map, arg_assign_name
 						return factory_result
 				}
 
-				arg_session_scope._svg_factory.create({ type:'plotf', space:arg_space, name:arg_assign_name, position:[0, 0], plot_fn:plot_cfg_fn, color:opd3, render:opd4, size:opd5 })
+				svg_factory.create({ type:'plotf', space:arg_space, name:arg_assign_name, position:[0, 0], plot_fn:plot_cfg_fn, color:opd3, render:opd4, size:opd5 })
 				break
 			case 'circle':
-				arg_session_scope._svg_factory.create({ type:'circle', space:arg_space, name:arg_assign_name, position:[opd1, opd2], radius:opd3, color:opd4 })
+				svg_factory.create({ type:'circle', space:arg_space, name:arg_assign_name, position:[opd1, opd2], radius:opd3, color:opd4 })
 				break
 			case 'rect':
 			case 'rectangle':
-				arg_session_scope._svg_factory.create({ type:'rect', space:arg_space, name:arg_assign_name, position:[opd1, opd2], width:opd3, height:opd4, color:opd5 })
+				svg_factory.create({ type:'rect', space:arg_space, name:arg_assign_name, position:[opd1, opd2], width:opd3, height:opd4, color:opd5 })
 				break
 			case 'square':
-				arg_session_scope._svg_factory.create({ type:'rect', space:arg_space, name:arg_assign_name, position:[opd1, opd2], width:opd3, height:opd3, color:opd4 })
+				svg_factory.create({ type:'rect', space:arg_space, name:arg_assign_name, position:[opd1, opd2], width:opd3, height:opd3, color:opd4 })
 				break
 			case 'point':
-				arg_session_scope._svg_factory.create({ type:'point', space:arg_space, name:arg_assign_name, position:[opd1, opd2], color:opd3, render:opd4, size:opd5 })
+				svg_factory.create({ type:'point', space:arg_space, name:arg_assign_name, position:[opd1, opd2], color:opd3, render:opd4, size:opd5 })
 				break
 			case 'line':
-				arg_session_scope._svg_factory.create({ type:'line', space:arg_space, name:arg_assign_name, position:[opd1, opd2], position_end:[opd3, opd4], color:opd5, width:opd6 })
+				svg_factory.create({ type:'line', space:arg_space, name:arg_assign_name, position:[opd1, opd2], position_end:[opd3, opd4], color:opd5, width:opd6 })
 				break
 			case 'axis':
-				arg_session_scope._svg_factory.create({ type:'axis', space:arg_space, name:arg_assign_name, position:[opd1, opd2], domain:opd3, color:opd4, width:opd5 })
+				svg_factory.create({ type:'axis', space:arg_space, name:arg_assign_name, position:[opd1, opd2], domain:opd3, color:opd4, width:opd5 })
 				break
 			case 'grid':
-				arg_session_scope._svg_factory.create({ type:'grid', space:arg_space, name:arg_assign_name, position:[opd1, opd2], width:opd3, height:opd4, color:opd5 })
+				svg_factory.create({ type:'grid', space:arg_space, name:arg_assign_name, position:[opd1, opd2], width:opd3, height:opd4, color:opd5 })
 				break
 			case 'polygon':
-				arg_session_scope._svg_factory.create({ type:'polygon', space:arg_space, name:arg_assign_name, position:[opd1, opd2], color:opd3, edges:opd4, radius:opd5 })
+				svg_factory.create({ type:'polygon', space:arg_space, name:arg_assign_name, position:[opd1, opd2], color:opd3, edges:opd4, radius:opd5 })
 				break
 			case 'star':
-				arg_session_scope._svg_factory.create({ type:'star', space:arg_space, name:arg_assign_name, position:[opd1, opd2], color:opd3, spikes:opd4, inner:opd5, outer:opd6 })
+				svg_factory.create({ type:'star', space:arg_space, name:arg_assign_name, position:[opd1, opd2], color:opd3, spikes:opd4, inner:opd5, outer:opd6 })
 				break
 		}
 		
-		factory_result.value = arg_session_scope._svg_factory.get(arg_assign_name)
+		factory_result.value = svg_factory.get(arg_assign_name)
 		return factory_result
 	}
 }

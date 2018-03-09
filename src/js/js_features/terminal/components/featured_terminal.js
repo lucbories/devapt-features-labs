@@ -6,6 +6,7 @@ import _ from 'lodash'
 import T from 'devapt-core-common/dist/js/utils/types'
 
 // PLUGIN IMPORTS
+import Scope from '../../../base/scope'
 import Terminal from './terminal'
 import TerminalFeature from './terminal_feature'
 
@@ -129,7 +130,7 @@ export default class FeaturedTerminal extends Terminal
 				}
 
 				this._features[feature_name] = feature
-				this._features_scopes[feature_name] = {}
+				this._features_scopes[feature_name] = new Scope(feature_name)
 			}
 		)
 
