@@ -10,6 +10,7 @@ import T from 'devapt-core-common/dist/js/utils/types'
 import Drawable from '../drawable'
 import GeoPoint from '../../geometry/geopoint'
 import Line from './line'
+import LineArrow from './line_arrow'
 
 
 const plugin_name = 'Labs' 
@@ -53,6 +54,7 @@ export default class Point extends Drawable
 		this.size   = arg_size
 
 		this.add_method('line')
+		this.add_method('vector')
 	}
 
 
@@ -120,12 +122,23 @@ export default class Point extends Drawable
 	/**
 	 * Draw a line from this point to given point or shape.
 	 * 
+	 * @param {string} arg_name_str - instance name (optional)
 	 * @param {GeoPoint|Drawable} arg_position 
 	 * @param {string} arg_color 
 	 * @param {integer} arg_width 
 	 */
-	line(arg_position, arg_color='blue', arg_width=1)
+	line(arg_name_str, arg_position, arg_color='blue', arg_width=1)
 	{
+		if ( T.isNotEmptyString(arg_name_str) && arg_name_str.substr(0, 8) == '##NAME##')
+		{
+			arg_name_str = ('' + arg_name_str).substr(8)
+		} else {
+			arg_width = arg_color
+			arg_color = arg_position
+			arg_position = arg_name_str
+			arg_name_str = 'no name'
+		}
+
 		if ( T.isArray(arg_position) )
 		{
 			arg_position = new GeoPoint(arg_position)
@@ -135,6 +148,47 @@ export default class Point extends Drawable
 			arg_position = arg_position.position()
 		}
 
-		return new Line(this.svg_space(), this, this.position(), arg_position, arg_color, arg_width).draw()
+		const shape = new Line(this.svg_space(), this, this.position(), arg_position, arg_color, arg_width).draw()
+		shape.name = arg_name_str
+		return shape
+	}
+
+
+
+	/**
+	 * Draw a line from this point to given point or shape.
+	 * 
+	 * @param {GeoPoint|Drawable} arg_relative_pos - start point relative position TODO
+	 * @param {string} arg_color 
+	 * @param {integer} arg_width 
+	 */
+	vector(arg_name_str, arg_relative_pos, arg_color='blue', arg_width=1)
+	{
+		if ( T.isNotEmptyString(arg_name_str) && arg_name_str.substr(0, 8) == '##NAME##')
+		{
+			arg_name_str = ('' + arg_name_str).substr(8)
+		} else {
+			arg_width = arg_color
+			arg_color = arg_relative_pos
+			arg_relative_pos = arg_name_str
+			arg_name_str = 'no name'
+		}
+
+		if ( T.isArray(arg_relative_pos) )
+		{
+			arg_relative_pos = new GeoPoint(arg_relative_pos)
+		}
+		else if ( T.isObject(arg_relative_pos) && arg_relative_pos.is_svg_drawable )
+		{
+			arg_relative_pos = arg_relative_pos.position()
+		}
+
+		arg_relative_pos.add_values( this.position().values() )
+
+		const shape = new LineArrow(this.svg_space(), this, this.position(), arg_relative_pos, arg_color, false, true, arg_width, 5, 5)
+		shape.name = arg_name_str
+		shape.project()
+		shape.draw()
+		return shape
 	}
 }

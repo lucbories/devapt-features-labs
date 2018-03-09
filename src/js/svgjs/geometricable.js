@@ -51,6 +51,13 @@ export default class Geometricable extends Methodeable
 
 		this._pixelposition = new PixelPoint(0, 0)
 		this._pixelpositions = [this._pixelposition]
+
+		this.add_method('x')
+		this.add_method('y')
+		this.add_method('z')
+		this.add_method('t')
+		this.add_method('position')
+		this.add_method('move')
 	}
 
 
@@ -200,8 +207,17 @@ export default class Geometricable extends Methodeable
 	 * 
 	 * @returns {This}
 	 */
-	move(arg_position, arg_opd2)
+	move(arg_name_str, arg_position, arg_opd2)
 	{
+		if ( T.isNotEmptyString(arg_name_str) && arg_name_str.substr(0, 8) == '##NAME##')
+		{
+			arg_name_str = ('' + arg_name_str).substr(8)
+		} else {
+			arg_opd2 = arg_position
+			arg_position = arg_name_str
+			arg_name_str = 'no name'
+		}
+
 		if ( T.isNumber(arg_position) && T.isNumber(arg_opd2) )
 		{
 			arg_position = [arg_position, arg_opd2]

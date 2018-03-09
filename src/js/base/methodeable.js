@@ -50,7 +50,7 @@ export default class Methodeable
 
 	get_method(arg_method_name)
 	{
-		return (arg_method_name in this) ? this[arg_method_name] : ( (arg_method_name in this.prototype) ? this.prototype[arg_method_name] : undefined)
+		return (arg_method_name in this._methods) && this._methods[arg_method_name] && (arg_method_name in this) ? this[arg_method_name] : ( (arg_method_name in this.prototype) ? this.prototype[arg_method_name] : undefined)
 	}
 
 

@@ -1,5 +1,13 @@
 import llang from '../../../../../bower_components/llang/index'
 
+
+/*
+
+e^x = lim(n->+infini)( (1+x/n)^n )
+
+*/
+
+
 function fact(x)
 {
 	if (x <= 0)
