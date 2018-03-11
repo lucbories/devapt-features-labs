@@ -43,9 +43,11 @@ export default class FeaturedTerminal extends Terminal
 		this._workers = []
 		this._features = {}
 		this._features_scopes = {}
+		this._features_shared_scope = new Scope('shared')
+		this._features_shared_scope.is_shared = true
 		this._aliases = {}
 		this._mode = undefined
-		this._default_feature_name
+		this._default_feature_name = undefined
 
 		if ( ! T.isObject( window.devapt().func_features ) )
 		{
@@ -130,7 +132,7 @@ export default class FeaturedTerminal extends Terminal
 				}
 
 				this._features[feature_name] = feature
-				this._features_scopes[feature_name] = new Scope(feature_name)
+				this._features_scopes[feature_name] = this._features_shared_scope ? this._features_shared_scope : new Scope(feature_name)
 			}
 		)
 
@@ -204,6 +206,28 @@ export default class FeaturedTerminal extends Terminal
 		)
 
 		this.enter_group('init_terminal')
+	}
+
+
+
+	/**
+	 * Has a shared scope for features?
+	 * @returns {boolean}
+	 */
+	has_shared_scope()
+	{
+		return this._features_shared_scope && this._features_shared_scope.is_shared
+	}
+
+
+
+	/**
+	 * Get shared scope for features.
+	 * @returns {Scope}
+	 */
+	get_shared_scope()
+	{
+		return this._features_shared_scope
 	}
 
 	

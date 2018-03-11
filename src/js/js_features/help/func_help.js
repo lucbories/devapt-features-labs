@@ -350,6 +350,38 @@ function func_help_cmd_scope(arg_terminal_feature, arg_response, cmd, opd1, opd2
             return arg_response
         }
 
+        const scope_items = []
+
+        // SCOPE IS SHARED
+        if ( terminal.has_shared_scope() )
+        {
+            const feature_name = 'shared'
+            const public_scope = terminal.get_shared_scope().get_public_items()
+            // console.log(context + ':func_help_cmd_scope:public_scope=', public_scope)
+
+            let item_type;
+            for(let item_name in public_scope)
+            {
+                const item = public_scope[item_name]
+
+                item_type = 'variable'
+                if (typeof item == 'function')
+                {
+                    item_type = 'function'
+                }
+                else if (Array.isArray(item))
+                {
+                    item_type = 'array variable'
+                }
+
+                scope_items.push([feature_name, item_type, item_name])
+            }
+
+            arg_response.result.value = scope_items
+            arg_response.result.str = func_help_format_scope(scope_items)
+            return arg_response
+        }
+
         const features = arg_terminal_feature._terminal.get_features()
         if (! features)
         {
@@ -357,7 +389,7 @@ function func_help_cmd_scope(arg_terminal_feature, arg_response, cmd, opd1, opd2
             return arg_response
         }
 
-        const scope_items = []
+        // LOOP ON FEATURES
         for(let feature_name in features)
         {
             const terminal_session_scope = terminal.get_feature_scope(feature_name)
@@ -368,7 +400,7 @@ function func_help_cmd_scope(arg_terminal_feature, arg_response, cmd, opd1, opd2
             }
 
             const public_scope = terminal_session_scope.get_public_items()
-            console.log(context + ':func_help_cmd_scope:public_scope=', public_scope)
+            // console.log(context + ':func_help_cmd_scope:public_scope=', public_scope)
 
             let item_type;
             for(let item_name in public_scope)
@@ -388,9 +420,8 @@ function func_help_cmd_scope(arg_terminal_feature, arg_response, cmd, opd1, opd2
                 scope_items.push([feature_name, item_type, item_name])
             }
         }
-        console.log(context + ':func_help_cmd_scope:scope_items=', scope_items)
+        // console.log(context + ':func_help_cmd_scope:scope_items=', scope_items)
 
-        // arg_response.result.value = JSON.stringify(aliases)
         arg_response.result.value = scope_items
         arg_response.result.str = func_help_format_scope(scope_items)
     }
